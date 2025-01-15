@@ -96,39 +96,36 @@ extern "C" {
 
     typedef struct
     {
-        uint16_t From;
-        uint16_t To;
-        uint8_t* Reserved;
         uint8_t Month;
         uint8_t Day;
         uint8_t Weekday;
-        bool Wday_After_Or_Before_Day; // After or Equal: True  | Before or Equal: False
+        bool Weekday_isAfterOrEqual_Day; // true if the specified weekday is on or after the reference day. If false, the specified weekday is on or before the reference day.
         uint32_t Hour;
-        bool UTC_Or_Local_Hour; // Hour based on Local (Standard): False | Hour based on UTC: True
+        bool Hour_isUTC; // true if time is set based on UTC, false otherwise (local standard time)
         int32_t Save_Hour;
         uint8_t* Letter;
         uint8_t* Comment;
-    }Rule_Data_t;
+    }Rule_Year_Data_t;
+
+    typedef struct
+    {
+        uint16_t From;
+        uint16_t To;
+        uint8_t* Reserved;
+        bool DST_Effect;
+        uint16_t Standard_Count;
+        Rule_Year_Data_t* Standard;
+        uint16_t DST_Count;
+        Rule_Year_Data_t* DST;
+    }Rule_Year_t;
 
     typedef struct
     {
         uint8_t* Name;
-        uint32_t Data_Count;
-        Rule_Data_t* Data;
+        uint32_t Years_Count;
+        Rule_Year_t* Years;
     }Rule_Entry_t;
 
-    
-
-
-
-    typedef struct
-    {
-        uint8_t Version;
-        uint16_t ISO3166_Count;
-        ISO3166_Entry_t* ISO3166_Data;
-        uint16_t ZoneTab_Count;
-        ZoneTab_Entry_t* ZoneTab_Data;
-    }TimeZone_DB_t;
 
 
     void Initial_FileNames(void);
@@ -136,7 +133,7 @@ extern "C" {
     ISO3166_Entry_t* Parse_ISO3166Tab(int* iso3166_Count);
     ZoneTab_Entry_t* Parse_ZoneTab(int* size);
     Rule_Entry_t* Parse_Rules(int* rules_Count);
-    Rule_Data_t Parse_Rule_Data(const char* from, const char* to, const char* reserved, const char* in, const char* on, const char* at, const char* save, const char* letter, const char* comment);
+    Rule_Year_t Parse_Rule_Year(const char* from, const char* to, const char* reserved, const char* in, const char* on, const char* at, const char* save, const char* letter, const char* comment);
 
 #ifdef __cplusplus
 }
