@@ -15,12 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TimeZoneDBCreator.h">
+    <ClInclude Include="Inc\TimeZoneDBCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\Parse_Rules.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TimeZoneDBCreator.C">
+    <ClCompile Include="Src\TimeZoneDBCreator.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Parse_Rules.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Constants.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
