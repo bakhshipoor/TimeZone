@@ -239,12 +239,12 @@ int main()
     int32_t rules_Count = 0;
     Rule_Entry_t* rules_list = Parse_Rules(&rules_Count);
 
-    FILE* temp = fopen("../temp.txt", "w");
+    /*FILE* temp = fopen("../temp.txt", "w");
     for (int i = 0; i < rules_Count; i++)
     {
         fprintf(temp, "%s\t%d\t%d\t%d\n", rules_list[i].Name, rules_list[i].Years_Count, rules_list[i].Year_Begin, rules_list[i].Year_End);
     }
-    fclose(temp);
+    fclose(temp);*/
 
     while (1);
     return 0;
