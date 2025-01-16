@@ -55,7 +55,7 @@ extern "C" {
         int16_t From;
         int16_t To;
         uint8_t* Reserved;
-        bool DST_Effect;
+        //bool DST_Effect;
         uint16_t Standard_Count;
         Rule_Year_Data_t* Standard;
         uint16_t DST_Count;
@@ -75,15 +75,18 @@ extern "C" {
     Rule_Entry_t* Parse_Rules(int32_t* rules_Count);
     Rule_Data_t Parse_Rule_Data(const char* line);
     int16_t Parse_Rule_Data_From(const Rule_Data_t rule_data);
-    int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data);
+    int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data, int16_t max_value);
     uint8_t Parse_Rule_Data_In(const Rule_Data_t rule_data);
     Rule_Year_Day_t Parse_Rule_Data_On(const Rule_Data_t rule_data);
     Rule_Year_Hour_t Parse_Rule_Data_At(const Rule_Data_t rule_data);
-    bool Rule_isExist(const Rule_Entry_t* rule_list, const int* rules_count, const char* rule_name, int32_t* find_Index);
-    Rule_Entry_t Rule_Create(const char* rule_name);
+    int32_t Parse_Rule_Data_Save(const Rule_Data_t rule_data);
+    bool Rule_isExist(const Rule_Entry_t* rule_list, const int32_t* rules_count, const char* rule_name, int32_t* find_Index);
+    bool Rule_Create(Rule_Entry_t** rule_list, const int32_t rules_Count, const char* rule_name);
     void Parse_Rule_Year_Range(Rule_Entry_t* rule_list, const int32_t rule_index, const Rule_Data_t rule_data);
+    void Parse_Rule_Years(Rule_Entry_t* rule_list, int32_t* rules_Count);
     bool Rule_Year_isExist(const Rule_Year_t* year_list, const uint32_t years_count, const int16_t year_from, const int16_t year_to, int32_t* find_index);
-    Rule_Year_t Rule_Year_Create(const int16_t year_from, const int16_t year_to);
+    bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const int16_t year_from, const int16_t year_to, const Rule_Data_t rule_data);
+    bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count, const Rule_Data_t rule_data);
 
 #ifdef __cplusplus
 }

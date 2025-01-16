@@ -32,24 +32,11 @@ Rule_Entry_t* Parse_Rules(int32_t* rules_Count)
             int32_t find_index = -1;
             if (!Rule_isExist(Rules_List, rules_Count, rule_data.Name, &find_index))
             {
-                Rule_Entry_t* rule_list = realloc(Rules_List, (*rules_Count + 1) * sizeof(Rule_Entry_t));
-                if (rule_list == NULL)
+                if (Rule_Create(&Rules_List, *rules_Count, rule_data.Name))
                 {
-                    return NULL;
+                    (*rules_Count)++;
                 }
-                Rules_List = rule_list;
-                Rules_List[*rules_Count] = Rule_Create(rule_data.Name);
-                (*rules_Count)++;
-            }
-
-            if (Rules_List == NULL)
-            {
-                return NULL;
-            }
-
-            if (find_index < 0)
-            {
-                find_index = *rules_Count - 1;
+                
             }
 
             Parse_Rule_Year_Range(Rules_List, find_index, rule_data);
@@ -65,7 +52,17 @@ Rule_Data_t Parse_Rule_Data(const char* line)
 {
     Rule_Data_t rule_data;
     int scan_lenght = 0;
-
+    memset(rule_data.Field, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.Name, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.From, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.To, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.Reserved, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.In, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.On, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.At, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.Save, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.Letter, '\0', MAX_LENGHT_DATA_FIELD);
+    memset(rule_data.Comment, '\0', MAX_LENGHT_DATA_FIELD);
 
     scan_lenght = sscanf(line, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%[^\r\n]",
         rule_data.Field,
@@ -114,7 +111,7 @@ int16_t Parse_Rule_Data_From(const Rule_Data_t rule_data)
     return atoi(rule_data.From);
 }
 
-int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data)
+int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data, int16_t max_value)
 {
     if (strcmp(rule_data.To, "only") == 0)
     {
@@ -122,7 +119,7 @@ int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data)
     }
     else if (strcmp(rule_data.To, "max") == 0)
     {
-        return -1;
+        return max_value;
     }
     else
     {
@@ -137,7 +134,7 @@ uint8_t Parse_Rule_Data_In(const Rule_Data_t rule_data)
     {
         if (strcmp(rule_data.In, Month_Names[month_index].Abbr) == 0 || strcmp(rule_data.In, Month_Names[month_index].Full) == 0)
         {
-            return Month_Names[month_index].Number;
+            return Month_Names[month_index].Number + 1;
         }
     }
     return 0;
@@ -253,7 +250,7 @@ int32_t Parse_Rule_Data_Save(const Rule_Data_t rule_data)
     return save;
 }
 
-bool Rule_isExist(const Rule_Entry_t* rule_list, const int* rules_count, const char* rule_name, int32_t* find_Index)
+bool Rule_isExist(const Rule_Entry_t* rule_list, const int32_t* rules_count, const char* rule_name, int32_t* find_Index)
 {
     if (rule_list != NULL && ((*rules_count) > 0))
     {
@@ -261,7 +258,7 @@ bool Rule_isExist(const Rule_Entry_t* rule_list, const int* rules_count, const c
         {
             if (strcmp(rule_list[rule_index].Name, rule_name) == 0)
             {
-                find_Index = rule_index;
+                *find_Index = rule_index;
                 return true;
             }
         }
@@ -269,7 +266,7 @@ bool Rule_isExist(const Rule_Entry_t* rule_list, const int* rules_count, const c
     return false;
 }
 
-Rule_Entry_t Rule_Create(const char* rule_name)
+bool Rule_Create(Rule_Entry_t** rule_list, const int32_t rules_Count, const char* rule_name)
 {
     Rule_Entry_t rule = { 0 };
     rule.Name = (uint8_t*)malloc((strlen(rule_name) + 1) * sizeof(uint8_t));
@@ -280,14 +277,22 @@ Rule_Entry_t Rule_Create(const char* rule_name)
     rule.Years_Count = 0;
     rule.Year_Begin = 0;
     rule.Year_End = 0;
-    return rule;
+
+    Rule_Entry_t* rules = realloc(*rule_list, (rules_Count + 1) * sizeof(Rule_Entry_t));
+    if (rules == NULL)
+    {
+        return false;
+    }
+    *rule_list = rules;
+    (*rule_list)[rules_Count] = rule;
+    return true;
 }
 
 void Parse_Rule_Year_Range(Rule_Entry_t* rule_list, const int32_t rule_index, const Rule_Data_t rule_data)
 {
     int16_t year_from = Parse_Rule_Data_From(rule_data);
-    int16_t year_to = Parse_Rule_Data_To(rule_data);
-
+    int16_t year_to = Parse_Rule_Data_To(rule_data, -1);
+    
     if (rule_list[rule_index].Year_Begin == 0)
     {
         rule_list[rule_index].Year_Begin = year_from;
@@ -298,6 +303,10 @@ void Parse_Rule_Year_Range(Rule_Entry_t* rule_list, const int32_t rule_index, co
     }
 
     if (rule_list[rule_index].Year_End == 0)
+    {
+        rule_list[rule_index].Year_End = year_to;
+    }
+    else if (year_to == -1)
     {
         rule_list[rule_index].Year_End = year_to;
     }
@@ -334,18 +343,86 @@ void Parse_Rule_Years(Rule_Entry_t* rule_list, int32_t* rules_Count)
                 continue;
             }
 
-            int32_t find_index = -1;
-            if (Rule_isExist(rule_list, rules_Count, rule_data.Name, &find_index))
+            int32_t rule_find_index;
+            rule_find_index = -1;
+            if (Rule_isExist(rule_list, rules_Count, rule_data.Name, &rule_find_index))
             {
-                
+                if (rule_find_index >= 0)
+                {
+                    int16_t year_from = Parse_Rule_Data_From(rule_data);
+                    int16_t year_to = Parse_Rule_Data_To(rule_data, rule_list[rule_find_index].Year_End);
+                    int16_t years_count = 0;
+                    int32_t year_find_index;
+                    if (year_to > year_from)
+                    {
+                        years_count = (year_to - year_from) + 1;
+                        for (int year_index = 0; year_index <= years_count; year_index++)
+                        {
+                            year_find_index = -1;
+                            if (!Rule_Year_isExist(rule_list[rule_find_index].Years, rule_list[rule_find_index].Years_Count, year_from, year_from, &year_find_index))
+                            {
+                                if (Rule_Year_Create(&rule_list[rule_find_index].Years, rule_list[rule_find_index].Years_Count, year_from, year_from, rule_data))
+                                {
+                                    rule_list[rule_find_index].Years_Count++;
+                                }
+                            }
+                            else
+                            {
+                                int32_t save_hour = Parse_Rule_Data_Save(rule_data);
+                                if (save_hour == 0)
+                                {
+                                    if (Rule_Year_Add_Data(&(rule_list[rule_find_index].Years[year_find_index].Standard), rule_list[rule_find_index].Years[year_find_index].Standard_Count, rule_data))
+                                    {
+                                        rule_list[rule_find_index].Years[year_find_index].Standard_Count++;
+                                    }
+                                }
+                                else
+                                {
+                                    if (Rule_Year_Add_Data(&(rule_list[rule_find_index].Years[year_find_index].DST), rule_list[rule_find_index].Years[year_find_index].DST_Count, rule_data))
+                                    {
+                                        rule_list[rule_find_index].Years[year_find_index].DST_Count++;
+                                    }
+                                }
+                            }
+                            year_from++;
+                        }
+                    }
+                    else
+                    {
+                        year_find_index = -1;
+                        if (!Rule_Year_isExist(rule_list[rule_find_index].Years, rule_list[rule_find_index].Years_Count, year_from, year_to, &year_find_index))
+                        {
+                            if (Rule_Year_Create(&rule_list[rule_find_index].Years, rule_list[rule_find_index].Years_Count, year_from, year_to, rule_data))
+                            {
+                                rule_list[rule_find_index].Years_Count++;
+                            }
+                        }
+                        else
+                        {
+                            int32_t save_hour = Parse_Rule_Data_Save(rule_data);
+                            if (save_hour == 0)
+                            {
+                                if (Rule_Year_Add_Data(&rule_list[rule_find_index].Years[year_find_index].Standard, rule_list[rule_find_index].Years[year_find_index].Standard_Count, rule_data))
+                                {
+                                    rule_list[rule_find_index].Years[year_find_index].Standard_Count++;
+                                }
+                            }
+                            else
+                            {
+                                if (Rule_Year_Add_Data(&rule_list[rule_find_index].Years[year_find_index].DST, rule_list[rule_find_index].Years[year_find_index].DST_Count, rule_data))
+                                {
+                                    rule_list[rule_find_index].Years[year_find_index].DST_Count++;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
             }
-
         }
-
         fclose(data_File);
     }
 }
-
 
 bool Rule_Year_isExist(const Rule_Year_t* year_list, const uint32_t years_count, const int16_t year_from, const int16_t year_to, int32_t* find_index)
 {
@@ -353,9 +430,9 @@ bool Rule_Year_isExist(const Rule_Year_t* year_list, const uint32_t years_count,
     {
         for (int year_index = 0; year_index < years_count; year_index++)
         {
-            if (year_list[year_index].From == year_from && year_list[year_index].From == year_to)
+            if (year_list[year_index].From == year_from && year_list[year_index].To == year_to)
             {
-                find_index = year_index;
+                (*find_index) = year_index;
                 return true;
             }
         }
@@ -363,94 +440,85 @@ bool Rule_Year_isExist(const Rule_Year_t* year_list, const uint32_t years_count,
     return false;
 }
 
-Rule_Year_t Rule_Year_Create(const int16_t year_from, const int16_t year_to)
+bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const int16_t year_from, const int16_t year_to, const Rule_Data_t rule_data)
 {
     Rule_Year_t rule_year = { 0 };
-
+    
     rule_year.From = year_from;
     rule_year.To = year_to;
+    rule_year.Reserved = (uint8_t*)malloc((strlen(rule_data.Reserved) + 1) * sizeof(uint8_t));
+    if (rule_year.Reserved != NULL)
+    {
+        if (rule_data.Reserved[0] == '-')
+        {
+            sprintf(rule_year.Reserved, "%c", '\0');
+        }
+        else
+        {
+            sprintf(rule_year.Reserved, "%s", rule_data.Reserved);
+        }
+    }
+    rule_year.Standard_Count = 0;
+    rule_year.DST_Count = 0;
 
-    return rule_year;
+    int32_t save_hour = Parse_Rule_Data_Save(rule_data);
+    if (save_hour == 0)
+    {
+        if (Rule_Year_Add_Data(&rule_year.Standard, rule_year.Standard_Count, rule_data))
+        {
+            rule_year.Standard_Count++;
+        }
+    }
+    else
+    {
+        if (Rule_Year_Add_Data(&rule_year.DST, rule_year.DST_Count, rule_data))
+        {
+            rule_year.DST_Count++;
+        }
+    }
+   
+
+    Rule_Year_t* year = (Rule_Year_t*)realloc(*year_list, (years_count + 1) * sizeof(Rule_Year_t));
+    if (year != NULL)
+    {
+        *year_list = year;
+        (*year_list)[years_count] = rule_year;
+        return true;
+    }
+    return false;
 }
 
+bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count,  const Rule_Data_t rule_data)
+{
+    Rule_Year_Data_t rule_year_data = { 0 };
+    rule_year_data.Month = Parse_Rule_Data_In(rule_data);
+    rule_year_data.Day = Parse_Rule_Data_On(rule_data);
+    rule_year_data.Hour = Parse_Rule_Data_At(rule_data);
+    rule_year_data.Save_Hour = Parse_Rule_Data_Save(rule_data);
+    rule_year_data.Letter = (uint8_t*)malloc((strlen(rule_data.Letter) + 1) * sizeof(uint8_t));
+    if (rule_data.Letter != NULL)
+    {
+        if (rule_data.Letter[0] == '-')
+        {
+            sprintf(rule_year_data.Letter, "%c", '\0');
+        }
+        else
+        {
+            sprintf(rule_year_data.Letter, "%s", rule_data.Letter);
+        }
+    }
+    rule_year_data.Comment = (uint8_t*)malloc((strlen(rule_data.Comment) + 1) * sizeof(uint8_t));
+    if (rule_year_data.Comment != NULL)
+    {
+        sprintf(rule_year_data.Comment, "%s", rule_data.Comment);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//int32_t find_index = -1;
-//    if (!Rule_Year_isExist(rule_list[rule_index].Years, rule_list[rule_index].Years_Count, year_from, year_to, &find_index))
-//    {
-//        Rule_Year_t* year = (Rule_Year_t*)realloc(rule_list[rule_index].Years, (rule_list[rule_index].Years_Count + 1) * sizeof(Rule_Year_t));
-//        if (year != NULL)
-//        {
-//            rule_list[rule_index].Years = year;
-//            rule_list[rule_index].Years[rule_list[rule_index].Years_Count] = Rule_Year_Create(year_from, year_to);
-//            rule_list[rule_index].Years_Count++;
-//        }
-//    }
-
-
-
-
-    //Rule_Year_t rule_year = { 0 };
-    //int sscanf_lenght;
-
-    
-
-    //rule_data.Reserved = (uint8_t*)malloc((strlen(reserved) + 1) * sizeof(uint8_t));
-    //if (rule_data.Reserved != NULL)
-    //{
-    //    if (reserved[0] == '-')
-    //    {
-    //        sprintf(rule_data.Reserved, "%c", '\0');
-    //    }
-    //    else
-    //    {
-    //        sprintf(rule_data.Reserved, "%s", reserved);
-    //    }
-    //}
-
-    
-
-    
-
-    
-
-    
-    //
-    //rule_data.Letter = (uint8_t*)malloc((strlen(letter) + 1) * sizeof(uint8_t));
-    //if (rule_data.Letter != NULL)
-    //{
-    //    if (letter[0] == '-')
-    //    {
-    //        sprintf(rule_data.Letter, "%c", '\0');
-    //    }
-    //    else
-    //    {
-    //        sprintf(rule_data.Letter, "%s", letter);
-    //    }
-    //    
-    //}
-
-    //rule_data.Comment = (uint8_t*)malloc((strlen(comment) + 1) * sizeof(uint8_t));
-    //if (rule_data.Comment != NULL)
-    //{
-    //    sprintf(rule_data.Comment, "%s", comment);
-    //}
+    Rule_Year_Data_t* data = (Rule_Year_Data_t*)realloc(*year_data, (count + 1) * sizeof(Rule_Year_Data_t));
+    if (data != NULL)
+    {
+        *year_data = data;
+        (*year_data)[count] = rule_year_data;
+        return true;
+    }
+    return false;
+}

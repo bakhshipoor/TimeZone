@@ -23,7 +23,8 @@ extern "C" {
 
 
 
-    typedef enum {
+    typedef enum 
+    {
         TZDB_WEEKDAY_SUNDAY=0,
         TZDB_WEEKDAY_MONDAY,
         TZDB_WEEKDAY_TUESDAY,
@@ -36,7 +37,8 @@ extern "C" {
         TZDB_WEEKDAY_NONE=255,
     }Weekday_Number_e;
 
-    typedef enum {
+    typedef enum 
+    {
         TZDB_MONTH_JANUARY=0,
         TZDB_MONTH_FEBRUARY,
         TZDB_MONTH_MARCH,
