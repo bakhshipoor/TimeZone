@@ -238,7 +238,7 @@ int main()
     int zoneCount = 0;
     ZoneTab_Entry_t* tab = Parse_ZoneTab(&zoneCount);
 
-    int rules_Count = 0;
+    int32_t rules_Count = 0;
     Rule_Entry_t* rules_list = Parse_Rules(&rules_Count);
    
     

@@ -22,9 +22,6 @@ extern "C" {
 #define MAX_LENGHT_COMMENT 1024
 
 
-#define MAX_LENGHT_DATA_FIELD 256
-
-#define RULE_MAX_VALUE 10000
 
     typedef enum {
         TZDB_WEEKDAY_SUNDAY=0,
