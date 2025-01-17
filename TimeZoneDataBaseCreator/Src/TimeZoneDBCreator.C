@@ -2,7 +2,7 @@
 #include "../Inc/TimeZoneDBCreator.h"
 #include "../Inc/Parse_Rules.h"
 #include "../Inc/Parse_Zones.h"
-
+#include "../Inc/Parse_Common.h"
 
 // Data Files
 uint8_t Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];

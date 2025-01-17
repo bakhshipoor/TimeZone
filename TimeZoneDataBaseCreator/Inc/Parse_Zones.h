@@ -23,15 +23,22 @@ extern "C" {
 
     typedef struct
     {
-        uint32_t Hour;          
+        int32_t Hour;          
         bool Hour_isUTC;       
     } Zone_Info_Until_Hour_t;
 
     typedef struct
     {
+        uint8_t Day;
+        uint8_t Weekday;
+        bool Weekday_isAfterOrEqual_Day;
+    } Zone_Info_Until_Day_t;
+
+    typedef struct
+    {
         int16_t Year;
         uint8_t Month;
-        uint8_t Day;
+        Zone_Info_Until_Day_t Day;
         Zone_Info_Until_Hour_t Hour;
     } Zone_Info_Until_t;
 

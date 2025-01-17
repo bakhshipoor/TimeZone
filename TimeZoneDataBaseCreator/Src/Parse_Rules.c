@@ -161,82 +161,13 @@ int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data, int16_t max_value)
 
 uint8_t Parse_Rule_Data_In(const Rule_Data_t rule_data)
 {
-    // Loop through all the months in the TZDB_MONTH_TOTAL
-    for (int month_index = 0; month_index < TZDB_MONTH_TOTAL; month_index++)
-    {
-        // Check if the 'In' field matches either the abbreviated or full name of the month
-        if (strcmp(rule_data.In, Month_Names[month_index].Abbr) == 0 || strcmp(rule_data.In, Month_Names[month_index].Full) == 0)
-        {
-            // Return the month number (1-based index, hence the +1)
-            return Month_Names[month_index].Number + 1;
-        }
-    }
-    // Return 0 if no match is found
-    return 0;
+    return Parse_Month(rule_data.In);
 }
 
 Rule_Year_Day_t Parse_Rule_Data_On(const Rule_Data_t rule_data)
 {
     Rule_Year_Day_t day = { 0 }; // Initialize a Rule_Year_Day_t structure with default values
-    day.Day = 0;
-    day.Weekday = (uint8_t)TZDB_WEEKDAY_NONE;
-    day.Weekday_isAfterOrEqual_Day = false;
-
-    // Check if the length of the 'On' field is less than or equal to 3
-    if (strlen(rule_data.On) <= 3)
-    {
-        day.Day = atoi(rule_data.On); // Convert the 'On' field to an integer and assign to day.Day
-        day.Weekday = (uint8_t)TZDB_WEEKDAY_NONE;
-        day.Weekday_isAfterOrEqual_Day = false;
-    }
-    else
-    {
-        uint8_t dow[10], d[10]; // Buffers to store day of week (dow) and day (d)
-        int sscanf_lenght = sscanf(rule_data.On, "%[^=]=%s", dow, d); // Parse the 'On' field into dow and d
-        sprintf(dow, "%s", dow); // Ensure null-terminated strings
-        sprintf(d, "%s", d);
-
-        // Check if only day of week was found
-        if (sscanf_lenght == 1)
-        {
-            // Loop through all weekdays to find a match
-            for (int last_week_index = 0; last_week_index < TZDB_WEEKDAY_TOTAL; last_week_index++)
-            {
-                if (strcmp(dow, Last_Weekday_Names[last_week_index].Full) == 0)
-                {
-                    day.Day = 0; // Last week
-                    day.Weekday = Last_Weekday_Names[last_week_index].Number;
-                    day.Weekday_isAfterOrEqual_Day = false;
-                    return day; // Return the day structure
-                }
-            }
-        }
-        else
-        {
-            int len = strlen(dow); // Get the length of dow
-
-            // Check if dow ends with '>' or '<'
-            if (dow[len - 1] == '>')
-            {
-                day.Weekday_isAfterOrEqual_Day = true; // Set to true if dow ends with '>'
-            }
-            else if (dow[len - 1] == '<')
-            {
-                day.Weekday_isAfterOrEqual_Day = false; // Set to false if dow ends with '<'
-            }
-            dow[len - 1] = '\0'; // Remove the last character ('>' or '<') from dow
-
-            // Loop through all weekdays to find a match
-            for (int week_index = 0; week_index < TZDB_WEEKDAY_TOTAL; week_index++)
-            {
-                if (strcmp(dow, Weekday_Names[week_index].Abbr) == 0 || strcmp(dow, Weekday_Names[week_index].Full) == 0)
-                {
-                    day.Day = atoi(d); // Convert d to an integer and assign to day.Day
-                    day.Weekday = Weekday_Names[week_index].Number; // Assign the corresponding weekday number
-                }
-            }
-        }
-    }
+    Parse_Day_Of_Month(rule_data.On, &day.Day, &day.Weekday, &day.Weekday_isAfterOrEqual_Day);
     return day; // Return the day structure
 }
 
@@ -244,42 +175,21 @@ Rule_Year_Hour_t Parse_Rule_Data_At(const Rule_Data_t rule_data)
 {
     // Initialize a Rule_Year_Hour_t structure with default values
     Rule_Year_Hour_t hour = { 0 };
-    hour.Hour = 0;
+    char* s = { 0 };
+    hour.Hour = Parse_Hour(rule_data.At, &s);
     hour.Hour_isUTC = false;
-
-    uint8_t base = 0; // Variable to store the base character ('u' or 's')
-    uint32_t h = 0, m = 0; // Variables to store hours and minutes
-
-    // Parse the 'At' field in the format "h:m" or "h:mu" or "h:ms"
-    if (sscanf(rule_data.At, "%d:%d%c", &h, &m, &base) == 3)
+    if (s[0]== 'u')
     {
-        // Convert hours and minutes to seconds and assign to hour.Hour
-        hour.Hour = (h * 3600) + (m * 60);
-
-        // Check the base character to set the hour as UTC or standard time
-        if (base == 'u')
-        {
-            hour.Hour_isUTC = true;
-        }
-        else if (base == 's')
-        {
-            hour.Hour_isUTC = false;
-        }
+        hour.Hour_isUTC = true;
     }
-    else if (sscanf(rule_data.At, "%d:%d", &h, &m) == 2)
-    {
-        // Convert hours and minutes to seconds and assign to hour.Hour
-        hour.Hour = (h * 3600) + (m * 60);
-        hour.Hour_isUTC = false;
-    }
-
     // Return the parsed hour structure
     return hour;
 }
 
 int32_t Parse_Rule_Data_Save(const Rule_Data_t rule_data) 
 {
-    return Parse_Hour(rule_data.Save);
+    char* s = { 0 };
+    return Parse_Hour(rule_data.Save, &s);
 }
 
 bool Rule_isExist(const Rule_Entry_t* rule_list, const int32_t* rules_count, const char* rule_name, int32_t* find_Index)

@@ -38,7 +38,7 @@ extern "C" {
     // Structure to hold rule year hour data
     typedef struct
     {
-        uint32_t Hour;          // The specific hour of the rule in seconds  (hour * 3600) + (minute * 60) + second
+        int32_t Hour;          // The specific hour of the rule in seconds  (hour * 3600) + (minute * 60) + second
         bool Hour_isUTC;        // True if the time is set based on UTC, false if based on local standard time
     } Rule_Year_Hour_t;
 

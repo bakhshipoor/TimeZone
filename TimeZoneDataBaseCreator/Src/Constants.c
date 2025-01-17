@@ -3,23 +3,13 @@
 const char Data_Folder_Name[] = "tzdata2024b";
 
 const Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL] = {
-    { "Sun", "Sunday",      (uint8_t)TZDB_WEEKDAY_SUNDAY },
-    { "Mon", "Monday",      (uint8_t)TZDB_WEEKDAY_MONDAY },
-    { "Tue", "Tuesday",     (uint8_t)TZDB_WEEKDAY_TUESDAY },
-    { "Wed", "Wednesday",   (uint8_t)TZDB_WEEKDAY_WEDNESDAY },
-    { "Thu", "Thursday",    (uint8_t)TZDB_WEEKDAY_THURSDAY },
-    { "Fri", "Friday",      (uint8_t)TZDB_WEEKDAY_FRIDAY },
-    { "Sat", "Saturday",    (uint8_t)TZDB_WEEKDAY_SATURDAY },
-};
-
-const Last_Weekday_Lookup_t Last_Weekday_Names[TZDB_WEEKDAY_TOTAL] = {
-    { "lastSun", (uint8_t)TZDB_WEEKDAY_SUNDAY },
-    { "lastMon", (uint8_t)TZDB_WEEKDAY_MONDAY },
-    { "lastTue", (uint8_t)TZDB_WEEKDAY_TUESDAY },
-    { "lastWed", (uint8_t)TZDB_WEEKDAY_WEDNESDAY },
-    { "lastThu", (uint8_t)TZDB_WEEKDAY_THURSDAY },
-    { "lastFri", (uint8_t)TZDB_WEEKDAY_FRIDAY },
-    { "lastSat", (uint8_t)TZDB_WEEKDAY_SATURDAY },
+    { "Sun", "Sunday",      "lastSun", "lastSunday",        (uint8_t)TZDB_WEEKDAY_SUNDAY },
+    { "Mon", "Monday",      "lastMon", "lastMonday",        (uint8_t)TZDB_WEEKDAY_MONDAY },
+    { "Tue", "Tuesday",     "lastTue", "lastTuesday",       (uint8_t)TZDB_WEEKDAY_TUESDAY },
+    { "Wed", "Wednesday",   "lastWed", "lastWednesday",     (uint8_t)TZDB_WEEKDAY_WEDNESDAY },
+    { "Thu", "Thursday",    "lastThu", "lastThursday",      (uint8_t)TZDB_WEEKDAY_THURSDAY },
+    { "Fri", "Friday",      "lastFri", "lastFriday",        (uint8_t)TZDB_WEEKDAY_FRIDAY },
+    { "Sat", "Saturday",    "lastSat", "lastSaturday" ,     (uint8_t)TZDB_WEEKDAY_SATURDAY },
 };
 
 const Month_Lookup_t Month_Names[TZDB_MONTH_TOTAL] = {

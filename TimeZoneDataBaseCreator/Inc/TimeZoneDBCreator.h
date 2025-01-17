@@ -60,6 +60,8 @@ extern "C" {
     {
         uint8_t* Abbr;
         uint8_t* Full;
+        uint8_t* Last_Abbr;
+        uint8_t* Last_Full;
         uint8_t Number;
     }Weekday_Lookup_t;
 

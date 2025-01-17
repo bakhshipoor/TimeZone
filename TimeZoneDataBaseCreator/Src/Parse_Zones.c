@@ -110,7 +110,8 @@ Zone_Data_t Parse_Zone_Data(const char* line)
 
 int32_t Parse_Zone_Data_Standard_Offset(const Zone_Data_t zone_data)
 {
-    return Parse_Hour(zone_data.Standard_Offset);
+    char* s = { 0 };
+    return Parse_Hour(zone_data.Standard_Offset, &s);
 }
 
 Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data)
@@ -134,7 +135,8 @@ Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data)
         {
             rule.Rule_Name[0] = '\0';
         }
-        rule.Save_Hour = Parse_Hour(zone_data.Rules);
+        char* s = { 0 };
+        rule.Save_Hour = Parse_Hour(zone_data.Rules, &s);
     }
     else
     {
@@ -149,7 +151,68 @@ Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data)
     return rule;
 }
 
-//int32_t Zone_Info_Until_t(const Zone_Data_t zone_data)
-//{
-//
-//}
+Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data)
+{
+    Zone_Info_Until_t until = { 0 };
+    char* until_data[4];
+    for (int ud_index = 0; ud_index < 4; ud_index++)
+    {
+        until_data[ud_index] = (char*)malloc(MAX_LENGHT_DATA_FIELD * sizeof(char));
+        if (until_data[ud_index] == NULL)
+        {
+            return until;
+        }
+    }
+    if (strlen(zone_data.Until) == 0)
+    {
+        until.Year = -1;
+        until.Month = 0;
+        until.Day.Day = 0;
+        until.Day.Weekday = (uint8_t)TZDB_WEEKDAY_NONE;
+        until.Day.Weekday_isAfterOrEqual_Day = false;
+        until.Hour.Hour = 0;
+        until.Hour.Hour_isUTC = false;
+    }
+    else
+    {
+        if (sscanf(zone_data.Until, "%s\t%s\t%s\t%s", until_data[0], until_data[1], until_data[2], until_data[3]) == 4)
+        {
+            sprintf(until_data[0], "%s", until_data[0]);
+            sprintf(until_data[1], "%s", until_data[1]);
+            sprintf(until_data[2], "%s", until_data[2]);
+            sprintf(until_data[3], "%s", until_data[3]);
+            until.Year = atoi(until_data[0]);
+            until.Month = Parse_Month(until_data[1]); 
+            Parse_Day_Of_Month(until_data[2], &until.Day.Day, &until.Day.Weekday, &until.Day.Weekday_isAfterOrEqual_Day);
+            char* s = { 0 };
+            until.Hour.Hour = Parse_Hour(until_data[3], &s);
+            until.Hour.Hour_isUTC = false;
+            if (s[0] == 'u')
+            {
+                until.Hour.Hour_isUTC = true;
+            }
+        }
+        else if (sscanf(zone_data.Until, "%s\t%s\t%s", until_data[0], until_data[1], until_data[2]) == 3)
+        {
+            sprintf(until_data[0], "%s", until_data[0]);
+            sprintf(until_data[1], "%s", until_data[1]);
+            sprintf(until_data[2], "%s", until_data[2]);
+            until.Year = atoi(until_data[0]);
+            until.Month = Parse_Month(until_data[1]);
+            Parse_Day_Of_Month(until_data[2], &until.Day.Day, &until.Day.Weekday, &until.Day.Weekday_isAfterOrEqual_Day);            
+        }
+        else if (sscanf(zone_data.Until, "%s\t%s", until_data[0], until_data[1]) == 2)
+        {
+            sprintf(until_data[0], "%s", until_data[0]);
+            sprintf(until_data[1], "%s", until_data[1]);
+            until.Year = atoi(until_data[0]);
+            until.Month = Parse_Month(until_data[1]);
+        }
+        else if (sscanf(zone_data.Until, "%s", until_data[0]) == 1)
+        {
+            sprintf(until_data[0], "%s", until_data[0]);
+            until.Year = atoi(until_data[0]);
+        }
+    }
+    return until;
+}
