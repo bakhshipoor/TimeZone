@@ -12,9 +12,9 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#define DATA_FILES_COUNT 10
-
+#define DATA_FILES_COUNT 13
 #define MAX_LENGHT_FILE_NAME 256
+
 #define MAX_LENGHT_COUNTRY_CODE 10
 #define MAX_LENGHT_COUNTRY_NAME 256
 #define MAX_LENGHT_COORDINATES 50
@@ -96,11 +96,12 @@ extern "C" {
 
 
     extern const char Data_Folder_Name[];
+    const char* Data_Files_Name[DATA_FILES_COUNT];
     extern const Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL];
     extern const Last_Weekday_Lookup_t Last_Weekday_Names[TZDB_WEEKDAY_TOTAL];
     extern const Month_Lookup_t Month_Names[TZDB_MONTH_TOTAL];
 
-    extern uint8_t Data_FileName[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
+    extern uint8_t Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
 
     void Initial_FileNames(void);
     char* Parse_Version();

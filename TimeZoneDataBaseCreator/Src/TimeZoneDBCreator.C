@@ -2,35 +2,22 @@
 #include "../Inc/TimeZoneDBCreator.h"
 #include "../Inc/Parse_Rules.h"
 
-uint8_t version_FileName[MAX_LENGHT_FILE_NAME]; 
-uint8_t iso3166tab_FileName[MAX_LENGHT_FILE_NAME]; 
-uint8_t zonetab_FileName[MAX_LENGHT_FILE_NAME]; 
+
 // Data Files
-uint8_t Data_FileName[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
+uint8_t Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
 
 
 void Initial_FileNames(void)
 {
-    sprintf_s(version_FileName,             MAX_LENGHT_FILE_NAME,   "../%s/version",          Data_Folder_Name);
-    sprintf_s(iso3166tab_FileName,          MAX_LENGHT_FILE_NAME,   "../%s/iso3166.tab",      Data_Folder_Name);
-    sprintf_s(zonetab_FileName,             MAX_LENGHT_FILE_NAME,   "../%s/zone.tab",         Data_Folder_Name);
-    // Data Files
-    sprintf_s(Data_FileName[0], MAX_LENGHT_FILE_NAME, "../%s/africa",           Data_Folder_Name);
-    sprintf_s(Data_FileName[1], MAX_LENGHT_FILE_NAME, "../%s/antarctica",       Data_Folder_Name);
-    sprintf_s(Data_FileName[2], MAX_LENGHT_FILE_NAME, "../%s/asia",             Data_Folder_Name);
-    sprintf_s(Data_FileName[3], MAX_LENGHT_FILE_NAME, "../%s/australasia",      Data_Folder_Name);
-    sprintf_s(Data_FileName[4], MAX_LENGHT_FILE_NAME, "../%s/backward",         Data_Folder_Name);
-    sprintf_s(Data_FileName[5], MAX_LENGHT_FILE_NAME, "../%s/backzone",         Data_Folder_Name);
-    sprintf_s(Data_FileName[6], MAX_LENGHT_FILE_NAME, "../%s/etcetera",         Data_Folder_Name);
-    sprintf_s(Data_FileName[7], MAX_LENGHT_FILE_NAME, "../%s/europe",           Data_Folder_Name);
-    sprintf_s(Data_FileName[8], MAX_LENGHT_FILE_NAME, "../%s/northamerica",     Data_Folder_Name);
-    sprintf_s(Data_FileName[9], MAX_LENGHT_FILE_NAME, "../%s/southamerica",     Data_Folder_Name);
-
+    for (int file_index = 0; file_index < DATA_FILES_COUNT; file_index++)
+    {
+        sprintf_s(Data_File[file_index], MAX_LENGHT_FILE_NAME, "../%s/%s", Data_Folder_Name, Data_Files_Name[file_index]);
+    }
 }
 
 char* Parse_Version()
 {
-    FILE* version_File = fopen(version_FileName, "r");
+    FILE* version_File = fopen(Data_File[0], "r");
     if (!version_File) {
         perror("Failed to open version");
         return NULL;
@@ -51,7 +38,7 @@ char* Parse_Version()
 
 ISO3166_Entry_t* Parse_ISO3166Tab(int* iso3166_Count)
 {
-    FILE* iso3166_File = fopen(iso3166tab_FileName, "r");
+    FILE* iso3166_File = fopen(Data_File[1], "r");
     if (!iso3166_File) {
         perror("Failed to open file");
         return NULL;
@@ -116,7 +103,7 @@ ISO3166_Entry_t* Parse_ISO3166Tab(int* iso3166_Count)
 
 ZoneTab_Entry_t* Parse_ZoneTab(int* zoneCount) 
 {
-    FILE* zonetab_File = fopen(zonetab_FileName, "r");
+    FILE* zonetab_File = fopen(Data_File[2], "r");
     if (!zonetab_File) {
         perror("Failed to open file");
         return NULL;

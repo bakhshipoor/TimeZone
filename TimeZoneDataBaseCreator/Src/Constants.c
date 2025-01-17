@@ -36,3 +36,19 @@ const Month_Lookup_t Month_Names[TZDB_MONTH_TOTAL] = {
     { "Nov", "November",    (uint8_t)TZDB_MONTH_NOVEMBER },
     { "Dec", "December",    (uint8_t)TZDB_MONTH_DECEMBER },
 };
+
+const char* Data_Files_Name[DATA_FILES_COUNT] = {
+    "version",
+    "iso3166.tab",
+    "zone.tab",
+    "africa",
+    "antarctica",
+    "asia",
+    "australasia",
+    "backward",
+    "backzone",
+    "etcetera",
+    ".europe",
+    "northamerica",
+    "southamerica"
+};
