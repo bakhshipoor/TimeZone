@@ -50,6 +50,9 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
 
         fclose(data_File);
     }
+
+    Parse_Zone_Info(Zones_List, zones_Count);
+
     return Zones_List;
 }
 
@@ -122,7 +125,7 @@ int32_t Parse_Zone_Data_Standard_Offset(const Zone_Data_t zone_data)
 Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data)
 {
     Zone_Info_Rule_t rule = { 0 };
-    if (strcmp(zone_data.Rules, '-') == 0)
+    if (strcmp(zone_data.Rules, "-") == 0)
     {
         rule.Has_Rule = false;
         rule.Rule_Name = (uint8_t*)malloc(sizeof(uint8_t));
@@ -290,5 +293,61 @@ void Parse_Zone_Year_Range(Zone_Entry_t* zone_list, const int32_t zone_index, co
     else if (year != -1 && zone_list[zone_index].Year_End < year)
     {
         zone_list[zone_index].Year_End = year;
+    }
+}
+
+void Parse_Zone_Info(Zone_Entry_t* zone_list, const int32_t* zones_Count)
+{
+    uint8_t line[2048]; 
+    uint16_t dataFile_index = 0;
+
+    for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
+    {
+        FILE* data_File = fopen(Data_File[dataFile_index], "r");
+        if (!data_File)
+        {
+            continue;
+        }
+
+        while (fgets(line, sizeof(line), data_File))
+        {
+            if (strlen(line) < 5 || line[0] == '#')
+            {
+                continue;
+            }
+
+            Zone_Data_t zone_data = Parse_Zone_Data(line);
+            if (strlen(zone_data.Name) <= 0)
+            {
+                continue;
+            }
+
+            int32_t find_index = -1;
+            if (Zone_isExist(zone_list, zones_Count, zone_data.Name, &find_index))
+            {
+                Zone_Info_t info = { 0 };
+                info.Standard_Offset = Parse_Zone_Data_Standard_Offset(zone_data);
+                info.Rule = Parse_Zone_Data_Rules(zone_data);
+                info.Format = (uint8_t*)malloc((strlen(zone_data.Format) + 1) * sizeof(uint8_t));
+                if (info.Format != NULL)
+                {
+                    sprintf(info.Format, "%s", zone_data.Format);
+                }
+                info.Until = Parse_Zone_Info_Until(zone_data);
+                info.Comment = (uint8_t*)malloc((strlen(zone_data.Comment) + 1) * sizeof(uint8_t));
+                if (info.Comment != NULL)
+                {
+                    sprintf(info.Comment, "%s", zone_data.Comment);
+                }
+                Zone_Info_t* z_info = (Zone_Info_t*)realloc(zone_list[find_index].Info, (zone_list[find_index].Info_Count + 1) * sizeof(Zone_Info_t));
+                if (z_info != NULL)
+                {
+                    zone_list[find_index].Info = z_info;
+                    zone_list[find_index].Info[zone_list[find_index].Info_Count] = info;
+                    zone_list[find_index].Info_Count++;
+                }
+            }
+        }
+        fclose(data_File);
     }
 }

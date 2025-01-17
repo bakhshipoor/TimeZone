@@ -54,7 +54,7 @@ extern "C" {
         int32_t Standard_Offset;
         Zone_Info_Rule_t Rule;
         uint8_t* Format;
-        Zone_Info_Until_Hour_t Until;
+        Zone_Info_Until_t Until;
         uint8_t* Comment;
     } Zone_Info_t;
 
@@ -75,6 +75,7 @@ extern "C" {
     bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, const char* zone_name, int32_t* find_Index);
     bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name);
     void Parse_Zone_Year_Range(Zone_Entry_t* zone_list, const int32_t zone_index, const Zone_Data_t zone_data);
+    void Parse_Zone_Info(Zone_Entry_t* zone_list, const int32_t* zones_Count);
 
 #ifdef __cplusplus
 }
