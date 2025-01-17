@@ -7,10 +7,10 @@ extern "C" {
 
 #include "TimeZoneDBCreator.h"
 
-    // Define the maximum length for data fields
+// Define the maximum length for data fields
 #define MAX_LENGHT_DATA_FIELD 256
 
-// Structure to hold rule data fields
+    // Structure to hold rule data fields
     typedef struct
     {
         uint8_t Field[MAX_LENGHT_DATA_FIELD];   // General field for rule data
@@ -77,10 +77,10 @@ extern "C" {
 
     // Function declarations for parsing rules and rule data
     /// <summary>
-/// Parses rules and returns a pointer to an array of rule entries.
-/// </summary>
-/// <param name="rules_Count">Pointer to an integer to store the number of parsed rules.</param>
-/// <returns>Pointer to an array of Rule_Entry_t structures.</returns>
+    /// Parses rules and returns a pointer to an array of rule entries.
+    /// </summary>
+    /// <param name="rules_Count">Pointer to an integer to store the number of parsed rules.</param>
+    /// <returns>Pointer to an array of Rule_Entry_t structures.</returns>
     Rule_Entry_t* Parse_Rules(int32_t* rules_Count);
 
     /// <summary>
