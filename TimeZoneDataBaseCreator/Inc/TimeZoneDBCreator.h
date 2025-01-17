@@ -16,6 +16,8 @@ extern "C" {
 #define DATA_FILES_COUNT 13
 #define MAX_LENGHT_FILE_NAME 256
 
+#define MAX_LENGHT_DATA_FIELD 256
+
 #define MAX_LENGHT_COUNTRY_CODE 10
 #define MAX_LENGHT_COUNTRY_NAME 256
 #define MAX_LENGHT_COORDINATES 50
@@ -79,37 +81,22 @@ extern "C" {
     }Month_Lookup_t;
 
 
-    typedef struct
-    {
-        uint8_t* Country_Code;
-        uint8_t* Country_Name;
-    } ISO3166_Entry_t;
+    
 
-    typedef struct
-    {
-        uint8_t* Country_Code;
-        uint8_t* Country_Name;
-        uint8_t* TZ_Identifier;
-        uint8_t* Comments;
-        double Latitude;
-        double Longitude;
-        
-    } ZoneTab_Entry_t;
+    
 
 
 
     extern const char Data_Folder_Name[];
-    const char* Data_Files_Name[DATA_FILES_COUNT];
+    extern const char* Data_Files_Name[DATA_FILES_COUNT];
     extern const Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL];
     extern const Last_Weekday_Lookup_t Last_Weekday_Names[TZDB_WEEKDAY_TOTAL];
     extern const Month_Lookup_t Month_Names[TZDB_MONTH_TOTAL];
-
     extern uint8_t Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
 
     void Initial_FileNames(void);
-    char* Parse_Version();
-    ISO3166_Entry_t* Parse_ISO3166Tab(int* iso3166_Count);
-    ZoneTab_Entry_t* Parse_ZoneTab(int* size);
+    
+    
    
 
 #ifdef __cplusplus

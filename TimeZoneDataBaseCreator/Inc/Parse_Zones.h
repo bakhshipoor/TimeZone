@@ -8,8 +8,6 @@ extern "C" {
 #include "TimeZoneDBCreator.h"
 #include "Parse_Common.h"
 
-#define MAX_LENGHT_DATA_FIELD 256
-
     typedef struct
     {
         uint8_t Field[MAX_LENGHT_DATA_FIELD];   

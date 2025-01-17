@@ -8,8 +8,6 @@ extern "C" {
 #include "TimeZoneDBCreator.h"
 #include "Parse_Common.h"
 
-// Define the maximum length for data fields
-#define MAX_LENGHT_DATA_FIELD 256
 
     // Structure to hold rule data fields
     typedef struct
