@@ -8,7 +8,6 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
     *zones_Count = 0;
     char line[2048]; 
     uint16_t dataFile_index = 0; 
-    FILE* temp = fopen("../temp.txt", "w");
     for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
     {
         FILE* data_File = fopen(Data_File[dataFile_index], "r");
@@ -26,16 +25,19 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
 
             Zone_Data_t zone_data = Parse_Zone_Data(line);
 
-            if (strlen(zone_data.Name) > 0)
+            if (strlen(zone_data.Name) <= 0)
             {
-                /*continue;*/
-                int x = 0;
-                x++;
-                
-    
-                fprintf(temp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\n", zone_data.Field, zone_data.Name, zone_data.Standard_Offset, zone_data.Rules, zone_data.Format, zone_data.Until, zone_data.Comment);
-    
-    
+                continue;
+            }
+
+            int32_t find_index = -1; 
+
+            if (!Zone_isExist(Zones_List, zones_Count, zone_data.Name, &find_index))
+            {
+                if (Zone_Create(&Zones_List, *zones_Count, zone_data.Name))
+                {
+                    (*zones_Count)++;
+                }
             }
 
             
@@ -43,8 +45,6 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
 
         fclose(data_File);
     }
-
-    fclose(temp);
     return Zones_List;
 }
 
@@ -215,4 +215,47 @@ Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data)
         }
     }
     return until;
+}
+
+bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, const char* zone_name, int32_t* find_Index)
+{
+    if (zone_list != NULL && ((*zones_count) > 0))
+    {
+        for (int zone_index = 0; zone_index < (*zones_count); zone_index++)
+        {
+            if (strcmp(zone_list[zone_index].Name, zone_name) == 0)
+            {
+                *find_Index = zone_index;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name)
+{
+    Zone_Entry_t zone = { 0 };
+
+    zone.Name = (uint8_t*)malloc((strlen(zone_name) + 1) * sizeof(uint8_t));
+    if (zone.Name != NULL)
+    {
+        sprintf(zone.Name, "%s", zone_name);
+    }
+
+    zone.Info_Count = 0;
+    zone.Year_Begin = 0;
+    zone.Year_End = 0;
+
+    Zone_Entry_t* zones = realloc(*zone_list, (zones_Count + 1) * sizeof(Zone_Entry_t));
+    if (zones == NULL)
+    {
+        return false;
+    }
+
+    *zone_list = zones;
+
+    (*zone_list)[zones_Count] = zone;
+
+    return true;
 }

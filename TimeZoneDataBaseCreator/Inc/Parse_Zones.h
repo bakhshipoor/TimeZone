@@ -69,6 +69,11 @@ extern "C" {
 
     Zone_Entry_t* Parse_Zones(int32_t* rules_Count);
     Zone_Data_t Parse_Zone_Data(const char* line);
+    int32_t Parse_Zone_Data_Standard_Offset(const Zone_Data_t zone_data);
+    Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data);
+    Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data);
+    bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, const char* zone_name, int32_t* find_Index);
+    bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name);
 
 
 #ifdef __cplusplus
