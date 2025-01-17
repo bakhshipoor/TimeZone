@@ -44,12 +44,17 @@ Rule_Entry_t* Parse_Rules(int32_t* rules_Count)
                 // If the rule does not exist, create a new rule entry
                 if (Rule_Create(&Rules_List, *rules_Count, rule_data.Name))
                 {
+                    find_index = (*rules_Count);
                     (*rules_Count)++; // Increment the rules count
                 }
             }
 
-            // Parse the year range for the rule
-            Parse_Rule_Year_Range(Rules_List, find_index, rule_data);
+            if (find_index != -1)
+            {
+                // Parse the year range for the rule
+                Parse_Rule_Year_Range(Rules_List, find_index, rule_data);
+            }
+            
         }
 
         // Close the data file

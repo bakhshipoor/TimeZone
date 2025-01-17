@@ -36,10 +36,15 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
             {
                 if (Zone_Create(&Zones_List, *zones_Count, zone_data.Name))
                 {
+                    find_index = (*zones_Count);
                     (*zones_Count)++;
                 }
             }
-
+            if (find_index != -1)
+            {
+                Parse_Zone_Year_Range(Zones_List, find_index, zone_data);
+            }
+            
             
         }
 
@@ -258,4 +263,32 @@ bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char
     (*zone_list)[zones_Count] = zone;
 
     return true;
+}
+
+void Parse_Zone_Year_Range(Zone_Entry_t* zone_list, const int32_t zone_index, const Zone_Data_t zone_data)
+{
+    Zone_Info_Until_t until = Parse_Zone_Info_Until(zone_data);
+    int16_t year = until.Year;
+    
+    if (zone_list[zone_index].Year_Begin == 0)
+    {
+        zone_list[zone_index].Year_Begin = year;
+    }
+    else if (year != -1 && zone_list[zone_index].Year_Begin > year)
+    {
+        zone_list[zone_index].Year_Begin = year;
+    }
+
+    if (zone_list[zone_index].Year_End == 0)
+    {
+        zone_list[zone_index].Year_End = year;
+    }
+    else if (year == -1)
+    {
+        zone_list[zone_index].Year_End = year;
+    }
+    else if (year != -1 && zone_list[zone_index].Year_End < year)
+    {
+        zone_list[zone_index].Year_End = year;
+    }
 }

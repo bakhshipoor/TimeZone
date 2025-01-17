@@ -74,7 +74,7 @@ extern "C" {
     Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data);
     bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, const char* zone_name, int32_t* find_Index);
     bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name);
-
+    void Parse_Zone_Year_Range(Zone_Entry_t* zone_list, const int32_t zone_index, const Zone_Data_t zone_data);
 
 #ifdef __cplusplus
 }
