@@ -128,12 +128,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Inc\Parse_Common.h" />
     <ClInclude Include="Inc\Parse_Rules.h" />
+    <ClInclude Include="Inc\Parse_Zones.h" />
     <ClInclude Include="Inc\TimeZoneDBCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Constants.c" />
+    <ClCompile Include="Src\Parse_Common.c" />
     <ClCompile Include="Src\Parse_Rules.c" />
+    <ClCompile Include="Src\Parse_Zones.c" />
     <ClCompile Include="Src\TimeZoneDBCreator.C" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

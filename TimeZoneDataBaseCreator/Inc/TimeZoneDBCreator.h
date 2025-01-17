@@ -11,6 +11,7 @@ extern "C" {
 #include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 #define DATA_FILES_COUNT 13
 #define MAX_LENGHT_FILE_NAME 256

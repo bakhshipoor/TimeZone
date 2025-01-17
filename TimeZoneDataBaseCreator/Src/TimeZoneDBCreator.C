@@ -1,6 +1,7 @@
 
 #include "../Inc/TimeZoneDBCreator.h"
 #include "../Inc/Parse_Rules.h"
+#include "../Inc/Parse_Zones.h"
 
 
 // Data Files
@@ -225,6 +226,8 @@ int main()
 
     int32_t rules_Count = 0;
     Rule_Entry_t* rules_list = Parse_Rules(&rules_Count);
+    int32_t zone_Count = 0;
+    Zone_Entry_t* zones_list = Parse_Zones(&zone_Count);
 
     /*FILE* temp = fopen("../temp.txt", "w");
     for (int i = 0; i < rules_Count; i++)

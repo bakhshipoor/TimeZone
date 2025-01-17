@@ -277,39 +277,9 @@ Rule_Year_Hour_t Parse_Rule_Data_At(const Rule_Data_t rule_data)
     return hour;
 }
 
-int32_t Parse_Rule_Data_Save(const Rule_Data_t rule_data)
+int32_t Parse_Rule_Data_Save(const Rule_Data_t rule_data) 
 {
-    int32_t save = 0; // Variable to store the parsed save value in seconds
-    uint8_t sign = 0; // Variable to store the sign ('+' or '-')
-    uint32_t h = 0, m = 0; // Variables to store hours and minutes
-
-    // Parse the 'Save' field in the format "±h:m"
-    if (sscanf(rule_data.Save, "%c%d:%d", &sign, &h, &m) == 3)
-    {
-        // Convert hours and minutes to seconds and assign to save
-        save = (h * 3600) + (m * 60);
-
-        // Check the sign to determine if the value should be negative
-        if (sign == '-')
-        {
-            save *= -1;
-        }
-    }
-    // Parse the 'Save' field in the format "h:m"
-    else if (sscanf(rule_data.Save, "%d:%d", &h, &m) == 2)
-    {
-        // Convert hours and minutes to seconds and assign to save
-        save = (h * 3600) + (m * 60);
-    }
-    // Parse the 'Save' field in the format "h"
-    else if (sscanf(rule_data.Save, "%d", &h) == 1)
-    {
-        // Convert hours to seconds and assign to save
-        save = (h * 3600);
-    }
-
-    // Return the parsed save value in seconds
-    return save;
+    return Parse_Hour(rule_data.Save);
 }
 
 bool Rule_isExist(const Rule_Entry_t* rule_list, const int32_t* rules_count, const char* rule_name, int32_t* find_Index)
