@@ -48,7 +48,7 @@ const char* Data_Files_Name[DATA_FILES_COUNT] = {
     "backward",
     "backzone",
     "etcetera",
-    ".europe",
+    "europe",
     "northamerica",
     "southamerica"
 };
