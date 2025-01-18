@@ -135,7 +135,7 @@
     <ClInclude Include="Parser\Inc\Parse_Version.h" />
     <ClInclude Include="Parser\Inc\Parse_Zones.h" />
     <ClInclude Include="Parser\Inc\Parse_Zonetab.h" />
-    <ClInclude Include="Inc\TimeZoneDBCreator.h" />
+    <ClInclude Include="TimeZoneDBCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Parser\Src\Parser.c" />
@@ -146,7 +146,7 @@
     <ClCompile Include="Parser\Src\Parse_Version.c" />
     <ClCompile Include="Parser\Src\Parse_Zones.c" />
     <ClCompile Include="Parser\Src\Parse_Zonetab.c" />
-    <ClCompile Include="Src\TimeZoneDBCreator.C" />
+    <ClCompile Include="TimeZoneDBCreator.C" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

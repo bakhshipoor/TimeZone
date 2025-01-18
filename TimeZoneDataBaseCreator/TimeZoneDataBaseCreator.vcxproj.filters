@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Inc\TimeZoneDBCreator.h">
+    <ClInclude Include="TimeZoneDBCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Parser\Inc\Parse_Rules.h">
@@ -41,7 +41,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\TimeZoneDBCreator.C">
+    <ClCompile Include="TimeZoneDBCreator.C">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Parser\Src\Parse_Rules.c">
