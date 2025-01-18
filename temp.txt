@@ -1,2425 +1,417 @@
-Zone	Africa/Algiers	0:12:12	-	LMT	1891 Mar 16	
-Zone	Africa/Algiers	0:09:21	-	PMT	1911 Mar 11 	 Paris Mean Time
-Zone	Africa/Algiers	0:00	Algeria	WE%sT	1940 Feb 25  2:00	
-Zone	Africa/Algiers	1:00	Algeria	CE%sT	1946 Oct  7	
-Zone	Africa/Algiers	0:00	-	WET	1956 Jan 29	
-Zone	Africa/Algiers	1:00	-	CET	1963 Apr 14	
-Zone	Africa/Algiers	0:00	Algeria	WE%sT	1977 Oct 21	
-Zone	Africa/Algiers	1:00	Algeria	CE%sT	1979 Oct 26	
-Zone	Africa/Algiers	0:00	Algeria	WE%sT	1981 May	
-Zone	Africa/Algiers	1:00	-	CET		
-Zone	Atlantic/Cape_Verde	-1:34:04	-	LMT	1912 Jan 01  2:00u 	 Praia
-Zone	Atlantic/Cape_Verde	-2:00	-	%z	1942 Sep	
-Zone	Atlantic/Cape_Verde	-2:00	1:00	%z	1945 Oct 15	
-Zone	Atlantic/Cape_Verde	-2:00	-	%z	1975 Nov 25  2:00	
-Zone	Atlantic/Cape_Verde	-1:00	-	%z		
-Zone	Africa/Ndjamena	1:00:12	-	LMT	1912 Jan  1 	 N'Djamena
-Zone	Africa/Ndjamena	1:00	-	WAT	1979 Oct 14	
-Zone	Africa/Ndjamena	1:00	1:00	WAST	1980 Mar  8	
-Zone	Africa/Ndjamena	1:00	-	WAT		
-Zone	Africa/Abidjan	-0:16:08	-	LMT	1912 Jan  1	
-Zone	Africa/Abidjan	0:00	-	GMT		
-Zone	Africa/Cairo	2:05:09	-	LMT	1900 Oct	
-Zone	Africa/Cairo	2:00	Egypt	EE%sT		
-Zone	Africa/Bissau	-1:02:20	-	LMT	1912 Jan  1  1:00u	
-Zone	Africa/Bissau	-1:00	-	%z	1975	
-Zone	Africa/Bissau	0:00	-	GMT		
-Zone	Africa/Nairobi	2:27:16	-	LMT	1908 May	
-Zone	Africa/Nairobi	2:30	-	%z	1928 Jun 30 24:00	
-Zone	Africa/Nairobi	3:00	-	EAT	1930 Jan  4 24:00	
-Zone	Africa/Nairobi	2:30	-	%z	1936 Dec 31 24:00	
-Zone	Africa/Nairobi	2:45	-	%z	1942 Jul 31 24:00	
-Zone	Africa/Nairobi	3:00	-	EAT		
-Zone	Africa/Monrovia	-0:43:08	-	LMT	1882	
-Zone	Africa/Monrovia	-0:43:08	-	MMT	1919 Mar 	 Monrovia Mean Time
-Zone	Africa/Monrovia	-0:44:30	-	MMT	1972 Jan 7 	 approximately MMT
-Zone	Africa/Monrovia	0:00	-	GMT		
-Zone	Africa/Tripoli	0:52:44	-	LMT	1920	
-Zone	Africa/Tripoli	1:00	Libya	CE%sT	1959	
-Zone	Africa/Tripoli	2:00	-	EET	1982	
-Zone	Africa/Tripoli	1:00	Libya	CE%sT	1990 May  4	
-Zone	Africa/Tripoli	2:00	-	EET	1996 Sep 30	
-Zone	Africa/Tripoli	1:00	Libya	CE%sT	1997 Oct  4	
-Zone	Africa/Tripoli	2:00	-	EET	2012 Nov 10  2:00	
-Zone	Africa/Tripoli	1:00	Libya	CE%sT	2013 Oct 25  2:00	
-Zone	Africa/Tripoli	2:00	-	EET		
-Zone	Indian/Mauritius	3:50:00	-	LMT	1907 	 Port Louis
-Zone	Indian/Mauritius	4:00	Mauritius	%z		
-Zone	Africa/Casablanca	-0:30:20	-	LMT	1913 Oct 26	
-Zone	Africa/Casablanca	0:00	Morocco	%z	1984 Mar 16	
-Zone	Africa/Casablanca	1:00	-	%z	1986	
-Zone	Africa/Casablanca	0:00	Morocco	%z	2018 Oct 28  3:00	
-Zone	Africa/Casablanca	1:00	Morocco	%z		
-Zone	Africa/El_Aaiun	-0:52:48	-	LMT	1934 Jan 	 El Aaiún
-Zone	Africa/El_Aaiun	-1:00	-	%z	1976 Apr 14	
-Zone	Africa/El_Aaiun	0:00	Morocco	%z	2018 Oct 28  3:00	
-Zone	Africa/El_Aaiun	1:00	Morocco	%z		
-Zone	Africa/Maputo	2:10:18	-	LMT	1909	
-Zone	Africa/Maputo	2:00	-	CAT		
-Zone	Africa/Windhoek	1:08:24	-	LMT	1892 Feb 8	
-Zone	Africa/Windhoek	1:30	-	%z	1903 Mar	
-Zone	Africa/Windhoek	2:00	-	SAST	1942 Sep 20  2:00	
-Zone	Africa/Windhoek	2:00	1:00	SAST	1943 Mar 21  2:00	
-Zone	Africa/Windhoek	2:00	-	SAST	1990 Mar 21 	 independence
-Zone	Africa/Windhoek	2:00	Namibia	%s		
-Zone	Africa/Lagos	0:13:35	-	LMT	1905 Jul  1	
-Zone	Africa/Lagos	0:00	-	GMT	1908 Jul  1	
-Zone	Africa/Lagos	0:13:35	-	LMT	1914 Jan  1	
-Zone	Africa/Lagos	0:30	-	%z	1919 Sep  1	
-Zone	Africa/Lagos	1:00	-	WAT		
-Zone	Africa/Sao_Tome	0:26:56	-	LMT	1884	
-Zone	Africa/Sao_Tome	-0:36:45	-	LMT	1912 Jan  1 00:00u 	 Lisbon MT
-Zone	Africa/Sao_Tome	0:00	-	GMT	2018 Jan  1 01:00	
-Zone	Africa/Sao_Tome	1:00	-	WAT	2019 Jan  1 02:00	
-Zone	Africa/Sao_Tome	0:00	-	GMT		
-Zone	Africa/Johannesburg	1:52:00	-	LMT	1892 Feb 8	
-Zone	Africa/Johannesburg	1:30	-	SAST	1903 Mar	
-Zone	Africa/Johannesburg	2:00	SA	SAST		
-Zone	Africa/Khartoum	2:10:08	-	LMT	1931	
-Zone	Africa/Khartoum	2:00	Sudan	CA%sT	2000 Jan 15 12:00	
-Zone	Africa/Khartoum	3:00	-	EAT	2017 Nov  1	
-Zone	Africa/Khartoum	2:00	-	CAT		
-Zone	Africa/Juba	2:06:28	-	LMT	1931	
-Zone	Africa/Juba	2:00	Sudan	CA%sT	2000 Jan 15 12:00	
-Zone	Africa/Juba	3:00	-	EAT	2021 Feb  1 00:00	
-Zone	Africa/Juba	2:00	-	CAT		
-Zone	Africa/Tunis	0:40:44	-	LMT	1881 May 12	
-Zone	Africa/Tunis	0:09:21	-	PMT	1911 Mar 11 	 Paris Mean Time
-Zone	Africa/Tunis	1:00	Tunisia	CE%sT		
-Zone	Antarctica/Casey	0	-	-00	1969	
-Zone	Antarctica/Casey	8:00	-	%z	2009 Oct 18  2:00	
-Zone	Antarctica/Casey	11:00	-	%z	2010 Mar  5  2:00	
-Zone	Antarctica/Casey	8:00	-	%z	2011 Oct 28  2:00	
-Zone	Antarctica/Casey	11:00	-	%z	2012 Feb 21 17:00u	
-Zone	Antarctica/Casey	8:00	-	%z	2016 Oct 22	
-Zone	Antarctica/Casey	11:00	-	%z	2018 Mar 11  4:00	
-Zone	Antarctica/Casey	8:00	-	%z	2018 Oct  7  4:00	
-Zone	Antarctica/Casey	11:00	-	%z	2019 Mar 17  3:00	
-Zone	Antarctica/Casey	8:00	-	%z	2019 Oct  4  3:00	
-Zone	Antarctica/Casey	11:00	-	%z	2020 Mar  8  3:00	
-Zone	Antarctica/Casey	8:00	-	%z	2020 Oct  4  0:01	
-Zone	Antarctica/Casey	11:00	-	%z	2021 Mar 14  0:00	
-Zone	Antarctica/Casey	8:00	-	%z	2021 Oct  3  0:01	
-Zone	Antarctica/Casey	11:00	-	%z	2022 Mar 13  0:00	
-Zone	Antarctica/Casey	8:00	-	%z	2022 Oct  2  0:01	
-Zone	Antarctica/Casey	11:00	-	%z	2023 Mar  9  3:00	
-Zone	Antarctica/Casey	8:00	-	%z		
-Zone	Antarctica/Davis	0	-	-00	1957 Jan 13	
-Zone	Antarctica/Davis	7:00	-	%z	1964 Nov	
-Zone	Antarctica/Davis	0	-	-00	1969 Feb	
-Zone	Antarctica/Davis	7:00	-	%z	2009 Oct 18  2:00	
-Zone	Antarctica/Davis	5:00	-	%z	2010 Mar 10 20:00u	
-Zone	Antarctica/Davis	7:00	-	%z	2011 Oct 28  2:00	
-Zone	Antarctica/Davis	5:00	-	%z	2012 Feb 21 20:00u	
-Zone	Antarctica/Davis	7:00	-	%z		
-Zone	Antarctica/Mawson	0	-	-00	1954 Feb 13	
-Zone	Antarctica/Mawson	6:00	-	%z	2009 Oct 18  2:00	
-Zone	Antarctica/Mawson	5:00	-	%z		
-Zone	Antarctica/Troll	0	-	-00	2005 Feb 12	
-Zone	Antarctica/Troll	0:00	Troll	%s		
-Zone	Antarctica/Vostok	0	-	-00	1957 Dec 16	
-Zone	Antarctica/Vostok	7:00	-	%z	1994 Feb	
-Zone	Antarctica/Vostok	0	-	-00	1994 Nov	
-Zone	Antarctica/Vostok	7:00	-	%z	2023 Dec 18  2:00	
-Zone	Antarctica/Vostok	5:00	-	%z		
-Zone	Antarctica/Rothera	0	-	-00	1976 Dec  1	
-Zone	Antarctica/Rothera	-3:00	-	%z		
-Zone	Asia/Kabul	4:36:48	-	LMT	1890	
-Zone	Asia/Kabul	4:00	-	%z	1945	
-Zone	Asia/Kabul	4:30	-	%z		
-Zone	Asia/Yerevan	2:58:00	-	LMT	1924 May  2	
-Zone	Asia/Yerevan	3:00	-	%z	1957 Mar	
-Zone	Asia/Yerevan	4:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Yerevan	3:00	RussiaAsia	%z	1995 Sep 24  2:00s	
-Zone	Asia/Yerevan	4:00	-	%z	1997	
-Zone	Asia/Yerevan	4:00	RussiaAsia	%z	2011	
-Zone	Asia/Yerevan	4:00	Armenia	%z		
-Zone	Asia/Baku	3:19:24	-	LMT	1924 May  2	
-Zone	Asia/Baku	3:00	-	%z	1957 Mar	
-Zone	Asia/Baku	4:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Baku	3:00	RussiaAsia	%z	1992 Sep lastSun  2:00s	
-Zone	Asia/Baku	4:00	-	%z	1996	
-Zone	Asia/Baku	4:00	EUAsia	%z	1997	
-Zone	Asia/Baku	4:00	Azer	%z		
-Zone	Asia/Dhaka	6:01:40	-	LMT	1890	
-Zone	Asia/Dhaka	5:53:20	-	HMT	1941 Oct    	 Howrah Mean Time?
-Zone	Asia/Dhaka	6:30	-	%z	1942 May 15	
-Zone	Asia/Dhaka	5:30	-	%z	1942 Sep	
-Zone	Asia/Dhaka	6:30	-	%z	1951 Sep 30	
-Zone	Asia/Dhaka	6:00	-	%z	2009	
-Zone	Asia/Dhaka	6:00	Dhaka	%z		
-Zone	Asia/Thimphu	5:58:36	-	LMT	1947 Aug 15 	 or Thimbu
-Zone	Asia/Thimphu	5:30	-	%z	1987 Oct	
-Zone	Asia/Thimphu	6:00	-	%z		
-Zone	Indian/Chagos	4:49:40	-	LMT	1907	
-Zone	Indian/Chagos	5:00	-	%z	1996	
-Zone	Indian/Chagos	6:00	-	%z		
-Zone	Asia/Yangon	6:24:47	-	LMT	1880        	 or Rangoon
-Zone	Asia/Yangon	6:24:47	-	RMT	1920        	 Rangoon local time
-Zone	Asia/Yangon	6:30	-	%z	1942 May	
-Zone	Asia/Yangon	9:00	-	%z	1945 May  3	
-Zone	Asia/Yangon	6:30	-	%z		
-Zone	Asia/Shanghai	8:05:43	-	LMT	1901	
-Zone	Asia/Shanghai	8:00	Shang	C%sT	1949 May 28	
-Zone	Asia/Shanghai	8:00	PRC	C%sT		
-Zone	Asia/Urumqi	5:50:20	-	LMT	1928	
-Zone	Asia/Urumqi	6:00	-	%z		
-Zone	Asia/Hong_Kong	7:36:42	-	LMT	1904 Oct 29 17:00u	
-Zone	Asia/Hong_Kong	8:00	-	HKT	1941 Jun 15  3:00	
-Zone	Asia/Hong_Kong	8:00	1:00	HKST	1941 Oct  1  4:00	
-Zone	Asia/Hong_Kong	8:00	0:30	HKWT	1941 Dec 25	
-Zone	Asia/Hong_Kong	9:00	-	JST	1945 Nov 18  2:00	
-Zone	Asia/Hong_Kong	8:00	HK	HK%sT		
-Zone	Asia/Taipei	8:06:00	-	LMT	1896 Jan  1	
-Zone	Asia/Taipei	8:00	-	CST	1937 Oct  1	
-Zone	Asia/Taipei	9:00	-	JST	1945 Sep 21  1:00	
-Zone	Asia/Taipei	8:00	Taiwan	C%sT		
-Zone	Asia/Macau	7:34:10	-	LMT	1904 Oct 30	
-Zone	Asia/Macau	8:00	-	CST	1941 Dec 21 23:00	
-Zone	Asia/Macau	9:00	Macau	%z	1945 Sep 30 24:00	
-Zone	Asia/Macau	8:00	Macau	C%sT		
-Zone	Asia/Nicosia	2:13:28	-	LMT	1921 Nov 14	
-Zone	Asia/Nicosia	2:00	Cyprus	EE%sT	1998 Sep	
-Zone	Asia/Nicosia	2:00	EUAsia	EE%sT		
-Zone	Asia/Famagusta	2:15:48	-	LMT	1921 Nov 14	
-Zone	Asia/Famagusta	2:00	Cyprus	EE%sT	1998 Sep	
-Zone	Asia/Famagusta	2:00	EUAsia	EE%sT	2016 Sep  8	
-Zone	Asia/Famagusta	3:00	-	%z	2017 Oct 29 1:00u	
-Zone	Asia/Famagusta	2:00	EUAsia	EE%sT		
-Zone	Asia/Tbilisi	2:59:11	-	LMT	1880	
-Zone	Asia/Tbilisi	2:59:11	-	TBMT	1924 May  2 	 Tbilisi Mean Time
-Zone	Asia/Tbilisi	3:00	-	%z	1957 Mar	
-Zone	Asia/Tbilisi	4:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Tbilisi	3:00	RussiaAsia	%z	1992	
-Zone	Asia/Tbilisi	3:00	E-EurAsia	%z	1994 Sep lastSun	
-Zone	Asia/Tbilisi	4:00	E-EurAsia	%z	1996 Oct lastSun	
-Zone	Asia/Tbilisi	4:00	1:00	%z	1997 Mar lastSun	
-Zone	Asia/Tbilisi	4:00	E-EurAsia	%z	2004 Jun 27	
-Zone	Asia/Tbilisi	3:00	RussiaAsia	%z	2005 Mar lastSun  2:00	
-Zone	Asia/Tbilisi	4:00	-	%z		
-Zone	Asia/Dili	8:22:20	-	LMT	1911 Dec 31 16:00u	
-Zone	Asia/Dili	8:00	-	%z	1942 Feb 21 23:00	
-Zone	Asia/Dili	9:00	-	%z	1976 May  3	
-Zone	Asia/Dili	8:00	-	%z	2000 Sep 17  0:00	
-Zone	Asia/Dili	9:00	-	%z		
-Zone	Asia/Kolkata	5:53:28	-	LMT	1854 Jun 28 	 Kolkata
-Zone	Asia/Kolkata	5:53:20	-	HMT	1870	    	 Howrah Mean Time?
-Zone	Asia/Kolkata	5:21:10	-	MMT	1906 Jan  1 	 Madras local time
-Zone	Asia/Kolkata	5:30	-	IST	1941 Oct	
-Zone	Asia/Kolkata	5:30	1:00	%z	1942 May 15	
-Zone	Asia/Kolkata	5:30	-	IST	1942 Sep	
-Zone	Asia/Kolkata	5:30	1:00	%z	1945 Oct 15	
-Zone	Asia/Kolkata	5:30	-	IST		
-Zone	Asia/Jakarta	7:07:12	-	LMT	1867 Aug 10	
-Zone	Asia/Jakarta	7:07:12	-	BMT	1923 Dec 31 16:40u 	 Batavia
-Zone	Asia/Jakarta	7:20	-	%z	1932 Nov	
-Zone	Asia/Jakarta	7:30	-	%z	1942 Mar 23	
-Zone	Asia/Jakarta	9:00	-	%z	1945 Sep 23	
-Zone	Asia/Jakarta	7:30	-	%z	1948 May	
-Zone	Asia/Jakarta	8:00	-	%z	1950 May	
-Zone	Asia/Jakarta	7:30	-	%z	1964	
-Zone	Asia/Jakarta	7:00	-	WIB		
-Zone	Asia/Pontianak	7:17:20	-	LMT	1908 May	
-Zone	Asia/Pontianak	7:17:20	-	PMT	1932 Nov    	 Pontianak MT
-Zone	Asia/Pontianak	7:30	-	%z	1942 Jan 29	
-Zone	Asia/Pontianak	9:00	-	%z	1945 Sep 23	
-Zone	Asia/Pontianak	7:30	-	%z	1948 May	
-Zone	Asia/Pontianak	8:00	-	%z	1950 May	
-Zone	Asia/Pontianak	7:30	-	%z	1964	
-Zone	Asia/Pontianak	8:00	-	WITA	1988 Jan  1	
-Zone	Asia/Pontianak	7:00	-	WIB		
-Zone	Asia/Makassar	7:57:36	-	LMT	1920	
-Zone	Asia/Makassar	7:57:36	-	MMT	1932 Nov    	 Macassar MT
-Zone	Asia/Makassar	8:00	-	%z	1942 Feb  9	
-Zone	Asia/Makassar	9:00	-	%z	1945 Sep 23	
-Zone	Asia/Makassar	8:00	-	WITA		
-Zone	Asia/Jayapura	9:22:48	-	LMT	1932 Nov	
-Zone	Asia/Jayapura	9:00	-	%z	1944 Sep  1	
-Zone	Asia/Jayapura	9:30	-	%z	1964	
-Zone	Asia/Jayapura	9:00	-	WIT		
-Zone	Asia/Tehran	3:25:44	-	LMT	1916	
-Zone	Asia/Tehran	3:25:44	-	TMT	1935 Jun 13 	 Tehran Mean Time
-Zone	Asia/Tehran	3:30	Iran	%z	1977 Oct 20 24:00	
-Zone	Asia/Tehran	4:00	Iran	%z	1979	
-Zone	Asia/Tehran	3:30	Iran	%z		
-Zone	Asia/Baghdad	2:57:40	-	LMT	1890	
-Zone	Asia/Baghdad	2:57:36	-	BMT	1918     	 Baghdad Mean Time?
-Zone	Asia/Baghdad	3:00	-	%z	1982 May	
-Zone	Asia/Baghdad	3:00	Iraq	%z		
-Zone	Asia/Jerusalem	2:20:54	-	LMT	1880	
-Zone	Asia/Jerusalem	2:20:40	-	JMT	1918 	 Jerusalem Mean Time?
-Zone	Asia/Jerusalem	2:00	Zion	I%sT		
-Zone	Asia/Tokyo	9:18:59	-	LMT	1887 Dec 31 15:00u	
-Zone	Asia/Tokyo	9:00	Japan	J%sT		
-Zone	Asia/Amman	2:23:44	-	LMT	1931	
-Zone	Asia/Amman	2:00	Jordan	EE%sT	2022 Oct 28 0:00s	
-Zone	Asia/Amman	3:00	-	%z		
-Zone	Asia/Almaty	5:07:48	-	LMT	1924 May  2 	 or Alma-Ata
-Zone	Asia/Almaty	5:00	-	%z	1930 Jun 21	
-Zone	Asia/Almaty	6:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Almaty	5:00	RussiaAsia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Almaty	6:00	RussiaAsia	%z	2004 Oct 31  2:00s	
-Zone	Asia/Almaty	6:00	-	%z	2024 Mar  1  0:00	
-Zone	Asia/Almaty	5:00	-	%z		
-Zone	Asia/Qyzylorda	4:21:52	-	LMT	1924 May  2	
-Zone	Asia/Qyzylorda	4:00	-	%z	1930 Jun 21	
-Zone	Asia/Qyzylorda	5:00	-	%z	1981 Apr  1	
-Zone	Asia/Qyzylorda	5:00	1:00	%z	1981 Oct  1	
-Zone	Asia/Qyzylorda	6:00	-	%z	1982 Apr  1	
-Zone	Asia/Qyzylorda	5:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Qyzylorda	4:00	RussiaAsia	%z	1991 Sep 29  2:00s	
-Zone	Asia/Qyzylorda	5:00	RussiaAsia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Qyzylorda	6:00	RussiaAsia	%z	1992 Mar 29  2:00s	
-Zone	Asia/Qyzylorda	5:00	RussiaAsia	%z	2004 Oct 31  2:00s	
-Zone	Asia/Qyzylorda	6:00	-	%z	2018 Dec 21  0:00	
-Zone	Asia/Qyzylorda	5:00	-	%z		
-Zone	Asia/Qostanay	4:14:28	-	LMT	1924 May  2	
-Zone	Asia/Qostanay	4:00	-	%z	1930 Jun 21	
-Zone	Asia/Qostanay	5:00	-	%z	1981 Apr  1	
-Zone	Asia/Qostanay	5:00	1:00	%z	1981 Oct  1	
-Zone	Asia/Qostanay	6:00	-	%z	1982 Apr  1	
-Zone	Asia/Qostanay	5:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Qostanay	4:00	RussiaAsia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Qostanay	5:00	RussiaAsia	%z	2004 Oct 31  2:00s	
-Zone	Asia/Qostanay	6:00	-	%z	2024 Mar  1  0:00	
-Zone	Asia/Qostanay	5:00	-	%z		
-Zone	Asia/Aqtobe	3:48:40	-	LMT	1924 May  2	
-Zone	Asia/Aqtobe	4:00	-	%z	1930 Jun 21	
-Zone	Asia/Aqtobe	5:00	-	%z	1981 Apr  1	
-Zone	Asia/Aqtobe	5:00	1:00	%z	1981 Oct  1	
-Zone	Asia/Aqtobe	6:00	-	%z	1982 Apr  1	
-Zone	Asia/Aqtobe	5:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Aqtobe	4:00	RussiaAsia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Aqtobe	5:00	RussiaAsia	%z	2004 Oct 31  2:00s	
-Zone	Asia/Aqtobe	5:00	-	%z		
-Zone	Asia/Aqtau	3:21:04	-	LMT	1924 May  2	
-Zone	Asia/Aqtau	4:00	-	%z	1930 Jun 21	
-Zone	Asia/Aqtau	5:00	-	%z	1981 Oct  1	
-Zone	Asia/Aqtau	6:00	-	%z	1982 Apr  1	
-Zone	Asia/Aqtau	5:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Aqtau	4:00	RussiaAsia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Aqtau	5:00	RussiaAsia	%z	1994 Sep 25  2:00s	
-Zone	Asia/Aqtau	4:00	RussiaAsia	%z	2004 Oct 31  2:00s	
-Zone	Asia/Aqtau	5:00	-	%z		
-Zone	Asia/Atyrau	3:27:44	-	LMT	1924 May  2	
-Zone	Asia/Atyrau	3:00	-	%z	1930 Jun 21	
-Zone	Asia/Atyrau	5:00	-	%z	1981 Oct  1	
-Zone	Asia/Atyrau	6:00	-	%z	1982 Apr  1	
-Zone	Asia/Atyrau	5:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Atyrau	4:00	RussiaAsia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Atyrau	5:00	RussiaAsia	%z	1999 Mar 28  2:00s	
-Zone	Asia/Atyrau	4:00	RussiaAsia	%z	2004 Oct 31  2:00s	
-Zone	Asia/Atyrau	5:00	-	%z		
-Zone	Asia/Oral	3:25:24	-	LMT	1924 May  2 	 or Ural'sk
-Zone	Asia/Oral	3:00	-	%z	1930 Jun 21	
-Zone	Asia/Oral	5:00	-	%z	1981 Apr  1	
-Zone	Asia/Oral	5:00	1:00	%z	1981 Oct  1	
-Zone	Asia/Oral	6:00	-	%z	1982 Apr  1	
-Zone	Asia/Oral	5:00	RussiaAsia	%z	1989 Mar 26  2:00s	
-Zone	Asia/Oral	4:00	RussiaAsia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Oral	5:00	RussiaAsia	%z	1992 Mar 29  2:00s	
-Zone	Asia/Oral	4:00	RussiaAsia	%z	2004 Oct 31  2:00s	
-Zone	Asia/Oral	5:00	-	%z		
-Zone	Asia/Bishkek	4:58:24	-	LMT	1924 May  2	
-Zone	Asia/Bishkek	5:00	-	%z	1930 Jun 21	
-Zone	Asia/Bishkek	6:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Bishkek	5:00	RussiaAsia	%z	1991 Aug 31  2:00	
-Zone	Asia/Bishkek	5:00	Kyrgyz	%z	2005 Aug 12	
-Zone	Asia/Bishkek	6:00	-	%z		
-Zone	Asia/Seoul	8:27:52	-	LMT	1908 Apr  1	
-Zone	Asia/Seoul	8:30	-	KST	1912 Jan  1	
-Zone	Asia/Seoul	9:00	-	JST	1945 Sep  8	
-Zone	Asia/Seoul	9:00	ROK	K%sT	1954 Mar 21	
-Zone	Asia/Seoul	8:30	ROK	K%sT	1961 Aug 10	
-Zone	Asia/Seoul	9:00	ROK	K%sT		
-Zone	Asia/Pyongyang	8:23:00	-	LMT	1908 Apr  1	
-Zone	Asia/Pyongyang	8:30	-	KST	1912 Jan  1	
-Zone	Asia/Pyongyang	9:00	-	JST	1945 Aug 24	
-Zone	Asia/Pyongyang	9:00	-	KST	2015 Aug 15 00:00	
-Zone	Asia/Pyongyang	8:30	-	KST	2018 May  4 23:30	
-Zone	Asia/Pyongyang	9:00	-	KST		
-Zone	Asia/Beirut	2:22:00	-	LMT	1880	
-Zone	Asia/Beirut	2:00	Lebanon	EE%sT		
-Zone	Asia/Kuching	7:21:20	-	LMT	1926 Mar	
-Zone	Asia/Kuching	7:30	-	%z	1933	
-Zone	Asia/Kuching	8:00	NBorneo	%z	1942 Feb 16	
-Zone	Asia/Kuching	9:00	-	%z	1945 Sep 12	
-Zone	Asia/Kuching	8:00	-	%z		
-Zone	Indian/Maldives	4:54:00	-	LMT	1880 	 Malé
-Zone	Indian/Maldives	4:54:00	-	MMT	1960 	 Malé Mean Time
-Zone	Indian/Maldives	5:00	-	%z		
-Zone	Asia/Hovd	6:06:36	-	LMT	1905 Aug	
-Zone	Asia/Hovd	6:00	-	%z	1978	
-Zone	Asia/Hovd	7:00	Mongol	%z		
-Zone	Asia/Ulaanbaatar	7:07:32	-	LMT	1905 Aug	
-Zone	Asia/Ulaanbaatar	7:00	-	%z	1978	
-Zone	Asia/Ulaanbaatar	8:00	Mongol	%z		
-Zone	Asia/Kathmandu	5:41:16	-	LMT	1920	
-Zone	Asia/Kathmandu	5:30	-	%z	1986	
-Zone	Asia/Kathmandu	5:45	-	%z		
-Zone	Asia/Karachi	4:28:12	-	LMT	1907	
-Zone	Asia/Karachi	5:30	-	%z	1942 Sep	
-Zone	Asia/Karachi	5:30	1:00	%z	1945 Oct 15	
-Zone	Asia/Karachi	5:30	-	%z	1951 Sep 30	
-Zone	Asia/Karachi	5:00	-	%z	1971 Mar 26	
-Zone	Asia/Karachi	5:00	Pakistan	PK%sT		
-Zone	Asia/Gaza	2:17:52	-	LMT	1900 Oct	
-Zone	Asia/Gaza	2:00	Zion	EET/EEST	1948 May 15	
-Zone	Asia/Gaza	2:00	EgyptAsia	EE%sT	1967 Jun  5	
-Zone	Asia/Gaza	2:00	Zion	I%sT	1996	
-Zone	Asia/Gaza	2:00	Jordan	EE%sT	1999	
-Zone	Asia/Gaza	2:00	Palestine	EE%sT	2008 Aug 29  0:00	
-Zone	Asia/Gaza	2:00	-	EET	2008 Sep	
-Zone	Asia/Gaza	2:00	Palestine	EE%sT	2010	
-Zone	Asia/Gaza	2:00	-	EET	2010 Mar 27  0:01	
-Zone	Asia/Gaza	2:00	Palestine	EE%sT	2011 Aug  1	
-Zone	Asia/Gaza	2:00	-	EET	2012	
-Zone	Asia/Gaza	2:00	Palestine	EE%sT		
-Zone	Asia/Hebron	2:20:23	-	LMT	1900 Oct	
-Zone	Asia/Hebron	2:00	Zion	EET/EEST	1948 May 15	
-Zone	Asia/Hebron	2:00	EgyptAsia	EE%sT	1967 Jun  5	
-Zone	Asia/Hebron	2:00	Zion	I%sT	1996	
-Zone	Asia/Hebron	2:00	Jordan	EE%sT	1999	
-Zone	Asia/Hebron	2:00	Palestine	EE%sT		
-Zone	Asia/Manila	-15:56:00	-	LMT	1844 Dec 31	
-Zone	Asia/Manila	8:04:00	-	LMT	1899 May 11	
-Zone	Asia/Manila	8:00	Phil	P%sT	1942 May	
-Zone	Asia/Manila	9:00	-	JST	1944 Nov	
-Zone	Asia/Manila	8:00	Phil	P%sT		
-Zone	Asia/Qatar	3:26:08	-	LMT	1920     	 Al Dawhah / Doha
-Zone	Asia/Qatar	4:00	-	%z	1972 Jun	
-Zone	Asia/Qatar	3:00	-	%z		
-Zone	Asia/Riyadh	3:06:52	-	LMT	1947 Mar 14	
-Zone	Asia/Riyadh	3:00	-	%z		
-Zone	Asia/Singapore	6:55:25	-	LMT	1901 Jan  1	
-Zone	Asia/Singapore	6:55:25	-	SMT	1905 Jun  1 	 Singapore M.T.
-Zone	Asia/Singapore	7:00	-	%z	1933 Jan  1	
-Zone	Asia/Singapore	7:00	0:20	%z	1936 Jan  1	
-Zone	Asia/Singapore	7:20	-	%z	1941 Sep  1	
-Zone	Asia/Singapore	7:30	-	%z	1942 Feb 16	
-Zone	Asia/Singapore	9:00	-	%z	1945 Sep 12	
-Zone	Asia/Singapore	7:30	-	%z	1981 Dec 31 16:00u	
-Zone	Asia/Singapore	8:00	-	%z		
-Zone	Asia/Colombo	5:19:24	-	LMT	1880	
-Zone	Asia/Colombo	5:19:32	-	MMT	1906        	 Moratuwa Mean Time
-Zone	Asia/Colombo	5:30	-	%z	1942 Jan  5	
-Zone	Asia/Colombo	5:30	0:30	%z	1942 Sep	
-Zone	Asia/Colombo	5:30	1:00	%z	1945 Oct 16  2:00	
-Zone	Asia/Colombo	5:30	-	%z	1996 May 25  0:00	
-Zone	Asia/Colombo	6:30	-	%z	1996 Oct 26  0:30	
-Zone	Asia/Colombo	6:00	-	%z	2006 Apr 15  0:30	
-Zone	Asia/Colombo	5:30	-	%z		
-Zone	Asia/Damascus	2:25:12	-	LMT	1920 	 Dimashq
-Zone	Asia/Damascus	2:00	Syria	EE%sT	2022 Oct 28 0:00	
-Zone	Asia/Damascus	3:00	-	%z		
-Zone	Asia/Dushanbe	4:35:12	-	LMT	1924 May  2	
-Zone	Asia/Dushanbe	5:00	-	%z	1930 Jun 21	
-Zone	Asia/Dushanbe	6:00	RussiaAsia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Dushanbe	5:00	1:00	%z	1991 Sep  9  2:00s	
-Zone	Asia/Dushanbe	5:00	-	%z		
-Zone	Asia/Bangkok	6:42:04	-	LMT	1880	
-Zone	Asia/Bangkok	6:42:04	-	BMT	1920 Apr 	 Bangkok Mean Time
-Zone	Asia/Bangkok	7:00	-	%z		
-Zone	Asia/Ashgabat	3:53:32	-	LMT	1924 May  2 	 or Ashkhabad
-Zone	Asia/Ashgabat	4:00	-	%z	1930 Jun 21	
-Zone	Asia/Ashgabat	5:00	RussiaAsia	%z	1991 Mar 31  2:00	
-Zone	Asia/Ashgabat	4:00	RussiaAsia	%z	1992 Jan 19  2:00	
-Zone	Asia/Ashgabat	5:00	-	%z		
-Zone	Asia/Dubai	3:41:12	-	LMT	1920	
-Zone	Asia/Dubai	4:00	-	%z		
-Zone	Asia/Samarkand	4:27:53	-	LMT	1924 May  2	
-Zone	Asia/Samarkand	4:00	-	%z	1930 Jun 21	
-Zone	Asia/Samarkand	5:00	-	%z	1981 Apr  1	
-Zone	Asia/Samarkand	5:00	1:00	%z	1981 Oct  1	
-Zone	Asia/Samarkand	6:00	-	%z	1982 Apr  1	
-Zone	Asia/Samarkand	5:00	RussiaAsia	%z	1992	
-Zone	Asia/Samarkand	5:00	-	%z		
-Zone	Asia/Tashkent	4:37:11	-	LMT	1924 May  2	
-Zone	Asia/Tashkent	5:00	-	%z	1930 Jun 21	
-Zone	Asia/Tashkent	6:00	RussiaAsia	%z	1991 Mar 31  2:00	
-Zone	Asia/Tashkent	5:00	RussiaAsia	%z	1992	
-Zone	Asia/Tashkent	5:00	-	%z		
-Zone	Asia/Ho_Chi_Minh	7:06:30	-	LMT	1906 Jul  1	
-Zone	Asia/Ho_Chi_Minh	7:06:30	-	PLMT	1911 May  1 	 Phù Liễn MT
-Zone	Asia/Ho_Chi_Minh	7:00	-	%z	1942 Dec 31 23:00	
-Zone	Asia/Ho_Chi_Minh	8:00	-	%z	1945 Mar 14 23:00	
-Zone	Asia/Ho_Chi_Minh	9:00	-	%z	1945 Sep  1 24:00	
-Zone	Asia/Ho_Chi_Minh	7:00	-	%z	1947 Apr  1	
-Zone	Asia/Ho_Chi_Minh	8:00	-	%z	1955 Jul  1 01:00	
-Zone	Asia/Ho_Chi_Minh	7:00	-	%z	1959 Dec 31 23:00	
-Zone	Asia/Ho_Chi_Minh	8:00	-	%z	1975 Jun 13	
-Zone	Asia/Ho_Chi_Minh	7:00	-	%z		
-Zone	Australia/Darwin	8:43:20	-	LMT	1895 Feb	
-Zone	Australia/Darwin	9:00	-	ACST	1899 May	
-Zone	Australia/Darwin	9:30	Aus	AC%sT		
-Zone	Australia/Perth	7:43:24	-	LMT	1895 Dec	
-Zone	Australia/Perth	8:00	Aus	AW%sT	1943 Jul	
-Zone	Australia/Perth	8:00	AW	AW%sT		
-Zone	Australia/Eucla	8:35:28	-	LMT	1895 Dec	
-Zone	Australia/Eucla	8:45	Aus	%z	1943 Jul	
-Zone	Australia/Eucla	8:45	AW	%z		
-Zone	Australia/Brisbane	10:12:08	-	LMT	1895	
-Zone	Australia/Brisbane	10:00	Aus	AE%sT	1971	
-Zone	Australia/Brisbane	10:00	AQ	AE%sT		
-Zone	Australia/Lindeman	9:55:56	-	LMT	1895	
-Zone	Australia/Lindeman	10:00	Aus	AE%sT	1971	
-Zone	Australia/Lindeman	10:00	AQ	AE%sT	1992 Jul	
-Zone	Australia/Lindeman	10:00	Holiday	AE%sT		
-Zone	Australia/Adelaide	9:14:20	-	LMT	1895 Feb	
-Zone	Australia/Adelaide	9:00	-	ACST	1899 May	
-Zone	Australia/Adelaide	9:30	Aus	AC%sT	1971	
-Zone	Australia/Adelaide	9:30	AS	AC%sT		
-Zone	Australia/Hobart	9:49:16	-	LMT	1895 Sep	
-Zone	Australia/Hobart	10:00	AT	AE%sT	1919 Oct 24	
-Zone	Australia/Hobart	10:00	Aus	AE%sT	1967	
-Zone	Australia/Hobart	10:00	AT	AE%sT		
-Zone	Australia/Melbourne	9:39:52	-	LMT	1895 Feb	
-Zone	Australia/Melbourne	10:00	Aus	AE%sT	1971	
-Zone	Australia/Melbourne	10:00	AV	AE%sT		
-Zone	Australia/Sydney	10:04:52	-	LMT	1895 Feb	
-Zone	Australia/Sydney	10:00	Aus	AE%sT	1971	
-Zone	Australia/Sydney	10:00	AN	AE%sT		
-Zone	Australia/Broken_Hill	9:25:48	-	LMT	1895 Feb	
-Zone	Australia/Broken_Hill	10:00	-	AEST	1896 Aug 23	
-Zone	Australia/Broken_Hill	9:00	-	ACST	1899 May	
-Zone	Australia/Broken_Hill	9:30	Aus	AC%sT	1971	
-Zone	Australia/Broken_Hill	9:30	AN	AC%sT	2000	
-Zone	Australia/Broken_Hill	9:30	AS	AC%sT		
-Zone	Australia/Lord_Howe	10:36:20	-	LMT	1895 Feb	
-Zone	Australia/Lord_Howe	10:00	-	AEST	1981 Mar	
-Zone	Australia/Lord_Howe	10:30	LH	%z	1985 Jul	
-Zone	Australia/Lord_Howe	10:30	LH	%z		
-Zone	Antarctica/Macquarie	0	-	-00	1899 Nov	
-Zone	Antarctica/Macquarie	10:00	-	AEST	1916 Oct  1  2:00	
-Zone	Antarctica/Macquarie	10:00	1:00	AEDT	1917 Feb	
-Zone	Antarctica/Macquarie	10:00	Aus	AE%sT	1919 Apr  1  0:00s	
-Zone	Antarctica/Macquarie	0	-	-00	1948 Mar 25	
-Zone	Antarctica/Macquarie	10:00	Aus	AE%sT	1967	
-Zone	Antarctica/Macquarie	10:00	AT	AE%sT	2010	
-Zone	Antarctica/Macquarie	10:00	1:00	AEDT	2011	
-Zone	Antarctica/Macquarie	10:00	AT	AE%sT		
-Zone	Pacific/Fiji	11:55:44	-	LMT	1915 Oct 26 	 Suva
-Zone	Pacific/Fiji	12:00	Fiji	%z		
-Zone	Pacific/Gambier	-8:59:48	-	LMT	1912 Oct  1 	 Rikitea
-Zone	Pacific/Gambier	-9:00	-	%z		
-Zone	Pacific/Marquesas	-9:18:00	-	LMT	1912 Oct  1	
-Zone	Pacific/Marquesas	-9:30	-	%z		
-Zone	Pacific/Tahiti	-9:58:16	-	LMT	1912 Oct  1 	 Papeete
-Zone	Pacific/Tahiti	-10:00	-	%z		
-Zone	Pacific/Guam	-14:21:00	-	LMT	1844 Dec 31	
-Zone	Pacific/Guam	9:39:00	-	LMT	1901        	 Agana
-Zone	Pacific/Guam	10:00	-	GST	1941 Dec 10 	 Guam
-Zone	Pacific/Guam	9:00	-	%z	1944 Jul 31	
-Zone	Pacific/Guam	10:00	Guam	G%sT	2000 Dec 23	
-Zone	Pacific/Guam	10:00	-	ChST		
-Zone	Pacific/Tarawa	11:32:04	-	LMT	1901 	 Bairiki
-Zone	Pacific/Tarawa	12:00	-	%z		
-Zone	Pacific/Kanton	0	-	-00	1937 Aug 31	
-Zone	Pacific/Kanton	-12:00	-	%z	1979 Oct	
-Zone	Pacific/Kanton	-11:00	-	%z	1994 Dec 31	
-Zone	Pacific/Kanton	13:00	-	%z		
-Zone	Pacific/Kiritimati	-10:29:20	-	LMT	1901	
-Zone	Pacific/Kiritimati	-10:40	-	%z	1979 Oct	
-Zone	Pacific/Kiritimati	-10:00	-	%z	1994 Dec 31	
-Zone	Pacific/Kiritimati	14:00	-	%z		
-Zone	Pacific/Kwajalein	11:09:20	-	LMT	1901	
-Zone	Pacific/Kwajalein	11:00	-	%z	1937	
-Zone	Pacific/Kwajalein	10:00	-	%z	1941 Apr  1	
-Zone	Pacific/Kwajalein	9:00	-	%z	1944 Feb  6	
-Zone	Pacific/Kwajalein	11:00	-	%z	1969 Oct	
-Zone	Pacific/Kwajalein	-12:00	-	%z	1993 Aug 20 24:00	
-Zone	Pacific/Kwajalein	12:00	-	%z		
-Zone	Pacific/Kosrae	-13:08:04	-	LMT	1844 Dec 31	
-Zone	Pacific/Kosrae	10:51:56	-	LMT	1901	
-Zone	Pacific/Kosrae	11:00	-	%z	1914 Oct	
-Zone	Pacific/Kosrae	9:00	-	%z	1919 Feb  1	
-Zone	Pacific/Kosrae	11:00	-	%z	1937	
-Zone	Pacific/Kosrae	10:00	-	%z	1941 Apr  1	
-Zone	Pacific/Kosrae	9:00	-	%z	1945 Aug	
-Zone	Pacific/Kosrae	11:00	-	%z	1969 Oct	
-Zone	Pacific/Kosrae	12:00	-	%z	1999	
-Zone	Pacific/Kosrae	11:00	-	%z		
-Zone	Pacific/Nauru	11:07:40	-	LMT	1921 Jan 15 	 Uaobe
-Zone	Pacific/Nauru	11:30	-	%z	1942 Aug 29	
-Zone	Pacific/Nauru	9:00	-	%z	1945 Sep  8	
-Zone	Pacific/Nauru	11:30	-	%z	1979 Feb 10  2:00	
-Zone	Pacific/Nauru	12:00	-	%z		
-Zone	Pacific/Noumea	11:05:48	-	LMT	1912 Jan 13 	 Nouméa
-Zone	Pacific/Noumea	11:00	NC	%z		
-Zone	Pacific/Auckland	11:39:04	-	LMT	1868 Nov  2	
-Zone	Pacific/Auckland	11:30	NZ	NZ%sT	1946 Jan  1	
-Zone	Pacific/Auckland	12:00	NZ	NZ%sT		
-Zone	Pacific/Chatham	12:13:48	-	LMT	1868 Nov  2	
-Zone	Pacific/Chatham	12:15	-	%z	1946 Jan  1	
-Zone	Pacific/Chatham	12:45	Chatham	%z		
-Zone	Pacific/Rarotonga	13:20:56	-	LMT	1899 Dec 26 	 Avarua
-Zone	Pacific/Rarotonga	-10:39:04	-	LMT	1952 Oct 16	
-Zone	Pacific/Rarotonga	-10:30	-	%z	1978 Nov 12	
-Zone	Pacific/Rarotonga	-10:00	Cook	%z		
-Zone	Pacific/Niue	-11:19:40	-	LMT	1952 Oct 16		 Alofi
-Zone	Pacific/Niue	-11:20	-	%z	1964 Jul	
-Zone	Pacific/Niue	-11:00	-	%z		
-Zone	Pacific/Norfolk	11:11:52	-	LMT	1901 	 Kingston
-Zone	Pacific/Norfolk	11:12	-	%z	1951	
-Zone	Pacific/Norfolk	11:30	-	%z	1974 Oct 27 02:00s	
-Zone	Pacific/Norfolk	11:30	1:00	%z	1975 Mar  2 02:00s	
-Zone	Pacific/Norfolk	11:30	-	%z	2015 Oct  4 02:00s	
-Zone	Pacific/Norfolk	11:00	-	%z	2019 Jul	
-Zone	Pacific/Norfolk	11:00	AN	%z		
-Zone	Pacific/Palau	-15:02:04	-	LMT	1844 Dec 31		 Koror
-Zone	Pacific/Palau	8:57:56	-	LMT	1901	
-Zone	Pacific/Palau	9:00	-	%z		
-Zone	Pacific/Port_Moresby	9:48:40	-	LMT	1880	
-Zone	Pacific/Port_Moresby	9:48:32	-	PMMT	1895 	 Port Moresby Mean Time
-Zone	Pacific/Port_Moresby	10:00	-	%z		
-Zone	Pacific/Bougainville	10:22:16	-	LMT	1880	
-Zone	Pacific/Bougainville	9:48:32	-	PMMT	1895	
-Zone	Pacific/Bougainville	10:00	-	%z	1942 Jul	
-Zone	Pacific/Bougainville	9:00	-	%z	1945 Aug 21	
-Zone	Pacific/Bougainville	10:00	-	%z	2014 Dec 28  2:00	
-Zone	Pacific/Bougainville	11:00	-	%z		
-Zone	Pacific/Pitcairn	-8:40:20	-	LMT	1901        	 Adamstown
-Zone	Pacific/Pitcairn	-8:30	-	%z	1998 Apr 27  0:00	
-Zone	Pacific/Pitcairn	-8:00	-	%z		
-Zone	Pacific/Pago_Pago	12:37:12	-	LMT	1892 Jul  5	
-Zone	Pacific/Pago_Pago	-11:22:48	-	LMT	1911	
-Zone	Pacific/Pago_Pago	-11:00	-	SST		
-Zone	Pacific/Apia	12:33:04	-	LMT	1892 Jul  5	
-Zone	Pacific/Apia	-11:26:56	-	LMT	1911	
-Zone	Pacific/Apia	-11:30	-	%z	1950	
-Zone	Pacific/Apia	-11:00	WS	%z	2011 Dec 29 24:00	
-Zone	Pacific/Apia	13:00	WS	%z		
-Zone	Pacific/Guadalcanal	10:39:48	-	LMT	1912 Oct  1 	 Honiara
-Zone	Pacific/Guadalcanal	11:00	-	%z		
-Zone	Pacific/Fakaofo	-11:24:56	-	LMT	1901	
-Zone	Pacific/Fakaofo	-11:00	-	%z	2011 Dec 30	
-Zone	Pacific/Fakaofo	13:00	-	%z		
-Zone	Pacific/Tongatapu	12:19:12	-	LMT	1945 Sep 10	
-Zone	Pacific/Tongatapu	12:20	-	%z	1961	
-Zone	Pacific/Tongatapu	13:00	-	%z	1999	
-Zone	Pacific/Tongatapu	13:00	Tonga	%z		
-Zone	Pacific/Efate	11:13:16	-	LMT	1912 Jan 13 	 Vila
-Zone	Pacific/Efate	11:00	Vanuatu	%z		
-Zone	Africa/Accra	-0:00:52	-	LMT	1915 Nov  2	
-Zone	Africa/Accra	0:00	Ghana	%s	1942 Feb  8	
-Zone	Africa/Accra	0:30	-	+0030	1946 Jan  6	
-Zone	Africa/Accra	0:00	Ghana	%s		
-Zone	Africa/Addis_Ababa	2:34:48	-	LMT	1870	
-Zone	Africa/Addis_Ababa	2:35:20	-	ADMT	1936 May  5 	 Adis Dera MT
-Zone	Africa/Addis_Ababa	3:00	-	EAT		
-Zone	Africa/Asmara	2:35:32	-	LMT	1870	
-Zone	Africa/Asmara	2:35:32	-	AMT	1890        	 Asmara Mean Time
-Zone	Africa/Asmara	2:35:20	-	ADMT	1936 May  5 	 Adis Dera MT
-Zone	Africa/Asmara	3:00	-	EAT		
-Zone	Africa/Bamako	-0:32:00	-	LMT	1912	
-Zone	Africa/Bamako	0:00	-	GMT	1934 Feb 26	
-Zone	Africa/Bamako	-1:00	-	-01	1960 Jun 20	
-Zone	Africa/Bamako	0:00	-	GMT		
-Zone	Africa/Bangui	1:14:20	-	LMT	1912	
-Zone	Africa/Bangui	1:00	-	WAT		
-Zone	Africa/Banjul	-1:06:36	-	LMT	1912	
-Zone	Africa/Banjul	-1:06:36	-	BMT	1933 Apr  1 	 Banjul Mean Time
-Zone	Africa/Banjul	-1:00	-	-01	1942 Feb  1  0:00	
-Zone	Africa/Banjul	0:00	-	GMT		
-Zone	Africa/Blantyre	2:20:00	-	LMT	1911 Jul 24	
-Zone	Africa/Blantyre	2:21:10	-	ZMT	1914 Jun 30 	 Zomba Mean Time
-Zone	Africa/Blantyre	2:21	-	ZMT	1925 Jul  1	
-Zone	Africa/Blantyre	2:00	-	CAT		
-Zone	Africa/Brazzaville	1:01:08	-	LMT	1912	
-Zone	Africa/Brazzaville	1:00	-	WAT		
-Zone	Africa/Bujumbura	1:57:28	-	LMT	1890	
-Zone	Africa/Bujumbura	2:00	-	CAT		
-Zone	Africa/Conakry	-0:54:52	-	LMT	1912	
-Zone	Africa/Conakry	0:00	-	GMT	1934 Feb 26	
-Zone	Africa/Conakry	-1:00	-	-01	1960	
-Zone	Africa/Conakry	0:00	-	GMT		
-Zone	Africa/Dakar	-1:09:44	-	LMT	1912	
-Zone	Africa/Dakar	-1:00	-	-01	1941 Jun	
-Zone	Africa/Dakar	0:00	-	GMT		
-Zone	Africa/Dar_es_Salaam	2:37:08	-	LMT	1931	
-Zone	Africa/Dar_es_Salaam	3:00	-	EAT	1948	
-Zone	Africa/Dar_es_Salaam	2:45	-	+0245	1961	
-Zone	Africa/Dar_es_Salaam	3:00	-	EAT		
-Zone	Africa/Djibouti	2:52:36	-	LMT	1911 Jul	
-Zone	Africa/Djibouti	3:00	-	EAT		
-Zone	Africa/Douala	0:38:48	-	LMT	1912	
-Zone	Africa/Douala	1:00	-	WAT		
-Zone	Africa/Freetown	-0:53:00	-	LMT	1882	
-Zone	Africa/Freetown	-0:53:00	-	FMT	1913 Jul  1 	 Freetown MT
-Zone	Africa/Freetown	-1:00	SL	%s	1939 Sep  5	
-Zone	Africa/Freetown	-1:00	-	-01	1941 Dec  6 24:00	
-Zone	Africa/Freetown	0:00	-	GMT		
-Zone	Africa/Gaborone	1:43:40	-	LMT	1885	
-Zone	Africa/Gaborone	1:30	-	SAST	1903 Mar	
-Zone	Africa/Gaborone	2:00	-	CAT	1943 Sep 19  2:00	
-Zone	Africa/Gaborone	2:00	1:00	CAST	1944 Mar 19  2:00	
-Zone	Africa/Gaborone	2:00	-	CAT		
-Zone	Africa/Harare	2:04:12	-	LMT	1903 Mar	
-Zone	Africa/Harare	2:00	-	CAT		
-Zone	Africa/Kampala	2:09:40	-	LMT	1928 Jul	
-Zone	Africa/Kampala	3:00	-	EAT	1930	
-Zone	Africa/Kampala	2:30	-	+0230	1948	
-Zone	Africa/Kampala	2:45	-	+0245	1957	
-Zone	Africa/Kampala	3:00	-	EAT		
-Zone	Africa/Kigali	2:00:16	-	LMT	1935 Jun	
-Zone	Africa/Kigali	2:00	-	CAT		
-Zone	Africa/Kinshasa	1:01:12	-	LMT	1897 Nov  9	
-Zone	Africa/Kinshasa	1:00	-	WAT		
-Zone	Africa/Libreville	0:37:48	-	LMT	1912	
-Zone	Africa/Libreville	1:00	-	WAT		
-Zone	Africa/Lome	0:04:52	-	LMT	1893	
-Zone	Africa/Lome	0:00	-	GMT		
-Zone	Africa/Luanda	0:52:56	-	LMT	1892	
-Zone	Africa/Luanda	0:52:04	-	LMT	1911 Dec 31 23:00u 	 Luanda MT?
-Zone	Africa/Luanda	1:00	-	WAT		
-Zone	Africa/Lubumbashi	1:49:52	-	LMT	1897 Nov  9	
-Zone	Africa/Lubumbashi	1:00	-	WAT	1920 Apr 25	
-Zone	Africa/Lubumbashi	2:00	-	CAT		
-Zone	Africa/Lusaka	1:53:08	-	LMT	1903 Mar	
-Zone	Africa/Lusaka	2:00	-	CAT		
-Zone	Africa/Malabo	0:35:08	-	LMT	1912	
-Zone	Africa/Malabo	0:00	-	GMT	1963 Dec 15	
-Zone	Africa/Malabo	1:00	-	WAT		
-Zone	Africa/Maseru	1:50:00	-	LMT	1903 Mar	
-Zone	Africa/Maseru	2:00	-	SAST	1943 Sep 19  2:00	
-Zone	Africa/Maseru	2:00	1:00	SAST	1944 Mar 19  2:00	
-Zone	Africa/Maseru	2:00	-	SAST		
-Zone	Africa/Mbabane	2:04:24	-	LMT	1903 Mar	
-Zone	Africa/Mbabane	2:00	-	SAST		
-Zone	Africa/Mogadishu	3:01:28	-	LMT	1893 Nov	
-Zone	Africa/Mogadishu	3:00	-	EAT	1931	
-Zone	Africa/Mogadishu	2:30	-	+0230	1957	
-Zone	Africa/Mogadishu	3:00	-	EAT		
-Zone	Africa/Niamey	0:08:28	-	LMT	1912	
-Zone	Africa/Niamey	-1:00	-	-01	1934 Feb 26	
-Zone	Africa/Niamey	0:00	-	GMT	1960	
-Zone	Africa/Niamey	1:00	-	WAT		
-Zone	Africa/Nouakchott	-1:03:48	-	LMT	1912	
-Zone	Africa/Nouakchott	0:00	-	GMT	1934 Feb 26	
-Zone	Africa/Nouakchott	-1:00	-	-01	1960 Nov 28	
-Zone	Africa/Nouakchott	0:00	-	GMT		
-Zone	Africa/Ouagadougou	-0:06:04	-	LMT	1912	
-Zone	Africa/Ouagadougou	0:00	-	GMT		
-Zone	Africa/Porto-Novo	0:10:28	-	LMT	1912 Jan  1	
-Zone	Africa/Porto-Novo	0:00	-	GMT	1934 Feb 26	
-Zone	Africa/Porto-Novo	1:00	-	WAT		
-Zone	Africa/Timbuktu	-0:12:04	-	LMT	1912	
-Zone	Africa/Timbuktu	0:00	-	GMT		
-Zone	America/Anguilla	-4:12:16	-	LMT	1912 Mar  2	
-Zone	America/Anguilla	-4:00	-	AST		
-Zone	America/Antigua	-4:07:12	-	LMT	1912 Mar 2	
-Zone	America/Antigua	-5:00	-	EST	1951	
-Zone	America/Antigua	-4:00	-	AST		
-Zone	America/Argentina/ComodRivadavia	-4:30:00	-	LMT	1894 Oct 31	
-Zone	America/Argentina/ComodRivadavia	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/ComodRivadavia	-4:00	-	-04	1930 Dec	
-Zone	America/Argentina/ComodRivadavia	-4:00	Arg	-04/-03	1969 Oct  5	
-Zone	America/Argentina/ComodRivadavia	-3:00	Arg	-03/-02	1991 Mar  3	
-Zone	America/Argentina/ComodRivadavia	-4:00	-	-04	1991 Oct 20	
-Zone	America/Argentina/ComodRivadavia	-3:00	Arg	-03/-02	1999 Oct  3	
-Zone	America/Argentina/ComodRivadavia	-4:00	Arg	-04/-03	2000 Mar  3	
-Zone	America/Argentina/ComodRivadavia	-3:00	-	-03	2004 Jun  1	
-Zone	America/Argentina/ComodRivadavia	-4:00	-	-04	2004 Jun 20	
-Zone	America/Argentina/ComodRivadavia	-3:00	-	-03		
-Zone	America/Aruba	-4:40:24	-	LMT	1912 Feb 12 	 Oranjestad
-Zone	America/Aruba	-4:30	-	-0430	1965	
-Zone	America/Aruba	-4:00	-	AST		
-Zone	America/Atikokan	-6:06:28	-	LMT	1895	
-Zone	America/Atikokan	-6:00	Canada	C%sT	1940 Sep 29	
-Zone	America/Atikokan	-6:00	1:00	CDT	1942 Feb  9  2:00s	
-Zone	America/Atikokan	-6:00	Canada	C%sT	1945 Sep 30  2:00	
-Zone	America/Atikokan	-5:00	-	EST		
-Zone	America/Blanc-Sablon	-3:48:28	-	LMT	1884	
-Zone	America/Blanc-Sablon	-4:00	Canada	A%sT	1970	
-Zone	America/Blanc-Sablon	-4:00	-	AST		
-Zone	America/Cayman	-5:25:32	-	LMT	1890     	 Georgetown
-Zone	America/Cayman	-5:07:10	-	KMT	1912 Feb 	 Kingston Mean Time
-Zone	America/Cayman	-5:00	-	EST		
-Zone	America/Coral_Harbour	-5:32:40	-	LMT	1884	
-Zone	America/Coral_Harbour	-5:00	NT_YK	E%sT	1946	
-Zone	America/Coral_Harbour	-5:00	-	EST		
-Zone	America/Creston	-7:46:04	-	LMT	1884	
-Zone	America/Creston	-7:00	-	MST	1916 Oct 1	
-Zone	America/Creston	-8:00	-	PST	1918 Jun 2	
-Zone	America/Creston	-7:00	-	MST		
-Zone	America/Curacao	-4:35:47	-	LMT	1912 Feb 12 	 Willemstad
-Zone	America/Curacao	-4:30	-	-0430	1965	
-Zone	America/Curacao	-4:00	-	AST		
-Zone	America/Dominica	-4:05:36	-	LMT	1911 Jul  1  0:01 	 Roseau
-Zone	America/Dominica	-4:00	-	AST		
-Zone	America/Ensenada	-7:46:28	-	LMT	1922 Jan  1  0:13:32	
-Zone	America/Ensenada	-8:00	-	PST	1927 Jun 10 23:00	
-Zone	America/Ensenada	-7:00	-	MST	1930 Nov 16	
-Zone	America/Ensenada	-8:00	-	PST	1942 Apr	
-Zone	America/Ensenada	-7:00	-	MST	1949 Jan 14	
-Zone	America/Ensenada	-8:00	-	PST	1996	
-Zone	America/Ensenada	-8:00	Mexico	P%sT		
-Zone	America/Grenada	-4:07:00	-	LMT	1911 Jul 	 St George's
-Zone	America/Grenada	-4:00	-	AST		
-Zone	America/Guadeloupe	-4:06:08	-	LMT	1911 Jun  8 	 Pointe-à-Pitre
-Zone	America/Guadeloupe	-4:00	-	AST		
-Zone	America/Montreal	-4:54:16	-	LMT	1884	
-Zone	America/Montreal	-5:00	Mont	E%sT	1918	
-Zone	America/Montreal	-5:00	Canada	E%sT	1919	
-Zone	America/Montreal	-5:00	Mont	E%sT	1942 Feb  9  2:00s	
-Zone	America/Montreal	-5:00	Canada	E%sT	1946	
-Zone	America/Montreal	-5:00	Mont	E%sT	1974	
-Zone	America/Montreal	-5:00	Canada	E%sT		
-Zone	America/Montserrat	-4:08:52	-	LMT	1911 Jul  1  0:01 	 Cork Hill
-Zone	America/Montserrat	-4:00	-	AST		
-Zone	America/Nassau	-5:09:30	-	LMT	1912 Mar 2	
-Zone	America/Nassau	-5:00	Bahamas	E%sT	1976	
-Zone	America/Nassau	-5:00	US	E%sT		
-Zone	America/Nipigon	-5:53:04	-	LMT	1895	
-Zone	America/Nipigon	-5:00	Canada	E%sT	1940 Sep 29	
-Zone	America/Nipigon	-5:00	1:00	EDT	1942 Feb  9  2:00s	
-Zone	America/Nipigon	-5:00	Canada	E%sT		
-Zone	America/Pangnirtung	0	-	-00	1921 	 trading post est.
-Zone	America/Pangnirtung	-5:00	NT_YK	E%sT	1999 Oct 31  2:00	
-Zone	America/Pangnirtung	-6:00	Canada	C%sT	2000 Oct 29  2:00	
-Zone	America/Pangnirtung	-5:00	Canada	E%sT		
-Zone	America/Port_of_Spain	-4:06:04	-	LMT	1912 Mar 2	
-Zone	America/Port_of_Spain	-4:00	-	AST		
-Zone	America/Rainy_River	-6:18:16	-	LMT	1895	
-Zone	America/Rainy_River	-6:00	Canada	C%sT	1940 Sep 29	
-Zone	America/Rainy_River	-6:00	1:00	CDT	1942 Feb  9  2:00s	
-Zone	America/Rainy_River	-6:00	Canada	C%sT		
-Zone	America/Rosario	-4:02:40	-	LMT	1894 Nov	
-Zone	America/Rosario	-4:16:44	-	CMT	1920 May	
-Zone	America/Rosario	-4:00	-	-04	1930 Dec	
-Zone	America/Rosario	-4:00	Arg	-04/-03	1969 Oct  5	
-Zone	America/Rosario	-3:00	Arg	-03/-02	1991 Jul	
-Zone	America/Rosario	-3:00	-	-03	1999 Oct  3  0:00	
-Zone	America/Rosario	-4:00	Arg	-04/-03	2000 Mar  3  0:00	
-Zone	America/Rosario	-3:00	-	-03		
-Zone	America/St_Kitts	-4:10:52	-	LMT	1912 Mar  2 	 Basseterre
-Zone	America/St_Kitts	-4:00	-	AST		
-Zone	America/St_Lucia	-4:04:00	-	LMT	1890 	 Castries
-Zone	America/St_Lucia	-4:04:00	-	CMT	1912 	 Castries Mean Time
-Zone	America/St_Lucia	-4:00	-	AST		
-Zone	America/St_Thomas	-4:19:44	-	LMT	1911 Jul 	 Charlotte Amalie
-Zone	America/St_Thomas	-4:00	-	AST		
-Zone	America/St_Vincent	-4:04:56	-	LMT	1890 	 Kingstown
-Zone	America/St_Vincent	-4:04:56	-	KMT	1912 	 Kingstown Mean Time
-Zone	America/St_Vincent	-4:00	-	AST		
-Zone	America/Thunder_Bay	-5:57:00	-	LMT	1895	
-Zone	America/Thunder_Bay	-6:00	-	CST	1910	
-Zone	America/Thunder_Bay	-5:00	-	EST	1942	
-Zone	America/Thunder_Bay	-5:00	Canada	E%sT	1970	
-Zone	America/Thunder_Bay	-5:00	Toronto	E%sT	1974	
-Zone	America/Thunder_Bay	-5:00	Canada	E%sT		
-Zone	America/Tortola	-4:18:28	-	LMT	1911 Jul 	 Road Town
-Zone	America/Tortola	-4:00	-	AST		
-Zone	America/Yellowknife	0	-	-00	1935 	 Yellowknife founded?
-Zone	America/Yellowknife	-7:00	NT_YK	M%sT	1980	
-Zone	America/Yellowknife	-7:00	Canada	M%sT		
-Zone	Antarctica/DumontDUrville	0	-	-00	1947	
-Zone	Antarctica/DumontDUrville	10:00	-	+10	1952 Jan 14	
-Zone	Antarctica/DumontDUrville	0	-	-00	1956 Nov	
-Zone	Antarctica/DumontDUrville	10:00	-	+10		
-Zone	Antarctica/McMurdo	0	-	-00	1956	
-Zone	Antarctica/McMurdo	12:00	NZ	NZ%sT		
-Zone	Antarctica/Syowa	0	-	-00	1957 Jan 29	
-Zone	Antarctica/Syowa	3:00	-	+03		
-Zone	Asia/Aden	2:59:54	-	LMT	1950	
-Zone	Asia/Aden	3:00	-	+03		
-Zone	Asia/Bahrain	3:22:20	-	LMT	1941 Jul 20  	 Manamah
-Zone	Asia/Bahrain	3:30	-	+0330	1944 Jan  1	
-Zone	Asia/Bahrain	4:00	-	+04	1972 Jun	
-Zone	Asia/Bahrain	3:00	-	+03		
-Zone	Asia/Brunei	7:39:40	-	LMT	1926 Mar 	 Bandar Seri Begawan
-Zone	Asia/Brunei	7:30	-	+0730	1933	
-Zone	Asia/Brunei	8:00	-	+08		
-Zone	Asia/Chongqing	7:06:20	-	LMT	1928     	 or Chungking
-Zone	Asia/Chongqing	7:00	-	+07	1980 May	
-Zone	Asia/Chongqing	8:00	PRC	C%sT		
-Zone	Asia/Hanoi	7:03:24	-	LMT	1906 Jul  1	
-Zone	Asia/Hanoi	7:06:30	-	PLMT	1911 May  1	
-Zone	Asia/Hanoi	7:00	-	+07	1942 Dec 31 23:00	
-Zone	Asia/Hanoi	8:00	-	+08	1945 Mar 14 23:00	
-Zone	Asia/Hanoi	9:00	-	+09	1945 Sep  2	
-Zone	Asia/Hanoi	7:00	-	+07	1947 Apr  1	
-Zone	Asia/Hanoi	8:00	-	+08	1954 Oct	
-Zone	Asia/Hanoi	7:00	-	+07		
-Zone	Asia/Harbin	8:26:44	-	LMT	1928     	 or Haerbin
-Zone	Asia/Harbin	8:30	-	+0830	1932 Mar	
-Zone	Asia/Harbin	8:00	-	CST	1940	
-Zone	Asia/Harbin	9:00	-	+09	1966 May	
-Zone	Asia/Harbin	8:30	-	+0830	1980 May	
-Zone	Asia/Harbin	8:00	PRC	C%sT		
-Zone	Asia/Kashgar	5:03:56	-	LMT	1928     	 or Kashi or Kaxgar
-Zone	Asia/Kashgar	5:30	-	+0530	1940	
-Zone	Asia/Kashgar	5:00	-	+05	1980 May	
-Zone	Asia/Kashgar	8:00	PRC	C%sT		
-Zone	Asia/Kuala_Lumpur	6:46:46	-	LMT	1901 Jan  1	
-Zone	Asia/Kuala_Lumpur	6:55:25	-	SMT	1905 Jun  1 	 Singapore M.T.
-Zone	Asia/Kuala_Lumpur	7:00	-	+07	1933 Jan  1	
-Zone	Asia/Kuala_Lumpur	7:00	0:20	+0720	1936 Jan  1	
-Zone	Asia/Kuala_Lumpur	7:20	-	+0720	1941 Sep  1	
-Zone	Asia/Kuala_Lumpur	7:30	-	+0730	1942 Feb 16	
-Zone	Asia/Kuala_Lumpur	9:00	-	+09	1945 Sep 12	
-Zone	Asia/Kuala_Lumpur	7:30	-	+0730	1981 Dec 31 16:00u	
-Zone	Asia/Kuala_Lumpur	8:00	-	+08		
-Zone	Asia/Kuwait	3:11:56	-	LMT	1950	
-Zone	Asia/Kuwait	3:00	-	+03		
-Zone	Asia/Muscat	3:54:24	-	LMT	1920	
-Zone	Asia/Muscat	4:00	-	+04		
-Zone	Asia/Phnom_Penh	6:59:40	-	LMT	1906 Jul  1	
-Zone	Asia/Phnom_Penh	7:06:30	-	PLMT	1911 May  1	
-Zone	Asia/Phnom_Penh	7:00	-	+07	1942 Dec 31 23:00	
-Zone	Asia/Phnom_Penh	8:00	-	+08	1945 Mar 14 23:00	
-Zone	Asia/Phnom_Penh	9:00	-	+09	1945 Sep  2	
-Zone	Asia/Phnom_Penh	7:00	-	+07		
-Zone	Asia/Tel_Aviv	2:19:04	-	LMT	1880	
-Zone	Asia/Tel_Aviv	2:21	-	JMT	1918	
-Zone	Asia/Tel_Aviv	2:00	Zion	I%sT		
-Zone	Asia/Vientiane	6:50:24	-	LMT	1906 Jul  1	
-Zone	Asia/Vientiane	7:06:30	-	PLMT	1911 May  1	
-Zone	Asia/Vientiane	7:00	-	+07	1942 Dec 31 23:00	
-Zone	Asia/Vientiane	8:00	-	+08	1945 Mar 14 23:00	
-Zone	Asia/Vientiane	9:00	-	+09	1945 Sep  2	
-Zone	Asia/Vientiane	7:00	-	+07	1947 Apr  1	
-Zone	Asia/Vientiane	8:00	-	+08	1955 Apr 15	
-Zone	Asia/Vientiane	7:00	-	+07		
-Zone	Atlantic/Jan_Mayen	-1:00	-	-01		
-Zone	Atlantic/Reykjavik	-1:28	-	LMT	1908	
-Zone	Atlantic/Reykjavik	-1:00	Iceland	-01/+00	1968 Apr  7  1:00s	
-Zone	Atlantic/Reykjavik	0:00	-	GMT		
-Zone	Atlantic/St_Helena	-0:22:48	-	LMT	1890 	 Jamestown
-Zone	Atlantic/St_Helena	-0:22:48	-	JMT	1951 	 Jamestown Mean Time
-Zone	Atlantic/St_Helena	0:00	-	GMT		
-Zone	Australia/Currie	9:35:28	-	LMT	1895 Sep	
-Zone	Australia/Currie	10:00	AT	AE%sT	1919 Oct 24	
-Zone	Australia/Currie	10:00	Aus	AE%sT	1968 Oct 15	
-Zone	Australia/Currie	10:00	AT	AE%sT		
-Zone	Europe/Amsterdam	0:19:32	-	LMT	1835	
-Zone	Europe/Amsterdam	0:19:32	Neth	%s	1937 Jul  1	
-Zone	Europe/Amsterdam	0:20	Neth	+0020/+0120	1940 May 16  0:00	
-Zone	Europe/Amsterdam	1:00	C-Eur	CE%sT	1945 Apr  2  2:00	
-Zone	Europe/Amsterdam	1:00	Neth	CE%sT	1977	
-Zone	Europe/Amsterdam	1:00	EU	CE%sT		
-Zone	Europe/Belfast	-0:23:40	-	LMT	1880 Aug  2	
-Zone	Europe/Belfast	-0:25:21	-	DMT	1916 May 21  2:00	
-Zone	Europe/Belfast	#	DMT	=	Dublin/Dunsink MT	
-Zone	Europe/Belfast	-0:25:21	1:00	IST	1916 Oct  1  2:00s	
-Zone	Europe/Belfast	#	IST	=	Irish Summer Time	
-Zone	Europe/Belfast	0:00	GB-Eire	%s	1968 Oct 27	
-Zone	Europe/Belfast	1:00	-	BST	1971 Oct 31  2:00u	
-Zone	Europe/Belfast	0:00	GB-Eire	%s	1996	
-Zone	Europe/Belfast	0:00	EU	GMT/BST		
-Zone	Europe/Copenhagen	0:50:20	-	LMT	1890	
-Zone	Europe/Copenhagen	0:50:20	-	CMT	1894 Jan  1 	 Copenhagen MT
-Zone	Europe/Copenhagen	1:00	Denmark	CE%sT	1942 Nov  2  2:00s	
-Zone	Europe/Copenhagen	1:00	C-Eur	CE%sT	1945 Apr  2  2:00	
-Zone	Europe/Copenhagen	1:00	Denmark	CE%sT	1980	
-Zone	Europe/Copenhagen	1:00	EU	CE%sT		
-Zone	Europe/Guernsey	-0:10:09	-	LMT	1913 Jun 18	
-Zone	Europe/Guernsey	0:00	GB-Eire	%s	1940 Jul  2	
-Zone	Europe/Guernsey	1:00	C-Eur	CE%sT	1945 May  8	
-Zone	Europe/Guernsey	0:00	GB-Eire	%s	1968 Oct 27	
-Zone	Europe/Guernsey	1:00	-	BST	1971 Oct 31  2:00u	
-Zone	Europe/Guernsey	0:00	GB-Eire	%s	1996	
-Zone	Europe/Guernsey	0:00	EU	GMT/BST		
-Zone	Europe/Isle_of_Man	-0:17:55	-	LMT	1883 Mar 30  0:00s	
-Zone	Europe/Isle_of_Man	0:00	GB-Eire	%s	1968 Oct 27	
-Zone	Europe/Isle_of_Man	1:00	-	BST	1971 Oct 31  2:00u	
-Zone	Europe/Isle_of_Man	0:00	GB-Eire	%s	1996	
-Zone	Europe/Isle_of_Man	0:00	EU	GMT/BST		
-Zone	Europe/Jersey	-0:08:26	-	LMT	1898 Jun 11 16:00u	
-Zone	Europe/Jersey	0:00	GB-Eire	%s	1940 Jul  2	
-Zone	Europe/Jersey	1:00	C-Eur	CE%sT	1945 May  8	
-Zone	Europe/Jersey	0:00	GB-Eire	%s	1968 Oct 27	
-Zone	Europe/Jersey	1:00	-	BST	1971 Oct 31  2:00u	
-Zone	Europe/Jersey	0:00	GB-Eire	%s	1996	
-Zone	Europe/Jersey	0:00	EU	GMT/BST		
-Zone	Europe/Ljubljana	0:58:04	-	LMT	1884	
-Zone	Europe/Ljubljana	1:00	-	CET	1941 Apr 18 23:00	
-Zone	Europe/Ljubljana	1:00	C-Eur	CE%sT	1945 May  8  2:00s	
-Zone	Europe/Ljubljana	1:00	1:00	CEST	1945 Sep 16  2:00s	
-Zone	Europe/Ljubljana	1:00	-	CET	1982 Nov 27	
-Zone	Europe/Ljubljana	1:00	EU	CE%sT		
-Zone	Europe/Luxembourg	0:24:36	-	LMT	1904 Jun	
-Zone	Europe/Luxembourg	1:00	Lux	CE%sT	1918 Nov 25	
-Zone	Europe/Luxembourg	0:00	Lux	WE%sT	1929 Oct  6  2:00s	
-Zone	Europe/Luxembourg	0:00	Belgium	WE%sT	1940 May 14  3:00	
-Zone	Europe/Luxembourg	1:00	C-Eur	WE%sT	1944 Sep 18  3:00	
-Zone	Europe/Luxembourg	1:00	Belgium	CE%sT	1977	
-Zone	Europe/Luxembourg	1:00	EU	CE%sT		
-Zone	Europe/Monaco	0:29:32	-	LMT	1892 Jun  1	
-Zone	Europe/Monaco	0:09:21	-	PMT	1911 Mar 29 	 Paris Mean Time
-Zone	Europe/Monaco	0:00	France	WE%sT	1945 Sep 16  3:00	
-Zone	Europe/Monaco	1:00	France	CE%sT	1977	
-Zone	Europe/Monaco	1:00	EU	CE%sT		
-Zone	Europe/Oslo	0:43:00	-	LMT	1895 Jan  1	
-Zone	Europe/Oslo	1:00	Norway	CE%sT	1940 Aug 10 23:00	
-Zone	Europe/Oslo	1:00	C-Eur	CE%sT	1945 Apr  2  2:00	
-Zone	Europe/Oslo	1:00	Norway	CE%sT	1980	
-Zone	Europe/Oslo	1:00	EU	CE%sT		
-Zone	Europe/Sarajevo	1:13:40	-	LMT	1884	
-Zone	Europe/Sarajevo	1:00	-	CET	1941 Apr 18 23:00	
-Zone	Europe/Sarajevo	1:00	C-Eur	CE%sT	1945 May  8  2:00s	
-Zone	Europe/Sarajevo	1:00	1:00	CEST	1945 Sep 16  2:00s	
-Zone	Europe/Sarajevo	1:00	-	CET	1982 Nov 27	
-Zone	Europe/Sarajevo	1:00	EU	CE%sT		
-Zone	Europe/Skopje	1:25:44	-	LMT	1884	
-Zone	Europe/Skopje	1:00	-	CET	1941 Apr 18 23:00	
-Zone	Europe/Skopje	1:00	C-Eur	CE%sT	1945 May  8  2:00s	
-Zone	Europe/Skopje	1:00	1:00	CEST	1945 Sep 16  2:00s	
-Zone	Europe/Skopje	1:00	-	CET	1982 Nov 27	
-Zone	Europe/Skopje	1:00	EU	CE%sT		
-Zone	Europe/Stockholm	1:12:12	-	LMT	1879 Jan  1	
-Zone	Europe/Stockholm	1:00:14	-	SET	1900 Jan  1 	 Swedish Time
-Zone	Europe/Stockholm	1:00	-	CET	1916 May 14 23:00	
-Zone	Europe/Stockholm	1:00	1:00	CEST	1916 Oct  1  1:00	
-Zone	Europe/Stockholm	1:00	-	CET	1980	
-Zone	Europe/Stockholm	1:00	EU	CE%sT		
-Zone	Europe/Tiraspol	1:58:32	-	LMT	1880	
-Zone	Europe/Tiraspol	1:55	-	CMT	1918 Feb 15 	 Chisinau MT
-Zone	Europe/Tiraspol	1:44:24	-	BMT	1931 Jul 24 	 Bucharest MT
-Zone	Europe/Tiraspol	2:00	Romania	EE%sT	1940 Aug 15	
-Zone	Europe/Tiraspol	2:00	1:00	EEST	1941 Jul 17	
-Zone	Europe/Tiraspol	1:00	C-Eur	CE%sT	1944 Aug 24	
-Zone	Europe/Tiraspol	3:00	Russia	MSK/MSD	1991 Mar 31  2:00	
-Zone	Europe/Tiraspol	2:00	Russia	EE%sT	1992 Jan 19  2:00	
-Zone	Europe/Tiraspol	3:00	Russia	MSK/MSD		
-Zone	Europe/Uzhgorod	1:29:12	-	LMT	1890 Oct	
-Zone	Europe/Uzhgorod	1:00	-	CET	1940	
-Zone	Europe/Uzhgorod	1:00	C-Eur	CE%sT	1944 Oct	
-Zone	Europe/Uzhgorod	1:00	1:00	CEST	1944 Oct 26	
-Zone	Europe/Uzhgorod	1:00	-	CET	1945 Jun 29	
-Zone	Europe/Uzhgorod	3:00	Russia	MSK/MSD	1990	
-Zone	Europe/Uzhgorod	3:00	-	MSK	1990 Jul  1  2:00	
-Zone	Europe/Uzhgorod	1:00	-	CET	1991 Mar 31  3:00	
-Zone	Europe/Uzhgorod	2:00	-	EET	1992 Mar 20	
-Zone	Europe/Uzhgorod	2:00	C-Eur	EE%sT	1996 May 13	
-Zone	Europe/Uzhgorod	2:00	EU	EE%sT		
-Zone	Europe/Vaduz	0:38:04	-	LMT	1894 Jun	
-Zone	Europe/Vaduz	1:00	Swiss	CE%sT	1981	
-Zone	Europe/Vaduz	1:00	EU	CE%sT		
-Zone	Europe/Zagreb	1:03:52	-	LMT	1884	
-Zone	Europe/Zagreb	1:00	-	CET	1941 Apr 18 23:00	
-Zone	Europe/Zagreb	1:00	C-Eur	CE%sT	1945 May  8  2:00s	
-Zone	Europe/Zagreb	1:00	1:00	CEST	1945 Sep 16  2:00s	
-Zone	Europe/Zagreb	1:00	-	CET	1982 Nov 27	
-Zone	Europe/Zagreb	1:00	EU	CE%sT		
-Zone	Europe/Zaporozhye	2:20:40	-	LMT	1880	
-Zone	Europe/Zaporozhye	2:20	-	+0220	1924 May  2	
-Zone	Europe/Zaporozhye	2:00	-	EET	1930 Jun 21	
-Zone	Europe/Zaporozhye	3:00	-	MSK	1941 Aug 25	
-Zone	Europe/Zaporozhye	1:00	C-Eur	CE%sT	1943 Oct 25	
-Zone	Europe/Zaporozhye	3:00	Russia	MSK/MSD	1991 Mar 31  2:00	
-Zone	Europe/Zaporozhye	2:00	E-Eur	EE%sT	1992 Mar 20	
-Zone	Europe/Zaporozhye	2:00	C-Eur	EE%sT	1996 May 13	
-Zone	Europe/Zaporozhye	2:00	EU	EE%sT		
-Zone	Indian/Antananarivo	3:10:04	-	LMT	1911 Jul	
-Zone	Indian/Antananarivo	3:00	-	EAT	1954 Feb 27 23:00s	
-Zone	Indian/Antananarivo	3:00	1:00	EAST	1954 May 29 23:00s	
-Zone	Indian/Antananarivo	3:00	-	EAT		
-Zone	Indian/Christmas	7:02:52	-	LMT	1895 Feb	
-Zone	Indian/Christmas	7:00	-	+07		
-Zone	Indian/Cocos	6:27:40	-	LMT	1900	
-Zone	Indian/Cocos	6:30	-	+0630		
-Zone	Indian/Comoro	2:53:04	-	LMT	1911 Jul 	 Moroni, Gran Comoro
-Zone	Indian/Comoro	3:00	-	EAT		
-Zone	Indian/Kerguelen	0	-	-00	1950 	 Port-aux-Français
-Zone	Indian/Kerguelen	5:00	-	+05		
-Zone	Indian/Mahe	3:41:48	-	LMT	1907 Jan  1 	 Victoria
-Zone	Indian/Mahe	4:00	-	+04		
-Zone	Indian/Mayotte	3:00:56	-	LMT	1911 Jul 	 Mamoutzou
-Zone	Indian/Mayotte	3:00	-	EAT		
-Zone	Indian/Reunion	3:41:52	-	LMT	1911 Jun 	 Saint-Denis
-Zone	Indian/Reunion	4:00	-	+04		
-Zone	Pacific/Chuuk	-13:52:52	-	LMT	1844 Dec 31	
-Zone	Pacific/Chuuk	10:07:08	-	LMT	1901	
-Zone	Pacific/Chuuk	10:00	-	+10	1914 Oct	
-Zone	Pacific/Chuuk	9:00	-	+09	1919 Feb  1	
-Zone	Pacific/Chuuk	10:00	-	+10	1941 Apr  1	
-Zone	Pacific/Chuuk	9:00	-	+09	1945 Aug	
-Zone	Pacific/Chuuk	10:00	-	+10		
-Zone	Pacific/Enderbury	0	-	-00	1860	
-Zone	Pacific/Enderbury	-11:24:20	-	LMT	1885	
-Zone	Pacific/Enderbury	0	-	-00	1938 Mar  6	
-Zone	Pacific/Enderbury	-12:00	-	-12	1942 Feb  9	
-Zone	Pacific/Enderbury	0	-	-00		
-Zone	Pacific/Funafuti	11:56:52	-	LMT	1901	
-Zone	Pacific/Funafuti	12:00	-	+12		
-Zone	Pacific/Johnston	-10:00	-	HST		
-Zone	Pacific/Majuro	11:24:48	-	LMT	1901	
-Zone	Pacific/Majuro	11:00	-	+11	1914 Oct	
-Zone	Pacific/Majuro	9:00	-	+09	1919 Feb  1	
-Zone	Pacific/Majuro	11:00	-	+11	1937	
-Zone	Pacific/Majuro	10:00	-	+10	1941 Apr  1	
-Zone	Pacific/Majuro	9:00	-	+09	1944 Jan 30	
-Zone	Pacific/Majuro	11:00	-	+11	1969 Oct	
-Zone	Pacific/Majuro	12:00	-	+12		
-Zone	Pacific/Midway	-11:49:28	-	LMT	1901	
-Zone	Pacific/Midway	-11:00	-	-11	1956 Jun  3	
-Zone	Pacific/Midway	-11:00	1:00	-10	1956 Sep  2	
-Zone	Pacific/Midway	-11:00	-	SST		
-Zone	Pacific/Pohnpei	-13:27:08	-	LMT	1844 Dec 31		 Kolonia
-Zone	Pacific/Pohnpei	10:32:52	-	LMT	1901	
-Zone	Pacific/Pohnpei	11:00	-	+11	1914 Oct	
-Zone	Pacific/Pohnpei	9:00	-	+09	1919 Feb  1	
-Zone	Pacific/Pohnpei	11:00	-	+11	1937	
-Zone	Pacific/Pohnpei	10:00	-	+10	1941 Apr  1	
-Zone	Pacific/Pohnpei	9:00	-	+09	1945 Aug	
-Zone	Pacific/Pohnpei	11:00	-	+11		
-Zone	Pacific/Saipan	-14:17:00	-	LMT	1844 Dec 31	
-Zone	Pacific/Saipan	9:43:00	-	LMT	1901	
-Zone	Pacific/Saipan	9:00	-	+09	1944 Jul  9	
-Zone	Pacific/Saipan	10:00	Guam	G%sT	2000 Dec 23	
-Zone	Pacific/Saipan	10:00	-	ChST		
-Zone	Pacific/Wake	11:06:28	-	LMT	1901	
-Zone	Pacific/Wake	12:00	-	+12		
-Zone	Pacific/Wallis	12:15:20	-	LMT	1901	
-Zone	Pacific/Wallis	12:00	-	+12		
-Zone	HST	-10:00	-	HST		
-Zone	PST8PDT	-8:00	US	P%sT		
-Zone	MST	-7:00	-	MST		
-Zone	MST7MDT	-7:00	US	M%sT		
-Zone	CST6CDT	-6:00	US	C%sT		
-Zone	EST	-5:00	-	EST		
-Zone	EST5EDT	-5:00	US	E%sT		
-Zone	WET	0:00	EU	WE%sT		
-Zone	CET	1:00	C-Eur	CE%sT		
-Zone	MET	1:00	C-Eur	ME%sT		
-Zone	EET	2:00	EU	EE%sT		
-Zone	Etc/UTC	0	-	UTC		
-Zone	Etc/GMT	0	-	GMT		
-Zone	Etc/GMT-14	14	-	%z		
-Zone	Etc/GMT-13	13	-	%z		
-Zone	Etc/GMT-12	12	-	%z		
-Zone	Etc/GMT-11	11	-	%z		
-Zone	Etc/GMT-10	10	-	%z		
-Zone	Etc/GMT-9	9	-	%z		
-Zone	Etc/GMT-8	8	-	%z		
-Zone	Etc/GMT-7	7	-	%z		
-Zone	Etc/GMT-6	6	-	%z		
-Zone	Etc/GMT-5	5	-	%z		
-Zone	Etc/GMT-4	4	-	%z		
-Zone	Etc/GMT-3	3	-	%z		
-Zone	Etc/GMT-2	2	-	%z		
-Zone	Etc/GMT-1	1	-	%z		
-Zone	Etc/GMT+1	-1	-	%z		
-Zone	Etc/GMT+2	-2	-	%z		
-Zone	Etc/GMT+3	-3	-	%z		
-Zone	Etc/GMT+4	-4	-	%z		
-Zone	Etc/GMT+5	-5	-	%z		
-Zone	Etc/GMT+6	-6	-	%z		
-Zone	Etc/GMT+7	-7	-	%z		
-Zone	Etc/GMT+8	-8	-	%z		
-Zone	Etc/GMT+9	-9	-	%z		
-Zone	Etc/GMT+10	-10	-	%z		
-Zone	Etc/GMT+11	-11	-	%z		
-Zone	Etc/GMT+12	-12	-	%z		
-Zone	Europe/London	-0:01:15	-	LMT	1847 Dec  1	
-Zone	Europe/London	0:00	GB-Eire	%s	1968 Oct 27	
-Zone	Europe/London	1:00	-	BST	1971 Oct 31  2:00u	
-Zone	Europe/London	0:00	GB-Eire	%s	1996	
-Zone	Europe/London	0:00	EU	GMT/BST		
-Zone	Europe/Dublin	-0:25:21	-	LMT	1880 Aug  2	
-Zone	Europe/Dublin	-0:25:21	-	DMT	1916 May 21  2:00s	
-Zone	Europe/Dublin	-0:25:21	1:00	IST	1916 Oct  1  2:00s	
-Zone	Europe/Dublin	0:00	GB-Eire	%s	1921 Dec  6 	 independence
-Zone	Europe/Dublin	0:00	GB-Eire	GMT/IST	1940 Feb 25  2:00s	
-Zone	Europe/Dublin	0:00	1:00	IST	1946 Oct  6  2:00s	
-Zone	Europe/Dublin	0:00	-	GMT	1947 Mar 16  2:00s	
-Zone	Europe/Dublin	0:00	1:00	IST	1947 Nov  2  2:00s	
-Zone	Europe/Dublin	0:00	-	GMT	1948 Apr 18  2:00s	
-Zone	Europe/Dublin	0:00	GB-Eire	GMT/IST	1968 Oct 27	
-Zone	Europe/Dublin	1:00	Eire	IST/GMT		
-Zone	Europe/Tirane	1:19:20	-	LMT	1914	
-Zone	Europe/Tirane	1:00	-	CET	1940 Jun 16	
-Zone	Europe/Tirane	1:00	Albania	CE%sT	1984 Jul	
-Zone	Europe/Tirane	1:00	EU	CE%sT		
-Zone	Europe/Andorra	0:06:04	-	LMT	1901	
-Zone	Europe/Andorra	0:00	-	WET	1946 Sep 30	
-Zone	Europe/Andorra	1:00	-	CET	1985 Mar 31  2:00	
-Zone	Europe/Andorra	1:00	EU	CE%sT		
-Zone	Europe/Vienna	1:05:21	-	LMT	1893 Apr	
-Zone	Europe/Vienna	1:00	C-Eur	CE%sT	1920	
-Zone	Europe/Vienna	1:00	Austria	CE%sT	1940 Apr  1  2:00s	
-Zone	Europe/Vienna	1:00	C-Eur	CE%sT	1945 Apr  2  2:00s	
-Zone	Europe/Vienna	1:00	1:00	CEST	1945 Apr 12  2:00s	
-Zone	Europe/Vienna	1:00	-	CET	1946	
-Zone	Europe/Vienna	1:00	Austria	CE%sT	1981	
-Zone	Europe/Vienna	1:00	EU	CE%sT		
-Zone	Europe/Minsk	1:50:16	-	LMT	1880	
-Zone	Europe/Minsk	1:50	-	MMT	1924 May  2 	 Minsk Mean Time
-Zone	Europe/Minsk	2:00	-	EET	1930 Jun 21	
-Zone	Europe/Minsk	3:00	-	MSK	1941 Jun 28	
-Zone	Europe/Minsk	1:00	C-Eur	CE%sT	1944 Jul  3	
-Zone	Europe/Minsk	3:00	Russia	MSK/MSD	1990	
-Zone	Europe/Minsk	3:00	-	MSK	1991 Mar 31  2:00s	
-Zone	Europe/Minsk	2:00	Russia	EE%sT	2011 Mar 27  2:00s	
-Zone	Europe/Minsk	3:00	-	%z		
-Zone	Europe/Brussels	0:17:30	-	LMT	1880	
-Zone	Europe/Brussels	0:17:30	-	BMT	1892 May  1 00:17:30	
-Zone	Europe/Brussels	0:00	-	WET	1914 Nov  8	
-Zone	Europe/Brussels	1:00	-	CET	1916 May  1  0:00	
-Zone	Europe/Brussels	1:00	C-Eur	CE%sT	1918 Nov 11 11:00u	
-Zone	Europe/Brussels	0:00	Belgium	WE%sT	1940 May 20  2:00s	
-Zone	Europe/Brussels	1:00	C-Eur	CE%sT	1944 Sep  3	
-Zone	Europe/Brussels	1:00	Belgium	CE%sT	1977	
-Zone	Europe/Brussels	1:00	EU	CE%sT		
-Zone	Europe/Sofia	1:33:16	-	LMT	1880	
-Zone	Europe/Sofia	1:56:56	-	IMT	1894 Nov 30 	 Istanbul MT?
-Zone	Europe/Sofia	2:00	-	EET	1942 Nov  2  3:00	
-Zone	Europe/Sofia	1:00	C-Eur	CE%sT	1945	
-Zone	Europe/Sofia	1:00	-	CET	1945 Apr  2  3:00	
-Zone	Europe/Sofia	2:00	-	EET	1979 Mar 31 23:00	
-Zone	Europe/Sofia	2:00	Bulg	EE%sT	1982 Sep 26  3:00	
-Zone	Europe/Sofia	2:00	C-Eur	EE%sT	1991	
-Zone	Europe/Sofia	2:00	E-Eur	EE%sT	1997	
-Zone	Europe/Sofia	2:00	EU	EE%sT		
-Zone	Europe/Prague	0:57:44	-	LMT	1850	
-Zone	Europe/Prague	0:57:44	-	PMT	1891 Oct    	 Prague Mean Time
-Zone	Europe/Prague	1:00	C-Eur	CE%sT	1945 May  9	
-Zone	Europe/Prague	1:00	Czech	CE%sT	1946 Dec  1  3:00	
-Zone	Europe/Prague	1:00	-1:00	GMT	1947 Feb 23  2:00	
-Zone	Europe/Prague	1:00	Czech	CE%sT	1979	
-Zone	Europe/Prague	1:00	EU	CE%sT		
-Zone	Atlantic/Faroe	-0:27:04	-	LMT	1908 Jan 11 	 Tórshavn
-Zone	Atlantic/Faroe	0:00	-	WET	1981	
-Zone	Atlantic/Faroe	0:00	EU	WE%sT		
-Zone	America/Danmarkshavn	-1:14:40	-	LMT	1916 Jul 28	
-Zone	America/Danmarkshavn	-3:00	-	%z	1980 Apr  6  2:00	
-Zone	America/Danmarkshavn	-3:00	EU	%z	1996	
-Zone	America/Danmarkshavn	0:00	-	GMT		
-Zone	America/Scoresbysund	-1:27:52	-	LMT	1916 Jul 28 	 Ittoqqortoormiit
-Zone	America/Scoresbysund	-2:00	-	%z	1980 Apr  6  2:00	
-Zone	America/Scoresbysund	-2:00	C-Eur	%z	1981 Mar 29	
-Zone	America/Scoresbysund	-1:00	EU	%z	2024 Mar 31	
-Zone	America/Scoresbysund	-2:00	EU	%z		
-Zone	America/Nuuk	-3:26:56	-	LMT	1916 Jul 28 	 Godthåb
-Zone	America/Nuuk	-3:00	-	%z	1980 Apr  6  2:00	
-Zone	America/Nuuk	-3:00	EU	%z	2023 Mar 26  1:00u	
-Zone	America/Nuuk	-2:00	-	%z	2023 Oct 29  1:00u	
-Zone	America/Nuuk	-2:00	EU	%z		
-Zone	America/Thule	-4:35:08	-	LMT	1916 Jul 28 	 Pituffik
-Zone	America/Thule	-4:00	Thule	A%sT		
-Zone	Europe/Tallinn	1:39:00	-	LMT	1880	
-Zone	Europe/Tallinn	1:39:00	-	TMT	1918 Feb    	 Tallinn Mean Time
-Zone	Europe/Tallinn	1:00	C-Eur	CE%sT	1919 Jul	
-Zone	Europe/Tallinn	1:39:00	-	TMT	1921 May	
-Zone	Europe/Tallinn	2:00	-	EET	1940 Aug  6	
-Zone	Europe/Tallinn	3:00	-	MSK	1941 Sep 15	
-Zone	Europe/Tallinn	1:00	C-Eur	CE%sT	1944 Sep 22	
-Zone	Europe/Tallinn	3:00	Russia	MSK/MSD	1989 Mar 26  2:00s	
-Zone	Europe/Tallinn	2:00	1:00	EEST	1989 Sep 24  2:00s	
-Zone	Europe/Tallinn	2:00	C-Eur	EE%sT	1998 Sep 22	
-Zone	Europe/Tallinn	2:00	EU	EE%sT	1999 Oct 31  4:00	
-Zone	Europe/Tallinn	2:00	-	EET	2002 Feb 21	
-Zone	Europe/Tallinn	2:00	EU	EE%sT		
-Zone	Europe/Helsinki	1:39:49	-	LMT	1878 May 31	
-Zone	Europe/Helsinki	1:39:49	-	HMT	1921 May    	 Helsinki Mean Time
-Zone	Europe/Helsinki	2:00	Finland	EE%sT	1983	
-Zone	Europe/Helsinki	2:00	EU	EE%sT		
-Zone	Europe/Paris	0:09:21	-	LMT	1891 Mar 16	
-Zone	Europe/Paris	0:09:21	-	PMT	1911 Mar 11 	 Paris Mean Time
-Zone	Europe/Paris	0:00	France	WE%sT	1940 Jun 14 23:00	
-Zone	Europe/Paris	1:00	C-Eur	CE%sT	1944 Aug 25	
-Zone	Europe/Paris	0:00	France	WE%sT	1945 Sep 16  3:00	
-Zone	Europe/Paris	1:00	France	CE%sT	1977	
-Zone	Europe/Paris	1:00	EU	CE%sT		
-Zone	Europe/Berlin	0:53:28	-	LMT	1893 Apr	
-Zone	Europe/Berlin	1:00	C-Eur	CE%sT	1945 May 24  2:00	
-Zone	Europe/Berlin	1:00	SovietZone	CE%sT	1946	
-Zone	Europe/Berlin	1:00	Germany	CE%sT	1980	
-Zone	Europe/Berlin	1:00	EU	CE%sT		
-Zone	Europe/Gibraltar	-0:21:24	-	LMT	1880 Aug  2	
-Zone	Europe/Gibraltar	0:00	GB-Eire	%s	1957 Apr 14  2:00	
-Zone	Europe/Gibraltar	1:00	-	CET	1982	
-Zone	Europe/Gibraltar	1:00	EU	CE%sT		
-Zone	Europe/Athens	1:34:52	-	LMT	1895 Sep 14	
-Zone	Europe/Athens	1:34:52	-	AMT	1916 Jul 28  0:01 	 Athens MT
-Zone	Europe/Athens	2:00	Greece	EE%sT	1941 Apr 30	
-Zone	Europe/Athens	1:00	Greece	CE%sT	1944 Apr  4	
-Zone	Europe/Athens	2:00	Greece	EE%sT	1981	
-Zone	Europe/Athens	2:00	EU	EE%sT		
-Zone	Europe/Budapest	1:16:20	-	LMT	1890 Nov  1	
-Zone	Europe/Budapest	1:00	C-Eur	CE%sT	1918	
-Zone	Europe/Budapest	1:00	Hungary	CE%sT	1941 Apr  7 23:00	
-Zone	Europe/Budapest	1:00	C-Eur	CE%sT	1945	
-Zone	Europe/Budapest	1:00	Hungary	CE%sT	1984	
-Zone	Europe/Budapest	1:00	EU	CE%sT		
-Zone	Europe/Rome	0:49:56	-	LMT	1866 Dec 12	
-Zone	Europe/Rome	0:49:56	-	RMT	1893 Oct 31 23:00u 	 Rome Mean
-Zone	Europe/Rome	1:00	Italy	CE%sT	1943 Sep 10	
-Zone	Europe/Rome	1:00	C-Eur	CE%sT	1944 Jun  4	
-Zone	Europe/Rome	1:00	Italy	CE%sT	1980	
-Zone	Europe/Rome	1:00	EU	CE%sT		
-Zone	Europe/Riga	1:36:34	-	LMT	1880	
-Zone	Europe/Riga	1:36:34	-	RMT	1918 Apr 15  2:00 	 Riga MT
-Zone	Europe/Riga	1:36:34	1:00	LST	1918 Sep 16  3:00 	 Latvian ST
-Zone	Europe/Riga	1:36:34	-	RMT	1919 Apr  1  2:00	
-Zone	Europe/Riga	1:36:34	1:00	LST	1919 May 22  3:00	
-Zone	Europe/Riga	1:36:34	-	RMT	1926 May 11	
-Zone	Europe/Riga	2:00	-	EET	1940 Aug  5	
-Zone	Europe/Riga	3:00	-	MSK	1941 Jul	
-Zone	Europe/Riga	1:00	C-Eur	CE%sT	1944 Oct 13	
-Zone	Europe/Riga	3:00	Russia	MSK/MSD	1989 Mar lastSun  2:00s	
-Zone	Europe/Riga	2:00	1:00	EEST	1989 Sep lastSun  2:00s	
-Zone	Europe/Riga	2:00	Latvia	EE%sT	1997 Jan 21	
-Zone	Europe/Riga	2:00	EU	EE%sT	2000 Feb 29	
-Zone	Europe/Riga	2:00	-	EET	2001 Jan  2	
-Zone	Europe/Riga	2:00	EU	EE%sT		
-Zone	Europe/Vilnius	1:41:16	-	LMT	1880	
-Zone	Europe/Vilnius	1:24:00	-	WMT	1917        	 Warsaw Mean Time
-Zone	Europe/Vilnius	1:35:36	-	KMT	1919 Oct 10 	 Kaunas Mean Time
-Zone	Europe/Vilnius	1:00	-	CET	1920 Jul 12	
-Zone	Europe/Vilnius	2:00	-	EET	1920 Oct  9	
-Zone	Europe/Vilnius	1:00	-	CET	1940 Aug  3	
-Zone	Europe/Vilnius	3:00	-	MSK	1941 Jun 24	
-Zone	Europe/Vilnius	1:00	C-Eur	CE%sT	1944 Aug	
-Zone	Europe/Vilnius	3:00	Russia	MSK/MSD	1989 Mar 26  2:00s	
-Zone	Europe/Vilnius	2:00	Russia	EE%sT	1991 Sep 29  2:00s	
-Zone	Europe/Vilnius	2:00	C-Eur	EE%sT	1998	
-Zone	Europe/Vilnius	2:00	-	EET	1998 Mar 29  1:00u	
-Zone	Europe/Vilnius	1:00	EU	CE%sT	1999 Oct 31  1:00u	
-Zone	Europe/Vilnius	2:00	-	EET	2003 Jan  1	
-Zone	Europe/Vilnius	2:00	EU	EE%sT		
-Zone	Europe/Malta	0:58:04	-	LMT	1893 Nov  2 	 Valletta
-Zone	Europe/Malta	1:00	Italy	CE%sT	1973 Mar 31	
-Zone	Europe/Malta	1:00	Malta	CE%sT	1981	
-Zone	Europe/Malta	1:00	EU	CE%sT		
-Zone	Europe/Chisinau	1:55:20	-	LMT	1880	
-Zone	Europe/Chisinau	1:55	-	CMT	1918 Feb 15 	 Chisinau MT
-Zone	Europe/Chisinau	1:44:24	-	BMT	1931 Jul 24 	 Bucharest MT
-Zone	Europe/Chisinau	2:00	Romania	EE%sT	1940 Aug 15	
-Zone	Europe/Chisinau	2:00	1:00	EEST	1941 Jul 17	
-Zone	Europe/Chisinau	1:00	C-Eur	CE%sT	1944 Aug 24	
-Zone	Europe/Chisinau	3:00	Russia	MSK/MSD	1990 May  6  2:00	
-Zone	Europe/Chisinau	2:00	Russia	EE%sT	1992	
-Zone	Europe/Chisinau	2:00	E-Eur	EE%sT	1997	
-Zone	Europe/Chisinau	2:00	Moldova	EE%sT		
-Zone	Europe/Warsaw	1:24:00	-	LMT	1880	
-Zone	Europe/Warsaw	1:24:00	-	WMT	1915 Aug  5 	 Warsaw Mean Time
-Zone	Europe/Warsaw	1:00	C-Eur	CE%sT	1918 Sep 16  3:00	
-Zone	Europe/Warsaw	2:00	Poland	EE%sT	1922 Jun	
-Zone	Europe/Warsaw	1:00	Poland	CE%sT	1940 Jun 23  2:00	
-Zone	Europe/Warsaw	1:00	C-Eur	CE%sT	1944 Oct	
-Zone	Europe/Warsaw	1:00	Poland	CE%sT	1977	
-Zone	Europe/Warsaw	1:00	W-Eur	CE%sT	1988	
-Zone	Europe/Warsaw	1:00	EU	CE%sT		
-Zone	Europe/Lisbon	-0:36:45	-	LMT	1884	
-Zone	Europe/Lisbon	-0:36:45	-	LMT	1912 Jan  1  0:00u 	 Lisbon MT
-Zone	Europe/Lisbon	0:00	Port	WE%sT	1966 Oct  2  2:00s	
-Zone	Europe/Lisbon	1:00	-	CET	1976 Sep 26  1:00	
-Zone	Europe/Lisbon	0:00	Port	WE%sT	1986	
-Zone	Europe/Lisbon	0:00	EU	WE%sT	1992 Sep 27  1:00u	
-Zone	Europe/Lisbon	1:00	EU	CE%sT	1996 Mar 31  1:00u	
-Zone	Europe/Lisbon	0:00	EU	WE%sT		
-Zone	Atlantic/Azores	-1:42:40	-	LMT	1884        	 Ponta Delgada
-Zone	Atlantic/Azores	-1:54:32	-	HMT	1912 Jan  1  2:00u 	 Horta MT
-Zone	Atlantic/Azores	-2:00	Port	%z	1966 Oct  2  2:00s	
-Zone	Atlantic/Azores	-1:00	-	%z	1982 Mar 28  0:00s	
-Zone	Atlantic/Azores	-1:00	Port	%z	1986	
-Zone	Atlantic/Azores	-1:00	EU	%z	1992 Dec 27  1:00s	
-Zone	Atlantic/Azores	0:00	EU	WE%sT	1993 Jun 17  1:00u	
-Zone	Atlantic/Azores	-1:00	EU	%z		
-Zone	Atlantic/Madeira	-1:07:36	-	LMT	1884        	 Funchal
-Zone	Atlantic/Madeira	-1:07:36	-	FMT	1912 Jan  1  1:00u 	 Funchal MT
-Zone	Atlantic/Madeira	-1:00	Port	%z	1966 Oct  2  2:00s	
-Zone	Atlantic/Madeira	0:00	-	WET	1982 Apr  4	
-Zone	Atlantic/Madeira	0:00	Port	WE%sT	1986 Jul 31	
-Zone	Atlantic/Madeira	0:00	EU	WE%sT		
-Zone	Europe/Bucharest	1:44:24	-	LMT	1891 Oct	
-Zone	Europe/Bucharest	1:44:24	-	BMT	1931 Jul 24 	 Bucharest MT
-Zone	Europe/Bucharest	2:00	Romania	EE%sT	1981 Mar 29  2:00s	
-Zone	Europe/Bucharest	2:00	C-Eur	EE%sT	1991	
-Zone	Europe/Bucharest	2:00	Romania	EE%sT	1994	
-Zone	Europe/Bucharest	2:00	E-Eur	EE%sT	1997	
-Zone	Europe/Bucharest	2:00	EU	EE%sT		
-Zone	Europe/Kaliningrad	1:22:00	-	LMT	1893 Apr	
-Zone	Europe/Kaliningrad	1:00	C-Eur	CE%sT	1945 Apr 10	
-Zone	Europe/Kaliningrad	2:00	Poland	EE%sT	1946 Apr  7	
-Zone	Europe/Kaliningrad	3:00	Russia	MSK/MSD	1989 Mar 26  2:00s	
-Zone	Europe/Kaliningrad	2:00	Russia	EE%sT	2011 Mar 27  2:00s	
-Zone	Europe/Kaliningrad	3:00	-	%z	2014 Oct 26  2:00s	
-Zone	Europe/Kaliningrad	2:00	-	EET		
-Zone	Europe/Moscow	2:30:17	-	LMT	1880	
-Zone	Europe/Moscow	2:30:17	-	MMT	1916 Jul  3 	 Moscow Mean Time
-Zone	Europe/Moscow	2:31:19	Russia	%s	1919 Jul  1  0:00u	
-Zone	Europe/Moscow	3:00	Russia	%s	1921 Oct	
-Zone	Europe/Moscow	3:00	Russia	MSK/MSD	1922 Oct	
-Zone	Europe/Moscow	2:00	-	EET	1930 Jun 21	
-Zone	Europe/Moscow	3:00	Russia	MSK/MSD	1991 Mar 31  2:00s	
-Zone	Europe/Moscow	2:00	Russia	EE%sT	1992 Jan 19  2:00s	
-Zone	Europe/Moscow	3:00	Russia	MSK/MSD	2011 Mar 27  2:00s	
-Zone	Europe/Moscow	4:00	-	MSK	2014 Oct 26  2:00s	
-Zone	Europe/Moscow	3:00	-	MSK		
-Zone	Europe/Simferopol	2:16:24	-	LMT	1880	
-Zone	Europe/Simferopol	2:16	-	SMT	1924 May  2 	 Simferopol Mean T
-Zone	Europe/Simferopol	2:00	-	EET	1930 Jun 21	
-Zone	Europe/Simferopol	3:00	-	MSK	1941 Nov	
-Zone	Europe/Simferopol	1:00	C-Eur	CE%sT	1944 Apr 13	
-Zone	Europe/Simferopol	3:00	Russia	MSK/MSD	1990	
-Zone	Europe/Simferopol	3:00	-	MSK	1990 Jul  1  2:00	
-Zone	Europe/Simferopol	2:00	-	EET	1992 Mar 20	
-Zone	Europe/Simferopol	2:00	C-Eur	EE%sT	1994 May	
-Zone	Europe/Simferopol	3:00	C-Eur	MSK/MSD	1996 Mar 31  0:00s	
-Zone	Europe/Simferopol	3:00	1:00	MSD	1996 Oct 27  3:00s	
-Zone	Europe/Simferopol	3:00	-	MSK	1997 Mar lastSun  1:00u	
-Zone	Europe/Simferopol	2:00	EU	EE%sT	2014 Mar 30  2:00	
-Zone	Europe/Simferopol	4:00	-	MSK	2014 Oct 26  2:00s	
-Zone	Europe/Simferopol	3:00	-	MSK		
-Zone	Europe/Astrakhan	3:12:12	-	LMT	1924 May	
-Zone	Europe/Astrakhan	3:00	-	%z	1930 Jun 21	
-Zone	Europe/Astrakhan	4:00	Russia	%z	1989 Mar 26  2:00s	
-Zone	Europe/Astrakhan	3:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Europe/Astrakhan	4:00	-	%z	1992 Mar 29  2:00s	
-Zone	Europe/Astrakhan	3:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Europe/Astrakhan	4:00	-	%z	2014 Oct 26  2:00s	
-Zone	Europe/Astrakhan	3:00	-	%z	2016 Mar 27  2:00s	
-Zone	Europe/Astrakhan	4:00	-	%z		
-Zone	Europe/Volgograd	2:57:40	-	LMT	1920 Jan  3	
-Zone	Europe/Volgograd	3:00	-	%z	1930 Jun 21	
-Zone	Europe/Volgograd	4:00	-	%z	1961 Nov 11	
-Zone	Europe/Volgograd	4:00	Russia	%z	1988 Mar 27  2:00s	
-Zone	Europe/Volgograd	3:00	Russia	MSK/MSD	1991 Mar 31  2:00s	
-Zone	Europe/Volgograd	4:00	-	%z	1992 Mar 29  2:00s	
-Zone	Europe/Volgograd	3:00	Russia	MSK/MSD	2011 Mar 27  2:00s	
-Zone	Europe/Volgograd	4:00	-	MSK	2014 Oct 26  2:00s	
-Zone	Europe/Volgograd	3:00	-	MSK	2018 Oct 28  2:00s	
-Zone	Europe/Volgograd	4:00	-	%z	2020 Dec 27  2:00s	
-Zone	Europe/Volgograd	3:00	-	MSK		
-Zone	Europe/Saratov	3:04:18	-	LMT	1919 Jul  1  0:00u	
-Zone	Europe/Saratov	3:00	-	%z	1930 Jun 21	
-Zone	Europe/Saratov	4:00	Russia	%z	1988 Mar 27  2:00s	
-Zone	Europe/Saratov	3:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Europe/Saratov	4:00	-	%z	1992 Mar 29  2:00s	
-Zone	Europe/Saratov	3:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Europe/Saratov	4:00	-	%z	2014 Oct 26  2:00s	
-Zone	Europe/Saratov	3:00	-	%z	2016 Dec  4  2:00s	
-Zone	Europe/Saratov	4:00	-	%z		
-Zone	Europe/Kirov	3:18:48	-	LMT	1919 Jul  1  0:00u	
-Zone	Europe/Kirov	3:00	-	%z	1930 Jun 21	
-Zone	Europe/Kirov	4:00	Russia	%z	1989 Mar 26  2:00s	
-Zone	Europe/Kirov	3:00	Russia	MSK/MSD	1991 Mar 31  2:00s	
-Zone	Europe/Kirov	4:00	-	%z	1992 Mar 29  2:00s	
-Zone	Europe/Kirov	3:00	Russia	MSK/MSD	2011 Mar 27  2:00s	
-Zone	Europe/Kirov	4:00	-	MSK	2014 Oct 26  2:00s	
-Zone	Europe/Kirov	3:00	-	MSK		
-Zone	Europe/Samara	3:20:20	-	LMT	1919 Jul  1  0:00u	
-Zone	Europe/Samara	3:00	-	%z	1930 Jun 21	
-Zone	Europe/Samara	4:00	-	%z	1935 Jan 27	
-Zone	Europe/Samara	4:00	Russia	%z	1989 Mar 26  2:00s	
-Zone	Europe/Samara	3:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Europe/Samara	2:00	Russia	%z	1991 Sep 29  2:00s	
-Zone	Europe/Samara	3:00	-	%z	1991 Oct 20  3:00	
-Zone	Europe/Samara	4:00	Russia	%z	2010 Mar 28  2:00s	
-Zone	Europe/Samara	3:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Europe/Samara	4:00	-	%z		
-Zone	Europe/Ulyanovsk	3:13:36	-	LMT	1919 Jul  1  0:00u	
-Zone	Europe/Ulyanovsk	3:00	-	%z	1930 Jun 21	
-Zone	Europe/Ulyanovsk	4:00	Russia	%z	1989 Mar 26  2:00s	
-Zone	Europe/Ulyanovsk	3:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Europe/Ulyanovsk	2:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Europe/Ulyanovsk	3:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Europe/Ulyanovsk	4:00	-	%z	2014 Oct 26  2:00s	
-Zone	Europe/Ulyanovsk	3:00	-	%z	2016 Mar 27  2:00s	
-Zone	Europe/Ulyanovsk	4:00	-	%z		
-Zone	Asia/Yekaterinburg	4:02:33	-	LMT	1916 Jul  3	
-Zone	Asia/Yekaterinburg	3:45:05	-	PMT	1919 Jul 15  4:00	
-Zone	Asia/Yekaterinburg	4:00	-	%z	1930 Jun 21	
-Zone	Asia/Yekaterinburg	5:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Yekaterinburg	4:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Yekaterinburg	5:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Yekaterinburg	6:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Yekaterinburg	5:00	-	%z		
-Zone	Asia/Omsk	4:53:30	-	LMT	1919 Nov 14	
-Zone	Asia/Omsk	5:00	-	%z	1930 Jun 21	
-Zone	Asia/Omsk	6:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Omsk	5:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Omsk	6:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Omsk	7:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Omsk	6:00	-	%z		
-Zone	Asia/Barnaul	5:35:00	-	LMT	1919 Dec 10	
-Zone	Asia/Barnaul	6:00	-	%z	1930 Jun 21	
-Zone	Asia/Barnaul	7:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Barnaul	6:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Barnaul	7:00	Russia	%z	1995 May 28	
-Zone	Asia/Barnaul	6:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Barnaul	7:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Barnaul	6:00	-	%z	2016 Mar 27  2:00s	
-Zone	Asia/Barnaul	7:00	-	%z		
-Zone	Asia/Novosibirsk	5:31:40	-	LMT	1919 Dec 14  6:00	
-Zone	Asia/Novosibirsk	6:00	-	%z	1930 Jun 21	
-Zone	Asia/Novosibirsk	7:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Novosibirsk	6:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Novosibirsk	7:00	Russia	%z	1993 May 23 	 say Shanks & P.
-Zone	Asia/Novosibirsk	6:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Novosibirsk	7:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Novosibirsk	6:00	-	%z	2016 Jul 24  2:00s	
-Zone	Asia/Novosibirsk	7:00	-	%z		
-Zone	Asia/Tomsk	5:39:51	-	LMT	1919 Dec 22	
-Zone	Asia/Tomsk	6:00	-	%z	1930 Jun 21	
-Zone	Asia/Tomsk	7:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Tomsk	6:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Tomsk	7:00	Russia	%z	2002 May  1  3:00	
-Zone	Asia/Tomsk	6:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Tomsk	7:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Tomsk	6:00	-	%z	2016 May 29  2:00s	
-Zone	Asia/Tomsk	7:00	-	%z		
-Zone	Asia/Novokuznetsk	5:48:48	-	LMT	1924 May  1	
-Zone	Asia/Novokuznetsk	6:00	-	%z	1930 Jun 21	
-Zone	Asia/Novokuznetsk	7:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Novokuznetsk	6:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Novokuznetsk	7:00	Russia	%z	2010 Mar 28  2:00s	
-Zone	Asia/Novokuznetsk	6:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Novokuznetsk	7:00	-	%z		
-Zone	Asia/Krasnoyarsk	6:11:26	-	LMT	1920 Jan  6	
-Zone	Asia/Krasnoyarsk	6:00	-	%z	1930 Jun 21	
-Zone	Asia/Krasnoyarsk	7:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Krasnoyarsk	6:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Krasnoyarsk	7:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Krasnoyarsk	8:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Krasnoyarsk	7:00	-	%z		
-Zone	Asia/Irkutsk	6:57:05	-	LMT	1880	
-Zone	Asia/Irkutsk	6:57:05	-	IMT	1920 Jan 25 	 Irkutsk Mean Time
-Zone	Asia/Irkutsk	7:00	-	%z	1930 Jun 21	
-Zone	Asia/Irkutsk	8:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Irkutsk	7:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Irkutsk	8:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Irkutsk	9:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Irkutsk	8:00	-	%z		
-Zone	Asia/Chita	7:33:52	-	LMT	1919 Dec 15	
-Zone	Asia/Chita	8:00	-	%z	1930 Jun 21	
-Zone	Asia/Chita	9:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Chita	8:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Chita	9:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Chita	10:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Chita	8:00	-	%z	2016 Mar 27  2:00	
-Zone	Asia/Chita	9:00	-	%z		
-Zone	Asia/Yakutsk	8:38:58	-	LMT	1919 Dec 15	
-Zone	Asia/Yakutsk	8:00	-	%z	1930 Jun 21	
-Zone	Asia/Yakutsk	9:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Yakutsk	8:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Yakutsk	9:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Yakutsk	10:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Yakutsk	9:00	-	%z		
-Zone	Asia/Vladivostok	8:47:31	-	LMT	1922 Nov 15	
-Zone	Asia/Vladivostok	9:00	-	%z	1930 Jun 21	
-Zone	Asia/Vladivostok	10:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Vladivostok	9:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Vladivostok	10:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Vladivostok	11:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Vladivostok	10:00	-	%z		
-Zone	Asia/Khandyga	9:02:13	-	LMT	1919 Dec 15	
-Zone	Asia/Khandyga	8:00	-	%z	1930 Jun 21	
-Zone	Asia/Khandyga	9:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Khandyga	8:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Khandyga	9:00	Russia	%z	2004	
-Zone	Asia/Khandyga	10:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Khandyga	11:00	-	%z	2011 Sep 13  0:00s 	 Decree 725?
-Zone	Asia/Khandyga	10:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Khandyga	9:00	-	%z		
-Zone	Asia/Sakhalin	9:30:48	-	LMT	1905 Aug 23	
-Zone	Asia/Sakhalin	9:00	-	%z	1945 Aug 25	
-Zone	Asia/Sakhalin	11:00	Russia	%z	1991 Mar 31  2:00s 	 Sakhalin T
-Zone	Asia/Sakhalin	10:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Sakhalin	11:00	Russia	%z	1997 Mar lastSun  2:00s	
-Zone	Asia/Sakhalin	10:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Sakhalin	11:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Sakhalin	10:00	-	%z	2016 Mar 27  2:00s	
-Zone	Asia/Sakhalin	11:00	-	%z		
-Zone	Asia/Magadan	10:03:12	-	LMT	1924 May  2	
-Zone	Asia/Magadan	10:00	-	%z	1930 Jun 21 	 Magadan Time
-Zone	Asia/Magadan	11:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Magadan	10:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Magadan	11:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Magadan	12:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Magadan	10:00	-	%z	2016 Apr 24  2:00s	
-Zone	Asia/Magadan	11:00	-	%z		
-Zone	Asia/Srednekolymsk	10:14:52	-	LMT	1924 May  2	
-Zone	Asia/Srednekolymsk	10:00	-	%z	1930 Jun 21	
-Zone	Asia/Srednekolymsk	11:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Srednekolymsk	10:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Srednekolymsk	11:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Srednekolymsk	12:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Srednekolymsk	11:00	-	%z		
-Zone	Asia/Ust-Nera	9:32:54	-	LMT	1919 Dec 15	
-Zone	Asia/Ust-Nera	8:00	-	%z	1930 Jun 21	
-Zone	Asia/Ust-Nera	9:00	Russia	%z	1981 Apr  1	
-Zone	Asia/Ust-Nera	11:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Ust-Nera	10:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Ust-Nera	11:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Ust-Nera	12:00	-	%z	2011 Sep 13  0:00s 	 Decree 725?
-Zone	Asia/Ust-Nera	11:00	-	%z	2014 Oct 26  2:00s	
-Zone	Asia/Ust-Nera	10:00	-	%z		
-Zone	Asia/Kamchatka	10:34:36	-	LMT	1922 Nov 10	
-Zone	Asia/Kamchatka	11:00	-	%z	1930 Jun 21	
-Zone	Asia/Kamchatka	12:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Kamchatka	11:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Kamchatka	12:00	Russia	%z	2010 Mar 28  2:00s	
-Zone	Asia/Kamchatka	11:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Kamchatka	12:00	-	%z		
-Zone	Asia/Anadyr	11:49:56	-	LMT	1924 May  2	
-Zone	Asia/Anadyr	12:00	-	%z	1930 Jun 21	
-Zone	Asia/Anadyr	13:00	Russia	%z	1982 Apr  1  0:00s	
-Zone	Asia/Anadyr	12:00	Russia	%z	1991 Mar 31  2:00s	
-Zone	Asia/Anadyr	11:00	Russia	%z	1992 Jan 19  2:00s	
-Zone	Asia/Anadyr	12:00	Russia	%z	2010 Mar 28  2:00s	
-Zone	Asia/Anadyr	11:00	Russia	%z	2011 Mar 27  2:00s	
-Zone	Asia/Anadyr	12:00	-	%z		
-Zone	Europe/Belgrade	1:22:00	-	LMT	1884	
-Zone	Europe/Belgrade	1:00	-	CET	1941 Apr 18 23:00	
-Zone	Europe/Belgrade	1:00	C-Eur	CE%sT	1945	
-Zone	Europe/Belgrade	1:00	-	CET	1945 May  8  2:00s	
-Zone	Europe/Belgrade	1:00	1:00	CEST	1945 Sep 16  2:00s	
-Zone	Europe/Belgrade	1:00	-	CET	1982 Nov 27	
-Zone	Europe/Belgrade	1:00	EU	CE%sT		
-Zone	Europe/Madrid	-0:14:44	-	LMT	1901 Jan  1  0:00u	
-Zone	Europe/Madrid	0:00	Spain	WE%sT	1940 Mar 16 23:00	
-Zone	Europe/Madrid	1:00	Spain	CE%sT	1979	
-Zone	Europe/Madrid	1:00	EU	CE%sT		
-Zone	Africa/Ceuta	-0:21:16	-	LMT	1901 Jan  1  0:00u	
-Zone	Africa/Ceuta	0:00	-	WET	1918 May  6 23:00	
-Zone	Africa/Ceuta	0:00	1:00	WEST	1918 Oct  7 23:00	
-Zone	Africa/Ceuta	0:00	-	WET	1924	
-Zone	Africa/Ceuta	0:00	Spain	WE%sT	1929	
-Zone	Africa/Ceuta	0:00	-	WET	1967 	 Help zishrink.awk.
-Zone	Africa/Ceuta	0:00	SpainAfrica	WE%sT	1984 Mar 16	
-Zone	Africa/Ceuta	1:00	-	CET	1986	
-Zone	Africa/Ceuta	1:00	EU	CE%sT		
-Zone	Atlantic/Canary	-1:01:36	-	LMT	1922 Mar 	 Las Palmas de Gran C.
-Zone	Atlantic/Canary	-1:00	-	%z	1946 Sep 30  1:00	
-Zone	Atlantic/Canary	0:00	-	WET	1980 Apr  6  0:00s	
-Zone	Atlantic/Canary	0:00	1:00	WEST	1980 Sep 28  1:00u	
-Zone	Atlantic/Canary	0:00	EU	WE%sT		
-Zone	Europe/Zurich	0:34:08	-	LMT	1853 Jul 16 	 See above comment.
-Zone	Europe/Zurich	0:29:46	-	BMT	1894 Jun    	 Bern Mean Time
-Zone	Europe/Zurich	1:00	Swiss	CE%sT	1981	
-Zone	Europe/Zurich	1:00	EU	CE%sT		
-Zone	Europe/Istanbul	1:55:52	-	LMT	1880	
-Zone	Europe/Istanbul	1:56:56	-	IMT	1910 Oct 	 Istanbul Mean Time?
-Zone	Europe/Istanbul	2:00	Turkey	EE%sT	1978 Jun 29	
-Zone	Europe/Istanbul	3:00	Turkey	%z	1984 Nov  1  2:00	
-Zone	Europe/Istanbul	2:00	Turkey	EE%sT	2007	
-Zone	Europe/Istanbul	2:00	EU	EE%sT	2011 Mar 27  1:00u	
-Zone	Europe/Istanbul	2:00	-	EET	2011 Mar 28  1:00u	
-Zone	Europe/Istanbul	2:00	EU	EE%sT	2014 Mar 30  1:00u	
-Zone	Europe/Istanbul	2:00	-	EET	2014 Mar 31  1:00u	
-Zone	Europe/Istanbul	2:00	EU	EE%sT	2015 Oct 25  1:00u	
-Zone	Europe/Istanbul	2:00	1:00	EEST	2015 Nov  8  1:00u	
-Zone	Europe/Istanbul	2:00	EU	EE%sT	2016 Sep  7	
-Zone	Europe/Istanbul	3:00	-	%z		
-Zone	Europe/Kyiv	2:02:04	-	LMT	1880	
-Zone	Europe/Kyiv	2:02:04	-	KMT	1924 May  2 	 Kyiv Mean Time
-Zone	Europe/Kyiv	2:00	-	EET	1930 Jun 21	
-Zone	Europe/Kyiv	3:00	-	MSK	1941 Sep 20	
-Zone	Europe/Kyiv	1:00	C-Eur	CE%sT	1943 Nov  6	
-Zone	Europe/Kyiv	3:00	Russia	MSK/MSD	1990 Jul  1  2:00	
-Zone	Europe/Kyiv	2:00	1:00	EEST	1991 Sep 29  3:00	
-Zone	Europe/Kyiv	2:00	C-Eur	EE%sT	1996 May 13	
-Zone	Europe/Kyiv	2:00	EU	EE%sT		
-Zone	America/New_York	-4:56:02	-	LMT	1883 Nov 18 17:00u	
-Zone	America/New_York	-5:00	US	E%sT	1920	
-Zone	America/New_York	-5:00	NYC	E%sT	1942	
-Zone	America/New_York	-5:00	US	E%sT	1946	
-Zone	America/New_York	-5:00	NYC	E%sT	1967	
-Zone	America/New_York	-5:00	US	E%sT		
-Zone	America/Chicago	-5:50:36	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Chicago	-6:00	US	C%sT	1920	
-Zone	America/Chicago	-6:00	Chicago	C%sT	1936 Mar  1  2:00	
-Zone	America/Chicago	-5:00	-	EST	1936 Nov 15  2:00	
-Zone	America/Chicago	-6:00	Chicago	C%sT	1942	
-Zone	America/Chicago	-6:00	US	C%sT	1946	
-Zone	America/Chicago	-6:00	Chicago	C%sT	1967	
-Zone	America/Chicago	-6:00	US	C%sT		
-Zone	America/North_Dakota/Center	-6:45:12	-	LMT	1883 Nov 18 19:00u	
-Zone	America/North_Dakota/Center	-7:00	US	M%sT	1992 Oct 25  2:00	
-Zone	America/North_Dakota/Center	-6:00	US	C%sT		
-Zone	America/North_Dakota/New_Salem	-6:45:39	-	LMT	1883 Nov 18 19:00u	
-Zone	America/North_Dakota/New_Salem	-7:00	US	M%sT	2003 Oct 26  2:00	
-Zone	America/North_Dakota/New_Salem	-6:00	US	C%sT		
-Zone	America/North_Dakota/Beulah	-6:47:07	-	LMT	1883 Nov 18 19:00u	
-Zone	America/North_Dakota/Beulah	-7:00	US	M%sT	2010 Nov  7  2:00	
-Zone	America/North_Dakota/Beulah	-6:00	US	C%sT		
-Zone	America/Denver	-6:59:56	-	LMT	1883 Nov 18 19:00u	
-Zone	America/Denver	-7:00	US	M%sT	1920	
-Zone	America/Denver	-7:00	Denver	M%sT	1942	
-Zone	America/Denver	-7:00	US	M%sT	1946	
-Zone	America/Denver	-7:00	Denver	M%sT	1967	
-Zone	America/Denver	-7:00	US	M%sT		
-Zone	America/Los_Angeles	-7:52:58	-	LMT	1883 Nov 18 20:00u	
-Zone	America/Los_Angeles	-8:00	US	P%sT	1946	
-Zone	America/Los_Angeles	-8:00	CA	P%sT	1967	
-Zone	America/Los_Angeles	-8:00	US	P%sT		
-Zone	America/Juneau	15:02:19	-	LMT	1867 Oct 19 15:33:32	
-Zone	America/Juneau	-8:57:41	-	LMT	1900 Aug 20 12:00	
-Zone	America/Juneau	-8:00	-	PST	1942	
-Zone	America/Juneau	-8:00	US	P%sT	1946	
-Zone	America/Juneau	-8:00	-	PST	1969	
-Zone	America/Juneau	-8:00	US	P%sT	1980 Apr 27  2:00	
-Zone	America/Juneau	-9:00	US	Y%sT	1980 Oct 26  2:00	
-Zone	America/Juneau	-8:00	US	P%sT	1983 Oct 30  2:00	
-Zone	America/Juneau	-9:00	US	Y%sT	1983 Nov 30	
-Zone	America/Juneau	-9:00	US	AK%sT		
-Zone	America/Sitka	14:58:47	-	LMT	1867 Oct 19 15:30	
-Zone	America/Sitka	-9:01:13	-	LMT	1900 Aug 20 12:00	
-Zone	America/Sitka	-8:00	-	PST	1942	
-Zone	America/Sitka	-8:00	US	P%sT	1946	
-Zone	America/Sitka	-8:00	-	PST	1969	
-Zone	America/Sitka	-8:00	US	P%sT	1983 Oct 30  2:00	
-Zone	America/Sitka	-9:00	US	Y%sT	1983 Nov 30	
-Zone	America/Sitka	-9:00	US	AK%sT		
-Zone	America/Metlakatla	15:13:42	-	LMT	1867 Oct 19 15:44:55	
-Zone	America/Metlakatla	-8:46:18	-	LMT	1900 Aug 20 12:00	
-Zone	America/Metlakatla	-8:00	-	PST	1942	
-Zone	America/Metlakatla	-8:00	US	P%sT	1946	
-Zone	America/Metlakatla	-8:00	-	PST	1969	
-Zone	America/Metlakatla	-8:00	US	P%sT	1983 Oct 30  2:00	
-Zone	America/Metlakatla	-8:00	-	PST	2015 Nov  1  2:00	
-Zone	America/Metlakatla	-9:00	US	AK%sT	2018 Nov  4  2:00	
-Zone	America/Metlakatla	-8:00	-	PST	2019 Jan 20  2:00	
-Zone	America/Metlakatla	-9:00	US	AK%sT		
-Zone	America/Yakutat	14:41:05	-	LMT	1867 Oct 19 15:12:18	
-Zone	America/Yakutat	-9:18:55	-	LMT	1900 Aug 20 12:00	
-Zone	America/Yakutat	-9:00	-	YST	1942	
-Zone	America/Yakutat	-9:00	US	Y%sT	1946	
-Zone	America/Yakutat	-9:00	-	YST	1969	
-Zone	America/Yakutat	-9:00	US	Y%sT	1983 Nov 30	
-Zone	America/Yakutat	-9:00	US	AK%sT		
-Zone	America/Anchorage	14:00:24	-	LMT	1867 Oct 19 14:31:37	
-Zone	America/Anchorage	-9:59:36	-	LMT	1900 Aug 20 12:00	
-Zone	America/Anchorage	-10:00	-	AST	1942	
-Zone	America/Anchorage	-10:00	US	A%sT	1967 Apr	
-Zone	America/Anchorage	-10:00	-	AHST	1969	
-Zone	America/Anchorage	-10:00	US	AH%sT	1983 Oct 30  2:00	
-Zone	America/Anchorage	-9:00	US	Y%sT	1983 Nov 30	
-Zone	America/Anchorage	-9:00	US	AK%sT		
-Zone	America/Nome	12:58:22	-	LMT	1867 Oct 19 13:29:35	
-Zone	America/Nome	-11:01:38	-	LMT	1900 Aug 20 12:00	
-Zone	America/Nome	-11:00	-	NST	1942	
-Zone	America/Nome	-11:00	US	N%sT	1946	
-Zone	America/Nome	-11:00	-	NST	1967 Apr	
-Zone	America/Nome	-11:00	-	BST	1969	
-Zone	America/Nome	-11:00	US	B%sT	1983 Oct 30  2:00	
-Zone	America/Nome	-9:00	US	Y%sT	1983 Nov 30	
-Zone	America/Nome	-9:00	US	AK%sT		
-Zone	America/Adak	12:13:22	-	LMT	1867 Oct 19 12:44:35	
-Zone	America/Adak	-11:46:38	-	LMT	1900 Aug 20 12:00	
-Zone	America/Adak	-11:00	-	NST	1942	
-Zone	America/Adak	-11:00	US	N%sT	1946	
-Zone	America/Adak	-11:00	-	NST	1967 Apr	
-Zone	America/Adak	-11:00	-	BST	1969	
-Zone	America/Adak	-11:00	US	B%sT	1983 Oct 30  2:00	
-Zone	America/Adak	-10:00	US	AH%sT	1983 Nov 30	
-Zone	America/Adak	-10:00	US	H%sT		
-Zone	Pacific/Honolulu	-10:31:26	-	LMT	1896 Jan 13 12:00	
-Zone	Pacific/Honolulu	-10:30	-	HST	1933 Apr 30  2:00	
-Zone	Pacific/Honolulu	-10:30	1:00	HDT	1933 May 21 12:00	
-Zone	Pacific/Honolulu	-10:30	US	H%sT	1947 Jun  8  2:00	
-Zone	Pacific/Honolulu	-10:00	-	HST		
-Zone	America/Phoenix	-7:28:18	-	LMT	1883 Nov 18 19:00u	
-Zone	America/Phoenix	-7:00	US	M%sT	1944 Jan  1  0:01	
-Zone	America/Phoenix	-7:00	-	MST	1944 Apr  1  0:01	
-Zone	America/Phoenix	-7:00	US	M%sT	1944 Oct  1  0:01	
-Zone	America/Phoenix	-7:00	-	MST	1967	
-Zone	America/Phoenix	-7:00	US	M%sT	1968 Mar 21	
-Zone	America/Phoenix	-7:00	-	MST		
-Zone	America/Boise	-7:44:49	-	LMT	1883 Nov 18 20:00u	
-Zone	America/Boise	-8:00	US	P%sT	1923 May 13  2:00	
-Zone	America/Boise	-7:00	US	M%sT	1974	
-Zone	America/Boise	-7:00	-	MST	1974 Feb  3  2:00	
-Zone	America/Boise	-7:00	US	M%sT		
-Zone	America/Indiana/Indianapolis	-5:44:38	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Indianapolis	-6:00	US	C%sT	1920	
-Zone	America/Indiana/Indianapolis	-6:00	Indianapolis	C%sT	1942	
-Zone	America/Indiana/Indianapolis	-6:00	US	C%sT	1946	
-Zone	America/Indiana/Indianapolis	-6:00	Indianapolis	C%sT	1955 Apr 24  2:00	
-Zone	America/Indiana/Indianapolis	-5:00	-	EST	1957 Sep 29  2:00	
-Zone	America/Indiana/Indianapolis	-6:00	-	CST	1958 Apr 27  2:00	
-Zone	America/Indiana/Indianapolis	-5:00	-	EST	1969	
-Zone	America/Indiana/Indianapolis	-5:00	US	E%sT	1971	
-Zone	America/Indiana/Indianapolis	-5:00	-	EST	2006	
-Zone	America/Indiana/Indianapolis	-5:00	US	E%sT		
-Zone	America/Indiana/Marengo	-5:45:23	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Marengo	-6:00	US	C%sT	1951	
-Zone	America/Indiana/Marengo	-6:00	Marengo	C%sT	1961 Apr 30  2:00	
-Zone	America/Indiana/Marengo	-5:00	-	EST	1969	
-Zone	America/Indiana/Marengo	-5:00	US	E%sT	1974 Jan  6  2:00	
-Zone	America/Indiana/Marengo	-6:00	1:00	CDT	1974 Oct 27  2:00	
-Zone	America/Indiana/Marengo	-5:00	US	E%sT	1976	
-Zone	America/Indiana/Marengo	-5:00	-	EST	2006	
-Zone	America/Indiana/Marengo	-5:00	US	E%sT		
-Zone	America/Indiana/Vincennes	-5:50:07	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Vincennes	-6:00	US	C%sT	1946	
-Zone	America/Indiana/Vincennes	-6:00	Vincennes	C%sT	1964 Apr 26  2:00	
-Zone	America/Indiana/Vincennes	-5:00	-	EST	1969	
-Zone	America/Indiana/Vincennes	-5:00	US	E%sT	1971	
-Zone	America/Indiana/Vincennes	-5:00	-	EST	2006 Apr  2  2:00	
-Zone	America/Indiana/Vincennes	-6:00	US	C%sT	2007 Nov  4  2:00	
-Zone	America/Indiana/Vincennes	-5:00	US	E%sT		
-Zone	America/Indiana/Tell_City	-5:47:03	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Tell_City	-6:00	US	C%sT	1946	
-Zone	America/Indiana/Tell_City	-6:00	Perry	C%sT	1964 Apr 26  2:00	
-Zone	America/Indiana/Tell_City	-5:00	-	EST	1967 Oct 29  2:00	
-Zone	America/Indiana/Tell_City	-6:00	US	C%sT	1969 Apr 27  2:00	
-Zone	America/Indiana/Tell_City	-5:00	US	E%sT	1971	
-Zone	America/Indiana/Tell_City	-5:00	-	EST	2006 Apr  2  2:00	
-Zone	America/Indiana/Tell_City	-6:00	US	C%sT		
-Zone	America/Indiana/Petersburg	-5:49:07	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Petersburg	-6:00	US	C%sT	1955	
-Zone	America/Indiana/Petersburg	-6:00	Pike	C%sT	1965 Apr 25  2:00	
-Zone	America/Indiana/Petersburg	-5:00	-	EST	1966 Oct 30  2:00	
-Zone	America/Indiana/Petersburg	-6:00	US	C%sT	1977 Oct 30  2:00	
-Zone	America/Indiana/Petersburg	-5:00	-	EST	2006 Apr  2  2:00	
-Zone	America/Indiana/Petersburg	-6:00	US	C%sT	2007 Nov  4  2:00	
-Zone	America/Indiana/Petersburg	-5:00	US	E%sT		
-Zone	America/Indiana/Knox	-5:46:30	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Knox	-6:00	US	C%sT	1947	
-Zone	America/Indiana/Knox	-6:00	Starke	C%sT	1962 Apr 29  2:00	
-Zone	America/Indiana/Knox	-5:00	-	EST	1963 Oct 27  2:00	
-Zone	America/Indiana/Knox	-6:00	US	C%sT	1991 Oct 27  2:00	
-Zone	America/Indiana/Knox	-5:00	-	EST	2006 Apr  2  2:00	
-Zone	America/Indiana/Knox	-6:00	US	C%sT		
-Zone	America/Indiana/Winamac	-5:46:25	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Winamac	-6:00	US	C%sT	1946	
-Zone	America/Indiana/Winamac	-6:00	Pulaski	C%sT	1961 Apr 30  2:00	
-Zone	America/Indiana/Winamac	-5:00	-	EST	1969	
-Zone	America/Indiana/Winamac	-5:00	US	E%sT	1971	
-Zone	America/Indiana/Winamac	-5:00	-	EST	2006 Apr  2  2:00	
-Zone	America/Indiana/Winamac	-6:00	US	C%sT	2007 Mar 11  2:00	
-Zone	America/Indiana/Winamac	-5:00	US	E%sT		
-Zone	America/Indiana/Vevay	-5:40:16	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Indiana/Vevay	-6:00	US	C%sT	1954 Apr 25  2:00	
-Zone	America/Indiana/Vevay	-5:00	-	EST	1969	
-Zone	America/Indiana/Vevay	-5:00	US	E%sT	1973	
-Zone	America/Indiana/Vevay	-5:00	-	EST	2006	
-Zone	America/Indiana/Vevay	-5:00	US	E%sT		
-Zone	America/Kentucky/Louisville	-5:43:02	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Kentucky/Louisville	-6:00	US	C%sT	1921	
-Zone	America/Kentucky/Louisville	-6:00	Louisville	C%sT	1942	
-Zone	America/Kentucky/Louisville	-6:00	US	C%sT	1946	
-Zone	America/Kentucky/Louisville	-6:00	Louisville	C%sT	1961 Jul 23  2:00	
-Zone	America/Kentucky/Louisville	-5:00	-	EST	1968	
-Zone	America/Kentucky/Louisville	-5:00	US	E%sT	1974 Jan  6  2:00	
-Zone	America/Kentucky/Louisville	-6:00	1:00	CDT	1974 Oct 27  2:00	
-Zone	America/Kentucky/Louisville	-5:00	US	E%sT		
-Zone	America/Kentucky/Monticello	-5:39:24	-	LMT	1883 Nov 18 18:00u	
-Zone	America/Kentucky/Monticello	-6:00	US	C%sT	1946	
-Zone	America/Kentucky/Monticello	-6:00	-	CST	1968	
-Zone	America/Kentucky/Monticello	-6:00	US	C%sT	2000 Oct 29  2:00	
-Zone	America/Kentucky/Monticello	-5:00	US	E%sT		
-Zone	America/Detroit	-5:32:11	-	LMT	1905	
-Zone	America/Detroit	-6:00	-	CST	1915 May 15  2:00	
-Zone	America/Detroit	-5:00	-	EST	1942	
-Zone	America/Detroit	-5:00	US	E%sT	1946	
-Zone	America/Detroit	-5:00	Detroit	E%sT	1967 Jun 14  0:01	
-Zone	America/Detroit	-5:00	US	E%sT	1969	
-Zone	America/Detroit	-5:00	-	EST	1973	
-Zone	America/Detroit	-5:00	US	E%sT	1975	
-Zone	America/Detroit	-5:00	-	EST	1975 Apr 27  2:00	
-Zone	America/Detroit	-5:00	US	E%sT		
-Zone	America/Menominee	-5:50:27	-	LMT	1885 Sep 18 12:00	
-Zone	America/Menominee	-6:00	US	C%sT	1946	
-Zone	America/Menominee	-6:00	Menominee	C%sT	1969 Apr 27  2:00	
-Zone	America/Menominee	-5:00	-	EST	1973 Apr 29  2:00	
-Zone	America/Menominee	-6:00	US	C%sT		
-Zone	America/St_Johns	-3:30:52	-	LMT	1884	
-Zone	America/St_Johns	-3:30:52	StJohns	N%sT	1918	
-Zone	America/St_Johns	-3:30:52	Canada	N%sT	1919	
-Zone	America/St_Johns	-3:30:52	StJohns	N%sT	1935 Mar 30	
-Zone	America/St_Johns	-3:30	StJohns	N%sT	1942 May 11	
-Zone	America/St_Johns	-3:30	Canada	N%sT	1946	
-Zone	America/St_Johns	-3:30	StJohns	N%sT	2011 Nov	
-Zone	America/St_Johns	-3:30	Canada	N%sT		
-Zone	America/Goose_Bay	-4:01:40	-	LMT	1884 	 Happy Valley-Goose Bay
-Zone	America/Goose_Bay	-3:30:52	-	NST	1918	
-Zone	America/Goose_Bay	-3:30:52	Canada	N%sT	1919	
-Zone	America/Goose_Bay	-3:30:52	-	NST	1935 Mar 30	
-Zone	America/Goose_Bay	-3:30	-	NST	1936	
-Zone	America/Goose_Bay	-3:30	StJohns	N%sT	1942 May 11	
-Zone	America/Goose_Bay	-3:30	Canada	N%sT	1946	
-Zone	America/Goose_Bay	-3:30	StJohns	N%sT	1966 Mar 15  2:00	
-Zone	America/Goose_Bay	-4:00	StJohns	A%sT	2011 Nov	
-Zone	America/Goose_Bay	-4:00	Canada	A%sT		
-Zone	America/Halifax	-4:14:24	-	LMT	1902 Jun 15	
-Zone	America/Halifax	-4:00	Halifax	A%sT	1918	
-Zone	America/Halifax	-4:00	Canada	A%sT	1919	
-Zone	America/Halifax	-4:00	Halifax	A%sT	1942 Feb  9  2:00s	
-Zone	America/Halifax	-4:00	Canada	A%sT	1946	
-Zone	America/Halifax	-4:00	Halifax	A%sT	1974	
-Zone	America/Halifax	-4:00	Canada	A%sT		
-Zone	America/Glace_Bay	-3:59:48	-	LMT	1902 Jun 15	
-Zone	America/Glace_Bay	-4:00	Canada	A%sT	1953	
-Zone	America/Glace_Bay	-4:00	Halifax	A%sT	1954	
-Zone	America/Glace_Bay	-4:00	-	AST	1972	
-Zone	America/Glace_Bay	-4:00	Halifax	A%sT	1974	
-Zone	America/Glace_Bay	-4:00	Canada	A%sT		
-Zone	America/Moncton	-4:19:08	-	LMT	1883 Dec  9	
-Zone	America/Moncton	-5:00	-	EST	1902 Jun 15	
-Zone	America/Moncton	-4:00	Canada	A%sT	1933	
-Zone	America/Moncton	-4:00	Moncton	A%sT	1942	
-Zone	America/Moncton	-4:00	Canada	A%sT	1946	
-Zone	America/Moncton	-4:00	Moncton	A%sT	1973	
-Zone	America/Moncton	-4:00	Canada	A%sT	1993	
-Zone	America/Moncton	-4:00	Moncton	A%sT	2007	
-Zone	America/Moncton	-4:00	Canada	A%sT		
-Zone	America/Toronto	-5:17:32	-	LMT	1895	
-Zone	America/Toronto	-5:00	Canada	E%sT	1919	
-Zone	America/Toronto	-5:00	Toronto	E%sT	1942 Feb  9  2:00s	
-Zone	America/Toronto	-5:00	Canada	E%sT	1946	
-Zone	America/Toronto	-5:00	Toronto	E%sT	1974	
-Zone	America/Toronto	-5:00	Canada	E%sT		
-Zone	America/Winnipeg	-6:28:36	-	LMT	1887 Jul 16	
-Zone	America/Winnipeg	-6:00	Winn	C%sT	2006	
-Zone	America/Winnipeg	-6:00	Canada	C%sT		
-Zone	America/Regina	-6:58:36	-	LMT	1905 Sep	
-Zone	America/Regina	-7:00	Regina	M%sT	1960 Apr lastSun  2:00	
-Zone	America/Regina	-6:00	-	CST		
-Zone	America/Swift_Current	-7:11:20	-	LMT	1905 Sep	
-Zone	America/Swift_Current	-7:00	Canada	M%sT	1946 Apr lastSun  2:00	
-Zone	America/Swift_Current	-7:00	Regina	M%sT	1950	
-Zone	America/Swift_Current	-7:00	Swift	M%sT	1972 Apr lastSun  2:00	
-Zone	America/Swift_Current	-6:00	-	CST		
-Zone	America/Edmonton	-7:33:52	-	LMT	1906 Sep	
-Zone	America/Edmonton	-7:00	Edm	M%sT	1987	
-Zone	America/Edmonton	-7:00	Canada	M%sT		
-Zone	America/Vancouver	-8:12:28	-	LMT	1884	
-Zone	America/Vancouver	-8:00	Vanc	P%sT	1987	
-Zone	America/Vancouver	-8:00	Canada	P%sT		
-Zone	America/Dawson_Creek	-8:00:56	-	LMT	1884	
-Zone	America/Dawson_Creek	-8:00	Canada	P%sT	1947	
-Zone	America/Dawson_Creek	-8:00	Vanc	P%sT	1972 Aug 30  2:00	
-Zone	America/Dawson_Creek	-7:00	-	MST		
-Zone	America/Fort_Nelson	-8:10:47	-	LMT	1884	
-Zone	America/Fort_Nelson	-8:00	Vanc	P%sT	1946	
-Zone	America/Fort_Nelson	-8:00	-	PST	1947	
-Zone	America/Fort_Nelson	-8:00	Vanc	P%sT	1987	
-Zone	America/Fort_Nelson	-8:00	Canada	P%sT	2015 Mar  8  2:00	
-Zone	America/Fort_Nelson	-7:00	-	MST		
-Zone	America/Iqaluit	0	-	-00	1942 Aug 	 Frobisher Bay est.
-Zone	America/Iqaluit	-5:00	NT_YK	E%sT	1999 Oct 31  2:00	
-Zone	America/Iqaluit	-6:00	Canada	C%sT	2000 Oct 29  2:00	
-Zone	America/Iqaluit	-5:00	Canada	E%sT		
-Zone	America/Resolute	0	-	-00	1947 Aug 31 	 Resolute founded
-Zone	America/Resolute	-6:00	NT_YK	C%sT	2000 Oct 29  2:00	
-Zone	America/Resolute	-5:00	-	EST	2001 Apr  1  3:00	
-Zone	America/Resolute	-6:00	Canada	C%sT	2006 Oct 29  2:00	
-Zone	America/Resolute	-5:00	-	EST	2007 Mar 11  3:00	
-Zone	America/Resolute	-6:00	Canada	C%sT		
-Zone	America/Rankin_Inlet	0	-	-00	1957 	 Rankin Inlet founded
-Zone	America/Rankin_Inlet	-6:00	NT_YK	C%sT	2000 Oct 29  2:00	
-Zone	America/Rankin_Inlet	-5:00	-	EST	2001 Apr  1  3:00	
-Zone	America/Rankin_Inlet	-6:00	Canada	C%sT		
-Zone	America/Cambridge_Bay	0	-	-00	1920 	 trading post est.?
-Zone	America/Cambridge_Bay	-7:00	NT_YK	M%sT	1999 Oct 31  2:00	
-Zone	America/Cambridge_Bay	-6:00	Canada	C%sT	2000 Oct 29  2:00	
-Zone	America/Cambridge_Bay	-5:00	-	EST	2000 Nov  5  0:00	
-Zone	America/Cambridge_Bay	-6:00	-	CST	2001 Apr  1  3:00	
-Zone	America/Cambridge_Bay	-7:00	Canada	M%sT		
-Zone	America/Inuvik	0	-	-00	1953 	 Inuvik founded
-Zone	America/Inuvik	-8:00	NT_YK	P%sT	1979 Apr lastSun  2:00	
-Zone	America/Inuvik	-7:00	NT_YK	M%sT	1980	
-Zone	America/Inuvik	-7:00	Canada	M%sT		
-Zone	America/Whitehorse	-9:00:12	-	LMT	1900 Aug 20	
-Zone	America/Whitehorse	-9:00	NT_YK	Y%sT	1965	
-Zone	America/Whitehorse	-9:00	Yukon	Y%sT	1966 Feb 27  0:00	
-Zone	America/Whitehorse	-8:00	-	PST	1980	
-Zone	America/Whitehorse	-8:00	Canada	P%sT	2020 Nov  1	
-Zone	America/Whitehorse	-7:00	-	MST		
-Zone	America/Dawson	-9:17:40	-	LMT	1900 Aug 20	
-Zone	America/Dawson	-9:00	NT_YK	Y%sT	1965	
-Zone	America/Dawson	-9:00	Yukon	Y%sT	1973 Oct 28  0:00	
-Zone	America/Dawson	-8:00	-	PST	1980	
-Zone	America/Dawson	-8:00	Canada	P%sT	2020 Nov  1	
-Zone	America/Dawson	-7:00	-	MST		
-Zone	America/Cancun	-5:47:04	-	LMT	1922 Jan  1  6:00u	
-Zone	America/Cancun	-6:00	-	CST	1981 Dec 26  2:00	
-Zone	America/Cancun	-5:00	-	EST	1983 Jan  4  0:00	
-Zone	America/Cancun	-6:00	Mexico	C%sT	1997 Oct 26  2:00	
-Zone	America/Cancun	-5:00	Mexico	E%sT	1998 Aug  2  2:00	
-Zone	America/Cancun	-6:00	Mexico	C%sT	2015 Feb  1  2:00	
-Zone	America/Cancun	-5:00	-	EST		
-Zone	America/Merida	-5:58:28	-	LMT	1922 Jan  1  6:00u	
-Zone	America/Merida	-6:00	-	CST	1981 Dec 26  2:00	
-Zone	America/Merida	-5:00	-	EST	1982 Nov  2  2:00	
-Zone	America/Merida	-6:00	Mexico	C%sT		
-Zone	America/Matamoros	-6:30:00	-	LMT	1922 Jan  1  6:00u	
-Zone	America/Matamoros	-6:00	-	CST	1988	
-Zone	America/Matamoros	-6:00	US	C%sT	1989	
-Zone	America/Matamoros	-6:00	Mexico	C%sT	2010	
-Zone	America/Matamoros	-6:00	US	C%sT		
-Zone	America/Monterrey	-6:41:16	-	LMT	1922 Jan  1  6:00u	
-Zone	America/Monterrey	-7:00	-	MST	1927 Jun 10	
-Zone	America/Monterrey	-6:00	-	CST	1930 Nov 15	
-Zone	America/Monterrey	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Monterrey	-6:00	-	CST	1988	
-Zone	America/Monterrey	-6:00	US	C%sT	1989	
-Zone	America/Monterrey	-6:00	Mexico	C%sT		
-Zone	America/Mexico_City	-6:36:36	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Mexico_City	-7:00	-	MST	1927 Jun 10	
-Zone	America/Mexico_City	-6:00	-	CST	1930 Nov 15	
-Zone	America/Mexico_City	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Mexico_City	-6:00	Mexico	C%sT	2001 Sep 30  2:00	
-Zone	America/Mexico_City	-6:00	-	CST	2002 Feb 20	
-Zone	America/Mexico_City	-6:00	Mexico	C%sT		
-Zone	America/Ciudad_Juarez	-7:05:56	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Ciudad_Juarez	-7:00	-	MST	1927 Jun 10	
-Zone	America/Ciudad_Juarez	-6:00	-	CST	1930 Nov 15	
-Zone	America/Ciudad_Juarez	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Ciudad_Juarez	-6:00	-	CST	1996	
-Zone	America/Ciudad_Juarez	-6:00	Mexico	C%sT	1998	
-Zone	America/Ciudad_Juarez	-6:00	-	CST	1998 Apr Sun>=1  3:00	
-Zone	America/Ciudad_Juarez	-7:00	Mexico	M%sT	2010	
-Zone	America/Ciudad_Juarez	-7:00	US	M%sT	2022 Oct 30  2:00	
-Zone	America/Ciudad_Juarez	-6:00	-	CST	2022 Nov 30  0:00	
-Zone	America/Ciudad_Juarez	-7:00	US	M%sT		
-Zone	America/Ojinaga	-6:57:40	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Ojinaga	-7:00	-	MST	1927 Jun 10	
-Zone	America/Ojinaga	-6:00	-	CST	1930 Nov 15	
-Zone	America/Ojinaga	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Ojinaga	-6:00	-	CST	1996	
-Zone	America/Ojinaga	-6:00	Mexico	C%sT	1998	
-Zone	America/Ojinaga	-6:00	-	CST	1998 Apr Sun>=1  3:00	
-Zone	America/Ojinaga	-7:00	Mexico	M%sT	2010	
-Zone	America/Ojinaga	-7:00	US	M%sT	2022 Oct 30  2:00	
-Zone	America/Ojinaga	-6:00	-	CST	2022 Nov 30  0:00	
-Zone	America/Ojinaga	-6:00	US	C%sT		
-Zone	America/Chihuahua	-7:04:20	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Chihuahua	-7:00	-	MST	1927 Jun 10	
-Zone	America/Chihuahua	-6:00	-	CST	1930 Nov 15	
-Zone	America/Chihuahua	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Chihuahua	-6:00	-	CST	1996	
-Zone	America/Chihuahua	-6:00	Mexico	C%sT	1998	
-Zone	America/Chihuahua	-6:00	-	CST	1998 Apr Sun>=1  3:00	
-Zone	America/Chihuahua	-7:00	Mexico	M%sT	2022 Oct 30  2:00	
-Zone	America/Chihuahua	-6:00	-	CST		
-Zone	America/Hermosillo	-7:23:52	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Hermosillo	-7:00	-	MST	1927 Jun 10	
-Zone	America/Hermosillo	-6:00	-	CST	1930 Nov 15	
-Zone	America/Hermosillo	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Hermosillo	-6:00	-	CST	1942 Apr 24	
-Zone	America/Hermosillo	-7:00	-	MST	1996	
-Zone	America/Hermosillo	-7:00	Mexico	M%sT	1999	
-Zone	America/Hermosillo	-7:00	-	MST		
-Zone	America/Mazatlan	-7:05:40	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Mazatlan	-7:00	-	MST	1927 Jun 10	
-Zone	America/Mazatlan	-6:00	-	CST	1930 Nov 15	
-Zone	America/Mazatlan	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Mazatlan	-6:00	-	CST	1942 Apr 24	
-Zone	America/Mazatlan	-7:00	-	MST	1970	
-Zone	America/Mazatlan	-7:00	Mexico	M%sT		
-Zone	America/Bahia_Banderas	-7:01:00	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Bahia_Banderas	-7:00	-	MST	1927 Jun 10	
-Zone	America/Bahia_Banderas	-6:00	-	CST	1930 Nov 15	
-Zone	America/Bahia_Banderas	-7:00	Mexico	M%sT	1932 Apr  1	
-Zone	America/Bahia_Banderas	-6:00	-	CST	1942 Apr 24	
-Zone	America/Bahia_Banderas	-7:00	-	MST	1970	
-Zone	America/Bahia_Banderas	-7:00	Mexico	M%sT	2010 Apr  4  2:00	
-Zone	America/Bahia_Banderas	-6:00	Mexico	C%sT		
-Zone	America/Tijuana	-7:48:04	-	LMT	1922 Jan  1  7:00u	
-Zone	America/Tijuana	-7:00	-	MST	1924	
-Zone	America/Tijuana	-8:00	-	PST	1927 Jun 10	
-Zone	America/Tijuana	-7:00	-	MST	1930 Nov 15	
-Zone	America/Tijuana	-8:00	-	PST	1931 Apr  1	
-Zone	America/Tijuana	-8:00	1:00	PDT	1931 Sep 30	
-Zone	America/Tijuana	-8:00	-	PST	1942 Apr 24	
-Zone	America/Tijuana	-8:00	1:00	PWT	1945 Aug 14 23:00u	
-Zone	America/Tijuana	-8:00	1:00	PPT	1945 Nov 15 	 Peace
-Zone	America/Tijuana	-8:00	-	PST	1948 Apr  5	
-Zone	America/Tijuana	-8:00	1:00	PDT	1949 Jan 14	
-Zone	America/Tijuana	-8:00	-	PST	1950 May  1	
-Zone	America/Tijuana	-8:00	1:00	PDT	1950 Sep 24	
-Zone	America/Tijuana	-8:00	-	PST	1951 Apr 29  2:00	
-Zone	America/Tijuana	-8:00	1:00	PDT	1951 Sep 30  2:00	
-Zone	America/Tijuana	-8:00	-	PST	1952 Apr 27  2:00	
-Zone	America/Tijuana	-8:00	1:00	PDT	1952 Sep 28  2:00	
-Zone	America/Tijuana	-8:00	-	PST	1954	
-Zone	America/Tijuana	-8:00	CA	P%sT	1961	
-Zone	America/Tijuana	-8:00	-	PST	1976	
-Zone	America/Tijuana	-8:00	US	P%sT	1996	
-Zone	America/Tijuana	-8:00	Mexico	P%sT	2001	
-Zone	America/Tijuana	-8:00	US	P%sT	2002 Feb 20	
-Zone	America/Tijuana	-8:00	Mexico	P%sT	2010	
-Zone	America/Tijuana	-8:00	US	P%sT		
-Zone	America/Barbados	-3:58:29	-	LMT	1911 Aug 28 	 Bridgetown
-Zone	America/Barbados	-4:00	Barb	A%sT	1944	
-Zone	America/Barbados	-4:00	Barb	AST/-0330	1945	
-Zone	America/Barbados	-4:00	Barb	A%sT		
-Zone	America/Belize	-5:52:48	-	LMT	1912 Apr  1	
-Zone	America/Belize	-6:00	Belize	%s		
-Zone	Atlantic/Bermuda	-4:19:18	-	LMT	1890		 Hamilton
-Zone	Atlantic/Bermuda	-4:19:18	Bermuda	BMT/BST	1930 Jan 1  2:00	
-Zone	Atlantic/Bermuda	-4:00	Bermuda	A%sT	1974 Apr 28  2:00	
-Zone	Atlantic/Bermuda	-4:00	Canada	A%sT	1976	
-Zone	Atlantic/Bermuda	-4:00	US	A%sT		
-Zone	America/Costa_Rica	-5:36:13	-	LMT	1890        	 San José
-Zone	America/Costa_Rica	-5:36:13	-	SJMT	1921 Jan 15 	 San José Mean Time
-Zone	America/Costa_Rica	-6:00	CR	C%sT		
-Zone	America/Havana	-5:29:28	-	LMT	1890	
-Zone	America/Havana	-5:29:36	-	HMT	1925 Jul 19 12:00 	 Havana MT
-Zone	America/Havana	-5:00	Cuba	C%sT		
-Zone	America/Santo_Domingo	-4:39:36	-	LMT	1890	
-Zone	America/Santo_Domingo	-4:40	-	SDMT	1933 Apr  1 12:00 	 S. Dom. MT
-Zone	America/Santo_Domingo	-5:00	DR	%s	1974 Oct 27	
-Zone	America/Santo_Domingo	-4:00	-	AST	2000 Oct 29  2:00	
-Zone	America/Santo_Domingo	-5:00	US	E%sT	2000 Dec  3  1:00	
-Zone	America/Santo_Domingo	-4:00	-	AST		
-Zone	America/El_Salvador	-5:56:48	-	LMT	1921 	 San Salvador
-Zone	America/El_Salvador	-6:00	Salv	C%sT		
-Zone	America/Guatemala	-6:02:04	-	LMT	1918 Oct 5	
-Zone	America/Guatemala	-6:00	Guat	C%sT		
-Zone	America/Port-au-Prince	-4:49:20	-	LMT	1890	
-Zone	America/Port-au-Prince	-4:49	-	PPMT	1917 Jan 24 12:00 	 P-a-P MT
-Zone	America/Port-au-Prince	-5:00	Haiti	E%sT		
-Zone	America/Tegucigalpa	-5:48:52	-	LMT	1921 Apr	
-Zone	America/Tegucigalpa	-6:00	Hond	C%sT		
-Zone	America/Jamaica	-5:07:10	-	LMT	1890        	 Kingston
-Zone	America/Jamaica	-5:07:10	-	KMT	1912 Feb    	 Kingston Mean Time
-Zone	America/Jamaica	-5:00	-	EST	1974	
-Zone	America/Jamaica	-5:00	US	E%sT	1984	
-Zone	America/Jamaica	-5:00	-	EST		
-Zone	America/Martinique	-4:04:20	-	LMT	1890        	 Fort-de-France
-Zone	America/Martinique	-4:04:20	-	FFMT	1911 May  1 	 Fort-de-France MT
-Zone	America/Martinique	-4:00	-	AST	1980 Apr  6	
-Zone	America/Martinique	-4:00	1:00	ADT	1980 Sep 28	
-Zone	America/Martinique	-4:00	-	AST		
-Zone	America/Managua	-5:45:08	-	LMT	1890	
-Zone	America/Managua	-5:45:12	-	MMT	1934 Jun 23 	 Managua Mean Time?
-Zone	America/Managua	-6:00	-	CST	1973 May	
-Zone	America/Managua	-5:00	-	EST	1975 Feb 16	
-Zone	America/Managua	-6:00	Nic	C%sT	1992 Jan  1  4:00	
-Zone	America/Managua	-5:00	-	EST	1992 Sep 24	
-Zone	America/Managua	-6:00	-	CST	1993	
-Zone	America/Managua	-5:00	-	EST	1997	
-Zone	America/Managua	-6:00	Nic	C%sT		
-Zone	America/Panama	-5:18:08	-	LMT	1890	
-Zone	America/Panama	-5:19:36	-	CMT	1908 Apr 22 	 Colón Mean Time
-Zone	America/Panama	-5:00	-	EST		
-Zone	America/Puerto_Rico	-4:24:25	-	LMT	1899 Mar 28 12:00 	 San Juan
-Zone	America/Puerto_Rico	-4:00	-	AST	1942 May  3	
-Zone	America/Puerto_Rico	-4:00	US	A%sT	1946	
-Zone	America/Puerto_Rico	-4:00	-	AST		
-Zone	America/Miquelon	-3:44:40	-	LMT	1911 Jun 15 	 St Pierre
-Zone	America/Miquelon	-4:00	-	AST	1980 May	
-Zone	America/Miquelon	-3:00	-	%z	1987	
-Zone	America/Miquelon	-3:00	Canada	%z		
-Zone	America/Grand_Turk	-4:44:32	-	LMT	1890	
-Zone	America/Grand_Turk	-5:07:10	-	KMT	1912 Feb 	 Kingston Mean Time
-Zone	America/Grand_Turk	-5:00	-	EST	1979	
-Zone	America/Grand_Turk	-5:00	US	E%sT	2015 Mar  8  2:00	
-Zone	America/Grand_Turk	-4:00	-	AST	2018 Mar 11  3:00	
-Zone	America/Grand_Turk	-5:00	US	E%sT		
-Zone	America/Argentina/Buenos_Aires	-3:53:48	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Buenos_Aires	-4:16:48	-	CMT	1920 May    	 Córdoba Mean Time
-Zone	America/Argentina/Buenos_Aires	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Buenos_Aires	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Buenos_Aires	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Buenos_Aires	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Buenos_Aires	-3:00	Arg	%z		
-Zone	America/Argentina/Cordoba	-4:16:48	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Cordoba	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Cordoba	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Cordoba	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Cordoba	-3:00	Arg	%z	1991 Mar  3	
-Zone	America/Argentina/Cordoba	-4:00	-	%z	1991 Oct 20	
-Zone	America/Argentina/Cordoba	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Cordoba	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Cordoba	-3:00	Arg	%z		
-Zone	America/Argentina/Salta	-4:21:40	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Salta	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Salta	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Salta	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Salta	-3:00	Arg	%z	1991 Mar  3	
-Zone	America/Argentina/Salta	-4:00	-	%z	1991 Oct 20	
-Zone	America/Argentina/Salta	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Salta	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Salta	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/Salta	-3:00	-	%z		
-Zone	America/Argentina/Tucuman	-4:20:52	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Tucuman	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Tucuman	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Tucuman	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Tucuman	-3:00	Arg	%z	1991 Mar  3	
-Zone	America/Argentina/Tucuman	-4:00	-	%z	1991 Oct 20	
-Zone	America/Argentina/Tucuman	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Tucuman	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Tucuman	-3:00	-	%z	2004 Jun  1	
-Zone	America/Argentina/Tucuman	-4:00	-	%z	2004 Jun 13	
-Zone	America/Argentina/Tucuman	-3:00	Arg	%z		
-Zone	America/Argentina/La_Rioja	-4:27:24	-	LMT	1894 Oct 31	
-Zone	America/Argentina/La_Rioja	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/La_Rioja	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/La_Rioja	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/La_Rioja	-3:00	Arg	%z	1991 Mar  1	
-Zone	America/Argentina/La_Rioja	-4:00	-	%z	1991 May  7	
-Zone	America/Argentina/La_Rioja	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/La_Rioja	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/La_Rioja	-3:00	-	%z	2004 Jun  1	
-Zone	America/Argentina/La_Rioja	-4:00	-	%z	2004 Jun 20	
-Zone	America/Argentina/La_Rioja	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/La_Rioja	-3:00	-	%z		
-Zone	America/Argentina/San_Juan	-4:34:04	-	LMT	1894 Oct 31	
-Zone	America/Argentina/San_Juan	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/San_Juan	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/San_Juan	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/San_Juan	-3:00	Arg	%z	1991 Mar  1	
-Zone	America/Argentina/San_Juan	-4:00	-	%z	1991 May  7	
-Zone	America/Argentina/San_Juan	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/San_Juan	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/San_Juan	-3:00	-	%z	2004 May 31	
-Zone	America/Argentina/San_Juan	-4:00	-	%z	2004 Jul 25	
-Zone	America/Argentina/San_Juan	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/San_Juan	-3:00	-	%z		
-Zone	America/Argentina/Jujuy	-4:21:12	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Jujuy	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Jujuy	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Jujuy	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Jujuy	-3:00	Arg	%z	1990 Mar  4	
-Zone	America/Argentina/Jujuy	-4:00	-	%z	1990 Oct 28	
-Zone	America/Argentina/Jujuy	-4:00	1:00	%z	1991 Mar 17	
-Zone	America/Argentina/Jujuy	-4:00	-	%z	1991 Oct  6	
-Zone	America/Argentina/Jujuy	-3:00	1:00	%z	1992	
-Zone	America/Argentina/Jujuy	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Jujuy	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Jujuy	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/Jujuy	-3:00	-	%z		
-Zone	America/Argentina/Catamarca	-4:23:08	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Catamarca	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Catamarca	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Catamarca	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Catamarca	-3:00	Arg	%z	1991 Mar  3	
-Zone	America/Argentina/Catamarca	-4:00	-	%z	1991 Oct 20	
-Zone	America/Argentina/Catamarca	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Catamarca	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Catamarca	-3:00	-	%z	2004 Jun  1	
-Zone	America/Argentina/Catamarca	-4:00	-	%z	2004 Jun 20	
-Zone	America/Argentina/Catamarca	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/Catamarca	-3:00	-	%z		
-Zone	America/Argentina/Mendoza	-4:35:16	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Mendoza	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Mendoza	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Mendoza	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Mendoza	-3:00	Arg	%z	1990 Mar  4	
-Zone	America/Argentina/Mendoza	-4:00	-	%z	1990 Oct 15	
-Zone	America/Argentina/Mendoza	-4:00	1:00	%z	1991 Mar  1	
-Zone	America/Argentina/Mendoza	-4:00	-	%z	1991 Oct 15	
-Zone	America/Argentina/Mendoza	-4:00	1:00	%z	1992 Mar  1	
-Zone	America/Argentina/Mendoza	-4:00	-	%z	1992 Oct 18	
-Zone	America/Argentina/Mendoza	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Mendoza	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Mendoza	-3:00	-	%z	2004 May 23	
-Zone	America/Argentina/Mendoza	-4:00	-	%z	2004 Sep 26	
-Zone	America/Argentina/Mendoza	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/Mendoza	-3:00	-	%z		
-Zone	America/Argentina/San_Luis	-4:25:24	-	LMT	1894 Oct 31	
-Zone	America/Argentina/San_Luis	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/San_Luis	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/San_Luis	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/San_Luis	-3:00	Arg	%z	1990	
-Zone	America/Argentina/San_Luis	-3:00	1:00	%z	1990 Mar 14	
-Zone	America/Argentina/San_Luis	-4:00	-	%z	1990 Oct 15	
-Zone	America/Argentina/San_Luis	-4:00	1:00	%z	1991 Mar  1	
-Zone	America/Argentina/San_Luis	-4:00	-	%z	1991 Jun  1	
-Zone	America/Argentina/San_Luis	-3:00	-	%z	1999 Oct  3	
-Zone	America/Argentina/San_Luis	-4:00	1:00	%z	2000 Mar  3	
-Zone	America/Argentina/San_Luis	-3:00	-	%z	2004 May 31	
-Zone	America/Argentina/San_Luis	-4:00	-	%z	2004 Jul 25	
-Zone	America/Argentina/San_Luis	-3:00	Arg	%z	2008 Jan 21	
-Zone	America/Argentina/San_Luis	-4:00	SanLuis	%z	2009 Oct 11	
-Zone	America/Argentina/San_Luis	-3:00	-	%z		
-Zone	America/Argentina/Rio_Gallegos	-4:36:52	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Rio_Gallegos	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Rio_Gallegos	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Rio_Gallegos	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Rio_Gallegos	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Rio_Gallegos	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Rio_Gallegos	-3:00	-	%z	2004 Jun  1	
-Zone	America/Argentina/Rio_Gallegos	-4:00	-	%z	2004 Jun 20	
-Zone	America/Argentina/Rio_Gallegos	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/Rio_Gallegos	-3:00	-	%z		
-Zone	America/Argentina/Ushuaia	-4:33:12	-	LMT	1894 Oct 31	
-Zone	America/Argentina/Ushuaia	-4:16:48	-	CMT	1920 May	
-Zone	America/Argentina/Ushuaia	-4:00	-	%z	1930 Dec	
-Zone	America/Argentina/Ushuaia	-4:00	Arg	%z	1969 Oct  5	
-Zone	America/Argentina/Ushuaia	-3:00	Arg	%z	1999 Oct  3	
-Zone	America/Argentina/Ushuaia	-4:00	Arg	%z	2000 Mar  3	
-Zone	America/Argentina/Ushuaia	-3:00	-	%z	2004 May 30	
-Zone	America/Argentina/Ushuaia	-4:00	-	%z	2004 Jun 20	
-Zone	America/Argentina/Ushuaia	-3:00	Arg	%z	2008 Oct 18	
-Zone	America/Argentina/Ushuaia	-3:00	-	%z		
-Zone	America/La_Paz	-4:32:36	-	LMT	1890	
-Zone	America/La_Paz	-4:32:36	-	CMT	1931 Oct 15 	 Calamarca MT
-Zone	America/La_Paz	-4:32:36	1:00	BST	1932 Mar 21 	 Bolivia ST
-Zone	America/La_Paz	-4:00	-	%z		
-Zone	America/Noronha	-2:09:40	-	LMT	1914	
-Zone	America/Noronha	-2:00	Brazil	%z	1990 Sep 17	
-Zone	America/Noronha	-2:00	-	%z	1999 Sep 30	
-Zone	America/Noronha	-2:00	Brazil	%z	2000 Oct 15	
-Zone	America/Noronha	-2:00	-	%z	2001 Sep 13	
-Zone	America/Noronha	-2:00	Brazil	%z	2002 Oct  1	
-Zone	America/Noronha	-2:00	-	%z		
-Zone	America/Belem	-3:13:56	-	LMT	1914	
-Zone	America/Belem	-3:00	Brazil	%z	1988 Sep 12	
-Zone	America/Belem	-3:00	-	%z		
-Zone	America/Santarem	-3:38:48	-	LMT	1914	
-Zone	America/Santarem	-4:00	Brazil	%z	1988 Sep 12	
-Zone	America/Santarem	-4:00	-	%z	2008 Jun 24  0:00	
-Zone	America/Santarem	-3:00	-	%z		
-Zone	America/Fortaleza	-2:34:00	-	LMT	1914	
-Zone	America/Fortaleza	-3:00	Brazil	%z	1990 Sep 17	
-Zone	America/Fortaleza	-3:00	-	%z	1999 Sep 30	
-Zone	America/Fortaleza	-3:00	Brazil	%z	2000 Oct 22	
-Zone	America/Fortaleza	-3:00	-	%z	2001 Sep 13	
-Zone	America/Fortaleza	-3:00	Brazil	%z	2002 Oct  1	
-Zone	America/Fortaleza	-3:00	-	%z		
-Zone	America/Recife	-2:19:36	-	LMT	1914	
-Zone	America/Recife	-3:00	Brazil	%z	1990 Sep 17	
-Zone	America/Recife	-3:00	-	%z	1999 Sep 30	
-Zone	America/Recife	-3:00	Brazil	%z	2000 Oct 15	
-Zone	America/Recife	-3:00	-	%z	2001 Sep 13	
-Zone	America/Recife	-3:00	Brazil	%z	2002 Oct  1	
-Zone	America/Recife	-3:00	-	%z		
-Zone	America/Araguaina	-3:12:48	-	LMT	1914	
-Zone	America/Araguaina	-3:00	Brazil	%z	1990 Sep 17	
-Zone	America/Araguaina	-3:00	-	%z	1995 Sep 14	
-Zone	America/Araguaina	-3:00	Brazil	%z	2003 Sep 24	
-Zone	America/Araguaina	-3:00	-	%z	2012 Oct 21	
-Zone	America/Araguaina	-3:00	Brazil	%z	2013 Sep	
-Zone	America/Araguaina	-3:00	-	%z		
-Zone	America/Maceio	-2:22:52	-	LMT	1914	
-Zone	America/Maceio	-3:00	Brazil	%z	1990 Sep 17	
-Zone	America/Maceio	-3:00	-	%z	1995 Oct 13	
-Zone	America/Maceio	-3:00	Brazil	%z	1996 Sep  4	
-Zone	America/Maceio	-3:00	-	%z	1999 Sep 30	
-Zone	America/Maceio	-3:00	Brazil	%z	2000 Oct 22	
-Zone	America/Maceio	-3:00	-	%z	2001 Sep 13	
-Zone	America/Maceio	-3:00	Brazil	%z	2002 Oct  1	
-Zone	America/Maceio	-3:00	-	%z		
-Zone	America/Bahia	-2:34:04	-	LMT	1914	
-Zone	America/Bahia	-3:00	Brazil	%z	2003 Sep 24	
-Zone	America/Bahia	-3:00	-	%z	2011 Oct 16	
-Zone	America/Bahia	-3:00	Brazil	%z	2012 Oct 21	
-Zone	America/Bahia	-3:00	-	%z		
-Zone	America/Sao_Paulo	-3:06:28	-	LMT	1914	
-Zone	America/Sao_Paulo	-3:00	Brazil	%z	1963 Oct 23  0:00	
-Zone	America/Sao_Paulo	-3:00	1:00	%z	1964	
-Zone	America/Sao_Paulo	-3:00	Brazil	%z		
-Zone	America/Campo_Grande	-3:38:28	-	LMT	1914	
-Zone	America/Campo_Grande	-4:00	Brazil	%z		
-Zone	America/Cuiaba	-3:44:20	-	LMT	1914	
-Zone	America/Cuiaba	-4:00	Brazil	%z	2003 Sep 24	
-Zone	America/Cuiaba	-4:00	-	%z	2004 Oct  1	
-Zone	America/Cuiaba	-4:00	Brazil	%z		
-Zone	America/Porto_Velho	-4:15:36	-	LMT	1914	
-Zone	America/Porto_Velho	-4:00	Brazil	%z	1988 Sep 12	
-Zone	America/Porto_Velho	-4:00	-	%z		
-Zone	America/Boa_Vista	-4:02:40	-	LMT	1914	
-Zone	America/Boa_Vista	-4:00	Brazil	%z	1988 Sep 12	
-Zone	America/Boa_Vista	-4:00	-	%z	1999 Sep 30	
-Zone	America/Boa_Vista	-4:00	Brazil	%z	2000 Oct 15	
-Zone	America/Boa_Vista	-4:00	-	%z		
-Zone	America/Manaus	-4:00:04	-	LMT	1914	
-Zone	America/Manaus	-4:00	Brazil	%z	1988 Sep 12	
-Zone	America/Manaus	-4:00	-	%z	1993 Sep 28	
-Zone	America/Manaus	-4:00	Brazil	%z	1994 Sep 22	
-Zone	America/Manaus	-4:00	-	%z		
-Zone	America/Eirunepe	-4:39:28	-	LMT	1914	
-Zone	America/Eirunepe	-5:00	Brazil	%z	1988 Sep 12	
-Zone	America/Eirunepe	-5:00	-	%z	1993 Sep 28	
-Zone	America/Eirunepe	-5:00	Brazil	%z	1994 Sep 22	
-Zone	America/Eirunepe	-5:00	-	%z	2008 Jun 24  0:00	
-Zone	America/Eirunepe	-4:00	-	%z	2013 Nov 10	
-Zone	America/Eirunepe	-5:00	-	%z		
-Zone	America/Rio_Branco	-4:31:12	-	LMT	1914	
-Zone	America/Rio_Branco	-5:00	Brazil	%z	1988 Sep 12	
-Zone	America/Rio_Branco	-5:00	-	%z	2008 Jun 24  0:00	
-Zone	America/Rio_Branco	-4:00	-	%z	2013 Nov 10	
-Zone	America/Rio_Branco	-5:00	-	%z		
-Zone	America/Santiago	-4:42:45	-	LMT	1890	
-Zone	America/Santiago	-4:42:45	-	SMT	1910 Jan 10 	 Santiago Mean Time
-Zone	America/Santiago	-5:00	-	%z	1916 Jul  1	
-Zone	America/Santiago	-4:42:45	-	SMT	1918 Sep 10	
-Zone	America/Santiago	-4:00	-	%z	1919 Jul  1	
-Zone	America/Santiago	-4:42:45	-	SMT	1927 Sep  1	
-Zone	America/Santiago	-5:00	Chile	%z	1932 Sep  1	
-Zone	America/Santiago	-4:00	-	%z	1942 Jun  1	
-Zone	America/Santiago	-5:00	-	%z	1942 Aug  1	
-Zone	America/Santiago	-4:00	-	%z	1946 Jul 14 24:00	
-Zone	America/Santiago	-4:00	1:00	%z	1946 Aug 28 24:00 	 central CL
-Zone	America/Santiago	-5:00	1:00	%z	1947 Mar 31 24:00	
-Zone	America/Santiago	-5:00	-	%z	1947 May 21 23:00	
-Zone	America/Santiago	-4:00	Chile	%z		
-Zone	America/Punta_Arenas	-4:43:40	-	LMT	1890	
-Zone	America/Punta_Arenas	-4:42:45	-	SMT	1910 Jan 10	
-Zone	America/Punta_Arenas	-5:00	-	%z	1916 Jul  1	
-Zone	America/Punta_Arenas	-4:42:45	-	SMT	1918 Sep 10	
-Zone	America/Punta_Arenas	-4:00	-	%z	1919 Jul  1	
-Zone	America/Punta_Arenas	-4:42:45	-	SMT	1927 Sep  1	
-Zone	America/Punta_Arenas	-5:00	Chile	%z	1932 Sep  1	
-Zone	America/Punta_Arenas	-4:00	-	%z	1942 Jun  1	
-Zone	America/Punta_Arenas	-5:00	-	%z	1942 Aug  1	
-Zone	America/Punta_Arenas	-4:00	-	%z	1946 Aug 28 24:00	
-Zone	America/Punta_Arenas	-5:00	1:00	%z	1947 Mar 31 24:00	
-Zone	America/Punta_Arenas	-5:00	-	%z	1947 May 21 23:00	
-Zone	America/Punta_Arenas	-4:00	Chile	%z	2016 Dec  4	
-Zone	America/Punta_Arenas	-3:00	-	%z		
-Zone	Pacific/Easter	-7:17:28	-	LMT	1890	
-Zone	Pacific/Easter	-7:17:28	-	EMT	1932 Sep    	 Easter Mean Time
-Zone	Pacific/Easter	-7:00	Chile	%z	1982 Mar 14 3:00u 	 Easter Time
-Zone	Pacific/Easter	-6:00	Chile	%z		
-Zone	Antarctica/Palmer	0	-	-00	1965	
-Zone	Antarctica/Palmer	-4:00	Arg	%z	1969 Oct  5	
-Zone	Antarctica/Palmer	-3:00	Arg	%z	1982 May	
-Zone	Antarctica/Palmer	-4:00	Chile	%z	2016 Dec  4	
-Zone	Antarctica/Palmer	-3:00	-	%z		
-Zone	America/Bogota	-4:56:16	-	LMT	1884 Mar 13	
-Zone	America/Bogota	-4:56:16	-	BMT	1914 Nov 23 	 Bogotá Mean Time
-Zone	America/Bogota	-5:00	CO	%z		
-Zone	America/Guayaquil	-5:19:20	-	LMT	1890	
-Zone	America/Guayaquil	-5:14:00	-	QMT	1931 	 Quito Mean Time
-Zone	America/Guayaquil	-5:00	Ecuador	%z		
-Zone	Pacific/Galapagos	-5:58:24	-	LMT	1931 	 Puerto Baquerizo Moreno
-Zone	Pacific/Galapagos	-5:00	-	%z	1986	
-Zone	Pacific/Galapagos	-6:00	Ecuador	%z		
-Zone	Atlantic/Stanley	-3:51:24	-	LMT	1890	
-Zone	Atlantic/Stanley	-3:51:24	-	SMT	1912 Mar 12 	 Stanley Mean Time
-Zone	Atlantic/Stanley	-4:00	Falk	%z	1983 May	
-Zone	Atlantic/Stanley	-3:00	Falk	%z	1985 Sep 15	
-Zone	Atlantic/Stanley	-4:00	Falk	%z	2010 Sep  5  2:00	
-Zone	Atlantic/Stanley	-3:00	-	%z		
-Zone	America/Cayenne	-3:29:20	-	LMT	1911 Jul  1	
-Zone	America/Cayenne	-4:00	-	%z	1967 Oct	
-Zone	America/Cayenne	-3:00	-	%z		
-Zone	America/Guyana	-3:52:39	-	LMT	1911 Aug  1 	 Georgetown
-Zone	America/Guyana	-4:00	-	%z	1915 Mar  1	
-Zone	America/Guyana	-3:45	-	%z	1975 Aug  1	
-Zone	America/Guyana	-3:00	-	%z	1992 Mar 29  1:00	
-Zone	America/Guyana	-4:00	-	%z		
-Zone	America/Asuncion	-3:50:40	-	LMT	1890	
-Zone	America/Asuncion	-3:50:40	-	AMT	1931 Oct 10 	 Asunción Mean Time
-Zone	America/Asuncion	-4:00	-	%z	1972 Oct	
-Zone	America/Asuncion	-3:00	-	%z	1974 Apr	
-Zone	America/Asuncion	-4:00	Para	%z		
-Zone	America/Lima	-5:08:12	-	LMT	1890	
-Zone	America/Lima	-5:08:36	-	LMT	1908 Jul 28 	 Lima Mean Time?
-Zone	America/Lima	-5:00	Peru	%z		
-Zone	Atlantic/South_Georgia	-2:26:08	-	LMT	1890 	 Grytviken
-Zone	Atlantic/South_Georgia	-2:00	-	%z		
-Zone	America/Paramaribo	-3:40:40	-	LMT	1911	
-Zone	America/Paramaribo	-3:40:52	-	PMT	1935     	 Paramaribo Mean Time
-Zone	America/Paramaribo	-3:40:36	-	PMT	1945 Oct    	 The capital moved?
-Zone	America/Paramaribo	-3:30	-	%z	1984 Oct	
-Zone	America/Paramaribo	-3:00	-	%z		
-Zone	America/Montevideo	-3:44:51	-	LMT	1908 Jun 10	
-Zone	America/Montevideo	-3:44:51	-	MMT	1920 May  1 	 Montevideo MT
-Zone	America/Montevideo	-4:00	-	%z	1923 Oct  1	
-Zone	America/Montevideo	-3:30	Uruguay	%z	1942 Dec 14	
-Zone	America/Montevideo	-3:00	Uruguay	%z	1960	
-Zone	America/Montevideo	-3:00	Uruguay	%z	1968	
-Zone	America/Montevideo	-3:00	Uruguay	%z	1970	
-Zone	America/Montevideo	-3:00	Uruguay	%z	1974	
-Zone	America/Montevideo	-3:00	Uruguay	%z	1974 Mar 10	
-Zone	America/Montevideo	-3:00	Uruguay	%z	1974 Dec 22	
-Zone	America/Montevideo	-3:00	Uruguay	%z		
-Zone	America/Caracas	-4:27:44	-	LMT	1890	
-Zone	America/Caracas	-4:27:40	-	CMT	1912 Feb 12 	 Caracas Mean Time?
-Zone	America/Caracas	-4:30	-	%z	1965 Jan  1  0:00	
-Zone	America/Caracas	-4:00	-	%z	2007 Dec  9  3:00	
-Zone	America/Caracas	-4:30	-	%z	2016 May  1  2:30	
-Zone	America/Caracas	-4:00	-	%z		
+AD	Andorra	Europe/Andorra	42.500000	1.516667		3600	+01:00	1901	-1
+AE	United Arab Emirates	Asia/Dubai	25.300000	55.300000		14400	+04:00	1920	-1
+AF	Afghanistan	Asia/Kabul	34.516667	69.200000		16200	+04:30	1890	-1
+AG	Antigua & Barbuda	America/Antigua	17.050000	-61.800000		-14400	-04:00	1899	-1
+AI	Anguilla	America/Anguilla	18.200000	-63.066667		-14400	-04:00	1899	-1
+AL	Albania	Europe/Tirane	41.333333	19.833333		3600	+01:00	1914	-1
+AM	Armenia	Asia/Yerevan	40.183333	44.500000		14400	+04:00	1924	2011
+AO	Angola	Africa/Luanda	-8.800000	13.233333		3600	+01:00	1905	-1
+AQ	Antarctica	Antarctica/McMurdo	-77.833333	166.600000	New Zealand time - McMurdo, South Pole	43200	+12:00	1868	-1
+AQ	Antarctica	Antarctica/Casey	-66.283333	110.516667	Casey	28800	+08:00	1969	-1
+AQ	Antarctica	Antarctica/Davis	-68.583333	77.966667	Davis	25200	+07:00	1957	-1
+AQ	Antarctica	Antarctica/DumontDUrville	-66.666667	140.016667	Dumont-d'Urville	36000	+10:00	1880	-1
+AQ	Antarctica	Antarctica/Mawson	-67.600000	62.883333	Mawson	18000	+05:00	1954	-1
+AQ	Antarctica	Antarctica/Palmer	-64.800000	-64.100000	Palmer	-10800	-03:00	1965	-1
+AQ	Antarctica	Antarctica/Rothera	-67.566667	-68.133333	Rothera	-10800	-03:00	1976	-1
+AQ	Antarctica	Antarctica/Syowa	-69.006111	39.590000	Syowa	10800	+03:00	1947	-1
+AQ	Antarctica	Antarctica/Troll	-72.011389	2.535000	Troll	0	+00:00	2005	-1
+AQ	Antarctica	Antarctica/Vostok	-78.400000	106.900000	Vostok	18000	+05:00	1957	-1
+AR	Argentina	America/Argentina/Buenos_Aires	-34.600000	-58.450000	Buenos Aires (BA, CF)	-10800	-03:00	1894	2009
+AR	Argentina	America/Argentina/Cordoba	-31.400000	-64.183333	Argentina (most areas: CB, CC, CN, ER, FM, MN, SE, SF)	-10800	-03:00	1894	2009
+AR	Argentina	America/Argentina/Salta	-24.783333	-65.416667	Salta (SA, LP, NQ, RN)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/Jujuy	-24.183333	-65.300000	Jujuy (JY)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/Tucuman	-26.816667	-65.216667	Tucuman (TM)	-10800	-03:00	1894	2009
+AR	Argentina	America/Argentina/Catamarca	-28.466667	-65.783333	Catamarca (CT), Chubut (CH)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/La_Rioja	-29.433333	-66.850000	La Rioja (LR)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/San_Juan	-31.533333	-68.516667	San Juan (SJ)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/Mendoza	-32.883333	-68.816667	Mendoza (MZ)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/San_Luis	-33.316667	-66.350000	San Luis (SL)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/Rio_Gallegos	-51.633333	-69.216667	Santa Cruz (SC)	-10800	-03:00	1894	-1
+AR	Argentina	America/Argentina/Ushuaia	-54.800000	-68.300000	Tierra del Fuego (TF)	-10800	-03:00	1894	-1
+AS	Samoa (American)	Pacific/Pago_Pago	-14.266667	-170.700000		-39600	-11:00	1892	-1
+AT	Austria	Europe/Vienna	48.216667	16.333333		3600	+01:00	1893	-1
+AU	Australia	Australia/Lord_Howe	-31.550000	159.083333	Lord Howe Island	37800	+10:30	1895	-1
+AU	Australia	Antarctica/Macquarie	-54.500000	158.950000	Macquarie Island	36000	+10:00	1899	-1
+AU	Australia	Australia/Hobart	-42.883333	147.316667	Tasmania	36000	+10:00	1895	-1
+AU	Australia	Australia/Melbourne	-37.816667	144.966667	Victoria	36000	+10:00	1895	-1
+AU	Australia	Australia/Sydney	-33.866667	151.216667	New South Wales (most areas)	36000	+10:00	1895	-1
+AU	Australia	Australia/Broken_Hill	-31.950000	141.450000	New South Wales (Yancowinna)	34200	+09:30	1895	-1
+AU	Australia	Australia/Brisbane	-27.466667	153.033333	Queensland (most areas)	36000	+10:00	1895	1992
+AU	Australia	Australia/Lindeman	-20.266667	149.000000	Queensland (Whitsunday Islands)	36000	+10:00	1895	1994
+AU	Australia	Australia/Adelaide	-34.916667	138.583333	South Australia	34200	+09:30	1895	-1
+AU	Australia	Australia/Darwin	-12.466667	130.833333	Northern Territory	34200	+09:30	1895	1944
+AU	Australia	Australia/Perth	-31.950000	115.850000	Western Australia (most areas)	28800	+08:00	1895	2009
+AU	Australia	Australia/Eucla	-31.716667	128.866667	Western Australia (Eucla)	31500	+08:45	1895	2009
+AW	Aruba	America/Aruba	12.500000	-69.966667		-14400	-04:00	1899	-1
+AX	Åland Islands	Europe/Mariehamn	60.100000	19.950000		7200	+02:00	1878	-1
+AZ	Azerbaijan	Asia/Baku	40.383333	49.850000		14400	+04:00	1924	2015
+BA	Bosnia & Herzegovina	Europe/Sarajevo	43.866667	18.416667		3600	+01:00	1884	-1
+BB	Barbados	America/Barbados	13.100000	-59.616667		-14400	-04:00	1911	1980
+BD	Bangladesh	Asia/Dhaka	23.716667	90.416667		21600	+06:00	1890	2009
+BE	Belgium	Europe/Brussels	50.833333	4.333333		3600	+01:00	1880	-1
+BF	Burkina Faso	Africa/Ouagadougou	12.366667	-1.516667		0	+00:00	1912	-1
+BG	Bulgaria	Europe/Sofia	42.683333	23.316667		7200	+02:00	1880	-1
+BH	Bahrain	Asia/Bahrain	26.383333	50.583333		10800	+03:00	1920	-1
+BI	Burundi	Africa/Bujumbura	-3.383333	29.366667		7200	+02:00	1909	-1
+BJ	Benin	Africa/Porto-Novo	6.483333	2.616667		3600	+01:00	1905	-1
+BL	St Barthelemy	America/St_Barthelemy	17.883333	-62.850000		-14400	-04:00	1899	-1
+BM	Bermuda	Atlantic/Bermuda	32.283333	-64.766667		-14400	-04:00	1890	-1
+BN	Brunei	Asia/Brunei	4.933333	114.916667		28800	+08:00	1926	-1
+BO	Bolivia	America/La_Paz	-16.500000	-68.150000		-14400	-04:00	1890	-1
+BQ	Caribbean NL	America/Kralendijk	12.150833	-68.276667		-14400	-04:00	1899	-1
+BR	Brazil	America/Noronha	-3.850000	-32.416667	Atlantic islands	-7200	-02:00	1914	-1
+BR	Brazil	America/Belem	-1.450000	-48.483333	Para (east), Amapa	-10800	-03:00	1914	-1
+BR	Brazil	America/Fortaleza	-3.716667	-38.500000	Brazil (northeast: MA, PI, CE, RN, PB)	-10800	-03:00	1914	-1
+BR	Brazil	America/Recife	-8.050000	-34.900000	Pernambuco	-10800	-03:00	1914	-1
+BR	Brazil	America/Araguaina	-7.200000	-48.200000	Tocantins	-10800	-03:00	1914	-1
+BR	Brazil	America/Maceio	-9.666667	-35.716667	Alagoas, Sergipe	-10800	-03:00	1914	-1
+BR	Brazil	America/Bahia	-12.983333	-38.516667	Bahia	-10800	-03:00	1914	-1
+BR	Brazil	America/Sao_Paulo	-23.533333	-46.616667	Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)	-10800	-03:00	1914	2019
+BR	Brazil	America/Campo_Grande	-20.450000	-54.616667	Mato Grosso do Sul	-14400	-04:00	1914	2019
+BR	Brazil	America/Cuiaba	-15.583333	-56.083333	Mato Grosso	-14400	-04:00	1914	2019
+BR	Brazil	America/Santarem	-2.433333	-54.866667	Para (west)	-10800	-03:00	1914	-1
+BR	Brazil	America/Porto_Velho	-8.766667	-63.900000	Rondonia	-14400	-04:00	1914	-1
+BR	Brazil	America/Boa_Vista	2.816667	-60.666667	Roraima	-14400	-04:00	1914	-1
+BR	Brazil	America/Manaus	-3.133333	-60.016667	Amazonas (east)	-14400	-04:00	1914	-1
+BR	Brazil	America/Eirunepe	-6.666667	-69.866667	Amazonas (west)	-18000	-05:00	1914	-1
+BR	Brazil	America/Rio_Branco	-9.966667	-67.800000	Acre	-18000	-05:00	1914	-1
+BS	Bahamas	America/Nassau	25.083333	-77.350000		-18000	-05:00	1895	-1
+BT	Bhutan	Asia/Thimphu	27.466667	89.650000		21600	+06:00	1947	-1
+BW	Botswana	Africa/Gaborone	-24.650000	25.916667		7200	+02:00	1909	-1
+BY	Belarus	Europe/Minsk	53.900000	27.566667		10800	+03:00	1880	-1
+BZ	Belize	America/Belize	17.500000	-88.200000		-21600	-06:00	1912	1983
+CA	Canada	America/St_Johns	47.566667	-52.716667	Newfoundland, Labrador (SE)	-12600	-03:30	1884	-1
+CA	Canada	America/Halifax	44.650000	-63.600000	Atlantic - NS (most areas), PE	-14400	-04:00	1902	-1
+CA	Canada	America/Glace_Bay	46.200000	-59.950000	Atlantic - NS (Cape Breton)	-14400	-04:00	1902	-1
+CA	Canada	America/Moncton	46.100000	-64.783333	Atlantic - New Brunswick	-14400	-04:00	1883	-1
+CA	Canada	America/Goose_Bay	53.333333	-60.416667	Atlantic - Labrador (most areas)	-14400	-04:00	1884	-1
+CA	Canada	America/Blanc-Sablon	51.416667	-57.116667	AST - QC (Lower North Shore)	-14400	-04:00	1899	-1
+CA	Canada	America/Toronto	43.650000	-79.383333	Eastern - ON & QC (most areas)	-18000	-05:00	1895	-1
+CA	Canada	America/Iqaluit	63.733333	-68.466667	Eastern - NU (most areas)	-18000	-05:00	1942	-1
+CA	Canada	America/Atikokan	48.758611	-91.621667	EST - ON (Atikokan), NU (Coral H)	-18000	-05:00	1890	-1
+CA	Canada	America/Winnipeg	49.883333	-97.150000	Central - ON (west), Manitoba	-21600	-06:00	1887	-1
+CA	Canada	America/Resolute	74.695556	-94.829167	Central - NU (Resolute)	-21600	-06:00	1947	-1
+CA	Canada	America/Rankin_Inlet	62.816667	-92.083056	Central - NU (central)	-21600	-06:00	1957	-1
+CA	Canada	America/Regina	50.400000	-104.650000	CST - SK (most areas)	-21600	-06:00	1905	-1
+CA	Canada	America/Swift_Current	50.283333	-107.833333	CST - SK (midwest)	-21600	-06:00	1905	-1
+CA	Canada	America/Edmonton	53.550000	-113.466667	Mountain - AB, BC(E), NT(E), SK(W)	-25200	-07:00	1906	-1
+CA	Canada	America/Cambridge_Bay	69.113889	-105.052778	Mountain - NU (west)	-25200	-07:00	1920	-1
+CA	Canada	America/Inuvik	68.349722	-133.716667	Mountain - NT (west)	-25200	-07:00	1953	-1
+CA	Canada	America/Creston	49.100000	-116.516667	MST - BC (Creston)	-25200	-07:00	1883	-1
+CA	Canada	America/Dawson_Creek	55.766667	-120.233333	MST - BC (Dawson Cr, Ft St John)	-25200	-07:00	1884	-1
+CA	Canada	America/Fort_Nelson	58.800000	-122.700000	MST - BC (Ft Nelson)	-25200	-07:00	1884	-1
+CA	Canada	America/Whitehorse	60.716667	-135.050000	MST - Yukon (east)	-25200	-07:00	1900	-1
+CA	Canada	America/Dawson	64.066667	-139.416667	MST - Yukon (west)	-25200	-07:00	1900	-1
+CA	Canada	America/Vancouver	49.266667	-123.116667	Pacific - BC (most areas)	-28800	-08:00	1884	-1
+CC	Cocos (Keeling) Islands	Indian/Cocos	-12.166667	96.916667		23400	+06:30	1880	-1
+CD	Congo (Dem. Rep.)	Africa/Kinshasa	-4.300000	15.300000	Dem. Rep. of Congo (west)	3600	+01:00	1905	-1
+CD	Congo (Dem. Rep.)	Africa/Lubumbashi	-11.666667	27.466667	Dem. Rep. of Congo (east)	7200	+02:00	1909	-1
+CF	Central African Rep.	Africa/Bangui	4.366667	18.583333		3600	+01:00	1905	-1
+CG	Congo (Rep.)	Africa/Brazzaville	-4.266667	15.283333		3600	+01:00	1905	-1
+CH	Switzerland	Europe/Zurich	47.383333	8.533333		3600	+01:00	1853	-1
+CI	Côte d'Ivoire	Africa/Abidjan	5.316667	-4.033333		0	+00:00	1912	-1
+CK	Cook Islands	Pacific/Rarotonga	-21.233333	-159.766667		-36000	-10:00	1899	1991
+CL	Chile	America/Santiago	-33.450000	-70.666667	most of Chile	-14400	-04:00	1890	-1
+CL	Chile	America/Punta_Arenas	-53.150000	-70.916667	Region of Magallanes	-10800	-03:00	1890	-1
+CL	Chile	Pacific/Easter	-27.150000	-109.433333	Easter Island	-21600	-06:00	1890	-1
+CM	Cameroon	Africa/Douala	4.050000	9.700000		3600	+01:00	1905	-1
+CN	China	Asia/Shanghai	31.233333	121.466667	Beijing Time	28800	+08:00	1901	1991
+CN	China	Asia/Urumqi	43.800000	87.583333	Xinjiang Time	21600	+06:00	1928	-1
+CO	Colombia	America/Bogota	4.600000	-74.083333		-18000	-05:00	1884	1993
+CR	Costa Rica	America/Costa_Rica	9.933333	-84.083333		-21600	-06:00	1890	1992
+CU	Cuba	America/Havana	23.133333	-82.366667		-18000	-05:00	1890	-1
+CV	Cape Verde	Atlantic/Cape_Verde	14.916667	-23.516667		-3600	-01:00	1912	-1
+CW	Curaçao	America/Curacao	12.183333	-69.000000		-14400	-04:00	1899	-1
+CX	Christmas Island	Indian/Christmas	-10.416667	105.716667		25200	+07:00	1880	-1
+CY	Cyprus	Asia/Nicosia	35.166667	33.366667	most of Cyprus	7200	+02:00	1921	-1
+CY	Cyprus	Asia/Famagusta	35.116667	33.950000	Northern Cyprus	7200	+02:00	1921	-1
+CZ	Czech Republic	Europe/Prague	50.083333	14.433333		3600	+01:00	1850	-1
+DE	Germany	Europe/Berlin	52.500000	13.366667	most of Germany	3600	+01:00	1893	-1
+DE	Germany	Europe/Busingen	47.700000	8.683333	Busingen	3600	+01:00	1853	-1
+DJ	Djibouti	Africa/Djibouti	11.600000	43.150000		10800	+03:00	1908	-1
+DK	Denmark	Europe/Copenhagen	55.666667	12.583333		3600	+01:00	1893	-1
+DM	Dominica	America/Dominica	15.300000	-61.400000		-14400	-04:00	1899	-1
+DO	Dominican Republic	America/Santo_Domingo	18.466667	-69.900000		-14400	-04:00	1890	-1
+DZ	Algeria	Africa/Algiers	36.783333	3.050000		3600	+01:00	1891	-1
+EC	Ecuador	America/Guayaquil	-2.166667	-79.833333	Ecuador (mainland)	-18000	-05:00	1890	1993
+EC	Ecuador	Pacific/Galapagos	-0.900000	-89.600000	Galapagos Islands	-21600	-06:00	1931	1993
+EE	Estonia	Europe/Tallinn	59.416667	24.750000		7200	+02:00	1880	-1
+EG	Egypt	Africa/Cairo	30.050000	31.250000		7200	+02:00	1900	-1
+EH	Western Sahara	Africa/El_Aaiun	27.150000	-13.200000		3600	+01:00	1934	2087
+ER	Eritrea	Africa/Asmara	15.333333	38.883333		10800	+03:00	1908	-1
+ES	Spain	Europe/Madrid	40.400000	-3.683333	Spain (mainland)	3600	+01:00	1901	-1
+ES	Spain	Africa/Ceuta	35.883333	-5.316667	Ceuta, Melilla	3600	+01:00	1901	-1
+ES	Spain	Atlantic/Canary	28.100000	-15.400000	Canary Islands	0	+00:00	1922	-1
+ET	Ethiopia	Africa/Addis_Ababa	9.033333	38.700000		10800	+03:00	1908	-1
+FI	Finland	Europe/Helsinki	60.166667	24.966667		7200	+02:00	1878	-1
+FJ	Fiji	Pacific/Fiji	-18.133333	178.416667		43200	+12:00	1915	2021
+FK	Falkland Islands	Atlantic/Stanley	-51.700000	-57.850000		-10800	-03:00	1890	-1
+FM	Micronesia	Pacific/Chuuk	7.416667	151.783333	Chuuk/Truk, Yap	36000	+10:00	1880	-1
+FM	Micronesia	Pacific/Pohnpei	6.966667	158.216667	Pohnpei/Ponape	39600	+11:00	1912	-1
+FM	Micronesia	Pacific/Kosrae	5.316667	162.983333	Kosrae	39600	+11:00	1844	-1
+FO	Faroe Islands	Atlantic/Faroe	62.016667	-6.766667		0	+00:00	1908	-1
+FR	France	Europe/Paris	48.866667	2.333333		3600	+01:00	1891	-1
+GA	Gabon	Africa/Libreville	0.383333	9.450000		3600	+01:00	1905	-1
+GB	Britain (UK)	Europe/London	51.508333	-0.125278		0	+00:00	1847	-1
+GD	Grenada	America/Grenada	12.050000	-61.750000		-14400	-04:00	1899	-1
+GE	Georgia	Asia/Tbilisi	41.716667	44.816667		14400	+04:00	1880	-1
+GF	French Guiana	America/Cayenne	4.933333	-52.333333		-10800	-03:00	1911	-1
+GG	Guernsey	Europe/Guernsey	49.454722	-2.536111		0	+00:00	1847	-1
+GH	Ghana	Africa/Accra	5.550000	-0.216667		0	+00:00	1912	-1
+GI	Gibraltar	Europe/Gibraltar	36.133333	-5.350000		3600	+01:00	1880	-1
+GL	Greenland	America/Nuuk	64.183333	-51.733333	most of Greenland	-7200	-02:00	1916	-1
+GL	Greenland	America/Danmarkshavn	76.766667	-18.666667	National Park (east coast)	0	+00:00	1916	-1
+GL	Greenland	America/Scoresbysund	70.483333	-21.966667	Scoresbysund/Ittoqqortoormiit	-7200	-02:00	1916	-1
+GL	Greenland	America/Thule	76.566667	-68.783333	Thule/Pituffik	-14400	-04:00	1916	-1
+GM	Gambia	Africa/Banjul	13.466667	-16.650000		0	+00:00	1912	-1
+GN	Guinea	Africa/Conakry	9.516667	-13.716667		0	+00:00	1912	-1
+GP	Guadeloupe	America/Guadeloupe	16.233333	-61.533333		-14400	-04:00	1899	-1
+GQ	Equatorial Guinea	Africa/Malabo	3.750000	8.783333		3600	+01:00	1905	-1
+GR	Greece	Europe/Athens	37.966667	23.716667		7200	+02:00	1895	-1
+GS	South Georgia & the South Sandwich Islands	Atlantic/South_Georgia	-54.266667	-36.533333		-7200	-02:00	1890	-1
+GT	Guatemala	America/Guatemala	14.633333	-90.516667		-21600	-06:00	1918	2006
+GU	Guam	Pacific/Guam	13.466667	144.750000		36000	+10:00	1844	-1
+GW	Guinea-Bissau	Africa/Bissau	11.850000	-15.583333		0	+00:00	1912	-1
+GY	Guyana	America/Guyana	6.800000	-58.166667		-14400	-04:00	1911	-1
+HK	Hong Kong	Asia/Hong_Kong	22.283333	114.150000		28800	+08:00	1904	1979
+HN	Honduras	America/Tegucigalpa	14.100000	-87.216667		-21600	-06:00	1921	2006
+HR	Croatia	Europe/Zagreb	45.800000	15.966667		3600	+01:00	1884	-1
+HT	Haiti	America/Port-au-Prince	18.533333	-72.333333		-18000	-05:00	1890	-1
+HU	Hungary	Europe/Budapest	47.500000	19.083333		3600	+01:00	1890	-1
+ID	Indonesia	Asia/Jakarta	-6.166667	106.800000	Java, Sumatra	25200	+07:00	1867	-1
+ID	Indonesia	Asia/Pontianak	-0.033333	109.333333	Borneo (west, central)	25200	+07:00	1908	-1
+ID	Indonesia	Asia/Makassar	-5.116667	119.400000	Borneo (east, south), Sulawesi/Celebes, Bali, Nusa Tengarra, Timor (west)	28800	+08:00	1920	-1
+ID	Indonesia	Asia/Jayapura	-2.533333	140.700000	New Guinea (West Papua / Irian Jaya), Malukus/Moluccas	32400	+09:00	1932	-1
+IE	Ireland	Europe/Dublin	53.333333	-6.250000		3600	+01:00	1880	-1
+IL	Israel	Asia/Jerusalem	31.780556	35.223889		7200	+02:00	1880	-1
+IM	Isle of Man	Europe/Isle_of_Man	54.150000	-4.466667		0	+00:00	1847	-1
+IN	India	Asia/Kolkata	22.533333	88.366667		19800	+05:30	1854	-1
+IO	British Indian Ocean Territory	Indian/Chagos	-7.333333	72.416667		21600	+06:00	1907	-1
+IQ	Iraq	Asia/Baghdad	33.350000	44.416667		10800	+03:00	1890	2007
+IR	Iran	Asia/Tehran	35.666667	51.433333		12600	+03:30	1916	2022
+IS	Iceland	Atlantic/Reykjavik	64.150000	-21.850000		0	+00:00	1912	-1
+IT	Italy	Europe/Rome	41.900000	12.483333		3600	+01:00	1866	-1
+JE	Jersey	Europe/Jersey	49.183611	-2.106667		0	+00:00	1847	-1
+JM	Jamaica	America/Jamaica	17.968056	-76.793333		-18000	-05:00	1890	-1
+JO	Jordan	Asia/Amman	31.950000	35.933333		10800	+03:00	1931	-1
+JP	Japan	Asia/Tokyo	35.654444	139.744722		32400	+09:00	1887	1951
+KE	Kenya	Africa/Nairobi	-1.283333	36.816667		10800	+03:00	1908	-1
+KG	Kyrgyzstan	Asia/Bishkek	42.900000	74.600000		21600	+06:00	1924	-1
+KH	Cambodia	Asia/Phnom_Penh	11.550000	104.916667		25200	+07:00	1880	-1
+KI	Kiribati	Pacific/Tarawa	1.416667	173.000000	Gilbert Islands	43200	+12:00	1901	-1
+KI	Kiribati	Pacific/Kanton	-2.783333	-171.716667	Phoenix Islands	46800	+13:00	1937	-1
+KI	Kiribati	Pacific/Kiritimati	1.866667	-157.333333	Line Islands	50400	+14:00	1901	-1
+KM	Comoros	Indian/Comoro	-11.683333	43.266667		10800	+03:00	1908	-1
+KN	St Kitts & Nevis	America/St_Kitts	17.300000	-62.716667		-14400	-04:00	1899	-1
+KP	Korea (North)	Asia/Pyongyang	39.016667	125.750000		32400	+09:00	1908	-1
+KR	Korea (South)	Asia/Seoul	37.550000	126.966667		32400	+09:00	1908	1988
+KW	Kuwait	Asia/Kuwait	29.333333	47.983333		10800	+03:00	1947	-1
+KY	Cayman Islands	America/Cayman	19.300000	-81.383333		-18000	-05:00	1890	-1
+KZ	Kazakhstan	Asia/Almaty	43.250000	76.950000	most of Kazakhstan	18000	+05:00	1924	-1
+KZ	Kazakhstan	Asia/Qyzylorda	44.800000	65.466667	Qyzylorda/Kyzylorda/Kzyl-Orda	18000	+05:00	1924	-1
+KZ	Kazakhstan	Asia/Qostanay	53.200000	63.616667	Qostanay/Kostanay/Kustanay	18000	+05:00	1924	-1
+KZ	Kazakhstan	Asia/Aqtobe	50.283333	57.166667	Aqtobe/Aktobe	18000	+05:00	1924	-1
+KZ	Kazakhstan	Asia/Aqtau	44.516667	50.266667	Mangghystau/Mankistau	18000	+05:00	1924	-1
+KZ	Kazakhstan	Asia/Atyrau	47.116667	51.933333	Atyrau/Atirau/Gur'yev	18000	+05:00	1924	-1
+KZ	Kazakhstan	Asia/Oral	51.216667	51.350000	West Kazakhstan	18000	+05:00	1924	-1
+LA	Laos	Asia/Vientiane	17.966667	102.600000		25200	+07:00	1880	-1
+LB	Lebanon	Asia/Beirut	33.883333	35.500000		7200	+02:00	1880	-1
+LC	St Lucia	America/St_Lucia	14.016667	-61.000000		-14400	-04:00	1899	-1
+LI	Liechtenstein	Europe/Vaduz	47.150000	9.516667		3600	+01:00	1853	-1
+LK	Sri Lanka	Asia/Colombo	6.933333	79.850000		19800	+05:30	1880	-1
+LR	Liberia	Africa/Monrovia	6.300000	-10.783333		0	+00:00	1882	-1
+LS	Lesotho	Africa/Maseru	-29.466667	27.500000		7200	+02:00	1892	1944
+LT	Lithuania	Europe/Vilnius	54.683333	25.316667		7200	+02:00	1880	-1
+LU	Luxembourg	Europe/Luxembourg	49.600000	6.150000		3600	+01:00	1880	-1
+LV	Latvia	Europe/Riga	56.950000	24.100000		7200	+02:00	1880	-1
+LY	Libya	Africa/Tripoli	32.900000	13.183333		7200	+02:00	1920	-1
+MA	Morocco	Africa/Casablanca	33.650000	-7.583333		3600	+01:00	1913	2087
+MC	Monaco	Europe/Monaco	43.700000	7.383333		3600	+01:00	1891	-1
+MD	Moldova	Europe/Chisinau	47.000000	28.833333		7200	+02:00	1880	-1
+ME	Montenegro	Europe/Podgorica	42.433333	19.266667		3600	+01:00	1884	-1
+MF	St Martin (French)	America/Marigot	18.066667	-63.083333		-14400	-04:00	1899	-1
+MG	Madagascar	Indian/Antananarivo	-18.916667	47.516667		10800	+03:00	1908	-1
+MH	Marshall Islands	Pacific/Majuro	7.150000	171.200000	most of Marshall Islands	43200	+12:00	1901	-1
+MH	Marshall Islands	Pacific/Kwajalein	9.083333	167.333333	Kwajalein	43200	+12:00	1901	-1
+MK	North Macedonia	Europe/Skopje	41.983333	21.433333		3600	+01:00	1884	-1
+ML	Mali	Africa/Bamako	12.650000	-8.000000		0	+00:00	1912	-1
+MM	Myanmar (Burma)	Asia/Yangon	16.783333	96.166667		23400	+06:30	1880	-1
+MN	Mongolia	Asia/Ulaanbaatar	47.916667	106.883333	most of Mongolia	28800	+08:00	1905	2016
+MN	Mongolia	Asia/Hovd	48.016667	91.650000	Bayan-Olgii, Hovd, Uvs	25200	+07:00	1905	2016
+MO	Macau	Asia/Macau	22.197222	113.541667		28800	+08:00	1904	1979
+MP	Northern Mariana Islands	Pacific/Saipan	15.200000	145.750000		36000	+10:00	1844	-1
+MQ	Martinique	America/Martinique	14.600000	-61.083333		-14400	-04:00	1890	-1
+MR	Mauritania	Africa/Nouakchott	18.100000	-15.950000		0	+00:00	1912	-1
+MS	Montserrat	America/Montserrat	16.716667	-62.216667		-14400	-04:00	1899	-1
+MT	Malta	Europe/Malta	35.900000	14.516667		3600	+01:00	1893	-1
+MU	Mauritius	Indian/Mauritius	-20.166667	57.500000		14400	+04:00	1907	2009
+MV	Maldives	Indian/Maldives	4.166667	73.500000		18000	+05:00	1880	-1
+MW	Malawi	Africa/Blantyre	-15.783333	35.000000		7200	+02:00	1909	-1
+MX	Mexico	America/Mexico_City	19.400000	-99.150000	Central Mexico	-21600	-06:00	1922	2022
+MX	Mexico	America/Cancun	21.083333	-86.766667	Quintana Roo	-18000	-05:00	1922	-1
+MX	Mexico	America/Merida	20.966667	-89.616667	Campeche, Yucatan	-21600	-06:00	1922	2022
+MX	Mexico	America/Monterrey	25.666667	-100.316667	Durango; Coahuila, Nuevo Leon, Tamaulipas (most areas)	-21600	-06:00	1922	2022
+MX	Mexico	America/Matamoros	25.833333	-97.500000	Coahuila, Nuevo Leon, Tamaulipas (US border)	-21600	-06:00	1922	-1
+MX	Mexico	America/Chihuahua	28.633333	-106.083333	Chihuahua (most areas)	-21600	-06:00	1922	-1
+MX	Mexico	America/Ciudad_Juarez	31.733333	-106.483333	Chihuahua (US border - west)	-25200	-07:00	1922	-1
+MX	Mexico	America/Ojinaga	29.566667	-104.416667	Chihuahua (US border - east)	-21600	-06:00	1922	-1
+MX	Mexico	America/Mazatlan	23.216667	-106.416667	Baja California Sur, Nayarit (most areas), Sinaloa	-25200	-07:00	1922	2022
+MX	Mexico	America/Bahia_Banderas	20.800000	-105.250000	Bahia de Banderas	-21600	-06:00	1922	2022
+MX	Mexico	America/Hermosillo	29.066667	-110.966667	Sonora	-25200	-07:00	1922	-1
+MX	Mexico	America/Tijuana	32.533333	-117.016667	Baja California	-28800	-08:00	1922	-1
+MY	Malaysia	Asia/Kuala_Lumpur	3.166667	101.700000	Malaysia (peninsula)	28800	+08:00	1901	-1
+MY	Malaysia	Asia/Kuching	1.550000	110.333333	Sabah, Sarawak	28800	+08:00	1926	-1
+MZ	Mozambique	Africa/Maputo	-25.966667	32.583333		7200	+02:00	1909	-1
+NA	Namibia	Africa/Windhoek	-22.566667	17.100000		7200	+02:00	1892	2017
+NC	New Caledonia	Pacific/Noumea	-22.266667	166.450000		39600	+11:00	1912	1997
+NE	Niger	Africa/Niamey	13.516667	2.116667		3600	+01:00	1905	-1
+NF	Norfolk Island	Pacific/Norfolk	-29.050000	167.966667		39600	+11:00	1901	-1
+NG	Nigeria	Africa/Lagos	6.450000	3.400000		3600	+01:00	1905	-1
+NI	Nicaragua	America/Managua	12.150000	-86.283333		-21600	-06:00	1890	2006
+NL	Netherlands	Europe/Amsterdam	52.366667	4.900000		3600	+01:00	1880	-1
+NO	Norway	Europe/Oslo	59.916667	10.750000		3600	+01:00	1893	-1
+NP	Nepal	Asia/Kathmandu	27.716667	85.316667		20700	+05:45	1920	-1
+NR	Nauru	Pacific/Nauru	-0.516667	166.916667		43200	+12:00	1921	-1
+NU	Niue	Pacific/Niue	-19.016667	-169.916667		-39600	-11:00	1952	-1
+NZ	New Zealand	Pacific/Auckland	-36.866667	174.766667	most of New Zealand	43200	+12:00	1868	-1
+NZ	New Zealand	Pacific/Chatham	-43.950000	-176.550000	Chatham Islands	45900	+12:45	1868	-1
+OM	Oman	Asia/Muscat	23.600000	58.583333		14400	+04:00	1920	-1
+PA	Panama	America/Panama	8.966667	-79.533333		-18000	-05:00	1890	-1
+PE	Peru	America/Lima	-12.050000	-77.050000		-18000	-05:00	1890	1994
+PF	French Polynesia	Pacific/Tahiti	-17.533333	-149.566667	Society Islands	-36000	-10:00	1912	-1
+PF	French Polynesia	Pacific/Marquesas	-9.000000	-139.500000	Marquesas Islands	-34200	-09:30	1912	-1
+PF	French Polynesia	Pacific/Gambier	-23.133333	-134.950000	Gambier Islands	-32400	-09:00	1912	-1
+PG	Papua New Guinea	Pacific/Port_Moresby	-9.500000	147.166667	most of Papua New Guinea	36000	+10:00	1880	-1
+PG	Papua New Guinea	Pacific/Bougainville	-6.216667	155.566667	Bougainville	39600	+11:00	1880	-1
+PH	Philippines	Asia/Manila	14.586667	120.967778		28800	+08:00	1844	1990
+PK	Pakistan	Asia/Karachi	24.866667	67.050000		18000	+05:00	1907	2009
+PL	Poland	Europe/Warsaw	52.250000	21.000000		3600	+01:00	1880	-1
+PM	St Pierre & Miquelon	America/Miquelon	47.050000	-56.333333		-10800	-03:00	1911	-1
+PN	Pitcairn	Pacific/Pitcairn	-25.066667	-130.083333		-28800	-08:00	1901	-1
+PR	Puerto Rico	America/Puerto_Rico	18.468333	-66.106111		-14400	-04:00	1899	-1
+PS	Palestine	Asia/Gaza	31.500000	34.466667	Gaza Strip	7200	+02:00	1900	2086
+PS	Palestine	Asia/Hebron	31.533333	35.095000	West Bank	7200	+02:00	1900	2086
+PT	Portugal	Europe/Lisbon	38.716667	-9.133333	Portugal (mainland)	0	+00:00	1884	-1
+PT	Portugal	Atlantic/Madeira	32.633333	-16.900000	Madeira Islands	0	+00:00	1884	-1
+PT	Portugal	Atlantic/Azores	37.733333	-25.666667	Azores	-3600	-01:00	1884	-1
+PW	Palau	Pacific/Palau	7.333333	134.483333		32400	+09:00	1844	-1
+PY	Paraguay	America/Asuncion	-25.266667	-57.666667		-10800	-03:00	1890	-1
+QA	Qatar	Asia/Qatar	25.283333	51.533333		10800	+03:00	1920	-1
+RE	Réunion	Indian/Reunion	-20.866667	55.466667		14400	+04:00	1920	-1
+RO	Romania	Europe/Bucharest	44.433333	26.100000		7200	+02:00	1891	-1
+RS	Serbia	Europe/Belgrade	44.833333	20.500000		3600	+01:00	1884	-1
+RU	Russia	Europe/Kaliningrad	54.716667	20.500000	MSK-01 - Kaliningrad	7200	+02:00	1893	-1
+RU	Russia	Europe/Moscow	55.755833	37.617778	MSK+00 - Moscow area	10800	+03:00	1880	-1
+UA	Ukraine	Europe/Simferopol	44.950000	34.100000	Crimea	10800	+03:00	1880	-1
+RU	Russia	Europe/Kirov	58.600000	49.650000	MSK+00 - Kirov	10800	+03:00	1919	-1
+RU	Russia	Europe/Volgograd	48.733333	44.416667	MSK+00 - Volgograd	10800	+03:00	1920	-1
+RU	Russia	Europe/Astrakhan	46.350000	48.050000	MSK+01 - Astrakhan	14400	+04:00	1924	-1
+RU	Russia	Europe/Saratov	51.566667	46.033333	MSK+01 - Saratov	14400	+04:00	1919	-1
+RU	Russia	Europe/Ulyanovsk	54.333333	48.400000	MSK+01 - Ulyanovsk	14400	+04:00	1919	-1
+RU	Russia	Europe/Samara	53.200000	50.150000	MSK+01 - Samara, Udmurtia	14400	+04:00	1919	-1
+RU	Russia	Asia/Yekaterinburg	56.850000	60.600000	MSK+02 - Urals	18000	+05:00	1916	-1
+RU	Russia	Asia/Omsk	55.000000	73.400000	MSK+03 - Omsk	21600	+06:00	1919	-1
+RU	Russia	Asia/Novosibirsk	55.033333	82.916667	MSK+04 - Novosibirsk	25200	+07:00	1919	-1
+RU	Russia	Asia/Barnaul	53.366667	83.750000	MSK+04 - Altai	25200	+07:00	1919	-1
+RU	Russia	Asia/Tomsk	56.500000	84.966667	MSK+04 - Tomsk	25200	+07:00	1919	-1
+RU	Russia	Asia/Novokuznetsk	53.750000	87.116667	MSK+04 - Kemerovo	25200	+07:00	1924	-1
+RU	Russia	Asia/Krasnoyarsk	56.016667	92.833333	MSK+04 - Krasnoyarsk area	25200	+07:00	1920	-1
+RU	Russia	Asia/Irkutsk	52.266667	104.333333	MSK+05 - Irkutsk, Buryatia	28800	+08:00	1880	-1
+RU	Russia	Asia/Chita	52.050000	113.466667	MSK+06 - Zabaykalsky	32400	+09:00	1919	-1
+RU	Russia	Asia/Yakutsk	62.000000	129.666667	MSK+06 - Lena River	32400	+09:00	1919	-1
+RU	Russia	Asia/Khandyga	62.656389	135.553889	MSK+06 - Tomponsky, Ust-Maysky	32400	+09:00	1919	-1
+RU	Russia	Asia/Vladivostok	43.166667	131.933333	MSK+07 - Amur River	36000	+10:00	1922	-1
+RU	Russia	Asia/Ust-Nera	64.560278	143.226667	MSK+07 - Oymyakonsky	36000	+10:00	1919	-1
+RU	Russia	Asia/Magadan	59.566667	150.800000	MSK+08 - Magadan	39600	+11:00	1924	-1
+RU	Russia	Asia/Sakhalin	46.966667	142.700000	MSK+08 - Sakhalin Island	39600	+11:00	1905	-1
+RU	Russia	Asia/Srednekolymsk	67.466667	153.716667	MSK+08 - Sakha (E), N Kuril Is	39600	+11:00	1924	-1
+RU	Russia	Asia/Kamchatka	53.016667	158.650000	MSK+09 - Kamchatka	43200	+12:00	1922	-1
+RU	Russia	Asia/Anadyr	64.750000	177.483333	MSK+09 - Bering Sea	43200	+12:00	1924	-1
+RW	Rwanda	Africa/Kigali	-1.950000	30.066667		7200	+02:00	1909	-1
+SA	Saudi Arabia	Asia/Riyadh	24.633333	46.716667		10800	+03:00	1947	-1
+SB	Solomon Islands	Pacific/Guadalcanal	-9.533333	160.200000		39600	+11:00	1912	-1
+SC	Seychelles	Indian/Mahe	-4.666667	55.466667		14400	+04:00	1920	-1
+SD	Sudan	Africa/Khartoum	15.600000	32.533333		7200	+02:00	1931	-1
+SE	Sweden	Europe/Stockholm	59.333333	18.050000		3600	+01:00	1893	-1
+SG	Singapore	Asia/Singapore	1.283333	103.850000		28800	+08:00	1901	-1
+SH	St Helena	Atlantic/St_Helena	-15.916667	-5.700000		0	+00:00	1912	-1
+SI	Slovenia	Europe/Ljubljana	46.050000	14.516667		3600	+01:00	1884	-1
+SJ	Svalbard & Jan Mayen	Arctic/Longyearbyen	78.000000	16.000000		3600	+01:00	1893	-1
+SK	Slovakia	Europe/Bratislava	48.150000	17.116667		3600	+01:00	1850	-1
+SL	Sierra Leone	Africa/Freetown	8.500000	-13.250000		0	+00:00	1912	-1
+SM	San Marino	Europe/San_Marino	43.916667	12.466667		3600	+01:00	1866	-1
+SN	Senegal	Africa/Dakar	14.666667	-17.433333		0	+00:00	1912	-1
+SO	Somalia	Africa/Mogadishu	2.066667	45.366667		10800	+03:00	1908	-1
+SR	Suriname	America/Paramaribo	5.833333	-55.166667		-10800	-03:00	1911	-1
+SS	South Sudan	Africa/Juba	4.850000	31.616667		7200	+02:00	1931	-1
+ST	Sao Tome & Principe	Africa/Sao_Tome	0.333333	6.733333		0	+00:00	1884	-1
+SV	El Salvador	America/El_Salvador	13.700000	-89.200000		-21600	-06:00	1921	1988
+SX	St Maarten (Dutch)	America/Lower_Princes	18.051389	-63.047222		-14400	-04:00	1899	-1
+SY	Syria	Asia/Damascus	33.500000	36.300000		10800	+03:00	1920	-1
+SZ	Eswatini (Swaziland)	Africa/Mbabane	-26.300000	31.100000		7200	+02:00	1892	1944
+TC	Turks & Caicos Is	America/Grand_Turk	21.466667	-71.133333		-18000	-05:00	1890	-1
+TD	Chad	Africa/Ndjamena	12.116667	15.050000		3600	+01:00	1912	-1
+TF	French S. Terr.	Indian/Kerguelen	-49.352778	70.217500		18000	+05:00	1880	-1
+TG	Togo	Africa/Lome	6.133333	1.216667		0	+00:00	1912	-1
+TH	Thailand	Asia/Bangkok	13.750000	100.516667		25200	+07:00	1880	-1
+TJ	Tajikistan	Asia/Dushanbe	38.583333	68.800000		18000	+05:00	1924	-1
+TK	Tokelau	Pacific/Fakaofo	-9.366667	-171.233333		46800	+13:00	1901	-1
+TL	East Timor	Asia/Dili	-8.550000	125.583333		32400	+09:00	1911	-1
+TM	Turkmenistan	Asia/Ashgabat	37.950000	58.383333		18000	+05:00	1924	-1
+TN	Tunisia	Africa/Tunis	36.800000	10.183333		3600	+01:00	1881	2008
+TO	Tonga	Pacific/Tongatapu	-21.133333	-175.200000		46800	+13:00	1945	2017
+TR	Turkey	Europe/Istanbul	41.016667	28.966667		10800	+03:00	1880	-1
+TT	Trinidad & Tobago	America/Port_of_Spain	10.650000	-61.516667		-14400	-04:00	1899	-1
+TV	Tuvalu	Pacific/Funafuti	-8.516667	179.216667		43200	+12:00	1901	-1
+TW	Taiwan	Asia/Taipei	25.050000	121.500000		28800	+08:00	1896	1979
+TZ	Tanzania	Africa/Dar_es_Salaam	-6.800000	39.283333		10800	+03:00	1908	-1
+UA	Ukraine	Europe/Kyiv	50.433333	30.516667	most of Ukraine	7200	+02:00	1880	-1
+UG	Uganda	Africa/Kampala	0.316667	32.416667		10800	+03:00	1908	-1
+UM	US minor outlying islands	Pacific/Midway	28.216667	-177.366667	Midway Islands	-39600	-11:00	1892	-1
+UM	US minor outlying islands	Pacific/Wake	19.283333	166.616667	Wake Island	43200	+12:00	1901	-1
+US	United States	America/New_York	40.714167	-74.006389	Eastern (most areas)	-18000	-05:00	1883	-1
+US	United States	America/Detroit	42.331389	-83.045833	Eastern - MI (most areas)	-18000	-05:00	1905	-1
+US	United States	America/Kentucky/Louisville	38.254167	-85.759444	Eastern - KY (Louisville area)	-18000	-05:00	1883	-1
+US	United States	America/Kentucky/Monticello	36.829722	-84.849167	Eastern - KY (Wayne)	-18000	-05:00	1883	-1
+US	United States	America/Indiana/Indianapolis	39.768333	-86.158056	Eastern - IN (most areas)	-18000	-05:00	1883	-1
+US	United States	America/Indiana/Vincennes	38.677222	-87.528611	Eastern - IN (Da, Du, K, Mn)	-18000	-05:00	1883	-1
+US	United States	America/Indiana/Winamac	41.051389	-86.603056	Eastern - IN (Pulaski)	-18000	-05:00	1883	-1
+US	United States	America/Indiana/Marengo	38.375556	-86.344722	Eastern - IN (Crawford)	-18000	-05:00	1883	-1
+US	United States	America/Indiana/Petersburg	38.491944	-87.278611	Eastern - IN (Pike)	-18000	-05:00	1883	-1
+US	United States	America/Indiana/Vevay	38.747778	-85.067222	Eastern - IN (Switzerland)	-18000	-05:00	1883	-1
+US	United States	America/Chicago	41.850000	-87.650000	Central (most areas)	-21600	-06:00	1883	-1
+US	United States	America/Indiana/Tell_City	37.953056	-86.761389	Central - IN (Perry)	-21600	-06:00	1883	-1
+US	United States	America/Indiana/Knox	41.295833	-86.625000	Central - IN (Starke)	-21600	-06:00	1883	-1
+US	United States	America/Menominee	45.107778	-87.614167	Central - MI (Wisconsin border)	-21600	-06:00	1885	-1
+US	United States	America/North_Dakota/Center	47.116389	-101.299167	Central - ND (Oliver)	-21600	-06:00	1883	-1
+US	United States	America/North_Dakota/New_Salem	46.845000	-101.410833	Central - ND (Morton rural)	-21600	-06:00	1883	-1
+US	United States	America/North_Dakota/Beulah	47.264167	-101.777778	Central - ND (Mercer)	-21600	-06:00	1883	-1
+US	United States	America/Denver	39.739167	-104.984167	Mountain (most areas)	-25200	-07:00	1883	-1
+US	United States	America/Boise	43.613611	-116.202500	Mountain - ID (south), OR (east)	-25200	-07:00	1883	-1
+US	United States	America/Phoenix	33.448333	-112.073333	MST - AZ (except Navajo)	-25200	-07:00	1883	-1
+US	United States	America/Los_Angeles	34.052222	-118.242778	Pacific	-28800	-08:00	1883	-1
+US	United States	America/Anchorage	61.218056	-149.900278	Alaska (most areas)	-32400	-09:00	1867	-1
+US	United States	America/Juneau	58.301944	-134.419722	Alaska - Juneau area	-32400	-09:00	1867	-1
+US	United States	America/Sitka	57.176389	-135.301944	Alaska - Sitka area	-32400	-09:00	1867	-1
+US	United States	America/Metlakatla	55.126944	-131.576389	Alaska - Annette Island	-32400	-09:00	1867	-1
+US	United States	America/Yakutat	59.546944	-139.727222	Alaska - Yakutat	-32400	-09:00	1867	-1
+US	United States	America/Nome	64.501111	-165.406389	Alaska (west)	-32400	-09:00	1867	-1
+US	United States	America/Adak	51.880000	-176.658056	Alaska - western Aleutians	-36000	-10:00	1867	-1
+US	United States	Pacific/Honolulu	21.306944	-157.858333	Hawaii	-36000	-10:00	1896	-1
+UY	Uruguay	America/Montevideo	-34.909167	-56.212500		-10800	-03:00	1908	2015
+UZ	Uzbekistan	Asia/Samarkand	39.666667	66.800000	Uzbekistan (west)	18000	+05:00	1924	-1
+UZ	Uzbekistan	Asia/Tashkent	41.333333	69.300000	Uzbekistan (east)	18000	+05:00	1924	-1
+VA	Vatican City	Europe/Vatican	41.902222	12.453056		3600	+01:00	1866	-1
+VC	St Vincent	America/St_Vincent	13.150000	-61.233333		-14400	-04:00	1899	-1
+VE	Venezuela	America/Caracas	10.500000	-66.933333		-14400	-04:00	1890	-1
+VG	Virgin Islands (UK)	America/Tortola	18.450000	-64.616667		-14400	-04:00	1899	-1
+VI	Virgin Islands (US)	America/St_Thomas	18.350000	-64.933333		-14400	-04:00	1899	-1
+VN	Vietnam	Asia/Ho_Chi_Minh	10.750000	106.666667		25200	+07:00	1906	-1
+VU	Vanuatu	Pacific/Efate	-17.666667	168.416667		39600	+11:00	1912	1993
+WF	Wallis & Futuna	Pacific/Wallis	-13.300000	-176.166667		43200	+12:00	1901	-1
+WS	Samoa (western)	Pacific/Apia	-13.833333	-171.733333		46800	+13:00	1892	2021
+YE	Yemen	Asia/Aden	12.750000	45.200000		10800	+03:00	1947	-1
+YT	Mayotte	Indian/Mayotte	-12.783333	45.233333		10800	+03:00	1908	-1
+ZA	South Africa	Africa/Johannesburg	-26.250000	28.000000		7200	+02:00	1892	1944
+ZM	Zambia	Africa/Lusaka	-15.416667	28.283333		7200	+02:00	1909	-1
+ZW	Zimbabwe	Africa/Harare	-17.833333	31.050000		7200	+02:00	1909	-1

@@ -95,12 +95,24 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
         entry.Latitude = latitude;
         entry.Longitude = longitude;
 
-        ZoneTab_Entry_t* tz_list = realloc(TimeZone_List, (*zonetab_count + 1) * sizeof(ZoneTab_Entry_t));
-        if (tz_list == NULL)
+        if ((*zonetab_count) == 0)
         {
-            return NULL;
+            ZoneTab_Entry_t* tz_list = malloc(sizeof(ZoneTab_Entry_t));
+            if (tz_list == NULL)
+            {
+                return NULL;
+            }
+            TimeZone_List = tz_list;
         }
-        TimeZone_List = tz_list;
+        else
+        {
+            ZoneTab_Entry_t* tz_list = realloc(TimeZone_List, (*zonetab_count + 1) * sizeof(ZoneTab_Entry_t));
+            if (tz_list == NULL)
+            {
+                return NULL;
+            }
+            TimeZone_List = tz_list;
+        }
         TimeZone_List[*zonetab_count] = entry;
         (*zonetab_count)++;
     }

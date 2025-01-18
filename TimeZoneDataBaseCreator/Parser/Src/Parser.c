@@ -43,18 +43,23 @@ bool Initial_FileNames(const char* data_folder_path)
 
 Parse_Data_t* Parse_Data(const char* data_folder_path)
 {
-    Parse_Data_t data = { 0 };
+    Parse_Data_t* data = (Parse_Data_t*)malloc(sizeof(Parse_Data_t));
+    if (data == NULL)
+    {
+        return NULL;
+    }
 
     if (!Initial_FileNames(data_folder_path))
     {
         return NULL;
     }
 
-    data.Version = Parse_Version();
-    data.ISO3166 = Parse_ISO3166Tab(&data.ISO3166_Count);
-    data.Zonetab = Parse_ZoneTab(&data.Zonetab_Count);
-    data.Rules = Parse_Rules(&data.Rules_Count);
-    data.Zones = Parse_Zones(&data.Zones_Count);
+    data->Version = Parse_Version();
+    data->ISO3166 = Parse_ISO3166Tab(&data->ISO3166_Count);
+    data->Zonetab = Parse_ZoneTab(&data->Zonetab_Count);
+    data->Rules = Parse_Rules(&data->Rules_Count);
+    data->Zones = Parse_Zones(&data->Zones_Count);
+    data->Links = Parse_Links(&data->Links_Count);
 
-    return &data;
+    return data;
 }

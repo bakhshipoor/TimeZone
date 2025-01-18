@@ -39,6 +39,12 @@
     <ClInclude Include="Parser\Inc\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Generator\Inc\Generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\Inc\Parse_Link.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeZoneDBCreator.C">
@@ -66,6 +72,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Parser\Src\Parser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Generator\Src\Generator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\Src\Parse_Link.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

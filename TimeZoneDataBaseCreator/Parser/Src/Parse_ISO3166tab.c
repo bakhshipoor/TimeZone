@@ -51,12 +51,25 @@ ISO3166_Entry_t* Parse_ISO3166Tab(int32_t* iso3166_Count)
             sprintf_s(entry.Country_Name, strlen(country_name) + 1, "%s", country_name);
         }
 
-        ISO3166_Entry_t* tz_list = realloc(ISO3166_List, (*iso3166_Count + 1) * sizeof(ISO3166_Entry_t));
-        if (tz_list == NULL)
+        if ((*iso3166_Count) == 0)
         {
-            return NULL;
+            ISO3166_Entry_t* tz_list = malloc(sizeof(ISO3166_Entry_t));
+            if (tz_list == NULL)
+            {
+                return NULL;
+            }
+            ISO3166_List = tz_list;
         }
-        ISO3166_List = tz_list;
+        else
+        {
+            ISO3166_Entry_t* tz_list = realloc(ISO3166_List, (*iso3166_Count + 1) * sizeof(ISO3166_Entry_t));
+            if (tz_list == NULL)
+            {
+                return NULL;
+            }
+            ISO3166_List = tz_list;
+        }
+        
         ISO3166_List[*iso3166_Count] = entry;
         (*iso3166_Count)++;
     }

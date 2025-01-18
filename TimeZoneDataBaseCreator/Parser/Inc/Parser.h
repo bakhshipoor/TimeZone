@@ -10,11 +10,12 @@ extern "C" {
 #include "../Inc/Parse_Zonetab.h"
 #include "../Inc/Parse_Rules.h"
 #include "../Inc/Parse_Zones.h"
+#include "../Inc/Parse_Link.h"
 
 
     typedef struct
     {
-        Version_t Version;
+        Version_t* Version;
         int32_t ISO3166_Count;
         ISO3166_Entry_t* ISO3166;
         int32_t Zonetab_Count;
@@ -23,6 +24,8 @@ extern "C" {
         Rule_Entry_t* Rules;
         int32_t Zones_Count;
         Zone_Entry_t* Zones;
+        int32_t Links_Count;
+        Link_Entry_t* Links;
     }Parse_Data_t;
 
     

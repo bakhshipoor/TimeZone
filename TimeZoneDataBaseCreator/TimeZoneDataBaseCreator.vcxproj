@@ -128,9 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Generator\Inc\Generator.h" />
     <ClInclude Include="Parser\Inc\Parser.h" />
     <ClInclude Include="Parser\Inc\Parse_Common.h" />
     <ClInclude Include="Parser\Inc\Parse_ISO3166tab.h" />
+    <ClInclude Include="Parser\Inc\Parse_Link.h" />
     <ClInclude Include="Parser\Inc\Parse_Rules.h" />
     <ClInclude Include="Parser\Inc\Parse_Version.h" />
     <ClInclude Include="Parser\Inc\Parse_Zones.h" />
@@ -138,10 +140,12 @@
     <ClInclude Include="TimeZoneDBCreator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Generator\Src\Generator.c" />
     <ClCompile Include="Parser\Src\Parser.c" />
     <ClCompile Include="Parser\Src\Parse_Constants.c" />
     <ClCompile Include="Parser\Src\Parse_Common.c" />
     <ClCompile Include="Parser\Src\Parse_ISO3166tab.c" />
+    <ClCompile Include="Parser\Src\Parse_Link.c" />
     <ClCompile Include="Parser\Src\Parse_Rules.c" />
     <ClCompile Include="Parser\Src\Parse_Version.c" />
     <ClCompile Include="Parser\Src\Parse_Zones.c" />

@@ -62,6 +62,7 @@ extern "C" {
         Zone_Info_t* Info;
         int16_t Year_Begin;      
         int16_t Year_End;      
+        uint8_t* File;
     } Zone_Entry_t;
 
     Zone_Entry_t* Parse_Zones(int32_t* rules_Count);
@@ -70,7 +71,7 @@ extern "C" {
     Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data);
     Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data);
     bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, const char* zone_name, int32_t* find_Index);
-    bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name);
+    bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name, const char* file_name);
     void Parse_Zone_Year_Range(Zone_Entry_t* zone_list, const int32_t zone_index, const Zone_Data_t zone_data);
     void Parse_Zone_Info(Zone_Entry_t* zone_list, const int32_t* zones_Count);
 

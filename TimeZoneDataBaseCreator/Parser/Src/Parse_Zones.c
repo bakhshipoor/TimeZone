@@ -34,7 +34,7 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
 
             if (!Zone_isExist(Zones_List, zones_Count, zone_data.Name, &find_index))
             {
-                if (Zone_Create(&Zones_List, *zones_Count, zone_data.Name))
+                if (Zone_Create(&Zones_List, *zones_Count, zone_data.Name, Data_Files_Name[dataFile_index]))
                 {
                     find_index = (*zones_Count);
                     (*zones_Count)++;
@@ -241,7 +241,7 @@ bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, con
     return false;
 }
 
-bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name)
+bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name, const char* file_name)
 {
     Zone_Entry_t zone = { 0 };
 
@@ -255,14 +255,32 @@ bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char
     zone.Year_Begin = 0;
     zone.Year_End = 0;
 
-    Zone_Entry_t* zones = realloc(*zone_list, (zones_Count + 1) * sizeof(Zone_Entry_t));
-    if (zones == NULL)
+    zone.File = (uint8_t*)malloc((strlen(file_name) + 1) * sizeof(uint8_t));
+    if (zone.File != NULL)
     {
-        return false;
+        sprintf(zone.File, "%s", file_name);
     }
 
-    *zone_list = zones;
+    if (zones_Count == 0)
+    {
+        Zone_Entry_t* zones = malloc(sizeof(Zone_Entry_t));
+        if (zones == NULL)
+        {
+            return false;
+        }
 
+        *zone_list = zones;
+    }
+    else
+    {
+        Zone_Entry_t* zones = realloc(*zone_list, (zones_Count + 1) * sizeof(Zone_Entry_t));
+        if (zones == NULL)
+        {
+            return false;
+        }
+
+        *zone_list = zones;
+    }
     (*zone_list)[zones_Count] = zone;
 
     return true;
@@ -339,13 +357,28 @@ void Parse_Zone_Info(Zone_Entry_t* zone_list, const int32_t* zones_Count)
                 {
                     sprintf(info.Comment, "%s", zone_data.Comment);
                 }
-                Zone_Info_t* z_info = (Zone_Info_t*)realloc(zone_list[find_index].Info, (zone_list[find_index].Info_Count + 1) * sizeof(Zone_Info_t));
-                if (z_info != NULL)
+
+                if (zone_list[find_index].Info_Count==0)
                 {
-                    zone_list[find_index].Info = z_info;
-                    zone_list[find_index].Info[zone_list[find_index].Info_Count] = info;
-                    zone_list[find_index].Info_Count++;
+                    Zone_Info_t* z_info = (Zone_Info_t*)malloc(sizeof(Zone_Info_t));
+                    if (z_info != NULL)
+                    {
+                        zone_list[find_index].Info = z_info;
+                        zone_list[find_index].Info[zone_list[find_index].Info_Count] = info;
+                        zone_list[find_index].Info_Count++;
+                    }
                 }
+                else
+                {
+                    Zone_Info_t* z_info = (Zone_Info_t*)realloc(zone_list[find_index].Info, (zone_list[find_index].Info_Count + 1) * sizeof(Zone_Info_t));
+                    if (z_info != NULL)
+                    {
+                        zone_list[find_index].Info = z_info;
+                        zone_list[find_index].Info[zone_list[find_index].Info_Count] = info;
+                        zone_list[find_index].Info_Count++;
+                    }
+                }
+                
             }
         }
         fclose(data_File);

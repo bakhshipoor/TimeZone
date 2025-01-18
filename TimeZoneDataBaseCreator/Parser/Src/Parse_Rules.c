@@ -237,15 +237,25 @@ bool Rule_Create(Rule_Entry_t** rule_list, const int32_t rules_Count, const char
     rule.Year_End = 0;
 
     // Reallocate memory for the rule list to accommodate the new rule
-    Rule_Entry_t* rules = realloc(*rule_list, (rules_Count + 1) * sizeof(Rule_Entry_t));
-    if (rules == NULL)
+    if (rules_Count == 0)
     {
-        // If memory allocation fails, return false
-        return false;
+        Rule_Entry_t* rules = malloc(sizeof(Rule_Entry_t));
+        if (rules == NULL)
+        {
+            return false;
+        }
+        *rule_list = rules;
     }
-
-    // Update the rule list pointer to point to the newly allocated memory
-    *rule_list = rules;
+    else
+    {
+        Rule_Entry_t* rules = realloc(*rule_list, (rules_Count + 1) * sizeof(Rule_Entry_t));
+        if (rules == NULL)
+        {
+            return false;
+        }
+        *rule_list = rules;
+    }
+    
 
     // Add the new rule to the rule list at the specified index
     (*rule_list)[rules_Count] = rule;
@@ -487,15 +497,27 @@ bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const
     }
 
     // Reallocate memory for the year list to accommodate the new rule year
-    Rule_Year_t* year = (Rule_Year_t*)realloc(*year_list, (years_count + 1) * sizeof(Rule_Year_t));
-    if (year != NULL)
+    if (years_count == 0)
     {
-        // Update the year list pointer to point to the newly allocated memory
-        *year_list = year;
-        // Add the new rule year to the list at the specified index
-        (*year_list)[years_count] = rule_year;
-        return true; // Return true indicating the rule year was successfully created
+        Rule_Year_t* year = (Rule_Year_t*)malloc(sizeof(Rule_Year_t));
+        if (year != NULL)
+        {
+            *year_list = year;
+            (*year_list)[years_count] = rule_year;
+            return true; // Return true indicating the rule year was successfully created
+        }
     }
+    else
+    {
+        Rule_Year_t* year = (Rule_Year_t*)realloc(*year_list, (years_count + 1) * sizeof(Rule_Year_t));
+        if (year != NULL)
+        {
+            *year_list = year;
+            (*year_list)[years_count] = rule_year;
+            return true; // Return true indicating the rule year was successfully created
+        }
+    }
+    
     // If memory allocation fails, return false
     return false;
 }
@@ -535,15 +557,31 @@ bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count, cons
     }
 
     // Reallocate memory for the year data list to accommodate the new rule year data
-    Rule_Year_Data_t* data = (Rule_Year_Data_t*)realloc(*year_data, (count + 1) * sizeof(Rule_Year_Data_t));
-    if (data != NULL)
+    if (count==0)
     {
-        // Update the year data pointer to point to the newly allocated memory
-        *year_data = data;
-        // Add the new rule year data to the list at the specified index
-        (*year_data)[count] = rule_year_data;
-        return true; // Return true indicating the rule year data was successfully added
+        Rule_Year_Data_t* data = (Rule_Year_Data_t*)malloc(sizeof(Rule_Year_Data_t));
+        if (data != NULL)
+        {
+            // Update the year data pointer to point to the newly allocated memory
+            *year_data = data;
+            // Add the new rule year data to the list at the specified index
+            (*year_data)[count] = rule_year_data;
+            return true; // Return true indicating the rule year data was successfully added
+        }
     }
+    else
+    {
+        Rule_Year_Data_t* data = (Rule_Year_Data_t*)realloc(*year_data, (count + 1) * sizeof(Rule_Year_Data_t));
+        if (data != NULL)
+        {
+            // Update the year data pointer to point to the newly allocated memory
+            *year_data = data;
+            // Add the new rule year data to the list at the specified index
+            (*year_data)[count] = rule_year_data;
+            return true; // Return true indicating the rule year data was successfully added
+        }
+    }
+   
     // If memory allocation fails, return false
     return false;
 }

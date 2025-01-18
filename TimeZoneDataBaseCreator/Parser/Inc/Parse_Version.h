@@ -15,7 +15,7 @@ extern "C" {
         uint8_t* Minor;
     }Version_t;
 
-    Version_t Parse_Version(void);
+    Version_t* Parse_Version(void);
 
 #ifdef __cplusplus
 }
