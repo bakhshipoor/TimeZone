@@ -1,4 +1,4 @@
-# Time zone data base for embedded systems
+# Time zone database for embedded systems
 
 https://www.iana.org/time-zones
 
