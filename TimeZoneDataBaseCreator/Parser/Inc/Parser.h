@@ -27,9 +27,9 @@ extern "C" {
 
     
 
-    void Initial_FileNames(void);
+    bool Initial_FileNames(const char* data_folder_path);
 
-    void Parse_Data(void);
+    Parse_Data_t* Parse_Data(const char* data_folder_path);
 
 #ifdef __cplusplus
 }

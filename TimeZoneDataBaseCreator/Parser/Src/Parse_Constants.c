@@ -1,7 +1,5 @@
 #include "../Inc/Parse_Common.h"
 
-const char Data_Folder_Path[] = "../tzdata2025a";
-
 const Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL] = {
     { "Sun", "Sunday",      "lastSun", "lastSunday",        (uint8_t)TZDB_WEEKDAY_SUNDAY },
     { "Mon", "Monday",      "lastMon", "lastMonday",        (uint8_t)TZDB_WEEKDAY_MONDAY },

@@ -73,7 +73,6 @@ extern "C" {
         uint8_t Number;
     }Month_Lookup_t;
 
-    extern const char Data_Folder_Path[];
     extern const char* Data_Files_Name[DATA_FILES_COUNT];
     extern const Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL];
     extern const Last_Weekday_Lookup_t Last_Weekday_Names[TZDB_WEEKDAY_TOTAL];
