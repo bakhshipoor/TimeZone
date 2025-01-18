@@ -21,11 +21,11 @@ ISO3166_Entry_t* Parse_ISO3166Tab(int32_t* iso3166_Count)
 
 
         int sscanf_lenght;
-        uint8_t country_code[MAX_LENGHT_COUNTRY_CODE];
-        uint8_t country_name[MAX_LENGHT_COUNTRY_NAME];
+        uint8_t country_code[MAX_LENGHT_DATA_FIELD];
+        uint8_t country_name[MAX_LENGHT_DATA_FIELD];
 
-        memset(country_code, '\0', MAX_LENGHT_COUNTRY_CODE);
-        memset(country_name, '\0', MAX_LENGHT_COUNTRY_NAME);
+        memset(country_code, '\0', MAX_LENGHT_DATA_FIELD);
+        memset(country_name, '\0', MAX_LENGHT_DATA_FIELD);
 
         sscanf_lenght = sscanf(line, "%s\t%[^\n]", country_code, country_name);
 
@@ -34,8 +34,8 @@ ISO3166_Entry_t* Parse_ISO3166Tab(int32_t* iso3166_Count)
             continue;
         }
 
-        sprintf_s(country_code, MAX_LENGHT_COUNTRY_CODE, "%s", country_code);
-        sprintf_s(country_name, MAX_LENGHT_COUNTRY_NAME, "%s", country_name);
+        sprintf_s(country_code, MAX_LENGHT_DATA_FIELD, "%s", country_code);
+        sprintf_s(country_name, MAX_LENGHT_DATA_FIELD, "%s", country_name);
 
         ISO3166_Entry_t entry;
 

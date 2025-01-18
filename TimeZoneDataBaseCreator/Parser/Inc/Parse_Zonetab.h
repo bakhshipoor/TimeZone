@@ -5,12 +5,11 @@
 extern "C" {
 #endif
 
-#include "TimeZoneDBCreator.h"
+#include "Parse_Common.h"
 
     typedef struct
     {
         uint8_t* Country_Code;
-        uint8_t* Country_Name;
         uint8_t* TZ_Identifier;
         uint8_t* Comments;
         double Latitude;

@@ -21,10 +21,10 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
 
 
         int sscanf_lenght;
-        uint8_t code[MAX_LENGHT_COUNTRY_CODE];
-        uint8_t coordinates[MAX_LENGHT_COORDINATES];
-        uint8_t tzid[MAX_LENGHT_TIMEZONEID];
-        uint8_t comment[MAX_LENGHT_COMMENT];
+        uint8_t code[MAX_LENGHT_DATA_FIELD];
+        uint8_t coordinates[MAX_LENGHT_DATA_FIELD];
+        uint8_t tzid[MAX_LENGHT_DATA_FIELD];
+        uint8_t comment[MAX_LENGHT_DATA_FIELD];
         size_t coordinates_lenght = 0;
         char lat_Sign = 0;
         int lat_Hour = 0;
@@ -37,10 +37,10 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
         double latitude = 0.0;
         double longitude = 0.0;
 
-        memset(code, '\0', MAX_LENGHT_COUNTRY_CODE);
-        memset(coordinates, '\0', MAX_LENGHT_COORDINATES);
-        memset(tzid, '\0', MAX_LENGHT_TIMEZONEID);
-        memset(comment, '\0', MAX_LENGHT_COMMENT);
+        memset(code, '\0', MAX_LENGHT_DATA_FIELD);
+        memset(coordinates, '\0', MAX_LENGHT_DATA_FIELD);
+        memset(tzid, '\0', MAX_LENGHT_DATA_FIELD);
+        memset(comment, '\0', MAX_LENGHT_DATA_FIELD);
 
         sscanf_lenght = sscanf(line, "%s\t%s\t%s\t%[^\n]", code, coordinates, tzid, comment);
 
@@ -48,10 +48,10 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
         {
             continue;
         }
-        sprintf_s(code, MAX_LENGHT_COUNTRY_CODE, "%s", code);
-        sprintf_s(coordinates, MAX_LENGHT_COORDINATES, "%s", coordinates);
-        sprintf_s(tzid, MAX_LENGHT_TIMEZONEID, "%s", tzid);
-        sprintf_s(comment, MAX_LENGHT_COMMENT, "%s", comment);
+        sprintf_s(code, MAX_LENGHT_DATA_FIELD, "%s", code);
+        sprintf_s(coordinates, MAX_LENGHT_DATA_FIELD, "%s", coordinates);
+        sprintf_s(tzid, MAX_LENGHT_DATA_FIELD, "%s", tzid);
+        sprintf_s(comment, MAX_LENGHT_DATA_FIELD, "%s", comment);
 
         coordinates_lenght = strlen(coordinates);
         if (coordinates_lenght == 11)

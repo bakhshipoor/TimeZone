@@ -128,22 +128,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Inc\Parse_Common.h" />
-    <ClInclude Include="Inc\Parse_ISO3166tab.h" />
-    <ClInclude Include="Inc\Parse_Rules.h" />
-    <ClInclude Include="Inc\Parse_Version.h" />
-    <ClInclude Include="Inc\Parse_Zones.h" />
-    <ClInclude Include="Inc\Parse_Zonetab.h" />
+    <ClInclude Include="Parser\Inc\Parser.h" />
+    <ClInclude Include="Parser\Inc\Parse_Common.h" />
+    <ClInclude Include="Parser\Inc\Parse_ISO3166tab.h" />
+    <ClInclude Include="Parser\Inc\Parse_Rules.h" />
+    <ClInclude Include="Parser\Inc\Parse_Version.h" />
+    <ClInclude Include="Parser\Inc\Parse_Zones.h" />
+    <ClInclude Include="Parser\Inc\Parse_Zonetab.h" />
     <ClInclude Include="Inc\TimeZoneDBCreator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Constants.c" />
-    <ClCompile Include="Src\Parse_Common.c" />
-    <ClCompile Include="Src\Parse_ISO3166tab.c" />
-    <ClCompile Include="Src\Parse_Rules.c" />
-    <ClCompile Include="Src\Parse_Version.c" />
-    <ClCompile Include="Src\Parse_Zones.c" />
-    <ClCompile Include="Src\Parse_Zonetab.c" />
+    <ClCompile Include="Parser\Src\Parser.c" />
+    <ClCompile Include="Parser\Src\Parse_Constants.c" />
+    <ClCompile Include="Parser\Src\Parse_Common.c" />
+    <ClCompile Include="Parser\Src\Parse_ISO3166tab.c" />
+    <ClCompile Include="Parser\Src\Parse_Rules.c" />
+    <ClCompile Include="Parser\Src\Parse_Version.c" />
+    <ClCompile Include="Parser\Src\Parse_Zones.c" />
+    <ClCompile Include="Parser\Src\Parse_Zonetab.c" />
     <ClCompile Include="Src\TimeZoneDBCreator.C" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
