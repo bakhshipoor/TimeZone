@@ -1,6 +1,6 @@
 #include "../Inc/Parse_Zonetab.h"
 
-ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
+ZoneTab_Entry_t* Parse_ZoneTab(COUNTER* zonetab_count)
 {
     FILE* zonetab_File = fopen(Data_File[2], "r");
     if (!zonetab_File) {
@@ -10,7 +10,7 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
 
     ZoneTab_Entry_t* TimeZone_List = NULL;
     *zonetab_count = 0;
-    char line[2048];
+    CHAR line[2048];
 
     while (fgets(line, sizeof(line), zonetab_File))
     {
@@ -19,23 +19,26 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
             continue;
         }
 
+        CHAR code[MAX_LENGHT_DATA_FIELD];
+        CHAR coordinates[MAX_LENGHT_DATA_FIELD];
+        CHAR tzid[MAX_LENGHT_DATA_FIELD];
+        CHAR comment[MAX_LENGHT_DATA_FIELD];
 
-        int sscanf_lenght;
-        uint8_t code[MAX_LENGHT_DATA_FIELD];
-        uint8_t coordinates[MAX_LENGHT_DATA_FIELD];
-        uint8_t tzid[MAX_LENGHT_DATA_FIELD];
-        uint8_t comment[MAX_LENGHT_DATA_FIELD];
-        size_t coordinates_lenght = 0;
-        char lat_Sign = 0;
-        int lat_Hour = 0;
-        int lat_Minute = 0;
-        int lat_Second = 0;
-        char long_Sign = 0;
-        int long_Hour = 0;
-        int long_Minute = 0;
-        int long_Second = 0;
-        double latitude = 0.0;
-        double longitude = 0.0;
+        LENGHT sscanf_lenght;
+        LENGHT coordinates_lenght = 0;
+
+        CHAR lat_Sign = 0;
+        INT lat_Hour = 0;
+        INT lat_Minute = 0;
+        INT lat_Second = 0;
+
+        CHAR long_Sign = 0;
+        INT long_Hour = 0;
+        INT long_Minute = 0;
+        INT long_Second = 0;
+
+        LOCATION latitude = 0.0;
+        LOCATION longitude = 0.0;
 
         memset(code, '\0', MAX_LENGHT_DATA_FIELD);
         memset(coordinates, '\0', MAX_LENGHT_DATA_FIELD);
@@ -53,7 +56,7 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
         sprintf_s(tzid, MAX_LENGHT_DATA_FIELD, "%s", tzid);
         sprintf_s(comment, MAX_LENGHT_DATA_FIELD, "%s", comment);
 
-        coordinates_lenght = strlen(coordinates);
+        coordinates_lenght = (LENGHT)strlen(coordinates);
         if (coordinates_lenght == 11)
         {
             sscanf_lenght = sscanf(coordinates, "%c%2d%2d%c%3d%2d", &lat_Sign, &lat_Hour, &lat_Minute, &long_Sign, &long_Hour, &long_Minute);
@@ -75,9 +78,9 @@ ZoneTab_Entry_t* Parse_ZoneTab(int32_t* zonetab_count)
         longitude = long_Sign == '+' ? longitude : -longitude;
 
         ZoneTab_Entry_t entry;
-        entry.Country_Code = (uint8_t*)malloc((strlen(code) + 1) * sizeof(uint8_t));
-        entry.TZ_Identifier = (uint8_t*)malloc((strlen(tzid) + 1) * sizeof(uint8_t));
-        entry.Comments = (uint8_t*)malloc((strlen(comment) + 1) * sizeof(uint8_t));
+        entry.Country_Code = (CHAR*)malloc((strlen(code) + 1) * sizeof(CHAR));
+        entry.TZ_Identifier = (CHAR*)malloc((strlen(tzid) + 1) * sizeof(CHAR));
+        entry.Comments = (CHAR*)malloc((strlen(comment) + 1) * sizeof(CHAR));
 
         if (entry.Country_Code != NULL)
         {

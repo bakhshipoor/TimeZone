@@ -1,16 +1,16 @@
 #include "../Inc/Parse_ISO3166tab.h"
 
-ISO3166_Entry_t* Parse_ISO3166Tab(int32_t* iso3166_Count)
+ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count)
 {
     FILE* iso3166_File = fopen(Data_File[1], "r");
-    if (!iso3166_File) {
-        perror("Failed to open file");
+    if (!iso3166_File) 
+    {
         return NULL;
     }
 
     ISO3166_Entry_t* ISO3166_List = NULL;
     *iso3166_Count = 0;
-    char line[2048];
+    CHAR line[2048];
 
     while (fgets(line, sizeof(line), iso3166_File))
     {
@@ -20,9 +20,9 @@ ISO3166_Entry_t* Parse_ISO3166Tab(int32_t* iso3166_Count)
         }
 
 
-        int sscanf_lenght;
-        uint8_t country_code[MAX_LENGHT_DATA_FIELD];
-        uint8_t country_name[MAX_LENGHT_DATA_FIELD];
+        LENGHT sscanf_lenght;
+        CHAR country_code[MAX_LENGHT_DATA_FIELD];
+        CHAR country_name[MAX_LENGHT_DATA_FIELD];
 
         memset(country_code, '\0', MAX_LENGHT_DATA_FIELD);
         memset(country_name, '\0', MAX_LENGHT_DATA_FIELD);
@@ -39,8 +39,8 @@ ISO3166_Entry_t* Parse_ISO3166Tab(int32_t* iso3166_Count)
 
         ISO3166_Entry_t entry;
 
-        entry.Country_Code = (uint8_t*)malloc((strlen(country_code) + 1) * sizeof(uint8_t));
-        entry.Country_Name = (uint8_t*)malloc((strlen(country_name) + 1) * sizeof(uint8_t));
+        entry.Country_Code = (CHAR*)malloc((strlen(country_code) + 1) * sizeof(CHAR));
+        entry.Country_Name = (CHAR*)malloc((strlen(country_name) + 1) * sizeof(CHAR));
 
         if (entry.Country_Code != NULL)
         {

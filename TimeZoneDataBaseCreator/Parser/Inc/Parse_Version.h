@@ -11,11 +11,11 @@ extern "C" {
 
     typedef struct
     {
-        uint32_t Major;
-        uint8_t* Minor;
+        YEAR Major;
+        CHAR* Minor;
     }Version_t;
 
-    Version_t* Parse_Version(void);
+    Version_t* Parse_Version(VOID);
 
 #ifdef __cplusplus
 }

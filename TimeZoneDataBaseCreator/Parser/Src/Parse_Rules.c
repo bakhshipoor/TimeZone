@@ -1,12 +1,12 @@
 #include "../Inc/Parse_Rules.h"
 
-Rule_Entry_t* Parse_Rules(int32_t* rules_Count)
+Rule_Entry_t* Parse_Rules(COUNTER* rules_Count)
 {
     // Initialize the Rules_List to NULL and set the rules count to 0
     Rule_Entry_t* Rules_List = NULL;
     *rules_Count = 0;
-    char line[2048]; // Buffer to store each line read from the file
-    uint16_t dataFile_index = 0; // Index to iterate over data files
+    CHAR line[2048]; // Buffer to store each line read from the file
+    COUNTER dataFile_index = 0; // Index to iterate over data files
 
     // Loop through each data file
     for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
@@ -21,7 +21,7 @@ Rule_Entry_t* Parse_Rules(int32_t* rules_Count)
         // Read each line from the file
         while (fgets(line, sizeof(line), data_File))
         {
-            // Skip lines that are too short or start with a '#' character
+            // Skip lines that are too short or start with a '#' CHARacter
             if (strlen(line) < 5 || line[0] == '#')
             {
                 continue;
@@ -36,7 +36,7 @@ Rule_Entry_t* Parse_Rules(int32_t* rules_Count)
                 continue;
             }
 
-            int32_t find_index = -1; // Variable to store the index if the rule exists
+            COUNTER find_index = -1; // Variable to store the index if the rule exists
 
             // Check if the rule already exists in the Rules_List
             if (!Rule_isExist(Rules_List, rules_Count, rule_data.Name, &find_index))
@@ -68,12 +68,12 @@ Rule_Entry_t* Parse_Rules(int32_t* rules_Count)
     return Rules_List;
 }
 
-Rule_Data_t Parse_Rule_Data(const char* line)
+Rule_Data_t Parse_Rule_Data(CONST CHAR* line)
 {
     Rule_Data_t rule_data; // Initialize a Rule_Data_t structure
-    int scan_lenght = 0; // Variable to store the length of the scanned data
+    LENGHT scan_lenght = 0; // Variable to store the length of the scanned data
 
-    // Initialize all fields of rule_data to null characters
+    // Initialize all fields of rule_data to null CHARacters
     memset(rule_data.Field, '\0', MAX_LENGHT_DATA_FIELD);
     memset(rule_data.Name, '\0', MAX_LENGHT_DATA_FIELD);
     memset(rule_data.From, '\0', MAX_LENGHT_DATA_FIELD);
@@ -116,7 +116,7 @@ Rule_Data_t Parse_Rule_Data(const char* line)
     // Check if the parsed data is valid
     if (strcmp("Rule", rule_data.Field) != 0 || scan_lenght < 10)
     {
-        // If invalid, reset all fields to null characters
+        // If invalid, reset all fields to null CHARacters
         memset(rule_data.Field, '\0', MAX_LENGHT_DATA_FIELD);
         memset(rule_data.Name, '\0', MAX_LENGHT_DATA_FIELD);
         memset(rule_data.From, '\0', MAX_LENGHT_DATA_FIELD);
@@ -134,13 +134,13 @@ Rule_Data_t Parse_Rule_Data(const char* line)
     return rule_data;
 }
 
-int16_t Parse_Rule_Data_From(const Rule_Data_t rule_data)
+YEAR Parse_Rule_Data_From(CONST Rule_Data_t rule_data)
 {
     // Convert the 'From' field of rule_data from a string to an integer and return it
     return atoi(rule_data.From);
 }
 
-int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data, int16_t max_value)
+YEAR Parse_Rule_Data_To(CONST Rule_Data_t rule_data, YEAR max_value)
 {
     // Check if the 'To' field is "only". 
     // If it is, return the integer value of the 'From' field.
@@ -164,67 +164,67 @@ int16_t Parse_Rule_Data_To(const Rule_Data_t rule_data, int16_t max_value)
     return 0;
 }
 
-uint8_t Parse_Rule_Data_In(const Rule_Data_t rule_data)
+MONTH Parse_Rule_Data_In(CONST Rule_Data_t rule_data)
 {
     return Parse_Month(rule_data.In);
 }
 
-Rule_Year_Day_t Parse_Rule_Data_On(const Rule_Data_t rule_data)
+Rule_Year_Day_t Parse_Rule_Data_On(CONST Rule_Data_t rule_data)
 {
     Rule_Year_Day_t day = { 0 }; // Initialize a Rule_Year_Day_t structure with default values
     Parse_Day_Of_Month(rule_data.On, &day.Day, &day.Weekday, &day.Weekday_isAfterOrEqual_Day);
     return day; // Return the day structure
 }
 
-Rule_Year_Hour_t Parse_Rule_Data_At(const Rule_Data_t rule_data)
+Rule_Year_Hour_t Parse_Rule_Data_At(CONST Rule_Data_t rule_data)
 {
     // Initialize a Rule_Year_Hour_t structure with default values
     Rule_Year_Hour_t hour = { 0 };
-    char* s = { 0 };
+    CHAR* s = { 0 };
     hour.Hour = Parse_Hour(rule_data.At, &s);
-    hour.Hour_isUTC = false;
+    hour.Hour_isUTC = FALSE;
     if (s[0]== 'u')
     {
-        hour.Hour_isUTC = true;
+        hour.Hour_isUTC = TRUE;
     }
     // Return the parsed hour structure
     return hour;
 }
 
-int32_t Parse_Rule_Data_Save(const Rule_Data_t rule_data) 
+HOUR Parse_Rule_Data_Save(CONST Rule_Data_t rule_data)
 {
-    char* s = { 0 };
+    CHAR* s = { 0 };
     return Parse_Hour(rule_data.Save, &s);
 }
 
-bool Rule_isExist(const Rule_Entry_t* rule_list, const int32_t* rules_count, const char* rule_name, int32_t* find_Index)
+BOOL Rule_isExist(CONST Rule_Entry_t* rule_list, CONST COUNTER* rules_count, CONST CHAR* rule_name, COUNTER* find_Index)
 {
     // Check if the rule_list is not NULL and rules_count is greater than 0
     if (rule_list != NULL && ((*rules_count) > 0))
     {
         // Iterate through the list of rules
-        for (int rule_index = 0; rule_index < (*rules_count); rule_index++)
+        for (COUNTER rule_index = 0; rule_index < (*rules_count); rule_index++)
         {
             // Compare the name of the current rule with rule_name
             if (strcmp(rule_list[rule_index].Name, rule_name) == 0)
             {
-                // If a match is found, set find_Index to the current index and return true
+                // If a match is found, set find_Index to the current index and return TRUE
                 *find_Index = rule_index;
-                return true;
+                return TRUE;
             }
         }
     }
-    // If no match is found, return false
-    return false;
+    // If no match is found, return FALSE
+    return FALSE;
 }
 
-bool Rule_Create(Rule_Entry_t** rule_list, const int32_t rules_Count, const char* rule_name)
+BOOL Rule_Create(Rule_Entry_t** rule_list, CONST COUNTER rules_Count, CONST CHAR* rule_name)
 {
     // Initialize a new Rule_Entry_t structure with default values
     Rule_Entry_t rule = { 0 };
 
     // Allocate memory for the rule name and assign it to rule.Name
-    rule.Name = (uint8_t*)malloc((strlen(rule_name) + 1) * sizeof(uint8_t));
+    rule.Name = (CHAR*)malloc((strlen(rule_name) + 1) * sizeof(CHAR));
     if (rule.Name != NULL)
     {
         // Copy the rule name to the allocated memory
@@ -242,7 +242,7 @@ bool Rule_Create(Rule_Entry_t** rule_list, const int32_t rules_Count, const char
         Rule_Entry_t* rules = malloc(sizeof(Rule_Entry_t));
         if (rules == NULL)
         {
-            return false;
+            return FALSE;
         }
         *rule_list = rules;
     }
@@ -251,7 +251,7 @@ bool Rule_Create(Rule_Entry_t** rule_list, const int32_t rules_Count, const char
         Rule_Entry_t* rules = realloc(*rule_list, (rules_Count + 1) * sizeof(Rule_Entry_t));
         if (rules == NULL)
         {
-            return false;
+            return FALSE;
         }
         *rule_list = rules;
     }
@@ -260,17 +260,17 @@ bool Rule_Create(Rule_Entry_t** rule_list, const int32_t rules_Count, const char
     // Add the new rule to the rule list at the specified index
     (*rule_list)[rules_Count] = rule;
 
-    // Return true indicating that the rule was successfully created
-    return true;
+    // Return TRUE indicating that the rule was successfully created
+    return TRUE;
 }
 
-void Parse_Rule_Year_Range(Rule_Entry_t* rule_list, const int32_t rule_index, const Rule_Data_t rule_data)
+VOID Parse_Rule_Year_Range(Rule_Entry_t* rule_list, CONST COUNTER rule_index, CONST Rule_Data_t rule_data)
 {
     // Parse the 'From' year from the rule data
-    int16_t year_from = Parse_Rule_Data_From(rule_data);
+    YEAR year_from = Parse_Rule_Data_From(rule_data);
 
     // Parse the 'To' year from the rule data, with a default maximum value of -1
-    int16_t year_to = Parse_Rule_Data_To(rule_data, -1);
+    YEAR year_to = Parse_Rule_Data_To(rule_data, -1);
 
     // If the Year_Begin field of the rule is not set (i.e., 0)
     if (rule_list[rule_index].Year_Begin == 0)
@@ -302,10 +302,10 @@ void Parse_Rule_Year_Range(Rule_Entry_t* rule_list, const int32_t rule_index, co
     }
 }
 
-void Parse_Rule_Years(Rule_Entry_t* rule_list, int32_t* rules_Count)
+VOID Parse_Rule_Years(Rule_Entry_t* rule_list, COUNTER* rules_Count)
 {
-    uint8_t line[2048]; // Buffer to store each line read from the data file
-    uint16_t dataFile_index = 0; // Index to iterate through the data files
+    CHAR line[2048]; // Buffer to store each line read from the data file
+    COUNTER dataFile_index = 0; // Index to iterate through the data files
 
     // Loop through all data files
     for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
@@ -333,24 +333,24 @@ void Parse_Rule_Years(Rule_Entry_t* rule_list, int32_t* rules_Count)
                 continue; // Skip if the rule name is empty
             }
 
-            int32_t rule_find_index = -1; // Index to store the found rule
+            COUNTER rule_find_index = -1; // Index to store the found rule
             // Check if the rule exists in the rule list
             if (Rule_isExist(rule_list, rules_Count, rule_data.Name, &rule_find_index))
             {
                 if (rule_find_index >= 0)
                 {
                     // Parse the 'From' and 'To' years from the rule data
-                    int16_t year_from = Parse_Rule_Data_From(rule_data);
-                    int16_t year_to = Parse_Rule_Data_To(rule_data, rule_list[rule_find_index].Year_End);
-                    int16_t years_count = 0; // Variable to store the number of years in the range
-                    int32_t year_find_index = -1; // Index to store the found year
+                    YEAR year_from = Parse_Rule_Data_From(rule_data);
+                    YEAR year_to = Parse_Rule_Data_To(rule_data, rule_list[rule_find_index].Year_End);
+                    COUNTER years_count = 0; // Variable to store the number of years in the range
+                    COUNTER year_find_index = -1; // Index to store the found year
 
                     // Check if the range of years is valid
                     if (year_to > year_from)
                     {
                         years_count = (year_to - year_from) + 1;
                         // Loop through the range of years
-                        for (int year_index = 0; year_index <= years_count; year_index++)
+                        for (COUNTER year_index = 0; year_index <= years_count; year_index++)
                         {
                             year_find_index = -1;
                             // Check if the year already exists in the rule's year list
@@ -365,7 +365,7 @@ void Parse_Rule_Years(Rule_Entry_t* rule_list, int32_t* rules_Count)
                             else
                             {
                                 // Parse the save hour from the rule data
-                                int32_t save_hour = Parse_Rule_Data_Save(rule_data);
+                                HOUR save_hour = Parse_Rule_Data_Save(rule_data);
                                 // Add the rule data to the appropriate list (Standard or DST)
                                 if (save_hour == 0)
                                 {
@@ -401,7 +401,7 @@ void Parse_Rule_Years(Rule_Entry_t* rule_list, int32_t* rules_Count)
                         else
                         {
                             // Parse the save hour from the rule data
-                            int32_t save_hour = Parse_Rule_Data_Save(rule_data);
+                            HOUR save_hour = Parse_Rule_Data_Save(rule_data);
                             // Add the rule data to the appropriate list (Standard or DST)
                             if (save_hour == 0)
                             {
@@ -427,7 +427,7 @@ void Parse_Rule_Years(Rule_Entry_t* rule_list, int32_t* rules_Count)
     }
 }
 
-bool Rule_Year_isExist(const Rule_Year_t* year_list, const uint32_t years_count, const int16_t year_from, const int16_t year_to, int32_t* find_index)
+BOOL Rule_Year_isExist(CONST Rule_Year_t* year_list, CONST COUNTER years_count, CONST YEAR year_from, CONST YEAR year_to, COUNTER* find_index)
 {
     // Check if the year_list is not NULL and years_count is greater than 0
     if (year_list != NULL && (years_count > 0))
@@ -438,17 +438,17 @@ bool Rule_Year_isExist(const Rule_Year_t* year_list, const uint32_t years_count,
             // Compare the 'From' and 'To' years with the given year_from and year_to
             if (year_list[year_index].From == year_from && year_list[year_index].To == year_to)
             {
-                // If a match is found, set find_index to the current index and return true
+                // If a match is found, set find_index to the current index and return TRUE
                 (*find_index) = year_index;
-                return true;
+                return TRUE;
             }
         }
     }
-    // If no match is found, return false
-    return false;
+    // If no match is found, return FALSE
+    return FALSE;
 }
 
-bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const int16_t year_from, const int16_t year_to, const Rule_Data_t rule_data)
+BOOL Rule_Year_Create(Rule_Year_t** year_list, CONST COUNTER years_count, CONST YEAR year_from, CONST YEAR year_to, CONST Rule_Data_t rule_data)
 {
     // Initialize a new Rule_Year_t structure with default values
     Rule_Year_t rule_year = { 0 };
@@ -458,7 +458,7 @@ bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const
     rule_year.To = year_to;
 
     // Allocate memory for the 'Reserved' field and copy the data from rule_data
-    rule_year.Reserved = (uint8_t*)malloc((strlen(rule_data.Reserved) + 1) * sizeof(uint8_t));
+    rule_year.Reserved = (CHAR*)malloc((strlen(rule_data.Reserved) + 1) * sizeof(CHAR));
     if (rule_year.Reserved != NULL)
     {
         // If the 'Reserved' field in rule_data starts with '-', set it to an empty string
@@ -478,7 +478,7 @@ bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const
     rule_year.DST_Count = 0;
 
     // Parse the save hour from the rule data
-    int32_t save_hour = Parse_Rule_Data_Save(rule_data);
+    HOUR save_hour = Parse_Rule_Data_Save(rule_data);
 
     // Add the rule data to the appropriate list (Standard or DST) based on the save hour
     if (save_hour == 0)
@@ -504,7 +504,7 @@ bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const
         {
             *year_list = year;
             (*year_list)[years_count] = rule_year;
-            return true; // Return true indicating the rule year was successfully created
+            return TRUE; // Return TRUE indicating the rule year was successfully created
         }
     }
     else
@@ -514,15 +514,15 @@ bool Rule_Year_Create(Rule_Year_t** year_list, const uint32_t years_count, const
         {
             *year_list = year;
             (*year_list)[years_count] = rule_year;
-            return true; // Return true indicating the rule year was successfully created
+            return TRUE; // Return TRUE indicating the rule year was successfully created
         }
     }
     
-    // If memory allocation fails, return false
-    return false;
+    // If memory allocation fails, return FALSE
+    return FALSE;
 }
 
-bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count, const Rule_Data_t rule_data)
+BOOL Rule_Year_Add_Data(Rule_Year_Data_t** year_data, CONST COUNTER count, CONST Rule_Data_t rule_data)
 {
     // Initialize a new Rule_Year_Data_t structure with default values
     Rule_Year_Data_t rule_year_data = { 0 };
@@ -534,7 +534,7 @@ bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count, cons
     rule_year_data.Save_Hour = Parse_Rule_Data_Save(rule_data);
 
     // Allocate memory for the 'Letter' field and copy the data from rule_data
-    rule_year_data.Letter = (uint8_t*)malloc((strlen(rule_data.Letter) + 1) * sizeof(uint8_t));
+    rule_year_data.Letter = (CHAR*)malloc((strlen(rule_data.Letter) + 1) * sizeof(CHAR));
     if (rule_data.Letter != NULL)
     {
         // If the 'Letter' field in rule_data starts with '-', set it to an empty string
@@ -550,7 +550,7 @@ bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count, cons
     }
 
     // Allocate memory for the 'Comment' field and copy the data from rule_data
-    rule_year_data.Comment = (uint8_t*)malloc((strlen(rule_data.Comment) + 1) * sizeof(uint8_t));
+    rule_year_data.Comment = (CHAR*)malloc((strlen(rule_data.Comment) + 1) * sizeof(CHAR));
     if (rule_year_data.Comment != NULL)
     {
         sprintf(rule_year_data.Comment, "%s", rule_data.Comment);
@@ -566,7 +566,7 @@ bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count, cons
             *year_data = data;
             // Add the new rule year data to the list at the specified index
             (*year_data)[count] = rule_year_data;
-            return true; // Return true indicating the rule year data was successfully added
+            return TRUE; // Return TRUE indicating the rule year data was successfully added
         }
     }
     else
@@ -578,10 +578,10 @@ bool Rule_Year_Add_Data(Rule_Year_Data_t** year_data, const uint16_t count, cons
             *year_data = data;
             // Add the new rule year data to the list at the specified index
             (*year_data)[count] = rule_year_data;
-            return true; // Return true indicating the rule year data was successfully added
+            return TRUE; // Return TRUE indicating the rule year data was successfully added
         }
     }
    
-    // If memory allocation fails, return false
-    return false;
+    // If memory allocation fails, return FALSE
+    return FALSE;
 }

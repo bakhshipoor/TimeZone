@@ -2,28 +2,28 @@
 
 
 // Data Files
-uint8_t Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
+CHAR Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
 
-bool Initial_FileNames(const char* data_folder_path)
+BOOL Initial_FileNames(CONST CHAR* data_folder_path)
 {
     if (data_folder_path == NULL)
     {
-        return false;
+        return FALSE;
     }
-    int32_t path_lenght = strlen(data_folder_path);
-    char* folder_path = (char*)malloc((path_lenght + 1) * sizeof(char));
+    LENGHT path_lenght = (LENGHT)strlen(data_folder_path);
+    CHAR* folder_path = (CHAR*)malloc((path_lenght + 1) * sizeof(CHAR));
     if (folder_path == NULL || path_lenght == 0)
     {
-        return false;
+        return FALSE;
     }
     sprintf(folder_path, "%s", data_folder_path);
-    path_lenght = strlen(folder_path);
+    path_lenght = (LENGHT)strlen(folder_path);
     if (folder_path[path_lenght - 1] == '/' || folder_path[path_lenght - 1] == '\\')
     {
         folder_path[path_lenght - 1] = '\0';
     }
 
-    int file_index = 0;
+    COUNTER file_index = 0;
 
     for (file_index = 0; file_index < DATA_FILES_COUNT; file_index++)
     {
@@ -35,13 +35,14 @@ bool Initial_FileNames(const char* data_folder_path)
         FILE* data_File = fopen(Data_File[file_index], "r");
         if (!data_File)
         {
-            return false;
+            return FALSE;
         }
         fclose(data_File);
     }
+    return TRUE;
 }
 
-Parse_Data_t* Parse_Data(const char* data_folder_path)
+Parse_Data_t* Parse_Data(CONST CHAR* data_folder_path)
 {
     Parse_Data_t* data = (Parse_Data_t*)malloc(sizeof(Parse_Data_t));
     if (data == NULL)

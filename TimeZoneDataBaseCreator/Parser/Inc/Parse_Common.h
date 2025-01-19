@@ -12,12 +12,32 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
-#include <stdbool.h>
+#include <stdBOOL.h>
 #include <ctype.h>
 
 #define DATA_FILES_COUNT 12
 #define MAX_LENGHT_FILE_NAME 256
 #define MAX_LENGHT_DATA_FIELD 256
+
+#define VOID void
+#define CONST const
+#define EXTERN extern
+
+#define COUNTER int32_t
+#define LENGHT int32_t
+#define INT int32_t
+#define CHAR uint8_t
+#define LOCATION double
+
+#define YEAR int32_t
+#define MONTH uint8_t
+#define DAY uint8_t
+#define WEEKDAY uint8_t
+#define HOUR int64_t
+
+#define BOOL bool
+#define TRUE true
+#define FALSE false
 
     typedef enum
     {
@@ -53,36 +73,29 @@ extern "C" {
 
     typedef struct
     {
-        uint8_t* Abbr;
-        uint8_t* Full;
-        uint8_t* Last_Abbr;
-        uint8_t* Last_Full;
-        uint8_t Number;
+        CHAR* Abbr;
+        CHAR* Full;
+        CHAR* Last_Abbr;
+        CHAR* Last_Full;
+        WEEKDAY Number;
     }Weekday_Lookup_t;
 
     typedef struct
     {
-        uint8_t* Full;
-        uint8_t Number;
-    }Last_Weekday_Lookup_t;
-
-    typedef struct
-    {
-        uint8_t* Abbr;
-        uint8_t* Full;
-        uint8_t Number;
+        CHAR* Abbr;
+        CHAR* Full;
+        MONTH Number;
     }Month_Lookup_t;
 
-    extern const char* Data_Files_Name[DATA_FILES_COUNT];
-    extern const Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL];
-    extern const Last_Weekday_Lookup_t Last_Weekday_Names[TZDB_WEEKDAY_TOTAL];
-    extern const Month_Lookup_t Month_Names[TZDB_MONTH_TOTAL];
-    extern uint8_t Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
+    EXTERN CONST CHAR* Data_Files_Name[DATA_FILES_COUNT];
+    EXTERN CONST Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL];
+    EXTERN CONST Month_Lookup_t Month_Names[TZDB_MONTH_TOTAL];
+    EXTERN CHAR Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
 
-    int32_t Parse_Hour(const char* hour, char** suffix);
-    uint8_t Parse_Weekday(const char* weekday);
-    uint8_t Parse_Month(const char* month);
-    void Parse_Day_Of_Month(const char* on, uint8_t* day, uint8_t* weekday, bool* weekday_after);
+    HOUR Parse_Hour(CONST CHAR* hour, CHAR** suffix);
+    WEEKDAY Parse_Weekday(CONST CHAR* weekday);
+    MONTH Parse_Month(CONST CHAR* month);
+    VOID Parse_Day_Of_Month(CONST CHAR* on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after);
     
 
 #ifdef __cplusplus

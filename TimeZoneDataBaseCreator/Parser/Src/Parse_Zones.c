@@ -1,13 +1,13 @@
 #include "../Inc/Parse_Zones.h"
 
-char Last_Zone_Name[MAX_LENGHT_DATA_FIELD];
+CHAR Last_Zone_Name[MAX_LENGHT_DATA_FIELD];
 
-Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
+Zone_Entry_t* Parse_Zones(COUNTER* zones_Count)
 {
     Zone_Entry_t* Zones_List = NULL;
     *zones_Count = 0;
-    char line[2048]; 
-    uint16_t dataFile_index = 0; 
+    CHAR line[2048]; 
+    COUNTER dataFile_index = 0;
     for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
     {
         FILE* data_File = fopen(Data_File[dataFile_index], "r");
@@ -30,7 +30,7 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
                 continue;
             }
 
-            int32_t find_index = -1; 
+            COUNTER find_index = -1;
 
             if (!Zone_isExist(Zones_List, zones_Count, zone_data.Name, &find_index))
             {
@@ -56,10 +56,10 @@ Zone_Entry_t* Parse_Zones(int32_t* zones_Count)
     return Zones_List;
 }
 
-Zone_Data_t Parse_Zone_Data(const char* line)
+Zone_Data_t Parse_Zone_Data(CONST CHAR* line)
 {
     Zone_Data_t zone_data; 
-    int scan_lenght = 0;
+    LENGHT scan_lenght = 0;
 
     memset(zone_data.Field, '\0', MAX_LENGHT_DATA_FIELD);
     memset(zone_data.Name, '\0', MAX_LENGHT_DATA_FIELD);
@@ -116,19 +116,19 @@ Zone_Data_t Parse_Zone_Data(const char* line)
     return zone_data;
 }
 
-int32_t Parse_Zone_Data_Standard_Offset(const Zone_Data_t zone_data)
+HOUR Parse_Zone_Data_Standard_Offset(CONST Zone_Data_t zone_data)
 {
-    char* s = { 0 };
+    CHAR* s = { 0 };
     return Parse_Hour(zone_data.Standard_Offset, &s);
 }
 
-Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data)
+Zone_Info_Rule_t Parse_Zone_Data_Rules(CONST Zone_Data_t zone_data)
 {
     Zone_Info_Rule_t rule = { 0 };
     if (strcmp(zone_data.Rules, "-") == 0)
     {
-        rule.Has_Rule = false;
-        rule.Rule_Name = (uint8_t*)malloc(sizeof(uint8_t));
+        rule.Has_Rule = FALSE;
+        rule.Rule_Name = (CHAR*)malloc(sizeof(CHAR));
         if (rule.Rule_Name != NULL)
         {
             rule.Rule_Name[0] = '\0';
@@ -137,19 +137,19 @@ Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data)
     }
     else if (!isalpha(zone_data.Rules[0]))
     {
-        rule.Has_Rule = true;
-        rule.Rule_Name = (uint8_t*)malloc(sizeof(uint8_t));
+        rule.Has_Rule = TRUE;
+        rule.Rule_Name = (CHAR*)malloc(sizeof(CHAR));
         if (rule.Rule_Name != NULL)
         {
             rule.Rule_Name[0] = '\0';
         }
-        char* s = { 0 };
+        CHAR* s = { 0 };
         rule.Save_Hour = Parse_Hour(zone_data.Rules, &s);
     }
     else
     {
-        rule.Has_Rule = true;
-        rule.Rule_Name = (uint8_t*)malloc((strlen(zone_data.Rules) + 1) * sizeof(uint8_t));
+        rule.Has_Rule = TRUE;
+        rule.Rule_Name = (CHAR*)malloc((strlen(zone_data.Rules) + 1) * sizeof(CHAR));
         if (rule.Rule_Name != NULL)
         {
             sprintf(rule.Rule_Name, "%s", zone_data.Rules);
@@ -159,13 +159,13 @@ Zone_Info_Rule_t Parse_Zone_Data_Rules(const Zone_Data_t zone_data)
     return rule;
 }
 
-Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data)
+Zone_Info_Until_t Parse_Zone_Info_Until(CONST Zone_Data_t zone_data)
 {
     Zone_Info_Until_t until = { 0 };
-    char* until_data[4];
-    for (int ud_index = 0; ud_index < 4; ud_index++)
+    CHAR* until_data[4];
+    for (COUNTER ud_index = 0; ud_index < 4; ud_index++)
     {
-        until_data[ud_index] = (char*)malloc(MAX_LENGHT_DATA_FIELD * sizeof(char));
+        until_data[ud_index] = (CHAR*)malloc(MAX_LENGHT_DATA_FIELD * sizeof(CHAR));
         if (until_data[ud_index] == NULL)
         {
             return until;
@@ -176,10 +176,10 @@ Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data)
         until.Year = -1;
         until.Month = 0;
         until.Day.Day = 0;
-        until.Day.Weekday = (uint8_t)TZDB_WEEKDAY_NONE;
-        until.Day.Weekday_isAfterOrEqual_Day = false;
+        until.Day.Weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
+        until.Day.Weekday_isAfterOrEqual_Day = FALSE;
         until.Hour.Hour = 0;
-        until.Hour.Hour_isUTC = false;
+        until.Hour.Hour_isUTC = FALSE;
     }
     else
     {
@@ -192,12 +192,12 @@ Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data)
             until.Year = atoi(until_data[0]);
             until.Month = Parse_Month(until_data[1]); 
             Parse_Day_Of_Month(until_data[2], &until.Day.Day, &until.Day.Weekday, &until.Day.Weekday_isAfterOrEqual_Day);
-            char* s = { 0 };
+            CHAR* s = { 0 };
             until.Hour.Hour = Parse_Hour(until_data[3], &s);
-            until.Hour.Hour_isUTC = false;
+            until.Hour.Hour_isUTC = FALSE;
             if (s[0] == 'u')
             {
-                until.Hour.Hour_isUTC = true;
+                until.Hour.Hour_isUTC = TRUE;
             }
         }
         else if (sscanf(zone_data.Until, "%s\t%s\t%s", until_data[0], until_data[1], until_data[2]) == 3)
@@ -225,7 +225,7 @@ Zone_Info_Until_t Parse_Zone_Info_Until(const Zone_Data_t zone_data)
     return until;
 }
 
-bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, const char* zone_name, int32_t* find_Index)
+BOOL Zone_isExist(CONST Zone_Entry_t* zone_list, CONST COUNTER* zones_count, CONST CHAR* zone_name, COUNTER* find_Index)
 {
     if (zone_list != NULL && ((*zones_count) > 0))
     {
@@ -234,18 +234,18 @@ bool Zone_isExist(const Zone_Entry_t* zone_list, const int32_t* zones_count, con
             if (strcmp(zone_list[zone_index].Name, zone_name) == 0)
             {
                 *find_Index = zone_index;
-                return true;
+                return TRUE;
             }
         }
     }
-    return false;
+    return FALSE;
 }
 
-bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char* zone_name, const char* file_name)
+BOOL Zone_Create(Zone_Entry_t** zone_list, CONST COUNTER zones_Count, CONST CHAR* zone_name, CONST CHAR* file_name)
 {
     Zone_Entry_t zone = { 0 };
 
-    zone.Name = (uint8_t*)malloc((strlen(zone_name) + 1) * sizeof(uint8_t));
+    zone.Name = (CHAR*)malloc((strlen(zone_name) + 1) * sizeof(CHAR));
     if (zone.Name != NULL)
     {
         sprintf(zone.Name, "%s", zone_name);
@@ -255,7 +255,7 @@ bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char
     zone.Year_Begin = 0;
     zone.Year_End = 0;
 
-    zone.File = (uint8_t*)malloc((strlen(file_name) + 1) * sizeof(uint8_t));
+    zone.File = (CHAR*)malloc((strlen(file_name) + 1) * sizeof(CHAR));
     if (zone.File != NULL)
     {
         sprintf(zone.File, "%s", file_name);
@@ -266,7 +266,7 @@ bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char
         Zone_Entry_t* zones = malloc(sizeof(Zone_Entry_t));
         if (zones == NULL)
         {
-            return false;
+            return FALSE;
         }
 
         *zone_list = zones;
@@ -276,20 +276,20 @@ bool Zone_Create(Zone_Entry_t** zone_list, const int32_t zones_Count, const char
         Zone_Entry_t* zones = realloc(*zone_list, (zones_Count + 1) * sizeof(Zone_Entry_t));
         if (zones == NULL)
         {
-            return false;
+            return FALSE;
         }
 
         *zone_list = zones;
     }
     (*zone_list)[zones_Count] = zone;
 
-    return true;
+    return TRUE;
 }
 
-void Parse_Zone_Year_Range(Zone_Entry_t* zone_list, const int32_t zone_index, const Zone_Data_t zone_data)
+VOID Parse_Zone_Year_Range(Zone_Entry_t* zone_list, CONST COUNTER zone_index, CONST Zone_Data_t zone_data)
 {
     Zone_Info_Until_t until = Parse_Zone_Info_Until(zone_data);
-    int16_t year = until.Year;
+    YEAR year = until.Year;
     
     if (zone_list[zone_index].Year_Begin == 0)
     {
@@ -314,10 +314,10 @@ void Parse_Zone_Year_Range(Zone_Entry_t* zone_list, const int32_t zone_index, co
     }
 }
 
-void Parse_Zone_Info(Zone_Entry_t* zone_list, const int32_t* zones_Count)
+VOID Parse_Zone_Info(Zone_Entry_t* zone_list, CONST COUNTER* zones_Count)
 {
-    uint8_t line[2048]; 
-    uint16_t dataFile_index = 0;
+    CHAR line[2048]; 
+    COUNTER dataFile_index = 0;
 
     for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
     {
@@ -340,19 +340,19 @@ void Parse_Zone_Info(Zone_Entry_t* zone_list, const int32_t* zones_Count)
                 continue;
             }
 
-            int32_t find_index = -1;
+            COUNTER find_index = -1;
             if (Zone_isExist(zone_list, zones_Count, zone_data.Name, &find_index))
             {
                 Zone_Info_t info = { 0 };
                 info.Standard_Offset = Parse_Zone_Data_Standard_Offset(zone_data);
                 info.Rule = Parse_Zone_Data_Rules(zone_data);
-                info.Format = (uint8_t*)malloc((strlen(zone_data.Format) + 1) * sizeof(uint8_t));
+                info.Format = (CHAR*)malloc((strlen(zone_data.Format) + 1) * sizeof(CHAR));
                 if (info.Format != NULL)
                 {
                     sprintf(info.Format, "%s", zone_data.Format);
                 }
                 info.Until = Parse_Zone_Info_Until(zone_data);
-                info.Comment = (uint8_t*)malloc((strlen(zone_data.Comment) + 1) * sizeof(uint8_t));
+                info.Comment = (CHAR*)malloc((strlen(zone_data.Comment) + 1) * sizeof(CHAR));
                 if (info.Comment != NULL)
                 {
                     sprintf(info.Comment, "%s", zone_data.Comment);

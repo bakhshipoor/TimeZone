@@ -1,6 +1,6 @@
 #include "../Inc/Parse_Version.h"
 
-Version_t* Parse_Version(void)
+Version_t* Parse_Version(VOID)
 {
     Version_t* version = (Version_t*)malloc(sizeof(Version_t));
     if (version == NULL)
@@ -8,14 +8,14 @@ Version_t* Parse_Version(void)
         return NULL;
     }
     version->Major = 0;
-    uint8_t line[2048];
-    uint32_t major;
-    uint8_t minor[MAX_LENGHT_DATA_FIELD];
+    CHAR line[2048];
+    YEAR major;
+    CHAR minor[MAX_LENGHT_DATA_FIELD];
 
     FILE* data_File = fopen(Data_File[0], "r");
     if (!data_File)
     {
-        return version;
+        return NULL;
     }
     
     fgets(line, sizeof(line), data_File);
@@ -24,7 +24,7 @@ Version_t* Parse_Version(void)
     {
         version->Major = major;
         sprintf(minor, "%s", minor);
-        version->Minor = (uint8_t*)malloc((strlen(minor) + 1) * sizeof(uint8_t));
+        version->Minor = (CHAR*)malloc((strlen(minor) + 1) * sizeof(CHAR));
         if (version->Minor != NULL)
         {
             sprintf(version->Minor, minor);

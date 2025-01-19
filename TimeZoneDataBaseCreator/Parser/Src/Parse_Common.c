@@ -1,14 +1,14 @@
 #include "../Inc/Parse_Common.h"
 
-int32_t Parse_Hour(const char* hour, char** suffix)
+HOUR Parse_Hour(CONST CHAR* hour, CHAR** suffix)
 {
-    char* new_hour=(char*)malloc((strlen(hour)+1)*sizeof(char));
+    CHAR* new_hour=(CHAR*)malloc((strlen(hour)+1)*sizeof(CHAR));
     if (new_hour == NULL)
     {
         return 0;
     }
 
-    char* suf = (char*)realloc(*suffix, 2 * sizeof(char));
+    CHAR* suf = (CHAR*)realloc(*suffix, 2 * sizeof(CHAR));
     if (suf != NULL)
     {
         *suffix = suf;
@@ -16,9 +16,9 @@ int32_t Parse_Hour(const char* hour, char** suffix)
         (*suffix)[1] = '\0';
     }
 
-    int32_t std_offset = 0;
-    uint8_t sign = 0;
-    uint32_t h = 0, m = 0, s = 0;
+    HOUR std_offset = 0;
+    CHAR sign = 0;
+    HOUR h = 0, m = 0, s = 0;
 
     sprintf(new_hour, "%s", hour);
 
@@ -33,7 +33,7 @@ int32_t Parse_Hour(const char* hour, char** suffix)
         strcpy(new_hour, new_hour + 1);
     }
 
-    uint8_t ch = new_hour[strlen(new_hour) - 1];
+    CHAR ch = new_hour[strlen(new_hour) - 1];
 
     if (isalpha(ch))
     {
@@ -41,15 +41,15 @@ int32_t Parse_Hour(const char* hour, char** suffix)
         new_hour[strlen(new_hour) - 1] = '\0';
     }
 
-    if (sscanf(new_hour, "%d:%d:%d", &h, &m, &s) == 3)
+    if (sscanf(new_hour, "%lld:%lld:%lld", &h, &m, &s) == 3)
     {
         std_offset = (h * 3600) + (m * 60) + s;
     }
-    else if (sscanf(new_hour, "%d:%d", &h, &m) == 2)
+    else if (sscanf(new_hour, "%lld:%lld", &h, &m) == 2)
     {
         std_offset = (h * 3600) + (m * 60);
     }
-    else if (sscanf(new_hour, "%d", &h) == 1)
+    else if (sscanf(new_hour, "%lld", &h) == 1)
     {
         std_offset = (h * 3600);
     }
@@ -62,9 +62,9 @@ int32_t Parse_Hour(const char* hour, char** suffix)
     return std_offset;
 }
 
-uint8_t Parse_Weekday(const char* weekday)
+WEEKDAY Parse_Weekday(CONST CHAR* weekday)
 {
-    for (int weekday_index = 0; weekday_index < TZDB_WEEKDAY_TOTAL; weekday_index++)
+    for (COUNTER weekday_index = 0; weekday_index < TZDB_WEEKDAY_TOTAL; weekday_index++)
     {
         if (strcmp(weekday, Weekday_Names[weekday_index].Abbr) == 0 ||
             strcmp(weekday, Weekday_Names[weekday_index].Full) == 0 ||
@@ -74,33 +74,33 @@ uint8_t Parse_Weekday(const char* weekday)
             return Weekday_Names[weekday_index].Number;
         }
     }
-    return (uint8_t)TZDB_WEEKDAY_NONE;
+    return (WEEKDAY)TZDB_WEEKDAY_NONE;
 }
 
-uint8_t Parse_Month(const char* month)
+MONTH Parse_Month(CONST CHAR* month)
 {
-    for (int month_index = 0; month_index < TZDB_MONTH_TOTAL; month_index++)
+    for (COUNTER month_index = 0; month_index < TZDB_MONTH_TOTAL; month_index++)
     {
         if (strcmp(month, Month_Names[month_index].Abbr) == 0 || strcmp(month, Month_Names[month_index].Full) == 0)
         {
-            return Month_Names[month_index].Number + 1;
+            return (Month_Names[month_index].Number + 1);
         }
     }
     return 0;
 }
 
-void Parse_Day_Of_Month(const char* on, uint8_t* day, uint8_t* weekday, bool* weekday_after)
+VOID Parse_Day_Of_Month(CONST CHAR* on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after)
 {
     if (strlen(on) <= 3)
     {
         *day = atoi(on);
-        *weekday = (uint8_t)TZDB_WEEKDAY_NONE;
-        *weekday_after = false;
+        *weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
+        *weekday_after = FALSE;
     }
     else
     {
-        uint8_t dow[10], d[10]; 
-        int sscanf_lenght = sscanf(on, "%[^=]=%s", dow, d); 
+        CHAR dow[10], d[10]; 
+        LENGHT sscanf_lenght = sscanf(on, "%[^=]=%s", dow, d);
         sprintf(dow, "%s", dow); 
         sprintf(d, "%s", d);
 
@@ -108,19 +108,19 @@ void Parse_Day_Of_Month(const char* on, uint8_t* day, uint8_t* weekday, bool* we
         {
             *day = 0; // Last week
             *weekday = Parse_Weekday(dow);
-            *weekday_after = false;
+            *weekday_after = FALSE;
         }
         else
         {
-            int len = strlen(dow); 
+            LENGHT len = (LENGHT)strlen(dow);
 
             if (dow[len - 1] == '>')
             {
-                *weekday_after = true;
+                *weekday_after = TRUE;
             }
             else if (dow[len - 1] == '<')
             {
-                *weekday_after = false;
+                *weekday_after = FALSE;
             }
             dow[len - 1] = '\0'; 
 

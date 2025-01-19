@@ -1,82 +1,86 @@
 #include "../Inc/Parse_Link.h"
 
-Link_Entry_t* Parse_Links(int32_t* links_Count)
+Link_Entry_t* Parse_Links(COUNTER* links_Count)
 {
     Link_Entry_t* Links_List = NULL;
     *links_Count = 0;
-    char line[2048];
-    uint16_t dataFile_index = 0;
+    CHAR line[2048];
+    COUNTER dataFile_index = 0;
 
-    FILE* data_File = fopen(Data_File[7], "r");
-    if (!data_File)
+    for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
     {
-        return NULL;
-    }
 
-    while (fgets(line, sizeof(line), data_File))
-    {
-        if (strlen(line) < 5 || line[0] == '#')
+        FILE* data_File = fopen(Data_File[dataFile_index], "r");
+        if (!data_File)
         {
-            continue;
+            return NULL;
         }
 
-        Link_Data_t link_data = Parse_Link_Data(line);
-
-        if (strlen(link_data.Field) <= 0)
+        while (fgets(line, sizeof(line), data_File))
         {
-            continue;
-        }
-
-        Link_Entry_t entry = { 0 };
-
-        entry.Target = (uint8_t*)malloc((strlen(link_data.Target) + 1) * sizeof(uint8_t));
-        if (entry.Target != NULL)
-        {
-            sprintf(entry.Target, "%s", link_data.Target);
-        }
-
-        entry.Link_Name = (uint8_t*)malloc((strlen(link_data.Link_Name) + 1) * sizeof(uint8_t));
-        if (entry.Link_Name != NULL)
-        {
-            sprintf(entry.Link_Name, "%s", link_data.Link_Name);
-        }
-
-        entry.Target1 = (uint8_t*)malloc((strlen(link_data.Target1) + 1) * sizeof(uint8_t));
-        if (entry.Target1 != NULL)
-        {
-            sprintf(entry.Target1, "%s", link_data.Target1);
-        }
-
-        if ((*links_Count) == 0)
-        {
-            Link_Entry_t* links_list = (Link_Entry_t*)malloc(sizeof(Link_Entry_t));
-            if (links_list == NULL)
+            if (strlen(line) < 5 || line[0] == '#')
             {
-                return NULL;
+                continue;
             }
-            Links_List = links_list;
-        }
-        else
-        {
-            Link_Entry_t* links_list = (Link_Entry_t*)realloc(Links_List, ((*links_Count) + 1) * sizeof(Link_Entry_t));
-            if (links_list == NULL)
-            {
-                return NULL;
-            }
-            Links_List = links_list;
-        }
-        Links_List[*links_Count] = entry;
-        (*links_Count)++;
-    }
 
-    fclose(data_File);
+            Link_Data_t link_data = Parse_Link_Data(line);
+
+            if (strlen(link_data.Field) <= 0)
+            {
+                continue;
+            }
+
+            Link_Entry_t entry = { 0 };
+
+            entry.Target = (CHAR*)malloc((strlen(link_data.Target) + 1) * sizeof(CHAR));
+            if (entry.Target != NULL)
+            {
+                sprintf(entry.Target, "%s", link_data.Target);
+            }
+
+            entry.Link_Name = (CHAR*)malloc((strlen(link_data.Link_Name) + 1) * sizeof(CHAR));
+            if (entry.Link_Name != NULL)
+            {
+                sprintf(entry.Link_Name, "%s", link_data.Link_Name);
+            }
+
+            entry.Target1 = (CHAR*)malloc((strlen(link_data.Target1) + 1) * sizeof(CHAR));
+            if (entry.Target1 != NULL)
+            {
+                sprintf(entry.Target1, "%s", link_data.Target1);
+            }
+
+            if ((*links_Count) == 0)
+            {
+                Link_Entry_t* links_list = (Link_Entry_t*)malloc(sizeof(Link_Entry_t));
+                if (links_list == NULL)
+                {
+                    return NULL;
+                }
+                Links_List = links_list;
+            }
+            else
+            {
+                Link_Entry_t* links_list = (Link_Entry_t*)realloc(Links_List, ((*links_Count) + 1) * sizeof(Link_Entry_t));
+                if (links_list == NULL)
+                {
+                    return NULL;
+                }
+                Links_List = links_list;
+            }
+            Links_List[*links_Count] = entry;
+            (*links_Count)++;
+        }
+
+        fclose(data_File);
+    }
     return Links_List;
 }
 
-Link_Data_t Parse_Link_Data(const char* line)
+Link_Data_t Parse_Link_Data(CONST CHAR* line)
 {
     Link_Data_t link_data;
-    int scan_lenght = 0;
+    LENGHT scan_lenght = 0;
 
     memset(link_data.Field, '\0', MAX_LENGHT_DATA_FIELD);
     memset(link_data.Target, '\0', MAX_LENGHT_DATA_FIELD);

@@ -16,23 +16,23 @@ extern "C" {
     typedef struct
     {
         Version_t* Version;
-        int32_t ISO3166_Count;
+        COUNTER ISO3166_Count;
         ISO3166_Entry_t* ISO3166;
-        int32_t Zonetab_Count;
+        COUNTER Zonetab_Count;
         ZoneTab_Entry_t* Zonetab;
-        int32_t Rules_Count;
+        COUNTER Rules_Count;
         Rule_Entry_t* Rules;
-        int32_t Zones_Count;
+        COUNTER Zones_Count;
         Zone_Entry_t* Zones;
-        int32_t Links_Count;
+        COUNTER Links_Count;
         Link_Entry_t* Links;
     }Parse_Data_t;
 
     
 
-    bool Initial_FileNames(const char* data_folder_path);
+    BOOL Initial_FileNames(CONST CHAR* data_folder_path);
 
-    Parse_Data_t* Parse_Data(const char* data_folder_path);
+    Parse_Data_t* Parse_Data(CONST CHAR* data_folder_path);
 
 #ifdef __cplusplus
 }

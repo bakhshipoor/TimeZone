@@ -9,11 +9,11 @@ extern "C" {
 
     typedef struct
     {
-        uint8_t* Country_Code;
-        uint8_t* Country_Name;
+        CHAR* Country_Code;
+        CHAR* Country_Name;
     } ISO3166_Entry_t;
 
-    ISO3166_Entry_t* Parse_ISO3166Tab(int32_t* iso3166_Count);
+    ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count);
 
 #ifdef __cplusplus
 }

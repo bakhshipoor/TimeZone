@@ -9,21 +9,21 @@ extern "C" {
 
     typedef struct
     {
-        uint8_t Field[MAX_LENGHT_DATA_FIELD];
-        uint8_t Target[MAX_LENGHT_DATA_FIELD];
-        uint8_t Link_Name[MAX_LENGHT_DATA_FIELD];
-        uint8_t Target1[MAX_LENGHT_DATA_FIELD];
+        CHAR Field[MAX_LENGHT_DATA_FIELD];
+        CHAR Target[MAX_LENGHT_DATA_FIELD];
+        CHAR Link_Name[MAX_LENGHT_DATA_FIELD];
+        CHAR Target1[MAX_LENGHT_DATA_FIELD];
     } Link_Data_t;
 
     typedef struct
     {
-        uint8_t* Target;
-        uint8_t* Link_Name;
-        uint8_t* Target1;
+        CHAR* Target;
+        CHAR* Link_Name;
+        CHAR* Target1;
     }Link_Entry_t;
 
-    Link_Entry_t* Parse_Links(int32_t* links_Count);
-    Link_Data_t Parse_Link_Data(const char* line);
+    Link_Entry_t* Parse_Links(COUNTER* links_Count);
+    Link_Data_t Parse_Link_Data(CONST CHAR* line);
 
 #ifdef __cplusplus
 }
