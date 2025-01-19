@@ -7,7 +7,8 @@ extern "C" {
 
 #include "../../Parser/Inc/Parser.h"
 
-
+#define INVALID_YEAR -9999
+#define INVALID_OFFSET -999999
     typedef struct
     {
         MONTH Month;
@@ -46,6 +47,9 @@ extern "C" {
         CHAR* Comments;
         HOUR Standard_Offset;
         CHAR Standard_Offset_Text[10];
+        BOOL DST_Effect;
+        HOUR DST_Offset;
+        CHAR DST_Offset_Text[10];
         YEAR Year_Begin;
         YEAR Year_End;
         COUNTER Years_Count;
@@ -62,9 +66,17 @@ extern "C" {
     BOOL Generate_Full_List(CONST CHAR* data_folder_path);
     COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR* country_code);
     HOUR Get_Zone_Last_Standard_Offset(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire);
+    VOID Get_Zone_DST_Effect(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire, BOOL* dst_effect, HOUR* save_hour);
     YEAR Get_Zone_Year_Begin(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire);
     YEAR Get_Zone_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire);
     YEAR Get_Rule_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR* rule_name);
+    VOID Get_Rule_Year_End_DST_Data(CONST Parse_Data_t* parse_data, CONST CHAR* rule_name, BOOL* dst_effect, HOUR* save_hour);
+    INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b);
+    VOID Sort_Zone_Info_By_Identifier(G_Zone_Info_t* zone_info, COUNTER info_count);
+    INT Compare_Standard_Offset(CONST VOID* a, CONST VOID* b);
+    VOID Sort_Zone_Info_By_STD_Offset(G_Zone_Info_t* zone_info, COUNTER info_count);
+    INT Compare_Zones_Standard_Offset_Then_Identifier(CONST VOID* a, CONST VOID* b);
+    VOID Sort_Zone_Info_By_STD_Offset_Then_Identifier(G_Zone_Info_t* zone_info, COUNTER info_count);
 
 #ifdef __cplusplus
 }

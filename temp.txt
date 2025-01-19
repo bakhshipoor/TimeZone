@@ -1,417 +1,1251 @@
-AD	Andorra	Europe/Andorra	42.500000	1.516667		3600	+01:00	1901	1901
-AE	United Arab Emirates	Asia/Dubai	25.300000	55.300000		14400	+04:00	1920	1920
-AF	Afghanistan	Asia/Kabul	34.516667	69.200000		16200	+04:30	1890	1890
-AG	Antigua & Barbuda	America/Antigua	17.050000	-61.800000		-14400	-04:00	1899	1899
-AI	Anguilla	America/Anguilla	18.200000	-63.066667		-14400	-04:00	1899	1899
-AL	Albania	Europe/Tirane	41.333333	19.833333		3600	+01:00	1914	1914
-AM	Armenia	Asia/Yerevan	40.183333	44.500000		14400	+04:00	1924	1924
-AO	Angola	Africa/Luanda	-8.800000	13.233333		3600	+01:00	1905	1905
-AQ	Antarctica	Antarctica/McMurdo	-77.833333	166.600000	New Zealand time - McMurdo, South Pole	43200	+12:00	1868	1868
-AQ	Antarctica	Antarctica/Casey	-66.283333	110.516667	Casey	28800	+08:00	1969	1969
-AQ	Antarctica	Antarctica/Davis	-68.583333	77.966667	Davis	25200	+07:00	1957	1957
-AQ	Antarctica	Antarctica/DumontDUrville	-66.666667	140.016667	Dumont-d'Urville	36000	+10:00	1880	1880
-AQ	Antarctica	Antarctica/Mawson	-67.600000	62.883333	Mawson	18000	+05:00	1954	1954
-AQ	Antarctica	Antarctica/Palmer	-64.800000	-64.100000	Palmer	-10800	-03:00	1965	1965
-AQ	Antarctica	Antarctica/Rothera	-67.566667	-68.133333	Rothera	-10800	-03:00	1976	1976
-AQ	Antarctica	Antarctica/Syowa	-69.006111	39.590000	Syowa	10800	+03:00	1947	1947
-AQ	Antarctica	Antarctica/Troll	-72.011389	2.535000	Troll	0	+00:00	2005	2005
-AQ	Antarctica	Antarctica/Vostok	-78.400000	106.900000	Vostok	18000	+05:00	1957	1957
-AR	Argentina	America/Argentina/Buenos_Aires	-34.600000	-58.450000	Buenos Aires (BA, CF)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Cordoba	-31.400000	-64.183333	Argentina (most areas: CB, CC, CN, ER, FM, MN, SE, SF)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Salta	-24.783333	-65.416667	Salta (SA, LP, NQ, RN)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Jujuy	-24.183333	-65.300000	Jujuy (JY)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Tucuman	-26.816667	-65.216667	Tucuman (TM)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Catamarca	-28.466667	-65.783333	Catamarca (CT), Chubut (CH)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/La_Rioja	-29.433333	-66.850000	La Rioja (LR)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/San_Juan	-31.533333	-68.516667	San Juan (SJ)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Mendoza	-32.883333	-68.816667	Mendoza (MZ)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/San_Luis	-33.316667	-66.350000	San Luis (SL)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Rio_Gallegos	-51.633333	-69.216667	Santa Cruz (SC)	-10800	-03:00	1894	1894
-AR	Argentina	America/Argentina/Ushuaia	-54.800000	-68.300000	Tierra del Fuego (TF)	-10800	-03:00	1894	1894
-AS	Samoa (American)	Pacific/Pago_Pago	-14.266667	-170.700000		-39600	-11:00	1892	1892
-AT	Austria	Europe/Vienna	48.216667	16.333333		3600	+01:00	1893	1893
-AU	Australia	Australia/Lord_Howe	-31.550000	159.083333	Lord Howe Island	37800	+10:30	1895	1895
-AU	Australia	Antarctica/Macquarie	-54.500000	158.950000	Macquarie Island	36000	+10:00	1899	1899
-AU	Australia	Australia/Hobart	-42.883333	147.316667	Tasmania	36000	+10:00	1895	1895
-AU	Australia	Australia/Melbourne	-37.816667	144.966667	Victoria	36000	+10:00	1895	1895
-AU	Australia	Australia/Sydney	-33.866667	151.216667	New South Wales (most areas)	36000	+10:00	1895	1895
-AU	Australia	Australia/Broken_Hill	-31.950000	141.450000	New South Wales (Yancowinna)	34200	+09:30	1895	1895
-AU	Australia	Australia/Brisbane	-27.466667	153.033333	Queensland (most areas)	36000	+10:00	1895	1895
-AU	Australia	Australia/Lindeman	-20.266667	149.000000	Queensland (Whitsunday Islands)	36000	+10:00	1895	1895
-AU	Australia	Australia/Adelaide	-34.916667	138.583333	South Australia	34200	+09:30	1895	1895
-AU	Australia	Australia/Darwin	-12.466667	130.833333	Northern Territory	34200	+09:30	1895	1895
-AU	Australia	Australia/Perth	-31.950000	115.850000	Western Australia (most areas)	28800	+08:00	1895	1895
-AU	Australia	Australia/Eucla	-31.716667	128.866667	Western Australia (Eucla)	31500	+08:45	1895	1895
-AW	Aruba	America/Aruba	12.500000	-69.966667		-14400	-04:00	1899	1899
-AX	Åland Islands	Europe/Mariehamn	60.100000	19.950000		7200	+02:00	1878	1878
-AZ	Azerbaijan	Asia/Baku	40.383333	49.850000		14400	+04:00	1924	1924
-BA	Bosnia & Herzegovina	Europe/Sarajevo	43.866667	18.416667		3600	+01:00	1884	1884
-BB	Barbados	America/Barbados	13.100000	-59.616667		-14400	-04:00	1911	1911
-BD	Bangladesh	Asia/Dhaka	23.716667	90.416667		21600	+06:00	1890	1890
-BE	Belgium	Europe/Brussels	50.833333	4.333333		3600	+01:00	1880	1880
-BF	Burkina Faso	Africa/Ouagadougou	12.366667	-1.516667		0	+00:00	1912	1912
-BG	Bulgaria	Europe/Sofia	42.683333	23.316667		7200	+02:00	1880	1880
-BH	Bahrain	Asia/Bahrain	26.383333	50.583333		10800	+03:00	1920	1920
-BI	Burundi	Africa/Bujumbura	-3.383333	29.366667		7200	+02:00	1909	1909
-BJ	Benin	Africa/Porto-Novo	6.483333	2.616667		3600	+01:00	1905	1905
-BL	St Barthelemy	America/St_Barthelemy	17.883333	-62.850000		-14400	-04:00	1899	1899
-BM	Bermuda	Atlantic/Bermuda	32.283333	-64.766667		-14400	-04:00	1890	1890
-BN	Brunei	Asia/Brunei	4.933333	114.916667		28800	+08:00	1926	1926
-BO	Bolivia	America/La_Paz	-16.500000	-68.150000		-14400	-04:00	1890	1890
-BQ	Caribbean NL	America/Kralendijk	12.150833	-68.276667		-14400	-04:00	1899	1899
-BR	Brazil	America/Noronha	-3.850000	-32.416667	Atlantic islands	-7200	-02:00	1914	1914
-BR	Brazil	America/Belem	-1.450000	-48.483333	Para (east), Amapa	-10800	-03:00	1914	1914
-BR	Brazil	America/Fortaleza	-3.716667	-38.500000	Brazil (northeast: MA, PI, CE, RN, PB)	-10800	-03:00	1914	1914
-BR	Brazil	America/Recife	-8.050000	-34.900000	Pernambuco	-10800	-03:00	1914	1914
-BR	Brazil	America/Araguaina	-7.200000	-48.200000	Tocantins	-10800	-03:00	1914	1914
-BR	Brazil	America/Maceio	-9.666667	-35.716667	Alagoas, Sergipe	-10800	-03:00	1914	1914
-BR	Brazil	America/Bahia	-12.983333	-38.516667	Bahia	-10800	-03:00	1914	1914
-BR	Brazil	America/Sao_Paulo	-23.533333	-46.616667	Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)	-10800	-03:00	1914	1914
-BR	Brazil	America/Campo_Grande	-20.450000	-54.616667	Mato Grosso do Sul	-14400	-04:00	1914	1914
-BR	Brazil	America/Cuiaba	-15.583333	-56.083333	Mato Grosso	-14400	-04:00	1914	1914
-BR	Brazil	America/Santarem	-2.433333	-54.866667	Para (west)	-10800	-03:00	1914	1914
-BR	Brazil	America/Porto_Velho	-8.766667	-63.900000	Rondonia	-14400	-04:00	1914	1914
-BR	Brazil	America/Boa_Vista	2.816667	-60.666667	Roraima	-14400	-04:00	1914	1914
-BR	Brazil	America/Manaus	-3.133333	-60.016667	Amazonas (east)	-14400	-04:00	1914	1914
-BR	Brazil	America/Eirunepe	-6.666667	-69.866667	Amazonas (west)	-18000	-05:00	1914	1914
-BR	Brazil	America/Rio_Branco	-9.966667	-67.800000	Acre	-18000	-05:00	1914	1914
-BS	Bahamas	America/Nassau	25.083333	-77.350000		-18000	-05:00	1895	1895
-BT	Bhutan	Asia/Thimphu	27.466667	89.650000		21600	+06:00	1947	1947
-BW	Botswana	Africa/Gaborone	-24.650000	25.916667		7200	+02:00	1909	1909
-BY	Belarus	Europe/Minsk	53.900000	27.566667		10800	+03:00	1880	1880
-BZ	Belize	America/Belize	17.500000	-88.200000		-21600	-06:00	1912	1912
-CA	Canada	America/St_Johns	47.566667	-52.716667	Newfoundland, Labrador (SE)	-12600	-03:30	1884	1884
-CA	Canada	America/Halifax	44.650000	-63.600000	Atlantic - NS (most areas), PE	-14400	-04:00	1902	1902
-CA	Canada	America/Glace_Bay	46.200000	-59.950000	Atlantic - NS (Cape Breton)	-14400	-04:00	1902	1902
-CA	Canada	America/Moncton	46.100000	-64.783333	Atlantic - New Brunswick	-14400	-04:00	1883	1883
-CA	Canada	America/Goose_Bay	53.333333	-60.416667	Atlantic - Labrador (most areas)	-14400	-04:00	1884	1884
-CA	Canada	America/Blanc-Sablon	51.416667	-57.116667	AST - QC (Lower North Shore)	-14400	-04:00	1899	1899
-CA	Canada	America/Toronto	43.650000	-79.383333	Eastern - ON & QC (most areas)	-18000	-05:00	1895	1895
-CA	Canada	America/Iqaluit	63.733333	-68.466667	Eastern - NU (most areas)	-18000	-05:00	1942	1942
-CA	Canada	America/Atikokan	48.758611	-91.621667	EST - ON (Atikokan), NU (Coral H)	-18000	-05:00	1890	1890
-CA	Canada	America/Winnipeg	49.883333	-97.150000	Central - ON (west), Manitoba	-21600	-06:00	1887	1887
-CA	Canada	America/Resolute	74.695556	-94.829167	Central - NU (Resolute)	-21600	-06:00	1947	1947
-CA	Canada	America/Rankin_Inlet	62.816667	-92.083056	Central - NU (central)	-21600	-06:00	1957	1957
-CA	Canada	America/Regina	50.400000	-104.650000	CST - SK (most areas)	-21600	-06:00	1905	1905
-CA	Canada	America/Swift_Current	50.283333	-107.833333	CST - SK (midwest)	-21600	-06:00	1905	1905
-CA	Canada	America/Edmonton	53.550000	-113.466667	Mountain - AB, BC(E), NT(E), SK(W)	-25200	-07:00	1906	1906
-CA	Canada	America/Cambridge_Bay	69.113889	-105.052778	Mountain - NU (west)	-25200	-07:00	1920	1920
-CA	Canada	America/Inuvik	68.349722	-133.716667	Mountain - NT (west)	-25200	-07:00	1953	1953
-CA	Canada	America/Creston	49.100000	-116.516667	MST - BC (Creston)	-25200	-07:00	1883	1883
-CA	Canada	America/Dawson_Creek	55.766667	-120.233333	MST - BC (Dawson Cr, Ft St John)	-25200	-07:00	1884	1884
-CA	Canada	America/Fort_Nelson	58.800000	-122.700000	MST - BC (Ft Nelson)	-25200	-07:00	1884	1884
-CA	Canada	America/Whitehorse	60.716667	-135.050000	MST - Yukon (east)	-25200	-07:00	1900	1900
-CA	Canada	America/Dawson	64.066667	-139.416667	MST - Yukon (west)	-25200	-07:00	1900	1900
-CA	Canada	America/Vancouver	49.266667	-123.116667	Pacific - BC (most areas)	-28800	-08:00	1884	1884
-CC	Cocos (Keeling) Islands	Indian/Cocos	-12.166667	96.916667		23400	+06:30	1880	1880
-CD	Congo (Dem. Rep.)	Africa/Kinshasa	-4.300000	15.300000	Dem. Rep. of Congo (west)	3600	+01:00	1905	1905
-CD	Congo (Dem. Rep.)	Africa/Lubumbashi	-11.666667	27.466667	Dem. Rep. of Congo (east)	7200	+02:00	1909	1909
-CF	Central African Rep.	Africa/Bangui	4.366667	18.583333		3600	+01:00	1905	1905
-CG	Congo (Rep.)	Africa/Brazzaville	-4.266667	15.283333		3600	+01:00	1905	1905
-CH	Switzerland	Europe/Zurich	47.383333	8.533333		3600	+01:00	1853	1853
-CI	Côte d'Ivoire	Africa/Abidjan	5.316667	-4.033333		0	+00:00	1912	1912
-CK	Cook Islands	Pacific/Rarotonga	-21.233333	-159.766667		-36000	-10:00	1899	1899
-CL	Chile	America/Santiago	-33.450000	-70.666667	most of Chile	-14400	-04:00	1890	1890
-CL	Chile	America/Punta_Arenas	-53.150000	-70.916667	Region of Magallanes	-10800	-03:00	1890	1890
-CL	Chile	Pacific/Easter	-27.150000	-109.433333	Easter Island	-21600	-06:00	1890	1890
-CM	Cameroon	Africa/Douala	4.050000	9.700000		3600	+01:00	1905	1905
-CN	China	Asia/Shanghai	31.233333	121.466667	Beijing Time	28800	+08:00	1901	1901
-CN	China	Asia/Urumqi	43.800000	87.583333	Xinjiang Time	21600	+06:00	1928	1928
-CO	Colombia	America/Bogota	4.600000	-74.083333		-18000	-05:00	1884	1884
-CR	Costa Rica	America/Costa_Rica	9.933333	-84.083333		-21600	-06:00	1890	1890
-CU	Cuba	America/Havana	23.133333	-82.366667		-18000	-05:00	1890	1890
-CV	Cape Verde	Atlantic/Cape_Verde	14.916667	-23.516667		-3600	-01:00	1912	1912
-CW	Curaçao	America/Curacao	12.183333	-69.000000		-14400	-04:00	1899	1899
-CX	Christmas Island	Indian/Christmas	-10.416667	105.716667		25200	+07:00	1880	1880
-CY	Cyprus	Asia/Nicosia	35.166667	33.366667	most of Cyprus	7200	+02:00	1921	1921
-CY	Cyprus	Asia/Famagusta	35.116667	33.950000	Northern Cyprus	7200	+02:00	1921	1921
-CZ	Czech Republic	Europe/Prague	50.083333	14.433333		3600	+01:00	1850	1850
-DE	Germany	Europe/Berlin	52.500000	13.366667	most of Germany	3600	+01:00	1893	1893
-DE	Germany	Europe/Busingen	47.700000	8.683333	Busingen	3600	+01:00	1853	1853
-DJ	Djibouti	Africa/Djibouti	11.600000	43.150000		10800	+03:00	1908	1908
-DK	Denmark	Europe/Copenhagen	55.666667	12.583333		3600	+01:00	1893	1893
-DM	Dominica	America/Dominica	15.300000	-61.400000		-14400	-04:00	1899	1899
-DO	Dominican Republic	America/Santo_Domingo	18.466667	-69.900000		-14400	-04:00	1890	1890
-DZ	Algeria	Africa/Algiers	36.783333	3.050000		3600	+01:00	1891	1891
-EC	Ecuador	America/Guayaquil	-2.166667	-79.833333	Ecuador (mainland)	-18000	-05:00	1890	1890
-EC	Ecuador	Pacific/Galapagos	-0.900000	-89.600000	Galapagos Islands	-21600	-06:00	1931	1931
-EE	Estonia	Europe/Tallinn	59.416667	24.750000		7200	+02:00	1880	1880
-EG	Egypt	Africa/Cairo	30.050000	31.250000		7200	+02:00	1900	1900
-EH	Western Sahara	Africa/El_Aaiun	27.150000	-13.200000		3600	+01:00	1934	1934
-ER	Eritrea	Africa/Asmara	15.333333	38.883333		10800	+03:00	1908	1908
-ES	Spain	Europe/Madrid	40.400000	-3.683333	Spain (mainland)	3600	+01:00	1901	1901
-ES	Spain	Africa/Ceuta	35.883333	-5.316667	Ceuta, Melilla	3600	+01:00	1901	1901
-ES	Spain	Atlantic/Canary	28.100000	-15.400000	Canary Islands	0	+00:00	1922	1922
-ET	Ethiopia	Africa/Addis_Ababa	9.033333	38.700000		10800	+03:00	1908	1908
-FI	Finland	Europe/Helsinki	60.166667	24.966667		7200	+02:00	1878	1878
-FJ	Fiji	Pacific/Fiji	-18.133333	178.416667		43200	+12:00	1915	1915
-FK	Falkland Islands	Atlantic/Stanley	-51.700000	-57.850000		-10800	-03:00	1890	1890
-FM	Micronesia	Pacific/Chuuk	7.416667	151.783333	Chuuk/Truk, Yap	36000	+10:00	1880	1880
-FM	Micronesia	Pacific/Pohnpei	6.966667	158.216667	Pohnpei/Ponape	39600	+11:00	1912	1912
-FM	Micronesia	Pacific/Kosrae	5.316667	162.983333	Kosrae	39600	+11:00	1844	1844
-FO	Faroe Islands	Atlantic/Faroe	62.016667	-6.766667		0	+00:00	1908	1908
-FR	France	Europe/Paris	48.866667	2.333333		3600	+01:00	1891	1891
-GA	Gabon	Africa/Libreville	0.383333	9.450000		3600	+01:00	1905	1905
-GB	Britain (UK)	Europe/London	51.508333	-0.125278		0	+00:00	1847	1847
-GD	Grenada	America/Grenada	12.050000	-61.750000		-14400	-04:00	1899	1899
-GE	Georgia	Asia/Tbilisi	41.716667	44.816667		14400	+04:00	1880	1880
-GF	French Guiana	America/Cayenne	4.933333	-52.333333		-10800	-03:00	1911	1911
-GG	Guernsey	Europe/Guernsey	49.454722	-2.536111		0	+00:00	1847	1847
-GH	Ghana	Africa/Accra	5.550000	-0.216667		0	+00:00	1912	1912
-GI	Gibraltar	Europe/Gibraltar	36.133333	-5.350000		3600	+01:00	1880	1880
-GL	Greenland	America/Nuuk	64.183333	-51.733333	most of Greenland	-7200	-02:00	1916	1916
-GL	Greenland	America/Danmarkshavn	76.766667	-18.666667	National Park (east coast)	0	+00:00	1916	1916
-GL	Greenland	America/Scoresbysund	70.483333	-21.966667	Scoresbysund/Ittoqqortoormiit	-7200	-02:00	1916	1916
-GL	Greenland	America/Thule	76.566667	-68.783333	Thule/Pituffik	-14400	-04:00	1916	1916
-GM	Gambia	Africa/Banjul	13.466667	-16.650000		0	+00:00	1912	1912
-GN	Guinea	Africa/Conakry	9.516667	-13.716667		0	+00:00	1912	1912
-GP	Guadeloupe	America/Guadeloupe	16.233333	-61.533333		-14400	-04:00	1899	1899
-GQ	Equatorial Guinea	Africa/Malabo	3.750000	8.783333		3600	+01:00	1905	1905
-GR	Greece	Europe/Athens	37.966667	23.716667		7200	+02:00	1895	1895
-GS	South Georgia & the South Sandwich Islands	Atlantic/South_Georgia	-54.266667	-36.533333		-7200	-02:00	1890	1890
-GT	Guatemala	America/Guatemala	14.633333	-90.516667		-21600	-06:00	1918	1918
-GU	Guam	Pacific/Guam	13.466667	144.750000		36000	+10:00	1844	1844
-GW	Guinea-Bissau	Africa/Bissau	11.850000	-15.583333		0	+00:00	1912	1912
-GY	Guyana	America/Guyana	6.800000	-58.166667		-14400	-04:00	1911	1911
-HK	Hong Kong	Asia/Hong_Kong	22.283333	114.150000		28800	+08:00	1904	1904
-HN	Honduras	America/Tegucigalpa	14.100000	-87.216667		-21600	-06:00	1921	1921
-HR	Croatia	Europe/Zagreb	45.800000	15.966667		3600	+01:00	1884	1884
-HT	Haiti	America/Port-au-Prince	18.533333	-72.333333		-18000	-05:00	1890	1890
-HU	Hungary	Europe/Budapest	47.500000	19.083333		3600	+01:00	1890	1890
-ID	Indonesia	Asia/Jakarta	-6.166667	106.800000	Java, Sumatra	25200	+07:00	1867	1867
-ID	Indonesia	Asia/Pontianak	-0.033333	109.333333	Borneo (west, central)	25200	+07:00	1908	1908
-ID	Indonesia	Asia/Makassar	-5.116667	119.400000	Borneo (east, south), Sulawesi/Celebes, Bali, Nusa Tengarra, Timor (west)	28800	+08:00	1920	1920
-ID	Indonesia	Asia/Jayapura	-2.533333	140.700000	New Guinea (West Papua / Irian Jaya), Malukus/Moluccas	32400	+09:00	1932	1932
-IE	Ireland	Europe/Dublin	53.333333	-6.250000		3600	+01:00	1880	1880
-IL	Israel	Asia/Jerusalem	31.780556	35.223889		7200	+02:00	1880	1880
-IM	Isle of Man	Europe/Isle_of_Man	54.150000	-4.466667		0	+00:00	1847	1847
-IN	India	Asia/Kolkata	22.533333	88.366667		19800	+05:30	1854	1854
-IO	British Indian Ocean Territory	Indian/Chagos	-7.333333	72.416667		21600	+06:00	1907	1907
-IQ	Iraq	Asia/Baghdad	33.350000	44.416667		10800	+03:00	1890	1890
-IR	Iran	Asia/Tehran	35.666667	51.433333		12600	+03:30	1916	1916
-IS	Iceland	Atlantic/Reykjavik	64.150000	-21.850000		0	+00:00	1912	1912
-IT	Italy	Europe/Rome	41.900000	12.483333		3600	+01:00	1866	1866
-JE	Jersey	Europe/Jersey	49.183611	-2.106667		0	+00:00	1847	1847
-JM	Jamaica	America/Jamaica	17.968056	-76.793333		-18000	-05:00	1890	1890
-JO	Jordan	Asia/Amman	31.950000	35.933333		10800	+03:00	1931	1931
-JP	Japan	Asia/Tokyo	35.654444	139.744722		32400	+09:00	1887	1887
-KE	Kenya	Africa/Nairobi	-1.283333	36.816667		10800	+03:00	1908	1908
-KG	Kyrgyzstan	Asia/Bishkek	42.900000	74.600000		21600	+06:00	1924	1924
-KH	Cambodia	Asia/Phnom_Penh	11.550000	104.916667		25200	+07:00	1880	1880
-KI	Kiribati	Pacific/Tarawa	1.416667	173.000000	Gilbert Islands	43200	+12:00	1901	1901
-KI	Kiribati	Pacific/Kanton	-2.783333	-171.716667	Phoenix Islands	46800	+13:00	1937	1937
-KI	Kiribati	Pacific/Kiritimati	1.866667	-157.333333	Line Islands	50400	+14:00	1901	1901
-KM	Comoros	Indian/Comoro	-11.683333	43.266667		10800	+03:00	1908	1908
-KN	St Kitts & Nevis	America/St_Kitts	17.300000	-62.716667		-14400	-04:00	1899	1899
-KP	Korea (North)	Asia/Pyongyang	39.016667	125.750000		32400	+09:00	1908	1908
-KR	Korea (South)	Asia/Seoul	37.550000	126.966667		32400	+09:00	1908	1908
-KW	Kuwait	Asia/Kuwait	29.333333	47.983333		10800	+03:00	1947	1947
-KY	Cayman Islands	America/Cayman	19.300000	-81.383333		-18000	-05:00	1890	1890
-KZ	Kazakhstan	Asia/Almaty	43.250000	76.950000	most of Kazakhstan	18000	+05:00	1924	1924
-KZ	Kazakhstan	Asia/Qyzylorda	44.800000	65.466667	Qyzylorda/Kyzylorda/Kzyl-Orda	18000	+05:00	1924	1924
-KZ	Kazakhstan	Asia/Qostanay	53.200000	63.616667	Qostanay/Kostanay/Kustanay	18000	+05:00	1924	1924
-KZ	Kazakhstan	Asia/Aqtobe	50.283333	57.166667	Aqtobe/Aktobe	18000	+05:00	1924	1924
-KZ	Kazakhstan	Asia/Aqtau	44.516667	50.266667	Mangghystau/Mankistau	18000	+05:00	1924	1924
-KZ	Kazakhstan	Asia/Atyrau	47.116667	51.933333	Atyrau/Atirau/Gur'yev	18000	+05:00	1924	1924
-KZ	Kazakhstan	Asia/Oral	51.216667	51.350000	West Kazakhstan	18000	+05:00	1924	1924
-LA	Laos	Asia/Vientiane	17.966667	102.600000		25200	+07:00	1880	1880
-LB	Lebanon	Asia/Beirut	33.883333	35.500000		7200	+02:00	1880	1880
-LC	St Lucia	America/St_Lucia	14.016667	-61.000000		-14400	-04:00	1899	1899
-LI	Liechtenstein	Europe/Vaduz	47.150000	9.516667		3600	+01:00	1853	1853
-LK	Sri Lanka	Asia/Colombo	6.933333	79.850000		19800	+05:30	1880	1880
-LR	Liberia	Africa/Monrovia	6.300000	-10.783333		0	+00:00	1882	1882
-LS	Lesotho	Africa/Maseru	-29.466667	27.500000		7200	+02:00	1892	1892
-LT	Lithuania	Europe/Vilnius	54.683333	25.316667		7200	+02:00	1880	1880
-LU	Luxembourg	Europe/Luxembourg	49.600000	6.150000		3600	+01:00	1880	1880
-LV	Latvia	Europe/Riga	56.950000	24.100000		7200	+02:00	1880	1880
-LY	Libya	Africa/Tripoli	32.900000	13.183333		7200	+02:00	1920	1920
-MA	Morocco	Africa/Casablanca	33.650000	-7.583333		3600	+01:00	1913	1913
-MC	Monaco	Europe/Monaco	43.700000	7.383333		3600	+01:00	1891	1891
-MD	Moldova	Europe/Chisinau	47.000000	28.833333		7200	+02:00	1880	1880
-ME	Montenegro	Europe/Podgorica	42.433333	19.266667		3600	+01:00	1884	1884
-MF	St Martin (French)	America/Marigot	18.066667	-63.083333		-14400	-04:00	1899	1899
-MG	Madagascar	Indian/Antananarivo	-18.916667	47.516667		10800	+03:00	1908	1908
-MH	Marshall Islands	Pacific/Majuro	7.150000	171.200000	most of Marshall Islands	43200	+12:00	1901	1901
-MH	Marshall Islands	Pacific/Kwajalein	9.083333	167.333333	Kwajalein	43200	+12:00	1901	1901
-MK	North Macedonia	Europe/Skopje	41.983333	21.433333		3600	+01:00	1884	1884
-ML	Mali	Africa/Bamako	12.650000	-8.000000		0	+00:00	1912	1912
-MM	Myanmar (Burma)	Asia/Yangon	16.783333	96.166667		23400	+06:30	1880	1880
-MN	Mongolia	Asia/Ulaanbaatar	47.916667	106.883333	most of Mongolia	28800	+08:00	1905	1905
-MN	Mongolia	Asia/Hovd	48.016667	91.650000	Bayan-Olgii, Hovd, Uvs	25200	+07:00	1905	1905
-MO	Macau	Asia/Macau	22.197222	113.541667		28800	+08:00	1904	1904
-MP	Northern Mariana Islands	Pacific/Saipan	15.200000	145.750000		36000	+10:00	1844	1844
-MQ	Martinique	America/Martinique	14.600000	-61.083333		-14400	-04:00	1890	1890
-MR	Mauritania	Africa/Nouakchott	18.100000	-15.950000		0	+00:00	1912	1912
-MS	Montserrat	America/Montserrat	16.716667	-62.216667		-14400	-04:00	1899	1899
-MT	Malta	Europe/Malta	35.900000	14.516667		3600	+01:00	1893	1893
-MU	Mauritius	Indian/Mauritius	-20.166667	57.500000		14400	+04:00	1907	1907
-MV	Maldives	Indian/Maldives	4.166667	73.500000		18000	+05:00	1880	1880
-MW	Malawi	Africa/Blantyre	-15.783333	35.000000		7200	+02:00	1909	1909
-MX	Mexico	America/Mexico_City	19.400000	-99.150000	Central Mexico	-21600	-06:00	1922	1922
-MX	Mexico	America/Cancun	21.083333	-86.766667	Quintana Roo	-18000	-05:00	1922	1922
-MX	Mexico	America/Merida	20.966667	-89.616667	Campeche, Yucatan	-21600	-06:00	1922	1922
-MX	Mexico	America/Monterrey	25.666667	-100.316667	Durango; Coahuila, Nuevo Leon, Tamaulipas (most areas)	-21600	-06:00	1922	1922
-MX	Mexico	America/Matamoros	25.833333	-97.500000	Coahuila, Nuevo Leon, Tamaulipas (US border)	-21600	-06:00	1922	1922
-MX	Mexico	America/Chihuahua	28.633333	-106.083333	Chihuahua (most areas)	-21600	-06:00	1922	1922
-MX	Mexico	America/Ciudad_Juarez	31.733333	-106.483333	Chihuahua (US border - west)	-25200	-07:00	1922	1922
-MX	Mexico	America/Ojinaga	29.566667	-104.416667	Chihuahua (US border - east)	-21600	-06:00	1922	1922
-MX	Mexico	America/Mazatlan	23.216667	-106.416667	Baja California Sur, Nayarit (most areas), Sinaloa	-25200	-07:00	1922	1922
-MX	Mexico	America/Bahia_Banderas	20.800000	-105.250000	Bahia de Banderas	-21600	-06:00	1922	1922
-MX	Mexico	America/Hermosillo	29.066667	-110.966667	Sonora	-25200	-07:00	1922	1922
-MX	Mexico	America/Tijuana	32.533333	-117.016667	Baja California	-28800	-08:00	1922	1922
-MY	Malaysia	Asia/Kuala_Lumpur	3.166667	101.700000	Malaysia (peninsula)	28800	+08:00	1901	1901
-MY	Malaysia	Asia/Kuching	1.550000	110.333333	Sabah, Sarawak	28800	+08:00	1926	1926
-MZ	Mozambique	Africa/Maputo	-25.966667	32.583333		7200	+02:00	1909	1909
-NA	Namibia	Africa/Windhoek	-22.566667	17.100000		7200	+02:00	1892	1892
-NC	New Caledonia	Pacific/Noumea	-22.266667	166.450000		39600	+11:00	1912	1912
-NE	Niger	Africa/Niamey	13.516667	2.116667		3600	+01:00	1905	1905
-NF	Norfolk Island	Pacific/Norfolk	-29.050000	167.966667		39600	+11:00	1901	1901
-NG	Nigeria	Africa/Lagos	6.450000	3.400000		3600	+01:00	1905	1905
-NI	Nicaragua	America/Managua	12.150000	-86.283333		-21600	-06:00	1890	1890
-NL	Netherlands	Europe/Amsterdam	52.366667	4.900000		3600	+01:00	1880	1880
-NO	Norway	Europe/Oslo	59.916667	10.750000		3600	+01:00	1893	1893
-NP	Nepal	Asia/Kathmandu	27.716667	85.316667		20700	+05:45	1920	1920
-NR	Nauru	Pacific/Nauru	-0.516667	166.916667		43200	+12:00	1921	1921
-NU	Niue	Pacific/Niue	-19.016667	-169.916667		-39600	-11:00	1952	1952
-NZ	New Zealand	Pacific/Auckland	-36.866667	174.766667	most of New Zealand	43200	+12:00	1868	1868
-NZ	New Zealand	Pacific/Chatham	-43.950000	-176.550000	Chatham Islands	45900	+12:45	1868	1868
-OM	Oman	Asia/Muscat	23.600000	58.583333		14400	+04:00	1920	1920
-PA	Panama	America/Panama	8.966667	-79.533333		-18000	-05:00	1890	1890
-PE	Peru	America/Lima	-12.050000	-77.050000		-18000	-05:00	1890	1890
-PF	French Polynesia	Pacific/Tahiti	-17.533333	-149.566667	Society Islands	-36000	-10:00	1912	1912
-PF	French Polynesia	Pacific/Marquesas	-9.000000	-139.500000	Marquesas Islands	-34200	-09:30	1912	1912
-PF	French Polynesia	Pacific/Gambier	-23.133333	-134.950000	Gambier Islands	-32400	-09:00	1912	1912
-PG	Papua New Guinea	Pacific/Port_Moresby	-9.500000	147.166667	most of Papua New Guinea	36000	+10:00	1880	1880
-PG	Papua New Guinea	Pacific/Bougainville	-6.216667	155.566667	Bougainville	39600	+11:00	1880	1880
-PH	Philippines	Asia/Manila	14.586667	120.967778		28800	+08:00	1844	1844
-PK	Pakistan	Asia/Karachi	24.866667	67.050000		18000	+05:00	1907	1907
-PL	Poland	Europe/Warsaw	52.250000	21.000000		3600	+01:00	1880	1880
-PM	St Pierre & Miquelon	America/Miquelon	47.050000	-56.333333		-10800	-03:00	1911	1911
-PN	Pitcairn	Pacific/Pitcairn	-25.066667	-130.083333		-28800	-08:00	1901	1901
-PR	Puerto Rico	America/Puerto_Rico	18.468333	-66.106111		-14400	-04:00	1899	1899
-PS	Palestine	Asia/Gaza	31.500000	34.466667	Gaza Strip	7200	+02:00	1900	1900
-PS	Palestine	Asia/Hebron	31.533333	35.095000	West Bank	7200	+02:00	1900	1900
-PT	Portugal	Europe/Lisbon	38.716667	-9.133333	Portugal (mainland)	0	+00:00	1884	1884
-PT	Portugal	Atlantic/Madeira	32.633333	-16.900000	Madeira Islands	0	+00:00	1884	1884
-PT	Portugal	Atlantic/Azores	37.733333	-25.666667	Azores	-3600	-01:00	1884	1884
-PW	Palau	Pacific/Palau	7.333333	134.483333		32400	+09:00	1844	1844
-PY	Paraguay	America/Asuncion	-25.266667	-57.666667		-10800	-03:00	1890	1890
-QA	Qatar	Asia/Qatar	25.283333	51.533333		10800	+03:00	1920	1920
-RE	Réunion	Indian/Reunion	-20.866667	55.466667		14400	+04:00	1920	1920
-RO	Romania	Europe/Bucharest	44.433333	26.100000		7200	+02:00	1891	1891
-RS	Serbia	Europe/Belgrade	44.833333	20.500000		3600	+01:00	1884	1884
-RU	Russia	Europe/Kaliningrad	54.716667	20.500000	MSK-01 - Kaliningrad	7200	+02:00	1893	1893
-RU	Russia	Europe/Moscow	55.755833	37.617778	MSK+00 - Moscow area	10800	+03:00	1880	1880
-UA	Ukraine	Europe/Simferopol	44.950000	34.100000	Crimea	10800	+03:00	1880	1880
-RU	Russia	Europe/Kirov	58.600000	49.650000	MSK+00 - Kirov	10800	+03:00	1919	1919
-RU	Russia	Europe/Volgograd	48.733333	44.416667	MSK+00 - Volgograd	10800	+03:00	1920	1920
-RU	Russia	Europe/Astrakhan	46.350000	48.050000	MSK+01 - Astrakhan	14400	+04:00	1924	1924
-RU	Russia	Europe/Saratov	51.566667	46.033333	MSK+01 - Saratov	14400	+04:00	1919	1919
-RU	Russia	Europe/Ulyanovsk	54.333333	48.400000	MSK+01 - Ulyanovsk	14400	+04:00	1919	1919
-RU	Russia	Europe/Samara	53.200000	50.150000	MSK+01 - Samara, Udmurtia	14400	+04:00	1919	1919
-RU	Russia	Asia/Yekaterinburg	56.850000	60.600000	MSK+02 - Urals	18000	+05:00	1916	1916
-RU	Russia	Asia/Omsk	55.000000	73.400000	MSK+03 - Omsk	21600	+06:00	1919	1919
-RU	Russia	Asia/Novosibirsk	55.033333	82.916667	MSK+04 - Novosibirsk	25200	+07:00	1919	1919
-RU	Russia	Asia/Barnaul	53.366667	83.750000	MSK+04 - Altai	25200	+07:00	1919	1919
-RU	Russia	Asia/Tomsk	56.500000	84.966667	MSK+04 - Tomsk	25200	+07:00	1919	1919
-RU	Russia	Asia/Novokuznetsk	53.750000	87.116667	MSK+04 - Kemerovo	25200	+07:00	1924	1924
-RU	Russia	Asia/Krasnoyarsk	56.016667	92.833333	MSK+04 - Krasnoyarsk area	25200	+07:00	1920	1920
-RU	Russia	Asia/Irkutsk	52.266667	104.333333	MSK+05 - Irkutsk, Buryatia	28800	+08:00	1880	1880
-RU	Russia	Asia/Chita	52.050000	113.466667	MSK+06 - Zabaykalsky	32400	+09:00	1919	1919
-RU	Russia	Asia/Yakutsk	62.000000	129.666667	MSK+06 - Lena River	32400	+09:00	1919	1919
-RU	Russia	Asia/Khandyga	62.656389	135.553889	MSK+06 - Tomponsky, Ust-Maysky	32400	+09:00	1919	1919
-RU	Russia	Asia/Vladivostok	43.166667	131.933333	MSK+07 - Amur River	36000	+10:00	1922	1922
-RU	Russia	Asia/Ust-Nera	64.560278	143.226667	MSK+07 - Oymyakonsky	36000	+10:00	1919	1919
-RU	Russia	Asia/Magadan	59.566667	150.800000	MSK+08 - Magadan	39600	+11:00	1924	1924
-RU	Russia	Asia/Sakhalin	46.966667	142.700000	MSK+08 - Sakhalin Island	39600	+11:00	1905	1905
-RU	Russia	Asia/Srednekolymsk	67.466667	153.716667	MSK+08 - Sakha (E), N Kuril Is	39600	+11:00	1924	1924
-RU	Russia	Asia/Kamchatka	53.016667	158.650000	MSK+09 - Kamchatka	43200	+12:00	1922	1922
-RU	Russia	Asia/Anadyr	64.750000	177.483333	MSK+09 - Bering Sea	43200	+12:00	1924	1924
-RW	Rwanda	Africa/Kigali	-1.950000	30.066667		7200	+02:00	1909	1909
-SA	Saudi Arabia	Asia/Riyadh	24.633333	46.716667		10800	+03:00	1947	1947
-SB	Solomon Islands	Pacific/Guadalcanal	-9.533333	160.200000		39600	+11:00	1912	1912
-SC	Seychelles	Indian/Mahe	-4.666667	55.466667		14400	+04:00	1920	1920
-SD	Sudan	Africa/Khartoum	15.600000	32.533333		7200	+02:00	1931	1931
-SE	Sweden	Europe/Stockholm	59.333333	18.050000		3600	+01:00	1893	1893
-SG	Singapore	Asia/Singapore	1.283333	103.850000		28800	+08:00	1901	1901
-SH	St Helena	Atlantic/St_Helena	-15.916667	-5.700000		0	+00:00	1912	1912
-SI	Slovenia	Europe/Ljubljana	46.050000	14.516667		3600	+01:00	1884	1884
-SJ	Svalbard & Jan Mayen	Arctic/Longyearbyen	78.000000	16.000000		3600	+01:00	1893	1893
-SK	Slovakia	Europe/Bratislava	48.150000	17.116667		3600	+01:00	1850	1850
-SL	Sierra Leone	Africa/Freetown	8.500000	-13.250000		0	+00:00	1912	1912
-SM	San Marino	Europe/San_Marino	43.916667	12.466667		3600	+01:00	1866	1866
-SN	Senegal	Africa/Dakar	14.666667	-17.433333		0	+00:00	1912	1912
-SO	Somalia	Africa/Mogadishu	2.066667	45.366667		10800	+03:00	1908	1908
-SR	Suriname	America/Paramaribo	5.833333	-55.166667		-10800	-03:00	1911	1911
-SS	South Sudan	Africa/Juba	4.850000	31.616667		7200	+02:00	1931	1931
-ST	Sao Tome & Principe	Africa/Sao_Tome	0.333333	6.733333		0	+00:00	1884	1884
-SV	El Salvador	America/El_Salvador	13.700000	-89.200000		-21600	-06:00	1921	1921
-SX	St Maarten (Dutch)	America/Lower_Princes	18.051389	-63.047222		-14400	-04:00	1899	1899
-SY	Syria	Asia/Damascus	33.500000	36.300000		10800	+03:00	1920	1920
-SZ	Eswatini (Swaziland)	Africa/Mbabane	-26.300000	31.100000		7200	+02:00	1892	1892
-TC	Turks & Caicos Is	America/Grand_Turk	21.466667	-71.133333		-18000	-05:00	1890	1890
-TD	Chad	Africa/Ndjamena	12.116667	15.050000		3600	+01:00	1912	1912
-TF	French S. Terr.	Indian/Kerguelen	-49.352778	70.217500		18000	+05:00	1880	1880
-TG	Togo	Africa/Lome	6.133333	1.216667		0	+00:00	1912	1912
-TH	Thailand	Asia/Bangkok	13.750000	100.516667		25200	+07:00	1880	1880
-TJ	Tajikistan	Asia/Dushanbe	38.583333	68.800000		18000	+05:00	1924	1924
-TK	Tokelau	Pacific/Fakaofo	-9.366667	-171.233333		46800	+13:00	1901	1901
-TL	East Timor	Asia/Dili	-8.550000	125.583333		32400	+09:00	1911	1911
-TM	Turkmenistan	Asia/Ashgabat	37.950000	58.383333		18000	+05:00	1924	1924
-TN	Tunisia	Africa/Tunis	36.800000	10.183333		3600	+01:00	1881	1881
-TO	Tonga	Pacific/Tongatapu	-21.133333	-175.200000		46800	+13:00	1945	1945
-TR	Turkey	Europe/Istanbul	41.016667	28.966667		10800	+03:00	1880	1880
-TT	Trinidad & Tobago	America/Port_of_Spain	10.650000	-61.516667		-14400	-04:00	1899	1899
-TV	Tuvalu	Pacific/Funafuti	-8.516667	179.216667		43200	+12:00	1901	1901
-TW	Taiwan	Asia/Taipei	25.050000	121.500000		28800	+08:00	1896	1896
-TZ	Tanzania	Africa/Dar_es_Salaam	-6.800000	39.283333		10800	+03:00	1908	1908
-UA	Ukraine	Europe/Kyiv	50.433333	30.516667	most of Ukraine	7200	+02:00	1880	1880
-UG	Uganda	Africa/Kampala	0.316667	32.416667		10800	+03:00	1908	1908
-UM	US minor outlying islands	Pacific/Midway	28.216667	-177.366667	Midway Islands	-39600	-11:00	1892	1892
-UM	US minor outlying islands	Pacific/Wake	19.283333	166.616667	Wake Island	43200	+12:00	1901	1901
-US	United States	America/New_York	40.714167	-74.006389	Eastern (most areas)	-18000	-05:00	1883	1883
-US	United States	America/Detroit	42.331389	-83.045833	Eastern - MI (most areas)	-18000	-05:00	1905	1905
-US	United States	America/Kentucky/Louisville	38.254167	-85.759444	Eastern - KY (Louisville area)	-18000	-05:00	1883	1883
-US	United States	America/Kentucky/Monticello	36.829722	-84.849167	Eastern - KY (Wayne)	-18000	-05:00	1883	1883
-US	United States	America/Indiana/Indianapolis	39.768333	-86.158056	Eastern - IN (most areas)	-18000	-05:00	1883	1883
-US	United States	America/Indiana/Vincennes	38.677222	-87.528611	Eastern - IN (Da, Du, K, Mn)	-18000	-05:00	1883	1883
-US	United States	America/Indiana/Winamac	41.051389	-86.603056	Eastern - IN (Pulaski)	-18000	-05:00	1883	1883
-US	United States	America/Indiana/Marengo	38.375556	-86.344722	Eastern - IN (Crawford)	-18000	-05:00	1883	1883
-US	United States	America/Indiana/Petersburg	38.491944	-87.278611	Eastern - IN (Pike)	-18000	-05:00	1883	1883
-US	United States	America/Indiana/Vevay	38.747778	-85.067222	Eastern - IN (Switzerland)	-18000	-05:00	1883	1883
-US	United States	America/Chicago	41.850000	-87.650000	Central (most areas)	-21600	-06:00	1883	1883
-US	United States	America/Indiana/Tell_City	37.953056	-86.761389	Central - IN (Perry)	-21600	-06:00	1883	1883
-US	United States	America/Indiana/Knox	41.295833	-86.625000	Central - IN (Starke)	-21600	-06:00	1883	1883
-US	United States	America/Menominee	45.107778	-87.614167	Central - MI (Wisconsin border)	-21600	-06:00	1885	1885
-US	United States	America/North_Dakota/Center	47.116389	-101.299167	Central - ND (Oliver)	-21600	-06:00	1883	1883
-US	United States	America/North_Dakota/New_Salem	46.845000	-101.410833	Central - ND (Morton rural)	-21600	-06:00	1883	1883
-US	United States	America/North_Dakota/Beulah	47.264167	-101.777778	Central - ND (Mercer)	-21600	-06:00	1883	1883
-US	United States	America/Denver	39.739167	-104.984167	Mountain (most areas)	-25200	-07:00	1883	1883
-US	United States	America/Boise	43.613611	-116.202500	Mountain - ID (south), OR (east)	-25200	-07:00	1883	1883
-US	United States	America/Phoenix	33.448333	-112.073333	MST - AZ (except Navajo)	-25200	-07:00	1883	1883
-US	United States	America/Los_Angeles	34.052222	-118.242778	Pacific	-28800	-08:00	1883	1883
-US	United States	America/Anchorage	61.218056	-149.900278	Alaska (most areas)	-32400	-09:00	1867	1867
-US	United States	America/Juneau	58.301944	-134.419722	Alaska - Juneau area	-32400	-09:00	1867	1867
-US	United States	America/Sitka	57.176389	-135.301944	Alaska - Sitka area	-32400	-09:00	1867	1867
-US	United States	America/Metlakatla	55.126944	-131.576389	Alaska - Annette Island	-32400	-09:00	1867	1867
-US	United States	America/Yakutat	59.546944	-139.727222	Alaska - Yakutat	-32400	-09:00	1867	1867
-US	United States	America/Nome	64.501111	-165.406389	Alaska (west)	-32400	-09:00	1867	1867
-US	United States	America/Adak	51.880000	-176.658056	Alaska - western Aleutians	-36000	-10:00	1867	1867
-US	United States	Pacific/Honolulu	21.306944	-157.858333	Hawaii	-36000	-10:00	1896	1896
-UY	Uruguay	America/Montevideo	-34.909167	-56.212500		-10800	-03:00	1908	1908
-UZ	Uzbekistan	Asia/Samarkand	39.666667	66.800000	Uzbekistan (west)	18000	+05:00	1924	1924
-UZ	Uzbekistan	Asia/Tashkent	41.333333	69.300000	Uzbekistan (east)	18000	+05:00	1924	1924
-VA	Vatican City	Europe/Vatican	41.902222	12.453056		3600	+01:00	1866	1866
-VC	St Vincent	America/St_Vincent	13.150000	-61.233333		-14400	-04:00	1899	1899
-VE	Venezuela	America/Caracas	10.500000	-66.933333		-14400	-04:00	1890	1890
-VG	Virgin Islands (UK)	America/Tortola	18.450000	-64.616667		-14400	-04:00	1899	1899
-VI	Virgin Islands (US)	America/St_Thomas	18.350000	-64.933333		-14400	-04:00	1899	1899
-VN	Vietnam	Asia/Ho_Chi_Minh	10.750000	106.666667		25200	+07:00	1906	1906
-VU	Vanuatu	Pacific/Efate	-17.666667	168.416667		39600	+11:00	1912	1912
-WF	Wallis & Futuna	Pacific/Wallis	-13.300000	-176.166667		43200	+12:00	1901	1901
-WS	Samoa (western)	Pacific/Apia	-13.833333	-171.733333		46800	+13:00	1892	1892
-YE	Yemen	Asia/Aden	12.750000	45.200000		10800	+03:00	1947	1947
-YT	Mayotte	Indian/Mayotte	-12.783333	45.233333		10800	+03:00	1908	1908
-ZA	South Africa	Africa/Johannesburg	-26.250000	28.000000		7200	+02:00	1892	1892
-ZM	Zambia	Africa/Lusaka	-15.416667	28.283333		7200	+02:00	1909	1909
-ZW	Zimbabwe	Africa/Harare	-17.833333	31.050000		7200	+02:00	1909	1909
+Pacific/Midway | US minor outlying islands
+(UTC -11:00)
+
+Pacific/Niue | Niue
+(UTC -11:00)
+
+Pacific/Pago_Pago | Samoa (American)
+(UTC -11:00)
+
+America/Adak | United States
+(UTC -10:00 - DST +01:00)
+
+Pacific/Honolulu | United States
+(UTC -10:00)
+
+Pacific/Rarotonga | Cook Islands
+(UTC -10:00)
+
+Pacific/Tahiti | French Polynesia
+(UTC -10:00)
+
+Pacific/Marquesas | French Polynesia
+(UTC -09:30)
+
+America/Anchorage | United States
+(UTC -09:00 - DST +01:00)
+
+America/Juneau | United States
+(UTC -09:00 - DST +01:00)
+
+America/Metlakatla | United States
+(UTC -09:00 - DST +01:00)
+
+America/Nome | United States
+(UTC -09:00 - DST +01:00)
+
+America/Sitka | United States
+(UTC -09:00 - DST +01:00)
+
+America/Yakutat | United States
+(UTC -09:00 - DST +01:00)
+
+Pacific/Gambier | French Polynesia
+(UTC -09:00)
+
+America/Los_Angeles | United States
+(UTC -08:00 - DST +01:00)
+
+America/Tijuana | Mexico
+(UTC -08:00 - DST +01:00)
+
+America/Vancouver | Canada
+(UTC -08:00 - DST +01:00)
+
+Pacific/Pitcairn | Pitcairn
+(UTC -08:00)
+
+America/Boise | United States
+(UTC -07:00 - DST +01:00)
+
+America/Cambridge_Bay | Canada
+(UTC -07:00 - DST +01:00)
+
+America/Ciudad_Juarez | Mexico
+(UTC -07:00 - DST +01:00)
+
+America/Creston | Canada
+(UTC -07:00)
+
+America/Dawson | Canada
+(UTC -07:00)
+
+America/Dawson_Creek | Canada
+(UTC -07:00)
+
+America/Denver | United States
+(UTC -07:00 - DST +01:00)
+
+America/Edmonton | Canada
+(UTC -07:00 - DST +01:00)
+
+America/Fort_Nelson | Canada
+(UTC -07:00)
+
+America/Hermosillo | Mexico
+(UTC -07:00)
+
+America/Inuvik | Canada
+(UTC -07:00 - DST +01:00)
+
+America/Mazatlan | Mexico
+(UTC -07:00)
+
+America/Phoenix | United States
+(UTC -07:00)
+
+America/Whitehorse | Canada
+(UTC -07:00)
+
+America/Bahia_Banderas | Mexico
+(UTC -06:00)
+
+America/Belize | Belize
+(UTC -06:00)
+
+America/Chicago | United States
+(UTC -06:00 - DST +01:00)
+
+America/Chihuahua | Mexico
+(UTC -06:00)
+
+America/Costa_Rica | Costa Rica
+(UTC -06:00)
+
+America/El_Salvador | El Salvador
+(UTC -06:00)
+
+America/Guatemala | Guatemala
+(UTC -06:00)
+
+America/Indiana/Knox | United States
+(UTC -06:00 - DST +01:00)
+
+America/Indiana/Tell_City | United States
+(UTC -06:00 - DST +01:00)
+
+America/Managua | Nicaragua
+(UTC -06:00)
+
+America/Matamoros | Mexico
+(UTC -06:00 - DST +01:00)
+
+America/Menominee | United States
+(UTC -06:00 - DST +01:00)
+
+America/Merida | Mexico
+(UTC -06:00)
+
+America/Mexico_City | Mexico
+(UTC -06:00)
+
+America/Monterrey | Mexico
+(UTC -06:00)
+
+America/North_Dakota/Beulah | United States
+(UTC -06:00 - DST +01:00)
+
+America/North_Dakota/Center | United States
+(UTC -06:00 - DST +01:00)
+
+America/North_Dakota/New_Salem | United States
+(UTC -06:00 - DST +01:00)
+
+America/Ojinaga | Mexico
+(UTC -06:00 - DST +01:00)
+
+America/Rankin_Inlet | Canada
+(UTC -06:00 - DST +01:00)
+
+America/Regina | Canada
+(UTC -06:00)
+
+America/Resolute | Canada
+(UTC -06:00 - DST +01:00)
+
+America/Swift_Current | Canada
+(UTC -06:00)
+
+America/Tegucigalpa | Honduras
+(UTC -06:00)
+
+America/Winnipeg | Canada
+(UTC -06:00 - DST +01:00)
+
+Pacific/Easter | Chile
+(UTC -06:00 - DST +01:00)
+
+Pacific/Galapagos | Ecuador
+(UTC -06:00)
+
+America/Atikokan | Canada
+(UTC -05:00)
+
+America/Bogota | Colombia
+(UTC -05:00)
+
+America/Cancun | Mexico
+(UTC -05:00)
+
+America/Cayman | Cayman Islands
+(UTC -05:00)
+
+America/Detroit | United States
+(UTC -05:00 - DST +01:00)
+
+America/Eirunepe | Brazil
+(UTC -05:00)
+
+America/Grand_Turk | Turks & Caicos Is
+(UTC -05:00 - DST +01:00)
+
+America/Guayaquil | Ecuador
+(UTC -05:00)
+
+America/Havana | Cuba
+(UTC -05:00 - DST +01:00)
+
+America/Indiana/Indianapolis | United States
+(UTC -05:00 - DST +01:00)
+
+America/Indiana/Marengo | United States
+(UTC -05:00 - DST +01:00)
+
+America/Indiana/Petersburg | United States
+(UTC -05:00 - DST +01:00)
+
+America/Indiana/Vevay | United States
+(UTC -05:00 - DST +01:00)
+
+America/Indiana/Vincennes | United States
+(UTC -05:00 - DST +01:00)
+
+America/Indiana/Winamac | United States
+(UTC -05:00 - DST +01:00)
+
+America/Iqaluit | Canada
+(UTC -05:00 - DST +01:00)
+
+America/Jamaica | Jamaica
+(UTC -05:00)
+
+America/Kentucky/Louisville | United States
+(UTC -05:00 - DST +01:00)
+
+America/Kentucky/Monticello | United States
+(UTC -05:00 - DST +01:00)
+
+America/Lima | Peru
+(UTC -05:00)
+
+America/Nassau | Bahamas
+(UTC -05:00 - DST +01:00)
+
+America/New_York | United States
+(UTC -05:00 - DST +01:00)
+
+America/Panama | Panama
+(UTC -05:00)
+
+America/Port-au-Prince | Haiti
+(UTC -05:00 - DST +01:00)
+
+America/Rio_Branco | Brazil
+(UTC -05:00)
+
+America/Toronto | Canada
+(UTC -05:00 - DST +01:00)
+
+America/Anguilla | Anguilla
+(UTC -04:00)
+
+America/Antigua | Antigua & Barbuda
+(UTC -04:00)
+
+America/Aruba | Aruba
+(UTC -04:00)
+
+America/Barbados | Barbados
+(UTC -04:00)
+
+America/Blanc-Sablon | Canada
+(UTC -04:00)
+
+America/Boa_Vista | Brazil
+(UTC -04:00)
+
+America/Campo_Grande | Brazil
+(UTC -04:00)
+
+America/Caracas | Venezuela
+(UTC -04:00)
+
+America/Cuiaba | Brazil
+(UTC -04:00)
+
+America/Curacao | Curaçao
+(UTC -04:00)
+
+America/Dominica | Dominica
+(UTC -04:00)
+
+America/Glace_Bay | Canada
+(UTC -04:00 - DST +01:00)
+
+America/Goose_Bay | Canada
+(UTC -04:00 - DST +01:00)
+
+America/Grenada | Grenada
+(UTC -04:00)
+
+America/Guadeloupe | Guadeloupe
+(UTC -04:00)
+
+America/Guyana | Guyana
+(UTC -04:00)
+
+America/Halifax | Canada
+(UTC -04:00 - DST +01:00)
+
+America/Kralendijk | Caribbean NL
+(UTC -04:00)
+
+America/La_Paz | Bolivia
+(UTC -04:00)
+
+America/Lower_Princes | St Maarten (Dutch)
+(UTC -04:00)
+
+America/Manaus | Brazil
+(UTC -04:00)
+
+America/Marigot | St Martin (French)
+(UTC -04:00)
+
+America/Martinique | Martinique
+(UTC -04:00)
+
+America/Moncton | Canada
+(UTC -04:00 - DST +01:00)
+
+America/Montserrat | Montserrat
+(UTC -04:00)
+
+America/Port_of_Spain | Trinidad & Tobago
+(UTC -04:00)
+
+America/Porto_Velho | Brazil
+(UTC -04:00)
+
+America/Puerto_Rico | Puerto Rico
+(UTC -04:00)
+
+America/Santiago | Chile
+(UTC -04:00 - DST +01:00)
+
+America/Santo_Domingo | Dominican Republic
+(UTC -04:00)
+
+America/St_Barthelemy | St Barthelemy
+(UTC -04:00)
+
+America/St_Kitts | St Kitts & Nevis
+(UTC -04:00)
+
+America/St_Lucia | St Lucia
+(UTC -04:00)
+
+America/St_Thomas | Virgin Islands (US)
+(UTC -04:00)
+
+America/St_Vincent | St Vincent
+(UTC -04:00)
+
+America/Thule | Greenland
+(UTC -04:00 - DST +01:00)
+
+America/Tortola | Virgin Islands (UK)
+(UTC -04:00)
+
+Atlantic/Bermuda | Bermuda
+(UTC -04:00 - DST +01:00)
+
+America/St_Johns | Canada
+(UTC -03:30 - DST +01:00)
+
+America/Araguaina | Brazil
+(UTC -03:00)
+
+America/Argentina/Buenos_Aires | Argentina
+(UTC -03:00)
+
+America/Argentina/Catamarca | Argentina
+(UTC -03:00)
+
+America/Argentina/Cordoba | Argentina
+(UTC -03:00)
+
+America/Argentina/Jujuy | Argentina
+(UTC -03:00)
+
+America/Argentina/La_Rioja | Argentina
+(UTC -03:00)
+
+America/Argentina/Mendoza | Argentina
+(UTC -03:00)
+
+America/Argentina/Rio_Gallegos | Argentina
+(UTC -03:00)
+
+America/Argentina/Salta | Argentina
+(UTC -03:00)
+
+America/Argentina/San_Juan | Argentina
+(UTC -03:00)
+
+America/Argentina/San_Luis | Argentina
+(UTC -03:00)
+
+America/Argentina/Tucuman | Argentina
+(UTC -03:00)
+
+America/Argentina/Ushuaia | Argentina
+(UTC -03:00)
+
+America/Asuncion | Paraguay
+(UTC -03:00)
+
+America/Bahia | Brazil
+(UTC -03:00)
+
+America/Belem | Brazil
+(UTC -03:00)
+
+America/Cayenne | French Guiana
+(UTC -03:00)
+
+America/Fortaleza | Brazil
+(UTC -03:00)
+
+America/Maceio | Brazil
+(UTC -03:00)
+
+America/Miquelon | St Pierre & Miquelon
+(UTC -03:00 - DST +01:00)
+
+America/Montevideo | Uruguay
+(UTC -03:00)
+
+America/Paramaribo | Suriname
+(UTC -03:00)
+
+America/Punta_Arenas | Chile
+(UTC -03:00)
+
+America/Recife | Brazil
+(UTC -03:00)
+
+America/Santarem | Brazil
+(UTC -03:00)
+
+America/Sao_Paulo | Brazil
+(UTC -03:00)
+
+Antarctica/Palmer | Antarctica
+(UTC -03:00)
+
+Antarctica/Rothera | Antarctica
+(UTC -03:00)
+
+Atlantic/Stanley | Falkland Islands
+(UTC -03:00)
+
+America/Noronha | Brazil
+(UTC -02:00)
+
+America/Nuuk | Greenland
+(UTC -02:00)
+
+America/Scoresbysund | Greenland
+(UTC -02:00)
+
+Atlantic/South_Georgia | South Georgia & the South Sandwich Islands
+(UTC -02:00)
+
+Atlantic/Azores | Portugal
+(UTC -01:00)
+
+Atlantic/Cape_Verde | Cape Verde
+(UTC -01:00)
+
+Africa/Abidjan | Côte d'Ivoire
+(UTC +00:00)
+
+Africa/Accra | Ghana
+(UTC +00:00)
+
+Africa/Bamako | Mali
+(UTC +00:00)
+
+Africa/Banjul | Gambia
+(UTC +00:00)
+
+Africa/Bissau | Guinea-Bissau
+(UTC +00:00)
+
+Africa/Conakry | Guinea
+(UTC +00:00)
+
+Africa/Dakar | Senegal
+(UTC +00:00)
+
+Africa/Freetown | Sierra Leone
+(UTC +00:00)
+
+Africa/Lome | Togo
+(UTC +00:00)
+
+Africa/Monrovia | Liberia
+(UTC +00:00)
+
+Africa/Nouakchott | Mauritania
+(UTC +00:00)
+
+Africa/Ouagadougou | Burkina Faso
+(UTC +00:00)
+
+Africa/Sao_Tome | Sao Tome & Principe
+(UTC +00:00)
+
+America/Danmarkshavn | Greenland
+(UTC +00:00)
+
+Antarctica/Troll | Antarctica
+(UTC +00:00)
+
+Atlantic/Canary | Spain
+(UTC +00:00)
+
+Atlantic/Faroe | Faroe Islands
+(UTC +00:00)
+
+Atlantic/Madeira | Portugal
+(UTC +00:00)
+
+Atlantic/Reykjavik | Iceland
+(UTC +00:00)
+
+Atlantic/St_Helena | St Helena
+(UTC +00:00)
+
+Europe/Guernsey | Guernsey
+(UTC +00:00)
+
+Europe/Isle_of_Man | Isle of Man
+(UTC +00:00)
+
+Europe/Jersey | Jersey
+(UTC +00:00)
+
+Europe/Lisbon | Portugal
+(UTC +00:00)
+
+Europe/London | Britain (UK)
+(UTC +00:00)
+
+Africa/Algiers | Algeria
+(UTC +01:00)
+
+Africa/Bangui | Central African Rep.
+(UTC +01:00)
+
+Africa/Brazzaville | Congo (Rep.)
+(UTC +01:00)
+
+Africa/Casablanca | Morocco
+(UTC +01:00 - DST -01:00)
+
+Africa/Ceuta | Spain
+(UTC +01:00)
+
+Africa/Douala | Cameroon
+(UTC +01:00)
+
+Africa/El_Aaiun | Western Sahara
+(UTC +01:00 - DST -01:00)
+
+Africa/Kinshasa | Congo (Dem. Rep.)
+(UTC +01:00)
+
+Africa/Lagos | Nigeria
+(UTC +01:00)
+
+Africa/Libreville | Gabon
+(UTC +01:00)
+
+Africa/Luanda | Angola
+(UTC +01:00)
+
+Africa/Malabo | Equatorial Guinea
+(UTC +01:00)
+
+Africa/Ndjamena | Chad
+(UTC +01:00)
+
+Africa/Niamey | Niger
+(UTC +01:00)
+
+Africa/Porto-Novo | Benin
+(UTC +01:00)
+
+Africa/Tunis | Tunisia
+(UTC +01:00)
+
+Arctic/Longyearbyen | Svalbard & Jan Mayen
+(UTC +01:00)
+
+Europe/Amsterdam | Netherlands
+(UTC +01:00)
+
+Europe/Andorra | Andorra
+(UTC +01:00)
+
+Europe/Belgrade | Serbia
+(UTC +01:00)
+
+Europe/Berlin | Germany
+(UTC +01:00)
+
+Europe/Bratislava | Slovakia
+(UTC +01:00)
+
+Europe/Brussels | Belgium
+(UTC +01:00)
+
+Europe/Budapest | Hungary
+(UTC +01:00)
+
+Europe/Busingen | Germany
+(UTC +01:00)
+
+Europe/Copenhagen | Denmark
+(UTC +01:00)
+
+Europe/Dublin | Ireland
+(UTC +01:00 - DST -01:00)
+
+Europe/Gibraltar | Gibraltar
+(UTC +01:00)
+
+Europe/Ljubljana | Slovenia
+(UTC +01:00)
+
+Europe/Luxembourg | Luxembourg
+(UTC +01:00)
+
+Europe/Madrid | Spain
+(UTC +01:00)
+
+Europe/Malta | Malta
+(UTC +01:00)
+
+Europe/Monaco | Monaco
+(UTC +01:00)
+
+Europe/Oslo | Norway
+(UTC +01:00)
+
+Europe/Paris | France
+(UTC +01:00)
+
+Europe/Podgorica | Montenegro
+(UTC +01:00)
+
+Europe/Prague | Czech Republic
+(UTC +01:00)
+
+Europe/Rome | Italy
+(UTC +01:00)
+
+Europe/San_Marino | San Marino
+(UTC +01:00)
+
+Europe/Sarajevo | Bosnia & Herzegovina
+(UTC +01:00)
+
+Europe/Skopje | North Macedonia
+(UTC +01:00)
+
+Europe/Stockholm | Sweden
+(UTC +01:00)
+
+Europe/Tirane | Albania
+(UTC +01:00)
+
+Europe/Vaduz | Liechtenstein
+(UTC +01:00)
+
+Europe/Vatican | Vatican City
+(UTC +01:00)
+
+Europe/Vienna | Austria
+(UTC +01:00)
+
+Europe/Warsaw | Poland
+(UTC +01:00)
+
+Europe/Zagreb | Croatia
+(UTC +01:00)
+
+Europe/Zurich | Switzerland
+(UTC +01:00)
+
+Africa/Blantyre | Malawi
+(UTC +02:00)
+
+Africa/Bujumbura | Burundi
+(UTC +02:00)
+
+Africa/Cairo | Egypt
+(UTC +02:00 - DST +01:00)
+
+Africa/Gaborone | Botswana
+(UTC +02:00)
+
+Africa/Harare | Zimbabwe
+(UTC +02:00)
+
+Africa/Johannesburg | South Africa
+(UTC +02:00)
+
+Africa/Juba | South Sudan
+(UTC +02:00)
+
+Africa/Khartoum | Sudan
+(UTC +02:00)
+
+Africa/Kigali | Rwanda
+(UTC +02:00)
+
+Africa/Lubumbashi | Congo (Dem. Rep.)
+(UTC +02:00)
+
+Africa/Lusaka | Zambia
+(UTC +02:00)
+
+Africa/Maputo | Mozambique
+(UTC +02:00)
+
+Africa/Maseru | Lesotho
+(UTC +02:00)
+
+Africa/Mbabane | Eswatini (Swaziland)
+(UTC +02:00)
+
+Africa/Tripoli | Libya
+(UTC +02:00)
+
+Africa/Windhoek | Namibia
+(UTC +02:00)
+
+Asia/Beirut | Lebanon
+(UTC +02:00)
+
+Asia/Famagusta | Cyprus
+(UTC +02:00)
+
+Asia/Gaza | Palestine
+(UTC +02:00 - DST +01:00)
+
+Asia/Hebron | Palestine
+(UTC +02:00 - DST +01:00)
+
+Asia/Jerusalem | Israel
+(UTC +02:00 - DST +01:00)
+
+Asia/Nicosia | Cyprus
+(UTC +02:00)
+
+Europe/Athens | Greece
+(UTC +02:00)
+
+Europe/Bucharest | Romania
+(UTC +02:00)
+
+Europe/Chisinau | Moldova
+(UTC +02:00 - DST +01:00)
+
+Europe/Helsinki | Finland
+(UTC +02:00)
+
+Europe/Kaliningrad | Russia
+(UTC +02:00)
+
+Europe/Kyiv | Ukraine
+(UTC +02:00)
+
+Europe/Mariehamn | Åland Islands
+(UTC +02:00)
+
+Europe/Riga | Latvia
+(UTC +02:00)
+
+Europe/Sofia | Bulgaria
+(UTC +02:00)
+
+Europe/Tallinn | Estonia
+(UTC +02:00)
+
+Europe/Vilnius | Lithuania
+(UTC +02:00)
+
+Africa/Addis_Ababa | Ethiopia
+(UTC +03:00)
+
+Africa/Asmara | Eritrea
+(UTC +03:00)
+
+Africa/Dar_es_Salaam | Tanzania
+(UTC +03:00)
+
+Africa/Djibouti | Djibouti
+(UTC +03:00)
+
+Africa/Kampala | Uganda
+(UTC +03:00)
+
+Africa/Mogadishu | Somalia
+(UTC +03:00)
+
+Africa/Nairobi | Kenya
+(UTC +03:00)
+
+Antarctica/Syowa | Antarctica
+(UTC +03:00)
+
+Asia/Aden | Yemen
+(UTC +03:00)
+
+Asia/Amman | Jordan
+(UTC +03:00)
+
+Asia/Baghdad | Iraq
+(UTC +03:00)
+
+Asia/Bahrain | Bahrain
+(UTC +03:00)
+
+Asia/Damascus | Syria
+(UTC +03:00)
+
+Asia/Kuwait | Kuwait
+(UTC +03:00)
+
+Asia/Qatar | Qatar
+(UTC +03:00)
+
+Asia/Riyadh | Saudi Arabia
+(UTC +03:00)
+
+Europe/Istanbul | Turkey
+(UTC +03:00)
+
+Europe/Kirov | Russia
+(UTC +03:00)
+
+Europe/Minsk | Belarus
+(UTC +03:00)
+
+Europe/Moscow | Russia
+(UTC +03:00)
+
+Europe/Simferopol | Ukraine
+(UTC +03:00)
+
+Europe/Volgograd | Russia
+(UTC +03:00)
+
+Indian/Antananarivo | Madagascar
+(UTC +03:00)
+
+Indian/Comoro | Comoros
+(UTC +03:00)
+
+Indian/Mayotte | Mayotte
+(UTC +03:00)
+
+Asia/Tehran | Iran
+(UTC +03:30)
+
+Asia/Baku | Azerbaijan
+(UTC +04:00)
+
+Asia/Dubai | United Arab Emirates
+(UTC +04:00)
+
+Asia/Muscat | Oman
+(UTC +04:00)
+
+Asia/Tbilisi | Georgia
+(UTC +04:00)
+
+Asia/Yerevan | Armenia
+(UTC +04:00)
+
+Europe/Astrakhan | Russia
+(UTC +04:00)
+
+Europe/Samara | Russia
+(UTC +04:00)
+
+Europe/Saratov | Russia
+(UTC +04:00)
+
+Europe/Ulyanovsk | Russia
+(UTC +04:00)
+
+Indian/Mahe | Seychelles
+(UTC +04:00)
+
+Indian/Mauritius | Mauritius
+(UTC +04:00)
+
+Indian/Reunion | Réunion
+(UTC +04:00)
+
+Asia/Kabul | Afghanistan
+(UTC +04:30)
+
+Antarctica/Mawson | Antarctica
+(UTC +05:00)
+
+Antarctica/Vostok | Antarctica
+(UTC +05:00)
+
+Asia/Almaty | Kazakhstan
+(UTC +05:00)
+
+Asia/Aqtau | Kazakhstan
+(UTC +05:00)
+
+Asia/Aqtobe | Kazakhstan
+(UTC +05:00)
+
+Asia/Ashgabat | Turkmenistan
+(UTC +05:00)
+
+Asia/Atyrau | Kazakhstan
+(UTC +05:00)
+
+Asia/Dushanbe | Tajikistan
+(UTC +05:00)
+
+Asia/Karachi | Pakistan
+(UTC +05:00)
+
+Asia/Oral | Kazakhstan
+(UTC +05:00)
+
+Asia/Qostanay | Kazakhstan
+(UTC +05:00)
+
+Asia/Qyzylorda | Kazakhstan
+(UTC +05:00)
+
+Asia/Samarkand | Uzbekistan
+(UTC +05:00)
+
+Asia/Tashkent | Uzbekistan
+(UTC +05:00)
+
+Asia/Yekaterinburg | Russia
+(UTC +05:00)
+
+Indian/Kerguelen | French S. Terr.
+(UTC +05:00)
+
+Indian/Maldives | Maldives
+(UTC +05:00)
+
+Asia/Colombo | Sri Lanka
+(UTC +05:30)
+
+Asia/Kolkata | India
+(UTC +05:30)
+
+Asia/Kathmandu | Nepal
+(UTC +05:45)
+
+Asia/Bishkek | Kyrgyzstan
+(UTC +06:00)
+
+Asia/Dhaka | Bangladesh
+(UTC +06:00)
+
+Asia/Omsk | Russia
+(UTC +06:00)
+
+Asia/Thimphu | Bhutan
+(UTC +06:00)
+
+Asia/Urumqi | China
+(UTC +06:00)
+
+Indian/Chagos | British Indian Ocean Territory
+(UTC +06:00)
+
+Asia/Yangon | Myanmar (Burma)
+(UTC +06:30)
+
+Indian/Cocos | Cocos (Keeling) Islands
+(UTC +06:30)
+
+Antarctica/Davis | Antarctica
+(UTC +07:00)
+
+Asia/Bangkok | Thailand
+(UTC +07:00)
+
+Asia/Barnaul | Russia
+(UTC +07:00)
+
+Asia/Ho_Chi_Minh | Vietnam
+(UTC +07:00)
+
+Asia/Hovd | Mongolia
+(UTC +07:00)
+
+Asia/Jakarta | Indonesia
+(UTC +07:00)
+
+Asia/Krasnoyarsk | Russia
+(UTC +07:00)
+
+Asia/Novokuznetsk | Russia
+(UTC +07:00)
+
+Asia/Novosibirsk | Russia
+(UTC +07:00)
+
+Asia/Phnom_Penh | Cambodia
+(UTC +07:00)
+
+Asia/Pontianak | Indonesia
+(UTC +07:00)
+
+Asia/Tomsk | Russia
+(UTC +07:00)
+
+Asia/Vientiane | Laos
+(UTC +07:00)
+
+Indian/Christmas | Christmas Island
+(UTC +07:00)
+
+Antarctica/Casey | Antarctica
+(UTC +08:00)
+
+Asia/Brunei | Brunei
+(UTC +08:00)
+
+Asia/Hong_Kong | Hong Kong
+(UTC +08:00)
+
+Asia/Irkutsk | Russia
+(UTC +08:00)
+
+Asia/Kuala_Lumpur | Malaysia
+(UTC +08:00)
+
+Asia/Kuching | Malaysia
+(UTC +08:00)
+
+Asia/Macau | Macau
+(UTC +08:00)
+
+Asia/Makassar | Indonesia
+(UTC +08:00)
+
+Asia/Manila | Philippines
+(UTC +08:00)
+
+Asia/Shanghai | China
+(UTC +08:00)
+
+Asia/Singapore | Singapore
+(UTC +08:00)
+
+Asia/Taipei | Taiwan
+(UTC +08:00)
+
+Asia/Ulaanbaatar | Mongolia
+(UTC +08:00)
+
+Australia/Perth | Australia
+(UTC +08:00)
+
+Australia/Eucla | Australia
+(UTC +08:45)
+
+Asia/Chita | Russia
+(UTC +09:00)
+
+Asia/Dili | East Timor
+(UTC +09:00)
+
+Asia/Jayapura | Indonesia
+(UTC +09:00)
+
+Asia/Khandyga | Russia
+(UTC +09:00)
+
+Asia/Pyongyang | Korea (North)
+(UTC +09:00)
+
+Asia/Seoul | Korea (South)
+(UTC +09:00)
+
+Asia/Tokyo | Japan
+(UTC +09:00)
+
+Asia/Yakutsk | Russia
+(UTC +09:00)
+
+Pacific/Palau | Palau
+(UTC +09:00)
+
+Australia/Adelaide | Australia
+(UTC +09:30 - DST +01:00)
+
+Australia/Broken_Hill | Australia
+(UTC +09:30 - DST +01:00)
+
+Australia/Darwin | Australia
+(UTC +09:30)
+
+Antarctica/DumontDUrville | Antarctica
+(UTC +10:00)
+
+Antarctica/Macquarie | Australia
+(UTC +10:00)
+
+Asia/Ust-Nera | Russia
+(UTC +10:00)
+
+Asia/Vladivostok | Russia
+(UTC +10:00)
+
+Australia/Brisbane | Australia
+(UTC +10:00)
+
+Australia/Hobart | Australia
+(UTC +10:00)
+
+Australia/Lindeman | Australia
+(UTC +10:00)
+
+Australia/Melbourne | Australia
+(UTC +10:00 - DST +01:00)
+
+Australia/Sydney | Australia
+(UTC +10:00 - DST +01:00)
+
+Pacific/Chuuk | Micronesia
+(UTC +10:00)
+
+Pacific/Guam | Guam
+(UTC +10:00)
+
+Pacific/Port_Moresby | Papua New Guinea
+(UTC +10:00)
+
+Pacific/Saipan | Northern Mariana Islands
+(UTC +10:00)
+
+Australia/Lord_Howe | Australia
+(UTC +10:30 - DST +00:30)
+
+Asia/Magadan | Russia
+(UTC +11:00)
+
+Asia/Sakhalin | Russia
+(UTC +11:00)
+
+Asia/Srednekolymsk | Russia
+(UTC +11:00)
+
+Pacific/Bougainville | Papua New Guinea
+(UTC +11:00)
+
+Pacific/Efate | Vanuatu
+(UTC +11:00)
+
+Pacific/Guadalcanal | Solomon Islands
+(UTC +11:00)
+
+Pacific/Kosrae | Micronesia
+(UTC +11:00)
+
+Pacific/Norfolk | Norfolk Island
+(UTC +11:00 - DST +01:00)
+
+Pacific/Noumea | New Caledonia
+(UTC +11:00)
+
+Pacific/Pohnpei | Micronesia
+(UTC +11:00)
+
+Antarctica/McMurdo | Antarctica
+(UTC +12:00)
+
+Asia/Anadyr | Russia
+(UTC +12:00)
+
+Asia/Kamchatka | Russia
+(UTC +12:00)
+
+Pacific/Auckland | New Zealand
+(UTC +12:00)
+
+Pacific/Fiji | Fiji
+(UTC +12:00)
+
+Pacific/Funafuti | Tuvalu
+(UTC +12:00)
+
+Pacific/Kwajalein | Marshall Islands
+(UTC +12:00)
+
+Pacific/Majuro | Marshall Islands
+(UTC +12:00)
+
+Pacific/Nauru | Nauru
+(UTC +12:00)
+
+Pacific/Tarawa | Kiribati
+(UTC +12:00)
+
+Pacific/Wake | US minor outlying islands
+(UTC +12:00)
+
+Pacific/Wallis | Wallis & Futuna
+(UTC +12:00)
+
+Pacific/Chatham | New Zealand
+(UTC +12:45)
+
+Pacific/Apia | Samoa (western)
+(UTC +13:00)
+
+Pacific/Fakaofo | Tokelau
+(UTC +13:00)
+
+Pacific/Kanton | Kiribati
+(UTC +13:00)
+
+Pacific/Tongatapu | Tonga
+(UTC +13:00)
+
+Pacific/Kiritimati | Kiribati
+(UTC +14:00)
+

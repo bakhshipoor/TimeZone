@@ -15,6 +15,7 @@ extern "C" {
 #include <stdBOOL.h>
 #include <ctype.h>
 
+
 #define DATA_FILES_COUNT 12
 #define MAX_LENGHT_FILE_NAME 256
 #define MAX_LENGHT_DATA_FIELD 256
