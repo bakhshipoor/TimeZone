@@ -17,8 +17,9 @@ extern "C" {
 
 
 #define DATA_FILES_COUNT 12
-#define MAX_LENGHT_FILE_NAME 256
-#define MAX_LENGHT_DATA_FIELD 256
+#define MAX_LENGTH_FILE_NAME 256
+#define MAX_LENGTH_DATA_FIELD 256
+#define MAX_LENGTH_LINE 2048
 
 #define VOID void
 #define CONST const
@@ -91,11 +92,13 @@ extern "C" {
     EXTERN CONST CHAR* Data_Files_Name[DATA_FILES_COUNT];
     EXTERN CONST Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL];
     EXTERN CONST Month_Lookup_t Month_Names[TZDB_MONTH_TOTAL];
-    EXTERN CHAR Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
+    EXTERN CHAR Data_File[DATA_FILES_COUNT][MAX_LENGTH_FILE_NAME];
 
-    HOUR Parse_Hour(CONST CHAR* hour, CHAR** suffix);
-    WEEKDAY Parse_Weekday(CONST CHAR* weekday);
-    MONTH Parse_Month(CONST CHAR* month);
+    EXTERN CHAR* line;
+
+    HOUR* Parse_Hour(CONST CHAR* hour, CHAR** suffix);
+    WEEKDAY* Parse_Weekday(CONST CHAR* weekday);
+    MONTH* Parse_Month(CONST CHAR* month);
     VOID Parse_Day_Of_Month(CONST CHAR* on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after);
     
 

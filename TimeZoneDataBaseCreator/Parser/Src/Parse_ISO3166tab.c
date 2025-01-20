@@ -10,22 +10,22 @@ ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count)
 
     ISO3166_Entry_t* ISO3166_List = NULL;
     *iso3166_Count = 0;
-    CHAR line[2048];
 
-    while (fgets(line, sizeof(line), iso3166_File))
+    LENGHT sscanf_lenght;
+    CHAR* country_code = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(CHAR));
+    CHAR* country_name = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(CHAR));
+    if (country_code == NULL || country_name == NULL)
+    {
+        close(iso3166_File);
+        return ISO3166_List;
+    }
+
+    while (fgets(line, MAX_LENGTH_LINE, iso3166_File))
     {
         if (strlen(line) < 5 || line[0] == '#')
         {
             continue;
         }
-
-
-        LENGHT sscanf_lenght;
-        CHAR country_code[MAX_LENGHT_DATA_FIELD];
-        CHAR country_name[MAX_LENGHT_DATA_FIELD];
-
-        memset(country_code, '\0', MAX_LENGHT_DATA_FIELD);
-        memset(country_name, '\0', MAX_LENGHT_DATA_FIELD);
 
         sscanf_lenght = sscanf(line, "%s\t%[^\n]", country_code, country_name);
 
@@ -34,8 +34,8 @@ ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count)
             continue;
         }
 
-        sprintf_s(country_code, MAX_LENGHT_DATA_FIELD, "%s", country_code);
-        sprintf_s(country_name, MAX_LENGHT_DATA_FIELD, "%s", country_name);
+        sprintf_s(country_code, MAX_LENGTH_DATA_FIELD, "%s", country_code);
+        sprintf_s(country_name, MAX_LENGTH_DATA_FIELD, "%s", country_name);
 
         ISO3166_Entry_t entry;
 
@@ -72,8 +72,13 @@ ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count)
         
         ISO3166_List[*iso3166_Count] = entry;
         (*iso3166_Count)++;
-    }
 
+
+    }
+    free(country_code);
+    country_code = NULL;
+    free(country_name);
+    country_name = NULL;
     fclose(iso3166_File);
     return ISO3166_List;
 }

@@ -1,11 +1,11 @@
 #include "../Inc/Parse_Common.h"
 
-HOUR Parse_Hour(CONST CHAR* hour, CHAR** suffix)
+HOUR* Parse_Hour(CONST CHAR* hour, CHAR** suffix)
 {
     CHAR* new_hour=(CHAR*)malloc((strlen(hour)+1)*sizeof(CHAR));
     if (new_hour == NULL)
     {
-        return 0;
+        return NULL;
     }
 
     CHAR* suf = (CHAR*)realloc(*suffix, 2 * sizeof(CHAR));
@@ -16,7 +16,7 @@ HOUR Parse_Hour(CONST CHAR* hour, CHAR** suffix)
         (*suffix)[1] = '\0';
     }
 
-    HOUR std_offset = 0;
+    HOUR* std_offset = (HOUR*)malloc(sizeof(HOUR));
     CHAR sign = 0;
     HOUR h = 0, m = 0, s = 0;
 
@@ -43,27 +43,33 @@ HOUR Parse_Hour(CONST CHAR* hour, CHAR** suffix)
 
     if (sscanf(new_hour, "%lld:%lld:%lld", &h, &m, &s) == 3)
     {
-        std_offset = (h * 3600) + (m * 60) + s;
+        *std_offset = (h * 3600) + (m * 60) + s;
     }
     else if (sscanf(new_hour, "%lld:%lld", &h, &m) == 2)
     {
-        std_offset = (h * 3600) + (m * 60);
+        *std_offset = (h * 3600) + (m * 60);
     }
     else if (sscanf(new_hour, "%lld", &h) == 1)
     {
-        std_offset = (h * 3600);
+        *std_offset = (h * 3600);
     }
 
     if (sign == '-')
     {
-        std_offset *= -1;
+        *std_offset *= -1;
     }
 
     return std_offset;
 }
 
-WEEKDAY Parse_Weekday(CONST CHAR* weekday)
+WEEKDAY* Parse_Weekday(CONST CHAR* weekday)
 {
+    WEEKDAY* wd = (WEEKDAY*)malloc(sizeof(WEEKDAY*));
+    if (wd == NULL)
+    {
+        return NULL;
+    }
+    *wd = (WEEKDAY)TZDB_WEEKDAY_NONE;
     for (COUNTER weekday_index = 0; weekday_index < TZDB_WEEKDAY_TOTAL; weekday_index++)
     {
         if (strcmp(weekday, Weekday_Names[weekday_index].Abbr) == 0 ||
@@ -71,22 +77,28 @@ WEEKDAY Parse_Weekday(CONST CHAR* weekday)
             strcmp(weekday, Weekday_Names[weekday_index].Last_Abbr) == 0 ||
             strcmp(weekday, Weekday_Names[weekday_index].Last_Full) == 0)
         {
-            return Weekday_Names[weekday_index].Number;
+            *wd = Weekday_Names[weekday_index].Number;
         }
     }
-    return (WEEKDAY)TZDB_WEEKDAY_NONE;
+    return wd;
 }
 
-MONTH Parse_Month(CONST CHAR* month)
+MONTH* Parse_Month(CONST CHAR* month)
 {
+    MONTH* m = (MONTH*)malloc(sizeof(MONTH));
+    if (m == NULL)
+    {
+        return NULL;
+    }
+    *m = 0;
     for (COUNTER month_index = 0; month_index < TZDB_MONTH_TOTAL; month_index++)
     {
         if (strcmp(month, Month_Names[month_index].Abbr) == 0 || strcmp(month, Month_Names[month_index].Full) == 0)
         {
-            return (Month_Names[month_index].Number + 1);
+            *m = (Month_Names[month_index].Number + 1);
         }
     }
-    return 0;
+    return m;
 }
 
 VOID Parse_Day_Of_Month(CONST CHAR* on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after)

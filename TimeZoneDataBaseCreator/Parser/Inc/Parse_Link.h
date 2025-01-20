@@ -9,10 +9,10 @@ extern "C" {
 
     typedef struct
     {
-        CHAR Field[MAX_LENGHT_DATA_FIELD];
-        CHAR Target[MAX_LENGHT_DATA_FIELD];
-        CHAR Link_Name[MAX_LENGHT_DATA_FIELD];
-        CHAR Target1[MAX_LENGHT_DATA_FIELD];
+        CHAR* Field;
+        CHAR* Target;
+        CHAR* Link_Name;
+        CHAR* Target1;
     } Link_Data_t;
 
     typedef struct
@@ -23,7 +23,8 @@ extern "C" {
     }Link_Entry_t;
 
     Link_Entry_t* Parse_Links(COUNTER* links_Count);
-    Link_Data_t Parse_Link_Data(CONST CHAR* line);
+    Link_Data_t* Parse_Link_Data(CONST CHAR* line);
+    VOID Parse_Free_Link_Data(Link_Data_t** link_data);
 
 #ifdef __cplusplus
 }

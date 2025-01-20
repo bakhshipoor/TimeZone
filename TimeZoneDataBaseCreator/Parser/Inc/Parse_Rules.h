@@ -11,17 +11,17 @@ extern "C" {
     // Structure to hold rule data fields
     typedef struct
     {
-        CHAR Field[MAX_LENGHT_DATA_FIELD];   // General field for rule data
-        CHAR Name[MAX_LENGHT_DATA_FIELD];    // Name of the rule
-        CHAR From[MAX_LENGHT_DATA_FIELD];    // Start year of the rule
-        CHAR To[MAX_LENGHT_DATA_FIELD];      // End year of the rule
-        CHAR Reserved[MAX_LENGHT_DATA_FIELD];// Reserved field for future use
-        CHAR In[MAX_LENGHT_DATA_FIELD];      // Month when the rule applies
-        CHAR On[MAX_LENGHT_DATA_FIELD];      // Day when the rule applies
-        CHAR At[MAX_LENGHT_DATA_FIELD];      // Time when the rule applies
-        CHAR Save[MAX_LENGHT_DATA_FIELD];    // Amount of time to save (e.g., daylight saving time offset)
-        CHAR Letter[MAX_LENGHT_DATA_FIELD];  // Letter designation for the rule (e.g., 'S' for standard time, 'D' for daylight time)
-        CHAR Comment[MAX_LENGHT_DATA_FIELD]; // Comment or description of the rule
+        CHAR* Field;   // General field for rule data
+        CHAR* Name;    // Name of the rule
+        CHAR* From;    // Start year of the rule
+        CHAR* To;      // End year of the rule
+        CHAR* Reserved;// Reserved field for future use
+        CHAR* In;      // Month when the rule applies
+        CHAR* On;      // Day when the rule applies
+        CHAR* At;      // Time when the rule applies
+        CHAR* Save;    // Amount of time to save (e.g., daylight saving time offset)
+        CHAR* Letter;  // Letter designation for the rule (e.g., 'S' for standard time, 'D' for daylight time)
+        CHAR* Comment; // Comment or description of the rule
     } Rule_Data_t;
 
     // Structure to hold rule year day data
@@ -86,14 +86,16 @@ extern "C" {
     /// </summary>
     /// <param name="line">A string representing a line of rule data.</param>
     /// <returns>A Rule_Data_t structure containing parsed rule data.</returns>
-    Rule_Data_t Parse_Rule_Data(CONST CHAR* line);
+    Rule_Data_t* Parse_Rule_Data(CONST CHAR* line);
+
+    VOID Parse_Free_Rule_Data(Rule_Data_t** rule_data);
 
     /// <summary>
     /// Extracts the 'From' year from the given rule data.
     /// </summary>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <returns>An integer representing the 'From' year.</returns>
-    YEAR Parse_Rule_Data_From(CONST Rule_Data_t rule_data);
+    YEAR Parse_Rule_Data_From(CONST Rule_Data_t* rule_data);
 
     /// <summary>
     /// Extracts the 'To' year from the given rule data, with a specified maximum value.
@@ -101,35 +103,35 @@ extern "C" {
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <param name="max_value">An integer representing the maximum value for the 'To' year.</param>
     /// <returns>An integer representing the 'To' year.</returns>
-    YEAR Parse_Rule_Data_To(CONST Rule_Data_t rule_data, YEAR max_value);
+    YEAR Parse_Rule_Data_To(CONST Rule_Data_t* rule_data, YEAR max_value);
 
     /// <summary>
     /// Extracts the month ('In' field) from the given rule data.
     /// </summary>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <returns>An unsigned integer representing the month.</returns>
-    MONTH Parse_Rule_Data_In(CONST Rule_Data_t rule_data);
+    MONTH* Parse_Rule_Data_In(CONST Rule_Data_t* rule_data);
 
     /// <summary>
     /// Extracts the day and weekday ('On' field) from the given rule data and returns a Rule_Year_Day_t structure.
     /// </summary>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <returns>A Rule_Year_Day_t structure containing the parsed day and weekday data.</returns>
-    Rule_Year_Day_t Parse_Rule_Data_On(CONST Rule_Data_t rule_data);
+    Rule_Year_Day_t* Parse_Rule_Data_On(CONST Rule_Data_t* rule_data);
 
     /// <summary>
     /// Extracts the hour ('At' field) from the given rule data and returns a Rule_Year_Hour_t structure.
     /// </summary>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <returns>A Rule_Year_Hour_t structure containing the parsed hour data.</returns>
-    Rule_Year_Hour_t Parse_Rule_Data_At(CONST Rule_Data_t rule_data);
+    Rule_Year_Hour_t* Parse_Rule_Data_At(CONST Rule_Data_t* rule_data);
 
     /// <summary>
     /// Extracts the save hour ('Save' field) from the given rule data.
     /// </summary>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <returns>An integer representing the save hour.</returns>
-    HOUR Parse_Rule_Data_Save(CONST Rule_Data_t rule_data);
+    HOUR* Parse_Rule_Data_Save(CONST Rule_Data_t* rule_data);
 
     /// <summary>
     /// Checks if a rule with the specified name exists in the rule list.
@@ -158,7 +160,7 @@ extern "C" {
     /// <param name="rule_list">Pointer to an array of Rule_Entry_t structures representing the rule list.</param>
     /// <param name="rule_index">An integer representing the index of the rule to update.</param>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
-    VOID Parse_Rule_Year_Range(Rule_Entry_t* rule_list, CONST COUNTER rule_index, CONST Rule_Data_t rule_data);
+    VOID Parse_Rule_Year_Range(Rule_Entry_t* rule_list, CONST COUNTER rule_index, CONST Rule_Data_t* rule_data);
 
     /// <summary>
     /// Parses the years for all rules and updates the rule list.
@@ -189,7 +191,7 @@ extern "C" {
     /// <param name="year_to">An integer representing the end year of the new rule year.</param>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <returns>A BOOLean value indicating whether the rule year was successfully created (TRUE) or not (FALSE).</returns>
-    BOOL Rule_Year_Create(Rule_Year_t** year_list, CONST COUNTER years_count, CONST YEAR year_from, CONST YEAR year_to, CONST Rule_Data_t rule_data);
+    BOOL Rule_Year_Create(Rule_Year_t** year_list, CONST COUNTER years_count, CONST YEAR year_from, CONST YEAR year_to, CONST Rule_Data_t* rule_data);
 
     /// <summary>
     /// Adds rule year data to the specified year data list.
@@ -199,7 +201,13 @@ extern "C" {
     /// <param name="count">An unsigned integer representing the number of entries in the list.</param>
     /// <param name="rule_data">A Rule_Data_t structure containing the rule data.</param>
     /// <returns>A BOOLean value indicating whether the rule year data was successfully added (TRUE) or not (FALSE).</returns>
-    BOOL Rule_Year_Add_Data(Rule_Year_Data_t** year_data, CONST COUNTER count, CONST Rule_Data_t rule_data);
+    BOOL Rule_Year_Add_Data(Rule_Year_Data_t** year_data, CONST COUNTER count, CONST Rule_Data_t* rule_data);
+
+    VOID Free_Standard_Entries(Rule_Year_Data_t* standards, COUNTER count);
+    VOID Free_DST_Entries(Rule_Year_Data_t* dst_entries, COUNTER count);
+    VOID Parse_Free_Rules(Rule_Entry_t* rules, COUNTER rules_count);
+
+    VOID test(Rule_Entry_t* rules, COUNTER* rules_count);
 
 #ifdef __cplusplus
 }

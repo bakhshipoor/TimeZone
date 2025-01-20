@@ -12,17 +12,17 @@ ZoneTab_Entry_t* Parse_ZoneTab(COUNTER* zonetab_count)
     *zonetab_count = 0;
     CHAR line[2048];
 
-    while (fgets(line, sizeof(line), zonetab_File))
+    while (fgets(line, MAX_LENGTH_LINE, zonetab_File))
     {
         if (strlen(line) < 5 || line[0] == '#')
         {
             continue;
         }
 
-        CHAR code[MAX_LENGHT_DATA_FIELD];
-        CHAR coordinates[MAX_LENGHT_DATA_FIELD];
-        CHAR tzid[MAX_LENGHT_DATA_FIELD];
-        CHAR comment[MAX_LENGHT_DATA_FIELD];
+        CHAR code[MAX_LENGTH_DATA_FIELD];
+        CHAR coordinates[MAX_LENGTH_DATA_FIELD];
+        CHAR tzid[MAX_LENGTH_DATA_FIELD];
+        CHAR comment[MAX_LENGTH_DATA_FIELD];
 
         LENGHT sscanf_lenght;
         LENGHT coordinates_lenght = 0;
@@ -40,10 +40,10 @@ ZoneTab_Entry_t* Parse_ZoneTab(COUNTER* zonetab_count)
         LOCATION latitude = 0.0;
         LOCATION longitude = 0.0;
 
-        memset(code, '\0', MAX_LENGHT_DATA_FIELD);
-        memset(coordinates, '\0', MAX_LENGHT_DATA_FIELD);
-        memset(tzid, '\0', MAX_LENGHT_DATA_FIELD);
-        memset(comment, '\0', MAX_LENGHT_DATA_FIELD);
+        memset(code, '\0', MAX_LENGTH_DATA_FIELD);
+        memset(coordinates, '\0', MAX_LENGTH_DATA_FIELD);
+        memset(tzid, '\0', MAX_LENGTH_DATA_FIELD);
+        memset(comment, '\0', MAX_LENGTH_DATA_FIELD);
 
         sscanf_lenght = sscanf(line, "%s\t%s\t%s\t%[^\n]", code, coordinates, tzid, comment);
 
@@ -51,10 +51,10 @@ ZoneTab_Entry_t* Parse_ZoneTab(COUNTER* zonetab_count)
         {
             continue;
         }
-        sprintf_s(code, MAX_LENGHT_DATA_FIELD, "%s", code);
-        sprintf_s(coordinates, MAX_LENGHT_DATA_FIELD, "%s", coordinates);
-        sprintf_s(tzid, MAX_LENGHT_DATA_FIELD, "%s", tzid);
-        sprintf_s(comment, MAX_LENGHT_DATA_FIELD, "%s", comment);
+        sprintf_s(code, MAX_LENGTH_DATA_FIELD, "%s", code);
+        sprintf_s(coordinates, MAX_LENGTH_DATA_FIELD, "%s", coordinates);
+        sprintf_s(tzid, MAX_LENGTH_DATA_FIELD, "%s", tzid);
+        sprintf_s(comment, MAX_LENGTH_DATA_FIELD, "%s", comment);
 
         coordinates_lenght = (LENGHT)strlen(coordinates);
         if (coordinates_lenght == 11)

@@ -125,7 +125,6 @@ BOOL Generate_Full_List(CONST CHAR* data_folder_path)
 
         time_zones->Zone[zone_index].Year_Begin = Get_Zone_Year_Begin(parse_data, time_zones->Zone[zone_index].TZ_Identifier);
         time_zones->Zone[zone_index].Year_End = Get_Zone_Year_End(parse_data, time_zones->Zone[zone_index].TZ_Identifier);
-
         
     }
 
@@ -164,6 +163,9 @@ BOOL Generate_Full_List(CONST CHAR* data_folder_path)
         
     }
     fclose(temp);
+
+    //Parse_Free_Rules(parse_data->Rules, parse_data->Rules_Count);
+    
     return TRUE;
 }
 
@@ -194,7 +196,7 @@ HOUR Get_Zone_Last_Standard_Offset(CONST Parse_Data_t* parse_data, CONST CHAR* t
 
     COUNTER link_index = 0;
     COUNTER find_index = 0;
-    CHAR tz[MAX_LENGHT_DATA_FIELD];
+    CHAR tz[MAX_LENGTH_DATA_FIELD];
     sprintf(tz, "%s", tz_identifire);
     COUNTER tz_index = 0;
 ___START:
@@ -233,7 +235,7 @@ VOID Get_Zone_DST_Effect(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifi
     COUNTER tz_index = 0;
     COUNTER link_index = 0;
     COUNTER find_index = 0;
-    CHAR tz[MAX_LENGHT_DATA_FIELD];
+    CHAR tz[MAX_LENGTH_DATA_FIELD];
     sprintf(tz, "%s", tz_identifire);
 ___START:
     for (tz_index = 0; tz_index < parse_data->Zones_Count; tz_index++)
@@ -246,7 +248,7 @@ ___START:
                 {
                     if (strlen(parse_data->Zones[tz_index].Info[parse_data->Zones[tz_index].Info_Count - 1].Rule.Rule_Name) > 0)
                     {
-                        CHAR rule_name[MAX_LENGHT_DATA_FIELD];
+                        CHAR rule_name[MAX_LENGTH_DATA_FIELD];
                         sprintf(rule_name, "%s", parse_data->Zones[tz_index].Info[parse_data->Zones[tz_index].Info_Count - 1].Rule.Rule_Name);
                         YEAR rule_end_year = Get_Rule_Year_End(parse_data, rule_name);
                         if ((rule_end_year != -1) && (rule_end_year < parse_data->Version->Major))
@@ -286,7 +288,7 @@ YEAR Get_Zone_Year_Begin(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifi
     COUNTER tz_index = 0;
     COUNTER link_index = 0;
     COUNTER find_index = 0;
-    CHAR tz[MAX_LENGHT_DATA_FIELD];
+    CHAR tz[MAX_LENGTH_DATA_FIELD];
     sprintf(tz, "%s", tz_identifire);
 ___START:
     for (tz_index = 0; tz_index < parse_data->Zones_Count; tz_index++)
@@ -320,7 +322,7 @@ YEAR Get_Zone_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire
     COUNTER tz_index = 0;
     COUNTER link_index = 0;
     COUNTER find_index = 0;
-    CHAR tz[MAX_LENGHT_DATA_FIELD];
+    CHAR tz[MAX_LENGTH_DATA_FIELD];
     sprintf(tz, "%s", tz_identifire);
 ___START:
     for (tz_index = 0; tz_index < parse_data->Zones_Count; tz_index++)

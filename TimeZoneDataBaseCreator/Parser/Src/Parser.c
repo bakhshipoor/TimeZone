@@ -1,8 +1,8 @@
 #include "../Inc/Parser.h"
 
-
+CHAR* line;
 // Data Files
-CHAR Data_File[DATA_FILES_COUNT][MAX_LENGHT_FILE_NAME];
+CHAR Data_File[DATA_FILES_COUNT][MAX_LENGTH_FILE_NAME];
 
 BOOL Initial_FileNames(CONST CHAR* data_folder_path)
 {
@@ -27,7 +27,7 @@ BOOL Initial_FileNames(CONST CHAR* data_folder_path)
 
     for (file_index = 0; file_index < DATA_FILES_COUNT; file_index++)
     {
-        sprintf_s(Data_File[file_index], MAX_LENGHT_FILE_NAME, "%s/%s", folder_path, Data_Files_Name[file_index]);
+        sprintf_s(Data_File[file_index], MAX_LENGTH_FILE_NAME, "%s/%s", folder_path, Data_Files_Name[file_index]);
     }
 
     for (file_index = 0; file_index < DATA_FILES_COUNT; file_index++)
@@ -44,14 +44,22 @@ BOOL Initial_FileNames(CONST CHAR* data_folder_path)
 
 Parse_Data_t* Parse_Data(CONST CHAR* data_folder_path)
 {
+    if (!Initial_FileNames(data_folder_path))
+    {
+        return NULL;
+    }
+
     Parse_Data_t* data = (Parse_Data_t*)malloc(sizeof(Parse_Data_t));
     if (data == NULL)
     {
         return NULL;
     }
 
-    if (!Initial_FileNames(data_folder_path))
+    line = (CHAR*)malloc(MAX_LENGTH_LINE * sizeof(CHAR)); // Buffer to store each line read from the data file
+    if (line == NULL)
     {
+        free(data);
+        data = NULL;
         return NULL;
     }
 
@@ -61,6 +69,9 @@ Parse_Data_t* Parse_Data(CONST CHAR* data_folder_path)
     data->Rules = Parse_Rules(&data->Rules_Count);
     data->Zones = Parse_Zones(&data->Zones_Count);
     data->Links = Parse_Links(&data->Links_Count);
+
+    free(line);
+    line = NULL;
 
     return data;
 }
