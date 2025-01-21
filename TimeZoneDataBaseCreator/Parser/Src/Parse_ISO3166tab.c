@@ -11,14 +11,7 @@ ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count)
     ISO3166_Entry_t* ISO3166_List = NULL;
     *iso3166_Count = 0;
 
-    LENGHT sscanf_lenght;
-    CHAR* country_code = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(CHAR));
-    CHAR* country_name = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(CHAR));
-    if (country_code == NULL || country_name == NULL)
-    {
-        close(iso3166_File);
-        return ISO3166_List;
-    }
+    ISO3166_Data_t* iso_data = NULL;
 
     while (fgets(line, MAX_LENGTH_LINE, iso3166_File))
     {
@@ -27,58 +20,96 @@ ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count)
             continue;
         }
 
-        sscanf_lenght = sscanf(line, "%s\t%[^\n]", country_code, country_name);
-
-        if (sscanf_lenght < 2)
+        Parse_Free_ISO3166_Data(&iso_data);
+        iso_data = Parse_ISO3166_Data(&line);
+        if (iso_data == NULL)
         {
             continue;
         }
 
-        sprintf_s(country_code, MAX_LENGTH_DATA_FIELD, "%s", country_code);
-        sprintf_s(country_name, MAX_LENGTH_DATA_FIELD, "%s", country_name);
-
-        ISO3166_Entry_t entry;
-
-        entry.Country_Code = (CHAR*)malloc((strlen(country_code) + 1) * sizeof(CHAR));
-        entry.Country_Name = (CHAR*)malloc((strlen(country_name) + 1) * sizeof(CHAR));
-
-        if (entry.Country_Code != NULL)
+        ISO3166_Entry_t* iso = (ISO3166_Entry_t*)malloc(sizeof(ISO3166_Entry_t));
+        if (iso == NULL)
         {
-            sprintf_s(entry.Country_Code, strlen(country_code) + 1, "%s", country_code);
-        }
-        if (entry.Country_Name != NULL)
-        {
-            sprintf_s(entry.Country_Name, strlen(country_name) + 1, "%s", country_name);
+            continue;
         }
 
+        iso->Country_Code = (CHAR*)malloc((strlen(iso_data->Country_Code) + 1) * sizeof(CHAR));
+        iso->Country_Name = (CHAR*)malloc((strlen(iso_data->Country_Name) + 1) * sizeof(CHAR));
+
+        if (iso->Country_Code != NULL)
+        {
+            sprintf(iso->Country_Code, "%s", iso_data->Country_Code);
+        }
+        if (iso->Country_Name != NULL)
+        {
+            sprintf(iso->Country_Name, "%s", iso_data->Country_Name);
+        }
+
+        ISO3166_Entry_t* iso_list;
         if ((*iso3166_Count) == 0)
         {
-            ISO3166_Entry_t* tz_list = malloc(sizeof(ISO3166_Entry_t));
-            if (tz_list == NULL)
-            {
-                return NULL;
-            }
-            ISO3166_List = tz_list;
+            iso_list = malloc(sizeof(ISO3166_Entry_t));
         }
         else
         {
-            ISO3166_Entry_t* tz_list = realloc(ISO3166_List, (*iso3166_Count + 1) * sizeof(ISO3166_Entry_t));
-            if (tz_list == NULL)
-            {
-                return NULL;
-            }
-            ISO3166_List = tz_list;
+            iso_list = realloc(ISO3166_List, (*iso3166_Count + 1) * sizeof(ISO3166_Entry_t));
+            
         }
-        
-        ISO3166_List[*iso3166_Count] = entry;
-        (*iso3166_Count)++;
-
-
+        if (iso_list != NULL)
+        {
+            ISO3166_List = iso_list;
+            ISO3166_List[*iso3166_Count] = *iso;
+            (*iso3166_Count)++;
+        }
     }
-    free(country_code);
-    country_code = NULL;
-    free(country_name);
-    country_name = NULL;
+    Parse_Free_ISO3166_Data(&iso_data);
     fclose(iso3166_File);
     return ISO3166_List;
+}
+
+
+ISO3166_Data_t* Parse_ISO3166_Data(CONST CHAR** line)
+{
+    ISO3166_Data_t* iso_data = (ISO3166_Data_t*)malloc(sizeof(ISO3166_Data_t));
+    if (iso_data == NULL)
+    {
+        return NULL;
+    }
+    LENGHT scan_lenght = 0;
+
+    iso_data->Country_Code = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(char));
+    iso_data->Country_Name = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(char));
+    if (iso_data->Country_Code == NULL || iso_data->Country_Name == NULL)
+    {
+        Parse_Free_ISO3166_Data(&iso_data);
+        return NULL;
+    }
+
+    scan_lenght = sscanf(*line, "%s\t%[^\n]",
+        iso_data->Country_Code,
+        iso_data->Country_Name);
+
+    sprintf(iso_data->Country_Code, "%s", iso_data->Country_Code);
+    sprintf(iso_data->Country_Name, "%s", iso_data->Country_Name);
+
+    return iso_data;
+}
+
+VOID Parse_Free_ISO3166_Data(ISO3166_Data_t** iso_data)
+{
+    if (*iso_data != NULL)
+    {
+        if ((*iso_data)->Country_Code != NULL)
+        {
+            free((*iso_data)->Country_Code);
+            (*iso_data)->Country_Code = NULL;
+        }
+        if ((*iso_data)->Country_Name != NULL)
+        {
+            free((*iso_data)->Country_Name);
+            (*iso_data)->Country_Name = NULL;
+        }
+        free((*iso_data));
+        (*iso_data) = NULL;
+    }
 }

@@ -2,51 +2,88 @@
 
 Version_t* Parse_Version(VOID)
 {
-    FILE* data_File = fopen(Data_File[0], "r");
-    if (!data_File)
-    {
-        return NULL;
-    }
-
     Version_t* version = (Version_t*)malloc(sizeof(Version_t));
     if (version == NULL)
     {
-        fclose(data_File);
         return NULL;
     }
-    
-    CHAR* minor = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(CHAR));
-    if (minor == NULL)
+
+    FILE* data_File = fopen(Data_File[0], "r");
+    if (!data_File)
     {
         free(version);
         version = NULL;
-        fclose(data_File);
         return version;
     }
-    version->Major = 0;
+    
     fgets(line, sizeof(line), data_File);
 
-    if (sscanf(line, "%d%s", &version->Major, minor)==2)
+    Version_Data_t* version_data = Parse_Version_Data(&line);
+    if (version_data == NULL)
     {
-        sprintf(minor, "%s", minor);
-        version->Minor = (CHAR*)malloc((strlen(minor) + 1) * sizeof(CHAR));
-        if (version->Minor != NULL)
-        {
-            sprintf(version->Minor, minor);
-        }
+        free(version);
+        version = NULL;
     }
-    else if (sscanf(line, "%d", &version->Major) == 1)
+    
+    if (strlen(version_data->Major) == 4)
     {
-        
+        version->Major = atoi(version_data->Major);
     }
     else
     {
         version->Major = 0;
-
     }
-    free(minor);
-    minor = NULL;
-    
+    version->Minor = (CHAR*)malloc((strlen(version_data->Minor) + 1) * sizeof(CHAR));
+    if (version->Minor != NULL)
+    {
+        sprintf(version->Minor, "%s", version_data->Minor);
+    }
+    Parse_Free_Version_Data(&version_data);
     fclose(data_File);
     return version;
+}
+
+Version_Data_t* Parse_Version_Data(CONST CHAR** line)
+{
+    Version_Data_t* version_data = (Version_Data_t*)malloc(sizeof(Version_Data_t));
+    if (version_data == NULL)
+    {
+        return NULL;
+    }
+    LENGHT scan_lenght = 0;
+
+    version_data->Major = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(char));
+    version_data->Minor = (CHAR*)calloc(1, MAX_LENGTH_DATA_FIELD * sizeof(char));
+    if (version_data->Major == NULL || version_data->Minor == NULL)
+    {
+        return NULL;
+    }
+
+    scan_lenght = sscanf(*line, "%4s%s",
+        version_data->Major,
+        version_data->Minor);
+
+    sprintf(version_data->Major, "%s", version_data->Major);
+    sprintf(version_data->Minor, "%s", version_data->Minor);
+ 
+    return version_data;
+}
+
+VOID Parse_Free_Version_Data(Version_Data_t** version_data)
+{
+    if (*version_data != NULL)
+    {
+        if ((*version_data)->Major != NULL)
+        {
+            free((*version_data)->Major);
+            (*version_data)->Major = NULL;
+        }
+        if ((*version_data)->Minor != NULL)
+        {
+            free((*version_data)->Minor);
+            (*version_data)->Minor = NULL;
+        }
+        free((*version_data));
+        (*version_data) = NULL;
+    }
 }
