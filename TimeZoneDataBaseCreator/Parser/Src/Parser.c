@@ -4,19 +4,19 @@ CHAR* line;
 // Data Files
 CHAR Data_File[DATA_FILES_COUNT][MAX_LENGTH_FILE_NAME];
 
-BOOL Initial_FileNames(CONST CHAR* data_folder_path)
+BOOL Initial_FileNames(CONST CHAR** data_folder_path)
 {
-    if (data_folder_path == NULL)
+    if (*data_folder_path == NULL)
     {
         return FALSE;
     }
-    LENGHT path_lenght = (LENGHT)strlen(data_folder_path);
+    LENGHT path_lenght = (LENGHT)strlen(*data_folder_path);
     CHAR* folder_path = (CHAR*)malloc((path_lenght + 1) * sizeof(CHAR));
     if (folder_path == NULL || path_lenght == 0)
     {
         return FALSE;
     }
-    sprintf(folder_path, "%s", data_folder_path);
+    sprintf(folder_path, "%s", *data_folder_path);
     path_lenght = (LENGHT)strlen(folder_path);
     if (folder_path[path_lenght - 1] == '/' || folder_path[path_lenght - 1] == '\\')
     {
@@ -42,7 +42,7 @@ BOOL Initial_FileNames(CONST CHAR* data_folder_path)
     return TRUE;
 }
 
-Parse_Data_t* Parse_Data(CONST CHAR* data_folder_path)
+Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
 {
     if (!Initial_FileNames(data_folder_path))
     {

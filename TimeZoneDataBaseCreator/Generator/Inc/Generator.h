@@ -62,21 +62,21 @@ extern "C" {
         G_Zone_Info_t* Zone;
     }G_Time_Zones_t;
 
-    BOOL Generate_Data(CONST CHAR* data_folder_path);
-    BOOL Generate_Full_List(CONST CHAR* data_folder_path);
-    COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR* country_code);
-    HOUR Get_Zone_Last_Standard_Offset(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire);
-    VOID Get_Zone_DST_Effect(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire, BOOL* dst_effect, HOUR* save_hour);
-    YEAR Get_Zone_Year_Begin(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire);
-    YEAR Get_Zone_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR* tz_identifire);
-    YEAR Get_Rule_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR* rule_name);
-    VOID Get_Rule_Year_End_DST_Data(CONST Parse_Data_t* parse_data, CONST CHAR* rule_name, BOOL* dst_effect, HOUR* save_hour);
+    BOOL Generate_Data(CONST CHAR** data_folder_path);
+    BOOL Generate_Full_List(CONST CHAR** data_folder_path);
+    COUNTER Get_Country_Name(CONST Parse_Data_t** parse_data, CONST CHAR** country_code);
+    HOUR Get_Zone_Last_Standard_Offset(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire);
+    VOID Get_Zone_DST_Effect(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire, BOOL* dst_effect, HOUR* save_hour);
+    YEAR Get_Zone_Year_Begin(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire);
+    YEAR Get_Zone_Year_End(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire);
+    YEAR Get_Rule_Year_End(CONST Parse_Data_t** parse_data, CONST CHAR** rule_name);
+    VOID Get_Rule_Year_End_DST_Data(CONST Parse_Data_t** parse_data, CONST CHAR** rule_name, BOOL* dst_effect, HOUR* save_hour);
     INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Zone_Info_By_Identifier(G_Zone_Info_t* zone_info, COUNTER info_count);
+    VOID Sort_Zone_Info_By_Identifier(G_Zone_Info_t** zone_info, COUNTER* info_count);
     INT Compare_Standard_Offset(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Zone_Info_By_STD_Offset(G_Zone_Info_t* zone_info, COUNTER info_count);
+    VOID Sort_Zone_Info_By_STD_Offset(G_Zone_Info_t** zone_info, COUNTER* info_count);
     INT Compare_Zones_Standard_Offset_Then_Identifier(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Zone_Info_By_STD_Offset_Then_Identifier(G_Zone_Info_t* zone_info, COUNTER info_count);
+    VOID Sort_Zone_Info_By_STD_Offset_Then_Identifier(G_Zone_Info_t** zone_info, COUNTER* info_count);
 
 #ifdef __cplusplus
 }

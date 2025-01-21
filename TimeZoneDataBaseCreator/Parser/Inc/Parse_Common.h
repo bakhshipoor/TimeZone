@@ -96,10 +96,10 @@ extern "C" {
 
     EXTERN CHAR* line;
 
-    HOUR* Parse_Hour(CONST CHAR* hour, CHAR** suffix);
-    WEEKDAY* Parse_Weekday(CONST CHAR* weekday);
-    MONTH* Parse_Month(CONST CHAR* month);
-    VOID Parse_Day_Of_Month(CONST CHAR* on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after);
+    HOUR* Parse_Hour(CONST CHAR** hour, CHAR* suffix);
+    WEEKDAY* Parse_Weekday(CONST CHAR** weekday);
+    MONTH* Parse_Month(CONST CHAR** month);
+    VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after);
     
 
 #ifdef __cplusplus

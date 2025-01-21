@@ -30,9 +30,9 @@ extern "C" {
 
     
 
-    BOOL Initial_FileNames(CONST CHAR* data_folder_path);
+    BOOL Initial_FileNames(CONST CHAR** data_folder_path);
 
-    Parse_Data_t* Parse_Data(CONST CHAR* data_folder_path);
+    Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path);
 
 #ifdef __cplusplus
 }
