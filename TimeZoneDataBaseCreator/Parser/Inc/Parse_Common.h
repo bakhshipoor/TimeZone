@@ -21,6 +21,7 @@ extern "C" {
 #define MAX_LENGTH_DATA_FIELD 256
 #define MAX_LENGTH_LINE 2048
 
+#define STATIC static
 #define VOID void
 #define CONST const
 #define EXTERN extern
@@ -72,6 +73,24 @@ extern "C" {
 
         TZDB_MONTH_TOTAL
     }Month_Number_e;
+
+    typedef enum
+    {
+        FILE_VERSION=0,
+        FILE_ISO3166TAB,
+        FILE_ZONETAB,
+        FILE_AFRICA,
+        FILE_ANTARCTICA,
+        FILE_ASIA,
+        FILE_AUSTRALASIA,
+        FILE_BACKWARD,
+        FILE_ETCETERA,
+        FILE_EUROPE,
+        FILE_NORTHAMERICA,
+        FILE_SOUTHAMERICA,
+
+        FILE_TOTAL
+    }Parse_Files_e;
 
     typedef struct
     {

@@ -7,8 +7,6 @@ extern "C" {
 
 #include "Parse_Common.h"
 
-
-
     typedef struct
     {
         CHAR* Field;
@@ -24,7 +22,6 @@ extern "C" {
         CHAR* Comment;
     } Rule_Data_t;
 
-
     typedef struct
     {
         DAY Day;
@@ -32,13 +29,11 @@ extern "C" {
         BOOL Weekday_isAfterOrEqual_Day;
     } Rule_Year_Day_t;
 
-
     typedef struct
     {
         HOUR Hour;
         BOOL Hour_isUTC;
     } Rule_Year_Hour_t;
-
 
     typedef struct
     {
@@ -49,7 +44,6 @@ extern "C" {
         CHAR* Letter;
         CHAR* Comment;
     } Rule_Year_Data_t;
-
 
     typedef struct
     {
@@ -63,7 +57,6 @@ extern "C" {
         Rule_Year_Data_t* DST;
     } Rule_Year_t;
 
-
     typedef struct
     {
         CHAR* Name;
@@ -72,7 +65,6 @@ extern "C" {
         YEAR Year_Begin;
         YEAR Year_End;
     } Rule_Entry_t;
-
 
     Rule_Entry_t* Parse_Rules(COUNTER* rules_Count);
     BOOL Rule_isExist(CONST Rule_Entry_t** rule_list, CONST COUNTER* rules_count, CONST CHAR** rule_name, COUNTER* find_Index);

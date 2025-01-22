@@ -49,13 +49,13 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
         return NULL;
     }
 
-    Parse_Data_t* data = (Parse_Data_t*)malloc(sizeof(Parse_Data_t));
+    Parse_Data_t* data = (Parse_Data_t*)calloc(1, sizeof(Parse_Data_t));
     if (data == NULL)
     {
         return NULL;
     }
 
-    line = (CHAR*)malloc(MAX_LENGTH_LINE * sizeof(CHAR)); // Buffer to store each line read from the data file
+    line = (CHAR*)calloc(1, MAX_LENGTH_LINE * sizeof(CHAR));
     if (line == NULL)
     {
         free(data);
@@ -63,9 +63,45 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
         return NULL;
     }
 
-    data->Version = Parse_Version();
-    data->ISO3166 = Parse_ISO3166Tab(&data->ISO3166_Count);
-    data->Zonetab = Parse_ZoneTab(&data->Zonetab_Count);
+    FILE* data_File;
+    for (COUNTER dataFile_index = FILE_VERSION; dataFile_index < FILE_TOTAL; dataFile_index++)
+    {
+        data_File = fopen(Data_File[dataFile_index], "r");
+        if (!data_File)
+        {
+            continue;
+        }
+
+        while (fgets(line, MAX_LENGTH_LINE, data_File))
+        {
+            if (strlen(line) < 4 || line[0] == '#')
+            {
+                continue;
+            }
+
+            if (dataFile_index == FILE_VERSION)
+            {
+                Parse_Version(&line, &data->Version);
+                break;
+            }
+            else if (dataFile_index == FILE_ISO3166TAB)
+            {
+                Parse_ISO3166Tab(&line, &data->ISO3166, &data->ISO3166_Count);
+                continue;
+            }
+            else if (dataFile_index == FILE_ZONETAB)
+            {
+                Parse_ZoneTab(&line, &data->Zonetab, &data->Zonetab_Count);
+                continue;
+            }
+            
+
+        }
+
+        fclose(data_File);
+    }
+
+    
     data->Rules = Parse_Rules(&data->Rules_Count);
     data->Zones = Parse_Zones(&data->Zones_Count);
     data->Links = Parse_Links(&data->Links_Count);

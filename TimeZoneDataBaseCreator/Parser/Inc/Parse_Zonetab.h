@@ -7,13 +7,7 @@ extern "C" {
 
 #include "Parse_Common.h"
 
-    typedef struct
-    {
-        CHAR* Country_Code;
-        CHAR* Coordinates;
-        CHAR* TZ_Identifier;
-        CHAR* Comments;
-    } ZoneTab_Data_t;
+   
 
     typedef struct
     {
@@ -24,10 +18,8 @@ extern "C" {
         LOCATION Longitude;
     } ZoneTab_Entry_t;
 
-    ZoneTab_Entry_t* Parse_ZoneTab(COUNTER* zonetab_count);
-    ZoneTab_Data_t* Parse_ZoneTab_Data(CONST CHAR** line);
-    VOID Parse_ZoneTab_Data_Cordinates(ZoneTab_Entry_t** zone_tab, ZoneTab_Data_t** zonetab_data);
-    VOID Parse_Free_ZoneTab_Data(ZoneTab_Data_t** zonetab_data);
+    VOID Parse_ZoneTab(CHAR** line, ZoneTab_Entry_t** zonetab_list, COUNTER* zonetab_count);
+    
 
 #ifdef __cplusplus
 }

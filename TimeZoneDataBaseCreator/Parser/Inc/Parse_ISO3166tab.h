@@ -11,18 +11,11 @@ extern "C" {
     {
         CHAR* Country_Code;
         CHAR* Country_Name;
-    } ISO3166_Data_t;
-
-    typedef struct
-    {
-        CHAR* Country_Code;
-        CHAR* Country_Name;
     } ISO3166_Entry_t;
 
-    ISO3166_Entry_t* Parse_ISO3166Tab(COUNTER* iso3166_Count);
+    VOID Parse_ISO3166Tab(CONST CHAR** line, ISO3166_Entry_t** iso3166_List, COUNTER* iso3166_count);
 
-    ISO3166_Data_t* Parse_ISO3166_Data(CONST CHAR** line);
-    VOID Parse_Free_ISO3166_Data(ISO3166_Data_t** iso_data);
+    
 
 #ifdef __cplusplus
 }
