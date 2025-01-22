@@ -2,7 +2,7 @@
 
 CHAR* line;
 // Data Files
-CHAR Data_File[DATA_FILES_COUNT][MAX_LENGTH_FILE_NAME];
+CHAR Data_File[FILE_TOTAL][MAX_LENGTH_FILE_NAME];
 
 BOOL Initial_FileNames(CONST CHAR** data_folder_path)
 {
@@ -25,12 +25,12 @@ BOOL Initial_FileNames(CONST CHAR** data_folder_path)
 
     COUNTER file_index = 0;
 
-    for (file_index = 0; file_index < DATA_FILES_COUNT; file_index++)
+    for (file_index = 0; file_index < FILE_TOTAL; file_index++)
     {
         sprintf_s(Data_File[file_index], MAX_LENGTH_FILE_NAME, "%s/%s", folder_path, Data_Files_Name[file_index]);
     }
 
-    for (file_index = 0; file_index < DATA_FILES_COUNT; file_index++)
+    for (file_index = 0; file_index < FILE_TOTAL; file_index++)
     {
         FILE* data_File = fopen(Data_File[file_index], "r");
         if (!data_File)

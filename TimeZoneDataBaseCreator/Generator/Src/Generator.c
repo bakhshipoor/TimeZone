@@ -191,7 +191,7 @@ HOUR Get_Zone_Last_Standard_Offset(CONST Parse_Data_t** parse_data, CONST CHAR**
 {
     if (*tz_identifire == NULL)
     {
-        return INVALID_OFFSET;
+        return INVALID_HOUR;
     }
 
     COUNTER link_index = 0;
@@ -221,7 +221,7 @@ ___START:
             goto ___START;
         }
     }
-    return INVALID_OFFSET;
+    return INVALID_HOUR;
 }
 
 VOID Get_Zone_DST_Effect(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire, BOOL* dst_effect, HOUR* save_hour)
@@ -364,7 +364,7 @@ YEAR Get_Rule_Year_End(CONST Parse_Data_t** parse_data, CONST CHAR** rule_name)
 
 VOID Get_Rule_Year_End_DST_Data(CONST Parse_Data_t** parse_data, CONST CHAR** rule_name, BOOL* dst_effect, HOUR* save_hour)
 {
-    if (*rule_name == NULL)
+    /*if (*rule_name == NULL)
     {
         return INVALID_YEAR;
     }
@@ -387,7 +387,7 @@ VOID Get_Rule_Year_End_DST_Data(CONST Parse_Data_t** parse_data, CONST CHAR** ru
                 }
             }
         }
-    }
+    }*/
     return INVALID_YEAR;
 }
 

@@ -18,7 +18,7 @@ Zone_Entry_t* Parse_Zones(COUNTER* zones_Count)
     FILE* data_File;
     COUNTER find_index;
     Zone_Data_t* zone_data=NULL;
-    for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
+    for (dataFile_index = 3; dataFile_index < FILE_TOTAL; dataFile_index++)
     {
         data_File = fopen(Data_File[dataFile_index], "r");
         if (!data_File)
@@ -172,7 +172,7 @@ VOID Parse_Zone_Info(Zone_Entry_t** zone_list, CONST COUNTER* zones_Count)
     FILE* data_File;
     COUNTER find_index;
     Zone_Data_t* zone_data=NULL;
-    for (dataFile_index = 3; dataFile_index < DATA_FILES_COUNT; dataFile_index++)
+    for (dataFile_index = 3; dataFile_index < FILE_TOTAL; dataFile_index++)
     {
         data_File = fopen(Data_File[dataFile_index], "r");
         if (!data_File)

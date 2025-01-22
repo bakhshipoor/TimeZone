@@ -1,72 +1,64 @@
-#include "../Inc/Parse_Common.h"
+﻿#include "../Inc/Parse_Common.h"
 
-HOUR* Parse_Hour(CONST CHAR** hour, CHAR* suffix)
+HOUR Parse_Hour(CONST CHAR** hour, CHAR* suffix)
 {
-    CHAR* new_hour=(CHAR*)calloc(1,(strlen(hour)+1)*sizeof(CHAR));
-    if (new_hour == NULL)
+    if (hour == NULL || *hour == NULL || suffix == NULL)
     {
-        return NULL;
+        return INVALID_HOUR;
     }
 
-    HOUR* std_offset = (HOUR*)calloc(1,sizeof(HOUR));
-    if (std_offset == NULL)
-    {
-        return NULL;
-    }
-    CHAR sign = 0;
+    CHAR* input = *hour;
     HOUR h = 0, m = 0, s = 0;
+    HOUR parsed_hour = INVALID_HOUR;
+    CHAR sign = 0;
 
-    sprintf(new_hour, "%s", *hour);
-
-    if (new_hour[0] == '-')
+    if (input[0] == '-')
     {
         sign = '-';
-        strcpy(new_hour, new_hour + 1);
+        input++;
     }
-    else if (new_hour[0] == '+')
+    else if (input[0] == '+')
     {
         sign = '+';
-        strcpy(new_hour, new_hour + 1);
+        input++;
     }
 
-    CHAR ch = new_hour[strlen(new_hour) - 1];
-
+    size_t length = strlen(input);
     *suffix = '\0';
-    if (isalpha(ch))
+    if (isalpha(input[length - 1]))
     {
-        *suffix = ch;
-        new_hour[strlen(new_hour) - 1] = '\0';
+        *suffix = input[length - 1];
+        input[length - 1] = '\0';
     }
 
-    if (sscanf(new_hour, "%lld:%lld:%lld", &h, &m, &s) == 3)
+    if (sscanf(input, "%lld:%lld:%lld", &h, &m, &s) == 3)
     {
-        *std_offset = (h * 3600) + (m * 60) + s;
+        parsed_hour = (h * 3600) + (m * 60) + s;
     }
-    else if (sscanf(new_hour, "%lld:%lld", &h, &m) == 2)
+    else if (sscanf(input, "%lld:%lld", &h, &m) == 2)
     {
-        *std_offset = (h * 3600) + (m * 60);
+        parsed_hour = (h * 3600) + (m * 60);
     }
-    else if (sscanf(new_hour, "%lld", &h) == 1)
+    else if (sscanf(input, "%lld", &h) == 1)
     {
-        *std_offset = (h * 3600);
+        parsed_hour = (h * 3600);
     }
 
     if (sign == '-')
     {
-        *std_offset *= -1;
+        parsed_hour *= -1;
     }
 
-    return std_offset;
+    return parsed_hour;
 }
 
-WEEKDAY* Parse_Weekday(CONST CHAR** weekday)
+WEEKDAY Parse_Weekday(CONST CHAR** weekday)
 {
-    WEEKDAY* wd = (WEEKDAY*)malloc(sizeof(WEEKDAY*));
-    if (wd == NULL)
+    if (weekday == NULL || *weekday == NULL)
     {
-        return NULL;
+        return INVALID_WEEKDAY;
     }
-    *wd = (WEEKDAY)TZDB_WEEKDAY_NONE;
+
     for (COUNTER weekday_index = 0; weekday_index < TZDB_WEEKDAY_TOTAL; weekday_index++)
     {
         if (strcmp(*weekday, Weekday_Names[weekday_index].Abbr) == 0 ||
@@ -74,75 +66,76 @@ WEEKDAY* Parse_Weekday(CONST CHAR** weekday)
             strcmp(*weekday, Weekday_Names[weekday_index].Last_Abbr) == 0 ||
             strcmp(*weekday, Weekday_Names[weekday_index].Last_Full) == 0)
         {
-            *wd = Weekday_Names[weekday_index].Number;
+            return Weekday_Names[weekday_index].Number;
         }
     }
-    return wd;
+    return INVALID_WEEKDAY;
 }
 
-MONTH* Parse_Month(CONST CHAR** month)
+MONTH Parse_Month(CONST CHAR** month)
 {
-    MONTH* m = (MONTH*)malloc(sizeof(MONTH));
-    if (m == NULL)
+    if (month == NULL || *month == NULL)
     {
-        return NULL;
+        return INVALID_MONTH;
     }
-    *m = 0;
+
     for (COUNTER month_index = 0; month_index < TZDB_MONTH_TOTAL; month_index++)
     {
-        if (strcmp(*month, Month_Names[month_index].Abbr) == 0 || strcmp(*month, Month_Names[month_index].Full) == 0)
+        if (strcmp(*month, Month_Names[month_index].Abbr) == 0 || 
+            strcmp(*month, Month_Names[month_index].Full) == 0)
         {
-            *m = (Month_Names[month_index].Number + 1);
+            return Month_Names[month_index].Number;
         }
     }
-    return m;
+    return INVALID_MONTH;
 }
 
 VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after)
 {
+    if (on == NULL || *on == NULL || day == NULL || weekday == NULL || weekday_after == NULL)
+    {
+        return;
+    }
+
+    *day = INVALID_DAY;
+    *weekday = INVALID_WEEKDAY;
+    *weekday_after = FALSE;
+
     if (strlen(*on) <= 3)
     {
-        *day = atoi(on);
+        *day = atoi(*on);
         *weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
         *weekday_after = FALSE;
     }
     else
     {
-        CHAR* dow = (CHAR*)malloc(10 * sizeof(CHAR));
-        CHAR* d = (CHAR*)malloc(10 * sizeof(CHAR));
-        if (dow == NULL || d == NULL)
+        CHAR* dow = (CHAR*)calloc(10, sizeof(CHAR));
+        CHAR* d = (CHAR*)calloc(10, sizeof(CHAR));
+        if (dow != NULL && d != NULL)
         {
-            *day = 0;
-            *weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
-            *weekday_after = FALSE;
-            return;
-        }
-        LENGHT sscanf_lenght = sscanf(*on, "%[^=]=%s", dow, d);
-        sprintf(dow, "%s", dow); 
-        sprintf(d, "%s", d);
-
-        if (sscanf_lenght == 1)
-        {
-            *day = 0; // Last week
-            *weekday = Parse_Weekday(&dow);
-            *weekday_after = FALSE;
-        }
-        else
-        {
-            LENGHT len = (LENGHT)strlen(dow);
-
-            if (dow[len - 1] == '>')
+            if (sscanf(*on, "%[^=]=%s", dow, d) == 1)
             {
-                *weekday_after = TRUE;
-            }
-            else if (dow[len - 1] == '<')
-            {
+                *day = (MONTH)TZDB_MONTH_NONE; // Last week
+                *weekday = Parse_Weekday(&dow);
                 *weekday_after = FALSE;
             }
-            dow[len - 1] = '\0'; 
+            else
+            {
+                size_t len = strlen(dow);
 
-            *day = atoi(d);
-            weekday = Parse_Weekday(&dow);
+                if (dow[len - 1] == '>')
+                {
+                    *weekday_after = TRUE;
+                }
+                else if (dow[len - 1] == '<')
+                {
+                    *weekday_after = FALSE;
+                }
+                dow[len - 1] = '\0';
+
+                *day = atoi(d);
+                *weekday = Parse_Weekday(&dow);
+            }
         }
     }
 }

@@ -7,8 +7,7 @@ extern "C" {
 
 #include "../../Parser/Inc/Parser.h"
 
-#define INVALID_YEAR -9999
-#define INVALID_OFFSET -999999
+
     typedef struct
     {
         MONTH Month;
