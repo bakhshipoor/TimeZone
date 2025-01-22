@@ -55,7 +55,7 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
         return NULL;
     }
 
-    line = (CHAR*)calloc(1, MAX_LENGTH_LINE * sizeof(CHAR));
+    line = (CHAR*)calloc(MAX_LENGTH_LINE, sizeof(CHAR));
     if (line == NULL)
     {
         free(data);
@@ -98,7 +98,7 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
             }
             else
             {
-
+                Parse_Rules(&line, &data->Rules, &data->Rules_Count);
                 
             }
         }
@@ -106,7 +106,7 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
     }
 
     
-    data->Rules = Parse_Rules(&data->Rules_Count);
+    
     data->Zones = Parse_Zones(&data->Zones_Count);
     
 
