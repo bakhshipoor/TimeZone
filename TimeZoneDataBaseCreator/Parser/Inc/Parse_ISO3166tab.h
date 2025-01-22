@@ -13,7 +13,7 @@ extern "C" {
         CHAR* Country_Name;
     } ISO3166_Entry_t;
 
-    VOID Parse_ISO3166Tab(CONST CHAR** line, ISO3166_Entry_t** iso3166_List, COUNTER* iso3166_count);
+    VOID Parse_ISO3166Tab(CONST CHAR** line, ISO3166_Entry_t** iso3166_list, COUNTER* iso3166_count);
 
     
 

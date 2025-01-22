@@ -87,24 +87,28 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
             else if (dataFile_index == FILE_ISO3166TAB)
             {
                 Parse_ISO3166Tab(&line, &data->ISO3166, &data->ISO3166_Count);
-                continue;
             }
             else if (dataFile_index == FILE_ZONETAB)
             {
                 Parse_ZoneTab(&line, &data->Zonetab, &data->Zonetab_Count);
-                continue;
             }
-            
+            else if (dataFile_index == FILE_BACKWARD)
+            {
+                Parse_Links(&line, &data->Links, &data->Links_Count);
+            }
+            else
+            {
 
+                
+            }
         }
-
         fclose(data_File);
     }
 
     
     data->Rules = Parse_Rules(&data->Rules_Count);
     data->Zones = Parse_Zones(&data->Zones_Count);
-    data->Links = Parse_Links(&data->Links_Count);
+    
 
     free(line);
     line = NULL;

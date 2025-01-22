@@ -8,9 +8,10 @@ extern "C" {
 #include "../Inc/Parse_Version.h"
 #include "../Inc/Parse_ISO3166tab.h"
 #include "../Inc/Parse_Zonetab.h"
+#include "../Inc/Parse_Links.h"
 #include "../Inc/Parse_Rules.h"
 #include "../Inc/Parse_Zones.h"
-#include "../Inc/Parse_Link.h"
+
 
 
     typedef struct
@@ -20,12 +21,12 @@ extern "C" {
         ISO3166_Entry_t* ISO3166;
         COUNTER Zonetab_Count;
         ZoneTab_Entry_t* Zonetab;
+        COUNTER Links_Count;
+        Link_Entry_t* Links;
         COUNTER Rules_Count;
         Rule_Entry_t* Rules;
         COUNTER Zones_Count;
         Zone_Entry_t* Zones;
-        COUNTER Links_Count;
-        Link_Entry_t* Links;
     }Parse_Data_t;
 
     

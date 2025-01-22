@@ -10,7 +10,7 @@ STATIC ISO3166_Data_t* Parse_ISO3166_Data(CONST CHAR** line);
 STATIC VOID Free_ISO3166_Data(ISO3166_Data_t* iso_data);
 STATIC VOID Free_ISO3166_Tab(ISO3166_Entry_t* iso_tab);
 
-VOID Parse_ISO3166Tab(CONST CHAR** line, ISO3166_Entry_t** iso3166_List, COUNTER* iso3166_count)
+VOID Parse_ISO3166Tab(CONST CHAR** line, ISO3166_Entry_t** iso3166_list, COUNTER* iso3166_count)
 {
     ISO3166_Data_t* iso_data = Parse_ISO3166_Data(line);
     if (iso_data == NULL)
@@ -35,7 +35,7 @@ VOID Parse_ISO3166Tab(CONST CHAR** line, ISO3166_Entry_t** iso3166_List, COUNTER
         return;
     }
 
-    ISO3166_Entry_t* iso_list = realloc(*iso3166_List, (*iso3166_count + 1) * sizeof(ISO3166_Entry_t));
+    ISO3166_Entry_t* iso_list = realloc(*iso3166_list, (*iso3166_count + 1) * sizeof(ISO3166_Entry_t));
     if (iso_list == NULL)
     {
         Free_ISO3166_Tab(iso);
@@ -43,8 +43,8 @@ VOID Parse_ISO3166Tab(CONST CHAR** line, ISO3166_Entry_t** iso3166_List, COUNTER
         return;
     }
 
-    *iso3166_List = iso_list;
-    (*iso3166_List)[*iso3166_count] = *iso;
+    *iso3166_list = iso_list;
+    (*iso3166_list)[*iso3166_count] = *iso;
     (*iso3166_count)++;
 
     free(iso);
