@@ -53,11 +53,7 @@ VOID Parse_Rules(CONST CHAR** line, Rule_Entry_t** rule_list, COUNTER* rules_cou
             (*rule_list)[find_index].Years_Count++;
         }
     }
-
     Free_Rule_Data(rule_data);
-
-    //Parse_Rule_Years(&Rules_List, rules_count);
-
     return;
 }
 

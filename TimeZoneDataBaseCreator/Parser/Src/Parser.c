@@ -99,16 +99,11 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
             else
             {
                 Parse_Rules(&line, &data->Rules, &data->Rules_Count);
-                
+                Parse_Zones(&line, &data->Zones, &data->Zones_Count);
             }
         }
         fclose(data_File);
     }
-
-    
-    
-    data->Zones = Parse_Zones(&data->Zones_Count);
-    
 
     free(line);
     line = NULL;
