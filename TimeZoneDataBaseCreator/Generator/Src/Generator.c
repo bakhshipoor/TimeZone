@@ -4,32 +4,32 @@
 #include <string.h>
 #include <stdio.h>
 
-BOOL Generate_Data(CONST CHAR** data_folder_path)
+Time_Zones_t* Generate_Data(CONST CHAR** data_folder_path)
 {
     Parse_Data_t* parse_data = Parse_Data(data_folder_path);
     if (parse_data == NULL)
     {
-        return FALSE;
+        return NULL;
     }
 
     Time_Zones_t* time_zones = calloc(1, sizeof(Time_Zones_t));
     if (time_zones == NULL)
     {
-        return FALSE;
+        return NULL;
     }
     
     time_zones->Zones_Count = parse_data->Zonetab_Count;
     Generate_Time_Zones_Info(parse_data, &time_zones->Zones_Info, &parse_data->Zonetab_Count);
-    
     Generate_Time_Zones_Data(parse_data, &time_zones->Zones_Data,&time_zones->Zones_Data_Count, &time_zones);
     
     time_zones->Rules_Count = parse_data->Rules_Count;
     Generate_Rules_Info(parse_data, &time_zones->Rules_Info);
+    Generate_Rules_Data(parse_data, &time_zones->Rules_Data, &time_zones->Rules_Data_Count, &time_zones);
 
-    return TRUE;
+    return time_zones;
 }
 
-VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Time_Zone_Info_t** zone_info_list,CONST COUNTER* zones_count)
+VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Zone_Info_t** zone_info_list,CONST COUNTER* zones_count)
 {
     if (parse_data==NULL || zone_info_list==NULL || zones_count==NULL)
     {
@@ -38,14 +38,14 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Time_Zone_Info_t** zone_
     COUNTER zone_index = 0;
     for (zone_index = 0; zone_index < *zones_count; zone_index++)
     {
-        Time_Zone_Info_t* z_info;
+        Zone_Info_t* z_info;
         if (zone_index == 0)
         {
-            z_info = (Time_Zone_Info_t*)malloc((zone_index + 1) * sizeof(Time_Zone_Info_t));
+            z_info = (Zone_Info_t*)malloc((zone_index + 1) * sizeof(Zone_Info_t));
         }
         else
         {
-            z_info = (Time_Zone_Info_t*)realloc(*zone_info_list, (zone_index + 1) * sizeof(Time_Zone_Info_t));
+            z_info = (Zone_Info_t*)realloc(*zone_info_list, (zone_index + 1) * sizeof(Zone_Info_t));
         }
         if (z_info == NULL)
         {
@@ -145,7 +145,7 @@ VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, Zone_Data_t** zones_data
             *zones_data_list = z_data;
 
             (*zones_data_list)[*zones_data_count] = parse_data->Zones[zone_index].Info[data_index];
-            (*zones_data_list)[*zones_data_count].Time_Zone_ID = Get_TZ_ID(&(*tz_list)->Zones_Info,&(*tz_list)->Zones_Count,&parse_data->Zones[zone_index].Name);
+            (*zones_data_list)[*zones_data_count].Time_Zone_ID = Get_Zone_ID(&(*tz_list)->Zones_Info,&(*tz_list)->Zones_Count,&parse_data->Zones[zone_index].Name);
             (*zones_data_count)++;
         }
     }
@@ -153,6 +153,7 @@ VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, Zone_Data_t** zones_data
 
 VOID Generate_Rules_Info(Parse_Data_t* parse_data, Rule_Info_t** rules_info_list)
 {
+    Sort_Rules_By_Name(&parse_data->Rules, &parse_data->Rules_Count);
     COUNTER rule_index = 0;
     for (rule_index = 0; rule_index < parse_data->Rules_Count; rule_index++)
     {
@@ -182,14 +183,45 @@ VOID Generate_Rules_Info(Parse_Data_t* parse_data, Rule_Info_t** rules_info_list
         (*rules_info_list)[rule_index].Year_End = parse_data->Rules[rule_index].Year_End;
     }
 
-    Sort_Rules_Info_By_Name(rules_info_list, &parse_data->Rules_Count);
-
     for (rule_index = 0; rule_index < parse_data->Rules_Count; rule_index++)
     {
         (*rules_info_list)[rule_index].Rule_ID = rule_index + 1;
     }
 
 }
+
+VOID Generate_Rules_Data(Parse_Data_t* parse_data, Rule_Data_t** rules_data_list, COUNTER* rules_data_count, Time_Zones_t** tz_list)
+{
+    *rules_data_count = 0;
+    COUNTER reule_index = 0;
+    COUNTER data_index = 0;
+    for (reule_index = 0; reule_index < parse_data->Rules_Count; reule_index++)
+    {
+        for (data_index = 0; data_index < parse_data->Rules[reule_index].Years_Count; data_index++)
+        {
+            Rule_Data_t* r_data;
+            if (*rules_data_count == 0)
+            {
+                r_data = (Rule_Data_t*)malloc(sizeof(Rule_Data_t));
+            }
+            else
+            {
+                r_data = (Rule_Data_t*)realloc(*rules_data_list, (*rules_data_count + 1) * sizeof(Rule_Data_t));
+            }
+            if (r_data == NULL)
+            {
+                return;
+            }
+            *rules_data_list = r_data;
+
+            (*rules_data_list)[*rules_data_count] = parse_data->Rules[reule_index].Years[data_index];
+            (*rules_data_list)[*rules_data_count].Rule_ID = Get_Rule_ID(&(*tz_list)->Rules_Info, &(*tz_list)->Rules_Count, &parse_data->Rules[reule_index].Name);
+            (*rules_data_count)++;
+        }
+    }
+}
+
+
 
 COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR** country_code)
 {
@@ -293,7 +325,7 @@ COUNTER Get_Zone_Data_Count(CONST Parse_Data_t* parse_data, CONST CHAR** tz_iden
     return counts;
 }
 
-COUNTER Get_TZ_ID(CONST Time_Zone_Info_t** tz_info_list, CONST COUNTER* tz_info_count, CONST CHAR** tz_identifier)
+COUNTER Get_Zone_ID(CONST Zone_Info_t** tz_info_list, CONST COUNTER* tz_info_count, CONST CHAR** tz_identifier)
 {
     COUNTER tz_id = 0;
     for (COUNTER tz_info_index = 0; tz_info_index < *tz_info_count; tz_info_index++)
@@ -306,31 +338,31 @@ COUNTER Get_TZ_ID(CONST Time_Zone_Info_t** tz_info_list, CONST COUNTER* tz_info_
     return tz_id;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+COUNTER Get_Rule_ID(CONST Rule_Info_t** rule_info_list, CONST COUNTER* rule_info_count, CONST CHAR** rule_name)
+{
+    COUNTER rule_id = 0;
+    for (COUNTER rule_info_index = 0; rule_info_index < *rule_info_count; rule_info_index++)
+    {
+        if (strcmp((*rule_info_list)[rule_info_index].Name, *rule_name) == 0)
+        {
+            return (*rule_info_list)[rule_info_index].Rule_ID;
+        }
+    }
+    return rule_id;
+}
 
 
 
 INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b) 
 {
-    Time_Zone_Info_t* structA = (Time_Zone_Info_t*)a;
-    Time_Zone_Info_t* structB = (Time_Zone_Info_t*)b;
+    Zone_Info_t* structA = (Zone_Info_t*)a;
+    Zone_Info_t* structB = (Zone_Info_t*)b;
     return strcmp(structA->Time_Zone_Identifier, structB->Time_Zone_Identifier);
 }
 
-VOID Sort_Zone_Info_By_Identifier(Time_Zone_Info_t** zone_info, COUNTER* info_count)
+VOID Sort_Zone_Info_By_Identifier(Zone_Info_t** zone_info, COUNTER* info_count)
 {
-    qsort(*zone_info, *info_count, sizeof(Time_Zone_Info_t), Compare_TZ_Identifier);
+    qsort(*zone_info, *info_count, sizeof(Zone_Info_t), Compare_TZ_Identifier);
 }
 
 INT Compare_Zones_Data_Identifier(CONST VOID* a, CONST VOID* b)
@@ -345,100 +377,14 @@ VOID Sort_Zone_Data_By_Identifier(Zone_Entry_t** zone_data, COUNTER* data_count)
     qsort(*zone_data, *data_count, sizeof(Zone_Entry_t), Compare_Zones_Data_Identifier);
 }
 
-INT Compare_Rules_Info_Name(CONST VOID* a, CONST VOID* b)
+INT Compare_Rules_Name(CONST VOID* a, CONST VOID* b)
 {
-    Rule_Info_t* structA = (Rule_Info_t*)a;
-    Rule_Info_t* structB = (Rule_Info_t*)b;
+    Rule_Entry_t* structA = (Rule_Entry_t*)a;
+    Rule_Entry_t* structB = (Rule_Entry_t*)b;
     return strcmp(structA->Name, structB->Name);
 }
 
-VOID Sort_Rules_Info_By_Name(Rule_Info_t** rules_info, COUNTER* info_count)
+VOID Sort_Rules_By_Name(Rule_Info_t** rules_info, COUNTER* info_count)
 {
-    qsort(*rules_info, *info_count, sizeof(Zone_Entry_t), Compare_Rules_Info_Name);
+    qsort(*rules_info, *info_count, sizeof(Rule_Entry_t), Compare_Rules_Name);
 }
-
-
-//INT Compare_Standard_Offset(CONST VOID* a, CONST VOID* b) 
-//{
-//    Time_Zone_Info_t* pa = (Time_Zone_Info_t*)a;
-//    Time_Zone_Info_t* pb = (Time_Zone_Info_t*)b;
-//    return pa->Standard_Offset - pb->Standard_Offset;
-//}
-
-//VOID Sort_Zone_Info_By_STD_Offset(Time_Zone_Info_t** zone_info, COUNTER* info_count)
-//{
-//    qsort(*zone_info, *info_count, sizeof(Time_Zone_Info_t), Compare_Standard_Offset);
-//}
-
-//INT Compare_Zones_Standard_Offset_Then_Identifier(CONST VOID* a, CONST VOID* b)
-//{
-//    Time_Zone_Info_t* pa = (Time_Zone_Info_t*)a;
-//    Time_Zone_Info_t* pb = (Time_Zone_Info_t*)b;
-//
-//    char temp1[100], temp2[100];
-//    strcpy(temp1, pa->TZ_Identifier);
-//    strcpy(temp2, pb->TZ_Identifier);
-//    for (int i = 0; temp1[i]; i++) {
-//        temp1[i] = tolower(temp1[i]);
-//    }
-//    for (int i = 0; temp2[i]; i++) {
-//        temp2[i] = tolower(temp2[i]);
-//    }
-//
-//    // ابتدا بر اساس Standard_Offset مقایسه می‌کنیم
-//    int result = pa->Standard_Offset - pb->Standard_Offset;
-//    if (result != 0) {
-//        return result;
-//    }
-//
-//    // اگر Standard_Offset برابر بود، بر اساس TZ_Identifier مقایسه می‌کنیم
-//    return strcmp(temp1, temp2);
-//}
-
-//VOID Sort_Zone_Info_By_STD_Offset_Then_Identifier(Time_Zone_Info_t** zone_info, COUNTER* info_count)
-//{
-//    qsort(*zone_info, *info_count, sizeof(Time_Zone_Info_t), Compare_Zones_Standard_Offset_Then_Identifier);
-//}
-
-
-
-
-
-
-
-
-
-
-
-//FILE* temp = fopen("../temp.txt", "w");
-   //for (zone_index = 0; zone_index < zones_counts; zone_index++)
-   //{
-   //    /*fprintf(temp, "%s\t%s\t%s\t%.6lf\t%.6lf\t%s\t%lld\t%s\t%d\t%d\n",
-   //        time_zones->Zone[zone_index].Country_Code,
-   //        time_zones->Zone[zone_index].Country_Name,
-   //        time_zones->Zone[zone_index].TZ_Identifier,
-   //        time_zones->Zone[zone_index].Latitude,
-   //        time_zones->Zone[zone_index].Longitude,
-   //        time_zones->Zone[zone_index].Comments,
-   //        time_zones->Zone[zone_index].Standard_Offset,
-   //        time_zones->Zone[zone_index].Standard_Offset_Text,
-   //        time_zones->Zone[zone_index].Year_Begin,
-   //        time_zones->Zone[zone_index].Year_End);*/
-   //    if (time_zones->Zone[zone_index].DST_Effect == TRUE)
-   //    {
-   //        fprintf(temp, "%s | %s\n(UTC %s - DST %s)\n\n",
-   //            time_zones->Zone[zone_index].TZ_Identifier,
-   //            time_zones->Zone[zone_index].Country_Name,
-   //            time_zones->Zone[zone_index].Standard_Offset_Text,
-   //            time_zones->Zone[zone_index].DST_Offset_Text);
-   //    }
-   //    else
-   //    {
-   //        fprintf(temp, "%s | %s\n(UTC %s)\n\n",
-   //            time_zones->Zone[zone_index].TZ_Identifier,
-   //            time_zones->Zone[zone_index].Country_Name,
-   //            time_zones->Zone[zone_index].Standard_Offset_Text);
-   //    }
-   //    
-   //}
-   //fclose(temp);

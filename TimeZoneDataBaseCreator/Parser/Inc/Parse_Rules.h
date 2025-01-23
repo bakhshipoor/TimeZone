@@ -23,6 +23,7 @@ extern "C" {
 
     typedef struct
     {
+        COUNTER Rule_ID;
         YEAR From;
         YEAR To;
         CHAR* Reserved;

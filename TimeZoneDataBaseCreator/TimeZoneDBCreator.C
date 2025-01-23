@@ -1,11 +1,11 @@
 
 //#include "../Inc/TimeZoneDBCreator.h"
-#include "Generator/Inc/Generator.h"
+#include "Creator/Inc/Creator.h"
 
 int main()
 {
     CHAR* path= "../tzdata2025a";
-    Generate_Data(&path);
+    Create_Database(&path);
 
     while (1);
     return 0;

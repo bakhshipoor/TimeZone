@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Creator\Inc\Creator.h" />
     <ClInclude Include="Generator\Inc\Generator.h" />
     <ClInclude Include="Parser\Inc\Parser.h" />
     <ClInclude Include="Parser\Inc\Parse_Common.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="TimeZoneDBCreator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Creator\Src\Creator.c" />
     <ClCompile Include="Generator\Src\Generator.c" />
     <ClCompile Include="Parser\Src\Parser.c" />
     <ClCompile Include="Parser\Src\Parse_Constants.c" />
