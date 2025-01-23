@@ -51,30 +51,30 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "#define RULES_DATA_COUNT       %d\n", tz->Rules_Data_Count);
     fprintf(header_file, "\n");
     fprintf(header_file, "\n");
-    fprintf(header_file, "  typedef struct\n");
-    fprintf(header_file, "  {\n");
-    fprintf(header_file, "      char* Time_Zone_ID;\n");
-    fprintf(header_file, "      char* Time_Zone_Identifier\n");
-    fprintf(header_file, "      char* Country_Code;\n");
-    fprintf(header_file, "      char* Country_Name;\n");
-    fprintf(header_file, "      char* Latitude;\n");
-    fprintf(header_file, "      char* Longitude;\n");
-    fprintf(header_file, "      char* Has_Data;\n");
-    fprintf(header_file, "      char* Linked_TZ_Identifier;\n");
-    fprintf(header_file, "      char* Data_Count;\n");
-    fprintf(header_file, "      char* Year_Begin;\n");
-    fprintf(header_file, "      char* Year_End;\n");
-    fprintf(header_file, "      char* Comments;\n");
-    fprintf(header_file, "  } TZDB_Zone_Info_t;\n");
+    fprintf(header_file, "    typedef struct\n");
+    fprintf(header_file, "    {\n");
+    fprintf(header_file, "        char* Time_Zone_ID;\n");
+    fprintf(header_file, "        char* Time_Zone_Identifier;\n");
+    fprintf(header_file, "        char* Country_Code;\n");
+    fprintf(header_file, "        char* Country_Name;\n");
+    fprintf(header_file, "        char* Latitude;\n");
+    fprintf(header_file, "        char* Longitude;\n");
+    fprintf(header_file, "        char* Has_Data;\n");
+    fprintf(header_file, "        char* Linked_TZ_Identifier;\n");
+    fprintf(header_file, "        char* Data_Count;\n");
+    fprintf(header_file, "        char* Year_Begin;\n");
+    fprintf(header_file, "        char* Year_End;\n");
+    fprintf(header_file, "        char* Comments;\n");
+    fprintf(header_file, "    } TZDB_Zone_Info_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "\n");
-    fprintf(header_file, "  extern const ATTRIBUTE_MEM_ALIGN TZDB_Zone_Info_t TZDB_Zones_Info[ZONES_INFO_COUNT];\n");
-    fprintf(header_file, "  extern const ATTRIBUTE_MEM_ALIGN char* TZDB_Zones_Data[ZONES_DATA_COUNT];\n");
-    fprintf(header_file, "  extern const ATTRIBUTE_MEM_ALIGN char* TZDB_Rules_Info[RULES_INFO_COUNT];\n");
-    fprintf(header_file, "  extern const ATTRIBUTE_MEM_ALIGN char* TZDB_Rules_Data[RULES_DATA_COUNT];\n");
+    fprintf(header_file, "    extern const ATTRIBUTE_MEM_ALIGN TZDB_Zone_Info_t TZDB_Zones_Info[ZONES_INFO_COUNT];\n");
+    fprintf(header_file, "    extern const ATTRIBUTE_MEM_ALIGN char* TZDB_Zones_Data[ZONES_DATA_COUNT];\n");
+    fprintf(header_file, "    extern const ATTRIBUTE_MEM_ALIGN char* TZDB_Rules_Info[RULES_INFO_COUNT];\n");
+    fprintf(header_file, "    extern const ATTRIBUTE_MEM_ALIGN char* TZDB_Rules_Data[RULES_DATA_COUNT];\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "#ifdef __cplusplus\n");
     fprintf(header_file, "}\n");
@@ -115,6 +115,9 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     }
     fprintf(c_file, "};\n");
 
+
+
+
     fclose(c_file);
 
 }
@@ -147,8 +150,8 @@ Zones_Info_String_t* Convert_Time_Zone_Info_To_String(Time_Zones_t* tz, Zones_In
         sprintf(tz_info[tz_info_index].Time_Zone_Info[1], "%s", tz->Zones_Info[tz_info_index].Time_Zone_Identifier);
         sprintf(tz_info[tz_info_index].Time_Zone_Info[2], "%s", tz->Zones_Info[tz_info_index].Country_Code);
         sprintf(tz_info[tz_info_index].Time_Zone_Info[3], "%s", tz->Zones_Info[tz_info_index].Country_Name);
-        sprintf(tz_info[tz_info_index].Time_Zone_Info[4], "%.010llf", tz->Zones_Info[tz_info_index].Latitude);
-        sprintf(tz_info[tz_info_index].Time_Zone_Info[5], "%.010llf", tz->Zones_Info[tz_info_index].Longitude);
+        sprintf(tz_info[tz_info_index].Time_Zone_Info[4], "%.06llf", tz->Zones_Info[tz_info_index].Latitude);
+        sprintf(tz_info[tz_info_index].Time_Zone_Info[5], "%.06llf", tz->Zones_Info[tz_info_index].Longitude);
         sprintf(tz_info[tz_info_index].Time_Zone_Info[6], "%d", tz->Zones_Info[tz_info_index].Has_Data);
         sprintf(tz_info[tz_info_index].Time_Zone_Info[7], "%s", tz->Zones_Info[tz_info_index].Linked_TZ_Identifier);
         sprintf(tz_info[tz_info_index].Time_Zone_Info[8], "%d", tz->Zones_Info[tz_info_index].Data_Count);
