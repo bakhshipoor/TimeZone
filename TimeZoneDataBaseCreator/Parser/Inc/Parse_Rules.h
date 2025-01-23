@@ -12,14 +12,14 @@ extern "C" {
     {
         HOUR Hour;
         BOOL Hour_isUTC;
-    } Rule_Year_Hour_t;
+    } Rule_Data_Hour_t;
 
     typedef struct
     {
         DAY Day;
         WEEKDAY Weekday;
         BOOL Weekday_isAfterOrEqual_Day;
-    } Rule_Year_Day_t;
+    } Rule_Data_Day_t;
 
     typedef struct
     {
@@ -27,18 +27,18 @@ extern "C" {
         YEAR To;
         CHAR* Reserved;
         MONTH Month;
-        Rule_Year_Day_t Day;
-        Rule_Year_Hour_t Hour;
+        Rule_Data_Day_t Day;
+        Rule_Data_Hour_t Hour;
         HOUR Save_Hour;
         CHAR* Letter;
         CHAR* Comment;
-    } Rule_Year_t;
+    } Rule_Data_t;
 
     typedef struct
     {
         CHAR* Name;
         COUNTER Years_Count;
-        Rule_Year_t* Years;
+        Rule_Data_t* Years;
         YEAR Year_Begin;
         YEAR Year_End;
     } Rule_Entry_t;

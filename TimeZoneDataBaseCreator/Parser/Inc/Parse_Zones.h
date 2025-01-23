@@ -11,44 +11,45 @@ extern "C" {
     {
         HOUR Hour;
         BOOL Hour_isUTC;       
-    } Zone_Info_Until_Hour_t;
+    } Zone_Data_Until_Hour_t;
 
     typedef struct
     {
         DAY Day;
         WEEKDAY Weekday;
         BOOL Weekday_isAfterOrEqual_Day;
-    } Zone_Info_Until_Day_t;
+    } Zone_Data_Until_Day_t;
 
     typedef struct
     {
         YEAR Year;
         MONTH Month;
-        Zone_Info_Until_Day_t Day;
-        Zone_Info_Until_Hour_t Hour;
-    } Zone_Info_Until_t;
+        Zone_Data_Until_Day_t Day;
+        Zone_Data_Until_Hour_t Hour;
+    } Zone_Data_Until_t;
 
     typedef struct
     {
         BOOL Has_Rule;
         CHAR* Rule_Name;
         HOUR Save_Hour;
-    } Zone_Info_Rule_t;
+    } Zone_Data_Rule_t;
 
     typedef struct
     {
+        COUNTER Time_Zone_ID;
         HOUR Standard_Offset;
-        Zone_Info_Rule_t Rule;
+        Zone_Data_Rule_t Rule;
         CHAR* Format;
-        Zone_Info_Until_t Until;
+        Zone_Data_Until_t Until;
         CHAR* Comment;
-    } Zone_Info_t;
+    } Zone_Data_t;
 
     typedef struct
     {
         CHAR* Name;            
         COUNTER Info_Count;
-        Zone_Info_t* Info;
+        Zone_Data_t* Info;
         YEAR Year_Begin;
         YEAR Year_End;
     } Zone_Entry_t;

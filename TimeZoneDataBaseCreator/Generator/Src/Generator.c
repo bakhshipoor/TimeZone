@@ -21,7 +21,10 @@ BOOL Generate_Data(CONST CHAR** data_folder_path)
     time_zones->Zones_Count = parse_data->Zonetab_Count;
     Generate_Time_Zones_Info(parse_data, &time_zones->Zones_Info, &parse_data->Zonetab_Count);
     
-     
+    Generate_Time_Zones_Data(parse_data, &time_zones->Zones_Data,&time_zones->Zones_Data_Count, &time_zones);
+    
+    time_zones->Rules_Count = parse_data->Rules_Count;
+    Generate_Rules_Info(parse_data, &time_zones->Rules_Info);
 
     return TRUE;
 }
@@ -66,10 +69,10 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Time_Zone_Info_t** zone_
             }
         }
         
-        (*zone_info_list)[zone_index].TZ_Identifier = (CHAR*)malloc((strlen(parse_data->Zonetab[zone_index].TZ_Identifier) + 1) * sizeof(CHAR));
-        if ((*zone_info_list)[zone_index].TZ_Identifier != NULL)
+        (*zone_info_list)[zone_index].Time_Zone_Identifier = (CHAR*)malloc((strlen(parse_data->Zonetab[zone_index].TZ_Identifier) + 1) * sizeof(CHAR));
+        if ((*zone_info_list)[zone_index].Time_Zone_Identifier != NULL)
         {
-            sprintf((*zone_info_list)[zone_index].TZ_Identifier, "%s", parse_data->Zonetab[zone_index].TZ_Identifier);
+            sprintf((*zone_info_list)[zone_index].Time_Zone_Identifier, "%s", parse_data->Zonetab[zone_index].TZ_Identifier);
         }
         
         (*zone_info_list)[zone_index].Latitude = parse_data->Zonetab[zone_index].Latitude;
@@ -82,20 +85,26 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Time_Zone_Info_t** zone_
             sprintf((*zone_info_list)[zone_index].Comments, "%s", parse_data->Zonetab[zone_index].Comments);
         }
 
-        (*zone_info_list)[zone_index].Has_Data = TZ_Check_Data(parse_data, &(*zone_info_list)[zone_index].TZ_Identifier);
+        (*zone_info_list)[zone_index].Has_Data = TZ_Check_Data(parse_data, &(*zone_info_list)[zone_index].Time_Zone_Identifier);
 
         if ((*zone_info_list)[zone_index].Has_Data == FALSE)
         {
-            COUNTER link_index =  TZ_Get_Linked_Identifier(parse_data, &(*zone_info_list)[zone_index].TZ_Identifier);
+            COUNTER link_index =  TZ_Get_Linked_Identifier(parse_data, &(*zone_info_list)[zone_index].Time_Zone_Identifier);
             if (link_index != INDEX_NOT_FOUND)
             {
                 (*zone_info_list)[zone_index].Linked_TZ_Identifier = (CHAR*)calloc(strlen(parse_data->Links[link_index].Target) + 1, sizeof(CHAR));
                 (*zone_info_list)[zone_index].Linked_TZ_Identifier = _strdup(parse_data->Links[link_index].Target);
             }
+            (*zone_info_list)[zone_index].Data_Count = Get_Zone_Data_Count(parse_data, &(*zone_info_list)[zone_index].Linked_TZ_Identifier);
+            (*zone_info_list)[zone_index].Year_Begin = Get_Zone_Year_Begin(parse_data,&(*zone_info_list)[zone_index].Linked_TZ_Identifier);
+            (*zone_info_list)[zone_index].Year_End = Get_Zone_Year_End(parse_data, &(*zone_info_list)[zone_index].Linked_TZ_Identifier);
         }
         else
         {
             (*zone_info_list)[zone_index].Linked_TZ_Identifier = (CHAR*)calloc(1,sizeof(CHAR));
+            (*zone_info_list)[zone_index].Data_Count = Get_Zone_Data_Count(parse_data, &(*zone_info_list)[zone_index].Time_Zone_Identifier);
+            (*zone_info_list)[zone_index].Year_Begin = Get_Zone_Year_Begin(parse_data, &(*zone_info_list)[zone_index].Time_Zone_Identifier);
+            (*zone_info_list)[zone_index].Year_End = Get_Zone_Year_End(parse_data, &(*zone_info_list)[zone_index].Time_Zone_Identifier);
         }
         
     }
@@ -105,9 +114,81 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Time_Zone_Info_t** zone_
    
     for (COUNTER tz_index = 0; tz_index < *zones_count; tz_index++)
     {
-        (*zone_info_list)[tz_index].TZ_ID = tz_index + 1;
+        (*zone_info_list)[tz_index].Time_Zone_ID = tz_index + 1;
     }
    
+}
+
+VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, Zone_Data_t** zones_data_list, COUNTER* zones_data_count, Time_Zones_t** tz_list)
+{
+    Sort_Zone_Data_By_Identifier(&parse_data->Zones, &parse_data->Zones_Count);
+    *zones_data_count = 0;
+    COUNTER zone_index = 0;
+    COUNTER data_index = 0;
+    for (zone_index = 0; zone_index < parse_data->Zones_Count; zone_index++)
+    {
+        for (data_index = 0; data_index< parse_data->Zones[zone_index].Info_Count; data_index++)
+        {
+            Zone_Data_t* z_data;
+            if (*zones_data_count == 0)
+            {
+                z_data = (Zone_Data_t*)malloc(sizeof(Zone_Data_t));
+            }
+            else
+            {
+                z_data = (Zone_Data_t*)realloc(*zones_data_list, (*zones_data_count + 1) * sizeof(Zone_Data_t));
+            }
+            if (z_data == NULL)
+            {
+                return;
+            }
+            *zones_data_list = z_data;
+
+            (*zones_data_list)[*zones_data_count] = parse_data->Zones[zone_index].Info[data_index];
+            (*zones_data_list)[*zones_data_count].Time_Zone_ID = Get_TZ_ID(&(*tz_list)->Zones_Info,&(*tz_list)->Zones_Count,&parse_data->Zones[zone_index].Name);
+            (*zones_data_count)++;
+        }
+    }
+}
+
+VOID Generate_Rules_Info(Parse_Data_t* parse_data, Rule_Info_t** rules_info_list)
+{
+    COUNTER rule_index = 0;
+    for (rule_index = 0; rule_index < parse_data->Rules_Count; rule_index++)
+    {
+        Rule_Info_t* r_info;
+        if (rule_index == 0)
+        {
+            r_info = (Rule_Info_t*)malloc(sizeof(Rule_Info_t));
+        }
+        else
+        {
+            r_info = (Rule_Info_t*)realloc(*rules_info_list, (rule_index + 1) * sizeof(Rule_Info_t));
+        }
+        if (r_info == NULL)
+        {
+            return;
+        }
+        *rules_info_list = r_info;
+
+        (*rules_info_list)[rule_index].Name = (CHAR*)calloc(strlen(parse_data->Rules[rule_index].Name) + 1, sizeof(CHAR));
+        if ((*rules_info_list)[rule_index].Name != NULL)
+        {
+            (*rules_info_list)[rule_index].Name = _strdup(parse_data->Rules[rule_index].Name);
+        }
+
+        (*rules_info_list)[rule_index].Years_Count = parse_data->Rules[rule_index].Years_Count;
+        (*rules_info_list)[rule_index].Year_Begin = parse_data->Rules[rule_index].Year_Begin;
+        (*rules_info_list)[rule_index].Year_End = parse_data->Rules[rule_index].Year_End;
+    }
+
+    Sort_Rules_Info_By_Name(rules_info_list, &parse_data->Rules_Count);
+
+    for (rule_index = 0; rule_index < parse_data->Rules_Count; rule_index++)
+    {
+        (*rules_info_list)[rule_index].Rule_ID = rule_index + 1;
+    }
+
 }
 
 COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR** country_code)
@@ -160,15 +241,66 @@ COUNTER TZ_Get_Linked_Identifier(CONST Parse_Data_t* parse_data, CONST CHAR** tz
     return INDEX_NOT_FOUND;
 }
 
+YEAR Get_Zone_Year_Begin(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire)
+{
+    if (*tz_identifire == NULL)
+    {
+        return INVALID_YEAR;
+    }
+
+    COUNTER tz_index = 0;
+    for (tz_index = 0; tz_index < parse_data->Zones_Count; tz_index++)
+    {
+        if (strcmp(parse_data->Zones[tz_index].Name, *tz_identifire) == 0)
+        {
+            return parse_data->Zones[tz_index].Year_Begin;
+        }
+    }
+    return INVALID_YEAR;
+}
+
+YEAR Get_Zone_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire)
+{
+    if (*tz_identifire == NULL)
+    {
+        return INVALID_YEAR;
+    }
+
+    COUNTER tz_index = 0;
+    for (tz_index = 0; tz_index < parse_data->Zones_Count; tz_index++)
+    {
+        if (strcmp(parse_data->Zones[tz_index].Name, *tz_identifire) == 0)
+        {
+            return parse_data->Zones[tz_index].Year_End;
+        }
+    }
+
+    return INVALID_YEAR;
+}
+
+COUNTER Get_Zone_Data_Count(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire)
+{
+    COUNTER counts = 0;
+    COUNTER tz_index = 0;
+    COUNTER data_index = 0;
+    for (tz_index = 0; tz_index < parse_data->Zones_Count; tz_index++)
+    {
+        if (strcmp(parse_data->Zones[tz_index].Name, *tz_identifire) == 0)
+        {
+            return parse_data->Zones[tz_index].Info_Count;
+        }
+    }
+    return counts;
+}
 
 COUNTER Get_TZ_ID(CONST Time_Zone_Info_t** tz_info_list, CONST COUNTER* tz_info_count, CONST CHAR** tz_identifier)
 {
     COUNTER tz_id = 0;
     for (COUNTER tz_info_index = 0; tz_info_index < *tz_info_count; tz_info_index++)
     {
-        if (strcmp((*tz_info_list)[tz_info_index].TZ_Identifier, *tz_identifier) == 0)
+        if (strcmp((*tz_info_list)[tz_info_index].Time_Zone_Identifier, *tz_identifier) == 0)
         {
-            return (*tz_info_list)[tz_info_index].TZ_ID;
+            return (*tz_info_list)[tz_info_index].Time_Zone_ID;
         }
     }
     return tz_id;
@@ -193,7 +325,7 @@ INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b)
 {
     Time_Zone_Info_t* structA = (Time_Zone_Info_t*)a;
     Time_Zone_Info_t* structB = (Time_Zone_Info_t*)b;
-    return strcmp(structA->TZ_Identifier, structB->TZ_Identifier);
+    return strcmp(structA->Time_Zone_Identifier, structB->Time_Zone_Identifier);
 }
 
 VOID Sort_Zone_Info_By_Identifier(Time_Zone_Info_t** zone_info, COUNTER* info_count)
@@ -201,7 +333,29 @@ VOID Sort_Zone_Info_By_Identifier(Time_Zone_Info_t** zone_info, COUNTER* info_co
     qsort(*zone_info, *info_count, sizeof(Time_Zone_Info_t), Compare_TZ_Identifier);
 }
 
+INT Compare_Zones_Data_Identifier(CONST VOID* a, CONST VOID* b)
+{
+    Zone_Entry_t* structA = (Zone_Entry_t*)a;
+    Zone_Entry_t* structB = (Zone_Entry_t*)b;
+    return strcmp(structA->Name, structB->Name);
+}
 
+VOID Sort_Zone_Data_By_Identifier(Zone_Entry_t** zone_data, COUNTER* data_count)
+{
+    qsort(*zone_data, *data_count, sizeof(Zone_Entry_t), Compare_Zones_Data_Identifier);
+}
+
+INT Compare_Rules_Info_Name(CONST VOID* a, CONST VOID* b)
+{
+    Rule_Info_t* structA = (Rule_Info_t*)a;
+    Rule_Info_t* structB = (Rule_Info_t*)b;
+    return strcmp(structA->Name, structB->Name);
+}
+
+VOID Sort_Rules_Info_By_Name(Rule_Info_t** rules_info, COUNTER* info_count)
+{
+    qsort(*rules_info, *info_count, sizeof(Zone_Entry_t), Compare_Rules_Info_Name);
+}
 
 
 //INT Compare_Standard_Offset(CONST VOID* a, CONST VOID* b) 

@@ -9,44 +9,50 @@ extern "C" {
 
     typedef struct
     {
-        COUNTER TZ_ID;
-        CHAR* TZ_Identifier;
+        COUNTER Time_Zone_ID;
+        CHAR* Time_Zone_Identifier;
         CHAR* Country_Code;
         CHAR* Country_Name;
         LOCATION Latitude;
         LOCATION Longitude;
         CHAR* Comments;
-        // TZ Linked
         BOOL Has_Data;
         CHAR* Linked_TZ_Identifier;
-
+        COUNTER Data_Count;
+        YEAR Year_Begin;
+        YEAR Year_End;
     }Time_Zone_Info_t;
 
     typedef struct
     {
-        COUNTER Link_Name_TZ_ID;
-    }Time_Zone_Link_Name_t;
+        COUNTER Rule_ID;
+        CHAR* Name;
+        COUNTER Years_Count;
+        YEAR Year_Begin;
+        YEAR Year_End;
+    } Rule_Info_t;
 
-    typedef struct
-    {
-        COUNTER Target_TZ_ID;
-        COUNTER Link_Name_Count;
-        Time_Zone_Link_Name_t* Link_Name_List;
-    }Time_Zone_Links_t;
 
     typedef struct
     {
         COUNTER Zones_Count;
         Time_Zone_Info_t* Zones_Info;
-        COUNTER Links_Count;
-        Time_Zone_Links_t* Links;
+        COUNTER Zones_Data_Count;
+        Zone_Data_t* Zones_Data;
+        COUNTER Rules_Count;
+        Rule_Info_t* Rules_Info;
     }Time_Zones_t;
 
     BOOL Generate_Data(CONST CHAR** data_folder_path);
     VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Time_Zone_Info_t** zone_info_list, CONST COUNTER* zones_count);
+    VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, Zone_Data_t** zones_data_list, COUNTER* zones_data_count, Time_Zones_t** tz_list);
+    VOID Generate_Rules_Info(Parse_Data_t* parse_data, Rule_Info_t** rules_info_list);
     COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR** country_code);
     BOOL TZ_Check_Data(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifier);
     COUNTER TZ_Get_Linked_Identifier(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
+    YEAR Get_Zone_Year_Begin(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
+    YEAR Get_Zone_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
+    COUNTER Get_Zone_Data_Count(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
     COUNTER Get_TZ_ID(CONST Time_Zone_Info_t** tz_info_list, CONST COUNTER* tz_info_count, CONST CHAR** tz_identifier);
 
 
@@ -57,8 +63,10 @@ extern "C" {
 
     INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b);
     VOID Sort_Zone_Info_By_Identifier(Time_Zone_Info_t** zone_info, COUNTER* info_count);
-
-
+    INT Compare_Zones_Data_Identifier(CONST VOID* a, CONST VOID* b);
+    VOID Sort_Zone_Data_By_Identifier(Zone_Entry_t** zone_data, COUNTER* data_count);
+    INT Compare_Rules_Info_Name(CONST VOID* a, CONST VOID* b);
+    VOID Sort_Rules_Info_By_Name(Rule_Info_t** rules_info, COUNTER* info_count);
     
    
 
