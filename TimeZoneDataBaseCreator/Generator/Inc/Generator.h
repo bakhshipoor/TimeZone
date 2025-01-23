@@ -15,12 +15,12 @@ extern "C" {
         CHAR* Country_Name;
         LOCATION Latitude;
         LOCATION Longitude;
-        CHAR* Comments;
         BOOL Has_Data;
         CHAR* Linked_TZ_Identifier;
         COUNTER Data_Count;
         YEAR Year_Begin;
         YEAR Year_End;
+        CHAR* Comments;
     }Zone_Info_t;
 
     typedef struct
