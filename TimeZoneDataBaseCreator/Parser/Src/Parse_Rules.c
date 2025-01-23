@@ -141,6 +141,10 @@ STATIC VOID Parse_Rule_Year_Range(Rule_Entry_t** rule_list, CONST COUNTER* rule_
 
 STATIC BOOL Rule_Year_Create(Rule_Year_t** year_list, CONST COUNTER* years_count, CONST Rule_Data_t* rule_data)
 {
+    if (years_count == NULL || rule_data == NULL)
+    {
+        return FALSE;
+    }
 
     Rule_Year_t* rule_year = (Rule_Year_t*)calloc(1, sizeof(Rule_Year_t));
     if (rule_year == NULL)
@@ -187,7 +191,8 @@ STATIC BOOL Rule_Year_Create(Rule_Year_t** year_list, CONST COUNTER* years_count
     }
     *year_list = year;
     (*year_list)[*years_count] = *rule_year;
-    *years_count++;
+
+    free(rule_year);
 
     return TRUE;
 }

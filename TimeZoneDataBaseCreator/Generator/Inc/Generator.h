@@ -7,75 +7,60 @@ extern "C" {
 
 #include "../../Parser/Inc/Parser.h"
 
-
     typedef struct
     {
-        MONTH Month;
-        DAY Day;
-        WEEKDAY Weekday;
-        HOUR Hour;
-        BOOL Hour_isUTC;
-    }G_Effect_Time_t;
-
-    typedef struct
-    {
-        G_Effect_Time_t Start;
-        G_Effect_Time_t End;
-    }G_Effects_t;
-
-    typedef struct
-    {
-        YEAR Year;
-        HOUR Standard_Offset;
-        COUNTER Standard_Effects_Coutnt;
-        G_Effects_t* Standard_Effects;
-        BOOL DST_Effect;
-        HOUR DST_Offset;
-        COUNTER DST_Effects_Coutnt;
-        G_Effects_t* DST_Effects;
-        CHAR* Format;
-    }G_Yeaars_t;
-
-    typedef struct
-    {
+        COUNTER TZ_ID;
+        CHAR* TZ_Identifier;
         CHAR* Country_Code;
         CHAR* Country_Name;
-        CHAR* TZ_Identifier;
         LOCATION Latitude;
         LOCATION Longitude;
         CHAR* Comments;
-        HOUR Standard_Offset;
-        CHAR Standard_Offset_Text[10];
-        BOOL DST_Effect;
-        HOUR DST_Offset;
-        CHAR DST_Offset_Text[10];
-        YEAR Year_Begin;
-        YEAR Year_End;
-        COUNTER Years_Count;
-        G_Yeaars_t* Years;
-    }G_Zone_Info_t;
+        // TZ Linked
+        BOOL Has_Data;
+        CHAR* Linked_TZ_Identifier;
+
+    }Time_Zone_Info_t;
+
+    typedef struct
+    {
+        COUNTER Link_Name_TZ_ID;
+    }Time_Zone_Link_Name_t;
+
+    typedef struct
+    {
+        COUNTER Target_TZ_ID;
+        COUNTER Link_Name_Count;
+        Time_Zone_Link_Name_t* Link_Name_List;
+    }Time_Zone_Links_t;
 
     typedef struct
     {
         COUNTER Zones_Count;
-        G_Zone_Info_t* Zone;
-    }G_Time_Zones_t;
+        Time_Zone_Info_t* Zones_Info;
+        COUNTER Links_Count;
+        Time_Zone_Links_t* Links;
+    }Time_Zones_t;
 
     BOOL Generate_Data(CONST CHAR** data_folder_path);
-    BOOL Generate_Full_List(CONST CHAR** data_folder_path);
-    COUNTER Get_Country_Name(CONST Parse_Data_t** parse_data, CONST CHAR** country_code);
-    HOUR Get_Zone_Last_Standard_Offset(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire);
-    VOID Get_Zone_DST_Effect(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire, BOOL* dst_effect, HOUR* save_hour);
-    YEAR Get_Zone_Year_Begin(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire);
-    YEAR Get_Zone_Year_End(CONST Parse_Data_t** parse_data, CONST CHAR** tz_identifire);
-    YEAR Get_Rule_Year_End(CONST Parse_Data_t** parse_data, CONST CHAR** rule_name);
-    VOID Get_Rule_Year_End_DST_Data(CONST Parse_Data_t** parse_data, CONST CHAR** rule_name, BOOL* dst_effect, HOUR* save_hour);
+    VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Time_Zone_Info_t** zone_info_list, CONST COUNTER* zones_count);
+    COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR** country_code);
+    BOOL TZ_Check_Data(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifier);
+    COUNTER TZ_Get_Linked_Identifier(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
+    COUNTER Get_TZ_ID(CONST Time_Zone_Info_t** tz_info_list, CONST COUNTER* tz_info_count, CONST CHAR** tz_identifier);
+
+
+
+
+
+
+
     INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Zone_Info_By_Identifier(G_Zone_Info_t** zone_info, COUNTER* info_count);
-    INT Compare_Standard_Offset(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Zone_Info_By_STD_Offset(G_Zone_Info_t** zone_info, COUNTER* info_count);
-    INT Compare_Zones_Standard_Offset_Then_Identifier(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Zone_Info_By_STD_Offset_Then_Identifier(G_Zone_Info_t** zone_info, COUNTER* info_count);
+    VOID Sort_Zone_Info_By_Identifier(Time_Zone_Info_t** zone_info, COUNTER* info_count);
+
+
+    
+   
 
 #ifdef __cplusplus
 }

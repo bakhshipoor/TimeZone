@@ -92,12 +92,13 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
             {
                 Parse_ZoneTab(&line, &data->Zonetab, &data->Zonetab_Count);
             }
-            else if (dataFile_index == FILE_BACKWARD)
+            /*else if (dataFile_index == FILE_BACKWARD)
             {
-                Parse_Links(&line, &data->Links, &data->Links_Count);
-            }
+                
+            }*/
             else
             {
+                Parse_Links(&line, &data->Links, &data->Links_Count);
                 Parse_Rules(&line, &data->Rules, &data->Rules_Count);
                 Parse_Zones(&line, &data->Zones, &data->Zones_Count);
             }

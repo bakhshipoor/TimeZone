@@ -7,13 +7,17 @@ extern "C" {
 
 #include "Parse_Common.h"
 
-   
+    typedef struct
+    {
+        CHAR* Link_Name;
+    }Link_Name_t;
 
     typedef struct
     {
         CHAR* Target;
         CHAR* Link_Name;
-        CHAR* Target1;
+        /*COUNTER Link_Name_Counts;
+        Link_Name_t* Link_Names;*/
     }Link_Entry_t;
 
     Link_Entry_t* Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER* links_count);
