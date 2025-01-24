@@ -147,9 +147,16 @@ VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, Zone_Data_t** zones_data
             *zones_data_list = z_data;
 
             (*zones_data_list)[*zones_data_count] = parse_data->Zones[zone_index].Info[data_index];
+            if (strcmp(parse_data->Zones[zone_index].Name, "Europe/Astrakhan") == 0)
+            {
+                int x = 0;
+                x++;
+            }
             (*zones_data_list)[*zones_data_count].Time_Zone_ID = Get_Zone_ID(&(*tz_list)->Zones_Info,&(*tz_list)->Zones_Count,&parse_data->Zones[zone_index].Name);
             (*zones_data_count)++;
+            
         }
+        
     }
 }
 

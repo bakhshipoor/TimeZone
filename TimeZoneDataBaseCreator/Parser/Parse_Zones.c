@@ -158,6 +158,10 @@ STATIC BOOL Zone_Info_Create(Zone_Data_t** info_list, CONST COUNTER* info_count,
     info->Comment = (CHAR*)malloc((strlen(zone_data->Comment) + 1) * sizeof(CHAR));
     if (info->Comment != NULL)
     {
+        if (strlen(zone_data->Comment) > 0 && zone_data->Comment[0] == ' ')
+        {
+            strcpy(zone_data->Comment, zone_data->Comment + 1);
+        }
         sprintf(info->Comment, "%s", zone_data->Comment);
     }
     Zone_Data_t* z_info;
