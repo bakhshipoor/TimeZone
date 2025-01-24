@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 #include <stdint.h>
-#include <stdBOOL.h>
+#include <stdbool.h>
 
 #define TZDB_VERSION_MAJOR            2025
 #define TZDB_VERSION_MINOR            "a"
@@ -34,6 +34,7 @@ extern "C" {
 #define TZDB_RULES_INFO_COUNT         134
 #define TZDB_RULES_DATA_COUNT         2101
 
+#define TZDB_MAX_LENGHT_IDENTIFIER    31
 #define TZDB_YEAR_END_MAX             -1
 
     typedef enum

@@ -12,7 +12,7 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
-#include <stdBOOL.h>
+#include <stdbool.h>
 #include <ctype.h>
 #include <limits.h>
 #include <windows.h>

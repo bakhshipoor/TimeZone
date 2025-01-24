@@ -91,6 +91,7 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "#define TZDB_RULES_INFO_COUNT         %d\n", tz->Rules_Count);
     fprintf(header_file, "#define TZDB_RULES_DATA_COUNT         %d\n", tz->Rules_Data_Count);
     fprintf(header_file, "\n");
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_IDENTIFIER    %d\n", zones_info_lenght.Zones_Info[1] + 1);
     fprintf(header_file, "#define TZDB_YEAR_END_MAX             -1\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef enum\n");
