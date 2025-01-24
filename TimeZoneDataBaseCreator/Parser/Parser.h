@@ -5,12 +5,12 @@
 extern "C" {
 #endif
 
-#include "../Inc/Parse_Version.h"
-#include "../Inc/Parse_ISO3166tab.h"
-#include "../Inc/Parse_Zonetab.h"
-#include "../Inc/Parse_Links.h"
-#include "../Inc/Parse_Rules.h"
-#include "../Inc/Parse_Zones.h"
+#include "Parse_Version.h"
+#include "Parse_ISO3166tab.h"
+#include "Parse_Zonetab.h"
+#include "Parse_Links.h"
+#include "Parse_Rules.h"
+#include "Parse_Zones.h"
 
 
 

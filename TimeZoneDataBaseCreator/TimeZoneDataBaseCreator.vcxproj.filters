@@ -18,34 +18,34 @@
     <ClInclude Include="TimeZoneDBCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parse_Rules.h">
+    <ClInclude Include="Parser\Parse_Rules.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parse_Zones.h">
+    <ClInclude Include="Parser\Parse_Zones.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parse_Common.h">
+    <ClInclude Include="Parser\Parse_Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parse_Version.h">
+    <ClInclude Include="Parser\Parse_Version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parse_Zonetab.h">
+    <ClInclude Include="Parser\Parse_Zonetab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parse_ISO3166tab.h">
+    <ClInclude Include="Parser\Parse_ISO3166tab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parser.h">
+    <ClInclude Include="Parser\Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Generator\Inc\Generator.h">
+    <ClInclude Include="Generator\Generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser\Inc\Parse_Links.h">
+    <ClInclude Include="Parser\Parse_Links.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Creator\Inc\Creator.h">
+    <ClInclude Include="Creator\Creator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,37 +53,37 @@
     <ClCompile Include="TimeZoneDBCreator.C">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_Rules.c">
+    <ClCompile Include="Parser\Parse_Rules.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_Constants.c">
+    <ClCompile Include="Parser\Parse_Constants.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_Zones.c">
+    <ClCompile Include="Parser\Parse_Zones.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_Common.c">
+    <ClCompile Include="Parser\Parse_Common.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_Version.c">
+    <ClCompile Include="Parser\Parse_Version.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_Zonetab.c">
+    <ClCompile Include="Parser\Parse_Zonetab.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_ISO3166tab.c">
+    <ClCompile Include="Parser\Parse_ISO3166tab.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parser.c">
+    <ClCompile Include="Parser\Parser.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Generator\Src\Generator.c">
+    <ClCompile Include="Generator\Generator.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser\Src\Parse_Links.c">
+    <ClCompile Include="Parser\Parse_Links.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Creator\Src\Creator.c">
+    <ClCompile Include="Creator\Creator.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

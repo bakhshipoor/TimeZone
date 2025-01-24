@@ -1,12 +1,7 @@
 
 //#include "../Inc/TimeZoneDBCreator.h"
-#include "Creator/Inc/Creator.h"
+#include "Creator/Creator.h"
 
-const char* sss[] = {
-
-    //dfd
-    { "dddd"},
-};
 
 int main()
 {

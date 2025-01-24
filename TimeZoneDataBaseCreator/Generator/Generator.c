@@ -1,5 +1,5 @@
 ﻿
-#include "../Inc/Generator.h"
+#include "Generator.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -17,6 +17,8 @@ Time_Zones_t* Generate_Data(CONST CHAR** data_folder_path)
     {
         return NULL;
     }
+
+    time_zones->Version = *parse_data->Version;
     
     time_zones->Zones_Count = parse_data->Zonetab_Count;
     Generate_Time_Zones_Info(parse_data, &time_zones->Zones_Info, &parse_data->Zonetab_Count);

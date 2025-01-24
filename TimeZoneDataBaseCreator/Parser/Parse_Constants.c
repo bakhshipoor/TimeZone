@@ -1,4 +1,4 @@
-#include "../Inc/Parse_Common.h"
+#include "Parse_Common.h"
 
 CONST Weekday_Lookup_t Weekday_Names[TZDB_WEEKDAY_TOTAL] = {
     { "Sun", "Sunday",      "lastSun", "lastSunday",        (WEEKDAY)TZDB_WEEKDAY_SUNDAY },

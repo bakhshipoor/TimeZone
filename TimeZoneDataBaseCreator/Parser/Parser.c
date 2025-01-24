@@ -1,4 +1,4 @@
-#include "../Inc/Parser.h"
+#include "Parser.h"
 
 CHAR* line;
 // Data Files

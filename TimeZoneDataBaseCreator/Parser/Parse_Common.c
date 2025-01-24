@@ -1,4 +1,4 @@
-﻿#include "../Inc/Parse_Common.h"
+﻿#include "Parse_Common.h"
 
 HOUR Parse_Hour(CONST CHAR** hour, CHAR* suffix)
 {

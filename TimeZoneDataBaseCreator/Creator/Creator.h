@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include "../../Generator/Inc/Generator.h"
+#include "../Generator/Generator.h"
 
     typedef struct
     {

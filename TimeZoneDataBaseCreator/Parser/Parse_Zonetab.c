@@ -1,4 +1,4 @@
-#include "../Inc/Parse_Zonetab.h"
+#include "Parse_Zonetab.h"
 
 typedef struct
 {

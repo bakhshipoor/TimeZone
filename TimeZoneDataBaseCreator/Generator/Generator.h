@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include "../../Parser/Inc/Parser.h"
+#include "../Parser/Parser.h"
 
     typedef struct
     {
@@ -35,6 +35,7 @@ extern "C" {
 
     typedef struct
     {
+        Version_t Version;
         COUNTER Zones_Count;
         COUNTER Zones_Data_Count;
         COUNTER Rules_Count;

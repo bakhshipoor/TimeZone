@@ -1,4 +1,4 @@
-﻿#include "../Inc/Parse_Rules.h"
+﻿#include "Parse_Rules.h"
 
 typedef struct
 {
