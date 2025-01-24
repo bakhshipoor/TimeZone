@@ -10,12 +10,12 @@
 
 This repository contains two C libraries:
 
-* **TimeZoneDataBaseCreator:** This library extracts time zone data from the IANA time zone database and generates C code files for use in embedded systems.
+* **TimeZoneDatabaseCreator:** This library extracts time zone data from the IANA time zone database and generates C code files for use in embedded systems.
 * **TimeZoneOffsetCalculator:** This library calculates time zone offsets based on the generated data.
 
 ### Prerequisites
 
-* **Microsoft Visual Studio 2022 (Version 17.12.0 or later)** is recommended for building the `TimeZoneDataBaseCreator`.
+* **Microsoft Visual Studio 2022 (Version 17.12.0 or later)** is recommended for building the `TimeZoneDatabaseCreator`.
 * **A C compiler** for the target platform of your embedded system.
 
 ### Getting Started
@@ -25,9 +25,9 @@ This repository contains two C libraries:
 1. Download the latest **Data Only Distribution** from https://www.iana.org/time-zones.
 2. Extract the downloaded archive to a suitable location.
 
-#### Building the TimeZoneDataBaseCreator
+#### Building the TimeZoneDatabaseCreator
 
-1. Open the `TimeZoneDataBaseCreator` solution in Visual Studio.
+1. Open the `TimeZoneDatabaseCreator` solution in Visual Studio.
 2. Configure the project to point to the extracted IANA time zone database.
 3. Build the solution.
 
