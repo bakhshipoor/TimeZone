@@ -15,8 +15,8 @@ extern "C" {
 #include <stdint.h>
 #include <stdBOOL.h>
 
-#define TZDB_VERSION_MAJOR                 2025
-#define TZDB_VERSION_MINOR                 "a"
+#define TZDB_VERSION_MAJOR            2025
+#define TZDB_VERSION_MINOR            "a"
 
 // Enforces strict memory alignment for data, preventing potential performance issues 
 // and unexpected behavior in microcontroller environments. 
@@ -34,7 +34,7 @@ extern "C" {
 #define TZDB_RULES_INFO_COUNT         134
 #define TZDB_RULES_DATA_COUNT         2101
 
-#define YEAR_END_MAX                  -1
+#define TZDB_YEAR_END_MAX             -1
 
     typedef enum
     {
@@ -90,9 +90,9 @@ extern "C" {
         int32_t       time_zone_id;
         int64_t       standard_offset;
         bool          has_rule;
-        uint8_t*      rule_name[13];
+        uint8_t       rule_name[13];
         int64_t       save_hour;
-        uint8_t*      format[10];
+        uint8_t       format[10];
         int32_t       year;
         uint8_t       month;
         uint8_t       day;
@@ -100,13 +100,13 @@ extern "C" {
         bool          weekday_isafterorequal_day;
         int64_t       hour;
         bool          hour_isUTC;
-        uint8_t*      comments[24];
+        uint8_t       comments[24];
     } tzdb_zone_data_t;
 
     typedef struct
     {
         int32_t       rule_id;
-        uint8_t*      name[13];
+        uint8_t       name[13];
         int32_t       years_count;
         int32_t       year_begin;
         int32_t       year_end;
@@ -124,8 +124,8 @@ extern "C" {
         int64_t       hour;
         bool          hour_isUTC;
         int64_t       save_hour;
-        uint8_t*      letter[6];
-        uint8_t*      comment[10];
+        uint8_t       letter[6];
+        uint8_t       comment[10];
     } tzdb_rule_data_t;
 
     extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT];

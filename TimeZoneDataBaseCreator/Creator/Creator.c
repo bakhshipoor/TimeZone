@@ -72,8 +72,8 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "#include <stdint.h>\n");
     fprintf(header_file, "#include <stdBOOL.h>\n");
     fprintf(header_file, "\n");
-    fprintf(header_file, "#define TZDB_VERSION_MAJOR                 %d\n",tz->Version.Major);
-    fprintf(header_file, "#define TZDB_VERSION_MINOR                 \"%s\"\n",tz->Version.Minor);
+    fprintf(header_file, "#define TZDB_VERSION_MAJOR            %d\n",tz->Version.Major);
+    fprintf(header_file, "#define TZDB_VERSION_MINOR            \"%s\"\n",tz->Version.Minor);
     fprintf(header_file, "\n");
     fprintf(header_file, "// Enforces strict memory alignment for data, preventing potential performance issues \n");
     fprintf(header_file, "// and unexpected behavior in microcontroller environments. \n");
@@ -91,7 +91,7 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "#define TZDB_RULES_INFO_COUNT         %d\n", tz->Rules_Count);
     fprintf(header_file, "#define TZDB_RULES_DATA_COUNT         %d\n", tz->Rules_Data_Count);
     fprintf(header_file, "\n");
-    fprintf(header_file, "#define YEAR_END_MAX                  -1\n");
+    fprintf(header_file, "#define TZDB_YEAR_END_MAX             -1\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef enum\n");
     fprintf(header_file, "    {\n");
@@ -147,9 +147,9 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        int32_t       time_zone_id;\n");
     fprintf(header_file, "        int64_t       standard_offset;\n");
     fprintf(header_file, "        bool          has_rule;\n");
-    fprintf(header_file, "        uint8_t*      rule_name[%d];\n", zones_data_lenght.Zones_Data[3] + 1);
+    fprintf(header_file, "        uint8_t       rule_name[%d];\n", zones_data_lenght.Zones_Data[3] + 1);
     fprintf(header_file, "        int64_t       save_hour;\n");
-    fprintf(header_file, "        uint8_t*      format[%d];\n", zones_data_lenght.Zones_Data[5] + 1);
+    fprintf(header_file, "        uint8_t       format[%d];\n", zones_data_lenght.Zones_Data[5] + 1);
     fprintf(header_file, "        int32_t       year;\n");
     fprintf(header_file, "        uint8_t       month;\n");
     fprintf(header_file, "        uint8_t       day;\n");
@@ -157,13 +157,13 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        bool          weekday_isafterorequal_day;\n");
     fprintf(header_file, "        int64_t       hour;\n");
     fprintf(header_file, "        bool          hour_isUTC;\n");
-    fprintf(header_file, "        uint8_t*      comments[%d];\n", zones_data_lenght.Zones_Data[13] + 1);
+    fprintf(header_file, "        uint8_t       comments[%d];\n", zones_data_lenght.Zones_Data[13] + 1);
     fprintf(header_file, "    } tzdb_zone_data_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
     fprintf(header_file, "        int32_t       rule_id;\n");
-    fprintf(header_file, "        uint8_t*      name[%d];\n", rules_info_lenght.Rules_Info[1] + 1);
+    fprintf(header_file, "        uint8_t       name[%d];\n", rules_info_lenght.Rules_Info[1] + 1);
     fprintf(header_file, "        int32_t       years_count;\n");
     fprintf(header_file, "        int32_t       year_begin;\n");
     fprintf(header_file, "        int32_t       year_end;\n");
@@ -181,8 +181,8 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        int64_t       hour;\n");
     fprintf(header_file, "        bool          hour_isUTC;\n");
     fprintf(header_file, "        int64_t       save_hour;\n");
-    fprintf(header_file, "        uint8_t*      letter[%d];\n", rules_data_lenght.Rules_Data[10] + 1);
-    fprintf(header_file, "        uint8_t*      comment[%d];\n", rules_data_lenght.Rules_Data[11] + 1);
+    fprintf(header_file, "        uint8_t       letter[%d];\n", rules_data_lenght.Rules_Data[10] + 1);
+    fprintf(header_file, "        uint8_t       comment[%d];\n", rules_data_lenght.Rules_Data[11] + 1);
     fprintf(header_file, "    } tzdb_rule_data_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT];\n");
