@@ -24,6 +24,7 @@
     <ProjectGuid>{e8542882-d978-4bdf-bd0c-1267f6b6d6ad}</ProjectGuid>
     <RootNamespace>TimeZoneOffsetCalculator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TimeZoneCalculator</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
