@@ -13,11 +13,10 @@ extern "C" {
 #endif
 
 #include <stdint.h>
-
+#include <stdBOOL.h>
 
 #define TZDB_VERSION_MAJOR                 2025
 #define TZDB_VERSION_MINOR                 "a"
-
 
 // Enforces strict memory alignment for data, preventing potential performance issues 
 // and unexpected behavior in microcontroller environments. 
@@ -35,6 +34,40 @@ extern "C" {
 #define TZDB_RULES_INFO_COUNT         134
 #define TZDB_RULES_DATA_COUNT         2101
 
+#define YEAR_END_MAX                  -1
+
+    typedef enum
+    {
+        TZDB_WEEKDAY_SUNDAY = 0,
+        TZDB_WEEKDAY_MONDAY,
+        TZDB_WEEKDAY_TUESDAY,
+        TZDB_WEEKDAY_WEDNESDAY,
+        TZDB_WEEKDAY_THURSDAY,
+        TZDB_WEEKDAY_FRIDAY,
+        TZDB_WEEKDAY_SATURDAY,
+        
+        TZDB_WEEKDAY_TOTAL,
+        TZDB_WEEKDAY_NONE = 255,
+    } tzdb_weekday_number_e;
+
+    typedef enum
+    {
+        TZDB_MONTH_NONE = 0,
+        TZDB_MONTH_JANUARY,
+        TZDB_MONTH_FEBRUARY,
+        TZDB_MONTH_MARCH,
+        TZDB_MONTH_APRIL,
+        TZDB_MONTH_MAY,
+        TZDB_MONTH_JUNE,
+        TZDB_MONTH_JULY,
+        TZDB_MONTH_AUGUST,
+        TZDB_MONTH_SEPTEMBER,
+        TZDB_MONTH_OCTOBER,
+        TZDB_MONTH_NOVEMBER,
+        TZDB_MONTH_DECEMBER,
+        
+        TZDB_MONTH_TOTAL = TZDB_MONTH_DECEMBER,
+    } tzdb_month_number_e;
 
     typedef struct
     {
