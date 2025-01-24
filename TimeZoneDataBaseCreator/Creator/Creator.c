@@ -70,7 +70,7 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "#endif\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "#include <stdint.h>\n");
-    fprintf(header_file, "#include <stdBOOL.h>\n");
+    fprintf(header_file, "#include <stdbool.h>\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "#define TZDB_VERSION_MAJOR            %d\n",tz->Version.Major);
     fprintf(header_file, "#define TZDB_VERSION_MINOR            \"%s\"\n",tz->Version.Minor);

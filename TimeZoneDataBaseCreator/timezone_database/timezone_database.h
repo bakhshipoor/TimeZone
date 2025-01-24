@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 #include <stdint.h>
-#include <stdBOOL.h>
+#include <stdbool.h>
 
 #define TZDB_VERSION_MAJOR            2025
 #define TZDB_VERSION_MINOR            "a"
