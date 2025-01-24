@@ -233,8 +233,8 @@ STATIC Rule_Details_t* Parse_Rule_Data(CONST CHAR** line)
         Free_Rule_Data(rule_data);
         return NULL;
     }
-
-    scan_lenght = sscanf(*line, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%[^\r\n]",
+    //scan_lenght = sscanf(*line, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%[^#\32\n]# %[^\n]",
+    scan_lenght = sscanf(*line, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t# %s",
         rule_data->Field,
         rule_data->Name,
         rule_data->From,

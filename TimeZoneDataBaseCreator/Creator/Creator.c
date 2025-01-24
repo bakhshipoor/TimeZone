@@ -96,62 +96,61 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
-    fprintf(header_file, "        int32_t time_zone_id;\n");
-    fprintf(header_file, "        uint8_t time_zone_identifier[%d];\n", zones_info_lenght.Zones_Info[1] + 1);
-    fprintf(header_file, "        uint8_t country_code[%d];\n", zones_info_lenght.Zones_Info[2] + 1);
-    fprintf(header_file, "        uint8_t country_name[%d];\n", zones_info_lenght.Zones_Info[3] + 1);
-    fprintf(header_file, "        double latitude;\n");
-    fprintf(header_file, "        double longitude;\n");
-    fprintf(header_file, "        bool has_data;\n");
-    fprintf(header_file, "        uint8_t linked_tz_identifier[%d];\n", zones_info_lenght.Zones_Info[7] + 1);
-    fprintf(header_file, "        int32_t data_count;\n");
-    fprintf(header_file, "        int32_t year_begin;\n");
-    fprintf(header_file, "        int32_t year_end;\n");
-    fprintf(header_file, "        uint8_t comments[%d];\n", zones_info_lenght.Zones_Info[11] + 1);
+    fprintf(header_file, "        int32_t       time_zone_id;\n");
+    fprintf(header_file, "        uint8_t       time_zone_identifier[%d];\n", zones_info_lenght.Zones_Info[1] + 1);
+    fprintf(header_file, "        uint8_t       country_code[%d];\n", zones_info_lenght.Zones_Info[2] + 1);
+    fprintf(header_file, "        uint8_t       country_name[%d];\n", zones_info_lenght.Zones_Info[3] + 1);
+    fprintf(header_file, "        double        latitude;\n");
+    fprintf(header_file, "        double        longitude;\n");
+    fprintf(header_file, "        bool          has_data;\n");
+    fprintf(header_file, "        uint8_t       linked_tz_identifier[%d];\n", zones_info_lenght.Zones_Info[7] + 1);
+    fprintf(header_file, "        int32_t       data_count;\n");
+    fprintf(header_file, "        int32_t       year_begin;\n");
+    fprintf(header_file, "        int32_t       year_end;\n");
+    fprintf(header_file, "        uint8_t       comments[%d];\n", zones_info_lenght.Zones_Info[11] + 1);
     fprintf(header_file, "    } tzdb_zone_info_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
-    fprintf(header_file, "        int32_t time_zone_id;\n");
-    fprintf(header_file, "        int64_t standard_offset;\n");
-    fprintf(header_file, "        bool has_rule;\n");
-    fprintf(header_file, "        uint8_t* rule_name[%d];\n", zones_data_lenght.Zones_Data[3] + 1);
-    fprintf(header_file, "        int64_t save_hour;\n");
-    fprintf(header_file, "        uint8_t* format[%d];\n", zones_data_lenght.Zones_Data[5] + 1);
-    fprintf(header_file, "        int32_t year;\n");
-    fprintf(header_file, "        uint8_t month;\n");
-    fprintf(header_file, "        uint8_t day;\n");
-    fprintf(header_file, "        uint8_t weekday;\n");
-    fprintf(header_file, "        bool weekday_isafterorequal_day;\n");
-    fprintf(header_file, "        int64_t hour;\n");
-    fprintf(header_file, "        bool hour_isUTC;\n");
-    fprintf(header_file, "        uint8_t* comments[%d];\n", zones_data_lenght.Zones_Data[13] + 1);
+    fprintf(header_file, "        int32_t       time_zone_id;\n");
+    fprintf(header_file, "        int64_t       standard_offset;\n");
+    fprintf(header_file, "        bool          has_rule;\n");
+    fprintf(header_file, "        uint8_t*      rule_name[%d];\n", zones_data_lenght.Zones_Data[3] + 1);
+    fprintf(header_file, "        int64_t       save_hour;\n");
+    fprintf(header_file, "        uint8_t*      format[%d];\n", zones_data_lenght.Zones_Data[5] + 1);
+    fprintf(header_file, "        int32_t       year;\n");
+    fprintf(header_file, "        uint8_t       month;\n");
+    fprintf(header_file, "        uint8_t       day;\n");
+    fprintf(header_file, "        uint8_t       weekday;\n");
+    fprintf(header_file, "        bool          weekday_isafterorequal_day;\n");
+    fprintf(header_file, "        int64_t       hour;\n");
+    fprintf(header_file, "        bool          hour_isUTC;\n");
+    fprintf(header_file, "        uint8_t*      comments[%d];\n", zones_data_lenght.Zones_Data[13] + 1);
     fprintf(header_file, "    } tzdb_zone_data_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
-    fprintf(header_file, "        uint8_t* rule_id;\n");
-    fprintf(header_file, "        uint8_t* name;\n");
-    fprintf(header_file, "        uint8_t* years_count;\n");
-    fprintf(header_file, "        uint8_t* year_begin;\n");
-    fprintf(header_file, "        uint8_t* year_end;\n");
+    fprintf(header_file, "        int32_t       rule_id;\n");
+    fprintf(header_file, "        uint8_t*      name[%d];\n", rules_info_lenght.Rules_Info[1] + 1);
+    fprintf(header_file, "        int32_t       years_count;\n");
+    fprintf(header_file, "        int32_t       year_begin;\n");
+    fprintf(header_file, "        int32_t       year_end;\n");
     fprintf(header_file, "    } tzdb_rule_info_t;\n");
-    fprintf(header_file, "\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
-    fprintf(header_file, "        uint8_t* rule_id;\n");
-    fprintf(header_file, "        uint8_t* from;\n");
-    fprintf(header_file, "        uint8_t* to;\n");
-    fprintf(header_file, "        uint8_t* month;\n");
-    fprintf(header_file, "        uint8_t* day;\n");
-    fprintf(header_file, "        uint8_t* weekday;\n");
-    fprintf(header_file, "        uint8_t* weekday_isafterorequal_day;\n");
-    fprintf(header_file, "        uint8_t* hour;\n");
-    fprintf(header_file, "        uint8_t* hour_isUTC;\n");
-    fprintf(header_file, "        uint8_t* save_hour;\n");
-    fprintf(header_file, "        uint8_t* letter;\n");
-    fprintf(header_file, "        uint8_t* comment;\n");
+    fprintf(header_file, "        int32_t       rule_id;\n");
+    fprintf(header_file, "        int32_t       from;\n");
+    fprintf(header_file, "        int32_t       to;\n");
+    fprintf(header_file, "        uint8_t       month;\n");
+    fprintf(header_file, "        uint8_t       day;\n");
+    fprintf(header_file, "        uint8_t       weekday;\n");
+    fprintf(header_file, "        bool          weekday_isafterorequal_day;\n");
+    fprintf(header_file, "        int64_t       hour;\n");
+    fprintf(header_file, "        bool          hour_isUTC;\n");
+    fprintf(header_file, "        int64_t       save_hour;\n");
+    fprintf(header_file, "        uint8_t*      letter[%d];\n", rules_data_lenght.Rules_Data[10] + 1);
+    fprintf(header_file, "        uint8_t*      comment[%d];\n", rules_data_lenght.Rules_Data[11] + 1);
     fprintf(header_file, "    } tzdb_rule_data_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT];\n");
@@ -345,13 +344,104 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     for (COUNTER rules_info_index = 0; rules_info_index < tz->Rules_Count; rules_info_index++)
     {
         fprintf(c_file, "    { ");
-        for (COUNTER field_index = 0; field_index < RULE_INFO_FIELDS_COUNT; field_index++)
-        {
-            fprintf(c_file, "\"%s\",%s",
-                rules_info[rules_info_index].Rules_Info[field_index],
-                Print_Space(strlen(rules_info[rules_info_index].Rules_Info[field_index]), rules_info_lenght.Rules_Info[field_index])
-            );
-        }
+        // Field 0: rule_id
+        fprintf(c_file, "%d,%s",
+            atoi(rules_info[rules_info_index].Rules_Info[0]),
+            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[0]), rules_info_lenght.Rules_Info[0])
+        );
+        // Field 1: name
+        fprintf(c_file, "\"%s\",%s",
+            rules_info[rules_info_index].Rules_Info[1],
+            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[1]), rules_info_lenght.Rules_Info[1])
+        );
+        // Field 2: years_count
+        fprintf(c_file, "%d,%s",
+            atoi(rules_info[rules_info_index].Rules_Info[2]),
+            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[2]), rules_info_lenght.Rules_Info[2])
+        );
+        // Field 3: year_begin
+        fprintf(c_file, "%d,%s",
+            atoi(rules_info[rules_info_index].Rules_Info[3]),
+            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[3]), rules_info_lenght.Rules_Info[3])
+        );
+        // Field 4: year_end
+        fprintf(c_file, "%d,%s",
+            atoi(rules_info[rules_info_index].Rules_Info[4]),
+            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[4]), rules_info_lenght.Rules_Info[4])
+        );
+        fprintf(c_file, " },\n");
+    }
+    fprintf(c_file, "};\n");
+    fprintf(c_file, "\n");
+    fprintf(c_file, "\n");
+
+    fprintf(c_file, "const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_rule_data_t tzdb_rules_data[TZDB_RULES_DATA_COUNT] = {\n");
+    for (COUNTER rules_data_index = 0; rules_data_index < tz->Rules_Data_Count; rules_data_index++)
+    {
+        fprintf(c_file, "    { ");
+        // Field 0: rule_id
+        fprintf(c_file, "%d,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[0]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[0]), rules_data_lenght.Rules_Data[0])
+        );
+        // Field 1: from
+        fprintf(c_file, "%d,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[1]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[1]), rules_data_lenght.Rules_Data[1])
+        );
+        // Field 2: to
+        fprintf(c_file, "%d,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[2]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[2]), rules_data_lenght.Rules_Data[2])
+        );
+        // Field 3: month
+        fprintf(c_file, "%d,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[3]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[3]), rules_data_lenght.Rules_Data[3])
+        );
+        // Field 4: day
+        fprintf(c_file, "%d,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[4]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[4]), rules_data_lenght.Rules_Data[4])
+        );
+        // Field 5: weekday
+        fprintf(c_file, "%d,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[5]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[5]), rules_data_lenght.Rules_Data[5])
+        );
+        // Field 6: weekday_isafterorequal_day
+        int bool_len = atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? 5 : 4;
+        fprintf(c_file, "%s,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? "false" : "true",
+            Print_Space(bool_len, 5)
+        );
+        // Field 7: hour
+        fprintf(c_file, "%lld,%s",
+            _atoi64(rules_data[rules_data_index].Rules_Data[7]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[7]), rules_data_lenght.Rules_Data[7])
+        );
+        // Field 8: hour_isUTC
+        bool_len = atoi(rules_data[rules_data_index].Rules_Data[8]) <= 0 ? 5 : 4;
+        fprintf(c_file, "%s,%s",
+            atoi(rules_data[rules_data_index].Rules_Data[8]) <= 0 ? "false" : "true",
+            Print_Space(bool_len, 5)
+        );
+        // Field 9: save_hour
+        fprintf(c_file, "%lld,%s",
+            _atoi64(rules_data[rules_data_index].Rules_Data[9]),
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[9]), rules_data_lenght.Rules_Data[9])
+        );
+        // Field 10: letter
+        fprintf(c_file, "\"%s\",%s",
+            rules_data[rules_data_index].Rules_Data[10],
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[10]), rules_data_lenght.Rules_Data[10])
+        );
+        // Field 11: comment
+        fprintf(c_file, "\"%s\",%s",
+            rules_data[rules_data_index].Rules_Data[11],
+            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[11]), rules_data_lenght.Rules_Data[11])
+        );
+
         fprintf(c_file, " },\n");
     }
     fprintf(c_file, "};\n");
@@ -502,7 +592,50 @@ Rules_Info_String_t* Convert_Rules_Info_To_String(Time_Zones_t* tz, Rules_Info_L
 
 Rules_Data_String_t* Convert_Rules_Data_To_String(Time_Zones_t* tz, Rules_Data_Lenght_t* rules_data_lenght)
 {
+    for (COUNTER field_index = 0; field_index < RULE_DATA_FIELDS_COUNT; field_index++)
+    {
+        rules_data_lenght->Rules_Data[field_index] = 0;
+    }
 
+    Rules_Data_String_t* rules_data = (Rules_Data_String_t*)calloc(tz->Rules_Data_Count + 1, sizeof(Rules_Data_String_t));
+    if (rules_data == NULL)
+    {
+        return NULL;
+    }
+
+    for (COUNTER rules_data_index = 0; rules_data_index < tz->Rules_Data_Count; rules_data_index++)
+    {
+        for (COUNTER field_index = 0; field_index < RULE_DATA_FIELDS_COUNT; field_index++)
+        {
+            rules_data[rules_data_index].Rules_Data[field_index] = (CHAR*)calloc(MAX_LENGTH_DATA_FIELD, sizeof(CHAR));
+            if (rules_data[rules_data_index].Rules_Data[field_index] == NULL)
+            {
+                return NULL;
+            }
+        }
+
+        sprintf(rules_data[rules_data_index].Rules_Data[0], "%d", tz->Rules_Data[rules_data_index].Rule_ID);
+        sprintf(rules_data[rules_data_index].Rules_Data[1], "%d", tz->Rules_Data[rules_data_index].From);
+        sprintf(rules_data[rules_data_index].Rules_Data[2], "%d", tz->Rules_Data[rules_data_index].To);
+        sprintf(rules_data[rules_data_index].Rules_Data[3], "%d", tz->Rules_Data[rules_data_index].Month);
+        sprintf(rules_data[rules_data_index].Rules_Data[4], "%d", tz->Rules_Data[rules_data_index].Day.Day);
+        sprintf(rules_data[rules_data_index].Rules_Data[5], "%d", tz->Rules_Data[rules_data_index].Day.Weekday);
+        sprintf(rules_data[rules_data_index].Rules_Data[6], "%d", tz->Rules_Data[rules_data_index].Day.Weekday_isAfterOrEqual_Day);
+        sprintf(rules_data[rules_data_index].Rules_Data[7], "%lld", tz->Rules_Data[rules_data_index].Hour.Hour);
+        sprintf(rules_data[rules_data_index].Rules_Data[8], "%d", tz->Rules_Data[rules_data_index].Hour.Hour_isUTC);
+        sprintf(rules_data[rules_data_index].Rules_Data[9], "%lld", tz->Rules_Data[rules_data_index].Save_Hour);
+        sprintf(rules_data[rules_data_index].Rules_Data[10], "%s", tz->Rules_Data[rules_data_index].Letter);
+        sprintf(rules_data[rules_data_index].Rules_Data[11], "%s", tz->Rules_Data[rules_data_index].Comment);
+
+        for (COUNTER field_index = 0; field_index < RULE_DATA_FIELDS_COUNT; field_index++)
+        {
+            if (strlen(rules_data[rules_data_index].Rules_Data[field_index]) > rules_data_lenght->Rules_Data[field_index])
+            {
+                rules_data_lenght->Rules_Data[field_index] = strlen(rules_data[rules_data_index].Rules_Data[field_index]);
+            }
+        }
+    }
+    return rules_data;
 }
 
 
@@ -521,19 +654,3 @@ CHAR* Print_Space(COUNTER str_lenght, COUNTER max_lenght)
     return space;
 }
 
-/*
-
-        rule_id;
-        from;
-        to;
-        month;
-        day;
-        weekday;
-        weekday_isafterorequal_day;
-        hour;
-        hour_isUTC;
-        save_hour;
-        letter;
-        comment;
-
-*/
