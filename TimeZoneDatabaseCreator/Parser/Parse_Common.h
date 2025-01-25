@@ -29,6 +29,7 @@ extern "C" {
 #define COUNTER                 int32_t
 #define LENGHT                  int32_t
 #define INT                     int32_t
+#define INT64                   int64_t
 #define CHAR                    uint8_t
 #define LOCATION                double
 
@@ -45,14 +46,15 @@ extern "C" {
 #define INVALID_YEAR            _I32_MAX
 #define INVALID_MONTH           _UI8_MAX
 #define INVALID_DAY             _UI8_MAX
+#define TZDB_DAY_NONE           255
 #define INVALID_WEEKDAY         _UI8_MAX
-#define INVALID_HOUR            _I64_MAX
+#define INVALID_HOUR            0xFFFFF
 #define INDEX_NOT_FOUND         -1i32
 #define YEAR_END_MAX            -1i32
 
     typedef enum
     {
-        TZDB_WEEKDAY_SUNDAY = 0ui8,
+        TZDB_WEEKDAY_SUNDAY = 0,
         TZDB_WEEKDAY_MONDAY,
         TZDB_WEEKDAY_TUESDAY,
         TZDB_WEEKDAY_WEDNESDAY,
@@ -60,13 +62,13 @@ extern "C" {
         TZDB_WEEKDAY_FRIDAY,
         TZDB_WEEKDAY_SATURDAY,
 
-        TZDB_WEEKDAY_TOTAL = 7ui8,
-        TZDB_WEEKDAY_NONE = INVALID_WEEKDAY,
+        TZDB_WEEKDAY_TOTAL,
+        TZDB_WEEKDAY_NONE = 255,
     }Weekday_Number_e;
 
     typedef enum
     {
-        TZDB_MONTH_JANUARY = 1ui8,
+        TZDB_MONTH_JANUARY = 1,
         TZDB_MONTH_FEBRUARY,
         TZDB_MONTH_MARCH,
         TZDB_MONTH_APRIL,
@@ -80,7 +82,7 @@ extern "C" {
         TZDB_MONTH_DECEMBER,
 
         TZDB_MONTH_TOTAL = 12ui8,
-        TZDB_MONTH_NONE = INVALID_MONTH
+        TZDB_MONTH_NONE = 255
     }Month_Number_e;
 
     typedef enum

@@ -79,11 +79,11 @@ extern "C" {
         double        latitude;
         double        longitude;
         bool          has_data;
-        uint8_t       linked_tz_identifier[21];
+        uint8_t       linked_tz_identifier[3];
         int32_t       data_count;
         int32_t       year_begin;
         int32_t       year_end;
-        uint8_t       comments[74];
+        uint8_t       comments[1];
     } tzdb_zone_info_t;
 
     typedef struct
@@ -91,9 +91,9 @@ extern "C" {
         int32_t       time_zone_id;
         int64_t       standard_offset;
         bool          has_rule;
-        uint8_t       rule_name[13];
+        uint8_t       rule_name[6];
         int64_t       save_hour;
-        uint8_t       format[10];
+        uint8_t       format[9];
         int32_t       year;
         uint8_t       month;
         uint8_t       day;
@@ -101,7 +101,7 @@ extern "C" {
         bool          weekday_isafterorequal_day;
         int64_t       hour;
         bool          hour_isUTC;
-        uint8_t       comments[24];
+        uint8_t       comments[12];
     } tzdb_zone_data_t;
 
     typedef struct

@@ -250,36 +250,30 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
             atof(zones_info[zones_info_index].Zones_Info[5]),
             Print_Space(strlen(zones_info[zones_info_index].Zones_Info[5]), zones_info_lenght.Zones_Info[5])
         );
-        // Field 6: has_data
-        int bool_len = atoi(zones_info[zones_info_index].Zones_Info[6]) <= 0 ? 5 : 4;
-        fprintf(c_file, "%s,%s",
-            atoi(zones_info[zones_info_index].Zones_Info[6]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, 5)
+        // Field 6: linked_tz_identifier
+        fprintf(c_file, "%d,%s",
+            atoi(zones_info[zones_info_index].Zones_Info[6]),
+            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[6]), zones_info_lenght.Zones_Info[6])
         );
-        // Field 7: linked_tz_identifier
-        fprintf(c_file, "\"%s\",%s",
-            zones_info[zones_info_index].Zones_Info[7],
+        // Field 7: data_count
+        fprintf(c_file, "%d,%s",
+            atoi(zones_info[zones_info_index].Zones_Info[7]),
             Print_Space(strlen(zones_info[zones_info_index].Zones_Info[7]), zones_info_lenght.Zones_Info[7])
         );
-        // Field 8: data_count
+        // Field 8: year_begin
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[8]),
             Print_Space(strlen(zones_info[zones_info_index].Zones_Info[8]), zones_info_lenght.Zones_Info[8])
         );
-        // Field 9: year_begin
+        // Field 9: year_end
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[9]),
             Print_Space(strlen(zones_info[zones_info_index].Zones_Info[9]), zones_info_lenght.Zones_Info[9])
         );
-        // Field 10: year_end
-        fprintf(c_file, "%d,%s",
-            atoi(zones_info[zones_info_index].Zones_Info[10]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[10]), zones_info_lenght.Zones_Info[10])
-        );
-        // Field 11: comments
+        // Field 10: comments
         fprintf(c_file, "\"%s\"%s",
-            zones_info[zones_info_index].Zones_Info[11],
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[11]), zones_info_lenght.Zones_Info[11])
+            zones_info[zones_info_index].Zones_Info[10],
+            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[10]), zones_info_lenght.Zones_Info[10])
         );
         if (zones_info_index == (tz->Zones_Count - 1))
         {
@@ -309,68 +303,36 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
             _atoi64(zones_data[zones_data_index].Zones_Data[1]),
             Print_Space(strlen(zones_data[zones_data_index].Zones_Data[1]), zones_data_lenght.Zones_Data[1])
         );
-        // Field 2: has_rule
-        int bool_len = atoi(zones_data[zones_data_index].Zones_Data[2]) <= 0 ? 5 : 4;
-        fprintf(c_file, "%s,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[2]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, 5)
+        // Field 2: rule_id
+        fprintf(c_file, "%d,%s",
+            atoi(zones_data[zones_data_index].Zones_Data[2]),
+            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[2]), zones_data_lenght.Zones_Data[2])
         );
-        // Field 3: rule_name
-        fprintf(c_file, "\"%s\",%s",
-            zones_data[zones_data_index].Zones_Data[3],
+        // Field 3: save_hour
+        fprintf(c_file, "%lld,%s",
+            _atoi64(zones_data[zones_data_index].Zones_Data[3]),
             Print_Space(strlen(zones_data[zones_data_index].Zones_Data[3]), zones_data_lenght.Zones_Data[3])
         );
-        // Field 4: save_hour
-        fprintf(c_file, "%lld,%s",
-            _atoi64(zones_data[zones_data_index].Zones_Data[4]),
+        // Field 4: format
+        fprintf(c_file, "\"%s\",%s",
+            zones_data[zones_data_index].Zones_Data[4],
             Print_Space(strlen(zones_data[zones_data_index].Zones_Data[4]), zones_data_lenght.Zones_Data[4])
         );
-        // Field 5: format
-        fprintf(c_file, "\"%s\",%s",
-            zones_data[zones_data_index].Zones_Data[5],
+        // Field 5: until_jd
+        fprintf(c_file, "%llf,%s",
+            atof(zones_data[zones_data_index].Zones_Data[5]),
             Print_Space(strlen(zones_data[zones_data_index].Zones_Data[5]), zones_data_lenght.Zones_Data[5])
         );
-        // Field 6: year
-        fprintf(c_file, "%d,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[6]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[6]), zones_data_lenght.Zones_Data[6])
-        );
-        // Field 7: month
-        fprintf(c_file, "%d,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[7]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[7]), zones_data_lenght.Zones_Data[7])
-        );
-        // Field 8: day
-        fprintf(c_file, "%d,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[8]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[8]), zones_data_lenght.Zones_Data[8])
-        );
-        // Field 9: weekday
-        fprintf(c_file, "%d,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[9]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[9]), zones_data_lenght.Zones_Data[9])
-        );
-        // Field 10: weekday_isafterorequal_day
-        bool_len = atoi(zones_data[zones_data_index].Zones_Data[10]) <= 0 ? 5 : 4;
+        // Field 6: jd_isUTC
+        int bool_len = atoi(zones_data[zones_data_index].Zones_Data[6]) <= 0 ? 5 : 4;
         fprintf(c_file, "%s,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[10]) <= 0 ? "false" : "true",
+            atoi(zones_data[zones_data_index].Zones_Data[6]) <= 0 ? "false" : "true",
             Print_Space(bool_len, 5)
         );
-        // Field 11: hour
-        fprintf(c_file, "%lld,%s",
-            _atoi64(zones_data[zones_data_index].Zones_Data[11]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[11]), zones_data_lenght.Zones_Data[11])
-        );
-        // Field 12: hour_isUTC
-        bool_len = atoi(zones_data[zones_data_index].Zones_Data[12]) <= 0 ? 5 : 4;
-        fprintf(c_file, "%s,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[12]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, 5)
-        );
-        // Field 13: comments
+        // Field 7: comments
         fprintf(c_file, "\"%s\"%s",
-            zones_data[zones_data_index].Zones_Data[13],
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[13]), zones_data_lenght.Zones_Data[13])
+            zones_data[zones_data_index].Zones_Data[7],
+            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[7]), zones_data_lenght.Zones_Data[7])
         );
         if (zones_data_index == (tz->Zones_Data_Count - 1))
         {
@@ -542,12 +504,11 @@ Zones_Info_String_t* Convert_Zones_Info_To_String(Time_Zones_t* tz, Zones_Info_L
         sprintf(zones_info[zones_info_index].Zones_Info[3], "%s", tz->Zones_Info[zones_info_index].Country_Name);
         sprintf(zones_info[zones_info_index].Zones_Info[4], "%.06llf", tz->Zones_Info[zones_info_index].Latitude);
         sprintf(zones_info[zones_info_index].Zones_Info[5], "%.06llf", tz->Zones_Info[zones_info_index].Longitude);
-        sprintf(zones_info[zones_info_index].Zones_Info[6], "%d", tz->Zones_Info[zones_info_index].Has_Data);
-        sprintf(zones_info[zones_info_index].Zones_Info[7], "%s", tz->Zones_Info[zones_info_index].Linked_TZ_Identifier);
-        sprintf(zones_info[zones_info_index].Zones_Info[8], "%d", tz->Zones_Info[zones_info_index].Data_Count);
-        sprintf(zones_info[zones_info_index].Zones_Info[9], "%d", tz->Zones_Info[zones_info_index].Year_Begin);
-        sprintf(zones_info[zones_info_index].Zones_Info[10], "%d", tz->Zones_Info[zones_info_index].Year_End);
-        sprintf(zones_info[zones_info_index].Zones_Info[11], "%s", tz->Zones_Info[zones_info_index].Comments);
+        sprintf(zones_info[zones_info_index].Zones_Info[6], "%d", tz->Zones_Info[zones_info_index].Linked_Zone_ID);
+        sprintf(zones_info[zones_info_index].Zones_Info[7], "%d", tz->Zones_Info[zones_info_index].Data_Count);
+        sprintf(zones_info[zones_info_index].Zones_Info[8], "%d", tz->Zones_Info[zones_info_index].Year_Begin);
+        sprintf(zones_info[zones_info_index].Zones_Info[9], "%d", tz->Zones_Info[zones_info_index].Year_End);
+        sprintf(zones_info[zones_info_index].Zones_Info[10], "%s", tz->Zones_Info[zones_info_index].Comments);
 
         for (COUNTER field_index = 0; field_index < ZONE_INFO_FIELDS_COUNT; field_index++)
         {
@@ -586,18 +547,12 @@ Zones_Data_String_t* Convert_Zones_Data_To_String(Time_Zones_t* tz, Zones_Data_L
 
         sprintf(zones_data[zones_data_index].Zones_Data[0], "%d", tz->Zones_Data[zones_data_index].Time_Zone_ID);
         sprintf(zones_data[zones_data_index].Zones_Data[1], "%lld", tz->Zones_Data[zones_data_index].Standard_Offset);
-        sprintf(zones_data[zones_data_index].Zones_Data[2], "%d", tz->Zones_Data[zones_data_index].Rule.Has_Rule);
-        sprintf(zones_data[zones_data_index].Zones_Data[3], "%s", tz->Zones_Data[zones_data_index].Rule.Rule_Name);
-        sprintf(zones_data[zones_data_index].Zones_Data[4], "%lld", tz->Zones_Data[zones_data_index].Rule.Save_Hour);
-        sprintf(zones_data[zones_data_index].Zones_Data[5], "%s", tz->Zones_Data[zones_data_index].Format);
-        sprintf(zones_data[zones_data_index].Zones_Data[6], "%d", tz->Zones_Data[zones_data_index].Until.Year);
-        sprintf(zones_data[zones_data_index].Zones_Data[7], "%d", tz->Zones_Data[zones_data_index].Until.Month);
-        sprintf(zones_data[zones_data_index].Zones_Data[8], "%d", tz->Zones_Data[zones_data_index].Until.Day.Day);
-        sprintf(zones_data[zones_data_index].Zones_Data[9], "%d", tz->Zones_Data[zones_data_index].Until.Day.Weekday);
-        sprintf(zones_data[zones_data_index].Zones_Data[10], "%d", tz->Zones_Data[zones_data_index].Until.Day.Weekday_isAfterOrEqual_Day);
-        sprintf(zones_data[zones_data_index].Zones_Data[11], "%lld", tz->Zones_Data[zones_data_index].Until.Hour.Hour);
-        sprintf(zones_data[zones_data_index].Zones_Data[12], "%d", tz->Zones_Data[zones_data_index].Until.Hour.Hour_isUTC);
-        sprintf(zones_data[zones_data_index].Zones_Data[13], "%s", tz->Zones_Data[zones_data_index].Comment);
+        sprintf(zones_data[zones_data_index].Zones_Data[2], "%d", tz->Zones_Data[zones_data_index].Rule_ID);
+        sprintf(zones_data[zones_data_index].Zones_Data[3], "%lld", tz->Zones_Data[zones_data_index].Save_Hour);
+        sprintf(zones_data[zones_data_index].Zones_Data[4], "%s", tz->Zones_Data[zones_data_index].Format);
+        sprintf(zones_data[zones_data_index].Zones_Data[5], "%llf", tz->Zones_Data[zones_data_index].Until_JD);
+        sprintf(zones_data[zones_data_index].Zones_Data[6], "%d", tz->Zones_Data[zones_data_index].JD_isUTC);
+        sprintf(zones_data[zones_data_index].Zones_Data[7], "%s", tz->Zones_Data[zones_data_index].Comments);
 
         for (COUNTER field_index = 0; field_index < ZONE_DATA_FIELDS_COUNT; field_index++)
         {
@@ -636,7 +591,7 @@ Rules_Info_String_t* Convert_Rules_Info_To_String(Time_Zones_t* tz, Rules_Info_L
 
         sprintf(rules_info[rules_info_index].Rules_Info[0], "%d", tz->Rules_Info[rules_info_index].Rule_ID);
         sprintf(rules_info[rules_info_index].Rules_Info[1], "%s", tz->Rules_Info[rules_info_index].Name);
-        sprintf(rules_info[rules_info_index].Rules_Info[2], "%d", tz->Rules_Info[rules_info_index].Years_Count);
+        sprintf(rules_info[rules_info_index].Rules_Info[2], "%d", tz->Rules_Info[rules_info_index].Data_Count);
         sprintf(rules_info[rules_info_index].Rules_Info[3], "%d", tz->Rules_Info[rules_info_index].Year_Begin);
         sprintf(rules_info[rules_info_index].Rules_Info[4], "%d", tz->Rules_Info[rules_info_index].Year_End);
 
@@ -679,14 +634,14 @@ Rules_Data_String_t* Convert_Rules_Data_To_String(Time_Zones_t* tz, Rules_Data_L
         sprintf(rules_data[rules_data_index].Rules_Data[1], "%d", tz->Rules_Data[rules_data_index].From);
         sprintf(rules_data[rules_data_index].Rules_Data[2], "%d", tz->Rules_Data[rules_data_index].To);
         sprintf(rules_data[rules_data_index].Rules_Data[3], "%d", tz->Rules_Data[rules_data_index].Month);
-        sprintf(rules_data[rules_data_index].Rules_Data[4], "%d", tz->Rules_Data[rules_data_index].Day.Day);
-        sprintf(rules_data[rules_data_index].Rules_Data[5], "%d", tz->Rules_Data[rules_data_index].Day.Weekday);
-        sprintf(rules_data[rules_data_index].Rules_Data[6], "%d", tz->Rules_Data[rules_data_index].Day.Weekday_isAfterOrEqual_Day);
-        sprintf(rules_data[rules_data_index].Rules_Data[7], "%lld", tz->Rules_Data[rules_data_index].Hour.Hour);
-        sprintf(rules_data[rules_data_index].Rules_Data[8], "%d", tz->Rules_Data[rules_data_index].Hour.Hour_isUTC);
+        sprintf(rules_data[rules_data_index].Rules_Data[4], "%d", tz->Rules_Data[rules_data_index].Day);
+        sprintf(rules_data[rules_data_index].Rules_Data[5], "%d", tz->Rules_Data[rules_data_index].Weekday);
+        sprintf(rules_data[rules_data_index].Rules_Data[6], "%d", tz->Rules_Data[rules_data_index].Weekday_IsAfterOrEqual_Day);
+        sprintf(rules_data[rules_data_index].Rules_Data[7], "%lld", tz->Rules_Data[rules_data_index].Hour);
+        sprintf(rules_data[rules_data_index].Rules_Data[8], "%d", tz->Rules_Data[rules_data_index].Hour_isUTC);
         sprintf(rules_data[rules_data_index].Rules_Data[9], "%lld", tz->Rules_Data[rules_data_index].Save_Hour);
         sprintf(rules_data[rules_data_index].Rules_Data[10], "%s", tz->Rules_Data[rules_data_index].Letter);
-        sprintf(rules_data[rules_data_index].Rules_Data[11], "%s", tz->Rules_Data[rules_data_index].Comment);
+        sprintf(rules_data[rules_data_index].Rules_Data[11], "%s", tz->Rules_Data[rules_data_index].Comments);
 
         for (COUNTER field_index = 0; field_index < RULE_DATA_FIELDS_COUNT; field_index++)
         {

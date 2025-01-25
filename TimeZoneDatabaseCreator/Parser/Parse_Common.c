@@ -56,7 +56,7 @@ WEEKDAY Parse_Weekday(CONST CHAR** weekday)
 {
     if (weekday == NULL || *weekday == NULL)
     {
-        return INVALID_WEEKDAY;
+        return (WEEKDAY)TZDB_WEEKDAY_NONE;
     }
 
     for (COUNTER weekday_index = 0; weekday_index < TZDB_WEEKDAY_TOTAL; weekday_index++)
@@ -69,7 +69,7 @@ WEEKDAY Parse_Weekday(CONST CHAR** weekday)
             return Weekday_Names[weekday_index].Number;
         }
     }
-    return INVALID_WEEKDAY;
+    return (WEEKDAY)TZDB_WEEKDAY_NONE;
 }
 
 MONTH Parse_Month(CONST CHAR** month)
@@ -97,15 +97,13 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
         return;
     }
 
-    *day = INVALID_DAY;
-    *weekday = INVALID_WEEKDAY;
+    *day = (DAY)TZDB_DAY_NONE;
+    *weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
     *weekday_after = FALSE;
 
     if (strlen(*on) <= 3)
     {
         *day = atoi(*on);
-        *weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
-        *weekday_after = FALSE;
     }
     else
     {
@@ -115,7 +113,7 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
         {
             if (sscanf(*on, "%[^=]=%s", dow, d) == 1)
             {
-                *day = (MONTH)TZDB_MONTH_NONE; // Last week
+                *day = 0; // Last week
                 *weekday = Parse_Weekday(&dow);
                 *weekday_after = FALSE;
             }

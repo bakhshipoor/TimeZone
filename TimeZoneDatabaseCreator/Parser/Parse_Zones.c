@@ -312,7 +312,7 @@ STATIC Zone_Data_Until_t Parse_Zone_Info_Until(CONST Zone_Details_t* zone_data)
     }
 
     //CHAR until_data[4][MAX_LENGTH_DATA_FIELD] = { { 0 } };
-    CHAR* until_data_year = (CHAR*)calloc(MAX_LENGTH_DATA_FIELD,sizeof(CHAR));
+    CHAR* until_data_year = (CHAR*)calloc(MAX_LENGTH_DATA_FIELD, sizeof(CHAR));
     CHAR* until_data_month = (CHAR*)calloc(MAX_LENGTH_DATA_FIELD, sizeof(CHAR));
     CHAR* until_data_day = (CHAR*)calloc(MAX_LENGTH_DATA_FIELD, sizeof(CHAR));
     CHAR* until_data_hour = (CHAR*)calloc(MAX_LENGTH_DATA_FIELD, sizeof(CHAR));
@@ -341,39 +341,36 @@ STATIC Zone_Data_Until_t Parse_Zone_Info_Until(CONST Zone_Details_t* zone_data)
     }
 
 
-    if (strlen(zone_data->Until) == 0)
-    {
-        until.Year = -1;
-        until.Month = 0;
-        until.Day.Day = 0;
-        until.Day.Weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
-        until.Day.Weekday_isAfterOrEqual_Day = FALSE;
-        until.Hour.Hour = 0;
-        until.Hour.Hour_isUTC = FALSE;
-    }
-    else
-    {
-        int scan_lenght = sscanf(zone_data->Until, "%s\t%s\t%s\t%s", until_data_year, until_data_month, until_data_day, until_data_hour);
 
-        if (scan_lenght >= 1)
-        {
-            until.Year = atoi(until_data_year);
-        }
-        if (scan_lenght >= 2)
-        {
-            until.Month = Parse_Month(&until_data_month);
-        }
-        if (scan_lenght >= 3)
-        {
-            Parse_Day_Of_Month(&until_data_day, &until.Day.Day, &until.Day.Weekday, &until.Day.Weekday_isAfterOrEqual_Day);
-        }
-        if (scan_lenght == 4)
-        {
-            CHAR s;
-            until.Hour.Hour = Parse_Hour(&until_data_hour, &s);
-            until.Hour.Hour_isUTC = (s == 'u') ? TRUE : FALSE;
-        }
+    until.Year = -1;
+    until.Month = (MONTH)TZDB_MONTH_NONE;
+    until.Day.Day = (DAY)TZDB_DAY_NONE;
+    until.Day.Weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
+    until.Day.Weekday_isAfterOrEqual_Day = FALSE;
+    until.Hour.Hour = INVALID_HOUR;
+    until.Hour.Hour_isUTC = FALSE;
+
+    int scan_lenght = sscanf(zone_data->Until, "%s\t%s\t%s\t%s", until_data_year, until_data_month, until_data_day, until_data_hour);
+
+    if (scan_lenght >= 1)
+    {
+        until.Year = atoi(until_data_year);
     }
+    if (scan_lenght >= 2)
+    {
+        until.Month = Parse_Month(&until_data_month);
+    }
+    if (scan_lenght >= 3)
+    {
+        Parse_Day_Of_Month(&until_data_day, &until.Day.Day, &until.Day.Weekday, &until.Day.Weekday_isAfterOrEqual_Day);
+    }
+    if (scan_lenght == 4)
+    {
+        CHAR s;
+        until.Hour.Hour = Parse_Hour(&until_data_hour, &s);
+        until.Hour.Hour_isUTC = (s == 'u') ? TRUE : FALSE;
+    }
+
     if (until_data_year != NULL)
     {
         free(until_data_year);
