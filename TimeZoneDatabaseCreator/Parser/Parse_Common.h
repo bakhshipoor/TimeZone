@@ -16,6 +16,7 @@ extern "C" {
 #include <ctype.h>
 #include <limits.h>
 #include <windows.h>
+#include <math.h>
 
 #define MAX_LENGTH_FILE_NAME    256
 #define MAX_LENGTH_DATA_FIELD   256
@@ -51,7 +52,7 @@ extern "C" {
 #define INVALID_HOUR            0xFFFFF
 #define INDEX_NOT_FOUND         -1i32
 #define YEAR_END_MAX            -1i32
-#define JD                      double
+#define JD                      int64_t
 #define JDN                     int64_t
 
     typedef enum

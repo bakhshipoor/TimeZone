@@ -48,6 +48,9 @@
     <ClInclude Include="Creator\Creator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="timezone_database\timezone_database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeZoneDBCreator.C">
@@ -84,6 +87,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Creator\Creator.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timezone_database\timezone_database.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

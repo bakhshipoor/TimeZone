@@ -29,7 +29,7 @@ extern "C" {
         COUNTER Rule_ID;
         HOUR Save_Hour;
         CHAR* Format;
-        JD Until_JD;
+        JD Until_JD; // 'Until_JD' will hold the result of trunc(JD * pow(10.0, 5))
         CHAR* Comments;
     } ZoneData_t;
 

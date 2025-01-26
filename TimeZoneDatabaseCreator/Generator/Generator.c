@@ -408,7 +408,7 @@ JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset)
 {
     if (until->Year == YEAR_END_MAX)
     {
-        return ((JD)YEAR_END_MAX * 1.0);
+        return (JD)YEAR_END_MAX;
     }
     YEAR year = 0;
     MONTH month = 0;
@@ -490,7 +490,8 @@ DAY Calculate_Days_In_Month(YEAR year, MONTH month)
 
 JD Calculate_JD(JDN jdn, HOUR second) 
 {
-    return (((double)jdn * 1.0) + (((double)second * 1.0) / 86400.0));
+    double jd = (((double)jdn * 1.0) + (((double)second * 1.0) / 86400.0));
+    return trunc(jd * pow(10.0, 5));
 }
 
 JDN Calculate_JDN(YEAR year, MONTH month, DAY day)
