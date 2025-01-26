@@ -72,14 +72,13 @@ extern "C" {
 
     typedef struct
     {
-        int32_t       time_zone_id;
-        uint8_t       time_zone_identifier[31];
-        uint8_t       country_code[3];
+        int32_t       zone_id;
+        uint8_t       zone_identifier[31];
+        uint8_t       country_code[13];
         uint8_t       country_name[43];
         double        latitude;
         double        longitude;
-        bool          has_data;
-        uint8_t       linked_tz_identifier[21];
+        int32_t       linked_zone_id;
         int32_t       data_count;
         int32_t       year_begin;
         int32_t       year_end;
@@ -88,27 +87,20 @@ extern "C" {
 
     typedef struct
     {
-        int32_t       time_zone_id;
+        int32_t       zone_id;
         int64_t       standard_offset;
-        bool          has_rule;
-        uint8_t       rule_name[13];
+        int32_t       rule_id;
         int64_t       save_hour;
         uint8_t       format[10];
-        int32_t       year;
-        uint8_t       month;
-        uint8_t       day;
-        uint8_t       weekday;
-        bool          weekday_isafterorequal_day;
-        int64_t       hour;
-        bool          hour_isUTC;
+        double        until_jd;
         uint8_t       comments[24];
     } tzdb_zone_data_t;
 
     typedef struct
     {
         int32_t       rule_id;
-        uint8_t       name[13];
-        int32_t       years_count;
+        uint8_t       rule_name[13];
+        int32_t       data_count;
         int32_t       year_begin;
         int32_t       year_end;
     } tzdb_rule_info_t;
@@ -125,8 +117,8 @@ extern "C" {
         int64_t       hour;
         bool          hour_isUTC;
         int64_t       save_hour;
-        uint8_t       letter[6];
-        uint8_t       comment[10];
+        uint8_t       letter[7];
+        uint8_t       comments[10];
     } tzdb_rule_data_t;
 
     extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT];
