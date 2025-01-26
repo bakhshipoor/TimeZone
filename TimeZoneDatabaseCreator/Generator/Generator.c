@@ -191,9 +191,9 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Zone_Info_t** zone_info_
 
     for (COUNTER tz_index = 0; tz_index < *zones_count; tz_index++)
     {
-        BOOL Has_Data = TZ_Check_Data(parse_data, &(*zone_info_list)[tz_index].Time_Zone_Identifier);
+        _BOOL Has_Data = TZ_Check_Data(parse_data, &(*zone_info_list)[tz_index].Time_Zone_Identifier);
 
-        if (Has_Data == FALSE)
+        if (Has_Data == _FALSE)
         {
             COUNTER link_index = TZ_Get_Linked_Identifier(parse_data, &(*zone_info_list)[tz_index].Time_Zone_Identifier);
             if (link_index != INDEX_NOT_FOUND)
@@ -244,7 +244,7 @@ VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, ZoneData_t** zones_data_
             (*zones_data_list)[*zones_data_count].Standard_Offset = parse_data->Zones[zone_index].Info[data_index].Standard_Offset;
             (*zones_data_list)[*zones_data_count].Rule_ID = 0;
             (*zones_data_list)[*zones_data_count].Save_Hour = 0;
-            if (parse_data->Zones[zone_index].Info[data_index].Rule.Has_Rule == TRUE)
+            if (parse_data->Zones[zone_index].Info[data_index].Rule.Has_Rule == _TRUE)
             {
                 if (utf8_strlen(parse_data->Zones[zone_index].Info[data_index].Rule.Rule_Name) > 0)
                 {
@@ -293,13 +293,13 @@ COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR** country_co
     return -1;
 }
 
-BOOL TZ_Check_Data(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifier)
+_BOOL TZ_Check_Data(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifier)
 {
     for (COUNTER zone_index = 0; zone_index < parse_data->Zones_Count; zone_index++)
     {
         if (strcmp(parse_data->Zones[zone_index].Name, *tz_identifier) == 0)
         {
-            return TRUE;
+            return _TRUE;
         }
     }
     return false;
@@ -316,7 +316,7 @@ COUNTER TZ_Get_Linked_Identifier(CONST Parse_Data_t* parse_data, CONST CHAR** tz
     {
         if (strcmp(parse_data->Links[link_index].Link_Name, *tz_identifire) == 0)
         {
-            if (TZ_Check_Data(parse_data, &parse_data->Links[link_index].Target) == TRUE)
+            if (TZ_Check_Data(parse_data, &parse_data->Links[link_index].Target) == _TRUE)
             {
                 return link_index;
             }
@@ -442,7 +442,7 @@ JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset)
             {
                 day = Calculate_Last_Weekday_Day_In_Month(year, month, until->Day.Weekday);
             }
-            else if (until->Day.Weekday_isAfterOrEqual_Day == TRUE)
+            else if (until->Day.Weekday_isAfterOrEqual_Day == _TRUE)
             {
                 day = Calculate_First_Weekday_After_Day_In_Month(year, month, until->Day.Day, until->Day.Weekday);
             }
@@ -460,7 +460,7 @@ JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset)
     }
 
     Subtract_Or_Add_Seconds(&year, &month, &day, &second, -1);
-    if (until->Hour.Hour != INVALID_HOUR && until->Hour.Hour_isUTC == TRUE)
+    if (until->Hour.Hour != INVALID_HOUR && until->Hour.Hour_isUTC == _TRUE)
     {
         Subtract_Or_Add_Seconds(&year, &month, &day, &second, *utc_offset);
     }
@@ -490,8 +490,8 @@ DAY Calculate_Days_In_Month(YEAR year, MONTH month)
 
 JD Calculate_JD(JDN jdn, HOUR second) 
 {
-    double jd = (((double)jdn * 1.0) + (((double)second * 1.0) / 86400.0));
-    return trunc(jd * pow(10.0, 5));
+    JD jd = (((JD)jdn * 1.0) + (-12.0 / 24.0) + (((JD)second * 1.0) / 86400.0));
+    return jd;
 }
 
 JDN Calculate_JDN(YEAR year, MONTH month, DAY day)
@@ -610,7 +610,7 @@ INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b)
     return strcmp(structA->Time_Zone_Identifier, structB->Time_Zone_Identifier);
 }
 
-VOID Sort_Zone_Info_By_Identifier(Zone_Info_t** zone_info, COUNTER* info_count)
+VOID Sort_Zone_Info_By_Identifier(Zone_Info_t** zone_info, CONST COUNTER* info_count)
 {
     qsort(*zone_info, *info_count, sizeof(Zone_Info_t), Compare_TZ_Identifier);
 }
@@ -634,7 +634,7 @@ INT Compare_Rules_Name(CONST VOID* a, CONST VOID* b)
     return strcmp(structA->Name, structB->Name);
 }
 
-VOID Sort_Rules_By_Name(Rule_Info_t** rules_info, COUNTER* info_count)
+VOID Sort_Rules_By_Name(Rule_Entry_t** rules_info, CONST COUNTER* info_count)
 {
     qsort(*rules_info, *info_count, sizeof(Rule_Entry_t), Compare_Rules_Name);
 }

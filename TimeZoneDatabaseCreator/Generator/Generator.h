@@ -29,7 +29,7 @@ extern "C" {
         COUNTER Rule_ID;
         HOUR Save_Hour;
         CHAR* Format;
-        JD Until_JD; // 'Until_JD' will hold the result of trunc(JD * pow(10.0, 5))
+        JD Until_JD; 
         CHAR* Comments;
     } ZoneData_t;
 
@@ -82,7 +82,7 @@ extern "C" {
     COUNTER Get_Country_Name(CONST Parse_Data_t* parse_data, CONST CHAR** country_code);
 
 
-    BOOL TZ_Check_Data(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifier);
+    _BOOL TZ_Check_Data(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifier);
     COUNTER TZ_Get_Linked_Identifier(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
     YEAR Get_Zone_Year_Begin(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
     YEAR Get_Zone_Year_End(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
@@ -102,11 +102,11 @@ extern "C" {
 
 
     INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Zone_Info_By_Identifier(Zone_Info_t** zone_info, COUNTER* info_count);
+    VOID Sort_Zone_Info_By_Identifier(Zone_Info_t** zone_info, CONST COUNTER* info_count);
     INT Compare_Zones_Data_Identifier(CONST VOID* a, CONST VOID* b);
     VOID Sort_Zone_Data_By_Identifier(Zone_Entry_t** zone_data, COUNTER* data_count);
     INT Compare_Rules_Name(CONST VOID* a, CONST VOID* b);
-    VOID Sort_Rules_By_Name(Rule_Info_t** rules_info, COUNTER* info_count);
+    VOID Sort_Rules_By_Name(Rule_Entry_t** rules_info, CONST COUNTER* info_count);
     
    
    

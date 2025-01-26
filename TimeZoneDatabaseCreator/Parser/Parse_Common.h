@@ -40,9 +40,9 @@ extern "C" {
 #define WEEKDAY                 uint8_t
 #define HOUR                    int64_t
 
-#define BOOL                    bool
-#define TRUE                    true
-#define FALSE                   false
+#define _BOOL                    bool
+#define _TRUE                    true
+#define _FALSE                   false
 
 #define INVALID_YEAR            _I32_MAX
 #define INVALID_MONTH           _UI8_MAX
@@ -52,7 +52,7 @@ extern "C" {
 #define INVALID_HOUR            0xFFFFF
 #define INDEX_NOT_FOUND         -1i32
 #define YEAR_END_MAX            -1i32
-#define JD                      int64_t
+#define JD                      double
 #define JDN                     int64_t
 
     typedef enum
@@ -132,7 +132,7 @@ extern "C" {
     HOUR Parse_Hour(CONST CHAR** hour, CHAR* suffix);
     WEEKDAY Parse_Weekday(CONST CHAR** weekday);
     MONTH Parse_Month(CONST CHAR** month);
-    VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after);
+    VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, _BOOL* weekday_after);
 
     LENGHT utf8_strlen(CONST CHAR* s);
     

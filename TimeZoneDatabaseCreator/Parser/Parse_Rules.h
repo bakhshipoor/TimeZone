@@ -11,14 +11,14 @@ extern "C" {
     typedef struct
     {
         HOUR Hour;
-        BOOL Hour_isUTC;
+        _BOOL Hour_isUTC;
     } Rule_Data_Hour_t;
 
     typedef struct
     {
         DAY Day;
         WEEKDAY Weekday;
-        BOOL Weekday_isAfterOrEqual_Day;
+        _BOOL Weekday_isAfterOrEqual_Day;
     } Rule_Data_Day_t;
 
     typedef struct

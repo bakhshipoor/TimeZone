@@ -63,7 +63,7 @@ extern "C" {
     Rules_Data_String_t* Convert_Rules_Data_To_String(Time_Zones_t* tz, Rules_Data_Lenght_t* rules_data_lenght);
     
     CHAR* Print_Space(COUNTER str_lenght, COUNTER max_lenght);
-
+    VOID Free_TZ_Data(Time_Zones_t* tz);
 
 #ifdef __cplusplus
 }

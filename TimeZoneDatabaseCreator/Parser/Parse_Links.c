@@ -9,19 +9,19 @@ typedef struct
 } Link_Data_t;
 
 
-STATIC BOOL Target_isExist(CONST Link_Entry_t** link_list, CONST COUNTER* links_count, CONST CHAR** target, COUNTER* find_Index);
+STATIC _BOOL Target_isExist(CONST Link_Entry_t** link_list, CONST COUNTER* links_count, CONST CHAR** target, COUNTER* find_Index);
 STATIC VOID Link_Create(Link_Entry_t** link_list, COUNTER* links_count, CONST CHAR** target);
-STATIC BOOL Link_Name_Create(Link_Name_t** link_name_list, CONST COUNTER* link_names_count, CONST Link_Data_t* link_data);
+STATIC _BOOL Link_Name_Create(Link_Name_t** link_name_list, CONST COUNTER* link_names_count, CONST Link_Data_t* link_data);
 STATIC Link_Data_t* Parse_Link_Data(CONST CHAR** line);
 STATIC VOID Free_Link_Data(Link_Data_t* link_data);
 STATIC VOID Free_Link(Link_Entry_t* link);
 
-Link_Entry_t* Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER* links_count)
+VOID Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER* links_count)
 {
    Link_Data_t* link_data = Parse_Link_Data(line);
     if (link_data == NULL)
     {
-        return NULL;
+        return;
     }
 
     /* COUNTER find_index = INDEX_NOT_FOUND;
@@ -43,7 +43,7 @@ Link_Entry_t* Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER*
     if (link == NULL)
     {
         Free_Link_Data(link_data);
-        return NULL;
+        return;
     }
 
     link->Target = _strdup(link_data->Target);
@@ -54,7 +54,7 @@ Link_Entry_t* Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER*
     {
         Free_Link_Data(link_data);
         Free_Link(link);
-        return NULL;
+        return;
     }
 
     Link_Entry_t* list = (Link_Entry_t*)realloc(*links_list, ((*links_count) + 1) * sizeof(Link_Entry_t));
@@ -62,7 +62,7 @@ Link_Entry_t* Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER*
     {
         Free_Link_Data(link_data);
         Free_Link(link);
-        return NULL;
+        return;
     }
 
     *links_list = list;
@@ -74,7 +74,7 @@ Link_Entry_t* Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER*
     return;
 }
 
-STATIC BOOL Target_isExist(CONST Link_Entry_t** link_list, CONST COUNTER* links_count, CONST CHAR** target, COUNTER* find_Index)
+STATIC _BOOL Target_isExist(CONST Link_Entry_t** link_list, CONST COUNTER* links_count, CONST CHAR** target, COUNTER* find_Index)
 {
     if (link_list != NULL && links_count != NULL && *links_count > 0)
     {
@@ -83,11 +83,11 @@ STATIC BOOL Target_isExist(CONST Link_Entry_t** link_list, CONST COUNTER* links_
             if (strcmp((*link_list)[rule_index].Target, *target) == 0)
             {
                 *find_Index = rule_index;
-                return TRUE;
+                return _TRUE;
             }
         }
     }
-    return FALSE;
+    return _FALSE;
 }
 
 STATIC VOID Link_Create(Link_Entry_t** link_list, COUNTER* links_count, CONST CHAR** target)
@@ -126,11 +126,11 @@ STATIC VOID Link_Create(Link_Entry_t** link_list, COUNTER* links_count, CONST CH
     free(link);
 }
 
-STATIC BOOL Link_Name_Create(Link_Name_t** link_name_list, CONST COUNTER* link_names_count, CONST Link_Data_t* link_data)
+STATIC _BOOL Link_Name_Create(Link_Name_t** link_name_list, CONST COUNTER* link_names_count, CONST Link_Data_t* link_data)
 {
     if (link_names_count == NULL || link_data == NULL)
     {
-        return FALSE;
+        return _FALSE;
     }
 
     Link_Name_t link_name = { 0 };
@@ -155,13 +155,13 @@ STATIC BOOL Link_Name_Create(Link_Name_t** link_name_list, CONST COUNTER* link_n
     {
         free(ln_list);
         ln_list = NULL;
-        return FALSE;
+        return _FALSE;
     }
     *link_name_list = ln_list;
     (*link_name_list)[*link_names_count] = link_name;
 
 
-    return TRUE;
+    return _TRUE;
 }
 
 STATIC Link_Data_t* Parse_Link_Data(CONST CHAR** line)

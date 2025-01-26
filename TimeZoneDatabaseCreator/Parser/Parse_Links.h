@@ -20,7 +20,7 @@ extern "C" {
         Link_Name_t* Link_Names;*/
     }Link_Entry_t;
 
-    Link_Entry_t* Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER* links_count);
+    VOID Parse_Links(CONST CHAR** line, Link_Entry_t** links_list, COUNTER* links_count);
     
 
 #ifdef __cplusplus

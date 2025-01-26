@@ -11,7 +11,7 @@ typedef struct
 STATIC ZoneTab_Data_t* Parse_ZoneTab_Data(CONST CHAR** line);
 STATIC VOID Parse_ZoneTab_Data_Cordinates(ZoneTab_Entry_t* zone_tab, ZoneTab_Data_t* zonetab_data);
 STATIC VOID Free_ZoneTab_Data(ZoneTab_Data_t* zonetab_data);
-STATIC VOID Free_Zone_Tab(ZoneTab_Data_t* zone_tab);
+STATIC VOID Free_Zone_Tab(ZoneTab_Entry_t* zone_tab);
 
 VOID Parse_ZoneTab(CHAR** line, ZoneTab_Entry_t** zonetab_list, COUNTER* zonetab_count)
 {
@@ -152,7 +152,7 @@ STATIC VOID Free_ZoneTab_Data(ZoneTab_Data_t* zonetab_data)
     }
 }
 
-STATIC VOID Free_Zone_Tab(ZoneTab_Data_t* zone_tab)
+STATIC VOID Free_Zone_Tab(ZoneTab_Entry_t* zone_tab)
 {
     if (zone_tab != NULL)
     {

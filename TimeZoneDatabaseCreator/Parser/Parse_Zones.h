@@ -10,14 +10,14 @@ extern "C" {
     typedef struct
     {
         HOUR Hour;
-        BOOL Hour_isUTC;       
+        _BOOL Hour_isUTC;       
     } Zone_Data_Until_Hour_t;
 
     typedef struct
     {
         DAY Day;
         WEEKDAY Weekday;
-        BOOL Weekday_isAfterOrEqual_Day;
+        _BOOL Weekday_isAfterOrEqual_Day;
     } Zone_Data_Until_Day_t;
 
     typedef struct
@@ -30,7 +30,7 @@ extern "C" {
 
     typedef struct
     {
-        BOOL Has_Rule;
+        _BOOL Has_Rule;
         CHAR* Rule_Name;
         HOUR Save_Hour;
     } Zone_Data_Rule_t;

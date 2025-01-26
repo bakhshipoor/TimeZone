@@ -65,13 +65,13 @@ STATIC ISO3166_Data_t* Parse_ISO3166_Data(CONST CHAR** line)
     iso_data->Country_Name = (CHAR*)calloc(MAX_LENGTH_DATA_FIELD, sizeof(char));
     if (iso_data->Country_Code == NULL || iso_data->Country_Name == NULL)
     {
-        Free_ISO3166_Data(&iso_data);
+        Free_ISO3166_Data(iso_data);
         return NULL;
     }
 
     if (sscanf(*line, "%s\t%[^\n]", iso_data->Country_Code, iso_data->Country_Name) != 2)
     {
-        Free_ISO3166_Data(&iso_data);
+        Free_ISO3166_Data(iso_data);
         return NULL;
     }
 

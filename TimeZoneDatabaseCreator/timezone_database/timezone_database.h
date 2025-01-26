@@ -92,7 +92,7 @@ extern "C" {
         int32_t       rule_id;
         int64_t       save_hour;
         uint8_t       format[10];
-        int64_t       until_jd; // 'until_jd' will hold the result of trunc(JD * pow(10.0, 5))
+        double        until_jd;
         uint8_t       comments[24];
     } tzdb_zone_data_t;
 

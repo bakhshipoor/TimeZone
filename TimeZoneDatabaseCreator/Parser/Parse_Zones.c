@@ -14,10 +14,10 @@ typedef struct
 CHAR Last_Zone_Name[MAX_LENGTH_DATA_FIELD] = "\0";
 
 
-STATIC BOOL Zone_isExist(CONST Zone_Entry_t** zone_list, CONST COUNTER* zones_count, CONST CHAR** zone_name, COUNTER* find_Index);
-STATIC BOOL Zone_Create(Zone_Entry_t** zone_list, COUNTER* zones_count, CONST CHAR** zone_name);
+STATIC _BOOL Zone_isExist(CONST Zone_Entry_t** zone_list, CONST COUNTER* zones_count, CONST CHAR** zone_name, COUNTER* find_Index);
+STATIC _BOOL Zone_Create(Zone_Entry_t** zone_list, COUNTER* zones_count, CONST CHAR** zone_name);
 STATIC VOID Parse_Zone_Year_Range(Zone_Entry_t** zone_list, CONST COUNTER* zone_index, CONST Zone_Details_t* zone_data);
-STATIC BOOL Zone_Info_Create(Zone_Data_t** info_list, CONST COUNTER* info_count, CONST Zone_Details_t* zone_data);
+STATIC _BOOL Zone_Info_Create(Zone_Data_t** info_list, CONST COUNTER* info_count, CONST Zone_Details_t* zone_data);
 STATIC Zone_Details_t* Parse_Zone_Data(CONST CHAR** line);
 STATIC HOUR Parse_Zone_Data_Standard_Offset(CONST Zone_Details_t* zone_data);
 STATIC Zone_Data_Rule_t Parse_Zone_Data_Rules(CONST Zone_Details_t* zone_data);
@@ -53,11 +53,11 @@ VOID Parse_Zones(CONST CHAR** line, Zone_Entry_t** zones_list, COUNTER* zones_co
     Free_Zone_Data(zone_data);
 }
 
-STATIC BOOL Zone_isExist(CONST Zone_Entry_t** zone_list, CONST COUNTER* zones_count, CONST CHAR** zone_name, COUNTER* find_Index)
+STATIC _BOOL Zone_isExist(CONST Zone_Entry_t** zone_list, CONST COUNTER* zones_count, CONST CHAR** zone_name, COUNTER* find_Index)
 {
     if (zone_list == NULL || zones_count == NULL || zone_name == NULL || find_Index == NULL)
     {
-        return FALSE;
+        return _FALSE;
     }
 
     if (*zone_list != NULL && *zones_count > 0)
@@ -67,31 +67,31 @@ STATIC BOOL Zone_isExist(CONST Zone_Entry_t** zone_list, CONST COUNTER* zones_co
             if (strcmp((*zone_list)[zone_index].Name, *zone_name) == 0)
             {
                 *find_Index = zone_index;
-                return TRUE;
+                return _TRUE;
             }
         }
     }
-    return FALSE;
+    return _FALSE;
 }
 
-STATIC BOOL Zone_Create(Zone_Entry_t** zone_list, COUNTER* zones_count, CONST CHAR** zone_name)
+STATIC _BOOL Zone_Create(Zone_Entry_t** zone_list, COUNTER* zones_count, CONST CHAR** zone_name)
 {
     if (zone_list == NULL || zones_count == NULL || zone_name == NULL || *zone_name == NULL)
     {
-        return FALSE;
+        return _FALSE;
     }
 
     Zone_Entry_t* zone = (Zone_Entry_t*)calloc(1, sizeof(Zone_Entry_t));
     if (zone == NULL)
     {
-        return FALSE;
+        return _FALSE;
     }
 
     zone->Name = (CHAR*)calloc(utf8_strlen(*zone_name) + 1, sizeof(CHAR));
     if (zone->Name == NULL)
     {
         free(zone);
-        return FALSE;
+        return _FALSE;
     }
     strcpy(zone->Name, *zone_name);
 
@@ -104,14 +104,14 @@ STATIC BOOL Zone_Create(Zone_Entry_t** zone_list, COUNTER* zones_count, CONST CH
     {
         free(zone->Name);
         free(zone);
-        return FALSE;
+        return _FALSE;
     }
 
     *zone_list = zones;
     (*zone_list)[*zones_count] = *zone;
     (*zones_count)++;
     free(zone);
-    return TRUE;
+    return _TRUE;
 }
 
 STATIC VOID Parse_Zone_Year_Range(Zone_Entry_t** zone_list, CONST COUNTER* zone_index, CONST Zone_Details_t* zone_data)
@@ -137,14 +137,12 @@ STATIC VOID Parse_Zone_Year_Range(Zone_Entry_t** zone_list, CONST COUNTER* zone_
     }
 }
 
-STATIC BOOL Zone_Info_Create(Zone_Data_t** info_list, CONST COUNTER* info_count, CONST Zone_Details_t* zone_data)
+STATIC _BOOL Zone_Info_Create(Zone_Data_t** info_list, CONST COUNTER* info_count, CONST Zone_Details_t* zone_data)
 {
-    COUNTER find_index;
-
     Zone_Data_t* info = (Zone_Data_t*)malloc(sizeof(Zone_Data_t));
     if (info == NULL)
     {
-        return FALSE;
+        return _FALSE;
     }
     info->Standard_Offset = Parse_Zone_Data_Standard_Offset(zone_data);
     info->Rule = Parse_Zone_Data_Rules(zone_data);
@@ -179,7 +177,7 @@ STATIC BOOL Zone_Info_Create(Zone_Data_t** info_list, CONST COUNTER* info_count,
         (*info_list)[*info_count] = *info;
     }
     free(info);
-    return TRUE;
+    return _TRUE;
 }
 
 STATIC Zone_Details_t* Parse_Zone_Data(CONST CHAR** line)
@@ -256,7 +254,7 @@ STATIC Zone_Details_t* Parse_Zone_Data(CONST CHAR** line)
 STATIC HOUR Parse_Zone_Data_Standard_Offset(CONST Zone_Details_t* zone_data)
 {
     CHAR s;
-    return Parse_Hour(&zone_data->Standard_Offset, &s);
+    return Parse_Hour((CONST CHAR**) &zone_data->Standard_Offset, &s);
 }
 
 STATIC Zone_Data_Rule_t Parse_Zone_Data_Rules(CONST Zone_Details_t* zone_data)
@@ -270,20 +268,20 @@ STATIC Zone_Data_Rule_t Parse_Zone_Data_Rules(CONST Zone_Details_t* zone_data)
 
     if (strcmp(zone_data->Rules, "-") == 0)
     {
-        rule.Has_Rule = FALSE;
+        rule.Has_Rule = _FALSE;
         rule.Rule_Name = (CHAR*)calloc(1, sizeof(CHAR));
         rule.Save_Hour = 0;
     }
     else if (!isalpha(zone_data->Rules[0]))
     {
-        rule.Has_Rule = TRUE;
+        rule.Has_Rule = _TRUE;
         rule.Rule_Name = (CHAR*)calloc(1, sizeof(CHAR));
         CHAR s;
-        rule.Save_Hour = Parse_Hour(&zone_data->Rules, &s);
+        rule.Save_Hour = Parse_Hour((CONST CHAR**) &zone_data->Rules, &s);
     }
     else
     {
-        rule.Has_Rule = TRUE;
+        rule.Has_Rule = _TRUE;
         size_t rule_name_length = utf8_strlen(zone_data->Rules) + 1;
         rule.Rule_Name = (CHAR*)malloc(rule_name_length * sizeof(CHAR));
         if (rule.Rule_Name != NULL)
@@ -295,7 +293,7 @@ STATIC Zone_Data_Rule_t Parse_Zone_Data_Rules(CONST Zone_Details_t* zone_data)
 
     if (rule.Rule_Name == NULL)
     {
-        rule.Has_Rule = FALSE;
+        rule.Has_Rule = _FALSE;
         rule.Save_Hour = 0;
     }
 
@@ -346,9 +344,9 @@ STATIC Zone_Data_Until_t Parse_Zone_Info_Until(CONST Zone_Details_t* zone_data)
     until.Month = (MONTH)TZDB_MONTH_NONE;
     until.Day.Day = (DAY)TZDB_DAY_NONE;
     until.Day.Weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
-    until.Day.Weekday_isAfterOrEqual_Day = FALSE;
+    until.Day.Weekday_isAfterOrEqual_Day = _FALSE;
     until.Hour.Hour = INVALID_HOUR;
-    until.Hour.Hour_isUTC = FALSE;
+    until.Hour.Hour_isUTC = _FALSE;
 
     int scan_lenght = sscanf(zone_data->Until, "%s\t%s\t%s\t%s", until_data_year, until_data_month, until_data_day, until_data_hour);
 
@@ -368,7 +366,7 @@ STATIC Zone_Data_Until_t Parse_Zone_Info_Until(CONST Zone_Details_t* zone_data)
     {
         CHAR s;
         until.Hour.Hour = Parse_Hour(&until_data_hour, &s);
-        until.Hour.Hour_isUTC = (s == 'u') ? TRUE : FALSE;
+        until.Hour.Hour_isUTC = (s == 'u') ? _TRUE : _FALSE;
     }
 
     if (until_data_year != NULL)

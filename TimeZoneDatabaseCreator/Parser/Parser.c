@@ -4,17 +4,17 @@ CHAR* line;
 // Data Files
 CHAR Data_File[FILE_TOTAL][MAX_LENGTH_FILE_NAME];
 
-BOOL Initial_FileNames(CONST CHAR** data_folder_path)
+_BOOL Initial_FileNames(CONST CHAR** data_folder_path)
 {
     if (*data_folder_path == NULL)
     {
-        return FALSE;
+        return _FALSE;
     }
     LENGHT path_lenght = (LENGHT)utf8_strlen(*data_folder_path);
     CHAR* folder_path = (CHAR*)malloc((path_lenght + 1) * sizeof(CHAR));
     if (folder_path == NULL || path_lenght == 0)
     {
-        return FALSE;
+        return _FALSE;
     }
     sprintf(folder_path, "%s", *data_folder_path);
     path_lenght = (LENGHT)utf8_strlen(folder_path);
@@ -35,11 +35,11 @@ BOOL Initial_FileNames(CONST CHAR** data_folder_path)
         FILE* data_File = fopen(Data_File[file_index], "r");
         if (!data_File)
         {
-            return FALSE;
+            return _FALSE;
         }
         fclose(data_File);
     }
-    return TRUE;
+    return _TRUE;
 }
 
 Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)

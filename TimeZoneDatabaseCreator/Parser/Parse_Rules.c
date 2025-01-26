@@ -15,10 +15,10 @@ typedef struct
     CHAR* Comment;
 } Rule_Details_t;
 
-STATIC BOOL Rule_isExist(CONST Rule_Entry_t** rule_list, CONST COUNTER* rules_count, CONST CHAR** rule_name, COUNTER* find_Index);
+STATIC _BOOL Rule_isExist(CONST Rule_Entry_t** rule_list, CONST COUNTER* rules_count, CONST CHAR** rule_name, COUNTER* find_Index);
 STATIC VOID Rule_Create(Rule_Entry_t** rule_list, COUNTER* rules_count, CONST CHAR** rule_name);
 STATIC VOID Parse_Rule_Year_Range(Rule_Entry_t** rule_list, CONST COUNTER* rule_index, CONST Rule_Details_t* rule_data);
-STATIC BOOL Rule_Year_Create(Rule_Data_t** year_list, CONST COUNTER* years_count, CONST Rule_Details_t* rule_data);
+STATIC _BOOL Rule_Year_Create(Rule_Data_t** year_list, CONST COUNTER* years_count, CONST Rule_Details_t* rule_data);
 STATIC Rule_Details_t* Parse_Rule_Data(CONST CHAR** line);
 STATIC YEAR Parse_Rule_Data_From(CONST Rule_Details_t* rule_data);
 STATIC YEAR Parse_Rule_Data_To(CONST Rule_Details_t* rule_data, YEAR max_value);
@@ -57,7 +57,7 @@ VOID Parse_Rules(CONST CHAR** line, Rule_Entry_t** rule_list, COUNTER* rules_cou
     return;
 }
 
-STATIC BOOL Rule_isExist(CONST Rule_Entry_t** rule_list, CONST COUNTER* rules_count, CONST CHAR** rule_name, COUNTER* find_Index)
+STATIC _BOOL Rule_isExist(CONST Rule_Entry_t** rule_list, CONST COUNTER* rules_count, CONST CHAR** rule_name, COUNTER* find_Index)
 {
     if (rule_list != NULL && rules_count != NULL && *rules_count > 0)
     {
@@ -66,31 +66,31 @@ STATIC BOOL Rule_isExist(CONST Rule_Entry_t** rule_list, CONST COUNTER* rules_co
             if (strcmp((*rule_list)[rule_index].Name, *rule_name) == 0)
             {
                 *find_Index = rule_index;
-                return TRUE;
+                return _TRUE;
             }
         }
     }
-    return FALSE;
+    return _FALSE;
 }
 
 STATIC VOID Rule_Create(Rule_Entry_t** rule_list, COUNTER* rules_count, CONST CHAR** rule_name)
 {
     if (rules_count == NULL || rule_name == NULL || *rule_name == NULL)
     {
-        return FALSE;
+        return;
     }
 
     Rule_Entry_t* rule = (Rule_Entry_t*)calloc(1, sizeof(Rule_Entry_t));
     if (rule == NULL)
     {
-        return FALSE;
+        return;
     }
 
     rule->Name = (CHAR*)calloc((utf8_strlen(*rule_name) + 1), sizeof(CHAR));
     if (rule->Name == NULL)
     {
         Free_Rule(rule);
-        return FALSE;
+        return;
     }
 
     strcpy(rule->Name, *rule_name);
@@ -99,7 +99,7 @@ STATIC VOID Rule_Create(Rule_Entry_t** rule_list, COUNTER* rules_count, CONST CH
     if (rules == NULL)
     {
         Free_Rule(rule);
-        return FALSE;
+        return;
     }
 
     *rule_list = rules;
@@ -108,7 +108,7 @@ STATIC VOID Rule_Create(Rule_Entry_t** rule_list, COUNTER* rules_count, CONST CH
 
     free(rule);
 
-    return TRUE;
+    return;
 }
 
 STATIC VOID Parse_Rule_Year_Range(Rule_Entry_t** rule_list, CONST COUNTER* rule_index, CONST Rule_Details_t* rule_data)
@@ -139,11 +139,11 @@ STATIC VOID Parse_Rule_Year_Range(Rule_Entry_t** rule_list, CONST COUNTER* rule_
     }
 }
 
-STATIC BOOL Rule_Year_Create(Rule_Data_t** year_list, CONST COUNTER* years_count, CONST Rule_Details_t* rule_data)
+STATIC _BOOL Rule_Year_Create(Rule_Data_t** year_list, CONST COUNTER* years_count, CONST Rule_Details_t* rule_data)
 {
     if (years_count == NULL || rule_data == NULL)
     {
-        return FALSE;
+        return _FALSE;
     }
 
     Rule_Data_t* rule_year = (Rule_Data_t*)calloc(1, sizeof(Rule_Data_t));
@@ -187,14 +187,14 @@ STATIC BOOL Rule_Year_Create(Rule_Data_t** year_list, CONST COUNTER* years_count
     {
         free(rule_year);
         rule_year = NULL;
-        return FALSE;
+        return _FALSE;
     }
     *year_list = year;
     (*year_list)[*years_count] = *rule_year;
 
     free(rule_year);
 
-    return TRUE;
+    return _TRUE;
 }
 
 STATIC Rule_Details_t* Parse_Rule_Data(CONST CHAR** line)
@@ -281,13 +281,13 @@ STATIC YEAR Parse_Rule_Data_To(CONST Rule_Details_t* rule_data, YEAR max_value)
 
 STATIC MONTH Parse_Rule_Data_In(CONST Rule_Details_t* rule_data)
 {
-    return Parse_Month(&rule_data->In);
+    return Parse_Month((CONST CHAR**)&rule_data->In);
 }
 
 STATIC Rule_Data_Day_t Parse_Rule_Data_On(CONST Rule_Details_t* rule_data)
 {
     Rule_Data_Day_t day = { 0 };
-    Parse_Day_Of_Month(&rule_data->On, &day.Day, &day.Weekday, &day.Weekday_isAfterOrEqual_Day);
+    Parse_Day_Of_Month((CONST CHAR**)&rule_data->On, &day.Day, &day.Weekday, &day.Weekday_isAfterOrEqual_Day);
     return day;
 }
 
@@ -295,11 +295,11 @@ STATIC Rule_Data_Hour_t Parse_Rule_Data_At(CONST Rule_Details_t* rule_data)
 {
     Rule_Data_Hour_t hour = { 0 };
     CHAR s;
-    hour.Hour = Parse_Hour(&rule_data->At, &s);
-    hour.Hour_isUTC = FALSE;
+    hour.Hour = Parse_Hour((CONST CHAR**)&rule_data->At, &s);
+    hour.Hour_isUTC = _FALSE;
     if (s == 'u')
     {
-        hour.Hour_isUTC = TRUE;
+        hour.Hour_isUTC = _TRUE;
     }
     return hour;
 }
@@ -307,7 +307,7 @@ STATIC Rule_Data_Hour_t Parse_Rule_Data_At(CONST Rule_Details_t* rule_data)
 STATIC HOUR Parse_Rule_Data_Save(CONST Rule_Details_t* rule_data)
 {
     CHAR s;
-    return Parse_Hour(&rule_data->Save, &s);
+    return Parse_Hour((CONST CHAR**)&rule_data->Save, &s);
 }
 
 STATIC VOID Free_Rule_Data(Rule_Details_t* rule_data)

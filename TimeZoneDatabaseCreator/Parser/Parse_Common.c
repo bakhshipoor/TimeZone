@@ -7,7 +7,8 @@ HOUR Parse_Hour(CONST CHAR** hour, CHAR* suffix)
         return INVALID_HOUR;
     }
 
-    CHAR* input = *hour;
+    CHAR* input = (CHAR*)calloc(utf8_strlen(*hour) + 1, sizeof(CHAR));
+    strcpy(input, *hour);
     HOUR h = 0, m = 0, s = 0;
     HOUR parsed_hour = INVALID_HOUR;
     CHAR sign = 0;
@@ -90,7 +91,7 @@ MONTH Parse_Month(CONST CHAR** month)
     return INVALID_MONTH;
 }
 
-VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekday_after)
+VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, _BOOL* weekday_after)
 {
     if (on == NULL || *on == NULL || day == NULL || weekday == NULL || weekday_after == NULL)
     {
@@ -99,7 +100,7 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
 
     *day = (DAY)TZDB_DAY_NONE;
     *weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
-    *weekday_after = FALSE;
+    *weekday_after = _FALSE;
 
     if (utf8_strlen(*on) <= 3)
     {
@@ -115,7 +116,7 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
             {
                 *day = 0; // Last week
                 *weekday = Parse_Weekday(&dow);
-                *weekday_after = FALSE;
+                *weekday_after = _FALSE;
             }
             else
             {
@@ -123,11 +124,11 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
 
                 if (dow[len - 1] == '>')
                 {
-                    *weekday_after = TRUE;
+                    *weekday_after = _TRUE;
                 }
                 else if (dow[len - 1] == '<')
                 {
-                    *weekday_after = FALSE;
+                    *weekday_after = _FALSE;
                 }
                 dow[len - 1] = '\0';
 
