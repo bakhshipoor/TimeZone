@@ -103,7 +103,7 @@ STATIC VOID Link_Create(Link_Entry_t** link_list, COUNTER* links_count, CONST CH
         return;
     }
 
-    link->Target = (CHAR*)calloc((strlen(*target) + 1), sizeof(CHAR));
+    link->Target = (CHAR*)calloc((utf8_strlen(*target) + 1), sizeof(CHAR));
     if (link->Target == NULL)
     {
         Free_Link(link);
@@ -136,7 +136,7 @@ STATIC BOOL Link_Name_Create(Link_Name_t** link_name_list, CONST COUNTER* link_n
     Link_Name_t link_name = { 0 };
     
     
-    link_name.Link_Name = (CHAR*)calloc((strlen(link_data->Link_Name) + 1), sizeof(CHAR));
+    link_name.Link_Name = (CHAR*)calloc((utf8_strlen(link_data->Link_Name) + 1), sizeof(CHAR));
     if (link_name.Link_Name != NULL)
     {
         link_name.Link_Name = _strdup(link_data->Link_Name);

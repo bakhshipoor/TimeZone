@@ -55,7 +55,7 @@ VOID Generate_Rules_Info(Parse_Data_t* parse_data, Rule_Info_t** rules_info_list
         }
         *rules_info_list = r_info;
 
-        (*rules_info_list)[rule_index].Name = (CHAR*)calloc(strlen(parse_data->Rules[rule_index].Name) + 1, sizeof(CHAR));
+        (*rules_info_list)[rule_index].Name = (CHAR*)calloc(utf8_strlen(parse_data->Rules[rule_index].Name) + 1, sizeof(CHAR));
         if ((*rules_info_list)[rule_index].Name != NULL)
         {
             (*rules_info_list)[rule_index].Name = _strdup(parse_data->Rules[rule_index].Name);
@@ -108,12 +108,12 @@ VOID Generate_Rules_Data(Parse_Data_t* parse_data, RuleData_t** rules_data_list,
             (*rules_data_list)[*rules_data_count].Hour = parse_data->Rules[reule_index].Years[data_index].Hour.Hour;
             (*rules_data_list)[*rules_data_count].Hour_isUTC = parse_data->Rules[reule_index].Years[data_index].Hour.Hour_isUTC;
             (*rules_data_list)[*rules_data_count].Save_Hour = parse_data->Rules[reule_index].Years[data_index].Save_Hour;
-            (*rules_data_list)[*rules_data_count].Letter = (CHAR*)calloc(strlen(parse_data->Rules[reule_index].Years[data_index].Letter) + 1, sizeof(CHAR));
+            (*rules_data_list)[*rules_data_count].Letter = (CHAR*)calloc(utf8_strlen(parse_data->Rules[reule_index].Years[data_index].Letter) + 1, sizeof(CHAR));
             if ((*rules_data_list)[*rules_data_count].Letter != NULL)
             {
                 strcpy((*rules_data_list)[*rules_data_count].Letter, parse_data->Rules[reule_index].Years[data_index].Letter);
             }
-            (*rules_data_list)[*rules_data_count].Comments = (CHAR*)calloc(strlen(parse_data->Rules[reule_index].Years[data_index].Comment) + 1, sizeof(CHAR));
+            (*rules_data_list)[*rules_data_count].Comments = (CHAR*)calloc(utf8_strlen(parse_data->Rules[reule_index].Years[data_index].Comment) + 1, sizeof(CHAR));
             if ((*rules_data_list)[*rules_data_count].Comments != NULL)
             {
                 strcpy((*rules_data_list)[*rules_data_count].Comments, parse_data->Rules[reule_index].Years[data_index].Comment);
@@ -148,7 +148,7 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Zone_Info_t** zone_info_
         }
         *zone_info_list = z_info;
 
-        (*zone_info_list)[zone_index].Country_Code = (CHAR*)malloc((strlen(parse_data->Zonetab[zone_index].Country_Code) + 1) * sizeof(CHAR));
+        (*zone_info_list)[zone_index].Country_Code = (CHAR*)malloc((utf8_strlen(parse_data->Zonetab[zone_index].Country_Code) + 1) * sizeof(CHAR));
         if ((*zone_info_list)[zone_index].Country_Code != NULL)
         {
             sprintf((*zone_info_list)[zone_index].Country_Code, "%s", parse_data->Zonetab[zone_index].Country_Code);
@@ -157,14 +157,14 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Zone_Info_t** zone_info_
         COUNTER country_index = Get_Country_Name(parse_data, &parse_data->Zonetab[zone_index].Country_Code);
         if (country_index != -1)
         {
-            (*zone_info_list)[zone_index].Country_Name = (CHAR*)malloc((strlen(parse_data->ISO3166[country_index].Country_Name) + 1) * sizeof(CHAR));
+            (*zone_info_list)[zone_index].Country_Name = (CHAR*)malloc((utf8_strlen(parse_data->ISO3166[country_index].Country_Name) + 1) * sizeof(CHAR));
             if ((*zone_info_list)[zone_index].Country_Name != NULL)
             {
                 sprintf((*zone_info_list)[zone_index].Country_Name, "%s", parse_data->ISO3166[country_index].Country_Name);
             }
         }
 
-        (*zone_info_list)[zone_index].Time_Zone_Identifier = (CHAR*)malloc((strlen(parse_data->Zonetab[zone_index].TZ_Identifier) + 1) * sizeof(CHAR));
+        (*zone_info_list)[zone_index].Time_Zone_Identifier = (CHAR*)malloc((utf8_strlen(parse_data->Zonetab[zone_index].TZ_Identifier) + 1) * sizeof(CHAR));
         if ((*zone_info_list)[zone_index].Time_Zone_Identifier != NULL)
         {
             sprintf((*zone_info_list)[zone_index].Time_Zone_Identifier, "%s", parse_data->Zonetab[zone_index].TZ_Identifier);
@@ -174,7 +174,7 @@ VOID Generate_Time_Zones_Info(Parse_Data_t* parse_data, Zone_Info_t** zone_info_
 
         (*zone_info_list)[zone_index].Longitude = parse_data->Zonetab[zone_index].Longitude;
 
-        (*zone_info_list)[zone_index].Comments = (CHAR*)malloc((strlen(parse_data->Zonetab[zone_index].Comments) + 1) * sizeof(CHAR));
+        (*zone_info_list)[zone_index].Comments = (CHAR*)malloc((utf8_strlen(parse_data->Zonetab[zone_index].Comments) + 1) * sizeof(CHAR));
         if ((*zone_info_list)[zone_index].Comments != NULL)
         {
             sprintf((*zone_info_list)[zone_index].Comments, "%s", parse_data->Zonetab[zone_index].Comments);
@@ -246,7 +246,7 @@ VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, ZoneData_t** zones_data_
             (*zones_data_list)[*zones_data_count].Save_Hour = 0;
             if (parse_data->Zones[zone_index].Info[data_index].Rule.Has_Rule == TRUE)
             {
-                if (strlen(parse_data->Zones[zone_index].Info[data_index].Rule.Rule_Name) > 0)
+                if (utf8_strlen(parse_data->Zones[zone_index].Info[data_index].Rule.Rule_Name) > 0)
                 {
                     (*zones_data_list)[*zones_data_count].Rule_ID = Get_Rule_ID(&(*tz_list)->Rules_Info, &(*tz_list)->Rules_Count, &parse_data->Zones[zone_index].Info[data_index].Rule.Rule_Name);
                 }
@@ -255,14 +255,13 @@ VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, ZoneData_t** zones_data_
                     (*zones_data_list)[*zones_data_count].Save_Hour = parse_data->Zones[zone_index].Info[data_index].Rule.Save_Hour;
                 }
             }
-            (*zones_data_list)[*zones_data_count].Until_JD = 0.0;
-            (*zones_data_list)[*zones_data_count].Format = (CHAR*)calloc(strlen(parse_data->Zones[zone_index].Info[data_index].Format) + 1, sizeof(CHAR));
+            (*zones_data_list)[*zones_data_count].Until_JD = Get_Zone_Data_Until(&parse_data->Zones[zone_index].Info[data_index].Until, &parse_data->Zones[zone_index].Info[data_index].Standard_Offset);
+            (*zones_data_list)[*zones_data_count].Format = (CHAR*)calloc(utf8_strlen(parse_data->Zones[zone_index].Info[data_index].Format) + 1, sizeof(CHAR));
             if ((*zones_data_list)[*zones_data_count].Format != NULL)
             {
                 strcpy((*zones_data_list)[*zones_data_count].Format, parse_data->Zones[zone_index].Info[data_index].Format);
             }
-            (*zones_data_list)[*zones_data_count].JD_isUTC = parse_data->Zones[zone_index].Info[data_index].Until.Hour.Hour_isUTC;
-            (*zones_data_list)[*zones_data_count].Comments = (CHAR*)calloc(strlen(parse_data->Zones[zone_index].Info[data_index].Comment) + 1, sizeof(CHAR));
+            (*zones_data_list)[*zones_data_count].Comments = (CHAR*)calloc(utf8_strlen(parse_data->Zones[zone_index].Info[data_index].Comment) + 1, sizeof(CHAR));
             if ((*zones_data_list)[*zones_data_count].Comments != NULL)
             {
                 strcpy((*zones_data_list)[*zones_data_count].Comments, parse_data->Zones[zone_index].Info[data_index].Comment);
@@ -404,93 +403,74 @@ COUNTER Get_Rule_ID(CONST Rule_Info_t** rule_info_list, CONST COUNTER* rule_info
     return rule_id;
 }
 
-double Get_Zone_Data_Until(Zone_Data_Until_t* until)
+
+JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset)
 {
-    INT second = until->Hour.Hour;
-    if (second == INVALID_HOUR)
-    {
-        second = (24 * 3600) - 1;
-    }
     if (until->Year == YEAR_END_MAX)
     {
-        return ((double)YEAR_END_MAX * 1.0);
+        return ((JD)YEAR_END_MAX * 1.0);
     }
-    else if (until->Month == TZDB_MONTH_NONE)
+    YEAR year = 0;
+    MONTH month = 0;
+    DAY day = 0;
+    HOUR second = 0;
+
+    year = until->Year;
+
+    if (until->Month == TZDB_MONTH_NONE)
     {
-        INT year = until->Year-1;
-        INT month = 12;
-        INT day = Calculate_Days_In_Month(year, month);
-        INT jdn = Calculate_JDN(year, month, day);
-        return Calculate_JD(jdn, second);
+        month = 1;
+        day = 1;
+        second = 0;
     }
     else if (until->Day.Day == TZDB_DAY_NONE)
     {
-        if (until->Month > 1)
-        {
-            INT year = until->Year;
-            INT month = until->Month - 1;
-            INT day = Calculate_Days_In_Month(year, month);
-            INT jdn = Calculate_JDN(year, month, day);
-            return Calculate_JD(jdn, second);
-        }
-        else
-        {
-            INT year = until->Year - 1;
-            INT month = 12;
-            INT day = Calculate_Days_In_Month(year, month);
-            INT jdn = Calculate_JDN(year, month, day);
-            return Calculate_JD(jdn, second);
-        }
-    }
-    else if (until->Day.Weekday == (WEEKDAY)TZDB_WEEKDAY_NONE)
-    {
-        if (until->Day.Day > 1)
-        {
-            INT year = until->Year;
-            INT month = until->Month;
-            INT day = until->Day.Day - 1;
-            INT jdn = Calculate_JDN(year, month, day);
-            return Calculate_JD(jdn, second);
-        }
-        else
-        {
-            if (until->Month > 1)
-            {
-                INT year = until->Year;
-                INT month = until->Month - 1;
-                INT day = Calculate_Days_In_Month(year, month);
-                INT jdn = Calculate_JDN(year, month, day);
-                return Calculate_JD(jdn, second);
-            }
-            else
-            {
-                INT year = until->Year - 1;
-                INT month = 12;
-                INT day = Calculate_Days_In_Month(year, month);
-                INT jdn = Calculate_JDN(year, month, day);
-                return Calculate_JD(jdn, second);
-            }
-        }
-    }
-    else if (until->Day.Day == 0)
-    {
-        INT year = until->Year;
-        INT month = until->Month;
-        INT day = Calculate_Last_Weekday_Day_In_Month(year, month, until->Day.Weekday) - 1;
-        INT jdn = Calculate_JDN(year, month, day);
-        return Calculate_JD(jdn, second);
-    }
-    else if (until->Day.Weekday_isAfterOrEqual_Day == true)
-    {
-
+        month = until->Month;
+        day = 1;
+        second = 0;
     }
     else
     {
+        month = until->Month;
+        if (until->Day.Weekday == TZDB_WEEKDAY_NONE)
+        {
+            day = until->Day.Day;
+        }
+        else 
+        {
+            if (until->Day.Day == 0)
+            {
+                day = Calculate_Last_Weekday_Day_In_Month(year, month, until->Day.Weekday);
+            }
+            else if (until->Day.Weekday_isAfterOrEqual_Day == TRUE)
+            {
+                day = Calculate_First_Weekday_After_Day_In_Month(year, month, until->Day.Day, until->Day.Weekday);
+            }
+            else
+            {
+                day = Calculate_First_Weekday_Before_Day_In_Month(year, month, until->Day.Day, until->Day.Weekday);
+            }
+        }
 
+        second = 0;
+        if (until->Hour.Hour != INVALID_HOUR)
+        {
+            second = until->Hour.Hour;
+        }
     }
+
+    Subtract_Or_Add_Seconds(&year, &month, &day, &second, -1);
+    if (until->Hour.Hour != INVALID_HOUR && until->Hour.Hour_isUTC == TRUE)
+    {
+        Subtract_Or_Add_Seconds(&year, &month, &day, &second, *utc_offset);
+    }
+
+    JDN jdn = Calculate_JDN(year, month, day);
+
+    return Calculate_JD(jdn, second);
 }
 
-INT Calculate_Days_In_Month(INT year, INT month) 
+DAY Calculate_Days_In_Month(YEAR year, MONTH month) 
 {
     switch (month) 
     {
@@ -508,23 +488,23 @@ INT Calculate_Days_In_Month(INT year, INT month)
     }
 }
 
-double Calculate_JD(INT jdn, INT second) 
+JD Calculate_JD(JDN jdn, HOUR second) 
 {
     return (((double)jdn * 1.0) + (((double)second * 1.0) / 86400.0));
 }
 
-INT Calculate_JDN(INT year, INT month, INT day)
+JDN Calculate_JDN(YEAR year, MONTH month, DAY day)
 {
-    INT a = (14 - month) / 12;
-    INT y = year + 4800 - a;
-    INT m = month + 12 * a - 3;
+    JDN a = (14 - month) / 12;
+    JDN y = year + 4800 - a;
+    JDN m = month + 12 * a - 3;
 
     return (day + ((153 * m + 2) / 5) + 365 * y + (y / 4) - (y / 100) + (y / 400) - 32045);
 }
 
-INT Calculate_Last_Weekday_Day_In_Month(INT year, INT month, INT weekday)
+DAY Calculate_Last_Weekday_Day_In_Month(YEAR year, MONTH month, WEEKDAY weekday)
 {
-    INT result_day = Calculate_Days_In_Month(year, month);
+    DAY result_day = Calculate_Days_In_Month(year, month);
     while (((Calculate_JDN(year, month, result_day) + 1) % 7) != weekday)
     {
         result_day--;
@@ -532,20 +512,20 @@ INT Calculate_Last_Weekday_Day_In_Month(INT year, INT month, INT weekday)
     return result_day;
 }
 
-INT Calculate_First_Weekday_After_Day_In_Month(INT year, INT month, INT day, INT weekday)
+DAY Calculate_First_Weekday_After_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday)
 {
-    INT jdn = Calculate_JDN(year, month, day);
+    JDN jdn = Calculate_JDN(year, month, day);
     
-    INT current_weekday = (jdn + 1) % 7;
+    WEEKDAY current_weekday = ((jdn + 1) % 7);
 
     if (current_weekday == weekday)
     {
         return day;
     }
 
-    INT days_to_next_weekday = (weekday - current_weekday + 7) % 7;
+    DAY days_to_next_weekday = (weekday - current_weekday + 7) % 7;
 
-    INT result_day = day + days_to_next_weekday;
+    DAY result_day = day + days_to_next_weekday;
 
     if (result_day > Calculate_Days_In_Month(year, month)) 
     {
@@ -555,21 +535,20 @@ INT Calculate_First_Weekday_After_Day_In_Month(INT year, INT month, INT day, INT
     return result_day;
 }
 
-
-int Calculate_First_Weekday_Before_Day_In_Month(int year, int month, int day, int weekday) 
+DAY Calculate_First_Weekday_Before_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday)
 {
-    int jdn = Calculate_JDN(year, month, day);
+    JDN jdn = Calculate_JDN(year, month, day);
 
-    int current_weekday = (jdn + 1) % 7;
+    WEEKDAY current_weekday = ((jdn + 1) % 7);
 
     if (current_weekday == weekday)
     {
         return day;
     }
 
-    int days_to_prev_weekday = (current_weekday - weekday + 7) % 7;
+    DAY days_to_prev_weekday = (current_weekday - weekday + 7) % 7;
 
-    int result_day = day - days_to_prev_weekday;
+    DAY result_day = day - days_to_prev_weekday;
 
     if (result_day < 1) 
     {
@@ -579,7 +558,44 @@ int Calculate_First_Weekday_Before_Day_In_Month(int year, int month, int day, in
     return result_day;
 }
 
+VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, CONST HOUR seconds_to_add)
+{
+    HOUR total_seconds = *second + seconds_to_add;
 
+    while (total_seconds < 0) 
+    {
+        total_seconds += 86400;
+        (*day)--;
+        if (*day < 1) 
+        {
+            (*month)--;
+            if (*month < 1) 
+            {
+                *month = 12;
+                (*year)--;
+            }
+            *day = Calculate_Days_In_Month(*year ,*month);
+        }
+    }
+
+    while (total_seconds >= 86400) 
+    {
+        total_seconds -= 86400;
+        (*day)++;
+        if (*day > Calculate_Days_In_Month(*year, *month)) 
+        {
+            *day = 1;
+            (*month)++;
+            if (*month > 12) 
+            {
+                *month = 1;
+                (*year)++;
+            }
+        }
+    }
+
+    *second = total_seconds;
+}
 
 
 

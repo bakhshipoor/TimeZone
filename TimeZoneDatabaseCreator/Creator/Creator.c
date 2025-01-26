@@ -223,57 +223,57 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: time_zone_id
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[0]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[0]), zones_info_lenght.Zones_Info[0])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[0]), zones_info_lenght.Zones_Info[0])
         );
         // Field 1: time_zone_identifier
         fprintf(c_file, "\"%s\",%s",
             zones_info[zones_info_index].Zones_Info[1],
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[1]), zones_info_lenght.Zones_Info[1])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[1]), zones_info_lenght.Zones_Info[1])
         );
         // Field 2: country_code
         fprintf(c_file, "\"%s\",%s",
             zones_info[zones_info_index].Zones_Info[2],
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[2]), zones_info_lenght.Zones_Info[2])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[2]), zones_info_lenght.Zones_Info[2])
         );
         // Field 3: country_name
         fprintf(c_file, "\"%s\",%s",
             zones_info[zones_info_index].Zones_Info[3],
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[3]), zones_info_lenght.Zones_Info[3])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[3]), zones_info_lenght.Zones_Info[3])
         );
         // Field 4: latitude
         fprintf(c_file, "%llf,%s",
             atof(zones_info[zones_info_index].Zones_Info[4]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[4]), zones_info_lenght.Zones_Info[4])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[4]), zones_info_lenght.Zones_Info[4])
         );
         // Field 5: longitude
         fprintf(c_file, "%llf,%s",
             atof(zones_info[zones_info_index].Zones_Info[5]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[5]), zones_info_lenght.Zones_Info[5])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[5]), zones_info_lenght.Zones_Info[5])
         );
         // Field 6: linked_tz_identifier
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[6]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[6]), zones_info_lenght.Zones_Info[6])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[6]), zones_info_lenght.Zones_Info[6])
         );
         // Field 7: data_count
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[7]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[7]), zones_info_lenght.Zones_Info[7])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[7]), zones_info_lenght.Zones_Info[7])
         );
         // Field 8: year_begin
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[8]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[8]), zones_info_lenght.Zones_Info[8])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[8]), zones_info_lenght.Zones_Info[8])
         );
         // Field 9: year_end
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[9]),
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[9]), zones_info_lenght.Zones_Info[9])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[9]), zones_info_lenght.Zones_Info[9])
         );
         // Field 10: comments
         fprintf(c_file, "\"%s\"%s",
             zones_info[zones_info_index].Zones_Info[10],
-            Print_Space(strlen(zones_info[zones_info_index].Zones_Info[10]), zones_info_lenght.Zones_Info[10])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[10]), zones_info_lenght.Zones_Info[10])
         );
         if (zones_info_index == (tz->Zones_Count - 1))
         {
@@ -296,43 +296,37 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: time_zone_id
         fprintf(c_file, "%d,%s",
             atoi(zones_data[zones_data_index].Zones_Data[0]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[0]), zones_data_lenght.Zones_Data[0])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[0]), zones_data_lenght.Zones_Data[0])
         );
         // Field 1: standard_offset
         fprintf(c_file, "%lld,%s",
             _atoi64(zones_data[zones_data_index].Zones_Data[1]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[1]), zones_data_lenght.Zones_Data[1])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[1]), zones_data_lenght.Zones_Data[1])
         );
         // Field 2: rule_id
         fprintf(c_file, "%d,%s",
             atoi(zones_data[zones_data_index].Zones_Data[2]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[2]), zones_data_lenght.Zones_Data[2])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[2]), zones_data_lenght.Zones_Data[2])
         );
         // Field 3: save_hour
         fprintf(c_file, "%lld,%s",
             _atoi64(zones_data[zones_data_index].Zones_Data[3]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[3]), zones_data_lenght.Zones_Data[3])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[3]), zones_data_lenght.Zones_Data[3])
         );
         // Field 4: format
         fprintf(c_file, "\"%s\",%s",
             zones_data[zones_data_index].Zones_Data[4],
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[4]), zones_data_lenght.Zones_Data[4])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[4]), zones_data_lenght.Zones_Data[4])
         );
         // Field 5: until_jd
-        fprintf(c_file, "%llf,%s",
+        fprintf(c_file, "%.10llf,%s",
             atof(zones_data[zones_data_index].Zones_Data[5]),
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[5]), zones_data_lenght.Zones_Data[5])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[5]), zones_data_lenght.Zones_Data[5])
         );
-        // Field 6: jd_isUTC
-        int bool_len = atoi(zones_data[zones_data_index].Zones_Data[6]) <= 0 ? 5 : 4;
-        fprintf(c_file, "%s,%s",
-            atoi(zones_data[zones_data_index].Zones_Data[6]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, 5)
-        );
-        // Field 7: comments
+        // Field 6: comments
         fprintf(c_file, "\"%s\"%s",
-            zones_data[zones_data_index].Zones_Data[7],
-            Print_Space(strlen(zones_data[zones_data_index].Zones_Data[7]), zones_data_lenght.Zones_Data[7])
+            zones_data[zones_data_index].Zones_Data[6],
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[6]), zones_data_lenght.Zones_Data[6])
         );
         if (zones_data_index == (tz->Zones_Data_Count - 1))
         {
@@ -355,27 +349,27 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: rule_id
         fprintf(c_file, "%d,%s",
             atoi(rules_info[rules_info_index].Rules_Info[0]),
-            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[0]), rules_info_lenght.Rules_Info[0])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[0]), rules_info_lenght.Rules_Info[0])
         );
         // Field 1: name
         fprintf(c_file, "\"%s\",%s",
             rules_info[rules_info_index].Rules_Info[1],
-            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[1]), rules_info_lenght.Rules_Info[1])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[1]), rules_info_lenght.Rules_Info[1])
         );
         // Field 2: years_count
         fprintf(c_file, "%d,%s",
             atoi(rules_info[rules_info_index].Rules_Info[2]),
-            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[2]), rules_info_lenght.Rules_Info[2])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[2]), rules_info_lenght.Rules_Info[2])
         );
         // Field 3: year_begin
         fprintf(c_file, "%d,%s",
             atoi(rules_info[rules_info_index].Rules_Info[3]),
-            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[3]), rules_info_lenght.Rules_Info[3])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[3]), rules_info_lenght.Rules_Info[3])
         );
         // Field 4: year_end
         fprintf(c_file, "%d%s",
             atoi(rules_info[rules_info_index].Rules_Info[4]),
-            Print_Space(strlen(rules_info[rules_info_index].Rules_Info[4]), rules_info_lenght.Rules_Info[4])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[4]), rules_info_lenght.Rules_Info[4])
         );
         if (rules_info_index == (tz->Rules_Count - 1))
         {
@@ -397,32 +391,32 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: rule_id
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[0]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[0]), rules_data_lenght.Rules_Data[0])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[0]), rules_data_lenght.Rules_Data[0])
         );
         // Field 1: from
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[1]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[1]), rules_data_lenght.Rules_Data[1])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[1]), rules_data_lenght.Rules_Data[1])
         );
         // Field 2: to
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[2]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[2]), rules_data_lenght.Rules_Data[2])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[2]), rules_data_lenght.Rules_Data[2])
         );
         // Field 3: month
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[3]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[3]), rules_data_lenght.Rules_Data[3])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[3]), rules_data_lenght.Rules_Data[3])
         );
         // Field 4: day
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[4]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[4]), rules_data_lenght.Rules_Data[4])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[4]), rules_data_lenght.Rules_Data[4])
         );
         // Field 5: weekday
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[5]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[5]), rules_data_lenght.Rules_Data[5])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[5]), rules_data_lenght.Rules_Data[5])
         );
         // Field 6: weekday_isafterorequal_day
         int bool_len = atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? 5 : 4;
@@ -433,7 +427,7 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 7: hour
         fprintf(c_file, "%lld,%s",
             _atoi64(rules_data[rules_data_index].Rules_Data[7]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[7]), rules_data_lenght.Rules_Data[7])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[7]), rules_data_lenght.Rules_Data[7])
         );
         // Field 8: hour_isUTC
         bool_len = atoi(rules_data[rules_data_index].Rules_Data[8]) <= 0 ? 5 : 4;
@@ -444,17 +438,17 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 9: save_hour
         fprintf(c_file, "%lld,%s",
             _atoi64(rules_data[rules_data_index].Rules_Data[9]),
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[9]), rules_data_lenght.Rules_Data[9])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[9]), rules_data_lenght.Rules_Data[9])
         );
         // Field 10: letter
         fprintf(c_file, "\"%s\",%s",
             rules_data[rules_data_index].Rules_Data[10],
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[10]), rules_data_lenght.Rules_Data[10])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[10]), rules_data_lenght.Rules_Data[10])
         );
         // Field 11: comment
         fprintf(c_file, "\"%s\"%s",
             rules_data[rules_data_index].Rules_Data[11],
-            Print_Space(strlen(rules_data[rules_data_index].Rules_Data[11]), rules_data_lenght.Rules_Data[11])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[11]), rules_data_lenght.Rules_Data[11])
         );
         if (rules_data_index == (tz->Rules_Data_Count-1))
         {
@@ -512,9 +506,9 @@ Zones_Info_String_t* Convert_Zones_Info_To_String(Time_Zones_t* tz, Zones_Info_L
 
         for (COUNTER field_index = 0; field_index < ZONE_INFO_FIELDS_COUNT; field_index++)
         {
-            if (strlen(zones_info[zones_info_index].Zones_Info[field_index]) > zones_info_lenght->Zones_Info[field_index])
+            if (utf8_strlen(zones_info[zones_info_index].Zones_Info[field_index]) > zones_info_lenght->Zones_Info[field_index])
             {
-                zones_info_lenght->Zones_Info[field_index] = strlen(zones_info[zones_info_index].Zones_Info[field_index]);
+                zones_info_lenght->Zones_Info[field_index] = utf8_strlen(zones_info[zones_info_index].Zones_Info[field_index]);
             }
         }
     }
@@ -550,15 +544,14 @@ Zones_Data_String_t* Convert_Zones_Data_To_String(Time_Zones_t* tz, Zones_Data_L
         sprintf(zones_data[zones_data_index].Zones_Data[2], "%d", tz->Zones_Data[zones_data_index].Rule_ID);
         sprintf(zones_data[zones_data_index].Zones_Data[3], "%lld", tz->Zones_Data[zones_data_index].Save_Hour);
         sprintf(zones_data[zones_data_index].Zones_Data[4], "%s", tz->Zones_Data[zones_data_index].Format);
-        sprintf(zones_data[zones_data_index].Zones_Data[5], "%llf", tz->Zones_Data[zones_data_index].Until_JD);
-        sprintf(zones_data[zones_data_index].Zones_Data[6], "%d", tz->Zones_Data[zones_data_index].JD_isUTC);
-        sprintf(zones_data[zones_data_index].Zones_Data[7], "%s", tz->Zones_Data[zones_data_index].Comments);
+        sprintf(zones_data[zones_data_index].Zones_Data[5], "%.10llf", tz->Zones_Data[zones_data_index].Until_JD);
+        sprintf(zones_data[zones_data_index].Zones_Data[6], "%s", tz->Zones_Data[zones_data_index].Comments);
 
         for (COUNTER field_index = 0; field_index < ZONE_DATA_FIELDS_COUNT; field_index++)
         {
-            if (strlen(zones_data[zones_data_index].Zones_Data[field_index]) > zones_data_lenght->Zones_Data[field_index])
+            if (utf8_strlen(zones_data[zones_data_index].Zones_Data[field_index]) > zones_data_lenght->Zones_Data[field_index])
             {
-                zones_data_lenght->Zones_Data[field_index] = strlen(zones_data[zones_data_index].Zones_Data[field_index]);
+                zones_data_lenght->Zones_Data[field_index] = utf8_strlen(zones_data[zones_data_index].Zones_Data[field_index]);
             }
         }
     }
@@ -597,9 +590,9 @@ Rules_Info_String_t* Convert_Rules_Info_To_String(Time_Zones_t* tz, Rules_Info_L
 
         for (COUNTER field_index = 0; field_index < RULE_INFO_FIELDS_COUNT; field_index++)
         {
-            if (strlen(rules_info[rules_info_index].Rules_Info[field_index]) > rules_info_lenght->Rules_Info[field_index])
+            if (utf8_strlen(rules_info[rules_info_index].Rules_Info[field_index]) > rules_info_lenght->Rules_Info[field_index])
             {
-                rules_info_lenght->Rules_Info[field_index] = strlen(rules_info[rules_info_index].Rules_Info[field_index]);
+                rules_info_lenght->Rules_Info[field_index] = utf8_strlen(rules_info[rules_info_index].Rules_Info[field_index]);
             }
         }
     }
@@ -645,9 +638,9 @@ Rules_Data_String_t* Convert_Rules_Data_To_String(Time_Zones_t* tz, Rules_Data_L
 
         for (COUNTER field_index = 0; field_index < RULE_DATA_FIELDS_COUNT; field_index++)
         {
-            if (strlen(rules_data[rules_data_index].Rules_Data[field_index]) > rules_data_lenght->Rules_Data[field_index])
+            if (utf8_strlen(rules_data[rules_data_index].Rules_Data[field_index]) > rules_data_lenght->Rules_Data[field_index])
             {
-                rules_data_lenght->Rules_Data[field_index] = strlen(rules_data[rules_data_index].Rules_Data[field_index]);
+                rules_data_lenght->Rules_Data[field_index] = utf8_strlen(rules_data[rules_data_index].Rules_Data[field_index]);
             }
         }
     }

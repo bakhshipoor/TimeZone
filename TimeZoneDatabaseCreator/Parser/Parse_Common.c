@@ -23,7 +23,7 @@ HOUR Parse_Hour(CONST CHAR** hour, CHAR* suffix)
         input++;
     }
 
-    size_t length = strlen(input);
+    size_t length = utf8_strlen(input);
     *suffix = '\0';
     if (isalpha(input[length - 1]))
     {
@@ -101,7 +101,7 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
     *weekday = (WEEKDAY)TZDB_WEEKDAY_NONE;
     *weekday_after = FALSE;
 
-    if (strlen(*on) <= 3)
+    if (utf8_strlen(*on) <= 3)
     {
         *day = atoi(*on);
     }
@@ -119,7 +119,7 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
             }
             else
             {
-                size_t len = strlen(dow);
+                size_t len = utf8_strlen(dow);
 
                 if (dow[len - 1] == '>')
                 {
@@ -136,4 +136,18 @@ VOID Parse_Day_Of_Month(CONST CHAR** on, DAY* day, WEEKDAY* weekday, BOOL* weekd
             }
         }
     }
+}
+
+LENGHT utf8_strlen(CONST CHAR* s) 
+{
+    LENGHT length = 0;
+    while (*s) 
+    {
+        if ((*s & 0xC0) != 0x80) 
+        {
+            length++;
+        }
+        s++;
+    }
+    return length;
 }

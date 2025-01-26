@@ -93,7 +93,7 @@ extern "C" {
         bool          has_rule;
         uint8_t       rule_name[6];
         int64_t       save_hour;
-        uint8_t       format[9];
+        uint8_t       format[19];
         int32_t       year;
         uint8_t       month;
         uint8_t       day;

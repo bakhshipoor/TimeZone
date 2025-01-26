@@ -87,7 +87,7 @@ STATIC BOOL Zone_Create(Zone_Entry_t** zone_list, COUNTER* zones_count, CONST CH
         return FALSE;
     }
 
-    zone->Name = (CHAR*)calloc(strlen(*zone_name) + 1, sizeof(CHAR));
+    zone->Name = (CHAR*)calloc(utf8_strlen(*zone_name) + 1, sizeof(CHAR));
     if (zone->Name == NULL)
     {
         free(zone);
@@ -149,16 +149,16 @@ STATIC BOOL Zone_Info_Create(Zone_Data_t** info_list, CONST COUNTER* info_count,
     info->Standard_Offset = Parse_Zone_Data_Standard_Offset(zone_data);
     info->Rule = Parse_Zone_Data_Rules(zone_data);
 
-    info->Format = (CHAR*)malloc((strlen(zone_data->Format) + 1) * sizeof(CHAR));
+    info->Format = (CHAR*)malloc((utf8_strlen(zone_data->Format) + 1) * sizeof(CHAR));
     if (info->Format != NULL)
     {
         sprintf(info->Format, "%s", zone_data->Format);
     }
     info->Until = Parse_Zone_Info_Until(zone_data);
-    info->Comment = (CHAR*)malloc((strlen(zone_data->Comment) + 1) * sizeof(CHAR));
+    info->Comment = (CHAR*)malloc((utf8_strlen(zone_data->Comment) + 1) * sizeof(CHAR));
     if (info->Comment != NULL)
     {
-        if (strlen(zone_data->Comment) > 0 && zone_data->Comment[0] == ' ')
+        if (utf8_strlen(zone_data->Comment) > 0 && zone_data->Comment[0] == ' ')
         {
             strcpy(zone_data->Comment, zone_data->Comment + 1);
         }
@@ -284,7 +284,7 @@ STATIC Zone_Data_Rule_t Parse_Zone_Data_Rules(CONST Zone_Details_t* zone_data)
     else
     {
         rule.Has_Rule = TRUE;
-        size_t rule_name_length = strlen(zone_data->Rules) + 1;
+        size_t rule_name_length = utf8_strlen(zone_data->Rules) + 1;
         rule.Rule_Name = (CHAR*)malloc(rule_name_length * sizeof(CHAR));
         if (rule.Rule_Name != NULL)
         {

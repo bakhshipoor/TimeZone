@@ -29,8 +29,7 @@ extern "C" {
         COUNTER Rule_ID;
         HOUR Save_Hour;
         CHAR* Format;
-        double Until_JD;
-        bool JD_isUTC;
+        JD Until_JD;
         CHAR* Comments;
     } ZoneData_t;
 
@@ -90,6 +89,16 @@ extern "C" {
     COUNTER Get_Zone_Data_Count(CONST Parse_Data_t* parse_data, CONST CHAR** tz_identifire);
     COUNTER Get_Zone_ID(CONST Zone_Info_t** tz_info_list, CONST COUNTER* tz_info_count, CONST CHAR** tz_identifier);
     COUNTER Get_Rule_ID(CONST Rule_Info_t** rule_info_list, CONST COUNTER* rule_info_count, CONST CHAR** rule_name);
+
+
+    JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset);
+    DAY Calculate_Days_In_Month(YEAR year, MONTH month);
+    JD Calculate_JD(JDN jdn, HOUR second);
+    JDN Calculate_JDN(YEAR year, MONTH month, DAY day);
+    DAY Calculate_Last_Weekday_Day_In_Month(YEAR year, MONTH month, WEEKDAY weekday);
+    DAY Calculate_First_Weekday_After_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday);
+    DAY Calculate_First_Weekday_Before_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday);
+    VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, CONST HOUR seconds_to_add);
 
 
     INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b);

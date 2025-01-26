@@ -23,7 +23,7 @@ VOID Parse_Version(CONST CHAR** line, Version_t** version)
         return;
     }
 
-    if (strlen(version_data->Major) == 4)
+    if (utf8_strlen(version_data->Major) == 4)
     {
         (*version)->Major = atoi(version_data->Major);
     }
@@ -31,7 +31,7 @@ VOID Parse_Version(CONST CHAR** line, Version_t** version)
     {
         (*version)->Major = 0;
     }
-    LENGHT size = (LENGHT)strlen(version_data->Minor) + 1;
+    LENGHT size = (LENGHT)utf8_strlen(version_data->Minor) + 1;
     (*version)->Minor = (CHAR*)calloc(size, size * sizeof(CHAR));
     if ((*version)->Minor != NULL)
     {

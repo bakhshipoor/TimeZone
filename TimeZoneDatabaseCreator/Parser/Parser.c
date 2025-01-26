@@ -10,14 +10,14 @@ BOOL Initial_FileNames(CONST CHAR** data_folder_path)
     {
         return FALSE;
     }
-    LENGHT path_lenght = (LENGHT)strlen(*data_folder_path);
+    LENGHT path_lenght = (LENGHT)utf8_strlen(*data_folder_path);
     CHAR* folder_path = (CHAR*)malloc((path_lenght + 1) * sizeof(CHAR));
     if (folder_path == NULL || path_lenght == 0)
     {
         return FALSE;
     }
     sprintf(folder_path, "%s", *data_folder_path);
-    path_lenght = (LENGHT)strlen(folder_path);
+    path_lenght = (LENGHT)utf8_strlen(folder_path);
     if (folder_path[path_lenght - 1] == '/' || folder_path[path_lenght - 1] == '\\')
     {
         folder_path[path_lenght - 1] = '\0';
@@ -74,7 +74,7 @@ Parse_Data_t* Parse_Data(CONST CHAR** data_folder_path)
 
         while (fgets(line, MAX_LENGTH_LINE, data_File))
         {
-            if (strlen(line) < 4 || line[0] == '#')
+            if (utf8_strlen(line) < 4 || line[0] == '#')
             {
                 continue;
             }

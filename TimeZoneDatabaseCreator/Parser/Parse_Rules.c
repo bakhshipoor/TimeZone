@@ -86,7 +86,7 @@ STATIC VOID Rule_Create(Rule_Entry_t** rule_list, COUNTER* rules_count, CONST CH
         return FALSE;
     }
 
-    rule->Name = (CHAR*)calloc((strlen(*rule_name) + 1), sizeof(CHAR));
+    rule->Name = (CHAR*)calloc((utf8_strlen(*rule_name) + 1), sizeof(CHAR));
     if (rule->Name == NULL)
     {
         Free_Rule(rule);
@@ -154,7 +154,7 @@ STATIC BOOL Rule_Year_Create(Rule_Data_t** year_list, CONST COUNTER* years_count
 
     rule_year->From = Parse_Rule_Data_From(rule_data);
     rule_year->To = Parse_Rule_Data_To(rule_data, YEAR_END_MAX);
-    rule_year->Reserved = (CHAR*)calloc((strlen(rule_data->Reserved) + 1), sizeof(CHAR));
+    rule_year->Reserved = (CHAR*)calloc((utf8_strlen(rule_data->Reserved) + 1), sizeof(CHAR));
     if (rule_year->Reserved != NULL && strcmp(rule_data->Reserved, "-") != 0)
     {
         strcpy(rule_year->Reserved, rule_data->Reserved);
@@ -163,12 +163,12 @@ STATIC BOOL Rule_Year_Create(Rule_Data_t** year_list, CONST COUNTER* years_count
     rule_year->Day = Parse_Rule_Data_On(rule_data);
     rule_year->Hour = Parse_Rule_Data_At(rule_data);
     rule_year->Save_Hour = Parse_Rule_Data_Save(rule_data);
-    rule_year->Letter = (CHAR*)calloc((strlen(rule_data->Letter) + 1), sizeof(CHAR));
+    rule_year->Letter = (CHAR*)calloc((utf8_strlen(rule_data->Letter) + 1), sizeof(CHAR));
     if (rule_year->Letter != NULL && strcmp(rule_data->Letter, "-") != 0)
     {
         strcpy(rule_year->Letter, rule_data->Letter);
     }
-    rule_year->Comment = (CHAR*)calloc((strlen(rule_data->Comment) + 1), sizeof(CHAR));
+    rule_year->Comment = (CHAR*)calloc((utf8_strlen(rule_data->Comment) + 1), sizeof(CHAR));
     if (rule_year->Comment != NULL)
     {
         strcpy(rule_year->Comment, rule_data->Comment);
