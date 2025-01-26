@@ -74,7 +74,7 @@ extern "C" {
     {
         int32_t       zone_id;
         uint8_t       zone_identifier[31];
-        uint8_t       country_code[14];
+        uint8_t       country_code[13];
         uint8_t       country_name[43];
         double        latitude;
         double        longitude;
@@ -117,7 +117,7 @@ extern "C" {
         int64_t       hour;
         bool          hour_isUTC;
         int64_t       save_hour;
-        uint8_t       letter[6];
+        uint8_t       letter[7];
         uint8_t       comments[10];
     } tzdb_rule_data_t;
 

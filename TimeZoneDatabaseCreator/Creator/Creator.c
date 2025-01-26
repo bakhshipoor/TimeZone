@@ -8,42 +8,56 @@ Zones_Info_Lenght_t zones_info_lenght;
 Zones_Info_String_t* zones_info;
 CONST CHAR ZI_Comments[ZONE_INFO_FIELDS_COUNT][25] = {
     "Zone_ID",
-    "Zone_Identifier ",
-    "Country_Code ",
-    "Country_Name ",
-    "Latitude ",
-    "Longitude ",
-    "Linked_Zone_ID ",
-    "Data_Count ",
-    "Year_Begin ",
-    "Year_End ",
-    "Comments "
+    "Zone_Identifier",
+    "Country_Code",
+    "Country_Name",
+    "Latitude",
+    "Longitude",
+    "Linked_Zone_ID",
+    "Data_Count",
+    "Year_Begin",
+    "Year_End",
+    "Comments"
 };
 
 Zones_Data_Lenght_t zones_data_lenght;
 Zones_Data_String_t* zones_data;
 CONST CHAR ZD_Comments[ZONE_DATA_FIELDS_COUNT][25] = {
     "Zone_ID",
-    "Standard_Offset ",
-    "Rule_ID ",
-    "Save_Hour ",
-    "Format ",
-    "Until_JD ",
-    "Comments "
+    "Standard_Offset",
+    "Rule_ID",
+    "Save_Hour",
+    "Format",
+    "Until_JD",
+    "Comments"
 };
 
 Rules_Info_Lenght_t rules_info_lenght;
 Rules_Info_String_t* rules_info;
 CONST CHAR RI_Comments[RULE_INFO_FIELDS_COUNT][25] = {
     "Rule_ID",
-    "Rule_Name ",
-    "Data_Count ",
-    "Year_Begin ",
-    "Year_End "
+    "Rule_Name",
+    "Data_Count",
+    "Year_Begin",
+    "Year_End"
 };
 
 Rules_Data_Lenght_t rules_data_lenght;
 Rules_Data_String_t* rules_data;
+CONST CHAR RD_Comments[RULE_DATA_FIELDS_COUNT][35] = {
+    "Rule_ID",
+    "From",
+    "To",
+    "Month",
+    "Day",
+    "Weekday",
+    "Weekday_IsAfterOrEqual_Day",
+    "Hour",
+    "Hour_isUTC",
+    "Save_Hour",
+    "Letter",
+    "Comments"
+};
 
 VOID Create_Database(CONST CHAR** data_folder_path)
 {
@@ -446,6 +460,19 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     fprintf(c_file, "\n");
 
     fprintf(c_file, "const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_rule_data_t tzdb_rules_data[TZDB_RULES_DATA_COUNT] = {\n");
+    fprintf(c_file, "    /*");
+    for (COUNTER filed_index = 0; filed_index < RULE_DATA_FIELDS_COUNT; filed_index++)
+    {
+        if (filed_index == 10 || filed_index == 11)
+        {
+            fprintf(c_file, "%s   %s", RD_Comments[filed_index], Print_Space(utf8_strlen(RD_Comments[filed_index]), rules_data_lenght.Rules_Data[filed_index]));
+        }
+        else
+        {
+            fprintf(c_file, "%s %s", RD_Comments[filed_index], Print_Space(utf8_strlen(RD_Comments[filed_index]), rules_data_lenght.Rules_Data[filed_index]));
+        }
+    }
+    fprintf(c_file, " */\n");
     for (COUNTER rules_data_index = 0; rules_data_index < tz->Rules_Data_Count; rules_data_index++)
     {
         fprintf(c_file, "    { ");
@@ -480,10 +507,10 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
             Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[5]), rules_data_lenght.Rules_Data[5])
         );
         // Field 6: weekday_isafterorequal_day
-        int bool_len = atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? 5 : 4;
+        LENGHT bool_len = atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? 5 : 4;
         fprintf(c_file, "%s,%s",
             atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, 5)
+            Print_Space(bool_len, rules_data_lenght.Rules_Data[6] > bool_len ? rules_data_lenght.Rules_Data[6] : bool_len)
         );
         // Field 7: hour
         fprintf(c_file, "%lld,%s",
@@ -494,7 +521,7 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         bool_len = atoi(rules_data[rules_data_index].Rules_Data[8]) <= 0 ? 5 : 4;
         fprintf(c_file, "%s,%s",
             atoi(rules_data[rules_data_index].Rules_Data[8]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, 5)
+            Print_Space(bool_len, rules_data_lenght.Rules_Data[8] > bool_len ? rules_data_lenght.Rules_Data[8] : bool_len)
         );
         // Field 9: save_hour
         fprintf(c_file, "%lld,%s",
@@ -664,7 +691,7 @@ Rules_Data_String_t* Convert_Rules_Data_To_String(Time_Zones_t* tz, Rules_Data_L
 {
     for (COUNTER field_index = 0; field_index < RULE_DATA_FIELDS_COUNT; field_index++)
     {
-        rules_data_lenght->Rules_Data[field_index] = 0;
+        rules_data_lenght->Rules_Data[field_index] = utf8_strlen(RD_Comments[field_index]);
     }
 
     Rules_Data_String_t* rules_data = (Rules_Data_String_t*)calloc(tz->Rules_Data_Count + 1, sizeof(Rules_Data_String_t));
