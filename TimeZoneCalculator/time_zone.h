@@ -16,10 +16,10 @@ extern "C" {
 
     typedef struct
     {
-        uint64_t std_offset_seconds;
-        uint64_t dst_offset_seconds;
+        int64_t std_offset_seconds;
+        int64_t dst_offset_seconds;
         bool dst_effect;
-        uint64_t total_offset_seconds;
+        int64_t total_offset_seconds;
     } tz_get_offset_t;
 
     bool tz_init(void);

@@ -14,7 +14,7 @@ extern "C" {
 
     uint8_t calculate_days_in_month(int32_t* year, uint8_t* month);
     uint32_t calculate_JDN(int32_t* year, uint8_t* month, uint8_t* day);
-
+    double calculate_JD(uint32_t* jdn, int64_t* second);
 
 
 #ifdef __cplusplus

@@ -74,6 +74,12 @@ int main()
             continue;
         }
 
+        tz_get_offset_t* xxx = calloc(1, sizeof(tz_get_offset_t));
+        xxx = tz_get_offset();
+
+
+
+
         printf("\n\n\n");
         system("pause");
         clear_screen();

@@ -460,9 +460,9 @@ JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset)
     }
 
     Subtract_Or_Add_Seconds(&year, &month, &day, &second, -1);
-    if (until->Hour.Hour != INVALID_HOUR && until->Hour.Hour_isUTC == _TRUE)
+    if (until->Hour.Hour != INVALID_HOUR && until->Hour.Hour_isUTC == _FALSE)
     {
-        Subtract_Or_Add_Seconds(&year, &month, &day, &second, *utc_offset);
+        Subtract_Or_Add_Seconds(&year, &month, &day, &second, -1 * (*utc_offset));
     }
 
     JDN jdn = Calculate_JDN(year, month, day);
