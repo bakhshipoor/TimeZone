@@ -24,6 +24,9 @@
     <ClCompile Include="test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\tz_calendar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\tz_calculator.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="time_zone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\tz_calendar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

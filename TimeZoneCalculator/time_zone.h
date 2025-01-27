@@ -16,24 +16,20 @@ extern "C" {
 
     typedef struct
     {
-        uint8_t offset_hour;
-        uint8_t offset_minute;
-        uint8_t offset_second;
-        double offset;
+        uint64_t std_offset_seconds;
+        uint64_t dst_offset_seconds;
         bool dst_effect;
+        uint64_t total_offset_seconds;
     } tz_get_offset_t;
 
-    bool tz_set_zone(const char* tz_identifier);
-    bool tz_set_zone_ptr(const char** tz_identifier);
+    bool tz_init(void);
 
-    void tz_set_date(int32_t g_year,uint8_t  g_month, uint8_t  g_day);
-    void tz_set_date_ptr(int32_t* g_year, uint8_t* g_month, uint8_t* g_day);
+    bool tz_set_zone(const uint8_t** tz_identifier);
+    bool tz_set_date(int32_t* g_year, uint8_t* g_month, uint8_t* g_day);
+    bool tz_set_time(uint8_t* utc_hour, uint8_t* utc_minute, uint8_t* utc_second);
 
-    tz_get_time_t* tz_get_time(uint8_t utc_hour, uint8_t utc_minute, uint8_t utc_second);
-    tz_get_time_t* tz_get_time_ptr(uint8_t* utc_hour, uint8_t* utc_minute, uint8_t* utc_second);
-
-    tz_get_offset_t* tz_get_offset(uint8_t utc_hour, uint8_t utc_minute, uint8_t utc_second);
-    tz_get_offset_t* tz_get_offset_ptr(uint8_t* utc_hour, uint8_t* utc_minute, uint8_t* utc_second);
+    tz_get_time_t* tz_get_time(void);
+    tz_get_offset_t* tz_get_offset(void);
 
 
 #ifdef __cplusplus
