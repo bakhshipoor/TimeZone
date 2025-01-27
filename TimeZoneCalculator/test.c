@@ -74,10 +74,14 @@ int main()
             continue;
         }
 
-        tz_get_offset_t* xxx = calloc(1, sizeof(tz_get_offset_t));
-        xxx = tz_get_offset();
+         tz_get_offset_t* offset = tz_get_offset();
 
-
+        printf("\n\n");
+        
+        printf("Standard Offset:\t%d:%d:%d\n", offset->std_offset.hour, offset->std_offset.minute, offset->std_offset.second);
+        printf("DST Effect:\t\t%s\n", offset->dst_effect == true ? "True" : "False");
+        printf("DST Offset:\t\t%d:%d:%d\n", offset->dst_offset.hour, offset->dst_offset.minute, offset->dst_offset.second);
+        printf("Total Offset:\t\t%d:%d:%d\n", offset->total_offset.hour, offset->total_offset.minute, offset->total_offset.second);
 
 
         printf("\n\n\n");

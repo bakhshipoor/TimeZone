@@ -9,17 +9,22 @@ extern "C" {
 
     typedef struct
     {
-        uint8_t local_hour;
-        uint8_t local_minute;
-        uint8_t local_second;
-    } tz_get_time_t;
+        int8_t hour;
+        int8_t minute;
+        int8_t second;
+    } tz_time_t;
 
     typedef struct
     {
         int64_t std_offset_seconds;
-        int64_t dst_offset_seconds;
+        tz_time_t std_offset;
+
         bool dst_effect;
+        int64_t dst_offset_seconds;
+        tz_time_t dst_offset;
+
         int64_t total_offset_seconds;
+        tz_time_t total_offset;
     } tz_get_offset_t;
 
     bool tz_init(void);
@@ -28,7 +33,7 @@ extern "C" {
     bool tz_set_date(int32_t* g_year, uint8_t* g_month, uint8_t* g_day);
     bool tz_set_time(uint8_t* utc_hour, uint8_t* utc_minute, uint8_t* utc_second);
 
-    tz_get_time_t* tz_get_time(void);
+    tz_time_t* tz_get_local_time(void);
     tz_get_offset_t* tz_get_offset(void);
 
 
