@@ -143,17 +143,17 @@ tz_get_offset_t* tz_get_offset(void)
     tz_calculated_data.now_jdn = calculate_JDN(tz_inititial->g_year, tz_inititial->g_month, tz_inititial->g_day);
     tz_calculated_data.now_utc_jd = calculate_JD(&tz_calculated_data.now_jdn, &tz_calculated_data.now_seconds);
 
-    int32_t year_data_index = find_zone_data_index_jd(tz_inititial->tz_id, &tz_calculated_data.now_utc_jd);
-    if (year_data_index > -1)
+    tz_calculated_data.year_data_index = find_zone_data_index_jd(tz_inititial->tz_id, &tz_calculated_data.now_utc_jd);
+    if (tz_calculated_data.year_data_index > -1)
     {
-        tz_calculated_data.offsets->std_offset_seconds = tzdb_zones_data[year_data_index].standard_offset + tzdb_zones_data[year_data_index].save_hour;
+        tz_calculated_data.offsets->std_offset_seconds = tzdb_zones_data[tz_calculated_data.year_data_index].standard_offset + tzdb_zones_data[tz_calculated_data.year_data_index].save_hour;
         tz_calculated_data.now_std_jd = calculate_JD(&tz_calculated_data.now_jdn, &tz_calculated_data.offsets->std_offset_seconds);
         convert_second_to_time(&tz_calculated_data.offsets->std_offset_seconds, &tz_calculated_data.offsets->std_offset);
 
         tz_calculated_data.offsets->total_offset_seconds = tz_calculated_data.offsets->std_offset_seconds;
         convert_second_to_time(&tz_calculated_data.offsets->total_offset_seconds, &tz_calculated_data.offsets->total_offset);
 
-        if (tzdb_zones_data[year_data_index].rule_id != 0)
+        if (tzdb_zones_data[tz_calculated_data.year_data_index].rule_id != 0)
         {
 
         }
@@ -188,8 +188,6 @@ static int32_t* get_zone_data_count_identifier(uint8_t** tz_identifier)
     }
     return NULL;
 }
-
-
 
 static bool validate_data(void)
 {
@@ -267,7 +265,7 @@ static int32_t find_zone_data_index_jd(int32_t* tz_id, double* jd)
                 max_year_index = zd_index;
                 continue;
             }
-            if (*jd < tzdb_zones_data[zd_index].until_jd)
+            if (*jd <= tzdb_zones_data[zd_index].until_jd)
             {
                 return zd_index;
             }
@@ -275,6 +273,11 @@ static int32_t find_zone_data_index_jd(int32_t* tz_id, double* jd)
     }
     return max_year_index;
 }
+
+
+
+
+
 
 
 static void convert_second_to_time(int64_t* seconds, tz_time_t* time)

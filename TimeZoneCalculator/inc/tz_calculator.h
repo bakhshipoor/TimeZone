@@ -33,6 +33,7 @@ extern "C" {
 
     typedef struct
     {
+        int32_t year_data_index;
         int64_t now_seconds;
         uint32_t now_jdn;
         double now_utc_jd;
