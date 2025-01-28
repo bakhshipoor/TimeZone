@@ -33,12 +33,26 @@ extern "C" {
 
     typedef struct
     {
+        double jd;
+        int64_t offset;
+    }tz_rule_data_changes_t;
+
+    typedef struct
+    {
+        double from_jd;
+        double to_jd;
+        int64_t offset;
+    }tz_changes_t;
+
+    typedef struct
+    {
         int32_t year_data_index;
         int64_t now_seconds;
         uint32_t now_jdn;
         double now_utc_jd;
 
-
+        int32_t changes_count;
+        tz_changes_t* changes;
 
         tz_get_offset_t* offsets;
     }tz_calculated_data_t;

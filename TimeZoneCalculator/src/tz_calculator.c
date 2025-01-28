@@ -7,6 +7,9 @@ static int32_t* get_zone_id_identifier(uint8_t** tz_identifier);
 static int32_t* get_zone_data_count_identifier(uint8_t** tz_identifier);
 static bool validate_data(void);
 static int32_t find_zone_data_index_jd(int32_t* tz_id, double* jd);
+static void get_rules_data(tz_rule_data_changes_t** ch_list, int32_t* ch_count, const int32_t* rule_id, int32_t* year, int64_t* utc_offset);
+static void create_change_list(tz_rule_data_changes_t** ch_list, int32_t* ch_count, int32_t* year, tz_changes_t** change_list, int32_t* changes_count);
+static int8_t calculate_day(int32_t* _y, int8_t* _m, uint8_t* tzdb_day, uint8_t* tzdb_weekday, bool* tzdb_is_after);
 
 static void convert_second_to_time(int64_t* seconds, tz_time_t* time);
 static void free_tz_initial(tz_inititial_t* tz_inititial);
@@ -49,6 +52,7 @@ bool tz_init(void)
         free_tz_initial(tz_inititial);
         return false;
     }
+    tz_calculated_data.changes = NULL;
 
     tz_inititial->tz_is_init = true;
     return true;
@@ -130,8 +134,17 @@ tz_get_offset_t* tz_get_offset(void)
     {
         return NULL;
     }
+
     tz_calculated_data.now_jdn = 0;
     tz_calculated_data.now_utc_jd = 0;
+
+    tz_calculated_data.changes_count = 0;
+    if (tz_calculated_data.changes != NULL)
+    {
+        free(tz_calculated_data.changes);
+        tz_calculated_data.changes = NULL;
+    }
+    
     tz_calculated_data.offsets->std_offset_seconds = 0;
     tz_calculated_data.offsets->dst_effect = false;
     tz_calculated_data.offsets->dst_offset_seconds = 0;
@@ -153,8 +166,18 @@ tz_get_offset_t* tz_get_offset(void)
 
         if (tzdb_zones_data[tz_calculated_data.year_data_index].rule_id != 0)
         {
-
+            int32_t _year = (*tz_inititial->g_year) - 1;
+            tz_rule_data_changes_t* rd_changes = NULL;
+            int32_t rd_changes_count = 0;
+            get_rules_data(&rd_changes, &rd_changes_count, &tzdb_zones_data[tz_calculated_data.year_data_index].rule_id, &_year, &tz_calculated_data.offsets->std_offset_seconds);
+            get_rules_data(&rd_changes, &rd_changes_count, &tzdb_zones_data[tz_calculated_data.year_data_index].rule_id, tz_inititial->g_year, &tz_calculated_data.offsets->std_offset_seconds);
+            if (rd_changes_count > 0 && rd_changes != NULL)
+            {
+                create_change_list(&rd_changes, &rd_changes_count, tz_inititial->g_year, &tz_calculated_data.changes, &tz_calculated_data.changes_count);
+                free(rd_changes);
+            }
         }
+            
     }
 
     return tz_calculated_data.offsets;
@@ -258,7 +281,7 @@ static int32_t find_zone_data_index_jd(int32_t* tz_id, double* jd)
     {
         if (tzdb_zones_data[zd_index].zone_id == *tz_id)
         {
-            if (tzdb_zones_data[zd_index].until_jd == -1.0)
+            if (tzdb_zones_data[zd_index].until_jd == (double)TZDB_YEAR_END_MAX)
             {
                 max_year_index = zd_index;
                 continue;
@@ -272,8 +295,153 @@ static int32_t find_zone_data_index_jd(int32_t* tz_id, double* jd)
     return max_year_index;
 }
 
+static void get_rules_data(tz_rule_data_changes_t** ch_list, int32_t* ch_count, const int32_t* rule_id, int32_t* year, int64_t* utc_offset)
+{
+    bool find = false;
+    tz_rule_data_changes_t ch_entry = { 0 };
+    int32_t _year;
+    int8_t _month;
+    int8_t _day;
+    uint32_t jdn;
+    int64_t _seconds;
+    for (int32_t rd_index = 0; rd_index < TZDB_RULES_DATA_COUNT; rd_index++)
+    {
+        find = false;
+        if (tzdb_rules_data[rd_index].rule_id == (*rule_id))
+        {
+            if ((*year) >= tzdb_rules_data[rd_index].from)
+            {
+                if (tzdb_rules_data[rd_index].to == TZDB_YEAR_END_MAX)
+                {
+                    find = true;
+                }
+                else if ((*year) <= tzdb_rules_data[rd_index].to)
+                {
+                    find = true;
+                }
+                else
+                {
+                    find = false;
+                }
+            }
+            if (find == true)
+            {
+                tz_rule_data_changes_t* r_list;
+                if ((*ch_count) == 0)
+                {
+                    r_list = (tz_rule_data_changes_t*)calloc(1, sizeof(tz_rule_data_changes_t));
+                }
+                else
+                {
+                    r_list = (tz_rule_data_changes_t*)realloc((*ch_list), ((*ch_count) + 1) * sizeof(tz_rule_data_changes_t));
+                }
+                if (r_list != NULL)
+                {
+                    (*ch_list) = r_list;
+                    _year = (*year);
 
+                    _month = tzdb_rules_data[rd_index].month;
+                    _day = calculate_day(&_year, &_month, &tzdb_rules_data[rd_index].day, &tzdb_rules_data[rd_index].weekday, &tzdb_rules_data[rd_index].weekday_isafterorequal_day);
 
+                    _seconds = tzdb_rules_data[rd_index].hour;
+                    if (tzdb_rules_data[rd_index].hour_isUTC == false)
+                    {
+                        subtract_or_add_seconds(&_year, &_month, &_day, &_seconds, -(*utc_offset));
+                    }
+                    jdn = calculate_JDN(&_year, &_month, &_day);
+                    ch_entry.jd = calculate_JD(&jdn, &_seconds);
+
+                    ch_entry.offset = tzdb_rules_data[rd_index].save_hour;
+
+                    (*ch_list)[(*ch_count)] = ch_entry;
+                    (*ch_count)++;
+                }
+            }
+        }
+    }
+}
+
+static void create_change_list(tz_rule_data_changes_t** ch_list, int32_t* ch_count, int32_t* year, tz_changes_t** change_list, int32_t* changes_count)
+{
+    if (ch_list == NULL || (*ch_list) == NULL)
+    {
+        return;
+    }
+
+    bool find = false;
+    tz_changes_t tz_ch_entry = { 0 };
+    int32_t _year = (*year);
+    int8_t _month = 1;
+    int8_t _day = 1;
+    int64_t _seconds = 0;
+    uint32_t jdn = calculate_JDN(&_year, &_month, &_day);
+    double jd = calculate_JD(&jdn, &_seconds);
+    int32_t chc = (*ch_count) + 1;
+    for (int32_t ch_index = 0; ch_index < ((*ch_count) + 1); ch_index++)
+    {
+        if ((*ch_list)[ch_index].jd > jd || ch_index >= (*ch_count))
+        {
+            tz_changes_t* tz_ch_list;
+            if ((*changes_count) == 0)
+            {
+                tz_ch_list = (tz_changes_t*)calloc(1, sizeof(tz_changes_t));
+                tz_ch_entry.from_jd = jd;
+            }
+            else
+            {
+                tz_ch_list = (tz_changes_t*)realloc((*change_list), ((*changes_count) + 1) * sizeof(tz_changes_t));
+                tz_ch_entry.from_jd = (*ch_list)[ch_index - 1].jd;
+            }
+            if (tz_ch_list != NULL)
+            {
+                (*change_list) = tz_ch_list;
+
+                tz_ch_entry.offset = (*ch_list)[ch_index - 1].offset;
+
+                if (ch_index == (*ch_count))
+                {
+                    _month = 12;
+                    _day = 31;
+                    _seconds = 86400 - 1;
+                    jdn = calculate_JDN(&_year, &_month, &_day);
+                    tz_ch_entry.to_jd = calculate_JD(&jdn, &_seconds);
+                }
+                else
+                {
+                    tz_ch_entry.to_jd = ((*ch_list)[ch_index].jd - (1.0 / 86400.0));
+                    jd = (*ch_list)[ch_index].jd;
+                }
+                 
+                (*change_list)[(*changes_count)] = tz_ch_entry;
+                (*changes_count)++;
+
+            }
+        }
+    }
+}
+
+static int8_t calculate_day(int32_t* _y, int8_t* _m, uint8_t* tzdb_day, uint8_t* tzdb_weekday, bool* tzdb_is_after)
+{
+    if ((*tzdb_weekday) == TZDB_WEEKDAY_NONE)
+    {
+        return (*tzdb_day);
+    }
+    else
+    {
+        if ((*tzdb_day) == 0)
+        {
+            return calculate_last_weekday_day_in_month(_y, _m, tzdb_weekday);
+        }
+        else if ((*tzdb_is_after) == true)
+        {
+            return calculate_first_weekday_after_day_in_month(_y, _m, tzdb_day, tzdb_weekday);
+        }
+        else
+        {
+            return calculate_first_weekday_before_day_in_month(_y, _m, tzdb_day, tzdb_weekday);
+        }
+    }
+}
 
 
 
