@@ -37,7 +37,9 @@ extern "C" {
         int64_t now_seconds;
         uint32_t now_jdn;
         double now_utc_jd;
-        double now_std_jd;
+
+
+
         tz_get_offset_t* offsets;
     }tz_calculated_data_t;
     

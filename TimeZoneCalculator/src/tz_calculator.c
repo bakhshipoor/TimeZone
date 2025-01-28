@@ -132,7 +132,6 @@ tz_get_offset_t* tz_get_offset(void)
     }
     tz_calculated_data.now_jdn = 0;
     tz_calculated_data.now_utc_jd = 0;
-    tz_calculated_data.now_std_jd = 0;
     tz_calculated_data.offsets->std_offset_seconds = 0;
     tz_calculated_data.offsets->dst_effect = false;
     tz_calculated_data.offsets->dst_offset_seconds = 0;
@@ -147,7 +146,6 @@ tz_get_offset_t* tz_get_offset(void)
     if (tz_calculated_data.year_data_index > -1)
     {
         tz_calculated_data.offsets->std_offset_seconds = tzdb_zones_data[tz_calculated_data.year_data_index].standard_offset + tzdb_zones_data[tz_calculated_data.year_data_index].save_hour;
-        tz_calculated_data.now_std_jd = calculate_JD(&tz_calculated_data.now_jdn, &tz_calculated_data.offsets->std_offset_seconds);
         convert_second_to_time(&tz_calculated_data.offsets->std_offset_seconds, &tz_calculated_data.offsets->std_offset);
 
         tz_calculated_data.offsets->total_offset_seconds = tz_calculated_data.offsets->std_offset_seconds;
