@@ -123,12 +123,7 @@ bool tz_set_time(uint8_t* utc_hour, uint8_t* utc_minute, uint8_t* utc_second)
 }
 
 
-tz_time_t* tz_get_local_time(void)
-{
-
-}
-
-tz_get_offset_t* tz_get_offset(void)
+void tz_calculate(void)
 {
     if (!validate_data())
     {
@@ -144,7 +139,7 @@ tz_get_offset_t* tz_get_offset(void)
         free(tz_calculated_data.changes);
         tz_calculated_data.changes = NULL;
     }
-    
+
     tz_calculated_data.offsets->std_offset_seconds = 0;
     tz_calculated_data.offsets->dst_effect = false;
     tz_calculated_data.offsets->dst_offset_seconds = 0;
@@ -195,9 +190,23 @@ tz_get_offset_t* tz_get_offset(void)
                 }
             }
         }
-            
-    }
 
+    }
+}
+
+tz_time_t* tz_get_local_time(void)
+{
+    int64_t second = (*tz_inititial->utc_hour * 3600)+ (*tz_inititial->utc_minute * 60)+ *tz_inititial->utc_second + tz_calculated_data.offsets->total_offset_seconds;
+    tz_time_t* local = (tz_time_t*)calloc(1, sizeof(tz_time_t));
+    if (local != NULL)
+    {
+        convert_second_to_time(&second, local);
+    }
+   return local;
+}
+
+tz_get_offset_t* tz_get_offset(void)
+{
     return tz_calculated_data.offsets;
 }
 

@@ -33,6 +33,8 @@ extern "C" {
     bool tz_set_date(int32_t* g_year, uint8_t* g_month, uint8_t* g_day);
     bool tz_set_time(uint8_t* utc_hour, uint8_t* utc_minute, uint8_t* utc_second);
 
+    void tz_calculate(void);
+
     tz_time_t* tz_get_local_time(void);
     tz_get_offset_t* tz_get_offset(void);
 

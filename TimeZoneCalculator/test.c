@@ -5,15 +5,22 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-
-static void clear_screen(void)
-{
-    printf("\033[2J");
-    printf("\033[H");
-}
+#include <windows.h>
 
 int main()
 {
+    SYSTEMTIME st;
+    tz_time_t* local_time;
+    tz_get_offset_t* offset;
+
+    int32_t year = 0;
+    int32_t month = 0;
+    int32_t day = 0;
+
+    int32_t hour = 0;
+    int32_t minute = 0;
+    int32_t second = 0;
+
     if (!tz_init())
     {
         return -1;
@@ -26,67 +33,62 @@ int main()
     }
     int len = 0;
 
-    int32_t year = 0;
-    int32_t month = 0;
-    int32_t day = 0;
+    sprintf_s(buf, TZDB_MAX_LENGHT_IDENTIFIER, "%s", "America/New_York");
 
-    int32_t hour = 0;
-    int32_t minute = 0;
-    int32_t second = 0;
+    if (!tz_set_zone(&buf))
+    {
+        return -1;
+    }
 
     while (1)
     {
-        printf("\nPlease enter zone identifier: ");
-        len = scanf_s("%s", buf, TZDB_MAX_LENGHT_IDENTIFIER);
-        if (len > 0)
-        {
-            if (!tz_set_zone(&buf))
-            {
-                return -1;
-            }
-        }
 
-        printf("\nPlease enter date [ yyyy/mm/dd ]: ");
-        len = scanf_s("%4d/%2d/%2d", &year, &month, &day);
-        if (len != 3)
-        {
-            clear_screen();
-            continue;
-        }
+        GetSystemTime(&st);
+
+        year = st.wYear;
+        month = st.wMonth;
+        day = st.wDay;
+
+        hour = st.wHour;
+        minute = st.wMinute;
+        second = st.wSecond;
 
         if (!tz_set_date(&year, &month, &day))
         {
-            clear_screen();
-            continue;
-        }
-
-        printf("\nPlease enter time [ hh:mm:ss ]: ");
-        len = scanf_s("%2d:%2d:%2d", &hour, &minute, &second);
-        if (len < 2 || len > 3)
-        {
-            clear_screen();
+            system("cls");
             continue;
         }
 
         if (!tz_set_time(&hour, &minute, &second))
         {
-            clear_screen();
+            system("cls");
             continue;
         }
 
-         tz_get_offset_t* offset = tz_get_offset();
-
-        printf("\n\n");
-        
-        printf("Standard Offset:\t%02d:%02d:%02d\n", offset->std_offset.hour, offset->std_offset.minute, offset->std_offset.second);
-        printf("DST Effect:\t\t%s\n", offset->dst_effect == true ? "True" : "False");
-        printf("DST Offset:\t\t%02d:%02d:%02d\n", offset->dst_offset.hour, offset->dst_offset.minute, offset->dst_offset.second);
-        printf("Total Offset:\t\t%02d:%02d:%02d\n", offset->total_offset.hour, offset->total_offset.minute, offset->total_offset.second);
-
+        tz_calculate();
 
         printf("\n\n\n");
-        system("pause");
-        clear_screen();
+
+        local_time = tz_get_local_time();
+        if (local_time != NULL)
+        {
+            printf("Time Zone:\t\t%s\n\n", buf);
+            printf("UTC Time:\t\t%02d:%02d:%02d\n", hour, minute, second);
+            printf("Local Time:\t\t%02d:%02d:%02d\n\n", local_time->hour, local_time->minute, local_time->second);
+        }
+
+        offset = tz_get_offset();
+        if (offset != NULL)
+        {
+            printf("Standard Offset:\t%02d:%02d:%02d\n", offset->std_offset.hour, offset->std_offset.minute, offset->std_offset.second);
+            printf("DST Effect:\t\t%s\n", offset->dst_effect == true ? "True" : "False");
+            printf("DST Offset:\t\t%02d:%02d:%02d\n", offset->dst_offset.hour, offset->dst_offset.minute, offset->dst_offset.second);
+            printf("Total Offset:\t\t%02d:%02d:%02d\n", offset->total_offset.hour, offset->total_offset.minute, offset->total_offset.second);
+        }
+
+        printf("\n\n\n");
+        Sleep(1000);
+        system("cls");
     }
     return 0;
 }
