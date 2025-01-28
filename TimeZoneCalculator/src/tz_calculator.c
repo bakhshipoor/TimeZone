@@ -164,6 +164,9 @@ tz_get_offset_t* tz_get_offset(void)
         tz_calculated_data.offsets->total_offset_seconds = tz_calculated_data.offsets->std_offset_seconds;
         convert_second_to_time(&tz_calculated_data.offsets->total_offset_seconds, &tz_calculated_data.offsets->total_offset);
 
+        tz_calculated_data.offsets->dst_offset_seconds = 0;
+        convert_second_to_time(&tz_calculated_data.offsets->dst_offset_seconds, &tz_calculated_data.offsets->dst_offset);
+
         if (tzdb_zones_data[tz_calculated_data.year_data_index].rule_id != 0)
         {
             int32_t _year = (*tz_inititial->g_year) - 1;
@@ -175,6 +178,21 @@ tz_get_offset_t* tz_get_offset(void)
             {
                 create_change_list(&rd_changes, &rd_changes_count, tz_inititial->g_year, &tz_calculated_data.changes, &tz_calculated_data.changes_count);
                 free(rd_changes);
+
+                for (int32_t change_index = 0; change_index < tz_calculated_data.changes_count; change_index++)
+                {
+                    if (tz_calculated_data.now_utc_jd >= tz_calculated_data.changes[change_index].from_jd && tz_calculated_data.now_utc_jd <= tz_calculated_data.changes[change_index].to_jd)
+                    {
+                        if (tz_calculated_data.changes[change_index].offset != 0)
+                        {
+                            tz_calculated_data.offsets->dst_effect = true;
+                            tz_calculated_data.offsets->dst_offset_seconds = tz_calculated_data.changes[change_index].offset;
+                            convert_second_to_time(&tz_calculated_data.offsets->dst_offset_seconds, &tz_calculated_data.offsets->dst_offset);
+                            tz_calculated_data.offsets->total_offset_seconds += tz_calculated_data.offsets->dst_offset_seconds;
+                            convert_second_to_time(&tz_calculated_data.offsets->total_offset_seconds, &tz_calculated_data.offsets->total_offset);
+                        }
+                    }
+                }
             }
         }
             
