@@ -1,4 +1,4 @@
-﻿#if 1
+﻿#ifdef _WIN32
 
 #include "time_zone.h"
 #include <stdio.h>

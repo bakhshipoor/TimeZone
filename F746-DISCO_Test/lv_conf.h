@@ -27,7 +27,12 @@
  *====================*/
 
 /** Color depth: 1 (I1), 8 (L8), 16 (RGB565), 24 (RGB888), 32 (XRGB8888) */
+#ifdef _WIN32
+#define LV_COLOR_DEPTH 32
+#else
 #define LV_COLOR_DEPTH 16
+#endif
+
 
 /*=========================
    STDLIB WRAPPER SETTINGS
@@ -40,7 +45,7 @@
  * - LV_STDLIB_RTTHREAD:    RT-Thread implementation
  * - LV_STDLIB_CUSTOM:      Implement the functions externally
  */
-#define LV_USE_STDLIB_MALLOC    LV_STDLIB_BUILTIN
+#define LV_USE_STDLIB_MALLOC    LV_STDLIB_CLIB
 
 /** Possible values
  * - LV_STDLIB_BUILTIN:     LVGL's built in implementation
@@ -49,7 +54,7 @@
  * - LV_STDLIB_RTTHREAD:    RT-Thread implementation
  * - LV_STDLIB_CUSTOM:      Implement the functions externally
  */
-#define LV_USE_STDLIB_STRING    LV_STDLIB_BUILTIN
+#define LV_USE_STDLIB_STRING    LV_STDLIB_CLIB
 
 /** Possible values
  * - LV_STDLIB_BUILTIN:     LVGL's built in implementation
@@ -58,7 +63,7 @@
  * - LV_STDLIB_RTTHREAD:    RT-Thread implementation
  * - LV_STDLIB_CUSTOM:      Implement the functions externally
  */
-#define LV_USE_STDLIB_SPRINTF   LV_STDLIB_BUILTIN
+#define LV_USE_STDLIB_SPRINTF   LV_STDLIB_CLIB
 
 #define LV_STDINT_INCLUDE       <stdint.h>
 #define LV_STDDEF_INCLUDE       <stddef.h>
@@ -107,7 +112,11 @@
  * - LV_OS_MQX
  * - LV_OS_SDL2
  * - LV_OS_CUSTOM */
+#ifdef _WIN32
+#define LV_USE_OS   LV_OS_WINDOWS
+#else
 #define LV_USE_OS   LV_OS_NONE
+#endif
 
 #if LV_USE_OS == LV_OS_CUSTOM
     #define LV_OS_CUSTOM_INCLUDE <stdint.h>
@@ -1210,7 +1219,12 @@
 #endif
 
 /** LVGL Windows backend */
+#ifdef _WIN32
+#define LV_USE_WINDOWS    1
+#else
 #define LV_USE_WINDOWS    0
+#endif
+
 
 /** LVGL UEFI backend */
 #define LV_USE_UEFI 0

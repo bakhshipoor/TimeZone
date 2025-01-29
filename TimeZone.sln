@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeZoneDataBaseCreator", "TimeZoneDatabaseCreator\TimeZoneDatabaseCreator.vcxproj", "{66DD0220-A6CA-43AC-9DCC-D2B9D88F3961}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeZoneDatabaseCreator", "TimeZoneDatabaseCreator\TimeZoneDatabaseCreator.vcxproj", "{66DD0220-A6CA-43AC-9DCC-D2B9D88F3961}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeZoneOffsetCalculator", "TimeZoneCalculator\TimeZoneCalculator.vcxproj", "{E8542882-D978-4BDF-BD0C-1267F6B6D6AD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeZoneCalculator", "TimeZoneCalculator\TimeZoneCalculator.vcxproj", "{E8542882-D978-4BDF-BD0C-1267F6B6D6AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "F746-DISCO", "F746-DISCO_Test\F746-DISCO.vcxproj", "{579FDB43-BE71-4301-A4D9-4158F558DA7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{E8542882-D978-4BDF-BD0C-1267F6B6D6AD}.Release|x64.Build.0 = Release|x64
 		{E8542882-D978-4BDF-BD0C-1267F6B6D6AD}.Release|x86.ActiveCfg = Release|Win32
 		{E8542882-D978-4BDF-BD0C-1267F6B6D6AD}.Release|x86.Build.0 = Release|Win32
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Debug|x64.ActiveCfg = Debug|x64
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Debug|x64.Build.0 = Debug|x64
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Debug|x86.ActiveCfg = Debug|Win32
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Debug|x86.Build.0 = Debug|Win32
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Release|x64.ActiveCfg = Release|x64
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Release|x64.Build.0 = Release|x64
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Release|x86.ActiveCfg = Release|Win32
+		{579FDB43-BE71-4301-A4D9-4158F558DA7D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

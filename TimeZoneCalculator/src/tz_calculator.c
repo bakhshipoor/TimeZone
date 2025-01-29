@@ -127,7 +127,7 @@ void tz_calculate(void)
 {
     if (!validate_data())
     {
-        return NULL;
+        return;
     }
 
     tz_calculated_data.now_jdn = 0;
