@@ -34,6 +34,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "lvgl/demos/lv_demos.h"
+#include "UI/time_zone_ui.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -115,7 +116,9 @@ int main(void)
   lv_init();
   tft_init();
   touchpad_init();
-  lv_demo_widgets();
+  //lv_demo_widgets();
+  tz_ui();
+  //lv_screen_load(scr_Main);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -211,7 +214,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM6) {
-   lv_tick_inc(1);
+
   }
   /* USER CODE END Callback 1 */
 }

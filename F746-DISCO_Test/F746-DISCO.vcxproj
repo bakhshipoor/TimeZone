@@ -74,7 +74,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>LV_CONF_INCLUDE_SIMPLE;LV_LVGL_H_INCLUDE_SIMPLE;LV_USE_DEV_VERSION;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WIN32;LV_USE_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LV_CONF_INCLUDE_SIMPLE;LV_LVGL_H_INCLUDE_SIMPLE;_CRT_SECURE_NO_WARNINGS;_WINDOWS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WIN32;LV_USE_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)lvgl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -103,7 +103,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>LV_CONF_INCLUDE_SIMPLE;LV_LVGL_H_INCLUDE_SIMPLE;LV_USE_DEV_VERSION;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WIN32;LV_USE_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LV_CONF_INCLUDE_SIMPLE;LV_LVGL_H_INCLUDE_SIMPLE;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WIN32;LV_USE_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)lvgl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\1 Electronic\AzanClockCalendar\Test\AppFwCommTest\AppFwCommTest\Src\UI\Assets\Images\Touch_Keys\Key_Down\IMG_Down_Hover.c" />
     <ClCompile Include="lvgl\demos\lv_demos.c" />
     <ClCompile Include="lvgl\demos\widgets\assets\img_clothes.c" />
     <ClCompile Include="lvgl\demos\widgets\assets\img_demo_widgets_avatar.c" />
@@ -557,6 +558,10 @@
     <ClCompile Include="lvgl\src\widgets\textarea\lv_textarea.c" />
     <ClCompile Include="lvgl\src\widgets\tileview\lv_tileview.c" />
     <ClCompile Include="lvgl\src\widgets\win\lv_win.c" />
+    <ClCompile Include="timezone_calculator\src\tz_calculator.c" />
+    <ClCompile Include="timezone_calculator\src\tz_calendar.c" />
+    <ClCompile Include="timezone_database\timezone_database.c" />
+    <ClCompile Include="UI\time_zone_ui.c" />
     <ClCompile Include="windows.c" />
   </ItemGroup>
   <ItemGroup>
@@ -1077,6 +1082,11 @@
     <ClInclude Include="lvgl\src\widgets\win\lv_win.h" />
     <ClInclude Include="lvgl\src\widgets\win\lv_win_private.h" />
     <ClInclude Include="lv_conf.h" />
+    <ClInclude Include="timezone_calculator\inc\tz_calculator.h" />
+    <ClInclude Include="timezone_calculator\inc\tz_calendar.h" />
+    <ClInclude Include="timezone_calculator\time_zone.h" />
+    <ClInclude Include="timezone_database\timezone_database.h" />
+    <ClInclude Include="UI\time_zone_ui.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
