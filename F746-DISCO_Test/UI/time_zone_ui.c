@@ -85,7 +85,7 @@ static void update_data(lv_timer_t* timer)
         tz_time = tz_get_local_time();
         tz_offset = tz_get_offset();
 
-        lv_label_set_text_fmt(lbl_date, "Date:          20%02d/%02d/%02d", Year, Month, Day);
+        lv_label_set_text_fmt(lbl_date, "Date:          %04d/%02d/%02d", Year, Month, Day);
         lv_label_set_text_fmt(lbl_time, "UTC:           %02d:%02d:%02d", Hours, Minutes, Seconds);
         lv_label_set_text_fmt(lbl_local, "Local:         %02d:%02d:%02d", tz_time->hour, tz_time->minute, tz_time->second);
         lv_label_set_text_fmt(lbl_dst_effect, "DST Effect:    %s", tz_offset->dst_effect == true ? "True" : "False");

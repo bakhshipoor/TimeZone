@@ -66,7 +66,8 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+RTC_TimeTypeDef UTC_Time = {0};
+RTC_DateTypeDef UTC_Date = {0};
 /* USER CODE END 0 */
 
 /**
@@ -113,12 +114,38 @@ int main(void)
   MX_FMC_Init();
   MX_QUADSPI_Init();
   /* USER CODE BEGIN 2 */
+
+  UTC_Time.Hours = 12;
+  UTC_Time.Minutes = 0;
+  UTC_Time.Seconds = 0;
+  HAL_RTC_SetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
+
+  UTC_Date.WeekDay = RTC_WEEKDAY_WEDNESDAY;
+  UTC_Date.Month = 29;
+  UTC_Date.Date = 1;
+  UTC_Date.Year = 25;
+  HAL_RTC_SetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
+
+
+  HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
+  HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
+
+  Year = UTC_Date.Year+2000;
+  Month = UTC_Date.Month;
+  Day = UTC_Date.Date;
+
+  Hours = UTC_Time.Hours;
+  Minutes = UTC_Time.Minutes;
+  Seconds = UTC_Time.Seconds;
+
+  TZ_Init = tz_init();
+
+
   lv_init();
   tft_init();
   touchpad_init();
-  //lv_demo_widgets();
   tz_ui();
-  //lv_screen_load(scr_Main);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -214,7 +241,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM6) {
+	  HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
+	  HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
 
+
+	  Year = UTC_Date.Year+2000;
+	  Month = UTC_Date.Month;
+	  Day = UTC_Date.Date;
+
+	  Hours = UTC_Time.Hours;
+	  Minutes = UTC_Time.Minutes;
+	  Seconds = UTC_Time.Seconds;
   }
   /* USER CODE END Callback 1 */
 }

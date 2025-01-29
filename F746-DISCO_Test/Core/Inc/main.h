@@ -53,6 +53,8 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+extern RTC_TimeTypeDef UTC_Time;
+extern RTC_DateTypeDef UTC_Date;
 
 /* USER CODE END EFP */
 

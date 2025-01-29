@@ -80,7 +80,7 @@ void MX_RTC_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN RTC_Init 2 */
-
+  HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, 0xF2F2); // backup register
   /* USER CODE END RTC_Init 2 */
 
 }

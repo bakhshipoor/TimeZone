@@ -100,7 +100,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         time(&now);
         timeinfo = gmtime(&now);
 
-        Year = timeinfo->tm_year - 100;
+        Year = timeinfo->tm_year +1900;
         Month = timeinfo->tm_mon+1;
         Day = timeinfo->tm_mday;
 
