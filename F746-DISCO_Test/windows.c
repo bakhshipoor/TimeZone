@@ -11,6 +11,16 @@
 #include "lvgl/demos/lv_demos.h"
 #include "UI/time_zone_ui.h"
 
+void scr_Main_Event(lv_event_t* e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t* target = lv_event_get_target(e);
+    if (event_code == LV_EVENT_SCREEN_UNLOAD_START)
+    {
+        lv_timer_delete(timer_update_data);
+    }
+
+}
 
 
 int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nShowCmd)
@@ -88,7 +98,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 
     lv_obj_set_style_bg_color(scr_Main, lv_color_hex(0xFFFFFF),0);
     lv_obj_set_style_text_color(scr_Main, lv_color_hex(0x000000),0);
-
+    lv_obj_add_event_cb(scr_Main, scr_Main_Event, LV_EVENT_ALL, NULL);
     lv_screen_load(scr_Main);
 
 
@@ -100,7 +110,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         time(&now);
         timeinfo = gmtime(&now);
 
-        Year = timeinfo->tm_year +1900;
+        Year =  timeinfo->tm_year - 100 + 2000;
         Month = timeinfo->tm_mon+1;
         Day = timeinfo->tm_mday;
 

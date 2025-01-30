@@ -196,10 +196,17 @@ void tz_calculate(void)
 
 tz_time_t* tz_get_local_time(void)
 {
-    int64_t second = (*tz_inititial->utc_hour * 3600)+ (*tz_inititial->utc_minute * 60)+ *tz_inititial->utc_second + tz_calculated_data.offsets->total_offset_seconds;
+    int32_t year = *tz_inititial->g_year;
+    int8_t month = *tz_inititial->g_month;
+    int8_t day = *tz_inititial->g_day;
+    int64_t second = tz_calculated_data.now_seconds;
+    subtract_or_add_seconds(&year, &month, &day, &second, tz_calculated_data.offsets->total_offset_seconds);
     tz_time_t* local = (tz_time_t*)calloc(1, sizeof(tz_time_t));
     if (local != NULL)
     {
+        local->year = year;
+        local->month = month;
+        local->day = day;
         convert_second_to_time(&second, local);
     }
    return local;

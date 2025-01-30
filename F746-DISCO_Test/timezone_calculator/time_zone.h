@@ -9,6 +9,9 @@ extern "C" {
 
     typedef struct
     {
+        int32_t year;
+        int8_t month;
+        int8_t day;
         int8_t hour;
         int8_t minute;
         int8_t second;

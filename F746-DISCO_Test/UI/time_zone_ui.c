@@ -1,7 +1,7 @@
 #include "time_zone_ui.h"
 
 
-uint8_t Year = 0;
+int32_t Year = 0;
 uint8_t Month = 0;
 uint8_t Day = 0;
 
@@ -12,6 +12,8 @@ uint8_t Seconds = 0;
 uint8_t* Zone_Identifier;
 
 bool TZ_Init = false;
+
+lv_timer_t* timer_update_data = NULL;
 
 static tz_time_t* tz_time = NULL;
 static tz_get_offset_t* tz_offset = NULL;
@@ -24,9 +26,10 @@ static lv_style_t style_lbl_zone_2 = { 0 };
 static lv_obj_t * list_zone = NULL;
 static lv_obj_t * selected_zone = NULL;
 static lv_obj_t* lbl_selected_zone = NULL;
-static lv_obj_t* lbl_date = NULL;
-static lv_obj_t* lbl_time = NULL;
-static lv_obj_t* lbl_local = NULL;
+static lv_obj_t* lbl_utc_date = NULL;
+static lv_obj_t* lbl_utc_time = NULL;
+static lv_obj_t* lbl_local_date = NULL;
+static lv_obj_t* lbl_local_time = NULL;
 static lv_obj_t* lbl_dst_effect = NULL;
 static lv_obj_t* lbl_std_offset = NULL;
 static lv_obj_t* lbl_dst_offset = NULL;
@@ -85,13 +88,14 @@ static void update_data(lv_timer_t* timer)
         tz_time = tz_get_local_time();
         tz_offset = tz_get_offset();
 
-        lv_label_set_text_fmt(lbl_date, "Date:          %04d/%02d/%02d", Year, Month, Day);
-        lv_label_set_text_fmt(lbl_time, "UTC:           %02d:%02d:%02d", Hours, Minutes, Seconds);
-        lv_label_set_text_fmt(lbl_local, "Local:         %02d:%02d:%02d", tz_time->hour, tz_time->minute, tz_time->second);
-        lv_label_set_text_fmt(lbl_dst_effect, "DST Effect:    %s", tz_offset->dst_effect == true ? "True" : "False");
-        lv_label_set_text_fmt(lbl_std_offset, "STD Offset:    %02d:%02d:%02d", tz_offset->std_offset.hour, tz_offset->std_offset.minute, tz_offset->std_offset.second);
-        lv_label_set_text_fmt(lbl_dst_offset, "DST Offset:    %02d:%02d:%02d", tz_offset->dst_offset.hour, tz_offset->dst_offset.minute, tz_offset->dst_offset.second);
-        lv_label_set_text_fmt(lbl_total_offset, "Total Offset:  %02d:%02d:%02d", tz_offset->total_offset.hour, tz_offset->total_offset.minute, tz_offset->total_offset.second);
+        lv_label_set_text_fmt(lbl_utc_date,         "UTC Date:      %04d/%02d/%02d", Year, Month, Day);
+        lv_label_set_text_fmt(lbl_utc_time,         "UTC Time:      %02d:%02d:%02d", Hours, Minutes, Seconds);
+        lv_label_set_text_fmt(lbl_local_date,       "Local Date:    %04d/%02d/%02d", tz_time->year, tz_time->month, tz_time->day);
+        lv_label_set_text_fmt(lbl_local_time,       "Local Time:    %02d:%02d:%02d", tz_time->hour, tz_time->minute, tz_time->second);
+        lv_label_set_text_fmt(lbl_dst_effect,       "DST Effect:    %s", tz_offset->dst_effect == true ? "True" : "False");
+        lv_label_set_text_fmt(lbl_std_offset,       "STD Offset:    %02d:%02d:%02d", tz_offset->std_offset.hour, tz_offset->std_offset.minute, tz_offset->std_offset.second);
+        lv_label_set_text_fmt(lbl_dst_offset,       "DST Offset:    %02d:%02d:%02d", tz_offset->dst_offset.hour, tz_offset->dst_offset.minute, tz_offset->dst_offset.second);
+        lv_label_set_text_fmt(lbl_total_offset,     "Total Offset:  %02d:%02d:%02d", tz_offset->total_offset.hour, tz_offset->total_offset.minute, tz_offset->total_offset.second);
     }
 }
 
@@ -176,25 +180,25 @@ void tz_ui(void)
 
 
 
-    lv_obj_t*  lbl_2 = lv_label_create(cont);
-    lv_obj_set_size(lbl_2, lv_pct(100), 20);
-    lv_label_set_text(lbl_2, " ");
-    lv_obj_set_grid_cell(lbl_2, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 1, 1);
+    lbl_utc_date = lv_label_create(cont);
+    lv_obj_set_size(lbl_utc_date, lv_pct(100), 20);
+    lv_label_set_text(lbl_utc_date, "UTC Date:");
+    lv_obj_set_grid_cell(lbl_utc_date, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 1, 1);
 
-    lbl_date = lv_label_create(cont);
-    lv_obj_set_size(lbl_date, lv_pct(100), 20);
-    lv_label_set_text(lbl_date, "Date:");
-    lv_obj_set_grid_cell(lbl_date, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 2, 1);
+    lbl_utc_time = lv_label_create(cont);
+    lv_obj_set_size(lbl_utc_time, lv_pct(100), 20);
+    lv_label_set_text(lbl_utc_time, "UTC Time:");
+    lv_obj_set_grid_cell(lbl_utc_time, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 2, 1);
 
-    lbl_time = lv_label_create(cont);
-    lv_obj_set_size(lbl_time, lv_pct(100), 20);
-    lv_label_set_text(lbl_time, "UTC:");
-    lv_obj_set_grid_cell(lbl_time, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 3, 1);
+    lbl_local_date = lv_label_create(cont);
+    lv_obj_set_size(lbl_local_date, lv_pct(100), 20);
+    lv_label_set_text(lbl_local_date, "Local Date:");
+    lv_obj_set_grid_cell(lbl_local_date, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 3, 1);
 
-    lbl_local = lv_label_create(cont);
-    lv_obj_set_size(lbl_local, lv_pct(100), 20);
-    lv_label_set_text(lbl_local, "Local:");
-    lv_obj_set_grid_cell(lbl_local, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 4, 1);
+    lbl_local_time = lv_label_create(cont);
+    lv_obj_set_size(lbl_local_time, lv_pct(100), 20);
+    lv_label_set_text(lbl_local_time, "Local Time:");
+    lv_obj_set_grid_cell(lbl_local_time, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 4, 1);
 
     lbl_dst_effect = lv_label_create(cont);
     lv_obj_set_size(lbl_dst_effect, lv_pct(100), 20);
@@ -221,7 +225,7 @@ void tz_ui(void)
     lv_label_set_text(lbl_total_offset, "Total Offset:");
     lv_obj_set_grid_cell(lbl_total_offset, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 9, 1);
 
-    lv_timer_create(update_data, 500, NULL);
+    timer_update_data = lv_timer_create(update_data, 500, NULL);
    
 }
 

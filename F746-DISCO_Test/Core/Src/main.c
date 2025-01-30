@@ -68,6 +68,18 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 RTC_TimeTypeDef UTC_Time = {0};
 RTC_DateTypeDef UTC_Date = {0};
+
+void scr_Main_Event(lv_event_t* e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t* target = lv_event_get_target(e);
+    if (event_code == LV_EVENT_SCREEN_UNLOAD_START)
+    {
+        lv_timer_delete(timer_update_data);
+    }
+
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -144,6 +156,14 @@ int main(void)
   lv_init();
   tft_init();
   touchpad_init();
+
+  lv_obj_t* scr_Main;
+  scr_Main = lv_obj_create(NULL);
+  lv_obj_set_style_bg_color(scr_Main, lv_color_hex(0xFFFFFF),0);
+  lv_obj_set_style_text_color(scr_Main, lv_color_hex(0x000000),0);
+  lv_obj_add_event_cb(scr_Main, scr_Main_Event, LV_EVENT_ALL, NULL);
+  lv_screen_load(scr_Main);
+
   tz_ui();
 
   /* USER CODE END 2 */

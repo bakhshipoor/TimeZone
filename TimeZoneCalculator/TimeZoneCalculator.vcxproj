@@ -154,16 +154,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\tz_calendar.c" />
+    <ClCompile Include="timezone_calculator\src\tz_calendar.c" />
     <ClCompile Include="test.c" />
     <ClCompile Include="timezone_database\timezone_database.c" />
-    <ClCompile Include="src\tz_calculator.c" />
+    <ClCompile Include="timezone_calculator\src\tz_calculator.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="inc\tz_calendar.h" />
+    <ClInclude Include="timezone_calculator\inc\tz_calendar.h" />
     <ClInclude Include="timezone_database\timezone_database.h" />
-    <ClInclude Include="time_zone.h" />
-    <ClInclude Include="inc\tz_calculator.h" />
+    <ClInclude Include="timezone_calculator\time_zone.h" />
+    <ClInclude Include="timezone_calculator\inc\tz_calculator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

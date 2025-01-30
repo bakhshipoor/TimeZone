@@ -13,7 +13,7 @@ extern "C" {
     extern lv_obj_t* scr_Main;
     extern lv_style_t style_scr_Main;
 
-    extern uint8_t Year;
+    extern int32_t Year;
     extern uint8_t Month;
     extern uint8_t Day;
 
@@ -25,6 +25,7 @@ extern "C" {
 
     extern bool TZ_Init;
     
+    extern lv_timer_t* timer_update_data;
 
     void tz_ui(void);
 

@@ -15,6 +15,7 @@ extern "C" {
     uint8_t calculate_days_in_month(int32_t* year, int8_t* month);
     uint32_t calculate_JDN(int32_t* year, int8_t* month, int8_t* day);
     double calculate_JD(uint32_t* jdn, int64_t* second);
+    void convert_JD_to_Gregorian(double* JD, int* year, int* month, int* day, int* hour, int* minute, int* second);
     uint8_t calculate_last_weekday_day_in_month(int32_t* year, int8_t* month, int8_t* weekday);
     uint8_t calculate_first_weekday_after_day_in_month(int32_t* year, int8_t* month, int8_t* day, int8_t* weekday);
     uint8_t calculate_first_weekday_before_day_in_month(int32_t* year, int8_t* month, int8_t* day, int8_t* weekday);

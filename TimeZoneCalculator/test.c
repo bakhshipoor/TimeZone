@@ -1,6 +1,6 @@
 ﻿#ifdef _WIN32
 
-#include "time_zone.h"
+#include "timezone_calculator/time_zone.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -73,7 +73,9 @@ int main()
         if (local_time != NULL)
         {
             printf("Time Zone:\t\t%s\n\n", buf);
+            printf("UTC Date:\t\t%04d/%02d/%02d\n", year, month, day);
             printf("UTC Time:\t\t%02d:%02d:%02d\n", hour, minute, second);
+            printf("Local Date:\t\t%04d/%02d/%02d\n", local_time->year, local_time->month, local_time->day);
             printf("Local Time:\t\t%02d:%02d:%02d\n\n", local_time->hour, local_time->minute, local_time->second);
         }
 

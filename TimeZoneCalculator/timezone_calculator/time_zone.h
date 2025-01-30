@@ -5,10 +5,13 @@
 extern "C" {
 #endif
 
-#include "timezone_database/timezone_database.h"
+#include "../timezone_database/timezone_database.h"
 
     typedef struct
     {
+        int32_t year;
+        int8_t month;
+        int8_t day;
         int8_t hour;
         int8_t minute;
         int8_t second;

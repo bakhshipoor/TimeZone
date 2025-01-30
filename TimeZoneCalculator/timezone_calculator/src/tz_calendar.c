@@ -33,6 +33,40 @@ double calculate_JD(uint32_t* jdn, int64_t* second)
     return jd;
 }
 
+void convert_JD_to_Gregorian(double* JD, int* year, int* month, int* day, int* hour, int* minute, int* second) {
+    double Z, F, A, alpha, B, C, D, E;
+    double dayFraction, h, m, s;
+
+    Z = floor(*JD + 0.5);
+    F = (*JD + 0.5) - Z;
+
+    if (Z < 2299161) {
+        A = Z;
+    }
+    else {
+        alpha = floor((Z - 1867216.25) / 36524.25);
+        A = Z + 1 + alpha - floor(alpha / 4);
+    }
+
+    B = A + 1524;
+    C = floor((B - 122.1) / 365.25);
+    D = floor(365.25 * C);
+    E = floor((B - D) / 30.6001);
+
+    *day = (int)(B - D - floor(30.6001 * E));
+    *month = (int)((E < 14) ? E - 1 : E - 13);
+    *year = (int)((*month > 2) ? C - 4716 : C - 4715);
+
+    dayFraction = F * 24.0;
+    h = floor(dayFraction);
+    m = floor((dayFraction - h) * 60.0);
+    s = round(((dayFraction - h) * 60.0 - m) * 60.0);
+
+    *hour = (int)h;
+    *minute = (int)m;
+    *second = (int)s;
+}
+
 uint8_t calculate_last_weekday_day_in_month(int32_t* year, int8_t* month, int8_t* weekday)
 {
     uint8_t result_day = calculate_days_in_month(year, month);
