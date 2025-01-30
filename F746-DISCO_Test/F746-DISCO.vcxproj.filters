@@ -2885,5 +2885,21 @@
     <ClInclude Include="timezone_database\timezone_database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LvglWindowsIconResource\LvglWindowsIconResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LvglWindowsIconResource\LvglWindowsIconResource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="LvglWindowsIconResource\LvglWindowsIconResource.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LvglWindowsIconResource\LvglWindowsIconResource.props" />
   </ItemGroup>
 </Project>

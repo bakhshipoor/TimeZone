@@ -8,8 +8,8 @@
 #include <string.h>
 #include <time.h>
 #include "lvgl.h"
-#include "lvgl/demos/lv_demos.h"
 #include "UI/time_zone_ui.h"
+#include "LvglWindowsIconResource/LvglWindowsIconResource.h"
 
 void scr_Main_Event(lv_event_t* e)
 {
@@ -54,7 +54,22 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         return -1;
     }
 
-    
+    HICON icon_handle = LoadIconW(
+        GetModuleHandleW(NULL),
+        MAKEINTRESOURCE(IDI_LVGL_WINDOWS));
+    if (icon_handle)
+    {
+        SendMessageW(
+            window_handle,
+            WM_SETICON,
+            TRUE,
+            (LPARAM)icon_handle);
+        SendMessageW(
+            window_handle,
+            WM_SETICON,
+            FALSE,
+            (LPARAM)icon_handle);
+    }
 
     lv_indev_t* pointer_indev = lv_windows_acquire_pointer_indev(display);
     if (!pointer_indev)
@@ -73,8 +88,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     {
         return -1;
     }
-
-    lv_demo_widgets();
+    lv_task_handler();
     lv_theme_t* theme = lv_theme_default_init(display, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), false, LV_FONT_DEFAULT);
     lv_disp_set_theme(display, theme);
     lv_obj_t* scr_Main;
@@ -120,7 +134,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         
         uint32_t time_till_next = lv_timer_handler();
         lv_delay_ms(time_till_next);
-        lv_task_handler();
+        //lv_task_handler();
     }
 
     return 0;

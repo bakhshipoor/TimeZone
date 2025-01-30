@@ -148,7 +148,6 @@ int main(void)
   UTC_Date.WeekDay = RTC_WEEKDAY_WEDNESDAY;
   HAL_RTC_SetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
 
-
   HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
   HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
 
@@ -161,7 +160,6 @@ int main(void)
   Seconds = UTC_Time.Seconds;
 
   TZ_Init = tz_init();
-
 
   lv_init();
   tft_init();

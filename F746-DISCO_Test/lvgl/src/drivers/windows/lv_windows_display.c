@@ -151,6 +151,14 @@ static unsigned int __stdcall lv_windows_display_thread_entrypoint(
 
     data->display = context->display_device_object;
 
+    int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    int xPos = (screenWidth - data->hor_res) / 2;
+    int yPos = (screenHeight - data->ver_res) / 2;
+
+    MoveWindow(window_handle, xPos, yPos, data->hor_res, data->ver_res, TRUE);
+
     ShowWindow(window_handle, SW_SHOW);
     UpdateWindow(window_handle);
 

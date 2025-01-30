@@ -565,6 +565,7 @@
     <ClCompile Include="windows.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LvglWindowsIconResource\LvglWindowsIconResource.h" />
     <ClInclude Include="lvgl\demos\lv_demos.h" />
     <ClInclude Include="lvgl\demos\widgets\lv_demo_widgets.h" />
     <ClInclude Include="lvgl\libs\nema_gfx\include\build_version.h" />
@@ -1087,6 +1088,15 @@
     <ClInclude Include="timezone_calculator\time_zone.h" />
     <ClInclude Include="timezone_database\timezone_database.h" />
     <ClInclude Include="UI\time_zone_ui.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LvglWindowsIconResource\LvglWindowsIconResource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="LvglWindowsIconResource\LvglWindowsIconResource.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LvglWindowsIconResource\LvglWindowsIconResource.props" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
