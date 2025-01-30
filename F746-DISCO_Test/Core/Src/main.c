@@ -66,13 +66,12 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-RTC_TimeTypeDef UTC_Time = {0};
-RTC_DateTypeDef UTC_Date = {0};
+RTC_TimeTypeDef UTC_Time;
+RTC_DateTypeDef UTC_Date;
 
 void scr_Main_Event(lv_event_t* e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t* target = lv_event_get_target(e);
     if (event_code == LV_EVENT_SCREEN_UNLOAD_START)
     {
         lv_timer_delete(timer_update_data);
@@ -90,7 +89,18 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	UTC_Time.Hours=12;
+	UTC_Time.Minutes=0;
+	UTC_Time.Seconds=0;
+	UTC_Time.SubSeconds=0;
+	UTC_Time.SecondFraction=1000;
+	UTC_Time.TimeFormat=RTC_HOURFORMAT12_PM;
+	UTC_Time.DayLightSaving=RTC_DAYLIGHTSAVING_NONE;
+	UTC_Time.StoreOperation=RTC_STOREOPERATION_RESET;
+	UTC_Date.Year=25;
+	UTC_Date.Month=1;
+	UTC_Date.Date=1;
+	UTC_Date.WeekDay=RTC_WEEKDAY_WEDNESDAY;
   /* USER CODE END 1 */
 
   /* Enable the CPU Cache */
@@ -132,10 +142,10 @@ int main(void)
   UTC_Time.Seconds = 0;
   HAL_RTC_SetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
 
-  UTC_Date.WeekDay = RTC_WEEKDAY_WEDNESDAY;
-  UTC_Date.Month = 29;
-  UTC_Date.Date = 1;
   UTC_Date.Year = 25;
+  UTC_Date.Month = 1;
+  UTC_Date.Date = 29;
+  UTC_Date.WeekDay = RTC_WEEKDAY_WEDNESDAY;
   HAL_RTC_SetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
 
 
@@ -261,14 +271,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM6) {
+	  lv_tick_inc(1);
 	  HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
 	  HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
-
-
 	  Year = UTC_Date.Year+2000;
 	  Month = UTC_Date.Month;
 	  Day = UTC_Date.Date;
-
 	  Hours = UTC_Time.Hours;
 	  Minutes = UTC_Time.Minutes;
 	  Seconds = UTC_Time.Seconds;
