@@ -77,6 +77,7 @@
       <PreprocessorDefinitions>LV_CONF_INCLUDE_SIMPLE;LV_LVGL_H_INCLUDE_SIMPLE;_CRT_SECURE_NO_WARNINGS;_WINDOWS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WIN32;LV_USE_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)lvgl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -106,6 +107,7 @@
       <PreprocessorDefinitions>LV_CONF_INCLUDE_SIMPLE;LV_LVGL_H_INCLUDE_SIMPLE;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WIN32;LV_USE_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)lvgl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -130,12 +132,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\1 Electronic\AzanClockCalendar\Test\AppFwCommTest\AppFwCommTest\Src\UI\Assets\Images\Touch_Keys\Key_Down\IMG_Down_Hover.c" />
-    <ClCompile Include="lvgl\demos\lv_demos.c" />
-    <ClCompile Include="lvgl\demos\widgets\assets\img_clothes.c" />
-    <ClCompile Include="lvgl\demos\widgets\assets\img_demo_widgets_avatar.c" />
-    <ClCompile Include="lvgl\demos\widgets\assets\img_demo_widgets_needle.c" />
-    <ClCompile Include="lvgl\demos\widgets\assets\img_lvgl_logo.c" />
-    <ClCompile Include="lvgl\demos\widgets\lv_demo_widgets.c" />
     <ClCompile Include="lvgl\src\core\lv_group.c" />
     <ClCompile Include="lvgl\src\core\lv_obj.c" />
     <ClCompile Include="lvgl\src\core\lv_obj_class.c" />
@@ -566,8 +562,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LvglWindowsIconResource\LvglWindowsIconResource.h" />
-    <ClInclude Include="lvgl\demos\lv_demos.h" />
-    <ClInclude Include="lvgl\demos\widgets\lv_demo_widgets.h" />
     <ClInclude Include="lvgl\libs\nema_gfx\include\build_version.h" />
     <ClInclude Include="lvgl\libs\nema_gfx\include\nema_blender.h" />
     <ClInclude Include="lvgl\libs\nema_gfx\include\nema_cmdlist.h" />

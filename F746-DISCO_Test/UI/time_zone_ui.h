@@ -9,6 +9,7 @@ extern "C" {
 #include "../timezone_calculator/time_zone.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
     extern lv_obj_t* scr_Main;
     extern lv_style_t style_scr_Main;
@@ -21,7 +22,7 @@ extern "C" {
     extern uint8_t Minutes;
     extern uint8_t Seconds;
 
-    extern uint8_t* Zone_Identifier;
+    extern char* Zone_Identifier;
 
     extern bool TZ_Init;
     

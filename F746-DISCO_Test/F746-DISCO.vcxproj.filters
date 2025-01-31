@@ -15,24 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lvgl\demos\widgets\assets\img_clothes.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lvgl\demos\widgets\assets\img_demo_widgets_avatar.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lvgl\demos\widgets\assets\img_demo_widgets_needle.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lvgl\demos\widgets\assets\img_lvgl_logo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lvgl\demos\widgets\lv_demo_widgets.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lvgl\demos\lv_demos.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="lvgl\src\core\lv_group.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1319,12 +1301,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lvgl\demos\widgets\lv_demo_widgets.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="lvgl\demos\lv_demos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="lvgl\libs\nema_gfx\include\build_version.h">
       <Filter>Header Files</Filter>
     </ClInclude>

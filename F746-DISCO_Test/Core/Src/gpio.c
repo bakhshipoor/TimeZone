@@ -38,7 +38,6 @@
      PB5   ------> USB_OTG_HS_ULPI_D7
      PB4   ------> S_TIM3_CH1
      PD7   ------> SPDIFRX_IN0
-     PC12   ------> SDMMC1_CK
      PA15   ------> S_TIM2_CH1_ETR
      PE5   ------> DCMI_D6
      PE6   ------> DCMI_D7
@@ -46,8 +45,6 @@
      PB9   ------> I2C1_SDA
      PB7   ------> USART1_RX
      PG11   ------> ETH_TX_EN
-     PC11   ------> SDMMC1_D3
-     PC10   ------> SDMMC1_D2
      PA12   ------> USB_OTG_FS_DP
      PI4   ------> SAI2_MCLK_A
      PG10   ------> SAI2_SD_B
@@ -57,15 +54,12 @@
      PI7   ------> SAI2_FS_A
      PI6   ------> SAI2_SD_A
      PG9   ------> DCMI_VSYNC
-     PD2   ------> SDMMC1_CMD
      PI1   ------> SPI2_SCK
      PA10   ------> USB_OTG_FS_ID
      PH14   ------> DCMI_D4
      PI0   ------> S_TIM5_CH4
      PA9   ------> USART1_TX
-     PC9   ------> SDMMC1_D1
      PA8   ------> S_TIM1_CH1
-     PC8   ------> SDMMC1_D0
      PC7   ------> USART6_RX
      PH4   ------> USB_OTG_HS_ULPI_NXT
      PC6   ------> USART6_TX
@@ -185,16 +179,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF8_SPDIFRX;
   HAL_GPIO_Init(SPDIF_RX0_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PCPin PCPin PCPin PC9
-                           PC8 */
-  GPIO_InitStruct.Pin = SDMMC_CK_Pin|SDMMC_D3_Pin|SDMMC_D2_Pin|GPIO_PIN_9
-                          |GPIO_PIN_8;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF12_SDMMC1;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = ARDUINO_PWM_D9_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -280,7 +264,7 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin : PtPin */
   GPIO_InitStruct.Pin = uSD_Detect_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(uSD_Detect_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PtPin */
@@ -303,14 +287,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(OTG_FS_OverCurrent_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PtPin */
-  GPIO_InitStruct.Pin = SDMMC_CMD_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  GPIO_InitStruct.Alternate = GPIO_AF12_SDMMC1;
-  HAL_GPIO_Init(SDMMC_CMD_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PHPin PHPin */
   GPIO_InitStruct.Pin = TP3_Pin|NC2_Pin;

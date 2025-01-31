@@ -11,15 +11,20 @@
 #include "UI/time_zone_ui.h"
 #include "LvglWindowsIconResource/LvglWindowsIconResource.h"
 
-void scr_Main_Event(lv_event_t* e)
+static lv_obj_t* scr_Main;
+static void scr_Main_Event(lv_event_t* e);
+
+static void scr_Main_Event(lv_event_t* e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t* target = lv_event_get_target(e);
-    if (event_code == LV_EVENT_SCREEN_UNLOAD_START)
+    if (target == scr_Main)
     {
-        lv_timer_delete(timer_update_data);
+        if (event_code == LV_EVENT_DELETE)
+        {
+            lv_timer_delete(timer_update_data);
+        }
     }
-
 }
 
 
@@ -89,10 +94,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         return -1;
     }
     lv_task_handler();
-    lv_theme_t* theme = lv_theme_default_init(display, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), false, LV_FONT_DEFAULT);
-    lv_disp_set_theme(display, theme);
-    lv_obj_t* scr_Main;
-    scr_Main = lv_obj_create(NULL);
     
     time_t now;
     struct tm* timeinfo;
@@ -110,6 +111,10 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 
     TZ_Init = tz_init();
 
+    lv_theme_t* theme = lv_theme_default_init(display, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), false, LV_FONT_DEFAULT);
+    lv_disp_set_theme(display, theme);
+    
+    scr_Main = lv_obj_create(NULL);
     lv_obj_set_style_bg_color(scr_Main, lv_color_hex(0xFFFFFF),0);
     lv_obj_set_style_text_color(scr_Main, lv_color_hex(0x000000),0);
     lv_obj_add_event_cb(scr_Main, scr_Main_Event, LV_EVENT_ALL, NULL);
@@ -131,10 +136,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         Hours = timeinfo->tm_hour;
         Minutes = timeinfo->tm_min;
         Seconds = timeinfo->tm_sec;
-        
-        uint32_t time_till_next = lv_timer_handler();
-        lv_delay_ms(time_till_next);
-        //lv_task_handler();
+ 
+        lv_task_handler();
+        lv_delay_ms(5);
     }
 
     return 0;

@@ -25,6 +25,7 @@
 /* USER CODE END 0 */
 
 QSPI_HandleTypeDef hqspi;
+DMA_HandleTypeDef hdma_quadspi;
 
 /* QUADSPI init function */
 void MX_QUADSPI_Init(void)
@@ -40,9 +41,9 @@ void MX_QUADSPI_Init(void)
   hqspi.Instance = QUADSPI;
   hqspi.Init.ClockPrescaler = 1;
   hqspi.Init.FifoThreshold = 4;
-  hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_HALFCYCLE;
+  hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_NONE;
   hqspi.Init.FlashSize = 24;
-  hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_6_CYCLE;
+  hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_4_CYCLE;
   hqspi.Init.ClockMode = QSPI_CLOCK_MODE_0;
   hqspi.Init.FlashID = QSPI_FLASH_ID_1;
   hqspi.Init.DualFlash = QSPI_DUALFLASH_DISABLE;
@@ -107,6 +108,25 @@ void HAL_QSPI_MspInit(QSPI_HandleTypeDef* qspiHandle)
     GPIO_InitStruct.Alternate = GPIO_AF9_QUADSPI;
     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+    /* QUADSPI DMA Init */
+    /* QUADSPI Init */
+    hdma_quadspi.Instance = DMA2_Stream7;
+    hdma_quadspi.Init.Channel = DMA_CHANNEL_3;
+    hdma_quadspi.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_quadspi.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_quadspi.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_quadspi.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_quadspi.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_quadspi.Init.Mode = DMA_NORMAL;
+    hdma_quadspi.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_quadspi.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    if (HAL_DMA_Init(&hdma_quadspi) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(qspiHandle,hdma,hdma_quadspi);
+
   /* USER CODE BEGIN QUADSPI_MspInit 1 */
 
   /* USER CODE END QUADSPI_MspInit 1 */
@@ -138,6 +158,8 @@ void HAL_QSPI_MspDeInit(QSPI_HandleTypeDef* qspiHandle)
 
     HAL_GPIO_DeInit(GPIOD, QSPI_D1_Pin|QSPI_D3_Pin|QSPI_D0_Pin);
 
+    /* QUADSPI DMA DeInit */
+    HAL_DMA_DeInit(qspiHandle->hdma);
   /* USER CODE BEGIN QUADSPI_MspDeInit 1 */
 
   /* USER CODE END QUADSPI_MspDeInit 1 */

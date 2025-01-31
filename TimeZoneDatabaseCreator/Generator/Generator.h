@@ -92,12 +92,12 @@ extern "C" {
 
 
     JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset);
-    DAY Calculate_Days_In_Month(YEAR year, MONTH month);
-    JD Calculate_JD(JDN jdn, HOUR second);
-    JDN Calculate_JDN(YEAR year, MONTH month, DAY day);
-    DAY Calculate_Last_Weekday_Day_In_Month(YEAR year, MONTH month, WEEKDAY weekday);
-    DAY Calculate_First_Weekday_After_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday);
-    DAY Calculate_First_Weekday_Before_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday);
+    DAY Calculate_Days_In_Month(YEAR* year, MONTH* month);
+    JD Calculate_JD(JDN* jdn, HOUR* second);
+    JDN Calculate_JDN(YEAR* year, MONTH* month, DAY* day);
+    DAY Calculate_Last_Weekday_Day_In_Month(YEAR* year, MONTH* month, WEEKDAY* weekday);
+    DAY Calculate_First_Weekday_After_Day_In_Month(YEAR* year, MONTH* month, DAY* day, WEEKDAY* weekday);
+    DAY Calculate_First_Weekday_Before_Day_In_Month(YEAR* year, MONTH* month, DAY* day, WEEKDAY* weekday);
     VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, CONST HOUR seconds_to_add);
 
 

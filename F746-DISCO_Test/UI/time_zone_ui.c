@@ -9,7 +9,7 @@ uint8_t Hours = 0;
 uint8_t Minutes = 0;
 uint8_t Seconds = 0;
 
-uint8_t* Zone_Identifier;
+char* Zone_Identifier;
 
 bool TZ_Init = false;
 
@@ -17,7 +17,6 @@ lv_timer_t* timer_update_data = NULL;
 
 static tz_time_t* tz_time = NULL;
 static tz_get_offset_t* tz_offset = NULL;
-
 
 static lv_style_t style_list_zone = { 0 };
 static lv_style_t style_lbl_zone_1 = { 0 };
@@ -47,17 +46,9 @@ static void zone_list_label_event(lv_event_t * e)
         if (lbl_selected_zone != NULL)
         {
             lv_label_set_text(lbl_selected_zone, lv_label_get_text(obj));
-            sprintf(Zone_Identifier, "%s", lv_label_get_text(obj));
+            strcpy(Zone_Identifier, (const char*)lv_label_get_text(obj));
         }
-        
-        /*if(selected_zone == obj)
-        {
-            selected_zone = NULL;
-        }
-        else
-        {
-            selected_zone = obj;
-        }*/
+
         lv_obj_t * parent = lv_obj_get_parent(obj);
         uint32_t i;
         for(i = 0; i < lv_obj_get_child_count(parent); i++)
@@ -80,7 +71,7 @@ static void update_data(lv_timer_t* timer)
     if (TZ_Init == true)
     {
 
-        tz_set_zone(&Zone_Identifier);
+        tz_set_zone((const uint8_t**)&Zone_Identifier);
         tz_set_date(&Year, &Month, &Day);
         tz_set_time(&Hours, &Minutes, &Seconds);
         tz_calculate();
@@ -88,9 +79,9 @@ static void update_data(lv_timer_t* timer)
         tz_time = tz_get_local_time();
         tz_offset = tz_get_offset();
 
-        lv_label_set_text_fmt(lbl_utc_date,         "UTC Date:      %04d/%02d/%02d", Year, Month, Day);
+        lv_label_set_text_fmt(lbl_utc_date,         "UTC Date:      %04ld/%02d/%02d", Year, Month, Day);
         lv_label_set_text_fmt(lbl_utc_time,         "UTC Time:      %02d:%02d:%02d", Hours, Minutes, Seconds);
-        lv_label_set_text_fmt(lbl_local_date,       "Local Date:    %04d/%02d/%02d", tz_time->year, tz_time->month, tz_time->day);
+        lv_label_set_text_fmt(lbl_local_date,       "Local Date:    %04ld/%02d/%02d", tz_time->year, tz_time->month, tz_time->day);
         lv_label_set_text_fmt(lbl_local_time,       "Local Time:    %02d:%02d:%02d", tz_time->hour, tz_time->minute, tz_time->second);
         lv_label_set_text_fmt(lbl_dst_effect,       "DST Effect:    %s", tz_offset->dst_effect == true ? "True" : "False");
         lv_label_set_text_fmt(lbl_std_offset,       "STD Offset:    %02d:%02d:%02d", tz_offset->std_offset.hour, tz_offset->std_offset.minute, tz_offset->std_offset.second);
@@ -131,7 +122,7 @@ void tz_ui(void)
     
     style_init();
 
-    Zone_Identifier = (uint8_t*)calloc(TZDB_MAX_LENGHT_IDENTIFIER, sizeof(uint8_t));
+    Zone_Identifier = (char*)calloc(TZDB_MAX_LENGHT_IDENTIFIER, sizeof(char));
 
 
     static int32_t col_dsc[] = {LV_GRID_FR(1), LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST };
@@ -157,14 +148,17 @@ void tz_ui(void)
         lbl_zone = lv_label_create(list_zone);
         lv_obj_add_flag(lbl_zone, LV_OBJ_FLAG_CLICKABLE);
         lv_obj_add_event_cb(lbl_zone, zone_list_label_event, LV_EVENT_CLICKED, NULL);
-        lv_label_set_text_fmt(lbl_zone, "%s", tzdb_zones_info[i].zone_identifier);
+        lv_label_set_text(lbl_zone, (const char*)tzdb_zones_info[i].zone_identifier);
         lv_label_set_long_mode(lbl_zone, LV_LABEL_LONG_MODE_SCROLL);
         lv_obj_add_style(lbl_zone, &style_lbl_zone_1, 0);
         if (i == 0)
         {
             selected_zone = lbl_zone;
             lv_obj_add_style(lbl_zone, &style_lbl_zone_2, 0);
-            sprintf(Zone_Identifier, "%s", lv_label_get_text(lbl_zone));
+            if (Zone_Identifier != NULL)
+            {
+                strcpy(Zone_Identifier, lv_label_get_text(lbl_zone));
+            }
         }
     }
 

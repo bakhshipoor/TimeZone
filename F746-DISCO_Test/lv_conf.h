@@ -28,7 +28,7 @@
 
 /** Color depth: 1 (I1), 8 (L8), 16 (RGB565), 24 (RGB888), 32 (XRGB8888) */
 #ifdef _WIN32
-#define LV_COLOR_DEPTH 16
+#define LV_COLOR_DEPTH 32
 #else
 #define LV_COLOR_DEPTH 16
 #endif
@@ -1257,7 +1257,7 @@
  ====================*/
 
 /** Show some widgets. This might be required to increase `LV_MEM_SIZE`. */
-#define LV_USE_DEMO_WIDGETS 1
+#define LV_USE_DEMO_WIDGETS 0
 
 /** Demonstrate usage of encoder and keyboard. */
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 0

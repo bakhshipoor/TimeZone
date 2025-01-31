@@ -440,15 +440,15 @@ JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset)
         {
             if (until->Day.Day == 0)
             {
-                day = Calculate_Last_Weekday_Day_In_Month(year, month, until->Day.Weekday);
+                day = Calculate_Last_Weekday_Day_In_Month(&year, &month, &until->Day.Weekday);
             }
             else if (until->Day.Weekday_isAfterOrEqual_Day == _TRUE)
             {
-                day = Calculate_First_Weekday_After_Day_In_Month(year, month, until->Day.Day, until->Day.Weekday);
+                day = Calculate_First_Weekday_After_Day_In_Month(&year, &month, &until->Day.Day, &until->Day.Weekday);
             }
             else
             {
-                day = Calculate_First_Weekday_Before_Day_In_Month(year, month, until->Day.Day, until->Day.Weekday);
+                day = Calculate_First_Weekday_Before_Day_In_Month(&year, &month, &until->Day.Day, &until->Day.Weekday);
             }
         }
 
@@ -465,95 +465,98 @@ JD Get_Zone_Data_Until(CONST Zone_Data_Until_t* until, CONST HOUR* utc_offset)
         Subtract_Or_Add_Seconds(&year, &month, &day, &second, -(*utc_offset));
     }
 
-    JDN jdn = Calculate_JDN(year, month, day);
+    JDN jdn = Calculate_JDN(&year, &month, &day);
 
-    return Calculate_JD(jdn, second);
+    return Calculate_JD(&jdn, &second);
 }
 
-DAY Calculate_Days_In_Month(YEAR year, MONTH month) 
+DAY Calculate_Days_In_Month(YEAR* year, MONTH* month) 
 {
-    switch (month) 
+    static const uint8_t days_in_month[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    uint8_t days = days_in_month[(*month) - 1];
+    if (*month == 2 && ((*year % 4 == 0 && *year % 100 != 0) || (*year % 400 == 0)))
     {
-    case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-        return 31;
-    case 4: case 6: case 9: case 11:
-        return 30;
-    case 2:
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-            return 29;
-        else
-            return 28;
-    default:
-        return 0;
+        days = 29;
     }
+
+    return days;
 }
 
-JD Calculate_JD(JDN jdn, HOUR second) 
+JD Calculate_JD(JDN* jdn, HOUR* second) 
 {
-    JD jd = (((JD)jdn * 1.0) + (-12.0 / 24.0) + (((JD)second * 1.0) / 86400.0));
-    return jd;
+    return (((JD)*jdn * 1.0) + (-12.0 / 24.0) + (((JD)*second * 1.0) / 86400.0));
 }
 
-JDN Calculate_JDN(YEAR year, MONTH month, DAY day)
+JDN Calculate_JDN(YEAR* year, MONTH* month, DAY* day)
 {
-    JDN a = (14 - month) / 12;
-    JDN y = year + 4800 - a;
-    JDN m = month + 12 * a - 3;
+    JDN a = (14 - *month) / 12;
+    JDN y = *year + 4800 - a;
+    JDN m = *month + 12 * a - 3;
 
-    return (day + ((153 * m + 2) / 5) + 365 * y + (y / 4) - (y / 100) + (y / 400) - 32045);
+    return (*day + ((153 * m + 2) / 5) + 365 * y + (y / 4) - (y / 100) + (y / 400) - 32045);
 }
 
-DAY Calculate_Last_Weekday_Day_In_Month(YEAR year, MONTH month, WEEKDAY weekday)
+DAY Calculate_Last_Weekday_Day_In_Month(YEAR* year, MONTH* month, WEEKDAY* weekday)
 {
     DAY result_day = Calculate_Days_In_Month(year, month);
-    while (((Calculate_JDN(year, month, result_day) + 1) % 7) != weekday)
+    while (((Calculate_JDN(year, month, &result_day) + 1) % 7) != weekday)
     {
         result_day--;
     }
     return result_day;
 }
 
-DAY Calculate_First_Weekday_After_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday)
+DAY Calculate_First_Weekday_After_Day_In_Month(YEAR* year, MONTH* month, DAY* day, WEEKDAY* weekday)
 {
     JDN jdn = Calculate_JDN(year, month, day);
     
     WEEKDAY current_weekday = ((jdn + 1) % 7);
 
-    if (current_weekday == weekday)
+    if (current_weekday == *weekday)
     {
-        return day;
+        return *day;
     }
 
-    DAY days_to_next_weekday = (weekday - current_weekday + 7) % 7;
+    DAY days_to_next_weekday = (*weekday - current_weekday + 7) % 7;
 
-    DAY result_day = day + days_to_next_weekday;
+    DAY result_day = *day + days_to_next_weekday;
 
     if (result_day > Calculate_Days_In_Month(year, month)) 
     {
-        return TZDB_DAY_NONE;
+        (*month)++;
+        if (*month > 12) {
+            *month = 1;
+            (*year)++;
+        }
+        result_day -= Calculate_Days_In_Month(year, month);
     }
 
     return result_day;
 }
 
-DAY Calculate_First_Weekday_Before_Day_In_Month(YEAR year, MONTH month, DAY day, WEEKDAY weekday)
+DAY Calculate_First_Weekday_Before_Day_In_Month(YEAR* year, MONTH* month, DAY* day, WEEKDAY* weekday)
 {
     JDN jdn = Calculate_JDN(year, month, day);
 
     WEEKDAY current_weekday = ((jdn + 1) % 7);
 
-    if (current_weekday == weekday)
+    if (current_weekday == *weekday)
     {
         return day;
     }
 
-    DAY days_to_prev_weekday = (current_weekday - weekday + 7) % 7;
+    DAY days_to_prev_weekday = (current_weekday - *weekday + 7) % 7;
 
-    DAY result_day = day - days_to_prev_weekday;
+    DAY result_day = *day - days_to_prev_weekday;
 
     if (result_day < 1) 
     {
-        return TZDB_DAY_NONE;
+        (*month)--;
+        if (*month < 1) {
+            *month = 12;
+            (*year)--;
+        }
+        result_day += Calculate_Days_In_Month(year, month);
     }
 
     return result_day;
@@ -575,7 +578,7 @@ VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, C
                 *month = 12;
                 (*year)--;
             }
-            *day = Calculate_Days_In_Month(*year ,*month);
+            *day = Calculate_Days_In_Month(year ,month);
         }
     }
 
@@ -583,7 +586,7 @@ VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, C
     {
         total_seconds -= 86400;
         (*day)++;
-        if (*day > Calculate_Days_In_Month(*year, *month)) 
+        if (*day > Calculate_Days_In_Month(year, month)) 
         {
             *day = 1;
             (*month)++;
@@ -597,10 +600,6 @@ VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, C
 
     *second = total_seconds;
 }
-
-
-
-
 
 
 INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b) 

@@ -18,11 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "dma2d.h"
+#include "fatfs.h"
 #include "i2c.h"
 #include "ltdc.h"
 #include "quadspi.h"
 #include "rtc.h"
+#include "sdmmc.h"
 #include "gpio.h"
 #include "fmc.h"
 
@@ -33,7 +36,6 @@
 #include "touchpad.h"
 #include "stdio.h"
 #include "stdlib.h"
-#include "lvgl/demos/lv_demos.h"
 #include "UI/time_zone_ui.h"
 /* USER CODE END Includes */
 
@@ -60,6 +62,8 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void PeriphCommonClock_Config(void);
+static void MPU_Config(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -69,10 +73,10 @@ void SystemClock_Config(void);
 RTC_TimeTypeDef UTC_Time;
 RTC_DateTypeDef UTC_Date;
 
-void scr_Main_Event(lv_event_t* e)
+static void scr_Main_Event(lv_event_t* e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
-    if (event_code == LV_EVENT_SCREEN_UNLOAD_START)
+    if (event_code == LV_EVENT_DELETE)
     {
         lv_timer_delete(timer_update_data);
     }
@@ -103,6 +107,9 @@ int main(void)
 	UTC_Date.WeekDay=RTC_WEEKDAY_WEDNESDAY;
   /* USER CODE END 1 */
 
+  /* MPU Configuration--------------------------------------------------------*/
+  MPU_Config();
+
   /* Enable the CPU Cache */
 
   /* Enable I-Cache---------------------------------------------------------*/
@@ -123,18 +130,24 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 
+  /* Configure the peripherals common clocks */
+  PeriphCommonClock_Config();
+
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_DMA2D_Init();
   MX_I2C3_Init();
   MX_LTDC_Init();
   MX_RTC_Init();
   MX_FMC_Init();
-  MX_QUADSPI_Init();
+  //MX_QUADSPI_Init();
+  MX_SDMMC1_SD_Init();
+  MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
 
   UTC_Time.Hours = 12;
@@ -173,11 +186,56 @@ int main(void)
   lv_screen_load(scr_Main);
 
   tz_ui();
-
+  uint32_t counter=0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  FRESULT res;
+  UINT bytesWritten=0;
+  UINT bytesRead=0;
+  // Mount SD Card (Drive 1)
+
+  res = f_mount(&SDFatFS, SDPath, 1);
+  if (res != FR_OK) {
+	  Error_Handler();
+  }
+  char sd_file_path[20];
+  snprintf(sd_file_path, sizeof(sd_file_path), "%ssd_test.txt", SDPath);
+  res = f_open(&SDFile, sd_file_path, FA_CREATE_ALWAYS | FA_WRITE);
+  if (res == FR_OK) {
+	  f_write(&SDFile, "Hello from SD Card!", strlen("Hello from SD Card!"), &bytesWritten);
+	  f_close(&SDFile);
+  }
+  f_mount(NULL, SDPath, 1);
+
+  //uint8_t zzz = BSP_QSPI_Init();
+
+  FRESULT res3=0;
+  FRESULT res1 = f_mount(&USERFatFS, USERPath, 1);
+
+  //BYTE workBuffer[4096];
+  //FRESULT res2 = f_mkfs(USERPath, FM_FAT, 512, workBuffer, sizeof(workBuffer));
+
+	char qspi_file_path[20];
+	char read_buf[100];
+	const char write_buf[] = "Hello from QUADSPI Memory. Lucky!";
+	snprintf(qspi_file_path, sizeof(qspi_file_path), "%sqspi_test.txt", USERPath);
+	res = f_open(&USERFile, qspi_file_path, FA_CREATE_ALWAYS | FA_WRITE);
+	if (res == FR_OK) {
+		res3 = f_write(&USERFile, write_buf, strlen(write_buf)+1, &bytesWritten);
+	  f_close(&USERFile);
+	}
+
+	memset(read_buf, 0, sizeof(read_buf));
+	res = f_open(&USERFile, qspi_file_path, FA_READ );
+	if (res == FR_OK) {
+		res3 = f_read(&USERFile, read_buf, strlen(read_buf)-1, &bytesRead);
+	  f_close(&USERFile);
+	}
+
+	f_mount(NULL, USERPath, 1);
+
   while (1)
   {
     /* USER CODE END WHILE */
@@ -185,6 +243,19 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  HAL_Delay(5);
 	  lv_task_handler();
+	  counter++;
+	  if (counter>20)
+	  {
+		  HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
+		  HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
+		  Year = UTC_Date.Year+2000;
+		  Month = UTC_Date.Month;
+		  Day = UTC_Date.Date;
+		  Hours = UTC_Time.Hours;
+		  Minutes = UTC_Time.Minutes;
+		  Seconds = UTC_Time.Seconds;
+		  counter=0;
+	  }
   }
   /* USER CODE END 3 */
 }
@@ -247,9 +318,47 @@ void SystemClock_Config(void)
   }
 }
 
+/**
+  * @brief Peripherals Common Clock Configuration
+  * @retval None
+  */
+void PeriphCommonClock_Config(void)
+{
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+
+  /** Initializes the peripherals clock
+  */
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LTDC|RCC_PERIPHCLK_SDMMC1
+                              |RCC_PERIPHCLK_CLK48;
+  PeriphClkInitStruct.PLLSAI.PLLSAIN = 384;
+  PeriphClkInitStruct.PLLSAI.PLLSAIR = 2;
+  PeriphClkInitStruct.PLLSAI.PLLSAIQ = 2;
+  PeriphClkInitStruct.PLLSAI.PLLSAIP = RCC_PLLSAIP_DIV8;
+  PeriphClkInitStruct.PLLSAIDivQ = 1;
+  PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_8;
+  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLLSAIP;
+  PeriphClkInitStruct.Sdmmc1ClockSelection = RCC_SDMMC1CLKSOURCE_CLK48;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+ /* MPU Configuration */
+
+void MPU_Config(void)
+{
+
+  /* Disables the MPU */
+  HAL_MPU_Disable();
+  /* Enables the MPU */
+  HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+
+}
 
 /**
   * @brief  Period elapsed callback in non blocking mode
@@ -270,14 +379,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM6) {
 	  lv_tick_inc(1);
-	  HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
-	  HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
-	  Year = UTC_Date.Year+2000;
-	  Month = UTC_Date.Month;
-	  Day = UTC_Date.Date;
-	  Hours = UTC_Time.Hours;
-	  Minutes = UTC_Time.Minutes;
-	  Seconds = UTC_Time.Seconds;
   }
   /* USER CODE END Callback 1 */
 }
