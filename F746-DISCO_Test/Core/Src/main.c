@@ -145,7 +145,7 @@ int main(void)
   MX_LTDC_Init();
   MX_RTC_Init();
   MX_FMC_Init();
-  //MX_QUADSPI_Init();
+  MX_QUADSPI_Init();
   MX_SDMMC1_SD_Init();
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
@@ -209,7 +209,6 @@ int main(void)
   }
   f_mount(NULL, SDPath, 1);
 
-  //uint8_t zzz = BSP_QSPI_Init();
 
   FRESULT res3=0;
   FRESULT res1 = f_mount(&USERFatFS, USERPath, 1);
@@ -223,7 +222,7 @@ int main(void)
 	snprintf(qspi_file_path, sizeof(qspi_file_path), "%sqspi_test.txt", USERPath);
 	res = f_open(&USERFile, qspi_file_path, FA_CREATE_ALWAYS | FA_WRITE);
 	if (res == FR_OK) {
-		res3 = f_write(&USERFile, write_buf, strlen(write_buf)+1, &bytesWritten);
+		res3 = f_write(&USERFile, write_buf, strlen(write_buf), &bytesWritten);
 	  f_close(&USERFile);
 	}
 

@@ -157,9 +157,6 @@ DSTATUS SD_initialize(BYTE lun)
     Stat = SD_CheckStatus(lun);
   }
 
-  BSP_SD_CardInfo CardInfo;
-  BSP_SD_GetCardInfo(&CardInfo);
-
 #else
   Stat = SD_CheckStatus(lun);
 #endif
