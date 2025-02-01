@@ -1296,9 +1296,6 @@
     <ClCompile Include="timezone_database\timezone_database.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\1 Electronic\AzanClockCalendar\Test\AppFwCommTest\AppFwCommTest\Src\UI\Assets\Images\Touch_Keys\Key_Down\IMG_Down_Hover.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lvgl\libs\nema_gfx\include\build_version.h">

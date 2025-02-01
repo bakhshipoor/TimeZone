@@ -131,7 +131,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\1 Electronic\AzanClockCalendar\Test\AppFwCommTest\AppFwCommTest\Src\UI\Assets\Images\Touch_Keys\Key_Down\IMG_Down_Hover.c" />
     <ClCompile Include="lvgl\src\core\lv_group.c" />
     <ClCompile Include="lvgl\src\core\lv_obj.c" />
     <ClCompile Include="lvgl\src\core\lv_obj_class.c" />

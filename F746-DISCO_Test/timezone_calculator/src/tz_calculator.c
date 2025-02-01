@@ -62,14 +62,10 @@ bool tz_set_zone(const uint8_t** tz_identifier)
 {
     if (tz_identifier == NULL || *tz_identifier == NULL)
     {
+        tz_inititial->zone_is_init = false;
         return false;
     }
 
-    tz_inititial->tz_id = get_zone_id_identifier(tz_identifier);
-    if (tz_inititial->tz_id == NULL)
-    {
-        return false;
-    }
     tz_inititial->tz_identifier = tz_identifier;
 
     tz_inititial->zone_is_init = true;
@@ -140,6 +136,13 @@ void tz_calculate(void)
         tz_calculated_data.changes = NULL;
     }
 
+    tz_inititial->tz_id = get_zone_id_identifier(tz_inititial->tz_identifier);
+    if (tz_inititial->tz_id == NULL)
+    {
+        tz_inititial->zone_is_init = false;
+        return;
+    }
+
     tz_calculated_data.offsets->std_offset_seconds = 0;
     tz_calculated_data.offsets->dst_effect = false;
     tz_calculated_data.offsets->dst_offset_seconds = 0;
@@ -194,27 +197,48 @@ void tz_calculate(void)
     }
 }
 
-tz_time_t* tz_get_local_time(void)
+void tz_get_local_time(tz_time_t** local_time)
 {
+    if (local_time == NULL)
+    {
+        local_time = (tz_time_t**)calloc(1, sizeof(tz_time_t*));
+        if (local_time == NULL)
+        {
+            return;
+        }
+    }
     int32_t year = *tz_inititial->g_year;
     int8_t month = *tz_inititial->g_month;
     int8_t day = *tz_inititial->g_day;
     int64_t second = tz_calculated_data.now_seconds;
     subtract_or_add_seconds(&year, &month, &day, &second, tz_calculated_data.offsets->total_offset_seconds);
-    tz_time_t* local = (tz_time_t*)calloc(1, sizeof(tz_time_t));
-    if (local != NULL)
+    if ((*local_time) == NULL)
     {
-        local->year = year;
-        local->month = month;
-        local->day = day;
-        convert_second_to_time(&second, local);
+        (*local_time) = (tz_time_t*)calloc(1, sizeof(tz_time_t));
+        if ((*local_time) == NULL)
+        {
+            return;
+        }
     }
-   return local;
+
+    (*local_time)->year = year;
+    (*local_time)->month = month;
+    (*local_time)->day = day;
+    convert_second_to_time(&second, (*local_time));
+    
 }
 
-tz_get_offset_t* tz_get_offset(void)
+void tz_get_offset(tz_get_offset_t** offsets)
 {
-    return tz_calculated_data.offsets;
+    if (offsets == NULL)
+    {
+        offsets = (tz_get_offset_t**)calloc(1, sizeof(tz_get_offset_t*));
+        if (offsets == NULL)
+        {
+            return;
+        }
+    }
+    (*offsets) = tz_calculated_data.offsets;
 }
 
 

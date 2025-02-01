@@ -70,14 +70,9 @@ static void update_data(lv_timer_t* timer)
 {
     if (TZ_Init == true)
     {
-
-        tz_set_zone((const uint8_t**)&Zone_Identifier);
-        tz_set_date(&Year, &Month, &Day);
-        tz_set_time(&Hours, &Minutes, &Seconds);
         tz_calculate();
-
-        tz_time = tz_get_local_time();
-        tz_offset = tz_get_offset();
+        tz_get_local_time(&tz_time);
+        tz_get_offset(&tz_offset);
 
         lv_label_set_text_fmt(lbl_utc_date,         "UTC Date:      %04ld/%02d/%02d", Year, Month, Day);
         lv_label_set_text_fmt(lbl_utc_time,         "UTC Time:      %02d:%02d:%02d", Hours, Minutes, Seconds);
@@ -87,6 +82,7 @@ static void update_data(lv_timer_t* timer)
         lv_label_set_text_fmt(lbl_std_offset,       "STD Offset:    %02d:%02d:%02d", tz_offset->std_offset.hour, tz_offset->std_offset.minute, tz_offset->std_offset.second);
         lv_label_set_text_fmt(lbl_dst_offset,       "DST Offset:    %02d:%02d:%02d", tz_offset->dst_offset.hour, tz_offset->dst_offset.minute, tz_offset->dst_offset.second);
         lv_label_set_text_fmt(lbl_total_offset,     "Total Offset:  %02d:%02d:%02d", tz_offset->total_offset.hour, tz_offset->total_offset.minute, tz_offset->total_offset.second);
+
     }
 }
 
@@ -219,7 +215,15 @@ void tz_ui(void)
     lv_label_set_text(lbl_total_offset, "Total Offset:");
     lv_obj_set_grid_cell(lbl_total_offset, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_STRETCH, 9, 1);
 
-    timer_update_data = lv_timer_create(update_data, 500, NULL);
+    if (TZ_Init == true)
+    {
+        tz_set_zone((const uint8_t**)&Zone_Identifier);
+        tz_set_date(&Year, &Month, &Day);
+        tz_set_time(&Hours, &Minutes, &Seconds);
+        tz_calculate();
+    }
+
+    timer_update_data = lv_timer_create(update_data, 100, NULL);
    
 }
 
