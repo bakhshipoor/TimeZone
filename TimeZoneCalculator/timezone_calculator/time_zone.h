@@ -38,8 +38,8 @@ extern "C" {
 
     void tz_calculate(void);
 
-    tz_time_t* tz_get_local_time(void);
-    tz_get_offset_t* tz_get_offset(void);
+    void tz_get_local_time(tz_time_t** local_time);
+    void tz_get_offset(tz_get_offset_t** offsets);
 
 
 #ifdef __cplusplus
