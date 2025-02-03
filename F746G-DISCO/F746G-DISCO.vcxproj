@@ -553,11 +553,11 @@
     <ClCompile Include="lvgl\src\widgets\textarea\lv_textarea.c" />
     <ClCompile Include="lvgl\src\widgets\tileview\lv_tileview.c" />
     <ClCompile Include="lvgl\src\widgets\win\lv_win.c" />
-    <ClCompile Include="TimeZone\timezone_calculator\src\tz_calculator.c" />
-    <ClCompile Include="TimeZone\timezone_calculator\src\tz_calendar.c" />
-    <ClCompile Include="TimeZone\timezone_database\timezone_database.c" />
-    <ClCompile Include="TimeZone\UI\time_zone_ui.c" />
-    <ClCompile Include="TimeZone\windows.c" />
+    <ClCompile Include="Time_Zone\timezone_calculator\src\tz_calculator.c" />
+    <ClCompile Include="Time_Zone\timezone_calculator\src\tz_calendar.c" />
+    <ClCompile Include="Time_Zone\timezone_database\timezone_database.c" />
+    <ClCompile Include="Time_Zone\UI\time_zone_ui.c" />
+    <ClCompile Include="Time_Zone\windows.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LvglWindowsIconResource\LvglWindowsIconResource.h" />
@@ -1076,11 +1076,11 @@
     <ClInclude Include="lvgl\src\widgets\win\lv_win.h" />
     <ClInclude Include="lvgl\src\widgets\win\lv_win_private.h" />
     <ClInclude Include="lv_conf.h" />
-    <ClInclude Include="TimeZone\timezone_calculator\inc\tz_calculator.h" />
-    <ClInclude Include="TimeZone\timezone_calculator\inc\tz_calendar.h" />
-    <ClInclude Include="TimeZone\timezone_calculator\time_zone.h" />
-    <ClInclude Include="TimeZone\timezone_database\timezone_database.h" />
-    <ClInclude Include="TimeZone\UI\time_zone_ui.h" />
+    <ClInclude Include="Time_Zone\timezone_calculator\inc\tz_calculator.h" />
+    <ClInclude Include="Time_Zone\timezone_calculator\inc\tz_calendar.h" />
+    <ClInclude Include="Time_Zone\timezone_calculator\time_zone.h" />
+    <ClInclude Include="Time_Zone\timezone_database\timezone_database.h" />
+    <ClInclude Include="Time_Zone\UI\time_zone_ui.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LvglWindowsIconResource\LvglWindowsIconResource.rc" />

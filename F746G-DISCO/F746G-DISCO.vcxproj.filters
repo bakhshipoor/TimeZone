@@ -1281,19 +1281,19 @@
     <ClCompile Include="lvgl\src\lv_init.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="windows.c">
+    <ClCompile Include="Time_Zone\timezone_calculator\src\tz_calculator.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UI\time_zone_ui.c">
+    <ClCompile Include="Time_Zone\timezone_calculator\src\tz_calendar.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="timezone_calculator\src\tz_calculator.c">
+    <ClCompile Include="Time_Zone\timezone_database\timezone_database.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="timezone_calculator\src\tz_calendar.c">
+    <ClCompile Include="Time_Zone\UI\time_zone_ui.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="timezone_database\timezone_database.c">
+    <ClCompile Include="Time_Zone\windows.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -2843,22 +2843,22 @@
     <ClInclude Include="lv_conf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UI\time_zone_ui.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="timezone_calculator\inc\tz_calculator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="timezone_calculator\inc\tz_calendar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="timezone_calculator\time_zone.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="timezone_database\timezone_database.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LvglWindowsIconResource\LvglWindowsIconResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Time_Zone\timezone_calculator\inc\tz_calculator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Time_Zone\timezone_calculator\inc\tz_calendar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Time_Zone\timezone_calculator\time_zone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Time_Zone\timezone_database\timezone_database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Time_Zone\UI\time_zone_ui.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
