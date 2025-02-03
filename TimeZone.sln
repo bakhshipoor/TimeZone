@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeZoneDatabaseCreator", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TimeZoneCalculator", "TimeZoneCalculator\TimeZoneCalculator.vcxproj", "{E8542882-D978-4BDF-BD0C-1267F6B6D6AD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "F746-DISCO", "F746-DISCO_Test\F746-DISCO.vcxproj", "{579FDB43-BE71-4301-A4D9-4158F558DA7D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "F746-DISCO", "F746G-DISCO\F746G-DISCO.vcxproj", "{579FDB43-BE71-4301-A4D9-4158F558DA7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
