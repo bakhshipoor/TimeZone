@@ -13,8 +13,6 @@ char* Zone_Identifier;
 
 bool TZ_Init = false;
 
-lv_timer_t* timer_update_data = NULL;
-
 static tz_time_t* tz_time = NULL;
 static tz_get_offset_t* tz_offset = NULL;
 
@@ -66,7 +64,7 @@ static void zone_list_label_event(lv_event_t * e)
     }
 }
 
-static void update_data(lv_timer_t* timer)
+void update_data(void)
 {
     if (TZ_Init == true)
     {
@@ -223,7 +221,7 @@ void tz_ui(void)
         tz_calculate();
     }
 
-    timer_update_data = lv_timer_create(update_data, 100, NULL);
+
    
 }
 

@@ -14,19 +14,6 @@
 static lv_obj_t* scr_Main;
 static void scr_Main_Event(lv_event_t* e);
 
-static void scr_Main_Event(lv_event_t* e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t* target = lv_event_get_target(e);
-    if (target == scr_Main)
-    {
-        if (event_code == LV_EVENT_DELETE)
-        {
-            lv_timer_delete(timer_update_data);
-        }
-    }
-}
-
 
 int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nShowCmd)
 {
@@ -117,7 +104,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     scr_Main = lv_obj_create(NULL);
     lv_obj_set_style_bg_color(scr_Main, lv_color_hex(0xFFFFFF),0);
     lv_obj_set_style_text_color(scr_Main, lv_color_hex(0x000000),0);
-    lv_obj_add_event_cb(scr_Main, scr_Main_Event, LV_EVENT_ALL, NULL);
     lv_screen_load(scr_Main);
 
 
@@ -127,7 +113,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
    
     while (1)
     {
-        
+        lv_task_handler();
+        lv_delay_ms(5);
+
         time(&now);
         timeinfo = gmtime(&now);
 
@@ -138,9 +126,10 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         Hours = timeinfo->tm_hour;
         Minutes = timeinfo->tm_min;
         Seconds = timeinfo->tm_sec;
+
+        update_data();
  
-        lv_task_handler();
-        lv_delay_ms(5);
+        
     }
 
     return 0;

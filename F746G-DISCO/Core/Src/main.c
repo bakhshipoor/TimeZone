@@ -85,14 +85,6 @@ static void MX_NVIC_Init(void);
 RTC_TimeTypeDef UTC_Time;
 RTC_DateTypeDef UTC_Date;
 
-static void scr_Main_Event(lv_event_t* e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    if (event_code == LV_EVENT_DELETE)
-    {
-        lv_timer_delete(timer_update_data);
-    }
-}
 /* USER CODE END 0 */
 
 /**
@@ -212,7 +204,6 @@ int main(void)
 	scr_Main = lv_obj_create(NULL);
 	lv_obj_set_style_bg_color(scr_Main, lv_color_hex(0xFFFFFF),0);
 	lv_obj_set_style_text_color(scr_Main, lv_color_hex(0x000000),0);
-	lv_obj_add_event_cb(scr_Main, scr_Main_Event, LV_EVENT_ALL, NULL);
 	lv_screen_load(scr_Main);
 
 	tz_ui();
@@ -258,6 +249,7 @@ int main(void)
 			Hours = UTC_Time.Hours;
 			Minutes = UTC_Time.Minutes;
 			Seconds = UTC_Time.Seconds;
+			update_data();
 			counter=0;
 		}
 	}

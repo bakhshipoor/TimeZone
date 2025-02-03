@@ -29,7 +29,7 @@ extern "C" {
     extern lv_timer_t* timer_update_data;
 
     void tz_ui(void);
-
+    void update_data(void);
 
 #ifdef __cplusplus
 }
