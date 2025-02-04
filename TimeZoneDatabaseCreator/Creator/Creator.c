@@ -174,7 +174,7 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        TZDB_WEEKDAY_SATURDAY,\n");
     fprintf(header_file, "        \n");
     fprintf(header_file, "        TZDB_WEEKDAY_TOTAL,\n");
-    fprintf(header_file, "        TZDB_WEEKDAY_NONE = 255,\n");
+    fprintf(header_file, "        TZDB_WEEKDAY_NONE = -1,\n");
     fprintf(header_file, "    } tzdb_weekday_number_e;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef enum\n");
@@ -202,15 +202,15 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        uint8_t       zone_identifier[TZDB_MAX_LENGHT_ZI_IDENTIFIER];\n");
     fprintf(header_file, "        int64_t       std_offset;\n");
     fprintf(header_file, "        int64_t       dst_offset;\n");
-    fprintf(header_file, "        uint8_t       country_code[TZDB_MAX_LENGHT_ZI_COUNTRY_CODE];\n");
-    fprintf(header_file, "        uint8_t       country_name[TZDB_MAX_LENGHT_ZI_COUNTRY_NAME];\n");
+    fprintf(header_file, "        char          country_code[TZDB_MAX_LENGHT_ZI_COUNTRY_CODE];\n");
+    fprintf(header_file, "        char          country_name[TZDB_MAX_LENGHT_ZI_COUNTRY_NAME];\n");
     fprintf(header_file, "        double        latitude;\n");
     fprintf(header_file, "        double        longitude;\n");
     fprintf(header_file, "        int32_t       linked_zone_id;\n");
     fprintf(header_file, "        int32_t       data_count;\n");
     fprintf(header_file, "        int32_t       year_begin;\n");
     fprintf(header_file, "        int32_t       year_end;\n");
-    fprintf(header_file, "        uint8_t       comments[TZDB_MAX_LENGHT_ZI_COMMENTS];\n");
+    fprintf(header_file, "        char          comments[TZDB_MAX_LENGHT_ZI_COMMENTS];\n");
     fprintf(header_file, "    } tzdb_zone_info_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
@@ -219,15 +219,15 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        int64_t       standard_offset;\n");
     fprintf(header_file, "        int32_t       rule_id;\n");
     fprintf(header_file, "        int64_t       save_hour;\n");
-    fprintf(header_file, "        uint8_t       format[TZDB_MAX_LENGHT_ZD_FORMAT];\n");
+    fprintf(header_file, "        char          format[TZDB_MAX_LENGHT_ZD_FORMAT];\n");
     fprintf(header_file, "        double        until_jd;\n");
-    fprintf(header_file, "        uint8_t       comments[TZDB_MAX_LENGHT_ZD_COMMENTS];\n");
+    fprintf(header_file, "        char          comments[TZDB_MAX_LENGHT_ZD_COMMENTS];\n");
     fprintf(header_file, "    } tzdb_zone_data_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
     fprintf(header_file, "        int32_t       rule_id;\n");
-    fprintf(header_file, "        uint8_t       rule_name[TZDB_MAX_LENGHT_RI_NAME];\n");
+    fprintf(header_file, "        char          rule_name[TZDB_MAX_LENGHT_RI_NAME];\n");
     fprintf(header_file, "        int32_t       data_count;\n");
     fprintf(header_file, "        int32_t       year_begin;\n");
     fprintf(header_file, "        int32_t       year_end;\n");
@@ -238,21 +238,36 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        int32_t       rule_id;\n");
     fprintf(header_file, "        int32_t       from;\n");
     fprintf(header_file, "        int32_t       to;\n");
-    fprintf(header_file, "        uint8_t       month;\n");
-    fprintf(header_file, "        uint8_t       day;\n");
-    fprintf(header_file, "        uint8_t       weekday;\n");
+    fprintf(header_file, "        int8_t        month;\n");
+    fprintf(header_file, "        int8_t        day;\n");
+    fprintf(header_file, "        int8_t        weekday;\n");
     fprintf(header_file, "        bool          weekday_isafterorequal_day;\n");
     fprintf(header_file, "        int64_t       hour;\n");
     fprintf(header_file, "        bool          hour_isUTC;\n");
     fprintf(header_file, "        int64_t       save_hour;\n");
-    fprintf(header_file, "        uint8_t       letter[TZDB_MAX_LENGHT_RD_LETTER];\n");
-    fprintf(header_file, "        uint8_t       comments[TZDB_MAX_LENGHT_RD_COMMENTS];\n");
+    fprintf(header_file, "        char          letter[TZDB_MAX_LENGHT_RD_LETTER];\n");
+    fprintf(header_file, "        char          comments[TZDB_MAX_LENGHT_RD_COMMENTS];\n");
     fprintf(header_file, "    } tzdb_rule_data_t;\n");
+    fprintf(header_file, "\n");
+    fprintf(header_file, "// If you want to use external memory files instead of the built-in database,\n");
+    fprintf(header_file, "// change the value of USE_EMBEDED_DATABASE to zero.\n");
+    fprintf(header_file, "#define USE_EMBEDED_DATABASE                  1\n");
+    fprintf(header_file, "\n");
+    fprintf(header_file, "#if USE_EMBEDED_DATABASE == 1\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT];\n");
     fprintf(header_file, "    extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_data_t tzdb_zones_data[TZDB_ZONES_DATA_COUNT];\n");
     fprintf(header_file, "    extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_rule_info_t tzdb_rules_info[TZDB_RULES_INFO_COUNT];\n");
     fprintf(header_file, "    extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_rule_data_t tzdb_rules_data[TZDB_RULES_DATA_COUNT];\n");
+    fprintf(header_file, "\n");
+    fprintf(header_file, "#else\n");
+    fprintf(header_file, "\n");
+    fprintf(header_file, "    extern const char* tzdb_zone_info_file_name;\n");
+    fprintf(header_file, "    extern const char* tzdb_zone_data_file_name;\n");
+    fprintf(header_file, "    extern const char* tzdb_rule_info_file_name;\n");
+    fprintf(header_file, "    extern const char* tzdb_rule_data_file_name;\n");
+    fprintf(header_file, "\n");
+    fprintf(header_file, "#endif\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "#ifdef __cplusplus\n");
     fprintf(header_file, "}\n");
@@ -260,7 +275,7 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "#endif /* TIME_ZONE_DATABASE_H */\n");
 
     fclose(header_file);
-    
+
 }
 
 VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
@@ -297,7 +312,8 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     fprintf(c_file, "#include \"timezone_database.h\"\n");
     fprintf(c_file, "\n");
 
-    
+    fprintf(c_file, "#if USE_EMBEDED_DATABASE == 1\n");
+    fprintf(c_file, "\n");
     // Zones Info
     fprintf(c_file, "const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT] = {\n");
     fprintf(c_file, "    /*");
@@ -608,9 +624,18 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     fprintf(c_file, "};\n");
 
     fprintf(c_file, "\n");
+    fprintf(c_file, "#else\n");
+    fprintf(c_file, "\n");
+    fprintf(c_file, "const char* tzdb_zone_info_file_name = \"tz_zi.txt\";\n");
+    fprintf(c_file, "const char* tzdb_zone_data_file_name = \"tz_zd.txt\";\n");
+    fprintf(c_file, "const char* tzdb_rule_info_file_name = \"tz_ri.txt\";\n");
+    fprintf(c_file, "const char* tzdb_rule_data_file_name = \"tz_rd.txt\";\n");
+    fprintf(c_file, "\n");
+    fprintf(c_file, "#endif\n");
     fprintf(c_file, "\n");
 
     fclose(c_file);
+
 
 }
 

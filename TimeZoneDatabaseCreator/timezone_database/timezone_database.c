@@ -1,6 +1,8 @@
 
 #include "timezone_database.h"
 
+#if USE_EMBEDED_DATABASE == 1
+
 const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT] = {
     /*Zone_ID  Zone_Identifier                   Current_STD_Offset  Current_DST_Offset  Country_Code    Country_Name                                  Latitude    Longitude    Linked_Zone_ID  Data_Count  Year_Begin  Year_End  Comments                                                                      */
     { 1,       "Africa/Abidjan",                 0,                  0,                  "CI",           "Côte d'Ivoire",                              5.316667,   -4.033333,   0,              2,          1912,       -1,       ""                                                                          },
@@ -4614,4 +4616,12 @@ const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_rule_data_t tzdb_rules_data[TZDB_RULES_DATA_
     { 134,     2013, -1,   10,    0,   0,       false,                      7200,  false,      0,         "S",      ""          }
 };
 
+#else
+
+const char* tzdb_zone_info_file_name = "tz_zi.txt";
+const char* tzdb_zone_data_file_name = "tz_zd.txt";
+const char* tzdb_rule_info_file_name = "tz_ri.txt";
+const char* tzdb_rule_data_file_name = "tz_rd.txt";
+
+#endif
 
