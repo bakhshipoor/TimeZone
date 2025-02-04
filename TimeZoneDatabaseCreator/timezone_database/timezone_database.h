@@ -15,27 +15,36 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#define TZDB_VERSION_MAJOR            2025
-#define TZDB_VERSION_MINOR            "a"
+#define TZDB_VERSION_MAJOR                    2025
+#define TZDB_VERSION_MINOR                    "a"
 
-// Enforces strict memory alignment for data, preventing potential performance issues 
-// and unexpected behavior in microcontroller environments. 
-// When using compiler optimizations like -Os, data may not be naturally aligned 
-// to word boundaries, leading to inefficient memory access. 
-// This macro provides a convenient way to specify alignment attributes 
-// for variables and data structures. 
-// For information on memory layout and section placement, see LinkerScript.ld. 
-// Example: 
-//   __attribute__((section("ExtFlashSection"))) __attribute__((aligned(0x4))) uint64_t myAlignedData; 
-#define TZDB_ATTRIBUTE_MEM_ALIGN      
+    // Enforces strict memory alignment for data, preventing potential performance issues 
+    // and unexpected behavior in microcontroller environments. 
+    // When using compiler optimizations like -Os, data may not be naturally aligned 
+    // to word boundaries, leading to inefficient memory access. 
+    // This macro provides a convenient way to specify alignment attributes 
+    // for variables and data structures. 
+    // For information on memory layout and section placement, see LinkerScript.ld. 
+    // Example: 
+    //   __attribute__((section("ExtFlashSection"))) __attribute__((aligned(0x4))) uint64_t myAlignedData; 
+#define TZDB_ATTRIBUTE_MEM_ALIGN              
 
-#define TZDB_ZONES_INFO_COUNT         417
-#define TZDB_ZONES_DATA_COUNT         1942
-#define TZDB_RULES_INFO_COUNT         134
-#define TZDB_RULES_DATA_COUNT         2101
+#define TZDB_ZONES_INFO_COUNT                 417
+#define TZDB_ZONES_DATA_COUNT                 1942
+#define TZDB_RULES_INFO_COUNT                 134
+#define TZDB_RULES_DATA_COUNT                 2101
 
-#define TZDB_MAX_LENGHT_IDENTIFIER    31
-#define TZDB_YEAR_END_MAX             -1
+#define TZDB_MAX_LENGHT_ZI_IDENTIFIER         31
+#define TZDB_MAX_LENGHT_ZI_COUNTRY_CODE       3
+#define TZDB_MAX_LENGHT_ZI_COUNTRY_NAME       43
+#define TZDB_MAX_LENGHT_ZI_COMMENTS           74
+#define TZDB_MAX_LENGHT_ZD_FORMAT             10
+#define TZDB_MAX_LENGHT_ZD_COMMENTS           24
+#define TZDB_MAX_LENGHT_RI_NAME               13
+#define TZDB_MAX_LENGHT_RD_LETTER             6
+#define TZDB_MAX_LENGHT_RD_COMMENTS           10
+
+#define TZDB_YEAR_END_MAX                     -1
 
     typedef enum
     {
@@ -46,7 +55,7 @@ extern "C" {
         TZDB_WEEKDAY_THURSDAY,
         TZDB_WEEKDAY_FRIDAY,
         TZDB_WEEKDAY_SATURDAY,
-        
+
         TZDB_WEEKDAY_TOTAL,
         TZDB_WEEKDAY_NONE = 255,
     } tzdb_weekday_number_e;
@@ -66,25 +75,25 @@ extern "C" {
         TZDB_MONTH_OCTOBER,
         TZDB_MONTH_NOVEMBER,
         TZDB_MONTH_DECEMBER,
-        
+
         TZDB_MONTH_TOTAL = TZDB_MONTH_DECEMBER,
     } tzdb_month_number_e;
 
     typedef struct
     {
         int32_t       zone_id;
-        uint8_t       zone_identifier[31];
+        uint8_t       zone_identifier[TZDB_MAX_LENGHT_ZI_IDENTIFIER];
         int64_t       std_offset;
         int64_t       dst_offset;
-        uint8_t       country_code[3];
-        uint8_t       country_name[43];
+        uint8_t       country_code[TZDB_MAX_LENGHT_ZI_COUNTRY_CODE];
+        uint8_t       country_name[TZDB_MAX_LENGHT_ZI_COUNTRY_NAME];
         double        latitude;
         double        longitude;
         int32_t       linked_zone_id;
         int32_t       data_count;
         int32_t       year_begin;
         int32_t       year_end;
-        uint8_t       comments[74];
+        uint8_t       comments[TZDB_MAX_LENGHT_ZI_COMMENTS];
     } tzdb_zone_info_t;
 
     typedef struct
@@ -93,15 +102,15 @@ extern "C" {
         int64_t       standard_offset;
         int32_t       rule_id;
         int64_t       save_hour;
-        uint8_t       format[10];
+        uint8_t       format[TZDB_MAX_LENGHT_ZD_FORMAT];
         double        until_jd;
-        uint8_t       comments[24];
+        uint8_t       comments[TZDB_MAX_LENGHT_ZD_COMMENTS];
     } tzdb_zone_data_t;
 
     typedef struct
     {
         int32_t       rule_id;
-        uint8_t       rule_name[13];
+        uint8_t       rule_name[TZDB_MAX_LENGHT_RI_NAME];
         int32_t       data_count;
         int32_t       year_begin;
         int32_t       year_end;
@@ -119,14 +128,20 @@ extern "C" {
         int64_t       hour;
         bool          hour_isUTC;
         int64_t       save_hour;
-        uint8_t       letter[6];
-        uint8_t       comments[10];
+        uint8_t       letter[TZDB_MAX_LENGHT_RD_LETTER];
+        uint8_t       comments[TZDB_MAX_LENGHT_RD_COMMENTS];
     } tzdb_rule_data_t;
+
+
+#if 1
 
     extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT];
     extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_data_t tzdb_zones_data[TZDB_ZONES_DATA_COUNT];
     extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_rule_info_t tzdb_rules_info[TZDB_RULES_INFO_COUNT];
     extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_rule_data_t tzdb_rules_data[TZDB_RULES_DATA_COUNT];
+#else
+
+#endif
 
 #ifdef __cplusplus
 }

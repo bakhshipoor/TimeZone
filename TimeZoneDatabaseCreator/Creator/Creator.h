@@ -56,6 +56,7 @@ extern "C" {
     VOID Create_Database(CONST CHAR** data_folder_path);
     VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz);
     VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz);
+    VOID Create_Time_Zone_Database_Bin_Files(Time_Zones_t* tz);
 
     Zones_Info_String_t* Convert_Zones_Info_To_String(Time_Zones_t* tz, Zones_Info_Lenght_t* tz_info_lenght);
     Zones_Data_String_t* Convert_Zones_Data_To_String(Time_Zones_t* tz, Zones_Data_Lenght_t* tz_data_lenght);

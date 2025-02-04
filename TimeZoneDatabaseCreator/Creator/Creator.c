@@ -1,9 +1,15 @@
 #include "Creator.h"
 #include "math.h"
 
+
 CONST CHAR* folderPath = "timezone_database";
 CHAR* header_file_name = "timezone_database/timezone_database.h";
 CHAR* c_file_name = "timezone_database/timezone_database.c";
+CHAR* zone_info_bin_file_name = "timezone_database/tz_zi.txt";
+CHAR* zone_data_bin_file_name = "timezone_database/tz_zd.txt";
+CHAR* rule_info_bin_file_name = "timezone_database/tz_ri.txt";
+CHAR* rule_data_bin_file_name = "timezone_database/tz_rd.txt";
+
 
 Zones_Info_Lenght_t zones_info_lenght; 
 Zones_Info_String_t* zones_info;
@@ -95,6 +101,8 @@ VOID Create_Database(CONST CHAR** data_folder_path)
     Create_Time_Zone_Database_Header_File(tz);
     Create_Time_Zone_Database_C_File(tz);
 
+    Create_Time_Zone_Database_Bin_Files(tz);
+
     Free_TZ_Data(tz);
 }
 
@@ -124,8 +132,8 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "#include <stdint.h>\n");
     fprintf(header_file, "#include <stdbool.h>\n");
     fprintf(header_file, "\n");
-    fprintf(header_file, "#define TZDB_VERSION_MAJOR            %d\n",tz->Version.Major);
-    fprintf(header_file, "#define TZDB_VERSION_MINOR            \"%s\"\n",tz->Version.Minor);
+    fprintf(header_file, "#define TZDB_VERSION_MAJOR                    %d\n",tz->Version.Major);
+    fprintf(header_file, "#define TZDB_VERSION_MINOR                    \"%s\"\n",tz->Version.Minor);
     fprintf(header_file, "\n");
     fprintf(header_file, "// Enforces strict memory alignment for data, preventing potential performance issues \n");
     fprintf(header_file, "// and unexpected behavior in microcontroller environments. \n");
@@ -136,15 +144,24 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "// For information on memory layout and section placement, see LinkerScript.ld. \n");
     fprintf(header_file, "// Example: \n");
     fprintf(header_file, "//   __attribute__((section(\"ExtFlashSection\"))) __attribute__((aligned(0x4))) uint64_t myAlignedData; \n");
-    fprintf(header_file, "#define TZDB_ATTRIBUTE_MEM_ALIGN      \n");
+    fprintf(header_file, "#define TZDB_ATTRIBUTE_MEM_ALIGN              \n");
     fprintf(header_file, "\n");
-    fprintf(header_file, "#define TZDB_ZONES_INFO_COUNT         %d\n", tz->Zones_Count);
-    fprintf(header_file, "#define TZDB_ZONES_DATA_COUNT         %d\n", tz->Zones_Data_Count);
-    fprintf(header_file, "#define TZDB_RULES_INFO_COUNT         %d\n", tz->Rules_Count);
-    fprintf(header_file, "#define TZDB_RULES_DATA_COUNT         %d\n", tz->Rules_Data_Count);
+    fprintf(header_file, "#define TZDB_ZONES_INFO_COUNT                 %d\n", tz->Zones_Count);
+    fprintf(header_file, "#define TZDB_ZONES_DATA_COUNT                 %d\n", tz->Zones_Data_Count);
+    fprintf(header_file, "#define TZDB_RULES_INFO_COUNT                 %d\n", tz->Rules_Count);
+    fprintf(header_file, "#define TZDB_RULES_DATA_COUNT                 %d\n", tz->Rules_Data_Count);
     fprintf(header_file, "\n");
-    fprintf(header_file, "#define TZDB_MAX_LENGHT_IDENTIFIER    %d\n", zones_info_lenght.Zones_Info[1] + 1);
-    fprintf(header_file, "#define TZDB_YEAR_END_MAX             -1\n");
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_ZI_IDENTIFIER         %d\n", zones_info_lenght.Zones_Info[1] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_ZI_COUNTRY_CODE       %d\n", zones_info_lenght.Zones_Info[4] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_ZI_COUNTRY_NAME       %d\n", zones_info_lenght.Zones_Info[5] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_ZI_COMMENTS           %d\n", zones_info_lenght.Zones_Info[12] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_ZD_FORMAT             %d\n", zones_data_lenght.Zones_Data[4] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_ZD_COMMENTS           %d\n", zones_data_lenght.Zones_Data[6] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_RI_NAME               %d\n", rules_info_lenght.Rules_Info[1] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_RD_LETTER             %d\n", rules_data_lenght.Rules_Data[10] + 1);
+    fprintf(header_file, "#define TZDB_MAX_LENGHT_RD_COMMENTS           %d\n", rules_data_lenght.Rules_Data[11] + 1);
+    fprintf(header_file, "\n");
+    fprintf(header_file, "#define TZDB_YEAR_END_MAX                     -1\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef enum\n");
     fprintf(header_file, "    {\n");
@@ -182,18 +199,18 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
     fprintf(header_file, "        int32_t       zone_id;\n");
-    fprintf(header_file, "        uint8_t       zone_identifier[%d];\n", zones_info_lenght.Zones_Info[1] + 1);
+    fprintf(header_file, "        uint8_t       zone_identifier[TZDB_MAX_LENGHT_ZI_IDENTIFIER];\n");
     fprintf(header_file, "        int64_t       std_offset;\n");
     fprintf(header_file, "        int64_t       dst_offset;\n");
-    fprintf(header_file, "        uint8_t       country_code[%d];\n", zones_info_lenght.Zones_Info[4] + 1);
-    fprintf(header_file, "        uint8_t       country_name[%d];\n", zones_info_lenght.Zones_Info[5] + 1);
+    fprintf(header_file, "        uint8_t       country_code[TZDB_MAX_LENGHT_ZI_COUNTRY_CODE];\n");
+    fprintf(header_file, "        uint8_t       country_name[TZDB_MAX_LENGHT_ZI_COUNTRY_NAME];\n");
     fprintf(header_file, "        double        latitude;\n");
     fprintf(header_file, "        double        longitude;\n");
     fprintf(header_file, "        int32_t       linked_zone_id;\n");
     fprintf(header_file, "        int32_t       data_count;\n");
     fprintf(header_file, "        int32_t       year_begin;\n");
     fprintf(header_file, "        int32_t       year_end;\n");
-    fprintf(header_file, "        uint8_t       comments[%d];\n", zones_info_lenght.Zones_Info[12] + 1);
+    fprintf(header_file, "        uint8_t       comments[TZDB_MAX_LENGHT_ZI_COMMENTS];\n");
     fprintf(header_file, "    } tzdb_zone_info_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
@@ -202,15 +219,15 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        int64_t       standard_offset;\n");
     fprintf(header_file, "        int32_t       rule_id;\n");
     fprintf(header_file, "        int64_t       save_hour;\n");
-    fprintf(header_file, "        uint8_t       format[%d];\n", zones_data_lenght.Zones_Data[4] + 1);
+    fprintf(header_file, "        uint8_t       format[TZDB_MAX_LENGHT_ZD_FORMAT];\n");
     fprintf(header_file, "        double        until_jd;\n");
-    fprintf(header_file, "        uint8_t       comments[%d];\n", zones_data_lenght.Zones_Data[6] + 1);
+    fprintf(header_file, "        uint8_t       comments[TZDB_MAX_LENGHT_ZD_COMMENTS];\n");
     fprintf(header_file, "    } tzdb_zone_data_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
     fprintf(header_file, "    {\n");
     fprintf(header_file, "        int32_t       rule_id;\n");
-    fprintf(header_file, "        uint8_t       rule_name[%d];\n", rules_info_lenght.Rules_Info[1] + 1);
+    fprintf(header_file, "        uint8_t       rule_name[TZDB_MAX_LENGHT_RI_NAME];\n");
     fprintf(header_file, "        int32_t       data_count;\n");
     fprintf(header_file, "        int32_t       year_begin;\n");
     fprintf(header_file, "        int32_t       year_end;\n");
@@ -228,8 +245,8 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "        int64_t       hour;\n");
     fprintf(header_file, "        bool          hour_isUTC;\n");
     fprintf(header_file, "        int64_t       save_hour;\n");
-    fprintf(header_file, "        uint8_t       letter[%d];\n", rules_data_lenght.Rules_Data[10] + 1);
-    fprintf(header_file, "        uint8_t       comments[%d];\n", rules_data_lenght.Rules_Data[11] + 1);
+    fprintf(header_file, "        uint8_t       letter[TZDB_MAX_LENGHT_RD_LETTER];\n");
+    fprintf(header_file, "        uint8_t       comments[TZDB_MAX_LENGHT_RD_COMMENTS];\n");
     fprintf(header_file, "    } tzdb_rule_data_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    extern const TZDB_ATTRIBUTE_MEM_ALIGN tzdb_zone_info_t tzdb_zones_info[TZDB_ZONES_INFO_COUNT];\n");
@@ -595,6 +612,108 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
 
     fclose(c_file);
 
+}
+
+VOID Create_Time_Zone_Database_Bin_Files(Time_Zones_t* tz)
+{
+    COUNTER index = 0;
+
+    FILE* zone_info_bin_file = fopen(zone_info_bin_file_name, "w");
+    if (zone_info_bin_file == NULL)
+    {
+        printf("Error when Create bin File!");
+        return;
+    }
+    for (index = 0; index < tz->Zones_Count; index++)
+    {
+        fprintf(zone_info_bin_file,
+            "%d\t%s\t%lld\t%lld\t%s\t%s\t%.06lf\t%.06lf\t%d\t%d\t%d\t%d\t%s\n",
+            tz->Zones_Info[index].Time_Zone_ID,
+            utf8_strlen(tz->Zones_Info[index].Time_Zone_Identifier) == 0 ? "-" : tz->Zones_Info[index].Time_Zone_Identifier,
+            tz->Zones_Info[index].STD_Offset,
+            tz->Zones_Info[index].DST_Offset,
+            utf8_strlen(tz->Zones_Info[index].Country_Code) == 0 ? "-" : tz->Zones_Info[index].Country_Code,
+            utf8_strlen(tz->Zones_Info[index].Country_Name) == 0 ? "-" : tz->Zones_Info[index].Country_Name,
+            tz->Zones_Info[index].Latitude,
+            tz->Zones_Info[index].Longitude,
+            tz->Zones_Info[index].Linked_Zone_ID,
+            tz->Zones_Info[index].Data_Count,
+            tz->Zones_Info[index].Year_Begin,
+            tz->Zones_Info[index].Year_End,
+            utf8_strlen(tz->Zones_Info[index].Comments) == 0 ? "-" : tz->Zones_Info[index].Comments
+        );
+        
+    }
+    fclose(zone_info_bin_file);
+
+    FILE* zone_data_bin_file = fopen(zone_data_bin_file_name, "w");
+    if (zone_info_bin_file == NULL)
+    {
+        printf("Error when Create bin File!");
+        return;
+    }
+    for (index = 0; index < tz->Zones_Data_Count; index++)
+    {
+        fprintf(zone_data_bin_file,
+            "%d\t%lld\t%d\t%lld\t%s\t%.010lf\t%s\n",
+            tz->Zones_Data[index].Time_Zone_ID,
+            tz->Zones_Data[index].Standard_Offset,
+            tz->Zones_Data[index].Rule_ID,
+            tz->Zones_Data[index].Save_Hour,
+            utf8_strlen(tz->Zones_Data[index].Format) == 0 ? "-" : tz->Zones_Data[index].Format,
+            tz->Zones_Data[index].Until_JD,
+            utf8_strlen(tz->Zones_Data[index].Comments) == 0 ? "-" : tz->Zones_Data[index].Comments
+        );
+
+    }
+    fclose(zone_data_bin_file);
+
+    FILE* rule_info_bin_file = fopen(rule_info_bin_file_name, "w");
+    if (rule_info_bin_file == NULL)
+    {
+        printf("Error when Create bin File!");
+        return;
+    }
+    for (index = 0; index < tz->Rules_Count; index++)
+    {
+        fprintf(rule_info_bin_file,
+            "%d\t%s\t%d\t%d\t%d\n",
+            tz->Rules_Info[index].Rule_ID,
+            utf8_strlen(tz->Rules_Info[index].Name) == 0 ? "-" : tz->Rules_Info[index].Name,
+            tz->Rules_Info[index].Data_Count,
+            tz->Rules_Info[index].Year_Begin,
+            tz->Rules_Info[index].Year_End
+        );
+
+    }
+    fclose(rule_info_bin_file);
+
+    FILE* rule_data_bin_file = fopen(rule_data_bin_file_name, "w");
+    if (rule_data_bin_file == NULL)
+    {
+        printf("Error when Create bin File!");
+        return;
+    }
+    for (index = 0; index < tz->Rules_Data_Count; index++)
+    {
+        fprintf(rule_data_bin_file,
+            "%d\t%d\t%d\t%d\t%d\t%d\t%d\t%lld\t%d\t%lld\t%s\t%s\n",
+            tz->Rules_Data[index].Rule_ID,
+            tz->Rules_Data[index].From,
+            tz->Rules_Data[index].To,
+            tz->Rules_Data[index].Month,
+            tz->Rules_Data[index].Day,
+            tz->Rules_Data[index].Weekday,
+            tz->Rules_Data[index].Weekday_IsAfterOrEqual_Day,
+            tz->Rules_Data[index].Hour,
+            tz->Rules_Data[index].Hour_isUTC,
+            tz->Rules_Data[index].Save_Hour,
+            utf8_strlen(tz->Rules_Data[index].Letter) == 0 ? "-" : tz->Rules_Data[index].Letter,
+            utf8_strlen(tz->Rules_Data[index].Comments) == 0 ? "-" : tz->Rules_Data[index].Comments
+        );
+
+    }
+    fclose(rule_data_bin_file);
 }
 
 Zones_Info_String_t* Convert_Zones_Info_To_String(Time_Zones_t* tz, Zones_Info_Lenght_t* zones_info_lenght)

@@ -1,0 +1,417 @@
+1	Africa/Abidjan	0	0	CI	Côte d'Ivoire	5.316667	-4.033333	0	2	1912	-1	-
+2	Africa/Accra	0	0	GH	Ghana	5.550000	-0.216667	1	2	1912	-1	-
+3	Africa/Addis_Ababa	10800	0	ET	Ethiopia	9.033333	38.700000	43	6	1908	-1	-
+4	Africa/Algiers	3600	0	DZ	Algeria	36.783333	3.050000	0	10	1891	-1	-
+5	Africa/Asmara	10800	0	ER	Eritrea	15.333333	38.883333	43	6	1908	-1	-
+6	Africa/Bamako	0	0	ML	Mali	12.650000	-8.000000	1	2	1912	-1	-
+7	Africa/Bangui	3600	0	CF	Central African Rep.	4.366667	18.583333	31	5	1905	-1	-
+8	Africa/Banjul	0	0	GM	Gambia	13.466667	-16.650000	1	2	1912	-1	-
+9	Africa/Bissau	0	0	GW	Guinea-Bissau	11.850000	-15.583333	0	3	1912	-1	-
+10	Africa/Blantyre	7200	0	MW	Malawi	-15.783333	35.000000	38	2	1909	-1	-
+11	Africa/Brazzaville	3600	0	CG	Congo (Rep.)	-4.266667	15.283333	31	5	1905	-1	-
+12	Africa/Bujumbura	7200	0	BI	Burundi	-3.383333	29.366667	38	2	1909	-1	-
+13	Africa/Cairo	7200	3600	EG	Egypt	30.050000	31.250000	0	2	1900	-1	-
+14	Africa/Casablanca	3600	-3600	MA	Morocco	33.650000	-7.583333	0	5	1913	-1	-
+15	Africa/Ceuta	3600	3600	ES	Spain	35.883333	-5.316667	0	9	1901	-1	Ceuta, Melilla
+16	Africa/Conakry	0	0	GN	Guinea	9.516667	-13.716667	1	2	1912	-1	-
+17	Africa/Dakar	0	0	SN	Senegal	14.666667	-17.433333	1	2	1912	-1	-
+18	Africa/Dar_es_Salaam	10800	0	TZ	Tanzania	-6.800000	39.283333	43	6	1908	-1	-
+19	Africa/Djibouti	10800	0	DJ	Djibouti	11.600000	43.150000	43	6	1908	-1	-
+20	Africa/Douala	3600	0	CM	Cameroon	4.050000	9.700000	31	5	1905	-1	-
+21	Africa/El_Aaiun	3600	-3600	EH	Western Sahara	27.150000	-13.200000	0	4	1934	-1	-
+22	Africa/Freetown	0	0	SL	Sierra Leone	8.500000	-13.250000	1	2	1912	-1	-
+23	Africa/Gaborone	7200	0	BW	Botswana	-24.650000	25.916667	38	2	1909	-1	-
+24	Africa/Harare	7200	0	ZW	Zimbabwe	-17.833333	31.050000	38	2	1909	-1	-
+25	Africa/Johannesburg	7200	0	ZA	South Africa	-26.250000	28.000000	0	3	1892	-1	-
+26	Africa/Juba	7200	0	SS	South Sudan	4.850000	31.616667	0	4	1931	-1	-
+27	Africa/Kampala	10800	0	UG	Uganda	0.316667	32.416667	43	6	1908	-1	-
+28	Africa/Khartoum	7200	0	SD	Sudan	15.600000	32.533333	0	4	1931	-1	-
+29	Africa/Kigali	7200	0	RW	Rwanda	-1.950000	30.066667	38	2	1909	-1	-
+30	Africa/Kinshasa	3600	0	CD	Congo (Dem. Rep.)	-4.300000	15.300000	31	5	1905	-1	Dem. Rep. of Congo (west)
+31	Africa/Lagos	3600	0	NG	Nigeria	6.450000	3.400000	0	5	1905	-1	-
+32	Africa/Libreville	3600	0	GA	Gabon	0.383333	9.450000	31	5	1905	-1	-
+33	Africa/Lome	0	0	TG	Togo	6.133333	1.216667	1	2	1912	-1	-
+34	Africa/Luanda	3600	0	AO	Angola	-8.800000	13.233333	31	5	1905	-1	-
+35	Africa/Lubumbashi	7200	0	CD	Congo (Dem. Rep.)	-11.666667	27.466667	38	2	1909	-1	Dem. Rep. of Congo (east)
+36	Africa/Lusaka	7200	0	ZM	Zambia	-15.416667	28.283333	38	2	1909	-1	-
+37	Africa/Malabo	3600	0	GQ	Equatorial Guinea	3.750000	8.783333	31	5	1905	-1	-
+38	Africa/Maputo	7200	0	MZ	Mozambique	-25.966667	32.583333	0	2	1909	-1	-
+39	Africa/Maseru	7200	0	LS	Lesotho	-29.466667	27.500000	25	3	1892	-1	-
+40	Africa/Mbabane	7200	0	SZ	Eswatini (Swaziland)	-26.300000	31.100000	25	3	1892	-1	-
+41	Africa/Mogadishu	10800	0	SO	Somalia	2.066667	45.366667	43	6	1908	-1	-
+42	Africa/Monrovia	0	0	LR	Liberia	6.300000	-10.783333	0	4	1882	-1	-
+43	Africa/Nairobi	10800	0	KE	Kenya	-1.283333	36.816667	0	6	1908	-1	-
+44	Africa/Ndjamena	3600	0	TD	Chad	12.116667	15.050000	0	4	1912	-1	-
+45	Africa/Niamey	3600	0	NE	Niger	13.516667	2.116667	31	5	1905	-1	-
+46	Africa/Nouakchott	0	0	MR	Mauritania	18.100000	-15.950000	1	2	1912	-1	-
+47	Africa/Ouagadougou	0	0	BF	Burkina Faso	12.366667	-1.516667	1	2	1912	-1	-
+48	Africa/Porto-Novo	3600	0	BJ	Benin	6.483333	2.616667	31	5	1905	-1	-
+49	Africa/Sao_Tome	0	0	ST	Sao Tome & Principe	0.333333	6.733333	0	5	1884	-1	-
+50	Africa/Tripoli	7200	0	LY	Libya	32.900000	13.183333	0	9	1920	-1	-
+51	Africa/Tunis	3600	0	TN	Tunisia	36.800000	10.183333	0	3	1881	-1	-
+52	Africa/Windhoek	7200	0	NA	Namibia	-22.566667	17.100000	0	6	1892	-1	-
+53	America/Adak	-36000	3600	US	United States	51.880000	-176.658056	0	9	1867	-1	Alaska - western Aleutians
+54	America/Anchorage	-32400	3600	US	United States	61.218056	-149.900278	0	8	1867	-1	Alaska (most areas)
+55	America/Anguilla	-14400	0	AI	Anguilla	18.200000	-63.066667	167	4	1899	-1	-
+56	America/Antigua	-14400	0	AG	Antigua & Barbuda	17.050000	-61.800000	167	4	1899	-1	-
+57	America/Araguaina	-10800	0	BR	Brazil	-7.200000	-48.200000	0	7	1914	-1	Tocantins
+58	America/Argentina/Buenos_Aires	-10800	0	AR	Argentina	-34.600000	-58.450000	0	7	1894	-1	Buenos Aires (BA, CF)
+59	America/Argentina/Catamarca	-10800	0	AR	Argentina	-28.466667	-65.783333	0	12	1894	-1	Catamarca (CT), Chubut (CH)
+60	America/Argentina/Cordoba	-10800	0	AR	Argentina	-31.400000	-64.183333	0	9	1894	-1	Argentina (most areas: CB, CC, CN, ER, FM, MN, SE, SF)
+61	America/Argentina/Jujuy	-10800	0	AR	Argentina	-24.183333	-65.300000	0	13	1894	-1	Jujuy (JY)
+62	America/Argentina/La_Rioja	-10800	0	AR	Argentina	-29.433333	-66.850000	0	12	1894	-1	La Rioja (LR)
+63	America/Argentina/Mendoza	-10800	0	AR	Argentina	-32.883333	-68.816667	0	16	1894	-1	Mendoza (MZ)
+64	America/Argentina/Rio_Gallegos	-10800	0	AR	Argentina	-51.633333	-69.216667	0	10	1894	-1	Santa Cruz (SC)
+65	America/Argentina/Salta	-10800	0	AR	Argentina	-24.783333	-65.416667	0	10	1894	-1	Salta (SA, LP, NQ, RN)
+66	America/Argentina/San_Juan	-10800	0	AR	Argentina	-31.533333	-68.516667	0	12	1894	-1	San Juan (SJ)
+67	America/Argentina/San_Luis	-10800	0	AR	Argentina	-33.316667	-66.350000	0	16	1894	-1	San Luis (SL)
+68	America/Argentina/Tucuman	-10800	0	AR	Argentina	-26.816667	-65.216667	0	11	1894	-1	Tucuman (TM)
+69	America/Argentina/Ushuaia	-10800	0	AR	Argentina	-54.800000	-68.300000	0	10	1894	-1	Tierra del Fuego (TF)
+70	America/Aruba	-14400	0	AW	Aruba	12.500000	-69.966667	167	4	1899	-1	-
+71	America/Asuncion	-10800	0	PY	Paraguay	-25.266667	-57.666667	0	6	1890	-1	-
+72	America/Atikokan	-18000	0	CA	Canada	48.758611	-91.621667	161	3	1890	-1	EST - ON (Atikokan), NU (Coral H)
+73	America/Bahia	-10800	0	BR	Brazil	-12.983333	-38.516667	0	5	1914	-1	Bahia
+74	America/Bahia_Banderas	-21600	0	MX	Mexico	20.799722	-105.250000	0	8	1922	-1	Bahia de Banderas
+75	America/Barbados	-14400	0	BB	Barbados	13.100000	-59.616667	0	4	1911	-1	-
+76	America/Belem	-10800	0	BR	Brazil	-1.450000	-48.483333	0	3	1914	-1	Para (east), Amapa
+77	America/Belize	-21600	0	BZ	Belize	17.500000	-88.200000	0	2	1912	-1	-
+78	America/Blanc-Sablon	-14400	0	CA	Canada	51.416667	-57.116667	167	4	1899	-1	AST - QC (Lower North Shore)
+79	America/Boa_Vista	-14400	0	BR	Brazil	2.816667	-60.666667	0	5	1914	-1	Roraima
+80	America/Bogota	-18000	0	CO	Colombia	4.600000	-74.083333	0	3	1884	-1	-
+81	America/Boise	-25200	3600	US	United States	43.613611	-116.202500	0	5	1883	-1	Mountain - ID (south), OR (east)
+82	America/Cambridge_Bay	-25200	3600	CA	Canada	69.113889	-105.052778	0	6	1920	-1	Mountain - NU (west)
+83	America/Campo_Grande	-14400	0	BR	Brazil	-20.450000	-54.616667	0	2	1914	-1	Mato Grosso do Sul
+84	America/Cancun	-18000	0	MX	Mexico	21.083333	-86.766667	0	7	1922	-1	Quintana Roo
+85	America/Caracas	-14400	0	VE	Venezuela	10.500000	-66.933333	0	6	1890	-1	-
+86	America/Cayenne	-10800	0	GF	French Guiana	4.933333	-52.333333	0	3	1911	-1	-
+87	America/Cayman	-18000	0	KY	Cayman Islands	19.300000	-81.383333	161	3	1890	-1	-
+88	America/Chicago	-21600	3600	US	United States	41.850000	-87.650000	0	8	1883	-1	Central (most areas)
+89	America/Chihuahua	-21600	0	MX	Mexico	28.633056	-106.083333	0	9	1922	-1	Chihuahua (most areas)
+90	America/Ciudad_Juarez	-25200	3600	MX	Mexico	31.733056	-106.483333	0	11	1922	-1	Chihuahua (US border - west)
+91	America/Costa_Rica	-21600	0	CR	Costa Rica	9.933333	-84.083333	0	3	1890	-1	-
+92	America/Creston	-25200	0	CA	Canada	49.099722	-116.516667	163	7	1883	-1	MST - BC (Creston)
+93	America/Cuiaba	-14400	0	BR	Brazil	-15.583333	-56.083333	0	4	1914	-1	Mato Grosso
+94	America/Curacao	-14400	0	CW	Curaçao	12.183333	-69.000000	167	4	1899	-1	-
+95	America/Danmarkshavn	0	0	GL	Greenland	76.766667	-18.666667	0	4	1916	-1	National Park (east coast)
+96	America/Dawson	-25200	0	CA	Canada	64.066389	-139.416667	0	6	1900	-1	MST - Yukon (west)
+97	America/Dawson_Creek	-25200	0	CA	Canada	55.766389	-120.233333	0	4	1884	-1	MST - BC (Dawson Cr, Ft St John)
+98	America/Denver	-25200	3600	US	United States	39.739167	-104.984167	0	6	1883	-1	Mountain (most areas)
+99	America/Detroit	-18000	3600	US	United States	42.331389	-83.045833	0	10	1905	-1	Eastern - MI (most areas)
+100	America/Dominica	-14400	0	DM	Dominica	15.300000	-61.400000	167	4	1899	-1	-
+101	America/Edmonton	-25200	3600	CA	Canada	53.549722	-113.466667	0	3	1906	-1	Mountain - AB, BC(E), NT(E), SK(W)
+102	America/Eirunepe	-18000	0	BR	Brazil	-6.666667	-69.866667	0	7	1914	-1	Amazonas (west)
+103	America/El_Salvador	-21600	0	SV	El Salvador	13.700000	-89.200000	0	2	1921	-1	-
+104	America/Fort_Nelson	-25200	0	CA	Canada	58.799722	-122.700000	0	6	1884	-1	MST - BC (Ft Nelson)
+105	America/Fortaleza	-10800	0	BR	Brazil	-3.716667	-38.500000	0	7	1914	-1	Brazil (northeast: MA, PI, CE, RN, PB)
+106	America/Glace_Bay	-14400	3600	CA	Canada	46.200000	-59.950000	0	6	1902	-1	Atlantic - NS (Cape Breton)
+107	America/Goose_Bay	-14400	3600	CA	Canada	53.333333	-60.416667	0	10	1884	-1	Atlantic - Labrador (most areas)
+108	America/Grand_Turk	-18000	3600	TC	Turks & Caicos Is	21.466667	-71.133333	0	6	1890	-1	-
+109	America/Grenada	-14400	0	GD	Grenada	12.050000	-61.750000	167	4	1899	-1	-
+110	America/Guadeloupe	-14400	0	GP	Guadeloupe	16.233333	-61.533333	167	4	1899	-1	-
+111	America/Guatemala	-21600	0	GT	Guatemala	14.633333	-90.516667	0	2	1918	-1	-
+112	America/Guayaquil	-18000	0	EC	Ecuador	-2.166667	-79.833333	0	3	1890	-1	Ecuador (mainland)
+113	America/Guyana	-14400	0	GY	Guyana	6.800000	-58.166667	0	5	1911	-1	-
+114	America/Halifax	-14400	3600	CA	Canada	44.650000	-63.600000	0	7	1902	-1	Atlantic - NS (most areas), PE
+115	America/Havana	-18000	3600	CU	Cuba	23.133333	-82.366667	0	3	1890	-1	-
+116	America/Hermosillo	-25200	0	MX	Mexico	29.066389	-110.966667	0	8	1922	-1	Sonora
+117	America/Indiana/Indianapolis	-18000	3600	US	United States	39.768333	-86.158056	0	11	1883	-1	Eastern - IN (most areas)
+118	America/Indiana/Knox	-21600	3600	US	United States	41.295833	-86.625000	0	7	1883	-1	Central - IN (Starke)
+119	America/Indiana/Marengo	-18000	3600	US	United States	38.375556	-86.344722	0	9	1883	-1	Eastern - IN (Crawford)
+120	America/Indiana/Petersburg	-18000	3600	US	United States	38.491944	-87.278611	0	8	1883	-1	Eastern - IN (Pike)
+121	America/Indiana/Tell_City	-21600	3600	US	United States	37.953056	-86.761389	0	8	1883	-1	Central - IN (Perry)
+122	America/Indiana/Vevay	-18000	3600	US	United States	38.747778	-85.067222	0	6	1883	-1	Eastern - IN (Switzerland)
+123	America/Indiana/Vincennes	-18000	3600	US	United States	38.677222	-87.528611	0	8	1883	-1	Eastern - IN (Da, Du, K, Mn)
+124	America/Indiana/Winamac	-18000	3600	US	United States	41.051389	-86.603056	0	8	1883	-1	Eastern - IN (Pulaski)
+125	America/Inuvik	-25200	3600	CA	Canada	68.349722	-133.716667	0	4	1953	-1	Mountain - NT (west)
+126	America/Iqaluit	-18000	3600	CA	Canada	63.733333	-68.466667	0	4	1942	-1	Eastern - NU (most areas)
+127	America/Jamaica	-18000	0	JM	Jamaica	17.968056	-76.793333	0	5	1890	-1	-
+128	America/Juneau	-32400	3600	US	United States	58.301944	-134.419722	0	10	1867	-1	Alaska - Juneau area
+129	America/Kentucky/Louisville	-18000	3600	US	United States	38.254167	-85.759444	0	9	1883	-1	Eastern - KY (Louisville area)
+130	America/Kentucky/Monticello	-18000	3600	US	United States	36.829722	-84.849167	0	5	1883	-1	Eastern - KY (Wayne)
+131	America/Kralendijk	-14400	0	BQ	Caribbean NL	12.150833	-68.276667	167	4	1899	-1	-
+132	America/La_Paz	-14400	0	BO	Bolivia	-16.500000	-68.150000	0	4	1890	-1	-
+133	America/Lima	-18000	0	PE	Peru	-12.050000	-77.050000	0	3	1890	-1	-
+134	America/Los_Angeles	-28800	3600	US	United States	34.052222	-118.242778	0	4	1883	-1	Pacific
+135	America/Lower_Princes	-14400	0	SX	St Maarten (Dutch)	18.051389	-63.047222	167	4	1899	-1	-
+136	America/Maceio	-10800	0	BR	Brazil	-9.666667	-35.716667	0	9	1914	-1	Alagoas, Sergipe
+137	America/Managua	-21600	0	NI	Nicaragua	12.150000	-86.283333	0	9	1890	-1	-
+138	America/Manaus	-14400	0	BR	Brazil	-3.133333	-60.016667	0	5	1914	-1	Amazonas (east)
+139	America/Marigot	-14400	0	MF	St Martin (French)	18.066667	-63.083333	167	4	1899	-1	-
+140	America/Martinique	-14400	0	MQ	Martinique	14.600000	-61.083333	0	5	1890	-1	-
+141	America/Matamoros	-21600	3600	MX	Mexico	25.833333	-97.500000	0	5	1922	-1	Coahuila, Nuevo Leon, Tamaulipas (US border)
+142	America/Mazatlan	-25200	0	MX	Mexico	23.216389	-106.416667	0	7	1922	-1	Baja California Sur, Nayarit (most areas), Sinaloa
+143	America/Menominee	-21600	3600	US	United States	45.107778	-87.614167	0	5	1885	-1	Central - MI (Wisconsin border)
+144	America/Merida	-21600	0	MX	Mexico	20.966667	-89.616667	0	4	1922	-1	Campeche, Yucatan
+145	America/Metlakatla	-32400	3600	US	United States	55.126944	-131.576389	0	10	1867	-1	Alaska - Annette Island
+146	America/Mexico_City	-21600	0	MX	Mexico	19.400000	-99.150000	0	7	1922	-1	Central Mexico
+147	America/Miquelon	-10800	3600	PM	St Pierre & Miquelon	47.050000	-56.333333	0	4	1911	-1	-
+148	America/Moncton	-14400	3600	CA	Canada	46.100000	-64.783333	0	9	1883	-1	Atlantic - New Brunswick
+149	America/Monterrey	-21600	0	MX	Mexico	25.666389	-100.316667	0	7	1922	-1	Durango; Coahuila, Nuevo Leon, Tamaulipas (most areas)
+150	America/Montevideo	-10800	0	UY	Uruguay	-34.909167	-56.212500	0	11	1908	-1	-
+151	America/Montserrat	-14400	0	MS	Montserrat	16.716667	-62.216667	167	4	1899	-1	-
+152	America/Nassau	-18000	3600	BS	Bahamas	25.083333	-77.350000	190	6	1895	-1	-
+153	America/New_York	-18000	3600	US	United States	40.714167	-74.006389	0	6	1883	-1	Eastern (most areas)
+154	America/Nome	-32400	3600	US	United States	64.501111	-165.406389	0	9	1867	-1	Alaska (west)
+155	America/Noronha	-7200	0	BR	Brazil	-3.850000	-32.416667	0	7	1914	-1	Atlantic islands
+156	America/North_Dakota/Beulah	-21600	3600	US	United States	47.264167	-101.777778	0	3	1883	-1	Central - ND (Mercer)
+157	America/North_Dakota/Center	-21600	3600	US	United States	47.116389	-101.299167	0	3	1883	-1	Central - ND (Oliver)
+158	America/North_Dakota/New_Salem	-21600	3600	US	United States	46.845000	-101.410833	0	3	1883	-1	Central - ND (Morton rural)
+159	America/Nuuk	-7200	3600	GL	Greenland	64.183333	-51.733333	0	5	1916	-1	most of Greenland
+160	America/Ojinaga	-21600	3600	MX	Mexico	29.566389	-104.416667	0	11	1922	-1	Chihuahua (US border - east)
+161	America/Panama	-18000	0	PA	Panama	8.966667	-79.533333	0	3	1890	-1	-
+162	America/Paramaribo	-10800	0	SR	Suriname	5.833333	-55.166667	0	5	1911	-1	-
+163	America/Phoenix	-25200	0	US	United States	33.448333	-112.073333	0	7	1883	-1	MST - AZ (except Navajo)
+164	America/Port-au-Prince	-18000	3600	HT	Haiti	18.533333	-72.333333	0	3	1890	-1	-
+165	America/Port_of_Spain	-14400	0	TT	Trinidad & Tobago	10.650000	-61.516667	167	4	1899	-1	-
+166	America/Porto_Velho	-14400	0	BR	Brazil	-8.766667	-63.900000	0	3	1914	-1	Rondonia
+167	America/Puerto_Rico	-14400	0	PR	Puerto Rico	18.468333	-66.106111	0	4	1899	-1	-
+168	America/Punta_Arenas	-10800	0	CL	Chile	-53.150000	-70.916667	0	14	1890	-1	Region of Magallanes
+169	America/Rankin_Inlet	-21600	3600	CA	Canada	62.816667	-92.083056	0	4	1957	-1	Central - NU (central)
+170	America/Recife	-10800	0	BR	Brazil	-8.050000	-34.900000	0	7	1914	-1	Pernambuco
+171	America/Regina	-21600	0	CA	Canada	50.399722	-104.650000	0	3	1905	-1	CST - SK (most areas)
+172	America/Resolute	-21600	3600	CA	Canada	74.695556	-94.829167	0	6	1947	-1	Central - NU (Resolute)
+173	America/Rio_Branco	-18000	0	BR	Brazil	-9.966667	-67.800000	0	5	1914	-1	Acre
+174	America/Santarem	-10800	0	BR	Brazil	-2.433333	-54.866667	0	4	1914	-1	Para (west)
+175	America/Santiago	-14400	3600	CL	Chile	-33.450000	-70.666667	0	14	1890	-1	most of Chile
+176	America/Santo_Domingo	-14400	0	DO	Dominican Republic	18.466667	-69.900000	0	6	1890	-1	-
+177	America/Sao_Paulo	-10800	0	BR	Brazil	-23.533333	-46.616667	0	4	1914	-1	Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)
+178	America/Scoresbysund	-7200	3600	GL	Greenland	70.483333	-21.966667	0	5	1916	-1	Scoresbysund/Ittoqqortoormiit
+179	America/Sitka	-32400	3600	US	United States	57.176389	-135.301944	0	8	1867	-1	Alaska - Sitka area
+180	America/St_Barthelemy	-14400	0	BL	St Barthelemy	17.883333	-62.850000	167	4	1899	-1	-
+181	America/St_Johns	-12600	3600	CA	Canada	47.566667	-52.716667	0	8	1884	-1	Newfoundland, Labrador (SE)
+182	America/St_Kitts	-14400	0	KN	St Kitts & Nevis	17.300000	-62.716667	167	4	1899	-1	-
+183	America/St_Lucia	-14400	0	LC	St Lucia	14.016667	-61.000000	167	4	1899	-1	-
+184	America/St_Thomas	-14400	0	VI	Virgin Islands (US)	18.350000	-64.933333	167	4	1899	-1	-
+185	America/St_Vincent	-14400	0	VC	St Vincent	13.150000	-61.233333	167	4	1899	-1	-
+186	America/Swift_Current	-21600	0	CA	Canada	50.283056	-107.833333	0	5	1905	-1	CST - SK (midwest)
+187	America/Tegucigalpa	-21600	0	HN	Honduras	14.100000	-87.216667	0	2	1921	-1	-
+188	America/Thule	-14400	3600	GL	Greenland	76.566667	-68.783333	0	2	1916	-1	Thule/Pituffik
+189	America/Tijuana	-28800	3600	MX	Mexico	32.533056	-117.016667	0	25	1922	-1	Baja California
+190	America/Toronto	-18000	3600	CA	Canada	43.650000	-79.383333	0	6	1895	-1	Eastern - ON & QC (most areas)
+191	America/Tortola	-14400	0	VG	Virgin Islands (UK)	18.450000	-64.616667	167	4	1899	-1	-
+192	America/Vancouver	-28800	3600	CA	Canada	49.266389	-123.116667	0	3	1884	-1	Pacific - BC (most areas)
+193	America/Whitehorse	-25200	0	CA	Canada	60.716389	-135.050000	0	6	1900	-1	MST - Yukon (east)
+194	America/Winnipeg	-21600	3600	CA	Canada	49.883333	-97.150000	0	3	1887	-1	Central - ON (west), Manitoba
+195	America/Yakutat	-32400	3600	US	United States	59.546944	-139.727222	0	7	1867	-1	Alaska - Yakutat
+196	Antarctica/Casey	28800	0	AQ	Antarctica	-66.283611	110.516667	0	18	1969	-1	Casey
+197	Antarctica/Davis	25200	0	AQ	Antarctica	-68.583333	77.966667	0	8	1957	-1	Davis
+198	Antarctica/DumontDUrville	36000	0	AQ	Antarctica	-66.666944	140.016667	410	3	1880	-1	Dumont-d'Urville
+199	Antarctica/Macquarie	36000	3600	AU	Australia	-54.500278	158.950000	0	9	1899	-1	Macquarie Island
+200	Antarctica/Mawson	18000	0	AQ	Antarctica	-67.600000	62.883333	0	3	1954	-1	Mawson
+201	Antarctica/McMurdo	43200	3600	AQ	Antarctica	-77.833611	166.600000	381	3	1868	-1	New Zealand time - McMurdo, South Pole
+202	Antarctica/Palmer	-10800	0	AQ	Antarctica	-64.800000	-64.100000	0	5	1965	-1	Palmer
+203	Antarctica/Rothera	-10800	0	AQ	Antarctica	-67.566667	-68.133333	0	2	1976	-1	Rothera
+204	Antarctica/Syowa	10800	0	AQ	Antarctica	-69.006111	39.590000	267	2	1947	-1	Syowa
+205	Antarctica/Troll	0	7200	AQ	Antarctica	-72.011389	2.535000	0	2	2005	-1	Troll
+206	Antarctica/Vostok	18000	0	AQ	Antarctica	-78.400278	106.900000	0	5	1957	-1	Vostok
+207	Arctic/Longyearbyen	3600	3600	SJ	Svalbard & Jan Mayen	78.000000	16.000000	316	5	1893	-1	-
+208	Asia/Aden	10800	0	YE	Yemen	12.750000	45.200000	267	2	1947	-1	-
+209	Asia/Almaty	18000	0	KZ	Kazakhstan	43.250000	76.950000	0	7	1924	-1	most of Kazakhstan
+210	Asia/Amman	10800	0	JO	Jordan	31.950000	35.933333	0	3	1931	-1	-
+211	Asia/Anadyr	43200	0	RU	Russia	64.750278	177.483333	0	8	1924	-1	MSK+09 - Bering Sea
+212	Asia/Aqtau	18000	0	KZ	Kazakhstan	44.516667	50.266667	0	9	1924	-1	Mangghystau/Mankistau
+213	Asia/Aqtobe	18000	0	KZ	Kazakhstan	50.283333	57.166667	0	9	1924	-1	Aqtobe/Aktobe
+214	Asia/Ashgabat	18000	0	TM	Turkmenistan	37.950000	58.383333	0	5	1924	-1	-
+215	Asia/Atyrau	18000	0	KZ	Kazakhstan	47.116667	51.933333	0	9	1924	-1	Atyrau/Atirau/Gur'yev
+216	Asia/Baghdad	10800	0	IQ	Iraq	33.350000	44.416667	0	4	1890	-1	-
+217	Asia/Bahrain	10800	0	BH	Bahrain	26.383333	50.583333	264	3	1920	-1	-
+218	Asia/Baku	14400	0	AZ	Azerbaijan	40.383333	49.850000	0	7	1924	-1	-
+219	Asia/Bangkok	25200	0	TH	Thailand	13.750278	100.516667	0	3	1880	-1	-
+220	Asia/Barnaul	25200	0	RU	Russia	53.366667	83.750000	0	9	1919	-1	MSK+04 - Altai
+221	Asia/Beirut	7200	3600	LB	Lebanon	33.883333	35.500000	0	2	1880	-1	-
+222	Asia/Bishkek	21600	0	KG	Kyrgyzstan	42.900000	74.600000	0	6	1924	-1	-
+223	Asia/Brunei	28800	0	BN	Brunei	4.933611	114.916667	249	5	1926	-1	-
+224	Asia/Chita	32400	0	RU	Russia	52.050278	113.466667	0	8	1919	-1	MSK+06 - Zabaykalsky
+225	Asia/Colombo	19800	0	LK	Sri Lanka	6.933333	79.850000	0	9	1880	-1	-
+226	Asia/Damascus	10800	0	SY	Syria	33.500000	36.300000	0	3	1920	-1	-
+227	Asia/Dhaka	21600	0	BD	Bangladesh	23.716667	90.416667	0	7	1890	-1	-
+228	Asia/Dili	32400	0	TL	East Timor	-8.550278	125.583333	0	5	1911	-1	-
+229	Asia/Dubai	14400	0	AE	United Arab Emirates	25.300000	55.300000	0	2	1920	-1	-
+230	Asia/Dushanbe	18000	0	TJ	Tajikistan	38.583333	68.800000	0	5	1924	-1	-
+231	Asia/Famagusta	7200	3600	CY	Cyprus	35.116667	33.950000	0	5	1921	-1	Northern Cyprus
+232	Asia/Gaza	7200	3600	PS	Palestine	31.500000	34.466667	0	12	1900	-1	Gaza Strip
+233	Asia/Hebron	7200	3600	PS	Palestine	31.533333	35.095000	0	6	1900	-1	West Bank
+234	Asia/Ho_Chi_Minh	25200	0	VN	Vietnam	10.750278	106.666667	0	10	1906	-1	-
+235	Asia/Hong_Kong	28800	0	HK	Hong Kong	22.283611	114.150000	0	6	1904	-1	-
+236	Asia/Hovd	25200	0	MN	Mongolia	48.016667	91.650000	0	3	1905	-1	Bayan-Olgii, Hovd, Uvs
+237	Asia/Irkutsk	28800	0	RU	Russia	52.266944	104.333333	0	8	1880	-1	MSK+05 - Irkutsk, Buryatia
+238	Asia/Jakarta	25200	0	ID	Indonesia	-6.166944	106.800000	0	9	1867	-1	Java, Sumatra
+239	Asia/Jayapura	32400	0	ID	Indonesia	-2.533611	140.700000	0	4	1932	-1	New Guinea (West Papua / Irian Jaya), Malukus/Moluccas
+240	Asia/Jerusalem	7200	3600	IL	Israel	31.780556	35.223889	0	3	1880	-1	-
+241	Asia/Kabul	16200	0	AF	Afghanistan	34.516667	69.200000	0	3	1890	-1	-
+242	Asia/Kamchatka	43200	0	RU	Russia	53.016944	158.650000	0	7	1922	-1	MSK+09 - Kamchatka
+243	Asia/Karachi	18000	0	PK	Pakistan	24.866667	67.050000	0	6	1907	-1	-
+244	Asia/Kathmandu	20700	0	NP	Nepal	27.716667	85.316667	0	3	1920	-1	-
+245	Asia/Khandyga	32400	0	RU	Russia	62.656389	135.553889	0	9	1919	-1	MSK+06 - Tomponsky, Ust-Maysky
+246	Asia/Kolkata	19800	0	IN	India	22.533333	88.366667	0	8	1854	-1	-
+247	Asia/Krasnoyarsk	25200	0	RU	Russia	56.016667	92.833333	0	7	1920	-1	MSK+04 - Krasnoyarsk area
+248	Asia/Kuala_Lumpur	28800	0	MY	Malaysia	3.166944	101.700000	272	9	1901	-1	Malaysia (peninsula)
+249	Asia/Kuching	28800	0	MY	Malaysia	1.550278	110.333333	0	5	1926	-1	Sabah, Sarawak
+250	Asia/Kuwait	10800	0	KW	Kuwait	29.333333	47.983333	267	2	1947	-1	-
+251	Asia/Macau	28800	0	MO	Macau	22.197222	113.541667	0	4	1904	-1	-
+252	Asia/Magadan	39600	0	RU	Russia	59.566944	150.800000	0	8	1924	-1	MSK+08 - Magadan
+253	Asia/Makassar	28800	0	ID	Indonesia	-5.116944	119.400000	0	5	1920	-1	Borneo (east, south), Sulawesi/Celebes, Bali, Nusa Tengarra, Timor (west)
+254	Asia/Manila	28800	0	PH	Philippines	14.586667	120.967778	0	5	1844	-1	-
+255	Asia/Muscat	14400	0	OM	Oman	23.600000	58.583333	229	2	1920	-1	-
+256	Asia/Nicosia	7200	3600	CY	Cyprus	35.166667	33.366667	0	3	1921	-1	most of Cyprus
+257	Asia/Novokuznetsk	25200	0	RU	Russia	53.750000	87.116667	0	7	1924	-1	MSK+04 - Kemerovo
+258	Asia/Novosibirsk	25200	0	RU	Russia	55.033333	82.916667	0	9	1919	-1	MSK+04 - Novosibirsk
+259	Asia/Omsk	21600	0	RU	Russia	55.000000	73.400000	0	7	1919	-1	MSK+03 - Omsk
+260	Asia/Oral	18000	0	KZ	Kazakhstan	51.216667	51.350000	0	10	1924	-1	West Kazakhstan
+261	Asia/Phnom_Penh	25200	0	KH	Cambodia	11.550278	104.916667	219	3	1880	-1	-
+262	Asia/Pontianak	25200	0	ID	Indonesia	-0.033611	109.333333	0	9	1908	-1	Borneo (west, central)
+263	Asia/Pyongyang	32400	0	KP	Korea (North)	39.016944	125.750000	0	6	1908	-1	-
+264	Asia/Qatar	10800	0	QA	Qatar	25.283333	51.533333	0	3	1920	-1	-
+265	Asia/Qostanay	18000	0	KZ	Kazakhstan	53.200000	63.616667	0	10	1924	-1	Qostanay/Kostanay/Kustanay
+266	Asia/Qyzylorda	18000	0	KZ	Kazakhstan	44.800000	65.466667	0	12	1924	-1	Qyzylorda/Kyzylorda/Kzyl-Orda
+267	Asia/Riyadh	10800	0	SA	Saudi Arabia	24.633333	46.716667	0	2	1947	-1	-
+268	Asia/Sakhalin	39600	0	RU	Russia	46.966944	142.700000	0	9	1905	-1	MSK+08 - Sakhalin Island
+269	Asia/Samarkand	18000	0	UZ	Uzbekistan	39.666667	66.800000	0	7	1924	-1	Uzbekistan (west)
+270	Asia/Seoul	32400	0	KR	Korea (South)	37.550278	126.966667	0	6	1908	-1	-
+271	Asia/Shanghai	28800	0	CN	China	31.233611	121.466667	0	3	1901	-1	Beijing Time
+272	Asia/Singapore	28800	0	SG	Singapore	1.283611	103.850000	0	9	1901	-1	-
+273	Asia/Srednekolymsk	39600	0	RU	Russia	67.466944	153.716667	0	7	1924	-1	MSK+08 - Sakha (E), N Kuril Is
+274	Asia/Taipei	28800	0	TW	Taiwan	25.050278	121.500000	0	4	1896	-1	-
+275	Asia/Tashkent	18000	0	UZ	Uzbekistan	41.333333	69.300000	0	5	1924	-1	Uzbekistan (east)
+276	Asia/Tbilisi	14400	0	GE	Georgia	41.716667	44.816667	0	11	1880	-1	-
+277	Asia/Tehran	12600	0	IR	Iran	35.666667	51.433333	0	5	1916	-1	-
+278	Asia/Thimphu	21600	0	BT	Bhutan	27.466667	89.650000	0	3	1947	-1	-
+279	Asia/Tokyo	32400	0	JP	Japan	35.654444	139.744722	0	2	1887	-1	-
+280	Asia/Tomsk	25200	0	RU	Russia	56.500000	84.966667	0	9	1919	-1	MSK+04 - Tomsk
+281	Asia/Ulaanbaatar	28800	0	MN	Mongolia	47.916944	106.883333	0	3	1905	-1	most of Mongolia
+282	Asia/Urumqi	21600	0	CN	China	43.800000	87.583333	0	2	1928	-1	Xinjiang Time
+283	Asia/Ust-Nera	36000	0	RU	Russia	64.560278	143.226667	0	9	1919	-1	MSK+07 - Oymyakonsky
+284	Asia/Vientiane	25200	0	LA	Laos	17.966944	102.600000	219	3	1880	-1	-
+285	Asia/Vladivostok	36000	0	RU	Russia	43.166944	131.933333	0	7	1922	-1	MSK+07 - Amur River
+286	Asia/Yakutsk	32400	0	RU	Russia	62.000278	129.666667	0	7	1919	-1	MSK+06 - Lena River
+287	Asia/Yangon	23400	0	MM	Myanmar (Burma)	16.783333	96.166667	0	5	1880	-1	-
+288	Asia/Yekaterinburg	18000	0	RU	Russia	56.850000	60.600000	0	8	1916	-1	MSK+02 - Urals
+289	Asia/Yerevan	14400	0	AM	Armenia	40.183333	44.500000	0	7	1924	-1	-
+290	Atlantic/Azores	-3600	3600	PT	Portugal	37.733333	-25.666667	0	8	1884	-1	Azores
+291	Atlantic/Bermuda	-14400	3600	BM	Bermuda	32.283333	-64.766667	0	5	1890	-1	-
+292	Atlantic/Canary	0	3600	ES	Spain	28.100000	-15.400000	0	5	1922	-1	Canary Islands
+293	Atlantic/Cape_Verde	-3600	0	CV	Cape Verde	14.916667	-23.516667	0	5	1912	-1	-
+294	Atlantic/Faroe	0	3600	FO	Faroe Islands	62.016667	-6.766667	0	3	1908	-1	-
+295	Atlantic/Madeira	0	3600	PT	Portugal	32.633333	-16.900000	0	6	1884	-1	Madeira Islands
+296	Atlantic/Reykjavik	0	0	IS	Iceland	64.150000	-21.850000	1	2	1912	-1	-
+297	Atlantic/South_Georgia	-7200	0	GS	South Georgia & the South Sandwich Islands	-54.266667	-36.533333	0	2	1890	-1	-
+298	Atlantic/St_Helena	0	0	SH	St Helena	-15.916667	-5.700000	1	2	1912	-1	-
+299	Atlantic/Stanley	-10800	0	FK	Falkland Islands	-51.700000	-57.850000	0	6	1890	-1	-
+300	Australia/Adelaide	34200	3600	AU	Australia	-34.916944	138.583333	0	4	1895	-1	South Australia
+301	Australia/Brisbane	36000	0	AU	Australia	-27.466944	153.033333	0	3	1895	-1	Queensland (most areas)
+302	Australia/Broken_Hill	34200	3600	AU	Australia	-31.950278	141.450000	0	6	1895	-1	New South Wales (Yancowinna)
+303	Australia/Darwin	34200	0	AU	Australia	-12.466944	130.833333	0	3	1895	-1	Northern Territory
+304	Australia/Eucla	31500	0	AU	Australia	-31.716944	128.866667	0	3	1895	-1	Western Australia (Eucla)
+305	Australia/Hobart	36000	3600	AU	Australia	-42.883611	147.316667	0	4	1895	-1	Tasmania
+306	Australia/Lindeman	36000	0	AU	Australia	-20.266944	149.000000	0	4	1895	-1	Queensland (Whitsunday Islands)
+307	Australia/Lord_Howe	37800	1800	AU	Australia	-31.550278	159.083333	0	4	1895	-1	Lord Howe Island
+308	Australia/Melbourne	36000	3600	AU	Australia	-37.816944	144.966667	0	3	1895	-1	Victoria
+309	Australia/Perth	28800	0	AU	Australia	-31.950278	115.850000	0	3	1895	-1	Western Australia (most areas)
+310	Australia/Sydney	36000	3600	AU	Australia	-33.866944	151.216667	0	3	1895	-1	New South Wales (most areas)
+311	Europe/Amsterdam	3600	3600	NL	Netherlands	52.366667	4.900000	318	9	1880	-1	-
+312	Europe/Andorra	3600	3600	AD	Andorra	42.500000	1.516667	0	4	1901	-1	-
+313	Europe/Astrakhan	14400	0	RU	Russia	46.350000	48.050000	0	9	1924	-1	MSK+01 - Astrakhan
+314	Europe/Athens	7200	3600	GR	Greece	37.966667	23.716667	0	6	1895	-1	-
+315	Europe/Belgrade	3600	3600	RS	Serbia	44.833333	20.500000	0	7	1884	-1	-
+316	Europe/Berlin	3600	3600	DE	Germany	52.500000	13.366667	0	5	1893	-1	most of Germany
+317	Europe/Bratislava	3600	3600	SK	Slovakia	48.150000	17.116667	347	7	1850	-1	-
+318	Europe/Brussels	3600	3600	BE	Belgium	50.833333	4.333333	0	9	1880	-1	-
+319	Europe/Bucharest	7200	3600	RO	Romania	44.433333	26.100000	0	7	1891	-1	-
+320	Europe/Budapest	3600	3600	HU	Hungary	47.500000	19.083333	0	6	1890	-1	-
+321	Europe/Busingen	3600	3600	DE	Germany	47.700000	8.683333	368	4	1853	-1	Busingen
+322	Europe/Chisinau	7200	3600	MD	Moldova	47.000000	28.833333	0	10	1880	-1	-
+323	Europe/Copenhagen	3600	3600	DK	Denmark	55.666667	12.583333	316	5	1893	-1	-
+324	Europe/Dublin	3600	-3600	IE	Ireland	53.333333	-6.250000	0	11	1880	-1	-
+325	Europe/Gibraltar	3600	3600	GI	Gibraltar	36.133333	-5.350000	0	4	1880	-1	-
+326	Europe/Guernsey	0	3600	GG	Guernsey	49.454722	-2.536111	336	5	1847	-1	-
+327	Europe/Helsinki	7200	3600	FI	Finland	60.166667	24.966667	0	4	1878	-1	-
+328	Europe/Isle_of_Man	0	3600	IM	Isle of Man	54.150000	-4.466667	336	5	1847	-1	-
+329	Europe/Istanbul	10800	0	TR	Turkey	41.016667	28.966667	0	13	1880	-1	-
+330	Europe/Jersey	0	3600	JE	Jersey	49.183611	-2.106667	336	5	1847	-1	-
+331	Europe/Kaliningrad	7200	0	RU	Russia	54.716667	20.500000	0	7	1893	-1	MSK-01 - Kaliningrad
+332	Europe/Kirov	10800	0	RU	Russia	58.600000	49.650000	0	8	1919	-1	MSK+00 - Kirov
+333	Europe/Kyiv	7200	3600	UA	Ukraine	50.433333	30.516667	0	9	1880	-1	most of Ukraine
+334	Europe/Lisbon	0	3600	PT	Portugal	38.716667	-9.133333	0	8	1884	-1	Portugal (mainland)
+335	Europe/Ljubljana	3600	3600	SI	Slovenia	46.050000	14.516667	315	7	1884	-1	-
+336	Europe/London	0	3600	GB	Britain (UK)	51.508333	-0.125278	0	5	1847	-1	-
+337	Europe/Luxembourg	3600	3600	LU	Luxembourg	49.600000	6.150000	318	9	1880	-1	-
+338	Europe/Madrid	3600	3600	ES	Spain	40.400000	-3.683333	0	4	1901	-1	Spain (mainland)
+339	Europe/Malta	3600	3600	MT	Malta	35.900000	14.516667	0	4	1893	-1	-
+340	Europe/Mariehamn	7200	3600	AX	Åland Islands	60.100000	19.950000	327	4	1878	-1	-
+341	Europe/Minsk	10800	0	BY	Belarus	53.900000	27.566667	0	9	1880	-1	-
+342	Europe/Monaco	3600	3600	MC	Monaco	43.700000	7.383333	345	7	1891	-1	-
+343	Europe/Moscow	10800	0	RU	Russia	55.755833	37.617778	0	11	1880	-1	MSK+00 - Moscow area
+344	Europe/Oslo	3600	3600	NO	Norway	59.916667	10.750000	316	5	1893	-1	-
+345	Europe/Paris	3600	3600	FR	France	48.866667	2.333333	0	7	1891	-1	-
+346	Europe/Podgorica	3600	3600	ME	Montenegro	42.433333	19.266667	315	7	1884	-1	-
+347	Europe/Prague	3600	3600	CZ	Czech Republic	50.083333	14.433333	0	7	1850	-1	-
+348	Europe/Riga	7200	3600	LV	Latvia	56.950000	24.100000	0	15	1880	-1	-
+349	Europe/Rome	3600	3600	IT	Italy	41.900000	12.483333	0	6	1866	-1	-
+350	Europe/Samara	14400	0	RU	Russia	53.200000	50.150000	0	10	1919	-1	MSK+01 - Samara, Udmurtia
+351	Europe/San_Marino	3600	3600	SM	San Marino	43.916667	12.466667	349	6	1866	-1	-
+352	Europe/Sarajevo	3600	3600	BA	Bosnia & Herzegovina	43.866667	18.416667	315	7	1884	-1	-
+353	Europe/Saratov	14400	0	RU	Russia	51.566667	46.033333	0	9	1919	-1	MSK+01 - Saratov
+354	Europe/Simferopol	10800	0	UA	Ukraine	44.950000	34.100000	0	15	1880	-1	Crimea
+355	Europe/Skopje	3600	3600	MK	North Macedonia	41.983333	21.433333	315	7	1884	-1	-
+356	Europe/Sofia	7200	3600	BG	Bulgaria	42.683333	23.316667	0	10	1880	-1	-
+357	Europe/Stockholm	3600	3600	SE	Sweden	59.333333	18.050000	316	5	1893	-1	-
+358	Europe/Tallinn	7200	3600	EE	Estonia	59.416667	24.750000	0	13	1880	-1	-
+359	Europe/Tirane	3600	3600	AL	Albania	41.333333	19.833333	0	4	1914	-1	-
+360	Europe/Ulyanovsk	14400	0	RU	Russia	54.333333	48.400000	0	9	1919	-1	MSK+01 - Ulyanovsk
+361	Europe/Vaduz	3600	3600	LI	Liechtenstein	47.150000	9.516667	368	4	1853	-1	-
+362	Europe/Vatican	3600	3600	VA	Vatican City	41.902222	12.453056	349	6	1866	-1	-
+363	Europe/Vienna	3600	3600	AT	Austria	48.216667	16.333333	0	8	1893	-1	-
+364	Europe/Vilnius	7200	3600	LT	Lithuania	54.683333	25.316667	0	15	1880	-1	-
+365	Europe/Volgograd	10800	0	RU	Russia	48.733333	44.416667	0	11	1920	-1	MSK+00 - Volgograd
+366	Europe/Warsaw	3600	3600	PL	Poland	52.250000	21.000000	0	9	1880	-1	-
+367	Europe/Zagreb	3600	3600	HR	Croatia	45.800000	15.966667	315	7	1884	-1	-
+368	Europe/Zurich	3600	3600	CH	Switzerland	47.383333	8.533333	0	4	1853	-1	-
+369	Indian/Antananarivo	10800	0	MG	Madagascar	-18.916667	47.516667	43	6	1908	-1	-
+370	Indian/Chagos	21600	0	IO	British Indian Ocean Territory	-7.333333	72.416667	0	3	1907	-1	-
+371	Indian/Christmas	25200	0	CX	Christmas Island	-10.416944	105.716667	219	3	1880	-1	-
+372	Indian/Cocos	23400	0	CC	Cocos (Keeling) Islands	-12.166667	96.916667	287	5	1880	-1	-
+373	Indian/Comoro	10800	0	KM	Comoros	-11.683333	43.266667	43	6	1908	-1	-
+374	Indian/Kerguelen	18000	0	TF	French S. Terr.	-49.352778	70.217500	376	3	1880	-1	-
+375	Indian/Mahe	14400	0	SC	Seychelles	-4.666667	55.466667	229	2	1920	-1	-
+376	Indian/Maldives	18000	0	MV	Maldives	4.166667	73.500000	0	3	1880	-1	-
+377	Indian/Mauritius	14400	0	MU	Mauritius	-20.166667	57.500000	0	2	1907	-1	-
+378	Indian/Mayotte	10800	0	YT	Mayotte	-12.783333	45.233333	43	6	1908	-1	-
+379	Indian/Reunion	14400	0	RE	Réunion	-20.866667	55.466667	229	2	1920	-1	-
+380	Pacific/Apia	46800	0	WS	Samoa (western)	-13.833056	-171.733333	0	5	1892	-1	-
+381	Pacific/Auckland	43200	3600	NZ	New Zealand	-36.866944	174.766667	0	3	1868	-1	most of New Zealand
+382	Pacific/Bougainville	39600	0	PG	Papua New Guinea	-6.216944	155.566667	0	6	1880	-1	Bougainville
+383	Pacific/Chatham	45900	3600	NZ	New Zealand	-43.949722	-176.550000	0	3	1868	-1	Chatham Islands
+384	Pacific/Chuuk	36000	0	FM	Micronesia	7.416944	151.783333	410	3	1880	-1	Chuuk/Truk, Yap
+385	Pacific/Easter	-21600	3600	CL	Chile	-27.149722	-109.433333	0	4	1890	-1	Easter Island
+386	Pacific/Efate	39600	0	VU	Vanuatu	-17.666944	168.416667	0	2	1912	-1	-
+387	Pacific/Fakaofo	46800	0	TK	Tokelau	-9.366389	-171.233333	0	3	1901	-1	-
+388	Pacific/Fiji	43200	0	FJ	Fiji	-18.133611	178.416667	0	2	1915	-1	-
+389	Pacific/Funafuti	43200	0	TV	Tuvalu	-8.516944	179.216667	414	2	1901	-1	-
+390	Pacific/Galapagos	-21600	0	EC	Ecuador	-0.900000	-89.600000	0	3	1931	-1	Galapagos Islands
+391	Pacific/Gambier	-32400	0	PF	French Polynesia	-23.133056	-134.950000	0	2	1912	-1	Gambier Islands
+392	Pacific/Guadalcanal	39600	0	SB	Solomon Islands	-9.533611	160.200000	0	2	1912	-1	-
+393	Pacific/Guam	36000	0	GU	Guam	13.466944	144.750000	0	6	1844	-1	-
+394	Pacific/Honolulu	-36000	0	US	United States	21.306944	-157.858333	0	5	1896	-1	Hawaii
+395	Pacific/Kanton	46800	0	KI	Kiribati	-2.783056	-171.716667	0	4	1937	-1	Phoenix Islands
+396	Pacific/Kiritimati	50400	0	KI	Kiribati	1.866389	-157.333333	0	4	1901	-1	Line Islands
+397	Pacific/Kosrae	39600	0	FM	Micronesia	5.316944	162.983333	0	10	1844	-1	Kosrae
+398	Pacific/Kwajalein	43200	0	MH	Marshall Islands	9.083611	167.333333	0	7	1901	-1	Kwajalein
+399	Pacific/Majuro	43200	0	MH	Marshall Islands	7.150278	171.200000	414	2	1901	-1	most of Marshall Islands
+400	Pacific/Marquesas	-34200	0	PF	French Polynesia	-8.999722	-139.500000	0	2	1912	-1	Marquesas Islands
+401	Pacific/Midway	-39600	0	UM	US minor outlying islands	28.216389	-177.366667	406	3	1892	-1	Midway Islands
+402	Pacific/Nauru	43200	0	NR	Nauru	-0.516944	166.916667	0	5	1921	-1	-
+403	Pacific/Niue	-39600	0	NU	Niue	-19.016389	-169.916667	0	3	1952	-1	-
+404	Pacific/Norfolk	39600	3600	NF	Norfolk Island	-29.050278	167.966667	0	7	1901	-1	-
+405	Pacific/Noumea	39600	0	NC	New Caledonia	-22.266944	166.450000	0	2	1912	-1	-
+406	Pacific/Pago_Pago	-39600	0	AS	Samoa (American)	-14.266389	-170.700000	0	3	1892	-1	-
+407	Pacific/Palau	32400	0	PW	Palau	7.333611	134.483333	0	3	1844	-1	-
+408	Pacific/Pitcairn	-28800	0	PN	Pitcairn	-25.066389	-130.083333	0	3	1901	-1	-
+409	Pacific/Pohnpei	39600	0	FM	Micronesia	6.966944	158.216667	392	2	1912	-1	Pohnpei/Ponape
+410	Pacific/Port_Moresby	36000	0	PG	Papua New Guinea	-9.500278	147.166667	0	3	1880	-1	most of Papua New Guinea
+411	Pacific/Rarotonga	-36000	0	CK	Cook Islands	-21.233056	-159.766667	0	4	1899	-1	-
+412	Pacific/Saipan	36000	0	MP	Northern Mariana Islands	15.200278	145.750000	393	6	1844	-1	-
+413	Pacific/Tahiti	-36000	0	PF	French Polynesia	-17.533056	-149.566667	0	2	1912	-1	Society Islands
+414	Pacific/Tarawa	43200	0	KI	Kiribati	1.416944	173.000000	0	2	1901	-1	Gilbert Islands
+415	Pacific/Tongatapu	46800	0	TO	Tonga	-21.133333	-175.200000	0	4	1945	-1	-
+416	Pacific/Wake	43200	0	UM	US minor outlying islands	19.283611	166.616667	414	2	1901	-1	Wake Island
+417	Pacific/Wallis	43200	0	WF	Wallis & Futuna	-13.299722	-176.166667	414	2	1901	-1	-

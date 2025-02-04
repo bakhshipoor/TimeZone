@@ -149,6 +149,7 @@
     <ClInclude Include="Parser\Parse_Zones.h" />
     <ClInclude Include="Parser\Parse_Zonetab.h" />
     <ClInclude Include="TimeZoneDBCreator.h" />
+    <ClInclude Include="timezone_database\timezone_database.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Creator\Creator.c" />
@@ -163,6 +164,7 @@
     <ClCompile Include="Parser\Parse_Zones.c" />
     <ClCompile Include="Parser\Parse_Zonetab.c" />
     <ClCompile Include="TimeZoneDBCreator.C" />
+    <ClCompile Include="timezone_database\timezone_database.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
