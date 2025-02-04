@@ -7,7 +7,7 @@ extern "C" {
 
 #include "../Generator/Generator.h"
 
-#define ZONE_INFO_FIELDS_COUNT 11
+#define ZONE_INFO_FIELDS_COUNT 13
 #define ZONE_DATA_FIELDS_COUNT 7
 #define RULE_INFO_FIELDS_COUNT 5
 #define RULE_DATA_FIELDS_COUNT 12

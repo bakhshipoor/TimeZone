@@ -35,9 +35,9 @@ extern "C" {
 #define LOCATION                double
 
 #define YEAR                    int32_t
-#define MONTH                   uint8_t
-#define DAY                     uint8_t
-#define WEEKDAY                 uint8_t
+#define MONTH                   int8_t
+#define DAY                     int8_t
+#define WEEKDAY                 int8_t
 #define HOUR                    int64_t
 
 #define _BOOL                    bool

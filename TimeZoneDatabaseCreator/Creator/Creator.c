@@ -1,4 +1,5 @@
 #include "Creator.h"
+#include "math.h"
 
 CONST CHAR* folderPath = "timezone_database";
 CHAR* header_file_name = "timezone_database/timezone_database.h";
@@ -9,6 +10,8 @@ Zones_Info_String_t* zones_info;
 CONST CHAR ZI_Comments[ZONE_INFO_FIELDS_COUNT][25] = {
     "Zone_ID",
     "Zone_Identifier",
+    "Current_STD_Offset",
+    "Current_DST_Offset",
     "Country_Code",
     "Country_Name",
     "Latitude",
@@ -19,6 +22,7 @@ CONST CHAR ZI_Comments[ZONE_INFO_FIELDS_COUNT][25] = {
     "Year_End",
     "Comments"
 };
+COUNTER ZI_Comments_Lenght[ZONE_INFO_FIELDS_COUNT];
 
 Zones_Data_Lenght_t zones_data_lenght;
 Zones_Data_String_t* zones_data;
@@ -31,6 +35,7 @@ CONST CHAR ZD_Comments[ZONE_DATA_FIELDS_COUNT][25] = {
     "Until_JD",
     "Comments"
 };
+COUNTER ZD_Comments_Lenght[ZONE_DATA_FIELDS_COUNT];
 
 Rules_Info_Lenght_t rules_info_lenght;
 Rules_Info_String_t* rules_info;
@@ -41,6 +46,7 @@ CONST CHAR RI_Comments[RULE_INFO_FIELDS_COUNT][25] = {
     "Year_Begin",
     "Year_End"
 };
+COUNTER RI_Comments_Lenght[RULE_INFO_FIELDS_COUNT];
 
 Rules_Data_Lenght_t rules_data_lenght;
 Rules_Data_String_t* rules_data;
@@ -58,6 +64,7 @@ CONST CHAR RD_Comments[RULE_DATA_FIELDS_COUNT][35] = {
     "Letter",
     "Comments"
 };
+COUNTER RD_Comments_Lenght[RULE_DATA_FIELDS_COUNT];
 
 VOID Create_Database(CONST CHAR** data_folder_path)
 {
@@ -176,15 +183,17 @@ VOID Create_Time_Zone_Database_Header_File(Time_Zones_t* tz)
     fprintf(header_file, "    {\n");
     fprintf(header_file, "        int32_t       zone_id;\n");
     fprintf(header_file, "        uint8_t       zone_identifier[%d];\n", zones_info_lenght.Zones_Info[1] + 1);
-    fprintf(header_file, "        uint8_t       country_code[%d];\n", zones_info_lenght.Zones_Info[2] + 1);
-    fprintf(header_file, "        uint8_t       country_name[%d];\n", zones_info_lenght.Zones_Info[3] + 1);
+    fprintf(header_file, "        int64_t       std_offset;\n");
+    fprintf(header_file, "        int64_t       dst_offset;\n");
+    fprintf(header_file, "        uint8_t       country_code[%d];\n", zones_info_lenght.Zones_Info[4] + 1);
+    fprintf(header_file, "        uint8_t       country_name[%d];\n", zones_info_lenght.Zones_Info[5] + 1);
     fprintf(header_file, "        double        latitude;\n");
     fprintf(header_file, "        double        longitude;\n");
     fprintf(header_file, "        int32_t       linked_zone_id;\n");
     fprintf(header_file, "        int32_t       data_count;\n");
     fprintf(header_file, "        int32_t       year_begin;\n");
     fprintf(header_file, "        int32_t       year_end;\n");
-    fprintf(header_file, "        uint8_t       comments[%d];\n", zones_info_lenght.Zones_Info[10] + 1);
+    fprintf(header_file, "        uint8_t       comments[%d];\n", zones_info_lenght.Zones_Info[12] + 1);
     fprintf(header_file, "    } tzdb_zone_info_t;\n");
     fprintf(header_file, "\n");
     fprintf(header_file, "    typedef struct\n");
@@ -248,6 +257,25 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         return;
     }
 
+    int index = 0;
+    for (index = 0; index < ZONE_INFO_FIELDS_COUNT; index++)
+    {
+        ZI_Comments_Lenght[index] = utf8_strlen(ZI_Comments[index]);
+    }
+    for (index = 0; index < ZONE_DATA_FIELDS_COUNT; index++)
+    {
+        ZD_Comments_Lenght[index] = utf8_strlen(ZD_Comments[index]);
+    }
+    for (index = 0; index < RULE_INFO_FIELDS_COUNT; index++)
+    {
+        RI_Comments_Lenght[index] = utf8_strlen(RI_Comments[index]);
+    }
+    for (index = 0; index < RULE_DATA_FIELDS_COUNT; index++)
+    {
+        RD_Comments_Lenght[index] = utf8_strlen(RD_Comments[index]);
+    }
+
+
     fprintf(c_file, "\n");
     fprintf(c_file, "#include \"timezone_database.h\"\n");
     fprintf(c_file, "\n");
@@ -258,13 +286,13 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     fprintf(c_file, "    /*");
     for (COUNTER filed_index = 0; filed_index < ZONE_INFO_FIELDS_COUNT; filed_index++)
     {
-        if (filed_index == 1 || filed_index == 2 || filed_index == 3 || filed_index == 10)
+        if (filed_index == 1 || filed_index == 4 || filed_index == 5 || filed_index == 12)
         {
-            fprintf(c_file, "%s   %s", ZI_Comments[filed_index], Print_Space(utf8_strlen(ZI_Comments[filed_index]), zones_info_lenght.Zones_Info[filed_index]));
+            fprintf(c_file, "%s   %s", ZI_Comments[filed_index], Print_Space(utf8_strlen(ZI_Comments[filed_index]), max(zones_info_lenght.Zones_Info[filed_index], ZI_Comments_Lenght[filed_index])));
         }
         else
         {
-            fprintf(c_file, "%s %s", ZI_Comments[filed_index], Print_Space(utf8_strlen(ZI_Comments[filed_index]), zones_info_lenght.Zones_Info[filed_index]));
+            fprintf(c_file, "%s %s", ZI_Comments[filed_index], Print_Space(utf8_strlen(ZI_Comments[filed_index]), max(zones_info_lenght.Zones_Info[filed_index], ZI_Comments_Lenght[filed_index])));
         }
     }
     fprintf(c_file, " */\n");
@@ -274,57 +302,67 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: time_zone_id
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[0]),
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[0]), zones_info_lenght.Zones_Info[0])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[0]), max(zones_info_lenght.Zones_Info[0], ZI_Comments_Lenght[0]))
         );
         // Field 1: time_zone_identifier
         fprintf(c_file, "\"%s\",%s",
             zones_info[zones_info_index].Zones_Info[1],
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[1]), zones_info_lenght.Zones_Info[1])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[1]), max(zones_info_lenght.Zones_Info[1], ZI_Comments_Lenght[1]))
         );
-        // Field 2: country_code
-        fprintf(c_file, "\"%s\",%s",
-            zones_info[zones_info_index].Zones_Info[2],
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[2]), zones_info_lenght.Zones_Info[2])
-        );
-        // Field 3: country_name
-        fprintf(c_file, "\"%s\",%s",
-            zones_info[zones_info_index].Zones_Info[3],
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[3]), zones_info_lenght.Zones_Info[3])
-        );
-        // Field 4: latitude
-        fprintf(c_file, "%.06lf,%s",
-            atof(zones_info[zones_info_index].Zones_Info[4]),
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[4]), zones_info_lenght.Zones_Info[4])
-        );
-        // Field 5: longitude
-        fprintf(c_file, "%.06lf,%s",
-            atof(zones_info[zones_info_index].Zones_Info[5]),
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[5]), zones_info_lenght.Zones_Info[5])
-        );
-        // Field 6: linked_tz_identifier
+        // Field 2: std_offset
         fprintf(c_file, "%d,%s",
-            atoi(zones_info[zones_info_index].Zones_Info[6]),
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[6]), zones_info_lenght.Zones_Info[6])
+            atoi(zones_info[zones_info_index].Zones_Info[2]),
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[2]), max(zones_info_lenght.Zones_Info[2], ZI_Comments_Lenght[2]))
         );
-        // Field 7: data_count
+        // Field 3: dst_offset
         fprintf(c_file, "%d,%s",
-            atoi(zones_info[zones_info_index].Zones_Info[7]),
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[7]), zones_info_lenght.Zones_Info[7])
+            atoi(zones_info[zones_info_index].Zones_Info[3]),
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[3]), max(zones_info_lenght.Zones_Info[3], ZI_Comments_Lenght[3]))
         );
-        // Field 8: year_begin
+        // Field 4: country_code
+        fprintf(c_file, "\"%s\",%s",
+            zones_info[zones_info_index].Zones_Info[4],
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[4]), max(zones_info_lenght.Zones_Info[4], ZI_Comments_Lenght[4]))
+        );
+        // Field 5: country_name
+        fprintf(c_file, "\"%s\",%s",
+            zones_info[zones_info_index].Zones_Info[5],
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[5]), max(zones_info_lenght.Zones_Info[5], ZI_Comments_Lenght[5]))
+        );
+        // Field 6: latitude
+        fprintf(c_file, "%.06lf,%s",
+            atof(zones_info[zones_info_index].Zones_Info[6]),
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[6]), max(zones_info_lenght.Zones_Info[6], ZI_Comments_Lenght[6]))
+        );
+        // Field 7: longitude
+        fprintf(c_file, "%.06lf,%s",
+            atof(zones_info[zones_info_index].Zones_Info[7]),
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[7]), max(zones_info_lenght.Zones_Info[7], ZI_Comments_Lenght[7]))
+        );
+        // Field 8: linked_tz_identifier
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[8]),
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[8]), zones_info_lenght.Zones_Info[8])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[8]), max(zones_info_lenght.Zones_Info[8], ZI_Comments_Lenght[8]))
         );
-        // Field 9: year_end
+        // Field 9: data_count
         fprintf(c_file, "%d,%s",
             atoi(zones_info[zones_info_index].Zones_Info[9]),
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[9]), zones_info_lenght.Zones_Info[9])
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[9]), max(zones_info_lenght.Zones_Info[9], ZI_Comments_Lenght[9]))
         );
-        // Field 10: comments
+        // Field 10: year_begin
+        fprintf(c_file, "%d,%s",
+            atoi(zones_info[zones_info_index].Zones_Info[10]),
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[10]), max(zones_info_lenght.Zones_Info[10], ZI_Comments_Lenght[10]))
+        );
+        // Field 11: year_end
+        fprintf(c_file, "%d,%s",
+            atoi(zones_info[zones_info_index].Zones_Info[11]),
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[11]), max(zones_info_lenght.Zones_Info[11], ZI_Comments_Lenght[11]))
+        );
+        // Field 12: comments
         fprintf(c_file, "\"%s\"%s",
-            zones_info[zones_info_index].Zones_Info[10],
-            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[10]), zones_info_lenght.Zones_Info[10])
+            zones_info[zones_info_index].Zones_Info[12],
+            Print_Space(utf8_strlen(zones_info[zones_info_index].Zones_Info[12]), max(zones_info_lenght.Zones_Info[12], ZI_Comments_Lenght[12]))
         );
         if (zones_info_index == (tz->Zones_Count - 1))
         {
@@ -346,11 +384,11 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     {
         if (filed_index == 4 || filed_index == 6)
         {
-            fprintf(c_file, "%s   %s", ZD_Comments[filed_index], Print_Space(utf8_strlen(ZD_Comments[filed_index]), zones_data_lenght.Zones_Data[filed_index]));
+            fprintf(c_file, "%s   %s", ZD_Comments[filed_index], Print_Space(utf8_strlen(ZD_Comments[filed_index]), max(zones_data_lenght.Zones_Data[filed_index], ZD_Comments_Lenght[filed_index])));
         }
         else
         {
-            fprintf(c_file, "%s %s", ZD_Comments[filed_index], Print_Space(utf8_strlen(ZD_Comments[filed_index]), zones_data_lenght.Zones_Data[filed_index]));
+            fprintf(c_file, "%s %s", ZD_Comments[filed_index], Print_Space(utf8_strlen(ZD_Comments[filed_index]), max(zones_data_lenght.Zones_Data[filed_index], ZD_Comments_Lenght[filed_index])));
         }
     }
     fprintf(c_file, " */\n");
@@ -360,37 +398,37 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: time_zone_id
         fprintf(c_file, "%d,%s",
             atoi(zones_data[zones_data_index].Zones_Data[0]),
-            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[0]), zones_data_lenght.Zones_Data[0])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[0]), max(zones_data_lenght.Zones_Data[0], ZD_Comments_Lenght[0]))
         );
         // Field 1: standard_offset
         fprintf(c_file, "%lld,%s",
             _atoi64(zones_data[zones_data_index].Zones_Data[1]),
-            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[1]), zones_data_lenght.Zones_Data[1])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[1]), max(zones_data_lenght.Zones_Data[1], ZD_Comments_Lenght[1]))
         );
         // Field 2: rule_id
         fprintf(c_file, "%d,%s",
             atoi(zones_data[zones_data_index].Zones_Data[2]),
-            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[2]), zones_data_lenght.Zones_Data[2])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[2]), max(zones_data_lenght.Zones_Data[2], ZD_Comments_Lenght[2]))
         );
         // Field 3: save_hour
         fprintf(c_file, "%lld,%s",
             _atoi64(zones_data[zones_data_index].Zones_Data[3]),
-            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[3]), zones_data_lenght.Zones_Data[3])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[3]), max(zones_data_lenght.Zones_Data[3], ZD_Comments_Lenght[3]))
         );
         // Field 4: format
         fprintf(c_file, "\"%s\",%s",
             zones_data[zones_data_index].Zones_Data[4],
-            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[4]), zones_data_lenght.Zones_Data[4])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[4]), max(zones_data_lenght.Zones_Data[4], ZD_Comments_Lenght[4]))
         );
         // Field 5: until_jd
         fprintf(c_file, "%.010lf,%s",
             atof(zones_data[zones_data_index].Zones_Data[5]),
-            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[5]), zones_data_lenght.Zones_Data[5])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[5]), max(zones_data_lenght.Zones_Data[5], ZD_Comments_Lenght[5]))
         );
         // Field 6: comments
         fprintf(c_file, "\"%s\"%s",
             zones_data[zones_data_index].Zones_Data[6],
-            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[6]), zones_data_lenght.Zones_Data[6])
+            Print_Space(utf8_strlen(zones_data[zones_data_index].Zones_Data[6]), max(zones_data_lenght.Zones_Data[6], ZD_Comments_Lenght[6]))
         );
         if (zones_data_index == (tz->Zones_Data_Count - 1))
         {
@@ -412,11 +450,11 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     {
         if (filed_index == 1)
         {
-            fprintf(c_file, "%s   %s", RI_Comments[filed_index], Print_Space(utf8_strlen(RI_Comments[filed_index]), rules_info_lenght.Rules_Info[filed_index]));
+            fprintf(c_file, "%s   %s", RI_Comments[filed_index], Print_Space(utf8_strlen(RI_Comments[filed_index]), max(rules_info_lenght.Rules_Info[filed_index], RI_Comments_Lenght[filed_index])));
         }
         else
         {
-            fprintf(c_file, "%s %s", RI_Comments[filed_index], Print_Space(utf8_strlen(RI_Comments[filed_index]), rules_info_lenght.Rules_Info[filed_index]));
+            fprintf(c_file, "%s %s", RI_Comments[filed_index], Print_Space(utf8_strlen(RI_Comments[filed_index]), max(rules_info_lenght.Rules_Info[filed_index], RI_Comments_Lenght[filed_index])));
         }
     }
     fprintf(c_file, " */\n");
@@ -426,27 +464,27 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: rule_id
         fprintf(c_file, "%d,%s",
             atoi(rules_info[rules_info_index].Rules_Info[0]),
-            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[0]), rules_info_lenght.Rules_Info[0])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[0]), max(rules_info_lenght.Rules_Info[0], RI_Comments_Lenght[0]))
         );
         // Field 1: name
         fprintf(c_file, "\"%s\",%s",
             rules_info[rules_info_index].Rules_Info[1],
-            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[1]), rules_info_lenght.Rules_Info[1])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[1]), max(rules_info_lenght.Rules_Info[1], RI_Comments_Lenght[1]))
         );
         // Field 2: years_count
         fprintf(c_file, "%d,%s",
             atoi(rules_info[rules_info_index].Rules_Info[2]),
-            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[2]), rules_info_lenght.Rules_Info[2])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[2]), max(rules_info_lenght.Rules_Info[2], RI_Comments_Lenght[2]))
         );
         // Field 3: year_begin
         fprintf(c_file, "%d,%s",
             atoi(rules_info[rules_info_index].Rules_Info[3]),
-            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[3]), rules_info_lenght.Rules_Info[3])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[3]), max(rules_info_lenght.Rules_Info[3], RI_Comments_Lenght[3]))
         );
         // Field 4: year_end
         fprintf(c_file, "%d%s",
             atoi(rules_info[rules_info_index].Rules_Info[4]),
-            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[4]), rules_info_lenght.Rules_Info[4])
+            Print_Space(utf8_strlen(rules_info[rules_info_index].Rules_Info[4]), max(rules_info_lenght.Rules_Info[4], RI_Comments_Lenght[4]))
         );
         if (rules_info_index == (tz->Rules_Count - 1))
         {
@@ -468,11 +506,11 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
     {
         if (filed_index == 10 || filed_index == 11)
         {
-            fprintf(c_file, "%s   %s", RD_Comments[filed_index], Print_Space(utf8_strlen(RD_Comments[filed_index]), rules_data_lenght.Rules_Data[filed_index]));
+            fprintf(c_file, "%s   %s", RD_Comments[filed_index], Print_Space(utf8_strlen(RD_Comments[filed_index]), max(rules_data_lenght.Rules_Data[filed_index], RD_Comments_Lenght[filed_index])));
         }
         else
         {
-            fprintf(c_file, "%s %s", RD_Comments[filed_index], Print_Space(utf8_strlen(RD_Comments[filed_index]), rules_data_lenght.Rules_Data[filed_index]));
+            fprintf(c_file, "%s %s", RD_Comments[filed_index], Print_Space(utf8_strlen(RD_Comments[filed_index]), max(rules_data_lenght.Rules_Data[filed_index], RD_Comments_Lenght[filed_index])));
         }
     }
     fprintf(c_file, " */\n");
@@ -482,64 +520,64 @@ VOID Create_Time_Zone_Database_C_File(Time_Zones_t* tz)
         // Field 0: rule_id
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[0]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[0]), rules_data_lenght.Rules_Data[0])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[0]), max(rules_data_lenght.Rules_Data[0], RD_Comments_Lenght[0]))
         );
         // Field 1: from
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[1]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[1]), rules_data_lenght.Rules_Data[1])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[1]), max(rules_data_lenght.Rules_Data[1], RD_Comments_Lenght[1]))
         );
         // Field 2: to
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[2]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[2]), rules_data_lenght.Rules_Data[2])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[2]), max(rules_data_lenght.Rules_Data[2], RD_Comments_Lenght[2]))
         );
         // Field 3: month
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[3]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[3]), rules_data_lenght.Rules_Data[3])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[3]), max(rules_data_lenght.Rules_Data[3], RD_Comments_Lenght[3]))
         );
         // Field 4: day
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[4]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[4]), rules_data_lenght.Rules_Data[4])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[4]), max(rules_data_lenght.Rules_Data[4], RD_Comments_Lenght[4]))
         );
         // Field 5: weekday
         fprintf(c_file, "%d,%s",
             atoi(rules_data[rules_data_index].Rules_Data[5]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[5]), rules_data_lenght.Rules_Data[5])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[5]), max(rules_data_lenght.Rules_Data[5], RD_Comments_Lenght[5]))
         );
         // Field 6: weekday_isafterorequal_day
         LENGHT bool_len = atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? 5 : 4;
         fprintf(c_file, "%s,%s",
             atoi(rules_data[rules_data_index].Rules_Data[6]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, rules_data_lenght.Rules_Data[6] > bool_len ? rules_data_lenght.Rules_Data[6] : bool_len)
+            Print_Space(bool_len, max(RD_Comments_Lenght[6], bool_len))
         );
         // Field 7: hour
         fprintf(c_file, "%lld,%s",
             _atoi64(rules_data[rules_data_index].Rules_Data[7]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[7]), rules_data_lenght.Rules_Data[7])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[7]), max(rules_data_lenght.Rules_Data[7], RD_Comments_Lenght[7]))
         );
         // Field 8: hour_isUTC
         bool_len = atoi(rules_data[rules_data_index].Rules_Data[8]) <= 0 ? 5 : 4;
         fprintf(c_file, "%s,%s",
             atoi(rules_data[rules_data_index].Rules_Data[8]) <= 0 ? "false" : "true",
-            Print_Space(bool_len, rules_data_lenght.Rules_Data[8] > bool_len ? rules_data_lenght.Rules_Data[8] : bool_len)
+            Print_Space(bool_len, max(RD_Comments_Lenght[8], bool_len))
         );
         // Field 9: save_hour
         fprintf(c_file, "%lld,%s",
             _atoi64(rules_data[rules_data_index].Rules_Data[9]),
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[9]), rules_data_lenght.Rules_Data[9])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[9]), max(rules_data_lenght.Rules_Data[9], RD_Comments_Lenght[9]))
         );
         // Field 10: letter
         fprintf(c_file, "\"%s\",%s",
             rules_data[rules_data_index].Rules_Data[10],
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[10]), rules_data_lenght.Rules_Data[10])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[10]), max(rules_data_lenght.Rules_Data[10], RD_Comments_Lenght[10]))
         );
         // Field 11: comment
         fprintf(c_file, "\"%s\"%s",
             rules_data[rules_data_index].Rules_Data[11],
-            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[11]), rules_data_lenght.Rules_Data[11])
+            Print_Space(utf8_strlen(rules_data[rules_data_index].Rules_Data[11]), max(rules_data_lenght.Rules_Data[11], RD_Comments_Lenght[11]))
         );
         if (rules_data_index == (tz->Rules_Data_Count-1))
         {
@@ -563,7 +601,7 @@ Zones_Info_String_t* Convert_Zones_Info_To_String(Time_Zones_t* tz, Zones_Info_L
 {
     for (COUNTER field_index = 0; field_index < ZONE_INFO_FIELDS_COUNT; field_index++)
     {
-        zones_info_lenght->Zones_Info[field_index] = utf8_strlen(ZI_Comments[field_index]);
+        zones_info_lenght->Zones_Info[field_index] = 0;
     }
 
     Zones_Info_String_t* zones_info = (Zones_Info_String_t*)calloc(tz->Zones_Count + 1, sizeof(Zones_Info_String_t));
@@ -585,21 +623,24 @@ Zones_Info_String_t* Convert_Zones_Info_To_String(Time_Zones_t* tz, Zones_Info_L
 
         sprintf(zones_info[zones_info_index].Zones_Info[0], "%d", tz->Zones_Info[zones_info_index].Time_Zone_ID);
         sprintf(zones_info[zones_info_index].Zones_Info[1], "%s", tz->Zones_Info[zones_info_index].Time_Zone_Identifier);
-        sprintf(zones_info[zones_info_index].Zones_Info[2], "%s", tz->Zones_Info[zones_info_index].Country_Code);
-        sprintf(zones_info[zones_info_index].Zones_Info[3], "%s", tz->Zones_Info[zones_info_index].Country_Name);
-        sprintf(zones_info[zones_info_index].Zones_Info[4], "%.06lf", tz->Zones_Info[zones_info_index].Latitude);
-        sprintf(zones_info[zones_info_index].Zones_Info[5], "%.06lf", tz->Zones_Info[zones_info_index].Longitude);
-        sprintf(zones_info[zones_info_index].Zones_Info[6], "%d", tz->Zones_Info[zones_info_index].Linked_Zone_ID);
-        sprintf(zones_info[zones_info_index].Zones_Info[7], "%d", tz->Zones_Info[zones_info_index].Data_Count);
-        sprintf(zones_info[zones_info_index].Zones_Info[8], "%d", tz->Zones_Info[zones_info_index].Year_Begin);
-        sprintf(zones_info[zones_info_index].Zones_Info[9], "%d", tz->Zones_Info[zones_info_index].Year_End);
-        sprintf(zones_info[zones_info_index].Zones_Info[10], "%s", tz->Zones_Info[zones_info_index].Comments);
+        sprintf(zones_info[zones_info_index].Zones_Info[2], "%lld", tz->Zones_Info[zones_info_index].STD_Offset);
+        sprintf(zones_info[zones_info_index].Zones_Info[3], "%lld", tz->Zones_Info[zones_info_index].DST_Offset);
+        sprintf(zones_info[zones_info_index].Zones_Info[4], "%s", tz->Zones_Info[zones_info_index].Country_Code);
+        sprintf(zones_info[zones_info_index].Zones_Info[5], "%s", tz->Zones_Info[zones_info_index].Country_Name);
+        sprintf(zones_info[zones_info_index].Zones_Info[6], "%.06lf", tz->Zones_Info[zones_info_index].Latitude);
+        sprintf(zones_info[zones_info_index].Zones_Info[7], "%.06lf", tz->Zones_Info[zones_info_index].Longitude);
+        sprintf(zones_info[zones_info_index].Zones_Info[8], "%d", tz->Zones_Info[zones_info_index].Linked_Zone_ID);
+        sprintf(zones_info[zones_info_index].Zones_Info[9], "%d", tz->Zones_Info[zones_info_index].Data_Count);
+        sprintf(zones_info[zones_info_index].Zones_Info[10], "%d", tz->Zones_Info[zones_info_index].Year_Begin);
+        sprintf(zones_info[zones_info_index].Zones_Info[11], "%d", tz->Zones_Info[zones_info_index].Year_End);
+        sprintf(zones_info[zones_info_index].Zones_Info[12], "%s", tz->Zones_Info[zones_info_index].Comments);
 
         for (COUNTER field_index = 0; field_index < ZONE_INFO_FIELDS_COUNT; field_index++)
         {
-            if (utf8_strlen(zones_info[zones_info_index].Zones_Info[field_index]) > zones_info_lenght->Zones_Info[field_index])
+            COUNTER str_len = utf8_strlen(zones_info[zones_info_index].Zones_Info[field_index]);
+            if (str_len  > zones_info_lenght->Zones_Info[field_index])
             {
-                zones_info_lenght->Zones_Info[field_index] = utf8_strlen(zones_info[zones_info_index].Zones_Info[field_index]);
+                zones_info_lenght->Zones_Info[field_index] = str_len;
             }
         }
     }
@@ -610,7 +651,7 @@ Zones_Data_String_t* Convert_Zones_Data_To_String(Time_Zones_t* tz, Zones_Data_L
 {
     for (COUNTER field_index = 0; field_index < ZONE_DATA_FIELDS_COUNT; field_index++)
     {
-        zones_data_lenght->Zones_Data[field_index] = utf8_strlen(ZD_Comments[field_index]);
+        zones_data_lenght->Zones_Data[field_index] = 0;
     }
 
     Zones_Data_String_t* zones_data = (Zones_Data_String_t*)calloc(tz->Zones_Data_Count + 1, sizeof(Zones_Data_String_t));
@@ -653,7 +694,7 @@ Rules_Info_String_t* Convert_Rules_Info_To_String(Time_Zones_t* tz, Rules_Info_L
 {
     for (COUNTER field_index = 0; field_index < RULE_INFO_FIELDS_COUNT; field_index++)
     {
-        rules_info_lenght->Rules_Info[field_index] = utf8_strlen(RI_Comments[field_index]);
+        rules_info_lenght->Rules_Info[field_index] = 0;
     }
 
     Rules_Info_String_t* rules_info = (Rules_Info_String_t*)calloc(tz->Rules_Count + 1, sizeof(Rules_Info_String_t));
@@ -694,7 +735,7 @@ Rules_Data_String_t* Convert_Rules_Data_To_String(Time_Zones_t* tz, Rules_Data_L
 {
     for (COUNTER field_index = 0; field_index < RULE_DATA_FIELDS_COUNT; field_index++)
     {
-        rules_data_lenght->Rules_Data[field_index] = utf8_strlen(RD_Comments[field_index]);
+        rules_data_lenght->Rules_Data[field_index] = 0;
     }
 
     Rules_Data_String_t* rules_data = (Rules_Data_String_t*)calloc(tz->Rules_Data_Count + 1, sizeof(Rules_Data_String_t));

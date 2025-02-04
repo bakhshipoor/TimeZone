@@ -28,7 +28,7 @@ Time_Zones_t* Generate_Data(CONST CHAR** data_folder_path)
     Generate_Time_Zones_Info(parse_data, &time_zones->Zones_Info, &parse_data->Zonetab_Count);
     Generate_Time_Zones_Data(parse_data, &time_zones->Zones_Data,&time_zones->Zones_Data_Count, &time_zones);
     
-    
+    Calculate_Current_Offsets(&time_zones);
     
 
     return time_zones;
@@ -268,9 +268,7 @@ VOID Generate_Time_Zones_Data(Parse_Data_t* parse_data, ZoneData_t** zones_data_
             }
             
             (*zones_data_count)++;
-
         }
-
     }
 }
 
@@ -499,7 +497,7 @@ JDN Calculate_JDN(YEAR* year, MONTH* month, DAY* day)
 DAY Calculate_Last_Weekday_Day_In_Month(YEAR* year, MONTH* month, WEEKDAY* weekday)
 {
     DAY result_day = Calculate_Days_In_Month(year, month);
-    while (((Calculate_JDN(year, month, &result_day) + 1) % 7) != weekday)
+    while (((Calculate_JDN(year, month, &result_day) + 1) % 7) != *weekday)
     {
         result_day--;
     }
@@ -600,6 +598,163 @@ VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, C
 
     *second = total_seconds;
 }
+
+
+
+VOID Calculate_Current_Offsets(Time_Zones_t** tz)
+{
+    YEAR y = (*tz)->Version.Major;
+    MONTH m = 1;
+    DAY d = 1;
+    HOUR s = 12 * 3600;
+    JDN current_jdn = Calculate_JDN(&y,&m,&d);
+    JD current_jd = Calculate_JD(&current_jdn, &s);
+
+    COUNTER zone_index = 0;
+    for (zone_index = 0; zone_index < (*tz)->Zones_Count; zone_index++)
+    {
+        (*tz)->Zones_Info[zone_index].STD_Offset = 0;
+        (*tz)->Zones_Info[zone_index].DST_Offset = 0;
+        COUNTER zone_id = (*tz)->Zones_Info[zone_index].Time_Zone_ID;
+        if ((*tz)->Zones_Info[zone_index].Linked_Zone_ID != 0)
+        {
+            zone_id = (*tz)->Zones_Info[zone_index].Linked_Zone_ID;
+        }
+
+        COUNTER current_jd_data_index = Find_Zone_Data_Index_JD(&zone_id, tz, &current_jd);
+        if (current_jd_data_index > -1)
+        {
+            (*tz)->Zones_Info[zone_index].STD_Offset = ((*tz)->Zones_Data[current_jd_data_index].Standard_Offset + (*tz)->Zones_Data[current_jd_data_index].Save_Hour);
+            (*tz)->Zones_Info[zone_index].DST_Offset = 0;
+            if ((*tz)->Zones_Data[current_jd_data_index].Rule_ID != 0)
+            {
+                Rule_Data_Changes_t* rd_changes = NULL;
+                COUNTER rd_changes_count = 0;
+                Get_Rules_Data_JD(tz, &rd_changes, &rd_changes_count, &(*tz)->Zones_Data[current_jd_data_index].Rule_ID, &y);
+                if (rd_changes_count > 0 && rd_changes != NULL)
+                {
+                    for (COUNTER change_index = 0; change_index < rd_changes_count; change_index++)
+                    {
+                        if (rd_changes[change_index].Offset != 0)
+                        {
+                            (*tz)->Zones_Info[zone_index].DST_Offset = rd_changes[change_index].Offset;
+                        }
+                    }
+                    free(rd_changes);
+                }
+            }
+        }
+    }
+}
+
+COUNTER Find_Zone_Data_Index_JD(COUNTER* tz_id, Time_Zones_t** tz, JD* jd)
+{
+    int32_t max_year_index = -1;
+    for (int32_t zd_index = 0; zd_index < (*tz)->Zones_Data_Count; zd_index++)
+    {
+        if ((*tz)->Zones_Data[zd_index].Time_Zone_ID == *tz_id)
+        {
+            if ((*tz)->Zones_Data[zd_index].Until_JD == (double)-1.0)
+            {
+                max_year_index = zd_index;
+                continue;
+            }
+            if (*jd <= (*tz)->Zones_Data[zd_index].Until_JD)
+            {
+                return zd_index;
+            }
+        }
+    }
+    return max_year_index;
+}
+
+VOID Get_Rules_Data_JD(CONST Time_Zones_t** tz, Rule_Data_Changes_t** ch_list, COUNTER* ch_count, CONST COUNTER* rule_id, CONST YEAR* year)
+{
+    bool find = false;
+    Rule_Data_Changes_t ch_entry = { 0 };
+    YEAR _year;
+    MONTH _month;
+    DAY _day;
+    JDN jdn;
+    HOUR _seconds;
+    for (int32_t rd_index = 0; rd_index < (*tz)->Rules_Data_Count; rd_index++)
+    {
+        find = false;
+        if ((*tz)->Rules_Data[rd_index].Rule_ID == (*rule_id))
+        {
+            if ((*year) >= (*tz)->Rules_Data[rd_index].From)
+            {
+                if ((*tz)->Rules_Data[rd_index].To == -1)
+                {
+                    find = true;
+                }
+                else if ((*year) <= (*tz)->Rules_Data[rd_index].To)
+                {
+                    find = true;
+                }
+                else
+                {
+                    find = false;
+                }
+            }
+            if (find == true)
+            {
+                Rule_Data_Changes_t* r_list;
+                if ((*ch_count) == 0)
+                {
+                    r_list = (Rule_Data_Changes_t*)calloc(1, sizeof(Rule_Data_Changes_t));
+                }
+                else
+                {
+                    r_list = (Rule_Data_Changes_t*)realloc((*ch_list), ((*ch_count) + 1) * sizeof(Rule_Data_Changes_t));
+                }
+                if (r_list != NULL)
+                {
+                    (*ch_list) = r_list;
+                    _year = (*year);
+
+                    _month = (*tz)->Rules_Data[rd_index].Month;
+                    _day = Calculate_Day(&_year, &_month, &(*tz)->Rules_Data[rd_index].Day, &(*tz)->Rules_Data[rd_index].Weekday, &(*tz)->Rules_Data[rd_index].Weekday_IsAfterOrEqual_Day);
+
+                    _seconds = (*tz)->Rules_Data[rd_index].Hour;
+                    
+                    jdn = Calculate_JDN(&_year, &_month, &_day);
+                    ch_entry.Rule_JD = Calculate_JD(&jdn, &_seconds);
+
+                    ch_entry.Offset = (*tz)->Rules_Data[rd_index].Save_Hour;
+
+                    (*ch_list)[(*ch_count)] = ch_entry;
+                    (*ch_count)++;
+                }
+            }
+        }
+    }
+}
+
+DAY Calculate_Day(YEAR* _y, MONTH* _m, DAY* _d, WEEKDAY* _weekday, _BOOL* _is_after)
+{
+    if ((*_weekday) == TZDB_WEEKDAY_NONE)
+    {
+        return (*_d);
+    }
+    else
+    {
+        if ((*_d) == 0)
+        {
+            return Calculate_Last_Weekday_Day_In_Month(_y, _m, _weekday);
+        }
+        else if ((*_is_after) == true)
+        {
+            return Calculate_First_Weekday_After_Day_In_Month(_y, _m, _d, _weekday);
+        }
+        else
+        {
+            return Calculate_First_Weekday_Before_Day_In_Month(_y, _m, _d, _weekday);
+        }
+    }
+}
+
+
 
 
 INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b) 

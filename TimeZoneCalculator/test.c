@@ -69,7 +69,7 @@ int main()
 
         printf("\n\n\n");
 
-        local_time = tz_get_local_time();
+        /*local_time = tz_get_local_time();
         if (local_time != NULL)
         {
             printf("Time Zone:\t\t%s\n\n", buf);
@@ -86,7 +86,7 @@ int main()
             printf("DST Effect:\t\t%s\n", offset->dst_effect == true ? "True" : "False");
             printf("DST Offset:\t\t%02d:%02d:%02d\n", offset->dst_offset.hour, offset->dst_offset.minute, offset->dst_offset.second);
             printf("Total Offset:\t\t%02d:%02d:%02d\n", offset->total_offset.hour, offset->total_offset.minute, offset->total_offset.second);
-        }
+        }*/
 
         printf("\n\n\n");
         Sleep(1000);

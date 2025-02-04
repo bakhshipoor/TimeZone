@@ -11,6 +11,8 @@ extern "C" {
     {
         COUNTER Time_Zone_ID;
         CHAR* Time_Zone_Identifier;
+        HOUR STD_Offset;
+        HOUR DST_Offset;
         CHAR* Country_Code;
         CHAR* Country_Name;
         LOCATION Latitude;
@@ -41,6 +43,12 @@ extern "C" {
         YEAR Year_Begin;
         YEAR Year_End;
     } Rule_Info_t;
+
+    typedef struct
+    {
+        JD Rule_JD;
+        HOUR Offset;
+    }Rule_Data_Changes_t;
 
     typedef struct
     {
@@ -100,6 +108,10 @@ extern "C" {
     DAY Calculate_First_Weekday_Before_Day_In_Month(YEAR* year, MONTH* month, DAY* day, WEEKDAY* weekday);
     VOID Subtract_Or_Add_Seconds(YEAR* year, MONTH* month, DAY* day, HOUR* second, CONST HOUR seconds_to_add);
 
+    VOID Calculate_Current_Offsets(Time_Zones_t** tz);
+    COUNTER Find_Zone_Data_Index_JD(COUNTER* tz_id, Time_Zones_t** tz, JD* jd);
+    VOID Get_Rules_Data_JD(CONST Time_Zones_t** tz, Rule_Data_Changes_t** ch_list, COUNTER* ch_count, CONST COUNTER* rule_id, CONST YEAR* year);
+    DAY Calculate_Day(YEAR* _y, MONTH* _m, DAY* _d, WEEKDAY* _weekday, _BOOL* _is_after);
 
     INT Compare_TZ_Identifier(CONST VOID* a, CONST VOID* b);
     VOID Sort_Zone_Info_By_Identifier(Zone_Info_t** zone_info, CONST COUNTER* info_count);

@@ -94,91 +94,91 @@ RTC_DateTypeDef UTC_Date;
 int main(void)
 {
 
-  /* USER CODE BEGIN 1 */
+	/* USER CODE BEGIN 1 */
 
-  /* USER CODE END 1 */
+	/* USER CODE END 1 */
 
-  /* MPU Configuration--------------------------------------------------------*/
-  MPU_Config();
+	/* MPU Configuration--------------------------------------------------------*/
+	MPU_Config();
 
-  /* Enable the CPU Cache */
+	/* Enable the CPU Cache */
 
-  /* Enable I-Cache---------------------------------------------------------*/
-  SCB_EnableICache();
+	/* Enable I-Cache---------------------------------------------------------*/
+	SCB_EnableICache();
 
-  /* Enable D-Cache---------------------------------------------------------*/
-  SCB_EnableDCache();
+	/* Enable D-Cache---------------------------------------------------------*/
+	SCB_EnableDCache();
 
-  /* MCU Configuration--------------------------------------------------------*/
+	/* MCU Configuration--------------------------------------------------------*/
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+	HAL_Init();
 
-  /* USER CODE BEGIN Init */
+	/* USER CODE BEGIN Init */
 
-  /* USER CODE END Init */
+	/* USER CODE END Init */
 
-  /* Configure the system clock */
-  SystemClock_Config();
+	/* Configure the system clock */
+	SystemClock_Config();
 
-  /* Configure the peripherals common clocks */
-  PeriphCommonClock_Config();
+	/* Configure the peripherals common clocks */
+	PeriphCommonClock_Config();
 
-  /* USER CODE BEGIN SysInit */
+	/* USER CODE BEGIN SysInit */
 
-  /* USER CODE END SysInit */
+	/* USER CODE END SysInit */
 
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_DMA_Init();
-  MX_ADC3_Init();
-  MX_CRC_Init();
-  MX_DCMI_Init();
-  MX_DMA2D_Init();
-  MX_ETH_Init();
-  MX_FMC_Init();
-  MX_I2C1_Init();
-  MX_I2C3_Init();
-  MX_LTDC_Init();
-  MX_QUADSPI_Init();
-  MX_RTC_Init();
-  MX_SAI2_Init();
-  MX_SPDIFRX_Init();
-  MX_SPI2_Init();
-  MX_TIM1_Init();
-  MX_TIM2_Init();
-  MX_TIM3_Init();
-  MX_TIM5_Init();
-  MX_TIM8_Init();
-  MX_TIM12_Init();
-  MX_USART1_UART_Init();
-  MX_USART6_UART_Init();
-  MX_USB_DEVICE_Init();
-  MX_SDMMC1_SD_Init();
-  MX_FATFS_Init();
+	/* Initialize all configured peripherals */
+	MX_GPIO_Init();
+	MX_DMA_Init();
+	MX_ADC3_Init();
+	MX_CRC_Init();
+	MX_DCMI_Init();
+	MX_DMA2D_Init();
+	MX_ETH_Init();
+	MX_FMC_Init();
+	MX_I2C1_Init();
+	MX_I2C3_Init();
+	MX_LTDC_Init();
+	MX_QUADSPI_Init();
+	MX_RTC_Init();
+	MX_SAI2_Init();
+	MX_SPDIFRX_Init();
+	MX_SPI2_Init();
+	MX_TIM1_Init();
+	MX_TIM2_Init();
+	MX_TIM3_Init();
+	MX_TIM5_Init();
+	MX_TIM8_Init();
+	MX_TIM12_Init();
+	MX_USART1_UART_Init();
+	MX_USART6_UART_Init();
+	MX_USB_DEVICE_Init();
+	MX_SDMMC1_SD_Init();
+	MX_FATFS_Init();
 
-  /* Initialize interrupts */
-  MX_NVIC_Init();
-  /* USER CODE BEGIN 2 */
-	//FRESULT res = f_mount(&SDFatFS, SDPath, 1);
-	//if (res != FR_OK) {
-	//	Error_Handler();
-	//}
+	/* Initialize interrupts */
+	MX_NVIC_Init();
+	/* USER CODE BEGIN 2 */
+	  //FRESULT res = f_mount(&SDFatFS, SDPath, 1);
+	  //if (res != FR_OK) {
+	  //	Error_Handler();
+	  //}
 
 	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, 0xF2F2); // backup register
 
-	UTC_Time.Hours=12;
-	UTC_Time.Minutes=0;
-	UTC_Time.Seconds=0;
-	UTC_Time.SubSeconds=0;
-	UTC_Time.SecondFraction=1000;
-	UTC_Time.TimeFormat=RTC_HOURFORMAT12_PM;
-	UTC_Time.DayLightSaving=RTC_DAYLIGHTSAVING_NONE;
-	UTC_Time.StoreOperation=RTC_STOREOPERATION_RESET;
-	UTC_Date.Year=25;
-	UTC_Date.Month=1;
-	UTC_Date.Date=29;
-	UTC_Date.WeekDay=RTC_WEEKDAY_WEDNESDAY;
+	UTC_Time.Hours = 12;
+	UTC_Time.Minutes = 0;
+	UTC_Time.Seconds = 0;
+	UTC_Time.SubSeconds = 0;
+	UTC_Time.SecondFraction = 1000;
+	UTC_Time.TimeFormat = RTC_HOURFORMAT12_PM;
+	UTC_Time.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+	UTC_Time.StoreOperation = RTC_STOREOPERATION_RESET;
+	UTC_Date.Year = 25;
+	UTC_Date.Month = 1;
+	UTC_Date.Date = 29;
+	UTC_Date.WeekDay = RTC_WEEKDAY_WEDNESDAY;
 
 	HAL_RTC_SetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
 	HAL_RTC_SetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
@@ -186,7 +186,7 @@ int main(void)
 	HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
 	HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
 
-	Year = UTC_Date.Year+2000;
+	Year = UTC_Date.Year + 2000;
 	Month = UTC_Date.Month;
 	Day = UTC_Date.Date;
 
@@ -202,20 +202,20 @@ int main(void)
 
 	lv_obj_t* scr_Main;
 	scr_Main = lv_obj_create(NULL);
-	lv_obj_set_style_bg_color(scr_Main, lv_color_hex(0xFFFFFF),0);
-	lv_obj_set_style_text_color(scr_Main, lv_color_hex(0x000000),0);
+	lv_obj_set_style_bg_color(scr_Main, lv_color_hex(0xFFFFFF), 0);
+	lv_obj_set_style_text_color(scr_Main, lv_color_hex(0x000000), 0);
 	lv_screen_load(scr_Main);
 
 	tz_ui();
-	uint32_t counter=0;
-  /* USER CODE END 2 */
+	uint32_t counter = 0;
+	/* USER CODE END 2 */
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+	/* Infinite loop */
+	/* USER CODE BEGIN WHILE */
 	uint8_t is_init = 0;
 	while (1)
 	{
-		HAL_Delay(1);
+		HAL_Delay(5);
 		lv_task_handler();
 		if (BSP_PlatformIsDetected() == SD_PRESENT && is_init == 0)
 		{
@@ -235,25 +235,25 @@ int main(void)
 			HAL_Delay(10);
 			is_init = 0;
 		}
-    /* USER CODE END WHILE */
+		/* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
+		/* USER CODE BEGIN 3 */
 		counter++;
-		if (counter>20)
+		if (counter > 40)
 		{
 			HAL_RTC_GetTime(&hrtc, &UTC_Time, RTC_FORMAT_BIN);
 			HAL_RTC_GetDate(&hrtc, &UTC_Date, RTC_FORMAT_BIN);
-			Year = UTC_Date.Year+2000;
+			Year = UTC_Date.Year + 2000;
 			Month = UTC_Date.Month;
 			Day = UTC_Date.Date;
 			Hours = UTC_Time.Hours;
 			Minutes = UTC_Time.Minutes;
 			Seconds = UTC_Time.Seconds;
 			update_data();
-			counter=0;
+			counter = 0;
 		}
 	}
-  /* USER CODE END 3 */
+	/* USER CODE END 3 */
 }
 
 /**
