@@ -8,7 +8,7 @@ This library is composed of two main parts:
 
 **Part 1: TimeZoneDatabaseCreator**
 
-This part is designed for use on Windows with Visual Basic 2022. It allows you to convert the time zone database from [https://www.iana.org/time-zones](https://www.iana.org/time-zones) into a format suitable for embedded systems.
+This part is designed for use on Windows with Visual Studio 2022. It allows you to convert the time zone database from [https://www.iana.org/time-zones](https://www.iana.org/time-zones) into a format suitable for embedded systems.
 
 **Steps:**
 
